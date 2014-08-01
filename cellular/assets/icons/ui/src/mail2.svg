@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<symbol  id="_x5F_button_x5F_shape" viewBox="-16 -16 32 32">
+	<g id="button_x5F_shape_1_">
+		<g>
+			<g opacity="0">
+				<path fill="#FFFFFF" d="M16-12c0-2.209-1.792-4-4-4h-24c-2.208,0-4,1.791-4,4v24c0,2.209,1.792,4,4,4h24c2.208,0,4-1.791,4-4
+					V-12z"/>
+			</g>
+		</g>
+	</g>
+</symbol>
+<symbol  id="email-abstract" viewBox="-16 -12.444 32 24.889">
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="0.085,1.473 15.407,6.289 15.407,11.853 -15.407,11.853 -15.407,6.306 			"/>
+			<path d="M0.086,0.851L-16,5.87v6.574h32V5.854L0.086,0.851L0.086,0.851z M-14.815,6.741l14.9-4.648l14.729,4.631v4.536h-29.629
+				V6.741L-14.815,6.741z"/>
+		</g>
+		<g>
+			<polygon fill="#FFFFFF" points="0.085,-0.995 -15.407,3.836 -15.407,-11.852 15.407,-11.852 15.407,3.819 			"/>
+			<path d="M16-12.444h-32V4.641L0.085-0.375L16,4.627V-12.444L16-12.444z M-14.815-11.259h29.629V3.013L0.086-1.616L-14.815,3.03
+				V-11.259L-14.815-11.259z"/>
+		</g>
+	</g>
+</symbol>
+<use xlink:href="#email-abstract"  width="32" height="24.889" x="-16" y="-12.444" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

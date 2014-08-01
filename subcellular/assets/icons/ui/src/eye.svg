@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<symbol  id="_x5F_button_x5F_shape" viewBox="-16 -16 32 32">
+	<g id="button_x5F_shape_1_">
+		<g>
+			<g opacity="0">
+				<path fill="#FFFFFF" d="M16-12c0-2.209-1.792-4-4-4h-24c-2.208,0-4,1.791-4,4v24c0,2.209,1.792,4,4,4h24c2.208,0,4-1.791,4-4
+					V-12z"/>
+			</g>
+		</g>
+	</g>
+</symbol>
+<symbol  id="eye" viewBox="-16 -9.881 32 19.762">
+	<g>
+		<path d="M7.585,1.444c0-4.188-3.396-7.585-7.585-7.585s-7.585,3.396-7.585,7.585C-7.585,5.633-4.189,9.03,0,9.03
+			C4.188,9.03,7.585,5.633,7.585,1.444z"/>
+		<path fill="#FFFFFF" d="M5.189,2.919c0-1.279-1.038-2.316-2.316-2.316c-1.279,0-2.316,1.037-2.316,2.316
+			c0,1.278,1.037,2.315,2.316,2.315C4.151,5.234,5.189,4.197,5.189,2.919z"/>
+		<path d="M0-9.881c-6.417,0-12.373,3.479-15.544,9.078L-16,0l0.456,0.803C-12.373,6.402-6.417,9.881,0,9.881
+			c6.416,0,12.371-3.479,15.545-9.077L16,0l-0.455-0.803C12.373-6.402,6.416-9.881,0-9.881L0-9.881z M-12.219,0
+			C-9.53-4.105-4.931-6.62,0-6.62S9.529-4.105,12.219,0C9.529,4.106,4.931,6.62,0,6.62C-4.93,6.62-9.53,4.106-12.219,0L-12.219,0z"
+			/>
+	</g>
+</symbol>
+<use xlink:href="#eye"  width="32" height="19.762" x="-16" y="-9.881" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

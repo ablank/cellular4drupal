@@ -1,0 +1,454 @@
+/* ****
+Cellular :: SVG icons
+**** */
+@import "variables";
+/////
+.icon {
+    &.search {
+        background-image: url('../assets/icons/svg/search.svg');
+    }
+
+    &.android {
+        background-image: url('../assets/icons/svg/android.svg');
+    }
+
+
+    &.angular {
+        background-image: url('../assets/icons/svg/angular.svg');
+    }
+
+
+    &.apple {
+        background-image: url('../assets/icons/svg/apple.svg');
+    }
+
+
+    &.arrow-down {
+        background-image: url('../assets/icons/svg/arrow-down.svg');
+    }
+
+
+    &.arrow-left {
+        background-image: url('../assets/icons/svg/arrow-left.svg');
+    }
+
+
+    &.arrow-light-up {
+        background-image: url('../assets/icons/svg/arrow-light-up.svg');
+    }
+
+
+    &.arrow-right {
+        background-image: url('../assets/icons/svg/arrow-right.svg');
+    }
+
+
+    &.arrow-up {
+        background-image: url('../assets/icons/svg/arrow-up.svg');
+    }
+
+
+    &.arrow-w-down {
+        background-image: url('../assets/icons/svg/arrow-w-down.svg');
+    }
+
+
+    &.arrow-w-left {
+        background-image: url('../assets/icons/svg/arrow-w-left.svg');
+    }
+
+
+    &.arrow-w-right {
+        background-image: url('../assets/icons/svg/arrow-w-right.svg');
+    }
+
+
+    &.arrow-w-up {
+        background-image: url('../assets/icons/svg/arrow-w-up.svg');
+    }
+
+
+    &.audio {
+        background-image: url('../assets/icons/svg/audio.svg');
+    }
+
+
+    &.camera {
+        background-image: url('../assets/icons/svg/camera.svg');
+    }
+
+
+    &.cart {
+        background-image: url('../assets/icons/svg/cart.svg');
+    }
+
+
+    &.cell-phone {
+        background-image: url('../assets/icons/svg/cell-phone.svg');
+    }
+
+
+    &.cell {
+        background-image: url('../assets/icons/svg/cell.svg');
+    }
+
+
+    &.chat {
+        background-image: url('../assets/icons/svg/chat.svg');
+    }
+
+
+    &.chrome {
+        background-image: url('../assets/icons/svg/chrome.svg');
+    }
+
+
+    &.cloud {
+        background-image: url('../assets/icons/svg/cloud.svg');
+    }
+
+
+    &.creativecommons {
+        background-image: url('../assets/icons/svg/creativecommons.svg');
+    }
+
+
+    &.css3 {
+        background-image: url('../assets/icons/svg/css3.svg');
+    }
+
+
+    &.delicious {
+        background-image: url('../assets/icons/svg/delicious.svg');
+    }
+
+
+    &.desktop {
+        background-image: url('../assets/icons/svg/desktop.svg');
+    }
+
+
+    &.digg {
+        background-image: url('../assets/icons/svg/digg.svg');
+    }
+
+
+    &.doc {
+        background-image: url('../assets/icons/svg/doc.svg');
+    }
+
+
+    &.drupal {
+        background-image: url('../assets/icons/svg/drupal.svg');
+    }
+
+
+    &.email {
+        background-image: url('../assets/icons/svg/email.svg');
+    }
+
+
+    &.eye {
+        background-image: url('../assets/icons/svg/eye.svg');
+    }
+
+
+    &.facebook {
+        background-image: url('../assets/icons/svg/facebook.svg');
+    }
+
+
+    &.film {
+        background-image: url('../assets/icons/svg/film.svg');
+    }
+
+
+    &.firefox {
+        background-image: url('../assets/icons/svg/firefox.svg');
+    }
+
+
+    &.flickr {
+        background-image: url('../assets/icons/svg/flickr.svg');
+    }
+
+
+    &.folder {
+        background-image: url('../assets/icons/svg/folder.svg');
+    }
+
+
+    &.gear {
+        background-image: url('../assets/icons/svg/gear.svg');
+    }
+
+
+    &.github-octo {
+        background-image: url('../assets/icons/svg/github-octo.svg');
+    }
+
+
+    &.globe {
+        background-image: url('../assets/icons/svg/globe.svg');
+    }
+
+
+    &.google {
+        background-image: url('../assets/icons/svg/google.svg');
+    }
+
+
+    &.hi5 {
+        background-image: url('../assets/icons/svg/hi5.svg');
+    }
+
+
+    &.home {
+        background-image: url('../assets/icons/svg/home.svg');
+    }
+
+
+    &.html5 {
+        background-image: url('../assets/icons/svg/html5.svg');
+    }
+
+
+    &.internetexplorer {
+        background-image: url('../assets/icons/svg/internetexplorer.svg');
+    }
+
+
+    &.jquery {
+        background-image: url('../assets/icons/svg/jquery.svg');
+    }
+
+
+    &.js {
+        background-image: url('../assets/icons/svg/js.svg');
+    }
+
+
+    &.key {
+        background-image: url('../assets/icons/svg/key.svg');
+    }
+
+
+    &.laptop {
+        background-image: url('../assets/icons/svg/laptop.svg');
+    }
+
+
+    &.linkedin {
+        background-image: url('../assets/icons/svg/linkedin.svg');
+    }
+
+
+    &.linux {
+        background-image: url('../assets/icons/svg/linux.svg');
+    }
+
+
+    &.lock {
+        background-image: url('../assets/icons/svg/lock.svg');
+    }
+
+
+    &.logo {
+        background-image: url('../assets/icons/svg/logo.svg');
+    }
+
+
+    &.mac {
+        background-image: url('../assets/icons/svg/mac.svg');
+    }
+
+
+    &.magnify {
+        background-image: url('../assets/icons/svg/magnify.svg');
+    }
+
+
+    &.mail {
+        background-image: url('../assets/icons/svg/mail.svg');
+    }
+
+
+    &.mail2 {
+        background-image: url('../assets/icons/svg/mail2.svg');
+    }
+
+    &.jMmenu,
+    &.menu {
+        background-image: url('../assets/icons/svg/menu.svg');
+    }
+
+
+    &.message-error {
+        background-image: url('../assets/icons/svg/message-error.svg');
+    }
+
+
+    &.message-ok {
+        background-image: url('../assets/icons/svg/message-ok.svg');
+    }
+
+
+    &.message-warning {
+        background-image: url('../assets/icons/svg/message-warning.svg');
+    }
+
+
+    &.message_icon_error {
+        background-image: url('../assets/icons/svg/message_icon_error.svg');
+    }
+
+
+    &.message_icon_ok {
+        background-image: url('../assets/icons/svg/message_icon_ok.svg');
+    }
+
+
+    &.message_icon_warning {
+        background-image: url('../assets/icons/svg/message_icon_warning.svg');
+    }
+
+
+    &.mobile {
+        background-image: url('../assets/icons/svg/mobile.svg');
+    }
+
+
+    &.myspace {
+        background-image: url('../assets/icons/svg/myspace.svg');
+    }
+
+
+    &.opera {
+        background-image: url('../assets/icons/svg/opera.svg');
+    }
+
+
+    &.pdf {
+        background-image: url('../assets/icons/svg/pdf.svg');
+    }
+
+
+    &.phone {
+        background-image: url('../assets/icons/svg/phone.svg');
+    }
+
+
+    &.phone2 {
+        background-image: url('../assets/icons/svg/phone2.svg');
+    }
+
+
+    &.picture {
+        background-image: url('../assets/icons/svg/picture.svg');
+    }
+
+
+    &.pinterest {
+        background-image: url('../assets/icons/svg/pinterest.svg');
+    }
+
+
+    &.print {
+        background-image: url('../assets/icons/svg/print.svg');
+    }
+
+
+    &.reddit {
+        background-image: url('../assets/icons/svg/reddit.svg');
+    }
+
+
+    &.rss {
+        background-image: url('../assets/icons/svg/rss.svg');
+    }
+
+
+    &.safari {
+        background-image: url('../assets/icons/svg/safari.svg');
+    }
+
+
+    &.spreadsheet {
+        background-image: url('../assets/icons/svg/spreadsheet.svg');
+    }
+
+
+    &.stackoverflow {
+        background-image: url('../assets/icons/svg/stackoverflow.svg');
+    }
+
+
+    &.stumbleupon {
+        background-image: url('../assets/icons/svg/stumbleupon.svg');
+    }
+
+
+    &.technorati {
+        background-image: url('../assets/icons/svg/technorati.svg');
+    }
+
+
+    &.tumblr {
+        background-image: url('../assets/icons/svg/tumblr.svg');
+    }
+
+
+    &.twitter-bird {
+        background-image: url('../assets/icons/svg/twitter-bird.svg');
+    }
+
+
+    &.twitter-t {
+        background-image: url('../assets/icons/svg/twitter-t.svg');
+    }
+
+
+    &.user-social {
+        background-image: url('../assets/icons/svg/user-social.svg');
+    }
+
+
+    &.user {
+        background-image: url('../assets/icons/svg/user.svg');
+    }
+
+
+    &.video {
+        background-image: url('../assets/icons/svg/video.svg');
+    }
+
+
+    &.w3 {
+        background-image: url('../assets/icons/svg/w3.svg');
+    }
+
+
+    &.windows {
+        background-image: url('../assets/icons/svg/windows.svg');
+    }
+
+
+    &.wordpress {
+        background-image: url('../assets/icons/svg/wordpress.svg');
+    }
+
+
+    &.wrench {
+        background-image: url('../assets/icons/svg/wrench.svg');
+    }
+
+
+    &.youtube {
+        background-image: url('../assets/icons/svg/youtube.svg');
+    }
+
+
+    &.zip {
+        background-image: url('../assets/icons/svg/zip.svg');
+    }
+}

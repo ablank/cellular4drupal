@@ -1,0 +1,83 @@
+/////
+// Cellular :: SASS Configuration
+/////
+/////
+@import "compass";
+@import "mixins";
+
+//////
+
+// Set stylesheet breakpoints
+$res_mobile: 650px;
+$res_large: 1024px;
+
+// Color swatches
+$adjust: 20%;
+
+$cyan: #29B4DE;
+$magenta: #DD2A99;
+$yellow: #EC2;
+$red: #8C0D00;
+$green: #61D43F;
+$blue: #00598E;
+
+$white: #FEFEFE;
+$black: #111;
+$grey: #8A8882;
+$light_grey: lighten($grey, $adjust);
+$dark_grey: darken($grey, $adjust);
+
+// Sizing vars
+$tiny: 0.3em;
+$small: 0.75em;
+$normal: 1em;
+$big: 1.4em;
+
+// Shadows: $h-off $v-off $blur $spread
+$shadow_big: 0 0 $normal $normal;
+$shadow_med: 0 0 $small $small;
+$shadow_small: 0 0 $tiny $tiny;
+
+// Assign values
+
+// Set Compass defaults
+$default-transition-duration: 400ms;
+$default-transition-function: ease-out;
+$default-border-radius: $tiny;
+
+$border: thin solid;
+$opacity: 0.8;
+
+$c1: $black;
+$c2: $white;
+
+$hilight: $cyan;
+$hilight_2: $magenta;
+$shadow: lighten($c1, 20%);
+
+// Typography
+$p_font: 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
+$p_size: $normal;
+$p_line_height: $normal * 1.8;
+$p_max_width: 32em;
+$p_color: $c1;
+
+$h_font: "Quicksand";
+$h_size: 2.4em;
+$h_weight: bold;
+$h_color: $grey;
+
+// Branding
+$logo_width: 72px;
+$logo_height: 72px;
+$logo_pad: .4em;
+$logo_png: url('../assets/images/png/logo.png');
+$logo_svg: url('../assets/images/svg/logo.svg');
+
+// Icons
+$icon_size: 32px;
+$icon_padding: 10px;
+
+// Images
+$loading: url('../assets/images/gif/throbber.gif');
+$body_img: url('../assets/images/honeycomb_light.png');

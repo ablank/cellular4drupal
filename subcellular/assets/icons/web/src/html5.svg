@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<symbol  id="_x5F_button_x5F_shape" viewBox="-16 -16 32 32">
+	<g id="button_x5F_shape_1_">
+		<g>
+			<g opacity="0">
+				<path fill="#FFFFFF" d="M16-12c0-2.209-1.792-4-4-4h-24c-2.208,0-4,1.791-4,4v24c0,2.209,1.792,4,4,4h24c2.208,0,4-1.791,4-4
+					V-12z"/>
+			</g>
+		</g>
+	</g>
+</symbol>
+<symbol  id="html5" viewBox="-14.108 -16 28.216 32">
+	<g>
+		<polygon fill="#E44D26" points="-11.541,-12.801 -14.108,16 14.108,16 11.536,-12.796 -0.017,-16 		"/>
+		<polygon fill="#F16529" points="0,-13.551 9.337,-10.963 11.533,13.646 0,13.646 		"/>
+		<polygon fill="#EBEBEB" points="0,2.964 -4.675,2.964 -4.998,6.579 0,6.579 0,10.113 -0.014,10.113 -8.857,10.113 -8.773,9.166 
+			-7.904,-0.568 0,-0.568 		"/>
+		<polygon fill="#EBEBEB" points="0,-6.21 -0.016,-6.214 -3.95,-5.151 -4.201,-2.335 -6.113,-2.335 -7.748,-2.335 -7.252,-7.88 
+			-0.017,-9.89 0,-9.886 		"/>
+		<polygon fill="#FFFFFF" points="-0.014,2.964 -0.014,-0.568 4.337,-0.568 3.928,-5.15 -0.014,-6.212 -0.014,-9.889 7.229,-7.88 
+			7.282,-7.283 8.11,2.016 8.198,2.964 7.245,2.964 		"/>
+		<polygon fill="#FFFFFF" points="-0.014,10.113 -0.014,7.921 -0.014,6.589 -0.014,6.579 8.507,6.579 8.507,6.579 8.52,6.579 
+			8.59,7.375 8.75,9.166 8.835,10.113 		"/>
+	</g>
+</symbol>
+<use xlink:href="#html5"  width="28.216" height="32" x="-14.108" y="-16" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

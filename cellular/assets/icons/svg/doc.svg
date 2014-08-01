@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <symbol id="a" viewBox="-12.445 -16 24.89 32">
+        <path fill="#fff" d="M-11.852 7.785v-23.192h23.704v30.814h-16.295z"/>
+        <path d="M12.444-16h-24.889v24.025l7.752 7.975h17.138l-.001-32zm-23.703 1.186h22.518v29.63h-15.451l-7.067-7.271v-22.359z"/>
+        <path fill="#999" d="M-11.852 7.785h7.409v7.622z"/>
+        <path fill="none" d="M0 11.597h8.889"/>
+        <path fill="#808080" d="M8.889 11.003h-8.889v1.185h8.889z"/>
+        <path fill="none" d="M0 9.226h8.889"/>
+        <path fill="#808080" d="M8.889 8.633h-8.889v1.185h8.889z"/>
+        <path fill="none" d="M0 6.855h8.889"/>
+        <path fill="#808080" d="M8.889 6.263h-8.889v1.184h8.889z"/>
+        <path fill="none" d="M-9.284 2.55h18.173"/>
+        <path fill="#808080" d="M8.889 1.957h-18.173v1.186h18.173z"/>
+        <path fill="none" d="M-9.284-1.006h18.173"/>
+        <path fill="#808080" d="M8.889-1.599h-18.173v1.186h18.173z"/>
+        <path fill="none" d="M-9.284-4.562h18.173"/>
+        <path fill="#808080" d="M8.889-5.154h-18.173v1.185h18.173z"/>
+        <path fill="none" d="M-9.284-8.117h18.173"/>
+        <path fill="#808080" d="M8.889-8.71h-18.173v1.186h18.173z"/>
+        <path fill="none" d="M-9.284-11.673h18.173"/>
+        <path fill="#808080" d="M8.889-12.265h-18.173v1.185h18.173z"/>
+    </symbol>
+    <use xlink:href="#a" width="24.89" height="32" x="-12.445" y="-16" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

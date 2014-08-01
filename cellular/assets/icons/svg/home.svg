@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <symbol id="a" viewBox="-16 -14 32 28">
+        <path d="M0 7.783l-10-10v-11.783h7v9h6v-9h7v11.783zM-.012 9.512l.012-.012.012.012 11.511-11.512h4.477l-16 16-16-16h4.476z"/>
+    </symbol>
+    <use xlink:href="#a" width="32" height="28" x="-16" y="-14" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

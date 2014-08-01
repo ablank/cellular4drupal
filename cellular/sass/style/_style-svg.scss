@@ -1,0 +1,38 @@
+/*****
+Cell::Style Regions
+*****/
+//////
+//////
+
+.svg {
+    #logo > a {
+        background-image: url($logo_svg);
+    }
+
+    #nav {
+        &.jMmenu.mini {
+            width: 3em;
+            height: 3em;
+            background-size: 3em;
+            background-image: url('../assets/icons/svg/menu.svg');
+
+            & > ul > li {
+                top: 3em;
+            }
+        }
+    }
+
+    .ok {
+        list-style-image: url('../assets/images/svg/message_icon_ok.svg');
+    }
+    .warning {
+        list-style-image: url('../assets/images/svg/message_icon_warning.svg');
+    }
+    .error {
+        list-style-image: url('../assets/images/svg/message_icon_error.svg');
+    }
+
+}
+@media screen and (max-width: $res_mobile) {
+
+}

@@ -1,0 +1,10 @@
+default:
+    - 'concurrent:watch'
+prod:
+    - 'concurrent:prod1'
+    - 'concurrent:prod2'
+    - 'concurrent:prod3'
+dev:
+    - 'concurrent:dev1'
+    - 'concurrent:dev2'
+    - 'concurrent:dev3'

@@ -1,0 +1,77 @@
+/*****
+Cellular :: drupal pager
+*****/
+//////
+
+.pager {
+    clear: both;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font: bold .8em/1em Arial, sans-serif;
+    text-align: center;
+    background: $dark_grey;
+    border: $border;
+    @include border-radius($small);
+    .pager-item {
+        margin: .2em;
+    }
+    li {
+        float: left;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0;
+        outline: 0;
+        list-style: none;
+        border: $border;
+    }
+    a,
+    a:link,
+        a:visited {
+        padding: $normal;
+        color: $c2;
+        display: block;
+        cursor: pointer;
+        background: $dark_grey;
+        border: $border $c1;
+    }
+    a:hover,
+        a:focus {
+        background: $c2;
+        color: $hilight;
+        border: $border $hilight;
+    }
+    .pager-ellipsis,
+    .pager-current {
+        text-decoration: none;
+    }
+    .pager-current {
+        margin: .2em .5em;
+        padding: $normal + .2em;
+        font-size: 1.2em;
+        font-weight: bold;
+        outline: 0;
+        background: $c2;
+        color: $dark_grey;
+        border: $border $dark_grey;
+    }
+    .pager-first,
+    .pager-previous,
+    .pager-next,
+    .pager-last {
+        margin: .5em;
+        border: none;
+        a,
+        a:visited {
+            width: 6em;
+            text-align: center;
+            color: $dark_grey;
+            background: $c2;
+            @include border-radius();
+            &:hover {
+                background: $c2;
+                color: $hilight;
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+/*****
+Cellular :: print
+
+(c) 2012 Adam Blankenship
+www.abctahoe.net
+*************** */
+/////
+@import "variables";
+
+//////
+
+@media print {
+
+    img, p {
+        page-break-inside: avoid;
+    }
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2, h3 {
+        page-break-after: avoid;
+    }
+
+    a,
+    a:visited {
+        color: #444;
+        text-decoration: underline;
+    }
+    a:after {
+        content: " (" attr(href) ")";
+    }
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    #app,
+    #content-wrap,
+    #content-main {
+        width: 100%;
+    }
+    #header,
+    #footer,
+    .hidden {
+        visibility: hidden;
+        display: none;
+    }
+}

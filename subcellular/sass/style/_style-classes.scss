@@ -1,0 +1,45 @@
+/*****
+ Cellular :: Classes
+*****/
+//////
+
+/////
+// Image Gallery
+/////
+.gallery {
+  text-align: center;
+  background: $dark_grey;
+
+  div,
+  a,
+  img {
+    display: inline;
+    margin: 0 auto;
+  }
+
+}
+
+/////
+// Misc. styles
+/////
+.dropCap:first-letter {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.textShadow {
+  text-shadow: 1px 1px 3px $dark_grey;
+}
+
+/////
+// Pseudo 3D Styles
+/////
+.ribbon {
+  @include ribbon(1.2em, 1em, $c1);
+  color: $c2;
+}
+
+.popout {
+  @include popout(1.2em, 1em, $c1);
+  color: $c2;
+}

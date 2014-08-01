@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<symbol  id="_x5F_button_x5F_shape" viewBox="-16 -16 32 32">
+	<g id="button_x5F_shape_1_">
+		<g>
+			<g opacity="0">
+				<path fill="#FFFFFF" d="M16-12c0-2.209-1.792-4-4-4h-24c-2.208,0-4,1.791-4,4v24c0,2.209,1.792,4,4,4h24c2.208,0,4-1.791,4-4
+					V-12z"/>
+			</g>
+		</g>
+	</g>
+</symbol>
+<symbol  id="windows-new" viewBox="-16 -15.945 32 31.89">
+	<g>
+		<g>
+			<g>
+				<g>
+					<polygon fill="#00ADEF" points="-3.166,1.125 -3.166,13.266 -16,11.473 -16,1.125 					"/>
+					<polygon fill="#00ADEF" points="-16,-1.125 -16,-11.641 -3.166,-13.365 -3.166,-1.125 					"/>
+				</g>
+				<g>
+					<g>
+						<polygon fill="#00ADEF" points="16,1.125 16,15.945 -0.916,13.58 -0.916,1.125 						"/>
+						<path fill="#00ADEF" d="M15,14.796V2.125H0.084V12.71L15,14.796 M16,15.945L-0.916,13.58V1.125H16V15.945L16,15.945z"/>
+					</g>
+					<g>
+						<polygon fill="#00ADEF" points="-0.916,-1.125 -0.916,-13.669 16,-15.945 16,-1.125 						"/>
+						<path fill="#00ADEF" d="M15-2.125v-12.677L0.084-12.795v10.67H15 M16-1.125H-0.916v-12.544L16-15.945V-1.125L16-1.125z"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<polygon fill="#00ADEF" points="-3.166,1.125 -3.166,13.266 -16,11.473 -16,1.125 					"/>
+					<polygon fill="#00ADEF" points="-16,-1.125 -16,-11.641 -3.166,-13.365 -3.166,-1.125 					"/>
+				</g>
+				<g>
+					<g>
+						<polygon fill="#00ADEF" points="16,1.125 16,15.945 -0.916,13.58 -0.916,1.125 						"/>
+					</g>
+					<g>
+						<polygon fill="#00ADEF" points="-0.916,-1.125 -0.916,-13.669 16,-15.945 16,-1.125 						"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</symbol>
+<use xlink:href="#windows-new"  width="32" height="31.89" x="-16" y="-15.945" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

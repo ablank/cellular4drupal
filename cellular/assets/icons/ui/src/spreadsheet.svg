@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<symbol  id="_x5F_button_x5F_shape" viewBox="-16 -16 32 32">
+	<g id="button_x5F_shape_1_">
+		<g>
+			<g opacity="0">
+				<path fill="#FFFFFF" d="M16-12c0-2.209-1.792-4-4-4h-24c-2.208,0-4,1.791-4,4v24c0,2.209,1.792,4,4,4h24c2.208,0,4-1.791,4-4
+					V-12z"/>
+			</g>
+		</g>
+	</g>
+</symbol>
+<symbol  id="spreadsheet" viewBox="-15.975 -16.594 31.949 33.188">
+	<polygon fill="#FFFFFF" stroke="#333333" points="-11.231,-13.353 15.475,-13.353 15.475,13.353 -11.231,13.353 	"/>
+	<g>
+		<polygon fill="#999999" points="12.972,7.354 7.678,7.354 7.678,10.53 12.972,10.53 		"/>
+		<polygon fill="#999999" points="12.972,1.441 7.678,1.441 7.678,4.618 12.972,4.618 		"/>
+		<polygon fill="#999999" points="12.972,-4.47 7.678,-4.47 7.678,-1.293 12.972,-1.293 		"/>
+		<polygon fill="#999999" points="12.972,-10.381 7.678,-10.381 7.678,-7.205 12.972,-7.205 		"/>
+		<polygon fill="#999999" points="5.03,7.354 -0.264,7.354 -0.264,10.53 5.03,10.53 		"/>
+		<polygon fill="#999999" points="5.03,1.441 -0.264,1.441 -0.264,4.618 5.03,4.618 		"/>
+		<polygon fill="#999999" points="5.03,-4.47 -0.264,-4.47 -0.264,-1.293 5.03,-1.293 		"/>
+		<polygon fill="#999999" points="5.03,-10.381 -0.264,-10.381 -0.264,-7.205 5.03,-7.205 		"/>
+	</g>
+	<polygon fill="#FFFFFF" stroke="#333333" points="-15.475,-13.353 -0.149,-16 -0.149,16 -15.475,13.353 	"/>
+	<polygon fill="#00BF16" points="-1.855,6.271 -5.033,6.271 -7.813,1.293 -10.591,6.271 -13.769,6.271 -9.135,-0.698 
+		-13.769,-7.669 -10.591,-7.669 -7.813,-2.689 -5.033,-7.669 -1.855,-7.669 -6.488,-0.698 	"/>
+</symbol>
+<use xlink:href="#spreadsheet"  width="31.949" height="33.188" x="-15.975" y="-16.594" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

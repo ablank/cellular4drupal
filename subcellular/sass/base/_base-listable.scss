@@ -1,0 +1,88 @@
+/* ****
+Cellular :: lists & tables
+**** */
+//////
+
+hr {
+  margin: $p_size 0;
+  color: $light_grey;
+  border: $border;
+}
+
+/////
+// Lists
+/////
+ol,
+ul,
+dl {
+  margin: 0 0 1em 1.6em;
+  padding: 0;
+  list-style-position: inside;
+  width: auto;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+li {
+  width: auto;
+  margin: 0.3em auto 0.6em;
+  max-width: $p_max_width * 0.9;
+}
+
+dt {
+  margin: $small 0 0;
+  font-weight: bold;
+}
+
+dd {
+}
+
+/////
+// Tables
+/////
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: $grey $border;
+  img {
+    display: inline;
+    padding: 0;
+  }
+}
+
+th,
+thead {
+  padding: $tiny;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  font-size: $normal;
+  text-align: center;
+  background: lighten($light_grey, 15%);
+  color: darken($light_grey, 20%);
+  border: lighten($light_grey, 15%) $border;
+}
+
+tr:nth-child(even) {
+  background: darken($c2, 5%);
+}
+
+tr:nth-child(odd) {
+  background: $c2;
+}
+
+td {
+  padding: $tiny;
+  border: $light_grey $border;
+}
+
+tfoot {
+  font-style: italic;
+  text-align: center;
+}

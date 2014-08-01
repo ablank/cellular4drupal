@@ -1,0 +1,1652 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <g>
+        <defs>
+            <path id="a" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="b">
+            <use xlink:href="#a" overflow="visible"/>
+        </clipPath>
+        <path fill="#FBB03B" d="M18.708 16.054c-.364 0-.741.053-1.151.16-.447.104-.924.279-1.423.522-.513.234-1.063.531-1.736.935-.252.146-.513.275-.788.381-.316.138-.663.26-1.006.379-.335.116-.668.231-.973.366-1.031.454-1.452.996-1.452 1.872 0 .124.049.402.375.868 1.226 1.795 4.984 4.386 8.572 4.386.931 0 2.171-.589 3.407-1.614 1.445-1.188 2.652-2.805 2.695-3.606 0-.481-.418-1.058-1.24-1.74-.323-.264-.682-.516-.995-.72-.21-.142-.404-.268-.574-.377-.212-.138-.387-.251-.498-.333-.142-.104-.28-.217-.42-.329-.218-.176-.438-.354-.683-.509-.422-.302-.84-.48-1.332-.572-.24-.048-.493-.069-.778-.069z" clip-path="url(#b)"/>
+        <defs>
+            <path id="c" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="d">
+            <use xlink:href="#c" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#d)">
+            <defs>
+                <path id="e" d="M30.313 34.564"/>
+            </defs>
+            <clipPath id="f">
+                <use xlink:href="#e" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#f)" d="M30.313 34.564zM30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#010101" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#020202" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#030303" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#040404" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#050505" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#060606" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#070707" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#080808" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#090909" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#0A0A0A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#0B0B0B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#0C0C0C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#0D0D0D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#0E0E0E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#0F0F0F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#101010" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#111" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#121212" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#131313" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#141414" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#151515" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#161616" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#171717" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#181818" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#191919" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#1A1A1A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#1B1B1B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#1C1C1C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#1D1D1D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#1E1E1E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#1F1F1F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#202020" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#212121" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#222" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#232323" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#242424" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#252525" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#262626" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#272727" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#282828" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#292929" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#2A2A2A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#2B2B2B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#2C2C2C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#2D2D2D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#2E2E2E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#2F2F2F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#303030" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#313131" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#323232" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#333" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#343434" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#353535" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#363636" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#373737" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#383838" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#393939" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#3A3A3A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#3B3B3B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#3C3C3C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#3D3D3D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#3E3E3E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#3F3F3F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#404040" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#414141" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#424242" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#434343" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#444" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#454545" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#464646" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#474747" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#484848" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#494949" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#4A4A4A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#4B4B4B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#4C4C4C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#4D4D4D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#4E4E4E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#4F4F4F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#505050" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#515151" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#525252" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#535353" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#545454" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#555" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#565656" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#575757" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#585858" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#595959" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#5A5A5A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#5B5B5B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#5C5C5C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#5D5D5D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#5E5E5E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#5F5F5F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#606060" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#616161" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#626262" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#636363" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#646464" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#656565" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#666" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#676767" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#686868" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#696969" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#6A6A6A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#6B6B6B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#6C6C6C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#6D6D6D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#6E6E6E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#6F6F6F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#707070" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#717171" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#727272" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#737373" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#747474" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#757575" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#767676" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#777" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#787878" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#797979" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#7A7A7A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#7B7B7B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#7C7C7C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#7D7D7D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#7E7E7E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#808080" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#818181" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#828282" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#838383" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#848484" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#858585" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#868686" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#878787" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#888" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#898989" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#8A8A8A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#8B8B8B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#8C8C8C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#8D8D8D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#8E8E8E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#8F8F8F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#909090" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#919191" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#929292" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#939393" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#949494" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#959595" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#969696" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#979797" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#989898" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#999" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#9A9A9A" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#9B9B9B" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#9C9C9C" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#9D9D9D" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#9E9E9E" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#9F9F9F" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A0A0A0" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A1A1A1" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A2A2A2" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A3A3A3" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A4A4A4" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A5A5A5" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A6A6A6" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A7A7A7" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A8A8A8" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#A9A9A9" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#aaa" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#ABABAB" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#ACACAC" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#ADADAD" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#AEAEAE" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#AFAFAF" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B0B0B0" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B1B1B1" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B2B2B2" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B3B3B3" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B4B4B4" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B5B5B5" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B6B6B6" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B7B7B7" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B8B8B8" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#B9B9B9" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#BABABA" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#bbb" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#BCBCBC" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#BDBDBD" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#BEBEBE" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#BFBFBF" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C0C0C0" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C1C1C1" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C2C2C2" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C3C3C3" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C4C4C4" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C5C5C5" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C6C6C6" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C7C7C7" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C8C8C8" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#C9C9C9" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#CACACA" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#CBCBCB" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#ccc" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#CDCDCD" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#CECECE" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#CFCFCF" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D0D0D0" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D1D1D1" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D2D2D2" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D3D3D3" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D4D4D4" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D5D5D5" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D6D6D6" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D7D7D7" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D8D8D8" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#D9D9D9" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#DADADA" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#DBDBDB" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#DCDCDC" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#ddd" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#DEDEDE" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#DFDFDF" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E0E0E0" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E1E1E1" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E2E2E2" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E3E3E3" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E4E4E4" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E5E5E5" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E6E6E6" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E7E7E7" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E8E8E8" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#E9E9E9" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#EAEAEA" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#EBEBEB" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#ECECEC" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#EDEDED" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#eee" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#EFEFEF" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F0F0F0" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F1F1F1" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F2F2F2" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F3F3F3" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F4F4F4" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F5F5F5" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F6F6F6" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F7F7F7" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F8F8F8" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#F9F9F9" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#FAFAFA" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#FBFBFB" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#FCFCFC" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#FDFDFD" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#FEFEFE" d="M30.312 34.564z"/>
+            <path clip-path="url(#f)" fill="#fff" d="M30.312 34.564zM30.312 34.564zM30.312 34.564z"/>
+        </g>
+        <defs>
+            <path id="g" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="h">
+            <use xlink:href="#g" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#h)">
+            <defs>
+                <path id="i" d="M30.313 34.564"/>
+            </defs>
+            <clipPath id="j">
+                <use xlink:href="#i" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#j)" fill="#333" d="M30.313 34.564zM30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#343434" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#353535" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#363636" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#373737" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#383838" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#393939" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#3A3A3A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#3B3B3B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#3C3C3C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#3D3D3D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#3E3E3E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#3F3F3F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#404040" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#414141" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#424242" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#434343" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#444" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#454545" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#464646" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#474747" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#484848" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#494949" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#4A4A4A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#4B4B4B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#4C4C4C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#4D4D4D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#4E4E4E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#4F4F4F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#505050" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#515151" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#525252" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#535353" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#545454" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#555" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#565656" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#575757" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#585858" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#595959" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#5A5A5A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#5B5B5B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#5C5C5C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#5D5D5D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#5E5E5E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#5F5F5F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#606060" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#616161" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#626262" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#636363" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#646464" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#656565" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#666" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#676767" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#686868" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#696969" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#6A6A6A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#6B6B6B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#6C6C6C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#6D6D6D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#6E6E6E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#6F6F6F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#707070" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#717171" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#727272" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#737373" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#747474" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#757575" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#767676" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#777" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#787878" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#797979" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#7A7A7A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#7B7B7B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#7C7C7C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#7D7D7D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#7E7E7E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#7F7F7F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#808080" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#818181" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#828282" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#838383" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#848484" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#858585" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#868686" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#878787" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#888" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#898989" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#8A8A8A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#8B8B8B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#8C8C8C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#8D8D8D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#8E8E8E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#8F8F8F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#909090" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#919191" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#929292" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#939393" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#949494" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#959595" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#969696" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#979797" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#989898" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#9A9A9A" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#9B9B9B" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#9C9C9C" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#9D9D9D" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#9E9E9E" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#9F9F9F" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A0A0A0" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A1A1A1" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A2A2A2" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A3A3A3" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A4A4A4" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A5A5A5" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A6A6A6" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A7A7A7" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A8A8A8" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#A9A9A9" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#aaa" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#ABABAB" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#ACACAC" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#ADADAD" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#AEAEAE" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#AFAFAF" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B0B0B0" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B1B1B1" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B2B2B2" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B3B3B3" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B4B4B4" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B5B5B5" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B6B6B6" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B7B7B7" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B8B8B8" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#B9B9B9" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#BABABA" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#bbb" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#BCBCBC" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#BDBDBD" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#BEBEBE" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#BFBFBF" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C0C0C0" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C1C1C1" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C2C2C2" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C3C3C3" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C4C4C4" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C5C5C5" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C6C6C6" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C7C7C7" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C8C8C8" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#C9C9C9" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#CACACA" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#CBCBCB" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#ccc" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#CDCDCD" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#CECECE" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#CFCFCF" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D0D0D0" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D1D1D1" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D2D2D2" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D3D3D3" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D4D4D4" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D5D5D5" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D6D6D6" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D7D7D7" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D8D8D8" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#D9D9D9" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#DADADA" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#DBDBDB" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#DCDCDC" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#ddd" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#DEDEDE" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#DFDFDF" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E0E0E0" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E1E1E1" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E2E2E2" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E3E3E3" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E4E4E4" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E5E5E5" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E6E6E6" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E7E7E7" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E8E8E8" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#E9E9E9" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#EAEAEA" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#EBEBEB" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#ECECEC" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#EDEDED" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#eee" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#EFEFEF" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F0F0F0" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F1F1F1" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F2F2F2" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F3F3F3" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F4F4F4" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F5F5F5" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F6F6F6" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F7F7F7" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F8F8F8" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#F9F9F9" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#FAFAFA" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#FBFBFB" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#FCFCFC" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#FDFDFD" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#FEFEFE" d="M30.313 34.564z"/>
+            <path clip-path="url(#j)" fill="#fff" d="M30.313 34.564z"/>
+        </g>
+        <defs>
+            <path id="k" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="l">
+            <use xlink:href="#k" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#l)">
+            <defs>
+                <path id="m" d="M26.449 20.533c-.088-.727-.1-1.305-.063-1.675 1.503-12.615-1.279-17.82-10.326-18.239-3.052-.135-8.566.567-10.855 7.655-.86 2.671-.494 8.257-.344 11.052.251 4.688-3.064 12.357-3.064 12.357 4.163-4.586 4.959-4.976 7.911-7.14 1.587-1.163 4.41 2.604 6.765 3.627 2.927 1.271 4.843.905 6.282-1.327 0 .021 1.294-2.225 1.958-2.841 1.251-1.138 2.846 5.343 4.387 6.936 1.482 1.528 2.186.707 2.186.707-1.615-2.681-4.565-9.07-4.837-11.112zm-.912.185c-.049.91-1.279 2.572-2.807 3.827-1.156.96-2.484 1.688-3.604 1.688-3.755 0-7.57-2.684-8.825-4.518-.284-.406-.431-.764-.431-1.046 0-1.182.713-1.748 1.636-2.152-.712-.864-1.156-2.095-1.156-3.473 0-2.609 1.612-4.727 3.594-4.727s3.594 2.116 3.594 4.727c0 .295-.022.59-.062.873.418-.109.824-.172 1.231-.172.308 0 .578.023.836.073-.036-.258-.049-.528-.049-.812 0-2.462 1.354-4.455 3.026-4.455 1.662 0 3.016 1.993 3.016 4.455 0 1.551-.54 2.917-1.354 3.718.728.603 1.354 1.292 1.354 1.944.001.013.001.037.001.05z"/>
+            </defs>
+            <clipPath id="n">
+                <use xlink:href="#m" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#n)" d="M9.87 10.317h15.667v15.915h-15.667zM23.651 9.317h-9.719 9.719z"/>
+            <path clip-path="url(#n)" fill="#010101" d="M23.651 9.317h-9.688 9.688z"/>
+            <path clip-path="url(#n)" fill="#020202" d="M23.651 9.317h-9.658 9.658z"/>
+            <path clip-path="url(#n)" fill="#030303" d="M23.651 9.317h-9.627 9.627z"/>
+            <path clip-path="url(#n)" fill="#040404" d="M23.651 9.317h-9.596 9.596z"/>
+            <path clip-path="url(#n)" fill="#050505" d="M23.651 9.317h-9.565 9.565z"/>
+            <path clip-path="url(#n)" fill="#060606" d="M23.65 9.317h-9.535 9.535z"/>
+            <path clip-path="url(#n)" fill="#070707" d="M23.65 9.317h-9.504 9.504z"/>
+            <path clip-path="url(#n)" fill="#080808" d="M23.65 9.317h-9.473 9.473z"/>
+            <path clip-path="url(#n)" fill="#090909" d="M23.65 9.317h-9.443 9.443z"/>
+            <path clip-path="url(#n)" fill="#0A0A0A" d="M23.65 9.317h-9.412 9.412z"/>
+            <path clip-path="url(#n)" fill="#0B0B0B" d="M23.65 9.317h-9.381 9.381z"/>
+            <path clip-path="url(#n)" fill="#0C0C0C" d="M23.65 9.317h-9.35 9.35z"/>
+            <path clip-path="url(#n)" fill="#0D0D0D" d="M23.65 9.317h-9.32 9.32z"/>
+            <path clip-path="url(#n)" fill="#0E0E0E" d="M23.65 9.317h-9.289 9.289z"/>
+            <path clip-path="url(#n)" fill="#0F0F0F" d="M23.65 9.317h-9.258 9.258z"/>
+            <path clip-path="url(#n)" fill="#101010" d="M23.649 9.317h-9.228 9.228z"/>
+            <path clip-path="url(#n)" fill="#111" d="M23.649 9.317h-9.197 9.197z"/>
+            <path clip-path="url(#n)" fill="#121212" d="M23.649 9.317h-9.167 9.167z"/>
+            <path clip-path="url(#n)" fill="#131313" d="M23.649 9.317h-9.136 9.136z"/>
+            <path clip-path="url(#n)" fill="#141414" d="M23.649 9.317h-9.105 9.105z"/>
+            <path clip-path="url(#n)" fill="#151515" d="M23.649 9.317h-9.074 9.074z"/>
+            <path clip-path="url(#n)" fill="#161616" d="M23.649 9.317h-9.043 9.043z"/>
+            <path clip-path="url(#n)" fill="#171717" d="M23.649 9.317h-9.013 9.013z"/>
+            <path clip-path="url(#n)" fill="#181818" d="M23.649 9.317h-8.982 8.982z"/>
+            <path clip-path="url(#n)" fill="#191919" d="M23.649 9.317h-8.952 8.952z"/>
+            <path clip-path="url(#n)" fill="#1A1A1A" d="M23.649 9.317h-8.921 8.921z"/>
+            <path clip-path="url(#n)" fill="#1B1B1B" d="M23.648 9.317h-8.89 8.89z"/>
+            <path clip-path="url(#n)" fill="#1C1C1C" d="M23.648 9.317h-8.859 8.859z"/>
+            <path clip-path="url(#n)" fill="#1D1D1D" d="M23.648 9.317h-8.828 8.828z"/>
+            <path clip-path="url(#n)" fill="#1E1E1E" d="M23.648 9.317h-8.798 8.798z"/>
+            <path clip-path="url(#n)" fill="#1F1F1F" d="M23.648 9.317h-8.768 8.768z"/>
+            <path clip-path="url(#n)" fill="#202020" d="M23.648 9.317h-8.737 8.737z"/>
+            <path clip-path="url(#n)" fill="#212121" d="M23.648 9.317h-8.706 8.706z"/>
+            <path clip-path="url(#n)" fill="#222" d="M23.648 9.317h-8.675 8.675z"/>
+            <path clip-path="url(#n)" fill="#232323" d="M23.648 9.317h-8.645 8.645z"/>
+            <path clip-path="url(#n)" fill="#242424" d="M23.648 9.317h-8.614 8.614z"/>
+            <path clip-path="url(#n)" fill="#252525" d="M23.647 9.317h-8.583 8.583z"/>
+            <path clip-path="url(#n)" fill="#262626" d="M23.647 9.317h-8.552 8.552z"/>
+            <path clip-path="url(#n)" fill="#272727" d="M23.647 9.317h-8.522 8.522z"/>
+            <path clip-path="url(#n)" fill="#282828" d="M23.647 9.317h-8.491 8.491z"/>
+            <path clip-path="url(#n)" fill="#292929" d="M23.647 9.317h-8.46 8.46z"/>
+            <path clip-path="url(#n)" fill="#2A2A2A" d="M23.647 9.317h-8.43 8.43z"/>
+            <path clip-path="url(#n)" fill="#2B2B2B" d="M23.647 9.317h-8.399 8.399z"/>
+            <path clip-path="url(#n)" fill="#2C2C2C" d="M23.647 9.317h-8.368 8.368z"/>
+            <path clip-path="url(#n)" fill="#2D2D2D" d="M23.647 9.317h-8.337 8.337z"/>
+            <path clip-path="url(#n)" fill="#2E2E2E" d="M23.647 9.317h-8.307 8.307z"/>
+            <path clip-path="url(#n)" fill="#2F2F2F" d="M23.647 9.317h-8.276 8.276z"/>
+            <path clip-path="url(#n)" fill="#303030" d="M23.646 9.317h-8.246 8.246z"/>
+            <path clip-path="url(#n)" fill="#313131" d="M23.646 9.317h-8.215 8.215z"/>
+            <path clip-path="url(#n)" fill="#323232" d="M23.646 9.317h-8.184 8.184z"/>
+            <path clip-path="url(#n)" fill="#333" d="M23.646 9.317h-8.153 8.153z"/>
+            <path clip-path="url(#n)" fill="#343434" d="M23.646 9.317h-8.123 8.123z"/>
+            <path clip-path="url(#n)" fill="#353535" d="M23.646 9.317h-8.092 8.092z"/>
+            <path clip-path="url(#n)" fill="#363636" d="M23.646 9.317h-8.062 8.062z"/>
+            <path clip-path="url(#n)" fill="#373737" d="M23.646 9.317h-8.031 8.031z"/>
+            <path clip-path="url(#n)" fill="#383838" d="M23.646 9.317h-8 8z"/>
+            <path clip-path="url(#n)" fill="#393939" d="M23.646 9.317h-7.969 7.969z"/>
+            <path clip-path="url(#n)" fill="#3A3A3A" d="M23.646 9.317h-7.938 7.938z"/>
+            <path clip-path="url(#n)" fill="#3B3B3B" d="M23.646 9.317h-7.908 7.908z"/>
+            <path clip-path="url(#n)" fill="#3C3C3C" d="M23.646 9.317h-7.877 7.877z"/>
+            <path clip-path="url(#n)" fill="#3D3D3D" d="M23.646 9.317h-7.847 7.847z"/>
+            <path clip-path="url(#n)" fill="#3E3E3E" d="M23.646 9.317h-7.816 7.816z"/>
+            <path clip-path="url(#n)" fill="#3F3F3F" d="M23.646 9.317h-7.786 7.786z"/>
+            <path clip-path="url(#n)" fill="#404040" d="M23.646 9.317h-7.754 7.754z"/>
+            <path clip-path="url(#n)" fill="#414141" d="M23.646 9.317h-7.724 7.724z"/>
+            <path clip-path="url(#n)" fill="#424242" d="M23.646 9.317h-7.693 7.693z"/>
+            <path clip-path="url(#n)" fill="#434343" d="M23.646 9.317h-7.662 7.662z"/>
+            <path clip-path="url(#n)" fill="#444" d="M23.646 9.317h-7.631 7.631z"/>
+            <path clip-path="url(#n)" fill="#454545" d="M23.645 9.317h-7.601 7.601z"/>
+            <path clip-path="url(#n)" fill="#464646" d="M23.645 9.317h-7.57 7.57z"/>
+            <path clip-path="url(#n)" fill="#474747" d="M23.645 9.317h-7.54 7.54z"/>
+            <path clip-path="url(#n)" fill="#484848" d="M23.645 9.317h-7.509 7.509z"/>
+            <path clip-path="url(#n)" fill="#494949" d="M23.645 9.317h-7.478 7.478z"/>
+            <path clip-path="url(#n)" fill="#4A4A4A" d="M23.645 9.317h-7.447 7.447z"/>
+            <path clip-path="url(#n)" fill="#4B4B4B" d="M23.645 9.317h-7.417 7.417z"/>
+            <path clip-path="url(#n)" fill="#4C4C4C" d="M23.645 9.317h-7.386 7.386z"/>
+            <path clip-path="url(#n)" fill="#4D4D4D" d="M23.645 9.317h-7.355 7.355z"/>
+            <path clip-path="url(#n)" fill="#4E4E4E" d="M23.645 9.317h-7.325 7.325z"/>
+            <path clip-path="url(#n)" fill="#4F4F4F" d="M23.645 9.317h-7.294 7.294z"/>
+            <path clip-path="url(#n)" fill="#505050" d="M23.644 9.317h-7.264 7.264z"/>
+            <path clip-path="url(#n)" fill="#515151" d="M23.644 9.317h-7.232 7.232z"/>
+            <path clip-path="url(#n)" fill="#525252" d="M23.644 9.317h-7.202 7.202z"/>
+            <path clip-path="url(#n)" fill="#535353" d="M23.644 9.317h-7.171 7.171z"/>
+            <path clip-path="url(#n)" fill="#545454" d="M23.644 9.317h-7.141 7.141z"/>
+            <path clip-path="url(#n)" fill="#555" d="M23.644 9.317h-7.109 7.109z"/>
+            <path clip-path="url(#n)" fill="#565656" d="M23.644 9.317h-7.079 7.079z"/>
+            <path clip-path="url(#n)" fill="#575757" d="M23.644 9.317h-7.049 7.049z"/>
+            <path clip-path="url(#n)" fill="#585858" d="M23.644 9.317h-7.018 7.018z"/>
+            <path clip-path="url(#n)" fill="#595959" d="M23.644 9.317h-6.987 6.987z"/>
+            <path clip-path="url(#n)" fill="#5A5A5A" d="M23.643 9.317h-6.956 6.956z"/>
+            <path clip-path="url(#n)" fill="#5B5B5B" d="M23.643 9.317h-6.926 6.926z"/>
+            <path clip-path="url(#n)" fill="#5C5C5C" d="M23.643 9.317h-6.895 6.895z"/>
+            <path clip-path="url(#n)" fill="#5D5D5D" d="M23.643 9.317h-6.864 6.864z"/>
+            <path clip-path="url(#n)" fill="#5E5E5E" d="M23.643 9.317h-6.833 6.833z"/>
+            <path clip-path="url(#n)" fill="#5F5F5F" d="M23.643 9.317h-6.803 6.803z"/>
+            <path clip-path="url(#n)" fill="#606060" d="M23.643 9.317h-6.773 6.773z"/>
+            <path clip-path="url(#n)" fill="#616161" d="M23.643 9.317h-6.741 6.741z"/>
+            <path clip-path="url(#n)" fill="#626262" d="M23.643 9.317h-6.711 6.711z"/>
+            <path clip-path="url(#n)" fill="#636363" d="M23.643 9.317h-6.68 6.68z"/>
+            <path clip-path="url(#n)" fill="#646464" d="M23.643 9.317h-6.649 6.649z"/>
+            <path clip-path="url(#n)" fill="#656565" d="M23.642 9.317h-6.618 6.618z"/>
+            <path clip-path="url(#n)" fill="#666" d="M23.642 9.317h-6.588 6.588z"/>
+            <path clip-path="url(#n)" fill="#676767" d="M23.642 9.317h-6.558 6.558z"/>
+            <path clip-path="url(#n)" fill="#686868" d="M23.642 9.317h-6.526 6.526z"/>
+            <path clip-path="url(#n)" fill="#696969" d="M23.642 9.317h-6.496 6.496z"/>
+            <path clip-path="url(#n)" fill="#6A6A6A" d="M23.642 9.317h-6.465 6.465z"/>
+            <path clip-path="url(#n)" fill="#6B6B6B" d="M23.642 9.317h-6.435 6.435z"/>
+            <path clip-path="url(#n)" fill="#6C6C6C" d="M23.642 9.317h-6.403 6.403z"/>
+            <path clip-path="url(#n)" fill="#6D6D6D" d="M23.642 9.317h-6.373 6.373z"/>
+            <path clip-path="url(#n)" fill="#6E6E6E" d="M23.642 9.317h-6.343 6.343z"/>
+            <path clip-path="url(#n)" fill="#6F6F6F" d="M23.641 9.317h-6.312 6.312z"/>
+            <path clip-path="url(#n)" fill="#707070" d="M23.641 9.317h-6.281 6.281z"/>
+            <path clip-path="url(#n)" fill="#717171" d="M23.641 9.317h-6.25 6.25z"/>
+            <path clip-path="url(#n)" fill="#727272" d="M23.641 9.317h-6.22 6.22z"/>
+            <path clip-path="url(#n)" fill="#737373" d="M23.641 9.317h-6.188 6.188z"/>
+            <path clip-path="url(#n)" fill="#747474" d="M23.641 9.317h-6.158 6.158z"/>
+            <path clip-path="url(#n)" fill="#757575" d="M23.641 9.317h-6.128 6.128z"/>
+            <path clip-path="url(#n)" fill="#767676" d="M23.641 9.317h-6.097 6.097z"/>
+            <path clip-path="url(#n)" fill="#777" d="M23.641 9.317h-6.066 6.066z"/>
+            <path clip-path="url(#n)" fill="#787878" d="M23.641 9.317h-6.035 6.035z"/>
+            <path clip-path="url(#n)" fill="#797979" d="M23.641 9.317h-6.005 6.005z"/>
+            <path clip-path="url(#n)" fill="#7A7A7A" d="M23.64 9.317h-5.974 5.974z"/>
+            <path clip-path="url(#n)" fill="#7B7B7B" d="M23.64 9.317h-5.943 5.943z"/>
+            <path clip-path="url(#n)" fill="#7C7C7C" d="M23.64 9.317h-5.912 5.912z"/>
+            <path clip-path="url(#n)" fill="#7D7D7D" d="M23.64 9.317h-5.882 5.882z"/>
+            <path clip-path="url(#n)" fill="#7E7E7E" d="M23.64 9.317h-5.852 5.852z"/>
+            <path clip-path="url(#n)" fill="#808080" d="M23.64 9.317h-5.82 5.82z"/>
+            <path clip-path="url(#n)" fill="#818181" d="M23.64 9.317h-5.79 5.79z"/>
+            <path clip-path="url(#n)" fill="#828282" d="M23.64 9.317h-5.759 5.759z"/>
+            <path clip-path="url(#n)" fill="#838383" d="M23.64 9.317h-5.729 5.729z"/>
+            <path clip-path="url(#n)" fill="#848484" d="M23.64 9.317h-5.697 5.697z"/>
+            <path clip-path="url(#n)" fill="#858585" d="M23.64 9.317h-5.667 5.667z"/>
+            <path clip-path="url(#n)" fill="#868686" d="M23.639 9.317h-5.637 5.637z"/>
+            <path clip-path="url(#n)" fill="#878787" d="M23.639 9.317h-5.605 5.605z"/>
+            <path clip-path="url(#n)" fill="#888" d="M23.639 9.317h-5.575 5.575z"/>
+            <path clip-path="url(#n)" fill="#898989" d="M23.639 9.317h-5.544 5.544z"/>
+            <path clip-path="url(#n)" fill="#8A8A8A" d="M23.639 9.317h-5.514 5.514z"/>
+            <path clip-path="url(#n)" fill="#8B8B8B" d="M23.639 9.317h-5.482 5.482z"/>
+            <path clip-path="url(#n)" fill="#8C8C8C" d="M23.639 9.317h-5.452 5.452z"/>
+            <path clip-path="url(#n)" fill="#8D8D8D" d="M23.639 9.317h-5.422 5.422z"/>
+            <path clip-path="url(#n)" fill="#8E8E8E" d="M23.639 9.317h-5.391 5.391z"/>
+            <path clip-path="url(#n)" fill="#8F8F8F" d="M23.639 9.317h-5.36 5.36z"/>
+            <path clip-path="url(#n)" fill="#909090" d="M23.638 9.317h-5.329 5.329z"/>
+            <path clip-path="url(#n)" fill="#919191" d="M23.638 9.317h-5.299 5.299z"/>
+            <path clip-path="url(#n)" fill="#929292" d="M23.638 9.317h-5.268 5.268z"/>
+            <path clip-path="url(#n)" fill="#939393" d="M23.638 9.317h-5.238 5.238z"/>
+            <path clip-path="url(#n)" fill="#949494" d="M23.638 9.317h-5.207 5.207z"/>
+            <path clip-path="url(#n)" fill="#959595" d="M23.638 9.317h-5.176 5.176z"/>
+            <path clip-path="url(#n)" fill="#969696" d="M23.638 9.317h-5.146 5.146z"/>
+            <path clip-path="url(#n)" fill="#979797" d="M23.638 9.317h-5.114 5.114z"/>
+            <path clip-path="url(#n)" fill="#989898" d="M23.638 9.317h-5.084 5.084z"/>
+            <path clip-path="url(#n)" fill="#999" d="M23.638 9.317h-5.053 5.053z"/>
+            <path clip-path="url(#n)" fill="#9A9A9A" d="M23.638 9.317h-5.022 5.022z"/>
+            <path clip-path="url(#n)" fill="#9B9B9B" d="M23.637 9.317h-4.991 4.991z"/>
+            <path clip-path="url(#n)" fill="#9C9C9C" d="M23.637 9.317h-4.961 4.961z"/>
+            <path clip-path="url(#n)" fill="#9D9D9D" d="M23.637 9.317h-4.931 4.931z"/>
+            <path clip-path="url(#n)" fill="#9E9E9E" d="M23.637 9.317h-4.899 4.899z"/>
+            <path clip-path="url(#n)" fill="#9F9F9F" d="M23.637 9.317h-4.869 4.869z"/>
+            <path clip-path="url(#n)" fill="#A0A0A0" d="M23.637 9.317h-4.838 4.838z"/>
+            <path clip-path="url(#n)" fill="#A1A1A1" d="M23.637 9.317h-4.808 4.808z"/>
+            <path clip-path="url(#n)" fill="#A2A2A2" d="M23.637 9.317h-4.777 4.777z"/>
+            <path clip-path="url(#n)" fill="#A3A3A3" d="M23.637 9.317h-4.746 4.746z"/>
+            <path clip-path="url(#n)" fill="#A4A4A4" d="M23.637 9.317h-4.716 4.716z"/>
+            <path clip-path="url(#n)" fill="#A5A5A5" d="M23.636 9.317h-4.685 4.685z"/>
+            <path clip-path="url(#n)" fill="#A6A6A6" d="M23.636 9.317h-4.654 4.654z"/>
+            <path clip-path="url(#n)" fill="#A7A7A7" d="M23.636 9.317h-4.623 4.623z"/>
+            <path clip-path="url(#n)" fill="#A8A8A8" d="M23.636 9.317h-4.593 4.593z"/>
+            <path clip-path="url(#n)" fill="#A9A9A9" d="M23.636 9.317h-4.562 4.562z"/>
+            <path clip-path="url(#n)" fill="#aaa" d="M23.636 9.317h-4.531 4.531z"/>
+            <path clip-path="url(#n)" fill="#ABABAB" d="M23.636 9.317h-4.501 4.501z"/>
+            <path clip-path="url(#n)" fill="#ACACAC" d="M23.636 9.317h-4.47 4.47z"/>
+            <path clip-path="url(#n)" fill="#ADADAD" d="M23.636 9.317h-4.439 4.439z"/>
+            <path clip-path="url(#n)" fill="#AEAEAE" d="M23.636 9.317h-4.408 4.408z"/>
+            <path clip-path="url(#n)" fill="#AFAFAF" d="M23.636 9.317h-4.378 4.378z"/>
+            <path clip-path="url(#n)" fill="#B0B0B0" d="M23.635 9.317h-4.347 4.347z"/>
+            <path clip-path="url(#n)" fill="#B1B1B1" d="M23.635 9.317h-4.316 4.316z"/>
+            <path clip-path="url(#n)" fill="#B2B2B2" d="M23.635 9.317h-4.286 4.286z"/>
+            <path clip-path="url(#n)" fill="#B3B3B3" d="M23.635 9.317h-4.255 4.255z"/>
+            <path clip-path="url(#n)" fill="#B4B4B4" d="M23.635 9.317h-4.225 4.225z"/>
+            <path clip-path="url(#n)" fill="#B5B5B5" d="M23.635 9.317h-4.193 4.193z"/>
+            <path clip-path="url(#n)" fill="#B6B6B6" d="M23.635 9.317h-4.163 4.163z"/>
+            <path clip-path="url(#n)" fill="#B7B7B7" d="M23.635 9.317h-4.132 4.132z"/>
+            <path clip-path="url(#n)" fill="#B8B8B8" d="M23.635 9.317h-4.102 4.102z"/>
+            <path clip-path="url(#n)" fill="#B9B9B9" d="M23.635 9.317h-4.07 4.07z"/>
+            <path clip-path="url(#n)" fill="#BABABA" d="M23.634 9.317h-4.04 4.04z"/>
+            <path clip-path="url(#n)" fill="#bbb" d="M23.634 9.317h-4.01 4.01z"/>
+            <path clip-path="url(#n)" fill="#BCBCBC" d="M23.634 9.317h-3.979 3.979z"/>
+            <path clip-path="url(#n)" fill="#BDBDBD" d="M23.634 9.317h-3.948 3.948z"/>
+            <path clip-path="url(#n)" fill="#BEBEBE" d="M23.634 9.317h-3.917 3.917z"/>
+            <path clip-path="url(#n)" fill="#BFBFBF" d="M23.634 9.317h-3.887 3.887z"/>
+            <path clip-path="url(#n)" fill="#C0C0C0" d="M23.634 9.317h-3.855 3.855z"/>
+            <path clip-path="url(#n)" fill="#C1C1C1" d="M23.634 9.317h-3.825 3.825z"/>
+            <path clip-path="url(#n)" fill="#C2C2C2" d="M23.634 9.317h-3.795 3.795z"/>
+            <path clip-path="url(#n)" fill="#C3C3C3" d="M23.634 9.317h-3.764 3.764z"/>
+            <path clip-path="url(#n)" fill="#C4C4C4" d="M23.634 9.317h-3.734 3.734z"/>
+            <path clip-path="url(#n)" fill="#C5C5C5" d="M23.633 9.317h-3.702 3.702z"/>
+            <path clip-path="url(#n)" fill="#C6C6C6" d="M23.633 9.317h-3.672 3.672z"/>
+            <path clip-path="url(#n)" fill="#C7C7C7" d="M23.633 9.317h-3.641 3.641z"/>
+            <path clip-path="url(#n)" fill="#C8C8C8" d="M23.633 9.317h-3.61 3.61z"/>
+            <path clip-path="url(#n)" fill="#C9C9C9" d="M23.633 9.317h-3.58 3.58z"/>
+            <path clip-path="url(#n)" fill="#CACACA" d="M23.633 9.317h-3.549 3.549z"/>
+            <path clip-path="url(#n)" fill="#CBCBCB" d="M23.633 9.317h-3.519 3.519z"/>
+            <path clip-path="url(#n)" fill="#ccc" d="M23.633 9.317h-3.487 3.487z"/>
+            <path clip-path="url(#n)" fill="#CDCDCD" d="M23.633 9.317h-3.457 3.457z"/>
+            <path clip-path="url(#n)" fill="#CECECE" d="M23.633 9.317h-3.426 3.426z"/>
+            <path clip-path="url(#n)" fill="#CFCFCF" d="M23.633 9.317h-3.396 3.396z"/>
+            <path clip-path="url(#n)" fill="#D0D0D0" d="M23.632 9.317h-3.365 3.365z"/>
+            <path clip-path="url(#n)" fill="#D1D1D1" d="M23.632 9.317h-3.334 3.334z"/>
+            <path clip-path="url(#n)" fill="#D2D2D2" d="M23.632 9.317h-3.304 3.304z"/>
+            <path clip-path="url(#n)" fill="#D3D3D3" d="M23.632 9.317h-3.272 3.272z"/>
+            <path clip-path="url(#n)" fill="#D4D4D4" d="M23.632 9.317h-3.242 3.242z"/>
+            <path clip-path="url(#n)" fill="#D5D5D5" d="M23.632 9.317h-3.211 3.211z"/>
+            <path clip-path="url(#n)" fill="#D6D6D6" d="M23.632 9.317h-3.181 3.181z"/>
+            <path clip-path="url(#n)" fill="#D7D7D7" d="M23.632 9.317h-3.149 3.149z"/>
+            <path clip-path="url(#n)" fill="#D8D8D8" d="M23.632 9.317h-3.119 3.119z"/>
+            <path clip-path="url(#n)" fill="#D9D9D9" d="M23.632 9.317h-3.089 3.089z"/>
+            <path clip-path="url(#n)" fill="#DADADA" d="M23.631 9.317h-3.058 3.058z"/>
+            <path clip-path="url(#n)" fill="#DBDBDB" d="M23.631 9.317h-3.027 3.027z"/>
+            <path clip-path="url(#n)" fill="#DCDCDC" d="M23.631 9.317h-2.996 2.996z"/>
+            <path clip-path="url(#n)" fill="#ddd" d="M23.631 9.317h-2.966 2.966z"/>
+            <path clip-path="url(#n)" fill="#DEDEDE" d="M23.631 9.317h-2.935 2.935z"/>
+            <path clip-path="url(#n)" fill="#DFDFDF" d="M23.631 9.317h-2.904 2.904z"/>
+            <path clip-path="url(#n)" fill="#E0E0E0" d="M23.631 9.317h-2.874 2.874z"/>
+            <path clip-path="url(#n)" fill="#E1E1E1" d="M23.631 9.317h-2.843 2.843z"/>
+            <path clip-path="url(#n)" fill="#E2E2E2" d="M23.631 9.317h-2.813 2.813z"/>
+            <path clip-path="url(#n)" fill="#E3E3E3" d="M23.631 9.317h-2.781 2.781z"/>
+            <path clip-path="url(#n)" fill="#E4E4E4" d="M23.631 9.317h-2.751 2.751z"/>
+            <path clip-path="url(#n)" fill="#E5E5E5" d="M23.63 9.317h-2.72 2.72z"/>
+            <path clip-path="url(#n)" fill="#E6E6E6" d="M23.63 9.317h-2.69 2.69z"/>
+            <path clip-path="url(#n)" fill="#E7E7E7" d="M23.63 9.317h-2.659 2.659z"/>
+            <path clip-path="url(#n)" fill="#E8E8E8" d="M23.63 9.317h-2.628 2.628z"/>
+            <path clip-path="url(#n)" fill="#E9E9E9" d="M23.63 9.317h-2.598 2.598z"/>
+            <path clip-path="url(#n)" fill="#EAEAEA" d="M23.63 9.317h-2.566 2.566z"/>
+            <path clip-path="url(#n)" fill="#EBEBEB" d="M23.63 9.317h-2.536 2.536z"/>
+            <path clip-path="url(#n)" fill="#ECECEC" d="M23.63 9.317h-2.505 2.505z"/>
+            <path clip-path="url(#n)" fill="#EDEDED" d="M23.63 9.317h-2.475 2.475z"/>
+            <path clip-path="url(#n)" fill="#eee" d="M23.63 9.317h-2.444 2.444z"/>
+            <path clip-path="url(#n)" fill="#EFEFEF" d="M23.629 9.317h-2.413 2.413z"/>
+            <path clip-path="url(#n)" fill="#F0F0F0" d="M23.629 9.317h-2.383 2.383z"/>
+            <path clip-path="url(#n)" fill="#F1F1F1" d="M23.629 9.317h-2.352 2.352z"/>
+            <path clip-path="url(#n)" fill="#F2F2F2" d="M23.629 9.317h-2.321 2.321z"/>
+            <path clip-path="url(#n)" fill="#F3F3F3" d="M23.629 9.317h-2.29 2.29z"/>
+            <path clip-path="url(#n)" fill="#F4F4F4" d="M23.629 9.317h-2.26 2.26z"/>
+            <path clip-path="url(#n)" fill="#F5F5F5" d="M23.629 9.317h-2.229 2.229z"/>
+            <path clip-path="url(#n)" fill="#F6F6F6" d="M23.629 9.317h-2.198 2.198z"/>
+            <path clip-path="url(#n)" fill="#F7F7F7" d="M23.629 9.317h-2.168 2.168z"/>
+            <path clip-path="url(#n)" fill="#F8F8F8" d="M23.629 9.317h-2.137 2.137z"/>
+            <path clip-path="url(#n)" fill="#F9F9F9" d="M23.629 9.317h-2.106 2.106z"/>
+            <path clip-path="url(#n)" fill="#FAFAFA" d="M23.628 9.317h-2.075 2.075z"/>
+            <path clip-path="url(#n)" fill="#FBFBFB" d="M23.628 9.317h-2.045 2.045z"/>
+            <path clip-path="url(#n)" fill="#FCFCFC" d="M23.628 9.317h-2.014 2.014z"/>
+            <path clip-path="url(#n)" fill="#FDFDFD" d="M23.628 9.317h-1.983 1.983z"/>
+            <path clip-path="url(#n)" fill="#FEFEFE" d="M23.628 9.317h-1.953 1.953z"/>
+            <path clip-path="url(#n)" fill="#fff" d="M23.628 9.317h-1.922 1.922zM23.628 9.317h-1.892 1.892zM23.622 9.317h-.945.945z"/>
+            <path clip-path="url(#n)" d="M1.797.484h29.488v31.982h-29.488z"/>
+            <ellipse clip-path="url(#n)" cx="23.651" cy=".415" rx="9.719" ry="7.486"/>
+            <ellipse clip-path="url(#n)" fill="#010101" cx="23.651" cy=".41" rx="9.688" ry="7.462"/>
+            <ellipse clip-path="url(#n)" fill="#020202" cx="23.651" cy=".405" rx="9.658" ry="7.438"/>
+            <ellipse clip-path="url(#n)" fill="#030303" cx="23.651" cy=".4" rx="9.627" ry="7.415"/>
+            <ellipse clip-path="url(#n)" fill="#040404" cx="23.651" cy=".395" rx="9.596" ry="7.391"/>
+            <ellipse clip-path="url(#n)" fill="#050505" cx="23.651" cy=".39" rx="9.565" ry="7.368"/>
+            <ellipse clip-path="url(#n)" fill="#060606" cx="23.65" cy=".385" rx="9.535" ry="7.344"/>
+            <ellipse clip-path="url(#n)" fill="#070707" cx="23.65" cy=".38" rx="9.504" ry="7.32"/>
+            <ellipse clip-path="url(#n)" fill="#080808" cx="23.65" cy=".375" rx="9.473" ry="7.296"/>
+            <ellipse clip-path="url(#n)" fill="#090909" cx="23.65" cy=".371" rx="9.443" ry="7.273"/>
+            <ellipse clip-path="url(#n)" fill="#0A0A0A" cx="23.65" cy=".366" rx="9.412" ry="7.25"/>
+            <ellipse clip-path="url(#n)" fill="#0B0B0B" cx="23.65" cy=".361" rx="9.381" ry="7.226"/>
+            <ellipse clip-path="url(#n)" fill="#0C0C0C" cx="23.65" cy=".355" rx="9.351" ry="7.202"/>
+            <ellipse clip-path="url(#n)" fill="#0D0D0D" cx="23.65" cy=".351" rx="9.32" ry="7.178"/>
+            <ellipse clip-path="url(#n)" fill="#0E0E0E" cx="23.65" cy=".346" rx="9.289" ry="7.155"/>
+            <ellipse clip-path="url(#n)" fill="#0F0F0F" cx="23.65" cy=".341" rx="9.258" ry="7.131"/>
+            <ellipse clip-path="url(#n)" fill="#101010" cx="23.649" cy=".336" rx="9.228" ry="7.107"/>
+            <ellipse clip-path="url(#n)" fill="#111" cx="23.649" cy=".331" rx="9.197" ry="7.084"/>
+            <ellipse clip-path="url(#n)" fill="#121212" cx="23.649" cy=".326" rx="9.167" ry="7.06"/>
+            <ellipse clip-path="url(#n)" fill="#131313" cx="23.649" cy=".321" rx="9.136" ry="7.037"/>
+            <ellipse clip-path="url(#n)" fill="#141414" cx="23.649" cy=".316" rx="9.105" ry="7.013"/>
+            <ellipse clip-path="url(#n)" fill="#151515" cx="23.649" cy=".312" rx="9.074" ry="6.989"/>
+            <ellipse clip-path="url(#n)" fill="#161616" cx="23.649" cy=".307" rx="9.043" ry="6.966"/>
+            <ellipse clip-path="url(#n)" fill="#171717" cx="23.649" cy=".302" rx="9.013" ry="6.942"/>
+            <ellipse clip-path="url(#n)" fill="#181818" cx="23.649" cy=".297" rx="8.982" ry="6.918"/>
+            <ellipse clip-path="url(#n)" fill="#191919" cx="23.649" cy=".292" rx="8.952" ry="6.895"/>
+            <ellipse clip-path="url(#n)" fill="#1A1A1A" cx="23.649" cy=".287" rx="8.921" ry="6.871"/>
+            <ellipse clip-path="url(#n)" fill="#1B1B1B" cx="23.648" cy=".282" rx="8.89" ry="6.847"/>
+            <ellipse clip-path="url(#n)" fill="#1C1C1C" cx="23.648" cy=".277" rx="8.859" ry="6.824"/>
+            <ellipse clip-path="url(#n)" fill="#1D1D1D" cx="23.648" cy=".272" rx="8.829" ry="6.8"/>
+            <ellipse clip-path="url(#n)" fill="#1E1E1E" cx="23.648" cy=".268" rx="8.798" ry="6.776"/>
+            <ellipse clip-path="url(#n)" fill="#1F1F1F" cx="23.648" cy=".263" rx="8.768" ry="6.753"/>
+            <ellipse clip-path="url(#n)" fill="#202020" cx="23.648" cy=".258" rx="8.737" ry="6.729"/>
+            <ellipse clip-path="url(#n)" fill="#212121" cx="23.648" cy=".253" rx="8.706" ry="6.706"/>
+            <ellipse clip-path="url(#n)" fill="#222" cx="23.648" cy=".248" rx="8.675" ry="6.682"/>
+            <ellipse clip-path="url(#n)" fill="#232323" cx="23.648" cy=".243" rx="8.645" ry="6.658"/>
+            <ellipse clip-path="url(#n)" fill="#242424" cx="23.648" cy=".238" rx="8.614" ry="6.635"/>
+            <ellipse clip-path="url(#n)" fill="#252525" cx="23.647" cy=".233" rx="8.583" ry="6.611"/>
+            <ellipse clip-path="url(#n)" fill="#262626" cx="23.647" cy=".228" rx="8.552" ry="6.587"/>
+            <ellipse clip-path="url(#n)" fill="#272727" cx="23.647" cy=".223" rx="8.522" ry="6.563"/>
+            <ellipse clip-path="url(#n)" fill="#282828" cx="23.647" cy=".218" rx="8.491" ry="6.54"/>
+            <ellipse clip-path="url(#n)" fill="#292929" cx="23.647" cy=".213" rx="8.46" ry="6.517"/>
+            <ellipse clip-path="url(#n)" fill="#2A2A2A" cx="23.647" cy=".208" rx="8.43" ry="6.493"/>
+            <ellipse clip-path="url(#n)" fill="#2B2B2B" cx="23.647" cy=".204" rx="8.399" ry="6.469"/>
+            <ellipse clip-path="url(#n)" fill="#2C2C2C" cx="23.647" cy=".199" rx="8.368" ry="6.445"/>
+            <ellipse clip-path="url(#n)" fill="#2D2D2D" cx="23.647" cy=".194" rx="8.337" ry="6.422"/>
+            <ellipse clip-path="url(#n)" fill="#2E2E2E" cx="23.647" cy=".189" rx="8.307" ry="6.398"/>
+            <ellipse clip-path="url(#n)" fill="#2F2F2F" cx="23.647" cy=".184" rx="8.276" ry="6.375"/>
+            <ellipse clip-path="url(#n)" fill="#303030" cx="23.646" cy=".179" rx="8.246" ry="6.351"/>
+            <ellipse clip-path="url(#n)" fill="#313131" cx="23.646" cy=".174" rx="8.215" ry="6.327"/>
+            <ellipse clip-path="url(#n)" fill="#323232" cx="23.646" cy=".169" rx="8.184" ry="6.304"/>
+            <ellipse clip-path="url(#n)" fill="#333" cx="23.646" cy=".165" rx="8.153" ry="6.28"/>
+            <ellipse clip-path="url(#n)" fill="#343434" cx="23.646" cy=".16" rx="8.123" ry="6.256"/>
+            <ellipse clip-path="url(#n)" fill="#353535" cx="23.646" cy=".155" rx="8.092" ry="6.232"/>
+            <ellipse clip-path="url(#n)" fill="#363636" cx="23.646" cy=".15" rx="8.062" ry="6.209"/>
+            <ellipse clip-path="url(#n)" fill="#373737" cx="23.646" cy=".145" rx="8.031" ry="6.186"/>
+            <ellipse clip-path="url(#n)" fill="#383838" cx="23.646" cy=".14" rx="8" ry="6.162"/>
+            <ellipse clip-path="url(#n)" fill="#393939" cx="23.646" cy=".135" rx="7.969" ry="6.138"/>
+            <ellipse clip-path="url(#n)" fill="#3A3A3A" cx="23.646" cy=".13" rx="7.938" ry="6.114"/>
+            <ellipse clip-path="url(#n)" fill="#3B3B3B" cx="23.646" cy=".125" rx="7.908" ry="6.091"/>
+            <ellipse clip-path="url(#n)" fill="#3C3C3C" cx="23.646" cy=".12" rx="7.877" ry="6.067"/>
+            <ellipse clip-path="url(#n)" fill="#3D3D3D" cx="23.646" cy=".115" rx="7.847" ry="6.043"/>
+            <ellipse clip-path="url(#n)" fill="#3E3E3E" cx="23.646" cy=".11" rx="7.816" ry="6.02"/>
+            <ellipse clip-path="url(#n)" fill="#3F3F3F" cx="23.646" cy=".105" rx="7.785" ry="5.996"/>
+            <ellipse clip-path="url(#n)" fill="#404040" cx="23.646" cy=".101" rx="7.754" ry="5.973"/>
+            <ellipse clip-path="url(#n)" fill="#414141" cx="23.646" cy=".096" rx="7.724" ry="5.949"/>
+            <ellipse clip-path="url(#n)" fill="#424242" cx="23.646" cy=".091" rx="7.693" ry="5.925"/>
+            <ellipse clip-path="url(#n)" fill="#434343" cx="23.646" cy=".086" rx="7.662" ry="5.902"/>
+            <ellipse clip-path="url(#n)" fill="#444" cx="23.646" cy=".081" rx="7.631" ry="5.878"/>
+            <ellipse clip-path="url(#n)" fill="#454545" cx="23.645" cy=".076" rx="7.601" ry="5.854"/>
+            <ellipse clip-path="url(#n)" fill="#464646" cx="23.645" cy=".071" rx="7.57" ry="5.831"/>
+            <ellipse clip-path="url(#n)" fill="#474747" cx="23.645" cy=".066" rx="7.54" ry="5.807"/>
+            <ellipse clip-path="url(#n)" fill="#484848" cx="23.645" cy=".062" rx="7.509" ry="5.783"/>
+            <ellipse clip-path="url(#n)" fill="#494949" cx="23.645" cy=".057" rx="7.478" ry="5.76"/>
+            <ellipse clip-path="url(#n)" fill="#4A4A4A" cx="23.645" cy=".052" rx="7.447" ry="5.736"/>
+            <ellipse clip-path="url(#n)" fill="#4B4B4B" cx="23.645" cy=".047" rx="7.417" ry="5.712"/>
+            <ellipse clip-path="url(#n)" fill="#4C4C4C" cx="23.645" cy=".042" rx="7.386" ry="5.689"/>
+            <ellipse clip-path="url(#n)" fill="#4D4D4D" cx="23.645" cy=".037" rx="7.355" ry="5.665"/>
+            <ellipse clip-path="url(#n)" fill="#4E4E4E" cx="23.645" cy=".032" rx="7.325" ry="5.642"/>
+            <ellipse clip-path="url(#n)" fill="#4F4F4F" cx="23.645" cy=".027" rx="7.294" ry="5.618"/>
+            <ellipse clip-path="url(#n)" fill="#505050" cx="23.644" cy=".022" rx="7.263" ry="5.594"/>
+            <ellipse clip-path="url(#n)" fill="#515151" cx="23.644" cy=".018" rx="7.232" ry="5.571"/>
+            <ellipse clip-path="url(#n)" fill="#525252" cx="23.644" cy=".013" rx="7.202" ry="5.547"/>
+            <ellipse clip-path="url(#n)" fill="#535353" cx="23.644" cy=".007" rx="7.171" ry="5.523"/>
+            <ellipse clip-path="url(#n)" fill="#545454" cx="23.644" cy=".002" rx="7.141" ry="5.5"/>
+            <ellipse clip-path="url(#n)" fill="#555" cx="23.644" cy="-.002" rx="7.109" ry="5.476"/>
+            <ellipse clip-path="url(#n)" fill="#565656" cx="23.644" cy="-.007" rx="7.079" ry="5.453"/>
+            <ellipse clip-path="url(#n)" fill="#575757" cx="23.644" cy="-.012" rx="7.049" ry="5.429"/>
+            <ellipse clip-path="url(#n)" fill="#585858" cx="23.644" cy="-.017" rx="7.018" ry="5.405"/>
+            <ellipse clip-path="url(#n)" fill="#595959" cx="23.644" cy="-.022" rx="6.987" ry="5.381"/>
+            <ellipse clip-path="url(#n)" fill="#5A5A5A" cx="23.643" cy="-.027" rx="6.956" ry="5.358"/>
+            <ellipse clip-path="url(#n)" fill="#5B5B5B" cx="23.643" cy="-.032" rx="6.926" ry="5.334"/>
+            <ellipse clip-path="url(#n)" fill="#5C5C5C" cx="23.643" cy="-.037" rx="6.895" ry="5.311"/>
+            <ellipse clip-path="url(#n)" fill="#5D5D5D" cx="23.643" cy="-.042" rx="6.864" ry="5.287"/>
+            <ellipse clip-path="url(#n)" fill="#5E5E5E" cx="23.643" cy="-.046" rx="6.833" ry="5.263"/>
+            <ellipse clip-path="url(#n)" fill="#5F5F5F" cx="23.643" cy="-.051" rx="6.803" ry="5.24"/>
+            <ellipse clip-path="url(#n)" fill="#606060" cx="23.643" cy="-.056" rx="6.772" ry="5.216"/>
+            <ellipse clip-path="url(#n)" fill="#616161" cx="23.643" cy="-.061" rx="6.741" ry="5.192"/>
+            <ellipse clip-path="url(#n)" fill="#626262" cx="23.643" cy="-.066" rx="6.711" ry="5.169"/>
+            <ellipse clip-path="url(#n)" fill="#636363" cx="23.643" cy="-.071" rx="6.68" ry="5.145"/>
+            <ellipse clip-path="url(#n)" fill="#646464" cx="23.643" cy="-.076" rx="6.649" ry="5.122"/>
+            <ellipse clip-path="url(#n)" fill="#656565" cx="23.642" cy="-.081" rx="6.618" ry="5.098"/>
+            <ellipse clip-path="url(#n)" fill="#666" cx="23.642" cy="-.085" rx="6.588" ry="5.074"/>
+            <ellipse clip-path="url(#n)" fill="#676767" cx="23.642" cy="-.09" rx="6.558" ry="5.05"/>
+            <ellipse clip-path="url(#n)" fill="#686868" cx="23.642" cy="-.095" rx="6.526" ry="5.027"/>
+            <ellipse clip-path="url(#n)" fill="#696969" cx="23.642" cy="-.1" rx="6.496" ry="5.003"/>
+            <ellipse clip-path="url(#n)" fill="#6A6A6A" cx="23.642" cy="-.105" rx="6.465" ry="4.979"/>
+            <ellipse clip-path="url(#n)" fill="#6B6B6B" cx="23.642" cy="-.11" rx="6.435" ry="4.956"/>
+            <ellipse clip-path="url(#n)" fill="#6C6C6C" cx="23.642" cy="-.115" rx="6.403" ry="4.932"/>
+            <ellipse clip-path="url(#n)" fill="#6D6D6D" cx="23.642" cy="-.12" rx="6.373" ry="4.909"/>
+            <ellipse clip-path="url(#n)" fill="#6E6E6E" cx="23.642" cy="-.125" rx="6.343" ry="4.885"/>
+            <ellipse clip-path="url(#n)" fill="#6F6F6F" cx="23.641" cy="-.13" rx="6.312" ry="4.861"/>
+            <ellipse clip-path="url(#n)" fill="#707070" cx="23.641" cy="-.135" rx="6.281" ry="4.838"/>
+            <ellipse clip-path="url(#n)" fill="#717171" cx="23.641" cy="-.14" rx="6.25" ry="4.814"/>
+            <ellipse clip-path="url(#n)" fill="#727272" cx="23.641" cy="-.145" rx="6.22" ry="4.791"/>
+            <ellipse clip-path="url(#n)" fill="#737373" cx="23.641" cy="-.149" rx="6.188" ry="4.767"/>
+            <ellipse clip-path="url(#n)" fill="#747474" cx="23.641" cy="-.154" rx="6.158" ry="4.743"/>
+            <ellipse clip-path="url(#n)" fill="#757575" cx="23.641" cy="-.159" rx="6.128" ry="4.72"/>
+            <ellipse clip-path="url(#n)" fill="#767676" cx="23.641" cy="-.164" rx="6.097" ry="4.696"/>
+            <ellipse clip-path="url(#n)" fill="#777" cx="23.641" cy="-.169" rx="6.066" ry="4.672"/>
+            <ellipse clip-path="url(#n)" fill="#787878" cx="23.641" cy="-.174" rx="6.035" ry="4.648"/>
+            <ellipse clip-path="url(#n)" fill="#797979" cx="23.641" cy="-.179" rx="6.005" ry="4.625"/>
+            <ellipse clip-path="url(#n)" fill="#7A7A7A" cx="23.64" cy="-.184" rx="5.974" ry="4.601"/>
+            <ellipse clip-path="url(#n)" fill="#7B7B7B" cx="23.64" cy="-.188" rx="5.943" ry="4.578"/>
+            <ellipse clip-path="url(#n)" fill="#7C7C7C" cx="23.64" cy="-.193" rx="5.912" ry="4.554"/>
+            <ellipse clip-path="url(#n)" fill="#7D7D7D" cx="23.64" cy="-.198" rx="5.882" ry="4.53"/>
+            <ellipse clip-path="url(#n)" fill="#7E7E7E" cx="23.64" cy="-.203" rx="5.852" ry="4.507"/>
+            <ellipse clip-path="url(#n)" fill="#808080" cx="23.64" cy="-.208" rx="5.82" ry="4.483"/>
+            <ellipse clip-path="url(#n)" fill="#818181" cx="23.64" cy="-.213" rx="5.79" ry="4.459"/>
+            <ellipse clip-path="url(#n)" fill="#828282" cx="23.64" cy="-.218" rx="5.759" ry="4.436"/>
+            <ellipse clip-path="url(#n)" fill="#838383" cx="23.64" cy="-.223" rx="5.729" ry="4.412"/>
+            <ellipse clip-path="url(#n)" fill="#848484" cx="23.64" cy="-.228" rx="5.697" ry="4.389"/>
+            <ellipse clip-path="url(#n)" fill="#858585" cx="23.64" cy="-.233" rx="5.667" ry="4.365"/>
+            <ellipse clip-path="url(#n)" fill="#868686" cx="23.639" cy="-.238" rx="5.637" ry="4.341"/>
+            <ellipse clip-path="url(#n)" fill="#878787" cx="23.639" cy="-.243" rx="5.605" ry="4.317"/>
+            <ellipse clip-path="url(#n)" fill="#888" cx="23.639" cy="-.248" rx="5.575" ry="4.294"/>
+            <ellipse clip-path="url(#n)" fill="#898989" cx="23.639" cy="-.252" rx="5.544" ry="4.271"/>
+            <ellipse clip-path="url(#n)" fill="#8A8A8A" cx="23.639" cy="-.257" rx="5.514" ry="4.247"/>
+            <ellipse clip-path="url(#n)" fill="#8B8B8B" cx="23.639" cy="-.262" rx="5.482" ry="4.223"/>
+            <ellipse clip-path="url(#n)" fill="#8C8C8C" cx="23.639" cy="-.267" rx="5.452" ry="4.199"/>
+            <ellipse clip-path="url(#n)" fill="#8D8D8D" cx="23.639" cy="-.272" rx="5.422" ry="4.176"/>
+            <ellipse clip-path="url(#n)" fill="#8E8E8E" cx="23.639" cy="-.277" rx="5.391" ry="4.152"/>
+            <ellipse clip-path="url(#n)" fill="#8F8F8F" cx="23.639" cy="-.282" rx="5.36" ry="4.128"/>
+            <ellipse clip-path="url(#n)" fill="#909090" cx="23.638" cy="-.287" rx="5.329" ry="4.105"/>
+            <ellipse clip-path="url(#n)" fill="#919191" cx="23.638" cy="-.292" rx="5.299" ry="4.081"/>
+            <ellipse clip-path="url(#n)" fill="#929292" cx="23.638" cy="-.296" rx="5.268" ry="4.058"/>
+            <ellipse clip-path="url(#n)" fill="#939393" cx="23.638" cy="-.301" rx="5.237" ry="4.034"/>
+            <ellipse clip-path="url(#n)" fill="#949494" cx="23.638" cy="-.306" rx="5.207" ry="4.01"/>
+            <ellipse clip-path="url(#n)" fill="#959595" cx="23.638" cy="-.311" rx="5.176" ry="3.986"/>
+            <ellipse clip-path="url(#n)" fill="#969696" cx="23.638" cy="-.316" rx="5.146" ry="3.963"/>
+            <ellipse clip-path="url(#n)" fill="#979797" cx="23.638" cy="-.321" rx="5.114" ry="3.939"/>
+            <ellipse clip-path="url(#n)" fill="#989898" cx="23.638" cy="-.326" rx="5.084" ry="3.916"/>
+            <ellipse clip-path="url(#n)" fill="#999" cx="23.638" cy="-.331" rx="5.053" ry="3.892"/>
+            <ellipse clip-path="url(#n)" fill="#9A9A9A" cx="23.638" cy="-.335" rx="5.022" ry="3.868"/>
+            <ellipse clip-path="url(#n)" fill="#9B9B9B" cx="23.637" cy="-.341" rx="4.991" ry="3.845"/>
+            <ellipse clip-path="url(#n)" fill="#9C9C9C" cx="23.637" cy="-.346" rx="4.961" ry="3.821"/>
+            <ellipse clip-path="url(#n)" fill="#9D9D9D" cx="23.637" cy="-.351" rx="4.931" ry="3.797"/>
+            <ellipse clip-path="url(#n)" fill="#9E9E9E" cx="23.637" cy="-.355" rx="4.899" ry="3.774"/>
+            <ellipse clip-path="url(#n)" fill="#9F9F9F" cx="23.637" cy="-.36" rx="4.869" ry="3.75"/>
+            <ellipse clip-path="url(#n)" fill="#A0A0A0" cx="23.637" cy="-.365" rx="4.838" ry="3.727"/>
+            <ellipse clip-path="url(#n)" fill="#A1A1A1" cx="23.637" cy="-.37" rx="4.808" ry="3.703"/>
+            <ellipse clip-path="url(#n)" fill="#A2A2A2" cx="23.637" cy="-.375" rx="4.776" ry="3.679"/>
+            <ellipse clip-path="url(#n)" fill="#A3A3A3" cx="23.637" cy="-.38" rx="4.746" ry="3.656"/>
+            <ellipse clip-path="url(#n)" fill="#A4A4A4" cx="23.637" cy="-.385" rx="4.716" ry="3.632"/>
+            <ellipse clip-path="url(#n)" fill="#A5A5A5" cx="23.636" cy="-.39" rx="4.685" ry="3.608"/>
+            <ellipse clip-path="url(#n)" fill="#A6A6A6" cx="23.636" cy="-.395" rx="4.654" ry="3.584"/>
+            <ellipse clip-path="url(#n)" fill="#A7A7A7" cx="23.636" cy="-.399" rx="4.623" ry="3.561"/>
+            <ellipse clip-path="url(#n)" fill="#A8A8A8" cx="23.636" cy="-.404" rx="4.593" ry="3.537"/>
+            <ellipse clip-path="url(#n)" fill="#A9A9A9" cx="23.636" cy="-.409" rx="4.562" ry="3.514"/>
+            <ellipse clip-path="url(#n)" fill="#aaa" cx="23.636" cy="-.414" rx="4.531" ry="3.49"/>
+            <ellipse clip-path="url(#n)" fill="#ABABAB" cx="23.636" cy="-.419" rx="4.501" ry="3.466"/>
+            <ellipse clip-path="url(#n)" fill="#ACACAC" cx="23.636" cy="-.424" rx="4.47" ry="3.443"/>
+            <ellipse clip-path="url(#n)" fill="#ADADAD" cx="23.636" cy="-.429" rx="4.439" ry="3.419"/>
+            <ellipse clip-path="url(#n)" fill="#AEAEAE" cx="23.636" cy="-.434" rx="4.408" ry="3.396"/>
+            <ellipse clip-path="url(#n)" fill="#AFAFAF" cx="23.636" cy="-.438" rx="4.378" ry="3.372"/>
+            <ellipse clip-path="url(#n)" fill="#B0B0B0" cx="23.635" cy="-.443" rx="4.347" ry="3.348"/>
+            <ellipse clip-path="url(#n)" fill="#B1B1B1" cx="23.635" cy="-.448" rx="4.316" ry="3.325"/>
+            <ellipse clip-path="url(#n)" fill="#B2B2B2" cx="23.635" cy="-.454" rx="4.286" ry="3.301"/>
+            <ellipse clip-path="url(#n)" fill="#B3B3B3" cx="23.635" cy="-.458" rx="4.255" ry="3.277"/>
+            <ellipse clip-path="url(#n)" fill="#B4B4B4" cx="23.635" cy="-.463" rx="4.225" ry="3.253"/>
+            <ellipse clip-path="url(#n)" fill="#B5B5B5" cx="23.635" cy="-.468" rx="4.193" ry="3.23"/>
+            <ellipse clip-path="url(#n)" fill="#B6B6B6" cx="23.635" cy="-.473" rx="4.163" ry="3.207"/>
+            <ellipse clip-path="url(#n)" fill="#B7B7B7" cx="23.635" cy="-.478" rx="4.132" ry="3.183"/>
+            <ellipse clip-path="url(#n)" fill="#B8B8B8" cx="23.635" cy="-.483" rx="4.102" ry="3.159"/>
+            <ellipse clip-path="url(#n)" fill="#B9B9B9" cx="23.635" cy="-.488" rx="4.07" ry="3.135"/>
+            <ellipse clip-path="url(#n)" fill="#BABABA" cx="23.634" cy="-.493" rx="4.04" ry="3.112"/>
+            <ellipse clip-path="url(#n)" fill="#bbb" cx="23.634" cy="-.498" rx="4.01" ry="3.088"/>
+            <ellipse clip-path="url(#n)" fill="#BCBCBC" cx="23.634" cy="-.502" rx="3.979" ry="3.064"/>
+            <ellipse clip-path="url(#n)" fill="#BDBDBD" cx="23.634" cy="-.507" rx="3.948" ry="3.041"/>
+            <ellipse clip-path="url(#n)" fill="#BEBEBE" cx="23.634" cy="-.512" rx="3.917" ry="3.017"/>
+            <path clip-path="url(#n)" fill="#BFBFBF" d="M23.634 2.477c-2.146 0-3.887-1.34-3.887-2.994v.001h7.773v-.001c.001 1.653-1.74 2.994-3.886 2.994z"/>
+            <path clip-path="url(#n)" fill="#C0C0C0" d="M23.634 2.448c-2.13 0-3.855-1.33-3.855-2.97v.006h7.711v-.006c-.001 1.64-1.726 2.97-3.856 2.97z"/>
+            <path clip-path="url(#n)" fill="#C1C1C1" d="M23.634 2.419c-2.112 0-3.825-1.319-3.825-2.946v.011h7.65v-.011c0 1.627-1.713 2.946-3.825 2.946z"/>
+            <path clip-path="url(#n)" fill="#C2C2C2" d="M23.634 2.391c-2.096 0-3.795-1.309-3.795-2.923v.016h7.59v-.016c0 1.615-1.7 2.923-3.795 2.923z"/>
+            <path clip-path="url(#n)" fill="#C3C3C3" d="M23.634 2.362c-2.079 0-3.764-1.298-3.764-2.899v.021h7.527v-.021c0 1.601-1.684 2.899-3.763 2.899z"/>
+            <path clip-path="url(#n)" fill="#C4C4C4" d="M23.634 2.334c-2.062 0-3.733-1.288-3.733-2.875v.026h7.467v-.026c-.001 1.587-1.673 2.875-3.734 2.875z"/>
+            <path clip-path="url(#n)" fill="#C5C5C5" d="M23.633 2.305c-2.045 0-3.702-1.277-3.702-2.852v.031h7.404v-.031c0 1.575-1.657 2.852-3.702 2.852z"/>
+            <path clip-path="url(#n)" fill="#C6C6C6" d="M23.633 2.277c-2.028 0-3.672-1.266-3.672-2.828v.036h7.344v-.036c0 1.562-1.645 2.828-3.672 2.828z"/>
+            <path clip-path="url(#n)" fill="#C7C7C7" d="M23.633 2.248c-2.011 0-3.641-1.255-3.641-2.804v.041h7.281v-.041c0 1.549-1.629 2.804-3.64 2.804z"/>
+            <path clip-path="url(#n)" fill="#C8C8C8" d="M23.633 2.22c-1.994 0-3.61-1.245-3.61-2.781v.045h7.221v-.045c-.001 1.536-1.617 2.781-3.611 2.781z"/>
+            <path clip-path="url(#n)" fill="#C9C9C9" d="M23.633 2.191c-1.977 0-3.58-1.234-3.58-2.757v.05h7.16v-.05c0 1.523-1.604 2.757-3.58 2.757z"/>
+            <path clip-path="url(#n)" fill="#CACACA" d="M23.633 2.162c-1.96 0-3.549-1.224-3.549-2.733v.056h7.098v-.056c0 1.509-1.589 2.733-3.549 2.733z"/>
+            <path clip-path="url(#n)" fill="#CBCBCB" d="M23.633 2.134c-1.943 0-3.519-1.213-3.519-2.71v.061h7.037v-.061c0 1.496-1.575 2.71-3.518 2.71z"/>
+            <path clip-path="url(#n)" fill="#ccc" d="M23.633 2.105c-1.926 0-3.487-1.203-3.487-2.686v.065h6.975v-.065c-.001 1.483-1.562 2.686-3.488 2.686z"/>
+            <path clip-path="url(#n)" fill="#CDCDCD" d="M23.633 2.077c-1.909 0-3.457-1.192-3.457-2.663v.07h6.914v-.07c0 1.471-1.548 2.663-3.457 2.663z"/>
+            <path clip-path="url(#n)" fill="#CECECE" d="M23.633 2.048c-1.893 0-3.426-1.181-3.426-2.639v.075h6.852v-.075c0 1.458-1.534 2.639-3.426 2.639z"/>
+            <path clip-path="url(#n)" fill="#CFCFCF" d="M23.633 2.02c-1.875 0-3.396-1.171-3.396-2.615v.08h6.791v-.08c0 1.444-1.52 2.615-3.395 2.615z"/>
+            <path clip-path="url(#n)" fill="#D0D0D0" d="M23.632 1.991c-1.858 0-3.365-1.161-3.365-2.592v.085h6.73v-.085c0 1.432-1.507 2.592-3.365 2.592z"/>
+            <path clip-path="url(#n)" fill="#D1D1D1" d="M23.632 1.962c-1.842 0-3.334-1.149-3.334-2.568v.09h6.668v-.09c0 1.419-1.492 2.568-3.334 2.568z"/>
+            <path clip-path="url(#n)" fill="#D2D2D2" d="M23.632 1.934c-1.824 0-3.304-1.139-3.304-2.544v.095h6.607v-.095c.001 1.405-1.479 2.544-3.303 2.544z"/>
+            <path clip-path="url(#n)" fill="#D3D3D3" d="M23.632 1.905c-1.808 0-3.272-1.128-3.272-2.521v.1h6.545v-.1c-.001 1.393-1.466 2.521-3.273 2.521z"/>
+            <path clip-path="url(#n)" fill="#D4D4D4" d="M23.632 1.877c-1.79 0-3.242-1.118-3.242-2.497v.104h6.484v-.104c0 1.379-1.452 2.497-3.242 2.497z"/>
+            <path clip-path="url(#n)" fill="#D5D5D5" d="M23.632 1.848c-1.773 0-3.211-1.107-3.211-2.473v.109h6.422v-.109c0 1.366-1.438 2.473-3.211 2.473z"/>
+            <path clip-path="url(#n)" fill="#D6D6D6" d="M23.632 1.82c-1.757 0-3.181-1.097-3.181-2.45v.114h6.361v-.114c.001 1.353-1.423 2.45-3.18 2.45z"/>
+            <path clip-path="url(#n)" fill="#D7D7D7" d="M23.632 1.792c-1.739 0-3.149-1.086-3.149-2.426v.119h6.299v-.119c-.001 1.339-1.411 2.426-3.15 2.426z"/>
+            <path clip-path="url(#n)" fill="#D8D8D8" d="M23.632 1.763c-1.723 0-3.119-1.076-3.119-2.402v.124h6.238v-.125c0 1.327-1.397 2.403-3.119 2.403z"/>
+            <path clip-path="url(#n)" fill="#D9D9D9" d="M23.632 1.734c-1.706 0-3.089-1.065-3.089-2.379v.129h6.178v-.129c0 1.314-1.383 2.379-3.089 2.379z"/>
+            <path clip-path="url(#n)" fill="#DADADA" d="M23.631 1.706c-1.688 0-3.058-1.054-3.058-2.355v.134h6.115v-.134c0 1.3-1.369 2.355-3.057 2.355z"/>
+            <path clip-path="url(#n)" fill="#DBDBDB" d="M23.631 1.677c-1.672 0-3.027-1.044-3.027-2.332v.139h6.055v-.139c-.001 1.288-1.356 2.332-3.028 2.332z"/>
+            <path clip-path="url(#n)" fill="#DCDCDC" d="M23.631 1.649c-1.655 0-2.996-1.034-2.996-2.308v.144h5.992v-.144c0 1.274-1.341 2.308-2.996 2.308z"/>
+            <path clip-path="url(#n)" fill="#ddd" d="M23.631 1.62c-1.638 0-2.966-1.022-2.966-2.284v.148h5.932v-.148c0 1.262-1.328 2.284-2.966 2.284z"/>
+            <path clip-path="url(#n)" fill="#DEDEDE" d="M23.631 1.592c-1.621 0-2.935-1.012-2.935-2.261v.153h5.869v-.153c0 1.249-1.313 2.261-2.934 2.261z"/>
+            <path clip-path="url(#n)" fill="#DFDFDF" d="M23.631 1.563c-1.604 0-2.904-1.001-2.904-2.237v.158h5.809v-.158c-.001 1.236-1.302 2.237-2.905 2.237z"/>
+            <path clip-path="url(#n)" fill="#E0E0E0" d="M23.631 1.535c-1.587 0-2.874-.991-2.874-2.213v.163h5.748v-.163c0 1.221-1.287 2.213-2.874 2.213z"/>
+            <path clip-path="url(#n)" fill="#E1E1E1" d="M23.631 1.506c-1.57 0-2.843-.98-2.843-2.189v.168h5.686v-.168c0 1.209-1.273 2.189-2.843 2.189z"/>
+            <path clip-path="url(#n)" fill="#E2E2E2" d="M23.631 1.477c-1.553 0-2.813-.97-2.813-2.166v.173h5.625v-.173c0 1.196-1.259 2.166-2.812 2.166z"/>
+            <path clip-path="url(#n)" fill="#E3E3E3" d="M23.631 1.449c-1.536 0-2.781-.959-2.781-2.143v.178h5.563v-.178c-.001 1.183-1.246 2.143-2.782 2.143z"/>
+            <path clip-path="url(#n)" fill="#E4E4E4" d="M23.631 1.42c-1.52 0-2.751-.949-2.751-2.119v.183h5.502v-.183c0 1.17-1.232 2.119-2.751 2.119z"/>
+            <path clip-path="url(#n)" fill="#E5E5E5" d="M23.63 1.392c-1.502 0-2.72-.938-2.72-2.095v.188h5.439v-.188c.001 1.157-1.217 2.095-2.719 2.095z"/>
+            <path clip-path="url(#n)" fill="#E6E6E6" d="M23.63 1.363c-1.485 0-2.689-.927-2.689-2.071v.193h5.379v-.193c-.001 1.144-1.205 2.071-2.69 2.071z"/>
+            <path clip-path="url(#n)" fill="#E7E7E7" d="M23.63 1.334c-1.469 0-2.659-.917-2.659-2.048v.198h5.318v-.198c0 1.131-1.19 2.048-2.659 2.048z"/>
+            <path clip-path="url(#n)" fill="#E8E8E8" d="M23.63 1.306c-1.451 0-2.628-.906-2.628-2.024v.203h5.256v-.203c0 1.117-1.177 2.024-2.628 2.024z"/>
+            <path clip-path="url(#n)" fill="#E9E9E9" d="M23.63 1.277c-1.435 0-2.598-.896-2.598-2v.208h5.195v-.208c.001 1.105-1.163 2-2.597 2z"/>
+            <path clip-path="url(#n)" fill="#EAEAEA" d="M23.63 1.249c-1.418 0-2.566-.885-2.566-1.977v.212h5.133v-.212c-.001 1.092-1.149 1.977-2.567 1.977z"/>
+            <path clip-path="url(#n)" fill="#EBEBEB" d="M23.63 1.22c-1.4 0-2.536-.875-2.536-1.953v.217h5.072v-.217c0 1.079-1.136 1.953-2.536 1.953z"/>
+            <path clip-path="url(#n)" fill="#ECECEC" d="M23.63 1.192c-1.384 0-2.505-.864-2.505-1.93v.222h5.01v-.222c0 1.066-1.121 1.93-2.505 1.93z"/>
+            <path clip-path="url(#n)" fill="#EDEDED" d="M23.63 1.163c-1.366 0-2.475-.853-2.475-1.906v.227h4.949v-.227c0 1.053-1.108 1.906-2.474 1.906z"/>
+            <path clip-path="url(#n)" fill="#eee" d="M23.63 1.135c-1.35 0-2.444-.843-2.444-1.882v.232h4.889v-.232c-.001 1.039-1.096 1.882-2.445 1.882z"/>
+            <path clip-path="url(#n)" fill="#EFEFEF" d="M23.629 1.106c-1.333 0-2.413-.833-2.413-1.859v.237h4.826v-.237c0 1.027-1.08 1.859-2.413 1.859z"/>
+            <path clip-path="url(#n)" fill="#F0F0F0" d="M23.629 1.078c-1.315 0-2.383-.821-2.383-1.835v.242h4.766v-.242c0 1.013-1.068 1.835-2.383 1.835z"/>
+            <path clip-path="url(#n)" fill="#F1F1F1" d="M23.629 1.049c-1.299 0-2.352-.811-2.352-1.812v.247h4.703v-.247c0 1.001-1.052 1.812-2.351 1.812z"/>
+            <path clip-path="url(#n)" fill="#F2F2F2" d="M23.629 1.021c-1.282 0-2.321-.8-2.321-1.788v.251h4.643v-.251c-.001.987-1.04 1.788-2.322 1.788z"/>
+            <path clip-path="url(#n)" fill="#F3F3F3" d="M23.629.992c-1.265 0-2.29-.79-2.29-1.764v.256h4.58v-.256c0 .974-1.025 1.764-2.29 1.764z"/>
+            <path clip-path="url(#n)" fill="#F4F4F4" d="M23.629.963c-1.248 0-2.26-.779-2.26-1.74v.261h4.52v-.261c0 .962-1.012 1.74-2.26 1.74z"/>
+            <path clip-path="url(#n)" fill="#F5F5F5" d="M23.629.935c-1.231 0-2.229-.769-2.229-1.717v.266h4.457v-.266c0 .949-.997 1.717-2.228 1.717z"/>
+            <path clip-path="url(#n)" fill="#F6F6F6" d="M23.629.907c-1.214 0-2.198-.758-2.198-1.693v.271h4.396v-.271c0 .934-.984 1.693-2.198 1.693z"/>
+            <path clip-path="url(#n)" fill="#F7F7F7" d="M23.629.878c-1.197 0-2.168-.748-2.168-1.669v.276h4.336v-.276c0 .921-.971 1.669-2.168 1.669z"/>
+            <path clip-path="url(#n)" fill="#F8F8F8" d="M23.629.85c-1.18 0-2.137-.737-2.137-1.646v.281h4.273v-.281c.001.909-.956 1.646-2.136 1.646z"/>
+            <path clip-path="url(#n)" fill="#F9F9F9" d="M23.629.82c-1.163 0-2.106-.726-2.106-1.622v.286h4.213v-.286c-.001.896-.944 1.622-2.107 1.622z"/>
+            <path clip-path="url(#n)" fill="#FAFAFA" d="M23.628.792c-1.146 0-2.075-.716-2.075-1.599v.291h4.15v-.291c0 .883-.929 1.599-2.075 1.599z"/>
+            <path clip-path="url(#n)" fill="#FBFBFB" d="M23.628.763c-1.129 0-2.045-.705-2.045-1.575v.296h4.09v-.296c0 .87-.916 1.575-2.045 1.575z"/>
+            <path clip-path="url(#n)" fill="#FCFCFC" d="M23.628.735c-1.112 0-2.014-.694-2.014-1.551v.301h4.027v-.301c.001.857-.901 1.551-2.013 1.551z"/>
+            <path clip-path="url(#n)" fill="#FDFDFD" d="M23.628.707c-1.096 0-1.983-.684-1.983-1.528v.306h3.967v-.306c-.001.843-.888 1.528-1.984 1.528z"/>
+            <path clip-path="url(#n)" fill="#FEFEFE" d="M23.628.678c-1.078 0-1.953-.673-1.953-1.504v.311h3.906v-.311c0 .83-.875 1.504-1.953 1.504z"/>
+            <path clip-path="url(#n)" fill="#fff" d="M23.628.649c-1.062 0-1.922-.663-1.922-1.48v.315h3.844v-.315c0 .817-.861 1.48-1.922 1.48zM23.628.625c-1.045 0-1.892-.652-1.892-1.457v.315h3.783v-.315c.001.806-.846 1.457-1.891 1.457zM23.622-.403c-.522 0-.945-.326-.945-.729v.616h1.891v-.616c-.001.403-.423.729-.946.729z"/>
+        </g>
+        <defs>
+            <path id="o" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="p">
+            <use xlink:href="#o" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#p)">
+            <defs>
+                <path id="q" d="M4.233 33.098"/>
+            </defs>
+            <clipPath id="r">
+                <use xlink:href="#q" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#r)" fill="#333" d="M4.233 33.098zM4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#343434" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#353535" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#363636" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#373737" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#383838" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#393939" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#3A3A3A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#3B3B3B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#3C3C3C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#3D3D3D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#3E3E3E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#3F3F3F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#404040" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#414141" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#424242" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#434343" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#444" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#454545" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#464646" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#474747" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#484848" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#494949" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#4A4A4A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#4B4B4B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#4C4C4C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#4D4D4D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#4E4E4E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#4F4F4F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#505050" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#515151" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#525252" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#535353" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#545454" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#555" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#565656" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#575757" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#585858" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#595959" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#5A5A5A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#5B5B5B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#5C5C5C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#5D5D5D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#5E5E5E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#5F5F5F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#606060" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#616161" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#626262" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#636363" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#646464" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#656565" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#666" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#676767" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#686868" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#696969" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#6A6A6A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#6B6B6B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#6C6C6C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#6D6D6D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#6E6E6E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#6F6F6F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#707070" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#717171" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#727272" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#737373" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#747474" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#757575" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#767676" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#777" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#787878" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#797979" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#7A7A7A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#7B7B7B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#7C7C7C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#7D7D7D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#7E7E7E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#7F7F7F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#808080" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#818181" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#828282" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#838383" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#848484" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#858585" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#868686" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#878787" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#888" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#898989" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#8A8A8A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#8B8B8B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#8C8C8C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#8D8D8D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#8E8E8E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#8F8F8F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#909090" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#919191" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#929292" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#939393" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#949494" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#959595" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#969696" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#979797" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#989898" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#9A9A9A" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#9B9B9B" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#9C9C9C" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#9D9D9D" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#9E9E9E" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#9F9F9F" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A0A0A0" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A1A1A1" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A2A2A2" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A3A3A3" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A4A4A4" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A5A5A5" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A6A6A6" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A7A7A7" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A8A8A8" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#A9A9A9" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#aaa" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#ABABAB" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#ACACAC" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#ADADAD" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#AEAEAE" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#AFAFAF" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B0B0B0" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B1B1B1" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B2B2B2" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B3B3B3" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B4B4B4" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B5B5B5" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B6B6B6" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B7B7B7" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B8B8B8" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#B9B9B9" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#BABABA" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#bbb" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#BCBCBC" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#BDBDBD" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#BEBEBE" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#BFBFBF" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C0C0C0" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C1C1C1" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C2C2C2" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C3C3C3" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C4C4C4" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C5C5C5" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C6C6C6" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C7C7C7" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C8C8C8" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#C9C9C9" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#CACACA" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#CBCBCB" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#ccc" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#CDCDCD" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#CECECE" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#CFCFCF" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D0D0D0" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D1D1D1" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D2D2D2" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D3D3D3" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D4D4D4" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D5D5D5" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D6D6D6" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D7D7D7" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D8D8D8" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#D9D9D9" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#DADADA" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#DBDBDB" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#DCDCDC" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#ddd" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#DEDEDE" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#DFDFDF" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E0E0E0" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E1E1E1" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E2E2E2" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E3E3E3" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E4E4E4" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E5E5E5" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E6E6E6" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E7E7E7" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E8E8E8" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#E9E9E9" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#EAEAEA" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#EBEBEB" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#ECECEC" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#EDEDED" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#eee" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#EFEFEF" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F0F0F0" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F1F1F1" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F2F2F2" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F3F3F3" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F4F4F4" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F5F5F5" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F6F6F6" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F7F7F7" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F8F8F8" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#F9F9F9" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#FAFAFA" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#FBFBFB" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#FCFCFC" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#FDFDFD" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#FEFEFE" d="M4.233 33.098z"/>
+            <path clip-path="url(#r)" fill="#fff" d="M4.233 33.098z"/>
+        </g>
+        <defs>
+            <path id="s" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="t">
+            <use xlink:href="#s" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#t)">
+            <defs>
+                <path id="u" d="M4.233 33.098"/>
+            </defs>
+            <clipPath id="v">
+                <use xlink:href="#u" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#v)" d="M4.233 33.098zM4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#010101" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#020202" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#030303" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#040404" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#050505" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#060606" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#070707" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#080808" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#090909" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#0A0A0A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#0B0B0B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#0C0C0C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#0D0D0D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#0E0E0E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#0F0F0F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#101010" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#111" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#121212" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#131313" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#141414" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#151515" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#161616" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#171717" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#181818" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#191919" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#1A1A1A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#1B1B1B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#1C1C1C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#1D1D1D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#1E1E1E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#1F1F1F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#202020" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#212121" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#222" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#232323" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#242424" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#252525" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#262626" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#272727" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#282828" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#292929" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#2A2A2A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#2B2B2B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#2C2C2C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#2D2D2D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#2E2E2E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#2F2F2F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#303030" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#313131" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#323232" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#333" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#343434" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#353535" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#363636" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#373737" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#383838" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#393939" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#3A3A3A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#3B3B3B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#3C3C3C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#3D3D3D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#3E3E3E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#3F3F3F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#404040" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#414141" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#424242" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#434343" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#444" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#454545" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#464646" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#474747" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#484848" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#494949" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#4A4A4A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#4B4B4B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#4C4C4C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#4D4D4D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#4E4E4E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#4F4F4F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#505050" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#515151" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#525252" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#535353" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#545454" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#555" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#565656" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#575757" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#585858" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#595959" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#5A5A5A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#5B5B5B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#5C5C5C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#5D5D5D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#5E5E5E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#5F5F5F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#606060" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#616161" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#626262" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#636363" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#646464" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#656565" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#666" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#676767" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#686868" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#696969" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#6A6A6A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#6B6B6B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#6C6C6C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#6D6D6D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#6E6E6E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#6F6F6F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#707070" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#717171" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#727272" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#737373" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#747474" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#757575" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#767676" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#777" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#787878" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#797979" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#7A7A7A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#7B7B7B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#7C7C7C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#7D7D7D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#7E7E7E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#808080" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#818181" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#828282" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#838383" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#848484" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#858585" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#868686" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#878787" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#888" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#898989" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#8A8A8A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#8B8B8B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#8C8C8C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#8D8D8D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#8E8E8E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#8F8F8F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#909090" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#919191" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#929292" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#939393" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#949494" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#959595" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#969696" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#979797" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#989898" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#999" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#9A9A9A" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#9B9B9B" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#9C9C9C" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#9D9D9D" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#9E9E9E" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#9F9F9F" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A0A0A0" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A1A1A1" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A2A2A2" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A3A3A3" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A4A4A4" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A5A5A5" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A6A6A6" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A7A7A7" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A8A8A8" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#A9A9A9" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#aaa" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#ABABAB" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#ACACAC" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#ADADAD" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#AEAEAE" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#AFAFAF" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B0B0B0" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B1B1B1" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B2B2B2" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B3B3B3" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B4B4B4" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B5B5B5" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B6B6B6" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B7B7B7" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B8B8B8" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#B9B9B9" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#BABABA" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#bbb" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#BCBCBC" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#BDBDBD" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#BEBEBE" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#BFBFBF" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C0C0C0" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C1C1C1" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C2C2C2" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C3C3C3" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C4C4C4" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C5C5C5" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C6C6C6" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C7C7C7" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C8C8C8" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#C9C9C9" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#CACACA" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#CBCBCB" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#ccc" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#CDCDCD" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#CECECE" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#CFCFCF" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D0D0D0" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D1D1D1" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D2D2D2" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D3D3D3" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D4D4D4" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D5D5D5" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D6D6D6" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D7D7D7" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D8D8D8" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#D9D9D9" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#DADADA" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#DBDBDB" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#DCDCDC" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#ddd" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#DEDEDE" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#DFDFDF" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E0E0E0" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E1E1E1" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E2E2E2" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E3E3E3" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E4E4E4" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E5E5E5" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E6E6E6" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E7E7E7" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E8E8E8" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#E9E9E9" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#EAEAEA" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#EBEBEB" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#ECECEC" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#EDEDED" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#eee" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#EFEFEF" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F0F0F0" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F1F1F1" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F2F2F2" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F3F3F3" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F4F4F4" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F5F5F5" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F6F6F6" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F7F7F7" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F8F8F8" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#F9F9F9" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#FAFAFA" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#FBFBFB" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#FCFCFC" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#FDFDFD" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#FEFEFE" d="M4.232 33.098z"/>
+            <path clip-path="url(#v)" fill="#fff" d="M4.232 33.098zM4.232 33.098zM4.232 33.098z"/>
+        </g>
+        <defs>
+            <path id="w" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="x">
+            <use xlink:href="#w" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#x)">
+            <defs>
+                <path id="y" d="M22.521 10.552c1.662 0 3.016 1.993 3.016 4.455 0 1.551-.54 2.917-1.354 3.718-.332-.272-.701-.531-1.021-.74.529-.258.887-.85.887-1.525 0-.936-.678-1.686-1.525-1.686-.838 0-1.526.736-1.539 1.66-.393-.281-.85-.505-1.439-.615-.037-.258-.05-.528-.05-.812-.001-2.462 1.354-4.455 3.025-4.455z"/>
+            </defs>
+            <clipPath id="z">
+                <use xlink:href="#y" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#z)" fill="#DCDCDC" d="M19.495 10.552h6.042v8.173h-6.042z"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.593 -6.76)" clip-path="url(#z)" fill="#DCDCDC" cx="22.517" cy="15.004" rx="4.096" ry="3.607"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.594 -6.759)" clip-path="url(#z)" fill="#ddd" cx="22.517" cy="15.004" rx="4.051" ry="3.567"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.758)" clip-path="url(#z)" fill="#DEDEDE" cx="22.517" cy="15.004" rx="4.006" ry="3.528"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.597 -6.757)" clip-path="url(#z)" fill="#DFDFDF" cx="22.517" cy="15.004" rx="3.961" ry="3.487"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#E0E0E0" cx="22.517" cy="15.004" rx="3.916" ry="3.448"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.594 -6.759)" clip-path="url(#z)" fill="#E1E1E1" cx="22.517" cy="15.004" rx="3.871" ry="3.408"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.595 -6.758)" clip-path="url(#z)" fill="#E2E2E2" cx="22.517" cy="15.004" rx="3.826" ry="3.369"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.757)" clip-path="url(#z)" fill="#E3E3E3" cx="22.517" cy="15.004" rx="3.781" ry="3.329"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#E4E4E4" cx="22.517" cy="15.004" rx="3.736" ry="3.29"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.593 -6.759)" clip-path="url(#z)" fill="#E5E5E5" cx="22.517" cy="15.004" rx="3.691" ry="3.25"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.595 -6.758)" clip-path="url(#z)" fill="#E6E6E6" cx="22.517" cy="15.004" rx="3.646" ry="3.211"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.757)" clip-path="url(#z)" fill="#E7E7E7" cx="22.517" cy="15.004" rx="3.601" ry="3.171"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#E8E8E8" cx="22.517" cy="15.004" rx="3.556" ry="3.132"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.593 -6.76)" clip-path="url(#z)" fill="#E9E9E9" cx="22.517" cy="15.004" rx="3.511" ry="3.093"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.594 -6.759)" clip-path="url(#z)" fill="#EAEAEA" cx="22.517" cy="15.004" rx="3.466" ry="3.052"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.758)" clip-path="url(#z)" fill="#EBEBEB" cx="22.517" cy="15.004" rx="3.422" ry="3.013"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.597 -6.757)" clip-path="url(#z)" fill="#ECECEC" cx="22.517" cy="15.004" rx="3.377" ry="2.973"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.592 -6.761)" clip-path="url(#z)" fill="#eee" cx="22.517" cy="15.004" rx="3.332" ry="2.934"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.594 -6.759)" clip-path="url(#z)" fill="#EFEFEF" cx="22.517" cy="15.004" rx="3.287" ry="2.894"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.595 -6.758)" clip-path="url(#z)" fill="#F0F0F0" cx="22.517" cy="15.004" rx="3.242" ry="2.855"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.597 -6.757)" clip-path="url(#z)" fill="#F1F1F1" cx="22.517" cy="15.004" rx="3.197" ry="2.815"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#F2F2F2" cx="22.517" cy="15.004" rx="3.152" ry="2.776"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.593 -6.76)" clip-path="url(#z)" fill="#F3F3F3" cx="22.517" cy="15.004" rx="3.107" ry="2.736"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.595 -6.759)" clip-path="url(#z)" fill="#F4F4F4" cx="22.517" cy="15.004" rx="3.062" ry="2.697"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.757)" clip-path="url(#z)" fill="#F5F5F5" cx="22.517" cy="15.004" rx="3.017" ry="2.656"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#F6F6F6" cx="22.517" cy="15.004" rx="2.972" ry="2.617"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.593 -6.76)" clip-path="url(#z)" fill="#F7F7F7" cx="22.517" cy="15.005" rx="2.927" ry="2.577"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.594 -6.759)" clip-path="url(#z)" fill="#F8F8F8" cx="22.517" cy="15.005" rx="2.883" ry="2.538"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.757)" clip-path="url(#z)" fill="#F9F9F9" cx="22.517" cy="15.005" rx="2.838" ry="2.498"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#FAFAFA" cx="22.517" cy="15.005" rx="2.793" ry="2.459"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.592 -6.76)" clip-path="url(#z)" fill="#FBFBFB" cx="22.517" cy="15.005" rx="2.748" ry="2.419"/>
+            <ellipse transform="matrix(-.048 .999 -.999 -.048 38.594 -6.759)" clip-path="url(#z)" fill="#FCFCFC" cx="22.517" cy="15.005" rx="2.703" ry="2.38"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.596 -6.758)" clip-path="url(#z)" fill="#FDFDFD" cx="22.517" cy="15.005" rx="2.658" ry="2.34"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.598 -6.756)" clip-path="url(#z)" fill="#FEFEFE" cx="22.517" cy="15.005" rx="2.613" ry="2.301"/>
+            <ellipse transform="matrix(-.049 .999 -.999 -.049 38.6 -6.755)" clip-path="url(#z)" fill="#fff" cx="22.517" cy="15.005" rx="2.568" ry="2.26"/>
+        </g>
+        <defs>
+            <path id="A" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="B">
+            <use xlink:href="#A" overflow="visible"/>
+        </clipPath>
+        <path d="M24.049 16.459c0 .677-.357 1.269-.887 1.525-.455-.309-.86-.555-1.059-.7-.369-.273-.713-.592-1.119-.851.012-.924.701-1.66 1.537-1.66.85 0 1.528.75 1.528 1.686z" clip-path="url(#B)"/>
+        <defs>
+            <path id="C" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="D">
+            <use xlink:href="#C" overflow="visible"/>
+        </clipPath>
+        <g clip-path="url(#D)">
+            <defs>
+                <path id="E" d="M17.537 15.044c0 .295-.023.59-.061.873-.479.111-.973.297-1.478.542 0-.936-.688-1.686-1.538-1.686-.837 0-1.526.75-1.526 1.686 0 .529.222 1.009.565 1.306-.651.281-1.378.479-1.994.752-.712-.864-1.156-2.095-1.156-3.473 0-2.609 1.612-4.727 3.594-4.727s3.594 2.117 3.594 4.727z"/>
+            </defs>
+            <clipPath id="F">
+                <use xlink:href="#E" overflow="visible"/>
+            </clipPath>
+            <path clip-path="url(#F)" fill="#DCDCDC" d="M10.35 10.317h7.187v8.199h-7.187z"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.945)" clip-path="url(#F)" fill="#DCDCDC" cx="13.944" cy="15.049" rx="4.866" ry="3.824"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.945)" clip-path="url(#F)" fill="#ddd" cx="13.944" cy="15.049" rx="4.812" ry="3.782"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.945)" clip-path="url(#F)" fill="#DEDEDE" cx="13.944" cy="15.05" rx="4.759" ry="3.74"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#DFDFDF" cx="13.944" cy="15.049" rx="4.706" ry="3.698"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#E0E0E0" cx="13.944" cy="15.049" rx="4.652" ry="3.656"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#E1E1E1" cx="13.944" cy="15.049" rx="4.599" ry="3.614"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#E2E2E2" cx="13.944" cy="15.049" rx="4.545" ry="3.573"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#E3E3E3" cx="13.944" cy="15.05" rx="4.492" ry="3.531"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#E4E4E4" cx="13.944" cy="15.049" rx="4.439" ry="3.489"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#E5E5E5" cx="13.944" cy="15.049" rx="4.385" ry="3.446"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#E6E6E6" cx="13.944" cy="15.049" rx="4.332" ry="3.404"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#E7E7E7" cx="13.944" cy="15.049" rx="4.278" ry="3.362"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#E8E8E8" cx="13.944" cy="15.05" rx="4.225" ry="3.321"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#E9E9E9" cx="13.944" cy="15.049" rx="4.172" ry="3.279"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#EAEAEA" cx="13.944" cy="15.049" rx="4.118" ry="3.237"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#EBEBEB" cx="13.944" cy="15.049" rx="4.065" ry="3.195"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#ECECEC" cx="13.944" cy="15.049" rx="4.011" ry="3.153"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#eee" cx="13.944" cy="15.05" rx="3.958" ry="3.111"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.945)" clip-path="url(#F)" fill="#EFEFEF" cx="13.944" cy="15.049" rx="3.905" ry="3.069"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F0F0F0" cx="13.944" cy="15.049" rx="3.851" ry="3.027"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F1F1F1" cx="13.944" cy="15.049" rx="3.798" ry="2.985"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F2F2F2" cx="13.944" cy="15.049" rx="3.744" ry="2.943"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F3F3F3" cx="13.944" cy="15.05" rx="3.691" ry="2.901"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F4F4F4" cx="13.944" cy="15.049" rx="3.638" ry="2.859"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F5F5F5" cx="13.944" cy="15.049" rx="3.584" ry="2.817"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.729 1.944)" clip-path="url(#F)" fill="#F6F6F6" cx="13.944" cy="15.049" rx="3.531" ry="2.775"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#F7F7F7" cx="13.944" cy="15.049" rx="3.477" ry="2.733"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.731 1.946)" clip-path="url(#F)" fill="#F8F8F8" cx="13.944" cy="15.05" rx="3.424" ry="2.691"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#F9F9F9" cx="13.944" cy="15.049" rx="3.371" ry="2.649"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#FAFAFA" cx="13.944" cy="15.049" rx="3.317" ry="2.607"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#FBFBFB" cx="13.944" cy="15.049" rx="3.264" ry="2.565"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#FCFCFC" cx="13.944" cy="15.049" rx="3.21" ry="2.523"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.946)" clip-path="url(#F)" fill="#FDFDFD" cx="13.944" cy="15.05" rx="3.157" ry="2.481"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#FEFEFE" cx="13.944" cy="15.049" rx="3.104" ry="2.439"/>
+            <ellipse transform="matrix(-.054 .999 -.999 -.054 29.73 1.945)" clip-path="url(#F)" fill="#fff" cx="13.944" cy="15.049" rx="3.05" ry="2.397"/>
+        </g>
+        <defs>
+            <path id="G" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="H">
+            <use xlink:href="#G" overflow="visible"/>
+        </clipPath>
+        <path d="M15.999 16.459c-.566.259-1.145.578-1.76.947-.234.136-.48.259-.739.357-.344-.297-.565-.775-.565-1.306 0-.936.689-1.686 1.526-1.686.85.002 1.538.752 1.538 1.688z" clip-path="url(#H)"/>
+        <defs>
+            <path id="I" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="J">
+            <use xlink:href="#I" overflow="visible"/>
+        </clipPath>
+        <path d="M11.031 18.908c-.837-1.014-1.298-2.385-1.298-3.864 0-2.945 1.889-5.343 4.21-5.343 2.321 0 4.209 2.396 4.209 5.343 0 .322-.024.646-.063.954l-1.224-.162c.033-.256.055-.524.055-.792 0-2.267-1.335-4.108-2.977-4.108s-2.977 1.843-2.977 4.108c0 1.177.369 2.298 1.015 3.079l-.95.785z" clip-path="url(#J)"/>
+        <defs>
+            <path id="K" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="L">
+            <use xlink:href="#K" overflow="visible"/>
+        </clipPath>
+        <path d="M24.617 19.163l-.865-.879c.73-.721 1.169-1.945 1.169-3.277 0-2.081-1.099-3.839-2.397-3.839-1.308 0-2.41 1.758-2.41 3.839 0 .253.01.495.041.727l-1.221.171c-.039-.285-.055-.585-.055-.897 0-2.845 1.602-5.071 3.645-5.071 2.035 0 3.631 2.228 3.631 5.071-.001 1.655-.576 3.209-1.538 4.155z" clip-path="url(#L)"/>
+        <defs>
+            <path id="M" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="N">
+            <use xlink:href="#M" overflow="visible"/>
+        </clipPath>
+        <path d="M19.126 26.54c-3.849 0-7.745-2.702-9.08-4.65-.32-.459-.483-.87-.483-1.221 0-1.45.973-2.063 1.819-2.436.319-.142.667-.263 1.02-.387.329-.114.662-.23.977-.366.255-.099.486-.213.707-.341.689-.414 1.259-.722 1.786-.961.534-.262 1.054-.451 1.536-.563.805-.214 1.56-.226 2.193-.101.575.106 1.086.324 1.563.668.248.159.487.351.724.539.133.106.264.214.398.313.104.077.268.182.467.312.173.111.372.24.58.382.325.212.702.479 1.044.756.988.817 1.468 1.533 1.468 2.185-.061 1.198-1.515 2.959-2.919 4.114-.789.655-2.334 1.757-3.8 1.757zm-.418-10.486c-.364 0-.741.053-1.151.16-.447.104-.924.279-1.423.522-.513.234-1.063.531-1.736.935-.252.146-.513.275-.788.381-.316.138-.663.26-1.006.379-.335.116-.668.231-.973.366-1.031.454-1.452.996-1.452 1.872 0 .124.049.402.375.868 1.226 1.795 4.984 4.386 8.572 4.386.931 0 2.171-.589 3.407-1.614 1.445-1.188 2.652-2.805 2.695-3.606 0-.481-.418-1.058-1.24-1.74-.323-.264-.682-.516-.995-.72-.21-.142-.404-.268-.574-.377-.212-.138-.387-.251-.498-.333-.142-.104-.28-.217-.42-.329-.218-.176-.438-.354-.683-.509-.422-.302-.84-.48-1.332-.572-.24-.048-.493-.069-.778-.069z" clip-path="url(#N)"/>
+        <defs>
+            <path id="O" d="M0 0h32v31.998h-32z"/>
+        </defs>
+        <clipPath id="P">
+            <use xlink:href="#O" overflow="visible"/>
+        </clipPath>
+        <path d="M19.813 24.417c-4.317 0-6.964-2.479-7.672-3.236-.158-.156-.235-.27-.235-.27l.755-.535-.378.269.376-.271c.009.013.057.073.146.162.657.703 3.064 2.957 7.008 2.957.879 0 1.807-.304 2.758-.901 1.316-.808 2.672-1.539 2.68-1.55-.039.051-.732 1.44-2.189 2.336-1.101.688-2.194 1.039-3.249 1.039z" clip-path="url(#P)"/>
+    </g>
+</svg>

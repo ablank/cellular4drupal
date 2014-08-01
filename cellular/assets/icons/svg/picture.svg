@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <symbol id="a" viewBox="-16 -13 32 26">
+        <path fill="#999" d="M-16-13h32v26h-32v-26zm30 2h-28v22h28v-22z"/>
+        <path d="M6 6c0-1.656 1.344-3 3-3 1.657 0 3 1.344 3 3 0 1.657-1.343 3-3 3-1.656 0-3-1.343-3-3"/>
+        <path d="M12-9h-24l6 16 8-10 4 3z"/>
+    </symbol>
+    <use xlink:href="#a" width="32" height="26" x="-16" y="-13" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+</svg>

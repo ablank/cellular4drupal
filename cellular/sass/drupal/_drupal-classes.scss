@@ -1,0 +1,54 @@
+/*****
+    Cellular :: Drupal Classes
+*****/
+
+// Declared here in case the core css is disabled
+.element-invisible {
+    position: absolute !important;
+    left: -999em;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+}
+
+.element-invisible.element-focusable:active,
+.element-invisible.element-focusable:focus {
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+}
+
+//////
+// cTools
+//////
+.ctools-locked {
+  color: $red;
+  border: 1px solid $red;
+  padding: 1em;
+}
+
+.ctools-owns-lock {
+  background: lighten($yellow, 50%);
+  border: 1px solid $yellow;
+  padding: 1em;
+}
+
+a,
+input,
+button,
+select {
+    &.ctools-ajaxing {
+  padding-right: 18px;
+  background: $loading center center no-repeat;
+}
+}
+
+div {
+    &.ctools-ajaxing {
+  float: left;
+  width: 18px;
+  background: $loading center center no-repeat;
+}
+}
