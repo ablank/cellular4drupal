@@ -1,6 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="240" viewBox="0 0 160 240">
-    <path fill="#4D4D4D" fill-opacity=".4" d="M2.221 120.002l51.779-110.957v221.916z"/>
-    <path fill="#808080" fill-opacity=".6" d="M52 18.086v203.828l-47.561-101.912 47.561-101.916m4-18.086l-56 120.002 56 119.998v-240z"/>
-    <path fill="#4D4D4D" fill-opacity=".4" d="M157.779 120.002l-51.779-110.957v221.916z"/>
-    <path fill="#808080" fill-opacity=".6" d="M108 18.086l47.561 101.916-47.561 101.912v-203.828m-4-18.086v240l56-119.998-56-120.002z"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="160px" height="240px" viewBox="0 0 160 240" enable-background="new 0 0 160 240" xml:space="preserve">
+<g>
+	<g opacity="0.6">
+		<path fill="#808080" d="M104,240"/>
+	</g>
+	<g opacity="0.6">
+		<path fill="#808080" d="M56,0L0,119.998L56,240L30,120L56,0z"/>
+	</g>
+	<polygon fill="#4D4D4D" points="56,0 22,120 56,240 6.22,119.998 	"/>
+	<path opacity="0.4" fill="#4D4D4D" d="M104,240"/>
+</g>
+<g>
+	<g opacity="0.6">
+		<path fill="#808080" d="M56,0"/>
+	</g>
+	<g opacity="0.6">
+		<path fill="#808080" d="M104,240l56-119.998L104,0l26,120L104,240z"/>
+	</g>
+	<polygon fill="#4D4D4D" points="104,240 138,120 104,0 153.779,120.002 	"/>
+	<path opacity="0.4" fill="#4D4D4D" d="M56,0"/>
+</g>
 </svg>

@@ -285,3 +285,28 @@ div.ctools-ajaxing {
   width: 18px;
   background: url("../assets/images/gif/throbber.gif") center center no-repeat;
 }
+
+/* line 56, ../sass/drupal/_drupal-classes.scss */
+.tabs.primary {
+  margin: 2em 0 1em;
+  background-color: #edeceb;
+  border-bottom: #8a8882 1px solid;
+}
+/* line 61, ../sass/drupal/_drupal-classes.scss */
+.tabs.primary li {
+  list-style: none;
+  display: inline;
+  margin: 0 .4em;
+}
+/* line 66, ../sass/drupal/_drupal-classes.scss */
+.tabs.primary a {
+  padding: .4em .8em 0.2em;
+  color: #565450;
+  border: #8a8882 1px solid;
+  border-bottom: none;
+  background-color: #bbbab7;
+}
+/* line 74, ../sass/drupal/_drupal-classes.scss */
+.tabs.primary a.active {
+  background-color: #fefefe;
+}

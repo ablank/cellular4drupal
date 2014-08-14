@@ -5,8 +5,8 @@
  * ************** */
 
 function cellular_js_alter(&$javascript) {
-
-// Pass variable from drupal to js 
+    global $base_url;
+// Pass variable from drupal to js
 //  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
 
     /* myVar will be available in Javascript as:
@@ -24,7 +24,7 @@ function cellular_js_alter(&$javascript) {
             'weight' => 99,
         ),
     );
-    
+
     cellular_add_js($scripts);
 
     $js_plugins = array(
@@ -34,6 +34,12 @@ function cellular_js_alter(&$javascript) {
             'object' => 'Modernizr',
             'file' => 'modernizr.js',
             'weight' => -1000,
+                ) : null,
+        'cellular' => theme_get_setting('cellularjs') == 1 ?
+                array(
+            'object' => 'Cellular',
+            'file' => 'plugins/jquery.cellular.min.js',
+            'weight' => 0,
                 ) : null,
         'd3' => theme_get_setting('d3js') == 1 ?
                 array(
@@ -58,12 +64,6 @@ function cellular_js_alter(&$javascript) {
             'object' => null,
             'file' => 'plugins/jquery.masonry.min.js',
             'weight' => 1,
-                ) : null,
-        'cellular' => theme_get_setting('cellularjs') == 1 ?
-                array(
-            'object' => 'Cellular',
-            'file' => 'plugins/jquery.cellular.min.js',
-            'weight' => 0,
                 ) : null,
     );
 
@@ -111,36 +111,53 @@ function cellular_js_alter(&$javascript) {
         cellular_update_jqueryui($javascript);
     }
 
+
+    if (theme_get_setting('modernizr') == 1) {
 // Build yepnope query based on theme settings
-    $yepnope = "Modernizr.load([";
-    $yepnope .= "
+// $base_url needs to be added for scripts to reference the correct path
+        $mq = array();
+        $mq['mobile'] = theme_get_setting('mq_mobile');
+        $mq['normal'] = theme_get_setting('mq_normal');
+        $mq['large'] = theme_get_setting('mq_large');
+
+
+        $yepnope = "Modernizr.load([";
+        $yepnope .= "
         {
           test : Modernizr.svg,
-          yep : [ '" . cellular_theme_path() . "/css/icons-svg.css' ],
-          nope : ['" . cellular_theme_path() . "/css/icons-png.css']
+          yep : [ '" . $base_url . '/' . cellular_theme_path() . "/css/icons-svg.css' ],
+          nope : ['" . $base_url . '/' . cellular_theme_path() . "/css/icons-png.css']
           },";
 
 
-    if (theme_get_setting('mq_mobile_enable') == 1) {
-        $yepnope .= "
+        if (theme_get_setting('mq_mobile_enable') == 1 && !empty($mq['mobile'])) {
+            $yepnope .= "
         {
-          test : Modernizr.mq('" . theme_get_setting('mq_mobile') . "'),
-          yep: ['" . cellular_theme_path() . "/css/conditional-mobile.css']
+          test : Modernizr.mq('" . $$mq['mobile'] . "'),
+          yep: ['" . $base_url . '/' . cellular_theme_path() . "/css/conditional-mobile.css']
           },
         ";
-    }
-    if (theme_get_setting('mq_large_enable') == 1) {
-        $yepnope .= "
+        }
+        if (theme_get_setting('mq_normal_enable') == 1 && !empty($mq['normal'])) {
+            $yepnope .= "
         {
-          test : Modernizr.mq('" . theme_get_setting('mq_large') . "'),
-          yep: ['" . cellular_theme_path() . "/css/conditional-large.css']
+          test : Modernizr.mq('" . $mq['normal'] . "'),
+          yep: ['" . $base_url . '/' . cellular_theme_path() . "/css/conditional-style.css']
           },
         ";
-    }
-    $yepnope .= "
+        }
+        if (theme_get_setting('mq_large_enable') == 1 && !empty($mq['large'])) {
+            $yepnope .= "
+        {
+          test : Modernizr.mq('" . $mq['large'] . "'),
+          yep: ['" . $base_url . '/' . cellular_theme_path() . "/css/conditional-large.css']
+          },
+        ";
+        }
+        $yepnope .= "
 ]);
 ";
-    if (theme_get_setting('modernizr') == 1) {
+
         drupal_add_js($yepnope, array(
             'type' => 'inline',
             'group' => CSS_SYSTEM,

@@ -8,12 +8,8 @@ module.exports = {
             expand: true,
         },
         files: {
+            'js/script.min.js': ['js/script.js'],
             'js/plugins/jquery.cellular.min.js': ['js/plugins/jquery.cellular.js'],
-            'js/plugins/jquery.form.min.js': ['js/plugins/jquery.form.js'],
-            'js/plugins/jquery.masonry.min.js': ['js/plugins/jquery.masonry.js'],
-            'js/plugins/prism.min.js': ['js/plugins/prism.js'],
-            'js/plugins/d3.min.js': ['js/plugins/d3.js'],
-            'js/plugins/three.min.js': ['js/plugins/three.js'],
         },
     },
     dev: {
@@ -23,12 +19,8 @@ module.exports = {
             preserveComments: 'all'
         },
         files: {
+            'js/script.dev.js': ['js/script.js'],
             'js/plugins/jquery.cellular.min.js': ['js/plugins/jquery.cellular.js'],
-            'js/plugins/jquery.form.min.js': ['js/plugins/jquery.form.js'],
-            'js/plugins/jquery.masonry.min.js': ['js/plugins/jquery.masonry.js'],
-            'js/plugins/prism.min.js': ['js/plugins/prism.js'],
-            'js/plugins/d3.min.js': ['js/plugins/d3.js'],
-            'js/plugins/three.min.js': ['js/plugins/three.js'],
         }
     }
 };

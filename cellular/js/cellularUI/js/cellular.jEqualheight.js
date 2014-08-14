@@ -1,23 +1,25 @@
-/////
 cellular.jEqualheight = function(opts) {
+    /*
+     var array = [267, 306, 108];
+     var largest = Math.max.apply(Math, array); // 306
+     */
     var o = jQuery.extend({
-        "height": true
+        //"opt": val
     }, opts);
     return this.each(function() {
+
         var $obj = jQuery(this);
         var kids = $obj.find('>*');
-        var kheight = 0;
+        var maxHeight = 0;
 
         kids.each(function() {
-            var $k = jQuery(this);
-            var kh = $k.height();
+            $t = jQuery(this);
 
-            if (kh > kheight) {
-                kheight = kh;
+            if ($t.height() > maxHeight) {
+                maxHeight = $t.height();
             }
+            $t.height(maxHeight);
         });
-        kids.css({
-            "height": kheight
-        });
+
     });
 };

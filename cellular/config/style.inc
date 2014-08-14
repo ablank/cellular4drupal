@@ -7,61 +7,25 @@ $form['c']['display_settings'] = array(
     '#collapsed' => FALSE
 );
 
-$form['c']['display_settings']['full_menu'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Display Full Menu'),
-    '#description' => t('Show the full menu tree in main_menu instead of only top level links.'),
-    '#default_value' => theme_get_setting('full_menu'),
-);
-
 $form['c']['display_settings']['remove_core_css'] = array(
     '#type' => 'checkbox',
     '#title' => t('Remove Drupal CSS'),
-    '#description' => t("Exclude Drupal core module CSS."),
+    '#description' => t("Exclude Drupal core module CSS. Other module stylesheets can be removed by adding the module & stylesheet to the array $exclude and calling function cellular_remove_css() in /inc/css_alter.inc"),
     '#default_value' => theme_get_setting('remove_core_css'),
         //'#options' => $drupal_stylesheets,
 );
 
-$form['c']['display_settings']['mq_mobile_enable'] = array(
+$form['c']['display_settings']['full_menu'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Enable Mobile Media Query'),
-    '#description' => t("Enable media query to load extra CSS (conditional-mobile.css) for mobile devices."),
-    '#default_value' => theme_get_setting('mq_mobile_enable'),
+    '#title' => t('Display All Links in Main Menu'),
+    '#description' => t('Print the full main_menu tree instead of only top level links.'),
+    '#default_value' => theme_get_setting('full_menu'),
 );
-$form['c']['display_settings']['mq_mobile'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Mobile Media Query'),
-    '#description' => t("The media query tested by Modernizr load extra CSS for mobile devices. This should match the @media setting in conditional-mobile.css."),
-    '#default_value' => theme_get_setting('mq_mobile'),
-    '#states' => array(
-        'visible' => array(
-            ':input[name="mq_mobile_enable"]' => array('checked' => TRUE),
-        ),
-    ),
-);
-$form['c']['display_settings']['mq_large_enable'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable Mobile Media Query'),
-    '#description' => t("Enable media query to load extra CSS (conditional-large.css) for large screen devices."),
-    '#default_value' => theme_get_setting('mq_large_enable'),
-);
-$form['c']['display_settings']['mq_large'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Large Screen Media Query'),
-    '#description' => t("The media query tested by Modernizr load extra CSS for large devices. This should match the @media setting in conditional-large.css."),
-    '#default_value' => theme_get_setting('mq_large'),
-    '#states' => array(
-        'visible' => array(
-            ':input[name="mq_large_enable"]' => array('checked' => TRUE),
-        ),
-    ),
-);
-
 
 $form['c']['display_settings']['breadcrumb_display'] = array(
     '#type' => 'checkbox',
     '#title' => t('Display Breadcrumbs'),
-    '#description' => t("Show breadcrumb navigation on pages other than --front."),
+    '#description' => t("Show breadcrumb navigation (Doesn't display on frontpage)"),
     '#default_value' => theme_get_setting('breadcrumb_display'),
 );
 

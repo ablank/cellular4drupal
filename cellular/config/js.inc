@@ -55,6 +55,90 @@ $form['c']['js'] = array(
     '#collapsed' => FALSE
 );
 
+$form['c']['js']['Modernizr'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Modernizr'),
+    '#description' => t("Browser testing & conditional resource loading."),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE
+);
+
+$form['c']['js']['Modernizr']['modernizr'] = array(
+    '#type' => 'checkbox',
+    '#title' => l(t('Modernizr'), 'http://modernizr.com/'),
+    '#description' => t("Include Modernizr.js to test  browser capabilities and load resources as needed."),
+    '#default_value' => theme_get_setting('modernizr'),
+);
+
+$form['c']['js']['Modernizr']['mq_mobile_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Mobile Media Query'),
+    '#description' => t("Enable media query to load extra CSS (conditional-mobile.css) for mobile devices."),
+    '#default_value' => theme_get_setting('mq_mobile_enable'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="modernizr"]' => array('checked' => TRUE),
+        ),
+    ),
+);
+$form['c']['js']['Modernizr']['mq_mobile'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Mobile Media Query'),
+    '#description' => t("The media query tested by Modernizr load extra CSS for mobile devices. This should match the @media setting in conditional-mobile.css."),
+    '#default_value' => theme_get_setting('mq_mobile'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="mq_mobile_enable"]' => array('checked' => TRUE),
+        ),
+    ),
+);
+
+$form['c']['js']['Modernizr']['mq_normal_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Desktop Media Query'),
+    '#description' => t("Enable media query to test before loading conditional-style.css."),
+    '#default_value' => theme_get_setting('mq_normale_enable'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="modernizr"]' => array('checked' => TRUE),
+        ),
+    ),
+);
+$form['c']['js']['Modernizr']['mq_normal'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Normal Media Query'),
+    '#description' => t("The media query tested by Modernizr load style.css."),
+    '#default_value' => theme_get_setting('mq_normal'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="mq_normal_enable"]' => array('checked' => TRUE),
+        ),
+    ),
+);
+
+$form['c']['js']['Modernizr']['mq_large_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Conditional Large Media Query'),
+    '#description' => t("Enable media query to load extra CSS (conditional-large.css) for large screen devices."),
+    '#default_value' => theme_get_setting('mq_large_enable'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="modernizr"]' => array('checked' => TRUE),
+        ),
+    ),
+);
+$form['c']['js']['Modernizr']['mq_large'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Large Screen Media Query'),
+    '#description' => t("The media query tested by Modernizr load extra CSS for large devices. This should match the @media setting in conditional-large.css."),
+    '#default_value' => theme_get_setting('mq_large'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="mq_large_enable"]' => array('checked' => TRUE),
+        ),
+    ),
+);
+
 $form['c']['js']['jquery_update'] = array(
     '#type' => 'checkbox',
     '#title' => t('Update jQuery'),
@@ -125,12 +209,6 @@ $form['c']['js']['plugins'] = array(
     '#title' => t('JS Plugins'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE
-);
-$form['c']['js']['plugins']['modernizr'] = array(
-    '#type' => 'checkbox',
-    '#title' => l(t('Modernizr'), 'http://modernizr.com/'),
-    '#description' => t("Include Modernizr to test HTML5 & CSS3 support."),
-    '#default_value' => theme_get_setting('modernizr'),
 );
 $form['c']['js']['plugins']['gsap'] = array(
     '#type' => 'checkbox',

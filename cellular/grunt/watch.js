@@ -1,8 +1,10 @@
 module.exports = {
     scripts: {
-        files: 'js/*.js',
+        files: ['js/cellularUI/js/*.js'],
         tasks: [
             //'jshint',
+            'concat',
+            'uglify'
         ],
         options: {
             interrupt: true,

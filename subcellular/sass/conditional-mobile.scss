@@ -6,36 +6,36 @@ Cellular :: mobile
 /////
 
 @media screen and (max-width: $res_mobile) {
-  body {
-  }
-  //////
-  #page-wrap {
-  }
-  #content-wrap {
-    padding: 1em 0;
-  }
-
-  #header {
-    height: auto;
-  }
-
-  #logo {
-
-    &:hover {
+    body {
     }
-    & > a {
+    //////
+    #page-wrap {
     }
-  }
+    #content-wrap {
+        padding: 1em 0;
+    }
 
-  #app {
-  }
+    #header {
+        height: auto;
+    }
 
-  #content-wrap {
-  }
-  #content {
-  }
+    #logo {
 
-  #sidebar-left,
-  #sidebar-right {
-  }
+        &:hover {
+        }
+        & > a {
+        }
+    }
+
+    #app {
+    }
+
+    #content-wrap {
+    }
+    #content {
+    }
+
+    #sidebar-left,
+    #sidebar-right {
+    }
 }

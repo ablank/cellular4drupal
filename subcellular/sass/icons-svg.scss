@@ -4,469 +4,451 @@ Cellular :: SVG icons
 @import "variables";
 /////
 .icon {
-    display: inline;
-    display: inline-block;
-    width: $icon_size;
-    height: $icon_size;
-    text-indent: -999em;
-    padding: $icon_padding;
-    background-position: $icon_padding $icon_padding;
-    background-repeat: no-repeat;
-    background-color: none;
-
-    &:hover {
-        background-color: $hilight;
+    &.search {
+        background-image: url('../assets/icons/svg/min/search.svg');
     }
 
-    &.social {
+    &.android {
+        background-image: url('../assets/icons/svg/min/android.svg');
     }
 
-&.search {
-    background-image: url('../assets/icons/svg/search.svg');
-    text-indent: 0;
-}
 
-&.android {
-    background-image: url('../assets/icons/svg/android.svg');
-}
+    &.angular {
+        background-image: url('../assets/icons/svg/min/angular.svg');
+    }
 
 
-&.angular {
-    background-image: url('../assets/icons/svg/angular.svg');
-}
+    &.apple {
+        background-image: url('../assets/icons/svg/min/apple.svg');
+    }
 
 
-&.apple {
-    background-image: url('../assets/icons/svg/apple.svg');
-}
+    &.arrow-down {
+        background-image: url('../assets/icons/svg/min/arrow-down.svg');
+    }
 
 
-&.arrow-down {
-    background-image: url('../assets/icons/svg/arrow-down.svg');
-}
+    &.arrow-left {
+        background-image: url('../assets/icons/svg/min/arrow-left.svg');
+    }
 
 
-&.arrow-left {
-    background-image: url('../assets/icons/svg/arrow-left.svg');
-}
+    &.arrow-light-up {
+        background-image: url('../assets/icons/svg/min/arrow-light-up.svg');
+    }
 
 
-&.arrow-light-up {
-    background-image: url('../assets/icons/svg/arrow-light-up.svg');
-}
+    &.arrow-right {
+        background-image: url('../assets/icons/svg/min/arrow-right.svg');
+    }
 
 
-&.arrow-right {
-    background-image: url('../assets/icons/svg/arrow-right.svg');
-}
+    &.arrow-up {
+        background-image: url('../assets/icons/svg/min/arrow-up.svg');
+    }
 
 
-&.arrow-up {
-    background-image: url('../assets/icons/svg/arrow-up.svg');
-}
+    &.arrow-w-down {
+        background-image: url('../assets/icons/svg/min/arrow-w-down.svg');
+    }
 
 
-&.arrow-w-down {
-    background-image: url('../assets/icons/svg/arrow-w-down.svg');
-}
+    &.arrow-w-left {
+        background-image: url('../assets/icons/svg/min/arrow-w-left.svg');
+    }
 
 
-&.arrow-w-left {
-    background-image: url('../assets/icons/svg/arrow-w-left.svg');
-}
+    &.arrow-w-right {
+        background-image: url('../assets/icons/svg/min/arrow-w-right.svg');
+    }
 
 
-&.arrow-w-right {
-    background-image: url('../assets/icons/svg/arrow-w-right.svg');
-}
+    &.arrow-w-up {
+        background-image: url('../assets/icons/svg/min/arrow-w-up.svg');
+    }
 
 
-&.arrow-w-up {
-    background-image: url('../assets/icons/svg/arrow-w-up.svg');
-}
+    &.audio {
+        background-image: url('../assets/icons/svg/min/audio.svg');
+    }
 
 
-&.audio {
-    background-image: url('../assets/icons/svg/audio.svg');
-}
+    &.camera {
+        background-image: url('../assets/icons/svg/min/camera.svg');
+    }
 
 
-&.camera {
-    background-image: url('../assets/icons/svg/camera.svg');
-}
+    &.cart {
+        background-image: url('../assets/icons/svg/min/cart.svg');
+    }
 
 
-&.cart {
-    background-image: url('../assets/icons/svg/cart.svg');
-}
+    &.cell-phone {
+        background-image: url('../assets/icons/svg/min/cell-phone.svg');
+    }
 
 
-&.cell-phone {
-    background-image: url('../assets/icons/svg/cell-phone.svg');
-}
+    &.cell {
+        background-image: url('../assets/icons/svg/min/cell.svg');
+    }
 
 
-&.cell {
-    background-image: url('../assets/icons/svg/cell.svg');
-}
+    &.chat {
+        background-image: url('../assets/icons/svg/min/chat.svg');
+    }
 
 
-&.chat {
-    background-image: url('../assets/icons/svg/chat.svg');
-}
+    &.chrome {
+        background-image: url('../assets/icons/svg/min/chrome.svg');
+    }
 
 
-&.chrome {
-    background-image: url('../assets/icons/svg/chrome.svg');
-}
+    &.cloud {
+        background-image: url('../assets/icons/svg/min/cloud.svg');
+    }
 
 
-&.cloud {
-    background-image: url('../assets/icons/svg/cloud.svg');
-}
+    &.creativecommons {
+        background-image: url('../assets/icons/svg/min/creativecommons.svg');
+    }
 
 
-&.creativecommons {
-    background-image: url('../assets/icons/svg/creativecommons.svg');
-}
+    &.css3 {
+        background-image: url('../assets/icons/svg/min/css3.svg');
+    }
 
 
-&.css3 {
-    background-image: url('../assets/icons/svg/css3.svg');
-}
+    &.delicious {
+        background-image: url('../assets/icons/svg/min/delicious.svg');
+    }
 
 
-&.delicious {
-    background-image: url('../assets/icons/svg/delicious.svg');
-}
+    &.desktop {
+        background-image: url('../assets/icons/svg/min/desktop.svg');
+    }
 
 
-&.desktop {
-    background-image: url('../assets/icons/svg/desktop.svg');
-}
+    &.digg {
+        background-image: url('../assets/icons/svg/min/digg.svg');
+    }
 
 
-&.digg {
-    background-image: url('../assets/icons/svg/digg.svg');
-}
+    &.doc {
+        background-image: url('../assets/icons/svg/min/doc.svg');
+    }
 
 
-&.doc {
-    background-image: url('../assets/icons/svg/doc.svg');
-}
+    &.drupal {
+        background-image: url('../assets/icons/svg/min/drupal.svg');
+    }
 
 
-&.drupal {
-    background-image: url('../assets/icons/svg/drupal.svg');
-}
+    &.email {
+        background-image: url('../assets/icons/svg/min/email.svg');
+    }
 
 
-&.email {
-    background-image: url('../assets/icons/svg/email.svg');
-}
+    &.eye {
+        background-image: url('../assets/icons/svg/min/eye.svg');
+    }
 
 
-&.eye {
-    background-image: url('../assets/icons/svg/eye.svg');
-}
+    &.facebook {
+        background-image: url('../assets/icons/svg/min/facebook.svg');
+    }
 
 
-&.facebook {
-    background-image: url('../assets/icons/svg/facebook.svg');
-}
+    &.film {
+        background-image: url('../assets/icons/svg/min/film.svg');
+    }
 
 
-&.film {
-    background-image: url('../assets/icons/svg/film.svg');
-}
+    &.firefox {
+        background-image: url('../assets/icons/svg/min/firefox.svg');
+    }
 
 
-&.firefox {
-    background-image: url('../assets/icons/svg/firefox.svg');
-}
+    &.flickr {
+        background-image: url('../assets/icons/svg/min/flickr.svg');
+    }
 
 
-&.flickr {
-    background-image: url('../assets/icons/svg/flickr.svg');
-}
+    &.folder {
+        background-image: url('../assets/icons/svg/min/folder.svg');
+    }
 
 
-&.folder {
-    background-image: url('../assets/icons/svg/folder.svg');
-}
+    &.gear {
+        background-image: url('../assets/icons/svg/min/gear.svg');
+    }
 
 
-&.gear {
-    background-image: url('../assets/icons/svg/gear.svg');
-}
+    &.github-octo {
+        background-image: url('../assets/icons/svg/min/github-octo.svg');
+    }
 
 
-&.github-octo {
-    background-image: url('../assets/icons/svg/github-octo.svg');
-}
+    &.globe {
+        background-image: url('../assets/icons/svg/min/globe.svg');
+    }
 
 
-&.globe {
-    background-image: url('../assets/icons/svg/globe.svg');
-}
+    &.google {
+        background-image: url('../assets/icons/svg/min/google.svg');
+    }
 
 
-&.google {
-    background-image: url('../assets/icons/svg/google.svg');
-}
+    &.hi5 {
+        background-image: url('../assets/icons/svg/min/hi5.svg');
+    }
 
 
-&.hi5 {
-    background-image: url('../assets/icons/svg/hi5.svg');
-}
+    &.home {
+        background-image: url('../assets/icons/svg/min/home.svg');
+    }
 
 
-&.home {
-    background-image: url('../assets/icons/svg/home.svg');
-}
+    &.html5 {
+        background-image: url('../assets/icons/svg/min/html5.svg');
+    }
 
 
-&.html5 {
-    background-image: url('../assets/icons/svg/html5.svg');
-}
+    &.internetexplorer {
+        background-image: url('../assets/icons/svg/min/internetexplorer.svg');
+    }
 
 
-&.internetexplorer {
-    background-image: url('../assets/icons/svg/internetexplorer.svg');
-}
+    &.jquery {
+        background-image: url('../assets/icons/svg/min/jquery.svg');
+    }
 
 
-&.jquery {
-    background-image: url('../assets/icons/svg/jquery.svg');
-}
+    &.js {
+        background-image: url('../assets/icons/svg/min/js.svg');
+    }
 
 
-&.js {
-    background-image: url('../assets/icons/svg/js.svg');
-}
+    &.key {
+        background-image: url('../assets/icons/svg/min/key.svg');
+    }
 
 
-&.key {
-    background-image: url('../assets/icons/svg/key.svg');
-}
+    &.laptop {
+        background-image: url('../assets/icons/svg/min/laptop.svg');
+    }
 
 
-&.laptop {
-    background-image: url('../assets/icons/svg/laptop.svg');
-}
+    &.linkedin {
+        background-image: url('../assets/icons/svg/min/linkedin.svg');
+    }
 
 
-&.linkedin {
-    background-image: url('../assets/icons/svg/linkedin.svg');
-}
+    &.linux {
+        background-image: url('../assets/icons/svg/min/linux.svg');
+    }
 
 
-&.linux {
-    background-image: url('../assets/icons/svg/linux.svg');
-}
+    &.lock {
+        background-image: url('../assets/icons/svg/min/lock.svg');
+    }
 
 
-&.lock {
-    background-image: url('../assets/icons/svg/lock.svg');
-}
+    &.logo {
+        background-image: url('../assets/icons/svg/min/logo.svg');
+    }
 
 
-&.logo {
-    background-image: url('../assets/icons/svg/logo.svg');
-}
+    &.mac {
+        background-image: url('../assets/icons/svg/min/mac.svg');
+    }
 
 
-&.mac {
-    background-image: url('../assets/icons/svg/mac.svg');
-}
+    &.magnify {
+        background-image: url('../assets/icons/svg/min/magnify.svg');
+    }
 
 
-&.magnify {
-    background-image: url('../assets/icons/svg/magnify.svg');
-}
+    &.mail {
+        background-image: url('../assets/icons/svg/min/mail.svg');
+    }
 
 
-&.mail {
-    background-image: url('../assets/icons/svg/mail.svg');
-}
+    &.mail2 {
+        background-image: url('../assets/icons/svg/min/mail2.svg');
+    }
 
+    &.jMmenu,
+    &.menu {
+        background-image: url('../assets/icons/svg/min/menu.svg');
+    }
 
-&.mail2 {
-    background-image: url('../assets/icons/svg/mail2.svg');
-}
 
-&.jMmenu,
-&.menu {
-    background-image: url('../assets/icons/svg/menu.svg');
-}
+    &.message-error {
+        background-image: url('../assets/icons/svg/min/message-error.svg');
+    }
 
 
-&.message-error {
-    background-image: url('../assets/icons/svg/message-error.svg');
-}
+    &.message-ok {
+        background-image: url('../assets/icons/svg/min/message-ok.svg');
+    }
 
 
-&.message-ok {
-    background-image: url('../assets/icons/svg/message-ok.svg');
-}
+    &.message-warning {
+        background-image: url('../assets/icons/svg/min/message-warning.svg');
+    }
 
 
-&.message-warning {
-    background-image: url('../assets/icons/svg/message-warning.svg');
-}
+    &.message_icon_error {
+        background-image: url('../assets/icons/svg/min/message_icon_error.svg');
+    }
 
 
-&.message_icon_error {
-    background-image: url('../assets/icons/svg/message_icon_error.svg');
-}
+    &.message_icon_ok {
+        background-image: url('../assets/icons/svg/min/message_icon_ok.svg');
+    }
 
 
-&.message_icon_ok {
-    background-image: url('../assets/icons/svg/message_icon_ok.svg');
-}
+    &.message_icon_warning {
+        background-image: url('../assets/icons/svg/min/message_icon_warning.svg');
+    }
 
 
-&.message_icon_warning {
-    background-image: url('../assets/icons/svg/message_icon_warning.svg');
-}
+    &.mobile {
+        background-image: url('../assets/icons/svg/min/mobile.svg');
+    }
 
 
-&.mobile {
-    background-image: url('../assets/icons/svg/mobile.svg');
-}
+    &.myspace {
+        background-image: url('../assets/icons/svg/min/myspace.svg');
+    }
 
 
-&.myspace {
-    background-image: url('../assets/icons/svg/myspace.svg');
-}
+    &.opera {
+        background-image: url('../assets/icons/svg/min/opera.svg');
+    }
 
 
-&.opera {
-    background-image: url('../assets/icons/svg/opera.svg');
-}
+    &.pdf {
+        background-image: url('../assets/icons/svg/min/pdf.svg');
+    }
 
 
-&.pdf {
-    background-image: url('../assets/icons/svg/pdf.svg');
-}
+    &.phone {
+        background-image: url('../assets/icons/svg/min/phone.svg');
+    }
 
 
-&.phone {
-    background-image: url('../assets/icons/svg/phone.svg');
-}
+    &.phone2 {
+        background-image: url('../assets/icons/svg/min/phone2.svg');
+    }
 
 
-&.phone2 {
-    background-image: url('../assets/icons/svg/phone2.svg');
-}
+    &.picture {
+        background-image: url('../assets/icons/svg/min/picture.svg');
+    }
 
 
-&.picture {
-    background-image: url('../assets/icons/svg/picture.svg');
-}
+    &.pinterest {
+        background-image: url('../assets/icons/svg/min/pinterest.svg');
+    }
 
 
-&.pinterest {
-    background-image: url('../assets/icons/svg/pinterest.svg');
-}
+    &.print {
+        background-image: url('../assets/icons/svg/min/print.svg');
+    }
 
 
-&.print {
-    background-image: url('../assets/icons/svg/print.svg');
-}
+    &.reddit {
+        background-image: url('../assets/icons/svg/min/reddit.svg');
+    }
 
 
-&.reddit {
-    background-image: url('../assets/icons/svg/reddit.svg');
-}
+    &.rss {
+        background-image: url('../assets/icons/svg/min/rss.svg');
+    }
 
 
-&.rss {
-    background-image: url('../assets/icons/svg/rss.svg');
-}
+    &.safari {
+        background-image: url('../assets/icons/svg/min/safari.svg');
+    }
 
 
-&.safari {
-    background-image: url('../assets/icons/svg/safari.svg');
-}
+    &.spreadsheet {
+        background-image: url('../assets/icons/svg/min/spreadsheet.svg');
+    }
 
 
-&.spreadsheet {
-    background-image: url('../assets/icons/svg/spreadsheet.svg');
-}
+    &.stackoverflow {
+        background-image: url('../assets/icons/svg/min/stackoverflow.svg');
+    }
 
 
-&.stackoverflow {
-    background-image: url('../assets/icons/svg/stackoverflow.svg');
-}
+    &.stumbleupon {
+        background-image: url('../assets/icons/svg/min/stumbleupon.svg');
+    }
 
 
-&.stumbleupon {
-    background-image: url('../assets/icons/svg/stumbleupon.svg');
-}
+    &.technorati {
+        background-image: url('../assets/icons/svg/min/technorati.svg');
+    }
 
 
-&.technorati {
-    background-image: url('../assets/icons/svg/technorati.svg');
-}
+    &.tumblr {
+        background-image: url('../assets/icons/svg/min/tumblr.svg');
+    }
 
 
-&.tumblr {
-    background-image: url('../assets/icons/svg/tumblr.svg');
-}
+    &.twitter-bird {
+        background-image: url('../assets/icons/svg/min/twitter-bird.svg');
+    }
 
 
-&.twitter-bird {
-    background-image: url('../assets/icons/svg/twitter-bird.svg');
-}
+    &.twitter-t {
+        background-image: url('../assets/icons/svg/min/twitter-t.svg');
+    }
 
 
-&.twitter-t {
-    background-image: url('../assets/icons/svg/twitter-t.svg');
-}
+    &.user-social {
+        background-image: url('../assets/icons/svg/min/user-social.svg');
+    }
 
 
-&.user-social {
-    background-image: url('../assets/icons/svg/user-social.svg');
-}
+    &.user {
+        background-image: url('../assets/icons/svg/min/user.svg');
+    }
 
 
-&.user {
-    background-image: url('../assets/icons/svg/user.svg');
-}
+    &.video {
+        background-image: url('../assets/icons/svg/min/video.svg');
+    }
 
 
-&.video {
-    background-image: url('../assets/icons/svg/video.svg');
-}
+    &.w3 {
+        background-image: url('../assets/icons/svg/min/w3.svg');
+    }
 
 
-&.w3 {
-    background-image: url('../assets/icons/svg/w3.svg');
-}
+    &.windows {
+        background-image: url('../assets/icons/svg/min/windows.svg');
+    }
 
 
-&.windows {
-    background-image: url('../assets/icons/svg/windows.svg');
-}
+    &.wordpress {
+        background-image: url('../assets/icons/svg/min/wordpress.svg');
+    }
 
 
-&.wordpress {
-    background-image: url('../assets/icons/svg/wordpress.svg');
-}
+    &.wrench {
+        background-image: url('../assets/icons/svg/min/wrench.svg');
+    }
 
 
-&.wrench {
-    background-image: url('../assets/icons/svg/wrench.svg');
-}
+    &.youtube {
+        background-image: url('../assets/icons/svg/min/youtube.svg');
+    }
 
 
-&.youtube {
-    background-image: url('../assets/icons/svg/youtube.svg');
-}
-
-
-&.zip {
-    background-image: url('../assets/icons/svg/zip.svg');
-}
+    &.zip {
+        background-image: url('../assets/icons/svg/min/zip.svg');
+    }
 }

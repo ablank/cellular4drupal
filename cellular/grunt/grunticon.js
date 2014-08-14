@@ -13,9 +13,9 @@ module.exports = {
         },
         files: [{
                 expand: true,
-                cwd: 'assets/icons',
-                src: ['**/*.svg'],
-                dest: '/css/icons/'
+                cwd: 'assets/icons/svg/',
+                src: ['*.svg'],
+                dest: 'grunt/grunticons/'
             }]
     }
 };

@@ -2,7 +2,7 @@ module.exports = {
     options: {
         defaultWidth: '32px',
         defaultHeight: '32px',
-        pngfolder: 'png',
+        pngfolder: 'png/',
         template: 'grunt/templates/icon-template.hbs'
     },
     prod: {
@@ -12,10 +12,10 @@ module.exports = {
             urlpngcss: 'icons-png.css'
         },
         files: [{
-            expand: true,
-            cwd: 'assets/icons',
-            src: ['*.svg', '**/*.svg'],
-            dest: 'css/icons'
-        }]
+                expand: true,
+                cwd: 'assets/icons/svg/',
+                src: ['*.svg'],
+                dest: 'grunt/grunticons/'
+            }]
     }
 };

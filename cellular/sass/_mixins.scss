@@ -163,7 +163,7 @@
     }
 }
 
-@mixin textstroke($color: $c2, $size: .1em) {
+@mixin textstroke($color: $c2, $size: 1px) {
     text-shadow: -$size -$size 0 $color,
         $size -$size 0 $color,
         -$size $size 0 $color, $size $size 0 $color;

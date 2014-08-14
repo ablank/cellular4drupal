@@ -16,7 +16,7 @@
 function cellular_preprocess_html(&$vars) {
     global $language, $base_url;
 
-// Set <HTML> attributes     
+// Set <HTML> attributes
     $html_attributes = array(
         'lang' => $language->language,
         'dir' => $language->dir,
@@ -209,7 +209,7 @@ function cellular_preprocess_page(&$vars) {
     $vars['social_media_share'] = cellular_social_media_share();
     $vars['social_media_follow'] = cellular_social_media_follow();
 
-    // Set copyright if provided 
+    // Set copyright if provided
     $copyright = theme_get_setting('copyright');
     $vars['copyright'] = isset($copyright) ?
             "&copy; " . date("Y") . " " . $copyright : null;
@@ -271,7 +271,7 @@ function cellular_preprocess_block(&$vars) {
     $vars['content_attributes_array']['class'] = array(
         'block-content',
     );
-    // 
+    //
     if ($block->module == 'menu') {
         $block->content = str_replace('class="menu"', 'class="menu myclass"', $block->content);
     }

@@ -24,15 +24,15 @@
 // cTools
 //////
 .ctools-locked {
-  color: $red;
-  border: 1px solid $red;
-  padding: 1em;
+    color: $red;
+    border: 1px solid $red;
+    padding: 1em;
 }
 
 .ctools-owns-lock {
-  background: lighten($yellow, 50%);
-  border: 1px solid $yellow;
-  padding: 1em;
+    background: lighten($yellow, 50%);
+    border: 1px solid $yellow;
+    padding: 1em;
 }
 
 a,
@@ -40,15 +40,39 @@ input,
 button,
 select {
     &.ctools-ajaxing {
-  padding-right: 18px;
-  background: $loading center center no-repeat;
-}
+        padding-right: 18px;
+        background: $loading center center no-repeat;
+    }
 }
 
 div {
     &.ctools-ajaxing {
-  float: left;
-  width: 18px;
-  background: $loading center center no-repeat;
+        float: left;
+        width: 18px;
+        background: $loading center center no-repeat;
+    }
 }
+
+.tabs.primary {
+    margin: 2em 0 1em;
+    background-color: lighten($light_grey, 20%);
+    border-bottom: $grey 1px solid;
+
+    li {
+        list-style: none;
+        display: inline;
+        margin: 0 .4em;
+    }
+    a {
+        padding: .4em .8em 0.2em;
+        color: $dark_grey;
+        border: $grey 1px solid;
+        border-bottom: none;
+        background-color: $light_grey;
+
+
+        &.active {
+            background-color: $white;
+        }
+    }
 }

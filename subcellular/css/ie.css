@@ -6,40 +6,40 @@ www.abctahoe.net
 *****/
 /* line 12, ../sass/ie.scss */
 body, * {
-  zoom: 1.0;
+    zoom: 1.0;
 }
 
 /* line 16, ../sass/ie.scss */
 body {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 /* line 20, ../sass/ie.scss */
 img {
-  -ms-interpolation-mode: bicubic;
+    -ms-interpolation-mode: bicubic;
 }
 
 /* line 24, ../sass/ie.scss */
 legend {
-  color: #bbbab7;
+    color: #bbbab7;
 }
 
 /* line 31, ../sass/ie.scss */
 input,
 textarea,
 select {
-  *font-size: 100%;
+    *font-size: 100%;
 }
 
 /* line 37, ../sass/ie.scss */
 input[type=checkbox], input[type=radio] {
-  display: inline;
-  margin: 0.3em;
-  vertical-align: middle;
+    display: inline;
+    margin: 0.3em;
+    vertical-align: middle;
 }
 /* line 42, ../sass/ie.scss */
 input[type=checkbox]:focus, input[type=radio]:focus {
-  border: thin solid;
+    border: thin solid;
 }
 
 /* line 62, ../sass/ie.scss */
@@ -57,32 +57,32 @@ input[type=checkbox]:focus, input[type=radio]:focus {
 .cell-25,
 .cell-20,
 .cell-10 {
-  overflow: visible;
+    overflow: visible;
 }
 
 /* line 67, ../sass/ie.scss */
 .ribbon {
-  margin: 0;
+    margin: 0;
 }
 
 /* line 71, ../sass/ie.scss */
 .center {
-  display: block;
+    display: block;
 }
 
 /* line 75, ../sass/ie.scss */
 .dropShadow {
-  border: none;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='$c1000')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='$c1000');
+    border: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='$c1000')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='$c1000');
 }
 
 /* line 83, ../sass/ie.scss */
 .jBlocklink {
-  margin: 0;
-  border: #bbbab7 1px solid;
+    margin: 0;
+    border: #bbbab7 1px solid;
 }
 /* line 87, ../sass/ie.scss */
 .jBlocklink:hover {
-  border-color: #29b4de;
+    border-color: #29b4de;
 }

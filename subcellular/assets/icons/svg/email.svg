@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><symbol viewBox="-15.032 -15.031 30.064 30.063"><g><use xlink:href="#button_x5F_shape" width="31" height="30.999" x="-15.5" y="-15.499" transform="scale(.969)" overflow="visible"/><path fill="none" stroke="#999" d="M14.532 0c0-8.024-6.506-14.531-14.532-14.531-8.027 0-14.532 6.507-14.532 14.531 0 8.025 6.505 14.532 14.532 14.532 8.026 0 14.532-6.507 14.532-14.532z"/></g></symbol><symbol viewBox="-15.016 -15.015 30.033 30.032"><use xlink:href="#button_x5F_shape" width="31" height="30.999" x="-15.5" y="-15.499" transform="scale(.969)" overflow="visible" opacity=".4"/></symbol><path fill="#666" d="M16 3c7.168 0 13 5.832 13 13s-5.832 13-13 13-13-5.832-13-13 5.832-13 13-13m0-1c-7.733 0-14 6.268-14 14 0 7.73 6.267 14 14 14 7.731 0 14-6.27 14-14 0-7.732-6.269-14-14-14z"/><g fill="#fff" stroke="#000"><path d="M16.072 14.758l12.928-4.065v-4.693h-26v4.68zM16.072 16.84l-13.072-4.076v13.236h26v-13.223z"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<path fill="#777777" d="M16,1.143c8.192,0,14.857,6.665,14.857,14.857c0,8.192-6.665,14.857-14.857,14.857
+		C7.808,30.857,1.143,24.192,1.143,16C1.143,7.808,7.808,1.143,16,1.143 M16,0C7.162,0,0,7.164,0,16c0,8.835,7.162,16,16,16
+		c8.835,0,16-7.165,16-16C32,7.164,24.835,0,16,0z"/>
+	<g>
+		<path fill="#FFFFFF" d="M16.082,14.58l14.775-4.646V4.571H1.143V9.92L16.082,14.58z M16.082,16.96L1.143,12.302v15.127h29.715
+			V12.316L16.082,16.96z"/>
+		<path fill="#777777" d="M31.429,28H0.571V11.525l15.51,4.836l15.348-4.823V28L31.429,28z M1.714,26.857h28.572V13.095
+			l-14.203,4.463l-0.171-0.052L1.714,13.079V26.857L1.714,26.857z M16.083,15.179L0.571,10.34V4h30.857v6.354L16.083,15.179
+			L16.083,15.179z M1.714,9.5l14.367,4.481l14.205-4.466V5.143H1.714V9.5L1.714,9.5z"/>
+	</g>
+</g>
+</svg>

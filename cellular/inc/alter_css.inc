@@ -7,31 +7,58 @@
  * ************** */
 
 function cellular_css_alter(&$css) {
-    global $base_url;
+
     // Add stylesheets to theme
+    // Paths are relative to /active_theme/css/
     $add_css = array(
         'drupal' => array(
-            'file' => cellular_theme_path() . '/css/drupal.css',
+            'file' => 'drupal.css',
             'weight' => 1
         ),
         'style' => array(
-            'file' => cellular_theme_path() . '/css/style.css',
+            'file' => 'style.css',
             'weight' => 2
         ),
         'print' => array(
-            'file' => cellular_theme_path() . '/css/print.css',
+            'file' => 'print.css',
             'media' => 'print',
             'weight' => 100,
             'preprocess' => FALSE,
         ),
-        // Conditional styles based on theme settings:
-        'prism' => theme_get_setting('prism') == 1 ?
-                array(
-            'file' => cellular_path() . '/css/plugins/prism.css'
-                ) : null,
     );
 
     cellular_add_css($add_css, $css);
+
+
+// Plugins available through cellular, styles added based on theme settings
+// $plugin_css paths are relative to /cellular/css/
+    $plugin_css = array(
+        'prism' => theme_get_setting('prism') == 1 ?
+                array(
+            'file' => 'plugins/prism.css' // Path relative to /cellular/css/
+                ) : null,
+    );
+
+    if (!empty($plugin_css)) {
+        foreach ($plugin_css as $style) {
+            if (isset($style)) {
+                $style['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
+                $style['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
+                $style['group'] = isset($style['group']) ? $style['group'] : CSS_THEME;
+                $style['weight'] = isset($style['weight']) ? $style['weight'] : 10;
+                $style['type'] = 'file';
+                $style['data'] = cellular_path() . '/css/' . $style['file'];
+                $style['media'] = isset($style['media']) ? $style['media'] : 'all';
+                $style['browsers'] = array(
+                    'IE' => TRUE,
+                    '!IE' => TRUE
+                );
+
+                $css[$style['file']] = $style;
+            }
+        }
+    }
+
 
     // get the jQuery UI theme
     $ui = array(

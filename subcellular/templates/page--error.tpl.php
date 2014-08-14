@@ -73,93 +73,93 @@
  */
 ?>
 
-    <div id="skipLinks" class="hidden">
-        <a href="#content-main"><?php print t('Skip to main content'); ?></a>
-        <a href="#nav"><?php print t('Skip to navigation'); ?></a>
-    </div>
+<div id="skipLinks" class="hidden">
+    <a href="#content-main"><?php print t('Skip to main content'); ?></a>
+    <a href="#nav"><?php print t('Skip to navigation'); ?></a>
+</div>
 
-    <div id="page-wrap">
-        <div id="header">
-            <div id="logo">
-                <?php
-                if ($site_name) {
-                    print $site_name;
-                }
-                ?>
-            </div>
-            <?php if (isset($main_menu)) : ?>
-                <div id="nav">
-                    <?php print render($main_menu); ?>
-                </div>
-            <?php endif; ?>
-            <?php print render($page['header']); ?>
-        </div>
-        <!-- /#header -->
-
-        <div id="app">
+<div id="page-wrap">
+    <div id="header">
+        <div id="logo">
             <?php
-            print render($title_prefix);
-            //Error Details
-            print '<h1 id="page-title">' . $http_status . '</h1>';
-            print render($title_suffix);
-
-            if ($action_links) {
-                print '<ul class="links">' . render($action_links) . '</ul>';
-            }
-            ?>
-            <div id="content-wrap">
-                <div id="content" class="<?php print $content_class; ?>">
-
-                    <div class="error-message">
-                        <?php
-                        // Error message
-                        print $messages;
-                        ?>
-                    </div>
-                    <div id="alternative">
-                        <?php
-                        print render($search_box);
-                        ?>
-                    </div>
-
-                </div>
-            </div>
-            <!-- /content-wrap-->
-        </div>
-        <!-- /app-->
-
- <?php if ($page['footer_top'] || $copyright) : ?>
-            <div id="footer-top" class="cell">
-                <?php if ($page['footer_top']) : ?>
-                    <?php print render($page['footer_top']); ?>
-                <?php endif; ?>
-            </div>
-<?php endif; ?>
-
-        <div id="footer" class="cell">
-            
-            <?php
-            if ($page['footer']) {
-                print render($page['footer']);
+            if ($site_name) {
+                print $site_name;
             }
             ?>
         </div>
-        <!-- /#footer -->
-
-        <?php if ($page['footer_bottom'] || $copyright) : ?>
-            <div id="footer-bottom" class="cell">
-                <?php if ($page['footer_bottom']) : ?>
-                    <?php print render($page['footer_bottom']); ?>
-                <?php endif; ?>
-
-                <?php if ($copyright): ?>
-                    <div id="copyright"><?php print $copyright; ?></div>
-                <?php endif; ?>
+        <?php if (isset($main_menu)) : ?>
+            <div id="nav">
+                <?php print render($main_menu); ?>
             </div>
-            <!-- /#footer-bottom -->
         <?php endif; ?>
+        <?php print render($page['header']); ?>
     </div>
-    <!-- /#page-wrap-->
+    <!-- /#header -->
+
+    <div id="app">
+        <?php
+        print render($title_prefix);
+        //Error Details
+        print '<h1 id="page-title">' . $http_status . '</h1>';
+        print render($title_suffix);
+
+        if ($action_links) {
+            print '<ul class="links">' . render($action_links) . '</ul>';
+        }
+        ?>
+        <div id="content-wrap">
+            <div id="content" class="<?php print $content_class; ?>">
+
+                <div class="error-message">
+                    <?php
+                    // Error message
+                    print $messages;
+                    ?>
+                </div>
+                <div id="alternative">
+                    <?php
+                    print render($search_box);
+                    ?>
+                </div>
+
+            </div>
+        </div>
+        <!-- /content-wrap-->
+    </div>
+    <!-- /app-->
+
+    <?php if ($page['footer_top'] || $copyright) : ?>
+        <div id="footer-top" class="cell">
+            <?php if ($page['footer_top']) : ?>
+                <?php print render($page['footer_top']); ?>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+
+    <div id="footer" class="cell">
+
+        <?php
+        if ($page['footer']) {
+            print render($page['footer']);
+        }
+        ?>
+    </div>
+    <!-- /#footer -->
+
+    <?php if ($page['footer_bottom'] || $copyright) : ?>
+        <div id="footer-bottom" class="cell">
+            <?php if ($page['footer_bottom']) : ?>
+                <?php print render($page['footer_bottom']); ?>
+            <?php endif; ?>
+
+            <?php if ($copyright): ?>
+                <div id="copyright"><?php print $copyright; ?></div>
+            <?php endif; ?>
+        </div>
+        <!-- /#footer-bottom -->
+    <?php endif; ?>
+</div>
+<!-- /#page-wrap-->
 <?php
 print "\n";
 

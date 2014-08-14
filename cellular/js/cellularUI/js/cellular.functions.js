@@ -21,6 +21,7 @@ cellular.deactivate = function() {
 };
 
 cellular.kidWrap = function() {
+    // Wrap element's children with index gt 0
     return this.each(function() {
         var $t = jQuery(this);
 
@@ -30,7 +31,18 @@ cellular.kidWrap = function() {
     });
 };
 
-/////
+cellular.classify = function($array) {
+    // Add array of classes to element
+    return this.each(function() {
+        var $t = jQuery(this);
+        var classes = $array.join(' ');
+
+        $t.addClass(classes);
+    });
+};
+
+
+/*////
 cellular.yPos = function() {
     return this.each(function() {
         var $t = jQuery(this);
@@ -44,3 +56,4 @@ cellular.loop = function($obj, fn) {
         $obj.next = $obj.siblings(0);
     }
 };
+*/

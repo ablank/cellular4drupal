@@ -9,9 +9,10 @@ $showDropdowns: true;
 @media screen {
     // Primary Navigation
     #nav {
+        position: absolute;
         margin: 2em 0 0 ($logo_width + 20px);
         padding: 0;
-        right: 0;
+
         ul {
             margin: 0;
         }
@@ -126,29 +127,6 @@ $showDropdowns: true;
     #nav {
         display: block;
         float: none;
-
-        &.jMmenu.mini {
-            cursor: pointer;
-            display: block;
-            z-index: 10;
-            width: 32px;
-            height: 32px;
-            background-image: url('../assets/icons/png/menu.png');
-
-            & > ul > li {
-                position: relative;
-                top: 32px;
-                width: 12em;
-                display: block;
-
-                & > ul {
-                    display: none;
-                }
-            }
-            a {
-                display: block;
-            }
-        }
 
         li: {
             margin: 0;

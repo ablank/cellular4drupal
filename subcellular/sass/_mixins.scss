@@ -1,7 +1,7 @@
 /////
 // Cellular::SASS Mixins
 //
-// tread with caution - here be dragons 
+// tread with caution
 //                      ^    ^
 //                     / \  //\
 //       |\___/|      /   \//  \
@@ -22,313 +22,313 @@
 /////
 
 @mixin prefix($name, $value) {
-  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
-    #{$vendor}#{$name}: #{$value};
-  }
+    @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+        #{$vendor}#{$name}: #{$value};
+    }
 }
 
 @mixin clearfix() {
-  zoom: 1;
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
+    zoom: 1;
+    &:before,
+        &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 @mixin overlay($color) {
-  $opacity: 0.8;
+    $opacity: 0.8;
 
-  background-color: adjust-saturation($color, -($opacity * 10));
-  background-color: rgba($color, $opacity);
-  @if lightness($color) < 50% {
-    color: darken($color, 70%);
-    h2,
-    h3,
-    h4 {
-      color: darken($color, 50%);
+    background-color: adjust-saturation($color, -($opacity * 10));
+    background-color: rgba($color, $opacity);
+    @if lightness($color) < 50% {
+        color: darken($color, 70%);
+        h2,
+        h3,
+        h4 {
+            color: darken($color, 50%);
+        }
+        p {
+            color: darken($color, 70%);
+        }
+    } @else {
+        color: lighten($color, 70%);
+        h2,
+        h3,
+        h4 {
+            color: lighten($color, 50%);
+        }
+        p {
+            color: lighten($color, 70%);
+        }
     }
-    p {
-      color: darken($color, 70%);
-    }
-  } @else {
-    color: lighten($color, 70%);
-    h2,
-    h3,
-    h4 {
-      color: lighten($color, 50%);
-    }
-    p {
-      color: lighten($color, 70%);
-    }
-  }
 }
 
 @mixin uniquelinks() {
-  // Unique link styling
+    // Unique link styling
 
-  &:nth-child(1) a {
-    border-color: darken($hilight, 10%);
-  }
-  &:nth-child(2) a {
-    border-color: darken($hilight, 20%);
-  }
-  &:nth-child(3) a {
-    border-color: darken($hilight, 30%);
-  }
-  &:nth-child(4) a {
-    border-color: darken($hilight, 40%);
-  }
-  &:nth-child(5) a {
-    border-color: darken($hilight, 50%);
-  }
+    &:nth-child(1) a {
+        border-color: darken($hilight, 10%);
+    }
+    &:nth-child(2) a {
+        border-color: darken($hilight, 20%);
+    }
+    &:nth-child(3) a {
+        border-color: darken($hilight, 30%);
+    }
+    &:nth-child(4) a {
+        border-color: darken($hilight, 40%);
+    }
+    &:nth-child(5) a {
+        border-color: darken($hilight, 50%);
+    }
 
 }
 
 @mixin contrast($color) {
-  @if lightness($color) < 50% {
-    color: lighten($color, 70%);
-    p {
-      color: lighten($color, $adjust_large);
+    @if lightness($color) < 50% {
+        color: lighten($color, 70%);
+        p {
+            color: lighten($color, $adjust_large);
+        }
+    } @else {
+        color: darken($color, 70%);
+        p {
+            color: darken($color, $adjust_large);
+        }
     }
-  } @else {
-    color: darken($color, 70%);
-    p {
-      color: darken($color, $adjust_large);
-    }
-  }
 }
 
 @mixin checkbox() {
-  // apply pseudo selectors so old browsers still work
-  &:not(:checked),
-  &:checked {
-    position: absolute;
-    left: -999em;
-
-    + label {
-      position: relative;
-      cursor: pointer;
-      margin: 0;
-      padding: 0 0 0 2em;
-      vertical-align: middle;
-
-      &:before {
-        content: '';
+    // apply pseudo selectors so old browsers still work
+    &:not(:checked),
+        &:checked {
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 1.4em;
-        height: 1.4em;
-        vertical-align: middle;
-        background: $white;
-        border: $light_grey $border;
-        @include border-radius();
-        @include box-shadow(inset 0 1px 2px $light_grey);
-      }
-    }
-    &:checked {
-      + label {
-        &:before {
-          border-color: $dark_grey;
+        left: -999em;
+
+        + label {
+            position: relative;
+            cursor: pointer;
+            margin: 0;
+            padding: 0 0 0 2em;
+            vertical-align: middle;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1.4em;
+                height: 1.4em;
+                vertical-align: middle;
+                background: $white;
+                border: $light_grey $border;
+                @include border-radius();
+                @include box-shadow(inset 0 1px 2px $light_grey);
+            }
         }
-        &:after {
-          position: absolute;
-          left: .1em;
-          top: 0;
-          font-size: 1.4em;
-          color: $green;
+        &:checked {
+            + label {
+                &:before {
+                    border-color: $dark_grey;
+                }
+                &:after {
+                    position: absolute;
+                    left: .1em;
+                    top: 0;
+                    font-size: 1.4em;
+                    color: $green;
+                }
+            }
         }
-      }
-    }
-    &:focus {
-      + label {
-        &:before {
-          border: 1px dotted $blue;
+        &:focus {
+            + label {
+                &:before {
+                    border: 1px dotted $blue;
+                }
+            }
         }
-      }
-    }
-    &:disabled {
-      + label {
-        color: $light_grey;
-        &:before {
-          background: $light_grey;
-          color: $dark_grey;
+        &:disabled {
+            + label {
+                color: $light_grey;
+                &:before {
+                    background: $light_grey;
+                    color: $dark_grey;
+                }
+            }
         }
-      }
     }
-  }
 }
 
-@mixin textstroke($color: $c2, $size: .1em) {
-  text-shadow: -$size -$size 0 $color,
-  $size -$size 0 $color,
-  -$size $size 0 $color, $size $size 0 $color;
+@mixin textstroke($color: $c2, $size: 1px) {
+    text-shadow: -$size -$size 0 $color,
+        $size -$size 0 $color,
+        -$size $size 0 $color, $size $size 0 $color;
 }
 
 @mixin button() {
-  cursor: pointer;
-  display: inline;
-  display: inline-block;
-  font-family: $h_font;
-  font-weight: bold;
-  line-height: auto;
-  padding: $small $normal;
-  background-color: $hilight;
-  width: auto;
-  color: $c2;
-  border: darken($hilight, 20%) .2em solid;
-  @include border-radius();
-  &:visited {
+    cursor: pointer;
+    display: inline;
+    display: inline-block;
+    font-family: $h_font;
+    font-weight: bold;
+    line-height: auto;
+    padding: $small $normal;
+    background-color: $hilight;
+    width: auto;
     color: $c2;
-  }
-  &.active,
-  &:active,
-  &:hover {
-    background-color: darken($hilight, 20%);
-    border-color: $hilight;
-    text-decoration: none;
-  }
+    border: darken($hilight, 20%) .2em solid;
+    @include border-radius();
+    &:visited {
+        color: $c2;
+    }
+    &.active,
+    &:active,
+        &:hover {
+        background-color: darken($hilight, 20%);
+        border-color: $hilight;
+        text-decoration: none;
+    }
 }
 
 @mixin link($color) {
-  color: $color;
-  &:visited {
-    color: darken($color, 15%);
-  }
-  &:active,
-  &:hover,
-  &:focus {
-    color: lighten($color, 15%);
-  }
+    color: $color;
+    &:visited {
+        color: darken($color, 15%);
+    }
+    &:active,
+        &:hover,
+        &:focus {
+        color: lighten($color, 15%);
+    }
 }
 
 @mixin title {
-  background: $c1;
-  color: $c2;
-  text-decoration: none;
+    background: $c1;
+    color: $c2;
+    text-decoration: none;
 }
 
 // Fullscreen background image
 @mixin cover($url) {
-  background: url($url) no-repeat center center fixed;
-  @include prefix(background-size, cover);
+    background: url($url) no-repeat center center fixed;
+    @include prefix(background-size, cover);
 }
 
 // Horizontal Linear Gradient
 @mixin gradient_x($color_1: $c1, $color_2: $c2) {
-  background: $color_1;
-  @include prefix(background-image, linear-gradient(left, $color_1 0%, $color_2 100%));
-  background-image: linear-gradient(to right, $color_1 0%, $color_2 100%);
+    background: $color_1;
+    @include prefix(background-image, linear-gradient(left, $color_1 0%, $color_2 100%));
+    background-image: linear-gradient(to right, $color_1 0%, $color_2 100%);
 }
 
 // Vertical Linear Gradient
 @mixin gradient_y($color_1: $c1, $color_2: $c2) {
-  background: $color_1;
-  @include prefix(background-image, linear-gradient(top, $color_1 0%, $color_2 100%));
-  background-image: linear-gradient(to bottom, $color_1 0%, $color_2 100%);
+    background: $color_1;
+    @include prefix(background-image, linear-gradient(top, $color_1 0%, $color_2 100%));
+    background-image: linear-gradient(to bottom, $color_1 0%, $color_2 100%);
 }
 
 // Radial Gradient
 @mixin gradient_rad($color_1: $c1, $color_2: $c2) {
-  background: $color_1;
-  @include prefix(background-image, radial-gradient(center top, ellipse farthest-side, $color_1 0%, $color_2 100%));
-  background-image: radial-gradient(ellipse farthest-side at center top, $color_1 0%, $color_2 100%);
+    background: $color_1;
+    @include prefix(background-image, radial-gradient(center top, ellipse farthest-side, $color_1 0%, $color_2 100%));
+    background-image: radial-gradient(ellipse farthest-side at center top, $color_1 0%, $color_2 100%);
 }
 
 @mixin round($rad: $default-border-radius) {
-  @include prefix(border-radius, $rad);
+    @include prefix(border-radius, $rad);
 }
 
 @mixin round_top($rad: $default-border-radius) {
-  @include prefix(border-top-left-radius, $rad);
-  @include prefix(border-top-right-radius, $rad);
+    @include prefix(border-top-left-radius, $rad);
+    @include prefix(border-top-right-radius, $rad);
 }
 
 @mixin round_right($rad: $default-border-radius) {
-  @include prefix(border-top-right-radius, $rad);
-  @include prefix(border-bottom-right-radius, $rad);
+    @include prefix(border-top-right-radius, $rad);
+    @include prefix(border-bottom-right-radius, $rad);
 }
 
 @mixin round_bottom($rad: $default-border-radius) {
-  @include prefix(border-bottom-left-radius, $rad);
-  @include prefix(border-bottom-right-radius, $rad);
+    @include prefix(border-bottom-left-radius, $rad);
+    @include prefix(border-bottom-right-radius, $rad);
 }
 
 @mixin round_left($rad: $default-border-radius) {
-  @include prefix(border-top-left-radius, $rad);
-  @include prefix(border-bottom-left-radius, $rad);
+    @include prefix(border-top-left-radius, $rad);
+    @include prefix(border-bottom-left-radius, $rad);
 }
 
 @mixin tri_left($width: $normal, $height: $normal, $color: $c1) {
-  &:after {
-    content: "";
-    position: absolute;
-    left: -$width;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-top: ($height/2) solid transparent;
-    border-bottom: ($height/2) solid transparent;
-    border-right: $width solid $color;
-  }
+    &:after {
+        content: "";
+        position: absolute;
+        left: -$width;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: ($height/2) solid transparent;
+        border-bottom: ($height/2) solid transparent;
+        border-right: $width solid $color;
+    }
 }
 
 @mixin tri_right($width: $normal, $height: $normal, $color: $c1) {
-  &:after {
-    content: "";
-    position: absolute;
-    right: -$width;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-top: ($height/2) solid transparent;
-    border-bottom: ($height/2) solid transparent;
-    border-left: $width solid $color;
-  }
+    &:after {
+        content: "";
+        position: absolute;
+        right: -$width;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: ($height/2) solid transparent;
+        border-bottom: ($height/2) solid transparent;
+        border-left: $width solid $color;
+    }
 }
 
 @mixin ribbon($width: $normal, $height: $normal, $color: $c1) {
-  position: relative;
-  margin: 0 auto $height;
-  padding: 0 $width;
-  border-bottom: darken($color, 10%) 1px solid;
-  background-color: $color;
-  &:before,
-  &:after {
-    content: " ";
-    position: absolute;
-    bottom: -$height;
-    border-top: darken($color, 10%) $height solid;
-  }
-  &:before {
-    left: 0;
-    border-left: $width solid transparent;
-  }
-  &:after {
-    right: 0;
-    border-right: $width solid transparent;
-  }
+    position: relative;
+    margin: 0 auto $height;
+    padding: 0 $width;
+    border-bottom: darken($color, 10%) 1px solid;
+    background-color: $color;
+    &:before,
+        &:after {
+        content: " ";
+        position: absolute;
+        bottom: -$height;
+        border-top: darken($color, 10%) $height solid;
+    }
+    &:before {
+        left: 0;
+        border-left: $width solid transparent;
+    }
+    &:after {
+        right: 0;
+        border-right: $width solid transparent;
+    }
 }
 
 @mixin popout($width: $normal, $height: $normal, $color: $c1) {
-  position: relative;
-  margin: 0 0 $height 0;
-  padding: 0 $width;
-  background: $color;
-  border-bottom: darken($color, 10%) 1px solid;
-  &:after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -$height;
-    height: 0;
-    border-top: $height solid darken($color, 30%);
-    border-left: $width solid transparent;
-    border-right: $width solid transparent;
-  }
+    position: relative;
+    margin: 0 0 $height 0;
+    padding: 0 $width;
+    background: $color;
+    border-bottom: darken($color, 10%) 1px solid;
+    &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -$height;
+        height: 0;
+        border-top: $height solid darken($color, 30%);
+        border-left: $width solid transparent;
+        border-right: $width solid transparent;
+    }
 }

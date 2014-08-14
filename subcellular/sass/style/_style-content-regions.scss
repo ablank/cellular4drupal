@@ -9,12 +9,12 @@ $region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 
 //////
 
 body {
-  background-color: $c2;
-  //background-image: $body_img;
-  //@include gradient_rad($c2, $c2, $light_grey);
-  //background-repeat: repeat;
-  //background-attachment: fixed;
-  
+    background-color: $c2;
+    //background-image: $body_img;
+    //@include gradient_rad($c2, $c2, $light_grey);
+    //background-repeat: repeat;
+    //background-attachment: fixed;
+
 }
 
 #page-wrap {
@@ -34,114 +34,114 @@ body {
 #footer_left,
 #footer-right,
 #footer-middle {
-  margin: $region_margin;
-  padding: $region_padding;
-  border: $region_border;
+    margin: $region_margin;
+    padding: $region_padding;
+    border: $region_border;
 }
 
 #header-top {
-  z-index: 4;
-  background: darken($hilight, 20%);
-  color: $c2;
-  border-bottom: $c1 $border;
-  // Position contents left or right
-  text-align: right;
-  @include clearfix();
-  // Custom type for region
-  div {
-    display: inline;
-  }
-  h2,
-  h3,
-  h4 {
-    color: lighten($hilight, 20%);
-    font-size: $normal;
-    display: inline;
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    z-index: 4;
+    background: darken($hilight, 20%);
+    color: $c2;
+    border-bottom: $c1 $border;
+    // Position contents left or right
+    text-align: right;
+    @include clearfix();
+    // Custom type for region
+    div {
+        display: inline;
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2,
+    h3,
+    h4 {
+        color: lighten($hilight, 20%);
+        font-size: $normal;
+        display: inline;
     }
-  }
+    h2 {
+    }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #header {
-  z-index: 2;
-  height: 72px;
-  padding: .8em;
-  background: #AAA;
-  background: rgba($c1, 0.4);
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    z-index: 2;
+    height: 72px;
+    padding: .8em;
+    background: #AAA;
+    background: rgba($c1, 0.4);
+    // Custom type for region
+    h2,
+    h3,
+    h4 {
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2 {
     }
-  }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #header-bottom {
-  height: 32px;
-  // background: darken($hilight, 20%);
-  color: $c2;
-  border-bottom: $c1 $border;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    height: 32px;
+    // background: darken($hilight, 20%);
+    color: $c2;
+    border-bottom: $c1 $border;
+    // Custom type for region
+    h2,
+    h3,
+    h4 {
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2 {
     }
-  }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #app {
-  z-index: 1;
-  overflow: visible;
+    z-index: 1;
+    overflow: visible;
 }
 
 #content-position {
-  display: block;
-  margin: 0 auto;
-  max-width: 1200px;
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 #content-wrap {
@@ -151,73 +151,73 @@ body {
 }
 
 #content-top {
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    // Custom type for region
+    h2,
+    h3,
+    h4 {
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2 {
     }
-  }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #content,
 #sidebar-left,
 #sidebar-right,
 #footer {
-  position: relative;
-  float: left;
-  display: block;
+    position: relative;
+    float: left;
+    display: block;
 }
 
 #content {
-  z-index: 2;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    z-index: 2;
+    // Custom type for region
+    h2,
+    h3,
+    h4 {
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2 {
     }
-  }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #comments {
-  text-align: center;
-  form {
-    text-align: left;
-  }
+    text-align: center;
+    form {
+        text-align: left;
+    }
 }
 
 #sidebar-left,
 #sidebar-right {
-  background: $light_grey;
+    background: $light_grey;
 }
 
 #sidebar-left {
@@ -230,31 +230,31 @@ body {
 }
 
 #footer {
-  background: $dark_grey;
-  color: $c2;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
+    background: $dark_grey;
     color: $c2;
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-    color: $c2;
-  }
-  a {
-    &:visited {
+    // Custom type for region
+    h2,
+    h3,
+    h4 {
+        color: $c2;
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2 {
     }
-  }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+        color: $c2;
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #footer_left,
@@ -272,73 +272,73 @@ body {
 }
 
 #footer-bottom {
-  font-size: $small;
-  background: $dark_grey;
-  color: $light_grey;
-  border-top: $border;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    font-size: $small;
+    background: $dark_grey;
+    color: $light_grey;
+    border-top: $border;
+    // Custom type for region
+    h2,
+    h3,
+    h4 {
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2 {
     }
-  }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }
 
 #copyright {
-  padding: $small $big $small;
-  text-align: right;
-  font-weight: bold;
+    padding: $small $big $small;
+    text-align: right;
+    font-weight: bold;
 }
 
 #social-media-follow,
 #social-media-share {
-  position: relative;
-  width: 100%;
-  padding: 0 0 1em 0;
-  background: $c2;
-  border-top: $dark_grey 1em solid;
-  overflow: hidden;
-  form {
-    margin: 0;
-    padding: 0;
-    display: inline;
-  }
-  h2,
-  h3,
-  h4 {
-    font-size: $normal;
-    font-weight: bold;
-    margin: 0;
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
-  p {
-  }
-  a {
-    &:visited {
+    position: relative;
+    width: 100%;
+    padding: 0 0 1em 0;
+    background: $c2;
+    border-top: $dark_grey 1em solid;
+    overflow: hidden;
+    form {
+        margin: 0;
+        padding: 0;
+        display: inline;
     }
-    &:focus,
-    &:hover,
-    &:active {
+    h2,
+    h3,
+    h4 {
+        font-size: $normal;
+        font-weight: bold;
+        margin: 0;
     }
-  }
+    h2 {
+    }
+    h3 {
+    }
+    h4 {
+    }
+    p {
+    }
+    a {
+        &:visited {
+        }
+        &:focus,
+            &:hover,
+            &:active {
+        }
+    }
 }

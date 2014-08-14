@@ -2,13 +2,13 @@
 Cellular :: mobile
 *****/
 @media screen and (max-width: 650px) {
-  /* line 14, ../sass/conditional-mobile.scss */
-  #content-wrap {
-    padding: 1em 0;
-  }
+    /* line 14, ../sass/conditional-mobile.scss */
+    #content-wrap {
+        padding: 1em 0;
+    }
 
-  /* line 18, ../sass/conditional-mobile.scss */
-  #header {
-    height: auto;
-  }
+    /* line 18, ../sass/conditional-mobile.scss */
+    #header {
+        height: auto;
+    }
 }

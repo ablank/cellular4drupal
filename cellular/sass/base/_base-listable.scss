@@ -7,11 +7,11 @@ hr {
     margin: $p_size 0;
     height: 1px;
     border: none;
-background-image: -webkit-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
-background-image: -moz-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
-background-image: -ms-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
-background-image: -o-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
-background-image: linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -webkit-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -moz-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -ms-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -o-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
 }
 
 /////

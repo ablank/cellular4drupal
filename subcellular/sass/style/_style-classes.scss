@@ -4,18 +4,49 @@
 //////
 
 /////
+// Icons
+/////
+.icon {
+    display: inline;
+    display: inline-block;
+    width: $icon_size;
+    height: $icon_size;
+    text-indent: -999em;
+    margin: 1em;
+    padding: $icon_padding;
+    vertical-align: middle;
+    background-color: $white;
+    background-position: $icon_padding $icon_padding;
+    background-repeat: no-repeat;
+    background-color: none;
+    border: 1px solid $light_grey;
+    @include border-radius();
+
+    &:hover {
+        border-color: $hilight;
+    }
+
+    &.social {
+    }
+
+    &.search {
+        text-indent: 0;
+    }
+}
+
+/////
 // Image Gallery
 /////
 .gallery {
-  text-align: center;
-  background: $dark_grey;
+    text-align: center;
+    background: $dark_grey;
 
-  div,
-  a,
-  img {
-    display: inline;
-    margin: 0 auto;
-  }
+    div,
+    a,
+    img {
+        display: inline;
+        margin: 0 auto;
+    }
 
 }
 
@@ -23,23 +54,67 @@
 // Misc. styles
 /////
 .dropCap:first-letter {
-  font-size: 1.3em;
-  font-weight: bold;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .textShadow {
-  text-shadow: 1px 1px 3px $dark_grey;
+    text-shadow: 1px 1px 3px $dark_grey;
 }
 
 /////
 // Pseudo 3D Styles
 /////
+
+/////
+// Page curl effect
+/////
+.box-shadow {
+    //max-width: 720px; // constrain width to prevent pseudo elements from showing outside of box
+    margin: 0 auto;
+    padding: 3em 1.4em;
+    background-color: $c2;
+    @include box-shadow(inset 0 0 .3em 0 $light_grey);
+
+    &:before, &:after {
+        position: absolute;
+        width: 40%;
+        height: 1em;
+        content: ' ';
+        left: 1.2em;
+        bottom: .8em;
+        background: transparent;
+        -webkit-transform: skew(-5deg) rotate(-5deg);
+        -moz-transform: skew(-5deg) rotate(-5deg);
+        -ms-transform: skew(-5deg) rotate(-5deg);
+        -o-transform: skew(-5deg) rotate(-5deg);
+        transform: skew(-5deg) rotate(-5deg);
+        -webkit-box-shadow: 0 6px 12px rgba($light_grey, 0.3);
+        -moz-box-shadow: 0 6px 12px rgba($light_grey, 0.3);
+        box-shadow: 0 6px 12px rgba($light_grey, 0.3);
+        z-index: -1;
+    }
+
+    &:after
+        {
+        left: auto;
+        right: 12px;
+        -webkit-transform: skew(5deg) rotate(5deg);
+        -moz-transform: skew(5deg) rotate(5deg);
+        -ms-transform: skew(5deg) rotate(5deg);
+        -o-transform: skew(5deg) rotate(5deg);
+        transform: skew(5deg) rotate(5deg);
+    }
+}
+
+/*
 .ribbon {
-  @include ribbon(1.2em, 1em, $c1);
-  color: $c2;
+    @include ribbon(1.2em, 1em, $c1);
+    color: $c2;
 }
 
 .popout {
-  @include popout(1.2em, 1em, $c1);
-  color: $c2;
+    @include popout(1.2em, 1em, $c1);
+    color: $c2;
 }
+*/

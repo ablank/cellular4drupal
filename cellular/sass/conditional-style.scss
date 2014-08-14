@@ -1,0 +1,43 @@
+/*****
+Cellular :: conditional-style
+Dynamically loaded styling for larger screens.
+
+(c) 2012 Adam Blankenship
+www.abctahoe.net
+*****/
+//////
+@import "variables";
+/////
+
+@media screen and (min-width: $res_mobile) and (max-width: $res_large) {
+    body {
+        // background: url(../assets/images/large-background-body.png) no-repeat;
+    }
+
+    #header {
+        // background: url(../assets/images/large-background-header.png) no-repeat;
+    }
+
+    #logo {
+
+        &:hover {
+        }
+        & > a {
+        }
+    }
+
+    #app {
+    }
+
+    #content-wrap {
+    }
+    #content {
+    }
+
+    #sidebar-left,
+    #sidebar-right {
+    }
+    #footer {
+
+    }
+}

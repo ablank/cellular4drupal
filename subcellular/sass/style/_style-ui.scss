@@ -4,149 +4,207 @@
 //////
 
 .cellular {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  //max-width: 50em;
-  .title {
-    cursor: pointer;
-    margin: 0;
-    padding: $small $normal;
-    background: $c1;
-    color: $c2;
-    &:hover {
-      background: $hilight;
-    }
-  }
-  .content {
+    /////
+    // Set appearance common to all UI elements
+    /////
+    position: relative;
     display: block;
-    border: $light_grey .1em solid;
-    margin: 0;
-    padding: $normal;
-  }
-  .panel {
-    display: block;
-    margin: 0;
-    padding: $normal;
-    background: $c2;
-    border: $light_grey .1em solid;
-    border-top: $grey .1em solid;
-  }
-  .active {
-    .title {
-      background: $hilight;
-    }
-  }
-  &.next,
-  &.back {
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: block;
-    width: 3em;
-    color: $c2;
-    @include overlay($black);
-  }
-  &.next {
-    right: 0
-  }
-  &.back {
-    left: 0
-  }
-  
-  &.jBlocklink {
-    display: block;
-    background: $c2;
-    color: $c2;
-    @include box-shadow(0 0 $tiny $tiny $shadow);
-    @include transition();
-    h3 {
-      margin: 0;
-      padding: 0;
-      border: none;
-      line-height: 1.4em;
-      text-align: center;
-      font-weight: bold;
-      a {
-        display: block;
-        padding: .2em 0 .3em 0;
-        background: $c1;
-        color: $c2;
-        &.active a,
-        &:active,
-        &:hover,
-        &:focus {
-          background: $yellow;
-        }
-        &:visited {
-          color: $c2;
-        }
-      }
-    }
-    &:hover,
-    &.active {
-      color: $dark_grey;
-      @include box-shadow(inset 0 0 0.1em $shadow);
-    }
-    &:hover {
-      @include box-shadow(0 0 .25em .25em $hilight);
-      h3 a {
-        background: $hilight;
-      }
-    }
-    &.active a,
-    a:active,
-    a:hover,
-    a:focus {
-      text-decoration: none;
-    }
-    img {
-      background: transparent;
-      //@include transition();
-    }
-    p {
-      color: $dark_grey;
-    }
-  }
-
-  &.jTabs {
-  display: block;
-  clear: both;
-  margin: 0;
-  padding: $normal 0 0 $big;
-  background-color: $light_grey;
-  li,
-  .tab,
-  .title {
-    display: inline;
+    margin: 0 auto;
+    padding: 0;
     list-style: none;
-    .content {
+    //max-width: 50em;
+
+    li {
+        max-width: 90%;
     }
-    a,
-    a:visited {
-      font-weight: bold;
-      line-height: $big;
-      padding: $small $normal .2em;
-      background: $grey;
-      color: $c2;
-      border: $light_grey $border;
-      border-bottom: none;
-      @include round_top($tiny);
-      &:hover {
-        background: $hilight;
-      }
-      &:active,
-      &.active {
-        background: $c2;
-        color: $dark_grey;
-      }
+
+    .title {
+        cursor: pointer;
+        margin: 0;
+        max-width: 100%;
+        padding: $small $normal;
+        background: $black;
+        color: $white;
+        @include transition();
+
+        &:hover {
+            background: darken($hilight, 10%);
+        }
+        a,
+        a:visited {
+            font-weight: bold;
+            line-height: $big;
+            color: $white;
+            border: none;
+            text-decoration: none;
+
+            &:hover,
+                &:active,
+                &.active {
+                border: none;
+                text-decoration: none;
+            }
+        }
     }
-  }
+
+    .panel {// Area content is displayed in accordions & tabs
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: $normal;
+            background-color: $white;
+            color: $dark_grey;
+            border: .1em solid;
+    }
+
+    /////
+    // Set appearance of active UI elements
+    /////
+    .active {
+
+        .title {
+            background: $hilight;
+        }
+    }
+
+    /////
+    // Set appearance of individual UI elements
+    /////
+    &.jAccordion {
+
+        li {
+            margin: 0 auto .1em;
+        }
+
+        .title {
+            padding-left: 32px;
+            background-image: url(../assets/icons/svg/plus.svg);
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: 1% center; 
+        }
+        .panel {
+        }
+
+        .active {
+            .title {
+                background-image: url(../assets/icons/svg/minus.svg);
+            }
+        }
+    }
+
+    &.jBlocklink {
+        display: inline-block;
+        vertical-align: top;
+        margin: 1em;
+        color: $light_grey;
+        @include transition();
+        @include box-shadow(0 0 .1em .1em $light_grey);
+
+        &.active,
+        &:active,
+            &:hover,
+            &:focus {
+            color: $dark_grey;
+            text-decoration: none;
+            @include box-shadow(0 0 .3em .3em $light_grey);
+
+        }
+        img {
+            //@include transition();
+        }
+        p {
+        }
+    }
+
+    &.jMmenu{
+
+        &.mini {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            display: block;
+            cursor: pointer;
+            z-index: 10;
+            width: 3em;
+            height: 3em;
+            padding: 1em;
+            background-image: url('../assets/icons/png/menu.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            border:1px solid;
+
+
+            & > ul {
+
+                & > li {
+                    position: relative;
+                    top: 32px;
+                    right: 0;
+                    width: 12em;
+                    display: block;
+
+                    & > ul {
+                        display: none;
+                    }
+                }
+            }
+            a {
+                display: block;
+            }
+        }
+    }
+
+    &.jScrolli {
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 1em;
+        }
+    }
+
+    &.jTabs {
+        display: block;
+        clear: both;
+        margin: 0;
+        padding: $normal 0 ;
+        // background-color: $light_grey;
+        li,
+        .tab,
+        .title {
+            display: inline;
+            list-style: none;
+            margin: 0 0.1em 0 0;
+        }
+        .panel {
+        }
+    }
 }
-}
+/*
+
+    &.next,
+    &.back {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: block;
+        width: 3em;
+        color: $c2;
+        background-color: $dark_grey;
+        background-color: rgba($dark_grey, 0.6);
+    }
+    &.next {
+        right: 0
+    }
+    &.back {
+        left: 0
+    }
 
 .jcarousel-clip {
     display: block;
@@ -159,47 +217,48 @@
 }
 
 .jcarousel-item-placeholder {
-  background: #fff $loading no-repeat center center;
-  color: #000;
+    background: #fff $loading no-repeat center center;
+    color: #000;
 }
 .jcarousel-item {
-  width: 33%
+    width: 33%
 }
 
 .jcarousel-navigation {
-  text-align: center;
+    text-align: center;
 
-  li {
-    display: inline;
-    list-style: none;
-    border: $light_grey 1px solid;
+    li {
+        display: inline;
+        list-style: none;
+        border: $light_grey 1px solid;
 
-    a {
-      padding: .4em 1em;
+        a {
+            padding: .4em 1em;
+        }
     }
-  }
 }
 .jcarousel-next,
 .jcarousel-prev {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3em;
-  background-color: rgba($light_grey, 0.4);
-  background-image: url('../assets/images/svg/carousel-arrows.svg');
-  background-repeat: no-repeat;
-  background-size: auto 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+    background-color: rgba($light_grey, 0.4);
+    background-image: url('../assets/images/svg/carousel-arrows.svg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 
-  &:hover,
- :focus {
-    background-color: rgba($grey, 0.5);
-  }
+    &:hover,
+        :focus {
+        background-color: rgba($grey, 0.5);
+    }
 }
 .jcarousel-next {
-  right: 0;
-  background-position: right center;
+    right: 0;
+    background-position: right center;
 }
 .jcarousel-prev {
-  left: 0;
-  background-position: left center;
+    left: 0;
+    background-position: left center;
 }
+*/

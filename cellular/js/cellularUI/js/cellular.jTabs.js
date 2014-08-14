@@ -5,42 +5,53 @@ cellular.jTabs = function(opts) {
     }, opts);
 
     var fn = {};
-    fn.style = function($obj) {
-        //Add element to display content
-        $obj.addClass(cellular.opts.cclass)
-                .append('<div class="panel" />');
-    };
+
     fn.showContent = function(li) {
         //Content
         var c = li.find('.content');
         //Display
-        var pan = li.parent().find('.panel');
+        var pan = li.parent().find('.panel-content');
 
         li.activate();
-        pan.html(c.html());
+        pan.fadeOut('normal', function() {
+            jQuery(this).html(c.html())
+                    .fadeIn('normal');
+        });
     };
 
     return this.each(function() {
+
         var $obj = jQuery(this);
         var tab = $obj.find('> li');
 
-        fn.style($obj);
-        //Add classes/functions to each panel
-        tab.addClass('tab')
-                .each(function() {
-                    var li = jQuery(this);
-                    var con = li.children();
+        $obj.once('jTabs', function() {
+            
+            $obj.addClass(cellular.opts.cclass)
+                    .append('<div class="' + cellular.opts.cclass + ' panel" />');
+            $obj.find('.panel').append('<div class="panel-content" />');
 
-                    li.kidWrap();
-                    //Set 1st child as title
-                    li.children().eq(0).addClass('title')
-                            .click(function() {
-                                fn.showContent(li);
-                            });
-                    //Set 2nd child as content
-                    li.children().eq(1).addClass('content')
-                            .hide();
-                });
+            tab.each(function() {
+                var li = jQuery(this);
+
+                li.addClass('tab')
+                    .kidWrap();
+                //Set 1st child as title
+                li.children().eq(0).addClass('title');
+                //Set 2nd child as content
+                li.children().eq(1).addClass('content')
+                        .hide();
+            });
+        });
+
+        //Add classes/functions to each panel
+        tab.each(function() {
+            var li = jQuery(this);
+
+            li.click(function(e) {
+                e.preventDefault();
+                fn.showContent(li);
+            });
+        });
 
         //Set default content
         fn.showContent(tab.eq([o.active]));

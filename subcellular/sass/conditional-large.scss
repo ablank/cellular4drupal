@@ -11,34 +11,34 @@ www.abctahoe.net
 /////
 
 @media screen and (min-width: $res_large) {
-  body {
-    // background: url(../assets/images/large-background-body.png) no-repeat;
-  }
-
-  #header {
-    // background: url(../assets/images/large-background-header.png) no-repeat;
-  }
-
-  #logo {
-
-    &:hover {
+    body {
+        // background: url(../assets/images/large-background-body.png) no-repeat;
     }
-    & > a {
+
+    #header {
+        // background: url(../assets/images/large-background-header.png) no-repeat;
     }
-  }
 
-  #app {
-  }
+    #logo {
 
-  #content-wrap {
-  }
-  #content {
-  }
+        &:hover {
+        }
+        & > a {
+        }
+    }
 
-  #sidebar-left,
-  #sidebar-right {
-  }
-  #footer {
+    #app {
+    }
 
-  }
+    #content-wrap {
+    }
+    #content {
+    }
+
+    #sidebar-left,
+    #sidebar-right {
+    }
+    #footer {
+
+    }
 }

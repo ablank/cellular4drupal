@@ -15,12 +15,14 @@ cellular.jScrolltrigger = function(opts) {
         w.hgt = $w.height();
         w.pos = $w.scrollTop();
 
-        $w.scroll(cellular.jScrolltrigger);
-
         var $t = jQuery(this);
         var t = {};
         t.hgt = $t.height();
         t.pos = $t.scrollTop();
+
+        if (w.pos - w.hgt >= t.pos) {
+            $t.fn.trigger();
+        }
 
         var trig = {};
         trig.top = function() {

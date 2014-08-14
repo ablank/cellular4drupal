@@ -1,380 +1,363 @@
 /* ****
 Cellular :: SVG icons
 **** */
-/* line 6, ../sass/icons-svg.scss */
-.icon {
-  display: inline;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  text-indent: -999em;
-  padding: 10px;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  background-color: none;
-}
-/* line 17, ../sass/icons-svg.scss */
-.icon:hover {
-  background-color: #29b4de;
-}
-/* line 24, ../sass/icons-svg.scss */
+/* line 7, ../sass/icons-svg.scss */
 .icon.search {
   background-image: url("../assets/icons/svg/search.svg");
-  text-indent: 0;
 }
-/* line 29, ../sass/icons-svg.scss */
+/* line 11, ../sass/icons-svg.scss */
 .icon.android {
   background-image: url("../assets/icons/svg/android.svg");
 }
-/* line 34, ../sass/icons-svg.scss */
+/* line 16, ../sass/icons-svg.scss */
 .icon.angular {
   background-image: url("../assets/icons/svg/angular.svg");
 }
-/* line 39, ../sass/icons-svg.scss */
+/* line 21, ../sass/icons-svg.scss */
 .icon.apple {
   background-image: url("../assets/icons/svg/apple.svg");
 }
-/* line 44, ../sass/icons-svg.scss */
+/* line 26, ../sass/icons-svg.scss */
 .icon.arrow-down {
   background-image: url("../assets/icons/svg/arrow-down.svg");
 }
-/* line 49, ../sass/icons-svg.scss */
+/* line 31, ../sass/icons-svg.scss */
 .icon.arrow-left {
   background-image: url("../assets/icons/svg/arrow-left.svg");
 }
-/* line 54, ../sass/icons-svg.scss */
+/* line 36, ../sass/icons-svg.scss */
 .icon.arrow-light-up {
   background-image: url("../assets/icons/svg/arrow-light-up.svg");
 }
-/* line 59, ../sass/icons-svg.scss */
+/* line 41, ../sass/icons-svg.scss */
 .icon.arrow-right {
   background-image: url("../assets/icons/svg/arrow-right.svg");
 }
-/* line 64, ../sass/icons-svg.scss */
+/* line 46, ../sass/icons-svg.scss */
 .icon.arrow-up {
   background-image: url("../assets/icons/svg/arrow-up.svg");
 }
-/* line 69, ../sass/icons-svg.scss */
+/* line 51, ../sass/icons-svg.scss */
 .icon.arrow-w-down {
   background-image: url("../assets/icons/svg/arrow-w-down.svg");
 }
-/* line 74, ../sass/icons-svg.scss */
+/* line 56, ../sass/icons-svg.scss */
 .icon.arrow-w-left {
   background-image: url("../assets/icons/svg/arrow-w-left.svg");
 }
-/* line 79, ../sass/icons-svg.scss */
+/* line 61, ../sass/icons-svg.scss */
 .icon.arrow-w-right {
   background-image: url("../assets/icons/svg/arrow-w-right.svg");
 }
-/* line 84, ../sass/icons-svg.scss */
+/* line 66, ../sass/icons-svg.scss */
 .icon.arrow-w-up {
   background-image: url("../assets/icons/svg/arrow-w-up.svg");
 }
-/* line 89, ../sass/icons-svg.scss */
+/* line 71, ../sass/icons-svg.scss */
 .icon.audio {
   background-image: url("../assets/icons/svg/audio.svg");
 }
-/* line 94, ../sass/icons-svg.scss */
+/* line 76, ../sass/icons-svg.scss */
 .icon.camera {
   background-image: url("../assets/icons/svg/camera.svg");
 }
-/* line 99, ../sass/icons-svg.scss */
+/* line 81, ../sass/icons-svg.scss */
 .icon.cart {
   background-image: url("../assets/icons/svg/cart.svg");
 }
-/* line 104, ../sass/icons-svg.scss */
+/* line 86, ../sass/icons-svg.scss */
 .icon.cell-phone {
   background-image: url("../assets/icons/svg/cell-phone.svg");
 }
-/* line 109, ../sass/icons-svg.scss */
+/* line 91, ../sass/icons-svg.scss */
 .icon.cell {
   background-image: url("../assets/icons/svg/cell.svg");
 }
-/* line 114, ../sass/icons-svg.scss */
+/* line 96, ../sass/icons-svg.scss */
 .icon.chat {
   background-image: url("../assets/icons/svg/chat.svg");
 }
-/* line 119, ../sass/icons-svg.scss */
+/* line 101, ../sass/icons-svg.scss */
 .icon.chrome {
   background-image: url("../assets/icons/svg/chrome.svg");
 }
-/* line 124, ../sass/icons-svg.scss */
+/* line 106, ../sass/icons-svg.scss */
 .icon.cloud {
   background-image: url("../assets/icons/svg/cloud.svg");
 }
-/* line 129, ../sass/icons-svg.scss */
+/* line 111, ../sass/icons-svg.scss */
 .icon.creativecommons {
   background-image: url("../assets/icons/svg/creativecommons.svg");
 }
-/* line 134, ../sass/icons-svg.scss */
+/* line 116, ../sass/icons-svg.scss */
 .icon.css3 {
   background-image: url("../assets/icons/svg/css3.svg");
 }
-/* line 139, ../sass/icons-svg.scss */
+/* line 121, ../sass/icons-svg.scss */
 .icon.delicious {
   background-image: url("../assets/icons/svg/delicious.svg");
 }
-/* line 144, ../sass/icons-svg.scss */
+/* line 126, ../sass/icons-svg.scss */
 .icon.desktop {
   background-image: url("../assets/icons/svg/desktop.svg");
 }
-/* line 149, ../sass/icons-svg.scss */
+/* line 131, ../sass/icons-svg.scss */
 .icon.digg {
   background-image: url("../assets/icons/svg/digg.svg");
 }
-/* line 154, ../sass/icons-svg.scss */
+/* line 136, ../sass/icons-svg.scss */
 .icon.doc {
   background-image: url("../assets/icons/svg/doc.svg");
 }
-/* line 159, ../sass/icons-svg.scss */
+/* line 141, ../sass/icons-svg.scss */
 .icon.drupal {
   background-image: url("../assets/icons/svg/drupal.svg");
 }
-/* line 164, ../sass/icons-svg.scss */
+/* line 146, ../sass/icons-svg.scss */
 .icon.email {
   background-image: url("../assets/icons/svg/email.svg");
 }
-/* line 169, ../sass/icons-svg.scss */
+/* line 151, ../sass/icons-svg.scss */
 .icon.eye {
   background-image: url("../assets/icons/svg/eye.svg");
 }
-/* line 174, ../sass/icons-svg.scss */
+/* line 156, ../sass/icons-svg.scss */
 .icon.facebook {
   background-image: url("../assets/icons/svg/facebook.svg");
 }
-/* line 179, ../sass/icons-svg.scss */
+/* line 161, ../sass/icons-svg.scss */
 .icon.film {
   background-image: url("../assets/icons/svg/film.svg");
 }
-/* line 184, ../sass/icons-svg.scss */
+/* line 166, ../sass/icons-svg.scss */
 .icon.firefox {
   background-image: url("../assets/icons/svg/firefox.svg");
 }
-/* line 189, ../sass/icons-svg.scss */
+/* line 171, ../sass/icons-svg.scss */
 .icon.flickr {
   background-image: url("../assets/icons/svg/flickr.svg");
 }
-/* line 194, ../sass/icons-svg.scss */
+/* line 176, ../sass/icons-svg.scss */
 .icon.folder {
   background-image: url("../assets/icons/svg/folder.svg");
 }
-/* line 199, ../sass/icons-svg.scss */
+/* line 181, ../sass/icons-svg.scss */
 .icon.gear {
   background-image: url("../assets/icons/svg/gear.svg");
 }
-/* line 204, ../sass/icons-svg.scss */
+/* line 186, ../sass/icons-svg.scss */
 .icon.github-octo {
   background-image: url("../assets/icons/svg/github-octo.svg");
 }
-/* line 209, ../sass/icons-svg.scss */
+/* line 191, ../sass/icons-svg.scss */
 .icon.globe {
   background-image: url("../assets/icons/svg/globe.svg");
 }
-/* line 214, ../sass/icons-svg.scss */
+/* line 196, ../sass/icons-svg.scss */
 .icon.google {
   background-image: url("../assets/icons/svg/google.svg");
 }
-/* line 219, ../sass/icons-svg.scss */
+/* line 201, ../sass/icons-svg.scss */
 .icon.hi5 {
   background-image: url("../assets/icons/svg/hi5.svg");
 }
-/* line 224, ../sass/icons-svg.scss */
+/* line 206, ../sass/icons-svg.scss */
 .icon.home {
   background-image: url("../assets/icons/svg/home.svg");
 }
-/* line 229, ../sass/icons-svg.scss */
+/* line 211, ../sass/icons-svg.scss */
 .icon.html5 {
   background-image: url("../assets/icons/svg/html5.svg");
 }
-/* line 234, ../sass/icons-svg.scss */
+/* line 216, ../sass/icons-svg.scss */
 .icon.internetexplorer {
   background-image: url("../assets/icons/svg/internetexplorer.svg");
 }
-/* line 239, ../sass/icons-svg.scss */
+/* line 221, ../sass/icons-svg.scss */
 .icon.jquery {
   background-image: url("../assets/icons/svg/jquery.svg");
 }
-/* line 244, ../sass/icons-svg.scss */
+/* line 226, ../sass/icons-svg.scss */
 .icon.js {
   background-image: url("../assets/icons/svg/js.svg");
 }
-/* line 249, ../sass/icons-svg.scss */
+/* line 231, ../sass/icons-svg.scss */
 .icon.key {
   background-image: url("../assets/icons/svg/key.svg");
 }
-/* line 254, ../sass/icons-svg.scss */
+/* line 236, ../sass/icons-svg.scss */
 .icon.laptop {
   background-image: url("../assets/icons/svg/laptop.svg");
 }
-/* line 259, ../sass/icons-svg.scss */
+/* line 241, ../sass/icons-svg.scss */
 .icon.linkedin {
   background-image: url("../assets/icons/svg/linkedin.svg");
 }
-/* line 264, ../sass/icons-svg.scss */
+/* line 246, ../sass/icons-svg.scss */
 .icon.linux {
   background-image: url("../assets/icons/svg/linux.svg");
 }
-/* line 269, ../sass/icons-svg.scss */
+/* line 251, ../sass/icons-svg.scss */
 .icon.lock {
   background-image: url("../assets/icons/svg/lock.svg");
 }
-/* line 274, ../sass/icons-svg.scss */
+/* line 256, ../sass/icons-svg.scss */
 .icon.logo {
   background-image: url("../assets/icons/svg/logo.svg");
 }
-/* line 279, ../sass/icons-svg.scss */
+/* line 261, ../sass/icons-svg.scss */
 .icon.mac {
   background-image: url("../assets/icons/svg/mac.svg");
 }
-/* line 284, ../sass/icons-svg.scss */
+/* line 266, ../sass/icons-svg.scss */
 .icon.magnify {
   background-image: url("../assets/icons/svg/magnify.svg");
 }
-/* line 289, ../sass/icons-svg.scss */
+/* line 271, ../sass/icons-svg.scss */
 .icon.mail {
   background-image: url("../assets/icons/svg/mail.svg");
 }
-/* line 294, ../sass/icons-svg.scss */
+/* line 276, ../sass/icons-svg.scss */
 .icon.mail2 {
   background-image: url("../assets/icons/svg/mail2.svg");
 }
-/* line 299, ../sass/icons-svg.scss */
+/* line 281, ../sass/icons-svg.scss */
 .icon.jMmenu, .icon.menu {
   background-image: url("../assets/icons/svg/menu.svg");
 }
-/* line 304, ../sass/icons-svg.scss */
+/* line 286, ../sass/icons-svg.scss */
 .icon.message-error {
   background-image: url("../assets/icons/svg/message-error.svg");
 }
-/* line 309, ../sass/icons-svg.scss */
+/* line 291, ../sass/icons-svg.scss */
 .icon.message-ok {
   background-image: url("../assets/icons/svg/message-ok.svg");
 }
-/* line 314, ../sass/icons-svg.scss */
+/* line 296, ../sass/icons-svg.scss */
 .icon.message-warning {
   background-image: url("../assets/icons/svg/message-warning.svg");
 }
-/* line 319, ../sass/icons-svg.scss */
+/* line 301, ../sass/icons-svg.scss */
 .icon.message_icon_error {
   background-image: url("../assets/icons/svg/message_icon_error.svg");
 }
-/* line 324, ../sass/icons-svg.scss */
+/* line 306, ../sass/icons-svg.scss */
 .icon.message_icon_ok {
   background-image: url("../assets/icons/svg/message_icon_ok.svg");
 }
-/* line 329, ../sass/icons-svg.scss */
+/* line 311, ../sass/icons-svg.scss */
 .icon.message_icon_warning {
   background-image: url("../assets/icons/svg/message_icon_warning.svg");
 }
-/* line 334, ../sass/icons-svg.scss */
+/* line 316, ../sass/icons-svg.scss */
 .icon.mobile {
   background-image: url("../assets/icons/svg/mobile.svg");
 }
-/* line 339, ../sass/icons-svg.scss */
+/* line 321, ../sass/icons-svg.scss */
 .icon.myspace {
   background-image: url("../assets/icons/svg/myspace.svg");
 }
-/* line 344, ../sass/icons-svg.scss */
+/* line 326, ../sass/icons-svg.scss */
 .icon.opera {
   background-image: url("../assets/icons/svg/opera.svg");
 }
-/* line 349, ../sass/icons-svg.scss */
+/* line 331, ../sass/icons-svg.scss */
 .icon.pdf {
   background-image: url("../assets/icons/svg/pdf.svg");
 }
-/* line 354, ../sass/icons-svg.scss */
+/* line 336, ../sass/icons-svg.scss */
 .icon.phone {
   background-image: url("../assets/icons/svg/phone.svg");
 }
-/* line 359, ../sass/icons-svg.scss */
+/* line 341, ../sass/icons-svg.scss */
 .icon.phone2 {
   background-image: url("../assets/icons/svg/phone2.svg");
 }
-/* line 364, ../sass/icons-svg.scss */
+/* line 346, ../sass/icons-svg.scss */
 .icon.picture {
   background-image: url("../assets/icons/svg/picture.svg");
 }
-/* line 369, ../sass/icons-svg.scss */
+/* line 351, ../sass/icons-svg.scss */
 .icon.pinterest {
   background-image: url("../assets/icons/svg/pinterest.svg");
 }
-/* line 374, ../sass/icons-svg.scss */
+/* line 356, ../sass/icons-svg.scss */
 .icon.print {
   background-image: url("../assets/icons/svg/print.svg");
 }
-/* line 379, ../sass/icons-svg.scss */
+/* line 361, ../sass/icons-svg.scss */
 .icon.reddit {
   background-image: url("../assets/icons/svg/reddit.svg");
 }
-/* line 384, ../sass/icons-svg.scss */
+/* line 366, ../sass/icons-svg.scss */
 .icon.rss {
   background-image: url("../assets/icons/svg/rss.svg");
 }
-/* line 389, ../sass/icons-svg.scss */
+/* line 371, ../sass/icons-svg.scss */
 .icon.safari {
   background-image: url("../assets/icons/svg/safari.svg");
 }
-/* line 394, ../sass/icons-svg.scss */
+/* line 376, ../sass/icons-svg.scss */
 .icon.spreadsheet {
   background-image: url("../assets/icons/svg/spreadsheet.svg");
 }
-/* line 399, ../sass/icons-svg.scss */
+/* line 381, ../sass/icons-svg.scss */
 .icon.stackoverflow {
   background-image: url("../assets/icons/svg/stackoverflow.svg");
 }
-/* line 404, ../sass/icons-svg.scss */
+/* line 386, ../sass/icons-svg.scss */
 .icon.stumbleupon {
   background-image: url("../assets/icons/svg/stumbleupon.svg");
 }
-/* line 409, ../sass/icons-svg.scss */
+/* line 391, ../sass/icons-svg.scss */
 .icon.technorati {
   background-image: url("../assets/icons/svg/technorati.svg");
 }
-/* line 414, ../sass/icons-svg.scss */
+/* line 396, ../sass/icons-svg.scss */
 .icon.tumblr {
   background-image: url("../assets/icons/svg/tumblr.svg");
 }
-/* line 419, ../sass/icons-svg.scss */
+/* line 401, ../sass/icons-svg.scss */
 .icon.twitter-bird {
   background-image: url("../assets/icons/svg/twitter-bird.svg");
 }
-/* line 424, ../sass/icons-svg.scss */
+/* line 406, ../sass/icons-svg.scss */
 .icon.twitter-t {
   background-image: url("../assets/icons/svg/twitter-t.svg");
 }
-/* line 429, ../sass/icons-svg.scss */
+/* line 411, ../sass/icons-svg.scss */
 .icon.user-social {
   background-image: url("../assets/icons/svg/user-social.svg");
 }
-/* line 434, ../sass/icons-svg.scss */
+/* line 416, ../sass/icons-svg.scss */
 .icon.user {
   background-image: url("../assets/icons/svg/user.svg");
 }
-/* line 439, ../sass/icons-svg.scss */
+/* line 421, ../sass/icons-svg.scss */
 .icon.video {
   background-image: url("../assets/icons/svg/video.svg");
 }
-/* line 444, ../sass/icons-svg.scss */
+/* line 426, ../sass/icons-svg.scss */
 .icon.w3 {
   background-image: url("../assets/icons/svg/w3.svg");
 }
-/* line 449, ../sass/icons-svg.scss */
+/* line 431, ../sass/icons-svg.scss */
 .icon.windows {
   background-image: url("../assets/icons/svg/windows.svg");
 }
-/* line 454, ../sass/icons-svg.scss */
+/* line 436, ../sass/icons-svg.scss */
 .icon.wordpress {
   background-image: url("../assets/icons/svg/wordpress.svg");
 }
-/* line 459, ../sass/icons-svg.scss */
+/* line 441, ../sass/icons-svg.scss */
 .icon.wrench {
   background-image: url("../assets/icons/svg/wrench.svg");
 }
-/* line 464, ../sass/icons-svg.scss */
+/* line 446, ../sass/icons-svg.scss */
 .icon.youtube {
   background-image: url("../assets/icons/svg/youtube.svg");
 }
-/* line 469, ../sass/icons-svg.scss */
+/* line 451, ../sass/icons-svg.scss */
 .icon.zip {
   background-image: url("../assets/icons/svg/zip.svg");
 }

@@ -12,6 +12,24 @@
 
   VARIABLES
 
+  Regions:
+  - $page['console']// Help, warnings, & other system notifications
+
+  - $page['header_top']
+  - $page['header']
+  - $page['header_bottom']
+
+  - $page['sidebar_left']
+  - $page['sidebar_right']
+
+  - $page['content_top']
+  - $page['content']// Main page content
+  - $page['content_bottom']
+
+  - $page['footer_top']: Footer Top
+  - $page['footer']: Footer
+  - $page['footer_bottom']: Footer Bottom
+
   General Utility Variables:
   - $base_path: The base URL path of the Drupal installation. At the very
   least, this will always default to "/"
@@ -36,51 +54,40 @@
   site, if they have been configured.
   - $secondary_menu (array): An array containing the Secondary menu links for
   the site, if they have been configured.
-  - $full_menu_tree : An array of all links in the Main menu.
+  - $full_menu_tree : All links in the Main menu.
   - $breadcrumb: The breadcrumb trail for the current page.
 
-  Page Layout:
+  Social Media
+ * Set in theme settings
+  - $social_media_share : links for users to share current page with their own social media network.
+  - $social_media_follow : links for users to subscribe to your social media outlets.
+
+  Page Layout
+ * Set in theme settings
   - $content_width : Grid class to set width of main content.
   - $content_class_single_sidebar : Grid class to set width of main content with one sidebar displayed.
   - $content_class_dual_sidebar : Grid class to set width of main content with two sidebars displayed.
   - $sidebar_width : Grid class to set width of sidebars.
-  - $triptych_class : Grid class to set width of triptych elements.
 
   Page Content:
-  - $title_prefix (array): An array containing additional output populated by
-  modules, intended to be displayed in front of the main title tag that
-  appears in the template.
-  - $title: The page title, for use in the actual HTML content.
-  - $title_suffix (array): An array containing additional output populated by
-  modules, intended to be displayed after the main title tag that appears in
-  the template.
-  - $messages: HTML for status and error messages. Should be displayed
-  prominently.
-  - $tabs (array): Tabs linking to any sub-pages beneath the current page
-  (e.g., the view and edit tabs when displaying a node).
-  - $action_links (array): Actions local to the page, such as 'Add menu' on the
-  menu administration interface.
-  - $feed_icons: A string of all feed icons for the current page.
   - $node: The node object, if there is an automatically-loaded node
   associated with the page, and the node ID is the second argument
   in the page's path (e.g. node/12345 and node/12345/revisions, but not
   comment/reply/12345).
-
-  Regions:
-  - $page['console']: Help, warnings, & other system notifications
-  - $page['header']: Page Header
-  - $page['nav']: System Navigation
-  - $page['hilight']: Items highlighted at the top of the content area.
-  - $page['sidebar_left']: Left Sidebar
-  - $page['content']: The main content of the current page.
-  - $page['sidebar_right']: Right Sidebar
-  - $page['triptych_left']: Left triptych panel
-  - $page['triptych_middle']: Middle triptych panel
-  - $page['triptych_right']: Right triptych panel
-  - $page['footer_left']: Footer Left Column
-  - $page['footer_middle']: Footer Middle Column
-  - $page['footer_right']: Footer Right Column
-  - $page['footer']: Items for the full footer region, the last elements rendered.
+  - $messages: HTML for status and error messages. Should be displayed
+  prominently.
+  - $action_links (array): Actions local to the page, such as 'Add menu' on the
+  menu administration interface.
+  - $title: The page title, for use in the actual HTML content.
+  - $title_prefix (array): An array containing additional output populated by
+  modules, intended to be displayed in front of the main title tag that
+  appears in the template.
+  - $title_suffix (array): An array containing additional output populated by
+  modules, intended to be displayed after the main title tag that appears in
+  the template.
+  - $tabs (array): Tabs linking to any sub-pages beneath the current page
+  (e.g., the view and edit tabs when displaying a node).
+  - $feed_icons: A string of all feed icons for the current page.
 
  */
 ?>
@@ -131,7 +138,7 @@
         print render($title_suffix);
         ?>
         <?php if ($tabs): ?>
-            <div class="tabs">
+            <div id="page-tabs">
                 <?php print render($tabs); ?>
             </div>
         <?php endif; ?>
@@ -168,7 +175,7 @@
                 <?php endif; ?>
 
                 <div id="content" class="<?php print $content_class; ?>">
-                
+
                     <?php
                     // Breadcrumb Navigation
                     if (theme_get_setting('breadcrumb_display' && !$is_front)) {
@@ -204,14 +211,17 @@
 
 
     <div id="footer" class="cell">
-        <?php print $social_media_share; ?>
-        <?php print $social_media_follow; ?>
+
 
         <?php if ($page['footer_top']) : ?>
             <div id="footer-top" class="cell">
                 <?php print render($page['footer_top']); ?>
             </div>
         <?php endif; ?>
+
+        <?php print $social_media_share; ?>
+        <?php print $social_media_follow; ?>
+
         <?php
         if ($page['footer']) {
             print render($page['footer']);

@@ -22,23 +22,24 @@ cellular.jAccordion = function(opts) {
     return this.each(function() {
         var $obj = jQuery(this);
         var li = $obj.find('li');
-
-        $obj.addClass(cellular.opts.cclass);
         //fn.style($obj);
-        //Add classes/functions to each panel
-        li.each(function() {
-            var $t = jQuery(this);
+        //Add classes/functions to each pane    
 
-            $t.kidWrap();
+        $obj.once('jAccordion', function() {
 
-            $t.children().eq(0).addClass('title');
-            $t.children().eq(1).addClass('panel');
+            $obj.addClass(cellular.opts.cclass);
 
-            $t.find('.panel').hide();
+            li.each(function() {
+                var $t = jQuery(this);
 
-            $t.find('.title').click(function(e) {
-                e.preventDefault();
-                fn.showContent($t);
+                $t.kidWrap();
+                $t.children().eq(0).addClass('title');
+                $t.children().eq(1).classify([cellular.opts.cclass, 'panel']);
+                $t.find('.panel').hide();
+                $t.find('.title').click(function(e) {
+                    e.preventDefault();
+                    fn.showContent($t);
+                });
             });
         });
 

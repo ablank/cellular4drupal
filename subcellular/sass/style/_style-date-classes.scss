@@ -13,35 +13,35 @@
 /////
 // Used for comments & posts
 .post-date {
-  display: inline-block;
-  margin: 1em 1em 1em 0;
-  background: $c2;
-  border: $light_grey $border;
-  color: $dark_grey;
-  text-align: center;
-  z-index: 10;
+    display: inline-block;
+    margin: 1em 1em 1em 0;
+    background: $c2;
+    border: $light_grey $border;
+    color: $dark_grey;
+    text-align: center;
+    z-index: 10;
 
-  @include border-radius(.5em);
+    @include border-radius(.5em);
 }
 
 .post-day,
 .post-month,
 .post-year {
-  display: block;
-  padding: .2em .5em;
+    display: block;
+    padding: .2em .5em;
 }
 
 .post-month {
-  font-size: .8em;
+    font-size: .8em;
 }
 
 .post-day {
-  font-size: 1.5em;
-  background: $c2;
+    font-size: 1.5em;
+    background: $c2;
 
-  @include box-shadow(inset $shadow_small $c2);
+    @include box-shadow(inset $shadow_small $c2);
 }
 
 .post-year {
-  font-size: 1em;
+    font-size: 1em;
 }

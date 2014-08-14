@@ -7,14 +7,14 @@ Cellular :: typography
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
-    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(//themes.googleusercontent.com/static/fonts/quicksand/v2/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+    src: local('Quicksand Regular'), local('Quicksand-Regular'), url('//themes.googleusercontent.com/static/fonts/quicksand/v2/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
-    src: local('Quicksand Bold'), local('Quicksand-Bold'), url(//themes.googleusercontent.com/static/fonts/quicksand/v2/32nyIRHyCu6iqEka_hbKsnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+    src: local('Quicksand Bold'), local('Quicksand-Bold'), url('//themes.googleusercontent.com/static/fonts/quicksand/v2/32nyIRHyCu6iqEka_hbKsnhCUOGz7vYGh680lGh-uXM.woff') format('woff');
 }
 
 body {
@@ -74,6 +74,8 @@ h3,
 h4,
 h5,
 h6 {
+    display: block;
+    clear: both;
     font-family: $h_font;
     font-weight: $h_weight;
     line-height: 1.1em;
@@ -83,12 +85,10 @@ h6 {
 
 h1 {
     margin: 0;
-    padding: $small $small 0;
+    padding: $normal $big $big;
     font-size: $h_size;
-    line-height: $big;
     text-align: left;
-    background-color: $h_color;
-    color: $c2;
+    color: $c1;
     border: none;
 }
 
@@ -167,9 +167,10 @@ caption {
 
 code,
 pre {
-    font-family: "Courier New", Courier, monospace;
+    display: block;
     margin: 1em auto;
     padding: 1em;
+    font-family: "Courier New", Courier, monospace;
     overflow: auto;
     white-space: pre;
     white-space: pre-wrap;

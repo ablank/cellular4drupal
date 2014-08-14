@@ -81,7 +81,7 @@ function cellular_favicon(&$icon_array, &$vars) {
         $link['#attributes']['type'] = isset($icon['type']) ? $icon['type'] : NULL;
         $link['#attributes']['sizes'] = isset($icon['size']) ? $icon['size'] : NULL;
         $link['#attributes']['href'] = isset($icon['href']) ? $icon_dir . '/' . $icon['href'] : NULL;
-        
+
         drupal_add_html_head($link, 'icon_' . $link['#attributes']['href']);
     }
 }
@@ -149,17 +149,17 @@ function cellular_add_css($array, &$css) {
     foreach ($array as $style) {
         if (isset($style)) {
             $style['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
-            $style['every_page'] = TRUE;
-            $style['group'] =  isset($style['group']) ? $style['group'] : CSS_THEME;
+            $style['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
+            $style['group'] = isset($style['group']) ? $style['group'] : CSS_THEME;
             $style['weight'] = isset($style['weight']) ? $style['weight'] : 10;
             $style['type'] = 'file';
-            $style['data'] = $style['file'];
+            $style['data'] = cellular_theme_path() . '/css/' . $style['file'];
             $style['media'] = isset($style['media']) ? $style['media'] : 'all';
             $style['browsers'] = array(
                 'IE' => TRUE,
                 '!IE' => TRUE,
             );
-            
+
             $css[$style['file']] = $style;
         }
     }
@@ -176,7 +176,7 @@ function cellular_add_js($array) {
             drupal_add_js(cellular_theme_path() . '/js/' . $script['file'], array(
                 'type' => 'file',
                 'group' => isset($script['group']) ? $script['group'] : JS_THEME,
-                'every_page' => TRUE,
+                'every_page' => $script['every_page'] = isset($script['every_page']) ? $script['every_page'] : TRUE,
                 'weight' => $script['weight']
             ));
         }

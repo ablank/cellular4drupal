@@ -42,10 +42,10 @@ a.colorbox {
     display: inline-block;
     margin: 1em;
     @include overlay($c1);
-    @include box-shadow(0 .1em .6em .6em $c1);
+    @include box-shadow(0 0 .2em .2em $light_grey);
 }
 
 a:hover.colorbox,
 a:focus.colorbox {
-    @include box-shadow(0 .1em .6em .6em $light_grey);
+    @include box-shadow(0 0 .3em .3em $light_grey);
 }

@@ -5,17 +5,17 @@ Cellular :: Drupal #IDs
 
 // "Powered by Drupal" block
 #block-system-powered-by {
-  float: right;
-  margin: 0 1em;
-  color: $c2;
-  .block-content a {
-    text-indent: -999em;
     float: right;
-    display: block;
-    width: 84px;
-    height: 32px;
-    background: url(../assets/images/png/drupal.png) no-repeat;
-  }
+    margin: 0 1em;
+    color: $c2;
+    .block-content a {
+        text-indent: -999em;
+        float: right;
+        display: block;
+        width: 84px;
+        height: 32px;
+        background: url(../assets/images/png/drupal.png) no-repeat;
+    }
 }
 
 #block-system-main {
@@ -23,13 +23,13 @@ Cellular :: Drupal #IDs
 
 #user-login-form {
 
-  input {
-    width: 9em;
+    input {
+        width: 9em;
 
-    &[type=submit] {
-     // width: 5em;
+        &[type=submit] {
+            // width: 5em;
+        }
     }
-  }
 }
 
 #login-links {
@@ -37,26 +37,42 @@ Cellular :: Drupal #IDs
 
 #search-form,
 #site-search {
-  display: inline;
-  text-align: right;
-  input {
     display: inline;
-    display: inline-block;
-    margin: 0;
-    padding: $tiny;
-    width: auto;
+    text-align: right;
+    input {
+        display: inline;
+        display: inline-block;
+        margin: 0;
+        padding: $tiny;
+        width: auto;
 
-    &[type=submit] {
-      @include button();
-      //background-image: url('../assets/images/svg/search.svg');
-      float: none;
-      width: 7em;
-      padding: 0 0 0 .4em;
-      font-size: $small;
-      text-align: left;
-      //text-indent: -999em;
-      background-position: right center;
-      border: $dark_grey 1px solid;
+        &[type=submit] {
+            @include button();
+            //background-image: url('../assets/images/svg/search.svg');
+            float: none;
+            width: 7em;
+            padding: 0 0 0 .4em;
+            font-size: $small;
+            text-align: left;
+            //text-indent: -999em;
+            background-position: right center;
+            border: $dark_grey 1px solid;
+        }
     }
-  }
+}
+
+#block-system-navigation {
+    .block-title {
+        display: none;
+    }
+    .menu {
+        li {
+            display: inline;
+            list-style: none;
+
+            a {
+                @include button();
+            }
+        }
+    }
 }

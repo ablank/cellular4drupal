@@ -52,16 +52,22 @@ function cellular_social_media_follow() {
             }
         }
         foreach ($media_block['links'] as $link) {
-            $media_block['markup'] .= '<a href="' . $link['url'] . '" class="' . $media_block['link_class'] . " " . $link['class'] . '">' . "\n";
-            $media_block['markup'] .= 'Follow us on ' . $link['name'];
-            $media_block['markup'] .= "</a>\n";
+            $media_block['markup'] .= l("Follow us on " . $link['name'], $link['url'], array(
+                'attributes' => array(
+                    'class' => array(
+                        $media_block ['link_class'],
+                        $link['class']
+                    )
+                ),
+                    )
+            );
         }
 
         if (!empty($media_block['links'])) {
 
-            $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-            $output .= "<h3>" . $media_block['title'] . "</h3>\n";
-            $output .= $media_block['markup'] . "\n";
+            $output .= "\n<div id=\"" . $media_block ['id'] . "\">\n";
+            $output .= "<h3>" . $media_block ['title'] . "</h3>\n";
+            $output .= $media_block ['markup'] . "\n";
             $output .= "</div>\n\n";
         }
     }
@@ -94,30 +100,41 @@ function cellular_social_media_share() {
         $links = array(
             'google+' => theme_get_setting('share_google_plus') == 1 ?
                     array(
+                'title' => 'Google+',
                 'script' => null,
-                'tag' => '<a href="http://plus.google.com/share?url=' . $page['url'] . '" class="' . $media_block['link_class'] . ' google">Share on Google+</a>'
+                'url' => 'http://plus.google.com/share?url=' . $page['url'],
+                'class' => 'google'
                     ) : null,
             'twitter' => theme_get_setting('share_twitter') == 1 ?
                     array(
+                'title' => 'Twitter',
                 'script' => null,
-                'tag' => '<a href="https://twitter.com/share" class="' . $media_block['link_class'] . ' twitter-bird">Tweet</a>',
+                'url' => 'https://twitter.com/share',
+                'class' => 'twitter-bird'
                     ) : null,
             'linkedin' => theme_get_setting('share_linkedin') == 1 ?
                     array(
+                'title' => '',
                 'script' => null,
-                'tag' => '<a href="http://www.linkedin.com/shareArticle?mini=true&url=' . $page['url'] . '&title=' . $page['title'] . '&source=' . $base_url . '" class="' . $media_block['link_class'] . '  linkedin">Share on LinkedIn</a>',
+                'url' => 'http://www.linkedin.com/shareArticle?mini=true&url=' . $page ['url'] . '&title=' . $page ['title'] . '&source=' . $base_url,
+                'class' => 'linkedin'
                     ) : null,
             'pinterest' => theme_get_setting('share_pinterest') == 1 ?
                     array(
+                'title' => 'Pinterest',
                 'script' => null,
-                'tag' => '<a href="http://pinterest.com/pin/create/bookmarklet/?media=&url=' . $page['url'] . '&is_video=false&description=' . $page['title'] . '" class="' . $media_block['link_class'] . ' pinterest">Pin This</a>',
+                'url' => 'http://pinterest.com/pin/create/bookmarklet/?media=&url=' . $page ['url'] . '&is_video=false&description=' . $page['title'],
+                'class' => 'pinterest'
                     ) : null,
             'reddit' => theme_get_setting('share_reddit') == 1 ?
                     array(
+                'title' => 'Reddit',
                 'script' => null,
-                'tag' => '<a href="http://www.reddit.com/submit?url=' . $page['url'] . '&title=' . $page['title'] . '" class="' . $media_block['link_class'] . ' reddit">Share on Reddit</a>',
-                    ) : null,
+                'url' => 'http://www.reddit.com/submit?url=' . $page['url'],
+                'class' => 'reddit'
+                    ) : null
         );
+
 
         $facebook = theme_get_setting('share_facebook') == 1 ?
                 array(
@@ -146,7 +163,20 @@ function cellular_social_media_share() {
                     'weight' => isset($link['weight']) ? $link['weight'] : 100,
                 ));
             }
-            $media_block['markup'] .= "\n " . $link['tag'] . "\n";
+            if (!empty($link['url'])) {
+                $media_block['markup'] .= l('Share this page on ' . $link['title'], $link['url'], array(
+                    'attributes' => array(
+                        'class' => array(
+                            $media_block['link_class'],
+                            $link['class']
+                        )
+                    ),
+                        )
+                );
+            }
+            if (!empty($link['tag'])) {
+                $media_block['markup'] .= "\n " . $link['tag'] . "\n";
+            }
         }
 
         $output .= "\n";

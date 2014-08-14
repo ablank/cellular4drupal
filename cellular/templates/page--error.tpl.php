@@ -5,6 +5,18 @@
   (c)2012 Adam Blankenship
  */
 /*
+
+  Regions:
+  - $page['console']: Help, warnings, & other system notifications
+  - $page['header']: Page Header
+  - $page['nav']: System Navigation
+  - $page['sidebar_left']: Left Sidebar
+  - $page['sidebar_right']: Right Sidebar
+  - $page['content']: The main content of the current page.
+  - $page['footer_top']: Footer Right Column
+  - $page['footer']: Items for the full footer region, the last elements rendered.
+  - $page['footer_bottom']: Footer Middle Column
+
   VARIABLES
 
   General Utility Variables:
@@ -61,22 +73,6 @@
   in the page's path (e.g. node/12345 and node/12345/revisions, but not
   comment/reply/12345).
 
-  Regions:
-  - $page['console']: Help, warnings, & other system notifications
-  - $page['header']: Page Header
-  - $page['nav']: System Navigation
-  - $page['hilight']: Items highlighted at the top of the content area.
-  - $page['sidebar_left']: Left Sidebar
-  - $page['content']: The main content of the current page.
-  - $page['sidebar_right']: Right Sidebar
-  - $page['triptych_left']: Left triptych panel
-  - $page['triptych_middle']: Middle triptych panel
-  - $page['triptych_right']: Right triptych panel
-  - $page['footer_left']: Footer Left Column
-  - $page['footer_middle']: Footer Middle Column
-  - $page['footer_right']: Footer Right Column
-  - $page['footer']: Items for the full footer region, the last elements rendered.
-
  */
 ?>
 
@@ -91,7 +87,7 @@
 
             <?php
             if ($site_name) {
-                print "<h2>". $site_name . "</h2>";
+                print "<h2>" . $site_name . "</h2>";
             }
             ?>
         </div>

@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><symbol id="a" viewBox="-16 -15 32 30"><path d="M-8 7c0-4.419 3.582-8 8-8s8 3.581 8 8-3.582 8-8 8-8-3.581-8-8m16-10h-16c-4.418 0-8-3.582-8-8v-4h31.999999999999996v4c0 4.418-3.582 8-8 8"/></symbol><use xlink:href="#a" width="32" height="30" x="-16" y="-15" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<path fill="#FFFFFF" d="M8,9c0,4.42,3.582,8,8,8s8-3.58,8-8s-3.582-8-8-8S8,4.58,8,9 M24,19H8c-4.418,0-8,3.582-8,8v4h32v-4
+	C32,22.582,28.418,19,24,19"/>
+</svg>

@@ -66,11 +66,6 @@
   - $is_front: Flags true when presented in the front page.
   - $logged_in: Flags true when the current user is a logged-in member.
   - $is_admin: Flags true when the current user is an administrator.
- * 
- * post_day
- * post_date
- * post_month
- * post_year
 
   Field variables: for each field instance attached to the node a corresponding
   variable is defined, e.g. $node->body becomes $body. When needing to access
@@ -97,18 +92,19 @@
         </h2>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
+
     <?php if ($display_submitted): ?>
         <div class="post-date">
-            <span class="post-month">
-                <?php print $post_month; ?>
-            </span>
-            <span class="post-day">
-                <?php print $post_date; ?>
-            </span>
-            <span class="post-year">
-                <?php print $post_year; ?>
-            </span>
+            <span class="day"><?php echo date("j", $node->created); ?></span>
+            <span class="month"><?php echo date("M", $node->created); ?></span>
+            <span class="year"><?php echo date("Y", $node->created); ?></span>
+
         </div>
+
+        <div class="author">
+            <?php print $name; ?>
+        </div>
+
     <?php endif; ?>
 
     <div<?php print $content_attributes; ?>>

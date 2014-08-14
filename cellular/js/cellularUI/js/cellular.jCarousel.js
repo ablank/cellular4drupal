@@ -1,18 +1,12 @@
 /////
 cellular.jCarousel = function(opts) {
     var o = jQuery.extend({
+        active: 0, // default active slide #
         auto: false, // auto advance through slides
-        duration: 5000, // if auto == true, display duration of slide
-        slide: {
-            src: null, // i.e. "data.json",
-            display: 3, // number of slides to display
-            active: 0, // default active slide #
-        },
-        scroll: {
-            direction: 'right', // direction of transition; top || right || bottom || left
-            speed: 700, // speed of transition to next slide
-            easing: "swing"
-        },
+        pause: 15000,  // time of each slide is displayed if auto == true
+        speed: 500,
+        easing: "swing"
+        direction: 'right', // direction of auto transition; top || right || bottom || left
         button: {
             next: "Next",
             prev: "Previous",

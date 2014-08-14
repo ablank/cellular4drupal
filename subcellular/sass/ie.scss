@@ -10,40 +10,40 @@ www.abctahoe.net
 //////
 
 body, * {
-  zoom: 1.0;
+    zoom: 1.0;
 }
 
 body {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 img {
-  -ms-interpolation-mode: bicubic;
+    -ms-interpolation-mode: bicubic;
 }
 
 legend {
-  // because legend doesn't inherit in IE
-  color: $light_grey;
+    // because legend doesn't inherit in IE
+    color: $light_grey;
 }
 
 input,
 textarea,
 select {
-  // to enable resizing for IE
-  *font-size: 100%;
+    // to enable resizing for IE
+    *font-size: 100%;
 }
 input {
-  &[type=checkbox],
-  &[type=radio] {
-    display: inline;
-    margin: $tiny;
-    vertical-align: middle;
+    &[type=checkbox],
+    &[type=radio] {
+        display: inline;
+        margin: $tiny;
+        vertical-align: middle;
 
-    &:focus {
-      border: $border;
+        &:focus {
+            border: $border;
+        }
+
     }
-
-  }
 }
 
 .cell,
@@ -60,31 +60,19 @@ input {
 .cell-25,
 .cell-20,
 .cell-10 {
-  overflow: visible;
+    overflow: visible;
 }
 
 // Custom styles
-.ribbon {
-  margin: 0;
-}
-
 .center {
-  display: block;
-}
-
-.dropShadow {
-  border: none;
-  //* IE drop shadow looks like crap...
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='$c1000')";
-  //IE 5.5 - 7
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='$c1000');
+    display: block;
 }
 
 .jBlocklink {
-  margin: 0;
-  border: $light_grey 1px solid;
+    margin: 0;
+    border: $light_grey 1px solid;
 
-  &:hover {
-    border-color: $hilight;
-  }
+    &:hover {
+        border-color: $hilight;
+    }
 }

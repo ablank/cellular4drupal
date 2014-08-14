@@ -44,6 +44,7 @@ cellular.deactivate = function() {
 };
 
 cellular.kidWrap = function() {
+    // Wrap element's children with index gt 0
     return this.each(function() {
         var $t = jQuery(this);
 
@@ -53,7 +54,18 @@ cellular.kidWrap = function() {
     });
 };
 
-/////
+cellular.classify = function($array) {
+    // Add array of classes to element
+    return this.each(function() {
+        var $t = jQuery(this);
+        var classes = $array.join(' ');
+
+        $t.addClass(classes);
+    });
+};
+
+
+/*////
 cellular.yPos = function() {
     return this.each(function() {
         var $t = jQuery(this);
@@ -67,6 +79,7 @@ cellular.loop = function($obj, fn) {
         $obj.next = $obj.siblings(0);
     }
 };
+*/
 
  
  ///// :) 
@@ -94,23 +107,24 @@ cellular.jAccordion = function(opts) {
     return this.each(function() {
         var $obj = jQuery(this);
         var li = $obj.find('li');
-
-        $obj.addClass(cellular.opts.cclass);
         //fn.style($obj);
-        //Add classes/functions to each panel
-        li.each(function() {
-            var $t = jQuery(this);
+        //Add classes/functions to each pane    
 
-            $t.kidWrap();
+        $obj.once('jAccordion', function() {
 
-            $t.children().eq(0).addClass('title');
-            $t.children().eq(1).addClass('panel');
+            $obj.addClass(cellular.opts.cclass);
 
-            $t.find('.panel').hide();
+            li.each(function() {
+                var $t = jQuery(this);
 
-            $t.find('.title').click(function(e) {
-                e.preventDefault();
-                fn.showContent($t);
+                $t.kidWrap();
+                $t.children().eq(0).addClass('title');
+                $t.children().eq(1).classify([cellular.opts.cclass, 'panel']);
+                $t.find('.panel').hide();
+                $t.find('.title').click(function(e) {
+                    e.preventDefault();
+                    fn.showContent($t);
+                });
             });
         });
 
@@ -124,20 +138,35 @@ cellular.jAccordion = function(opts) {
 /////
 cellular.jBlocklink = function(opts) {
     var o = jQuery.extend({
-        //opt : "val",
+        "cclass": "jBlocklink",
     }, opts);
 
     return this.each(function() {
         var $obj = jQuery(this);
-        var a = $obj.find('a').eq(0);
-        var c = a.attr('class') ? a.attr('class') : '';
-        var bl = jQuery('<a href="' + a.attr('href') + '" class="' + cellular.opts.cclass + ' jBlocklink ' + c + '" />');
 
-        $obj.wrap(bl);
-        bl.hover(function() {
-            bl.activate();
+        $obj.once(o.cclass, function() {
+            var a = $obj.find('a').eq(0);
+            var ahref = a.attr('href');
+
+            if (ahref !== undefined) {
+                var bl = jQuery('<a href="' + ahref + '" />');
+                var classes = [
+                    cellular.opts.cclass,
+                    o.cclass,
+                    a.attr('class') ? a.attr('class') : null
+                ];
+                bl.classify(classes);
+                $obj.wrap(bl)
+                        .find('h2, h3').addClass('title');
+
+            }
+
+        });
+
+        $obj.hover(function() {
+            jQuery(this).activate();
         }, function() {
-            bl.deactivate();
+            jQuery(this).deactivate();
         });
     });
 };
@@ -224,39 +253,48 @@ cellular.jMmenu = function(opts) {
 /////
 cellular.jScrolli = function(opts) {
     o = $.extend({
+        "active": 0,
         "speed": 500, // Duration of cycle
         "pause": 3000 // Time to pause between cycles
     }, opts);
-    /**/
+    /*Math.max.apply(Math, array)*/
     var fn = {};
     //fn.style = function(){};
-    fn.showContent = function($obj) {
-
-    };
-
     return this.each(function() {
         var $obj = jQuery(this);
         var $i = $obj.find(jQuery($obj.children()));
         var active = o.active ? o.active : $i[0];
+        var maxHeight = 0;
 
+        
         $i.each(function() {
-            jQuery(this).hide();
+            $t = jQuery(this);
+            if ($t.height() > maxHeight) {
+                maxHeight = $t.height();
+            }
+            $t.hide();
         });
 
-        jQuery(active).fadeToggle(o.speed, function() {
-                    var $t = jQuery(this);
-                    var next = $t.next();
-                    if (next.length === 0) {
-                        next = $i[0];
-                    }
-                    $t.delay(o.pause).fadeToggle(o.speed, function() {
+        $obj.addClass(cellular.opts.cclass)
+                .height(maxHeight);
+
+        jQuery(active).addClass('active')
+                .fadeIn(o.speed, function() {
+            var $t = jQuery(this);
+            var next = $t.next();
+            if (next.length === 0) {
+                next = $i[0];
+            }
+            $t.delay(o.pause)
+                    .fadeOut(o.speed, function() {
+                        $t.removeClass('');
                         $obj.jScrolli({
                             "active": next,
                             "speed": o.speed,
                             "pause": o.pause
                         });
                     });
-                });
+        });
     });
 };
  
@@ -268,48 +306,58 @@ cellular.jTabs = function(opts) {
     }, opts);
 
     var fn = {};
-    fn.style = function($obj) {
-        //Add element to display content
-        $obj.addClass(cellular.opts.cclass)
-                .append('<div class="panel" />');
-    };
+
     fn.showContent = function(li) {
         //Content
         var c = li.find('.content');
         //Display
-        var pan = li.parent().find('.panel');
+        var pan = li.parent().find('.panel-content');
 
         li.activate();
-        pan.html(c.html());
+        pan.fadeOut('normal', function() {
+            jQuery(this).html(c.html())
+                    .fadeIn('normal');
+        });
     };
 
     return this.each(function() {
+
         var $obj = jQuery(this);
         var tab = $obj.find('> li');
 
-        fn.style($obj);
-        //Add classes/functions to each panel
-        tab.addClass('tab')
-                .each(function() {
-                    var li = jQuery(this);
-                    var con = li.children();
+        $obj.once('jTabs', function() {
+            
+            $obj.addClass(cellular.opts.cclass)
+                    .append('<div class="' + cellular.opts.cclass + ' panel" />');
+            $obj.find('.panel').append('<div class="panel-content" />');
 
-                    li.kidWrap();
-                    //Set 1st child as title
-                    li.children().eq(0).addClass('title')
-                            .click(function() {
-                                fn.showContent(li);
-                            });
-                    //Set 2nd child as content
-                    li.children().eq(1).addClass('content')
-                            .hide();
-                });
+            tab.each(function() {
+                var li = jQuery(this);
+
+                li.addClass('tab')
+                    .kidWrap();
+                //Set 1st child as title
+                li.children().eq(0).addClass('title');
+                //Set 2nd child as content
+                li.children().eq(1).addClass('content')
+                        .hide();
+            });
+        });
+
+        //Add classes/functions to each panel
+        tab.each(function() {
+            var li = jQuery(this);
+
+            li.click(function(e) {
+                e.preventDefault();
+                fn.showContent(li);
+            });
+        });
 
         //Set default content
         fn.showContent(tab.eq([o.active]));
     });
 };
-
  
  ///// :) 
 jQuery.fn.extend(cellular);

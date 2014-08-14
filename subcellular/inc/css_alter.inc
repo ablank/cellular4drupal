@@ -1,32 +1,44 @@
 <?php
+
 function subcellular_css_alter(&$css) {
-/*
-    // Remove stylesheets
-    $exclude = array(
-        // 'module' => path/to/style.css
-        'calendar' => 'css/calendar_multiday.css',
-        'ctools' => 'css/ctools.css',
-        'views' => 'css/views.css',
-        'logintoboggan' => 'logintoboggan.css',
-        'panels' => array(
-            'css/panels.css', 
-            'plugins/layouts/flexible/flexible.css'
-        ),
-    );
+    /*
+      // Remove stylesheets set by modules
+     *
+      // Paths are relative to each module's directory
+     *
+      // Remove a single stylesheet set by a module
+      // 'stupidModule' => 'path/to/stupid.css'
+     *
+     // Remove multiple stylesheets set by a module
+      // 'stupidModule' => array('path/to/stupid.css', 'path/to/more/stupid.css');
 
-    cellular_remove_css($exclude, $css);
-  */  
+      $exclude = array(
+      'calendar' => 'css/calendar_multiday.css',
+      'ctools' => 'css/ctools.css',
+      'views' => 'css/views.css',
+      'logintoboggan' => 'logintoboggan.css',
+      'panels' => array(
+      'css/panels.css',
+      'plugins/layouts/flexible/flexible.css'
+      ),
+      );
 
-   /*
-    // Add stylesheets
-    $add_css = array(
-        'styleName' =>  array(
-            'file' => cellular_theme_path() . '/css/stylesheet.css',
+      cellular_remove_css($exclude, $css);
+     */
 
-            'weight' => 1,
-        ),
-    );
+    /*
+      // Add stylesheets to theme
+     *
+      // Paths are relative to the /active_theme/css/ directory
+     *
+      $add_css = array(
+      'styleName' =>  array(
+      'file' => 'my.awesome.css',
 
-    cellular_add_css($add_css, $css);
-    */
+      'weight' => 1,
+      ),
+      );
+
+      cellular_add_css($add_css, $css);
+     */
 }

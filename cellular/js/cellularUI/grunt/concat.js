@@ -11,7 +11,7 @@ module.exports = {
             'js/cellular.jAccordion.js',
             'js/cellular.jBlocklink.js',
             //'js/cellular.jCarousel.js',
-            'js/cellular.jEqualheight.js',
+            //'js/cellular.jEqualheight.js',
             'js/cellular.jFormal.js',
             'js//js/cellular.jMmenujs',
             //'js/cellular.jParallax.js',
