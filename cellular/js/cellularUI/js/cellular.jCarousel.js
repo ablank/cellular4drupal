@@ -6,7 +6,7 @@ cellular.jCarousel = function(opts) {
         pause: 15000,  // time of each slide is displayed if auto == true
         speed: 500,
         easing: "swing"
-        direction: 'right', // direction of auto transition; top || right || bottom || left
+       // direction: 'right', // direction of auto transition; top || right || bottom || left
         button: {
             next: "Next",
             prev: "Previous",
