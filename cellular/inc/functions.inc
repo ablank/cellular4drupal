@@ -46,17 +46,38 @@ function cellular_merge(&$arr) {
 function cellular_build_head_tags(&$meta_array) {
     $base_weight = 0;
 
+
     foreach ($meta_array as $meta) {
+        // Build tag
+        /*
         $tag = array(
             '#type' => 'html_tag',
-            '#tag' => 'meta',
+            '#tag' => isset($meta['tag']) ? $meta['tag'] : 'link',
             '#attributes' => array(
-                $meta['type'] => $meta['attr_val'],
+                $meta['attr'] => $meta['attr_val'],
                 'content' => $meta['content']
             ),
-            '#weight' => isset($meta['weight']) ? $meta['weight'] : $base_weight++,
+            '#weight' => isset($meta['weight']) ? $meta['weight'] : $base_weight
         );
+        isset($meta['rel']) ? $tag['#attributes']['rel'] = $meta['rel'] : NULL;
+        isset($meta['type']) ? $tag['#attributes']['type'] = $meta['type'] : NULL;
+        isset($meta['size']) ? $tag['#attributes']['sizes'] = $meta['size'] : NULL;
+        isset($meta['href']) ? $tag['#attributes']['href'] = $meta['href'] : NULL;
+        // Add tag
         drupal_add_html_head($tag, 'meta_' . $meta['attr_val']);
+*/
+        
+          $tag = array(
+          '#type' => 'html_tag',
+          '#tag' => 'meta',
+          '#attributes' => array(
+          $meta['attr'] => $meta['attr_val'],
+          'content' => $meta['content']
+          ),
+          '#weight' => isset($meta['weight']) ? $meta['weight'] : $base_weight
+          );
+          drupal_add_html_head($tag, 'meta_' . $meta['attr_val']);
+         
     }
 }
 
@@ -64,7 +85,7 @@ function cellular_build_head_tags(&$meta_array) {
   favicons & apple-touch-icons
  * ************** */
 
-function cellular_favicon(&$icon_array, &$vars) {
+function cellular_favicon(&$icon_array) {
 
     $icon_dir = cellular_theme_path() . '/assets/icons';
     $base_weight = 0;
@@ -78,9 +99,9 @@ function cellular_favicon(&$icon_array, &$vars) {
             ),
             '#weight' => isset($icon['weight']) ? $icon['weight'] : $base_weight++,
         );
-        $link['#attributes']['type'] = isset($icon['type']) ? $icon['type'] : NULL;
-        $link['#attributes']['sizes'] = isset($icon['size']) ? $icon['size'] : NULL;
-        $link['#attributes']['href'] = isset($icon['href']) ? $icon_dir . '/' . $icon['href'] : NULL;
+        isset($icon['type']) ? $link['#attributes']['type'] = $icon['type'] : NULL;
+        isset($icon['size']) ? $link['#attributes']['sizes'] = $icon['size'] : NULL;
+        isset($icon['href']) ? $link['#attributes']['href'] = $icon_dir . '/' . $icon['href'] : NULL;
 
         drupal_add_html_head($link, 'icon_' . $link['#attributes']['href']);
     }

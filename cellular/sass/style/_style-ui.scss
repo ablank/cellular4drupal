@@ -93,7 +93,7 @@
         }
     }
 
-    &.jBlocklink {
+    &.jBlocklink-link {
         display: inline-block;
         vertical-align: top;
         margin: 1em;
@@ -153,6 +153,11 @@
                 display: block;
             }
         }
+    }
+    &.jParallax {
+        background-image: url('../assets/images/png/carousel-arrows.png');
+        background-repeat: no-repeat;
+        background-position: 3px -4px; 
     }
 
     &.jScrolli {

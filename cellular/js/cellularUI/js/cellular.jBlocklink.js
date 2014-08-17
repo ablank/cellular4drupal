@@ -1,7 +1,7 @@
 /////
 cellular.jBlocklink = function(opts) {
     var o = jQuery.extend({
-        "cclass": "jBlocklink",
+        "cclass": "jBlocklink-link",
     }, opts);
 
     return this.each(function() {
@@ -13,14 +13,15 @@ cellular.jBlocklink = function(opts) {
 
             if (ahref !== undefined) {
                 var bl = jQuery('<a href="' + ahref + '" />');
-                var classes = [
+
+                bl.classify([
                     cellular.opts.cclass,
                     o.cclass,
                     a.attr('class') ? a.attr('class') : null
-                ];
-                bl.classify(classes);
+                ]);
+                   // .data(a.data());
                 $obj.wrap(bl)
-                        .find('h2, h3').addClass('title');
+                    .find('h2, h3').addClass('title');
 
             }
 

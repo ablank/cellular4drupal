@@ -89,6 +89,8 @@ settings[follow_twitter]        = 0
 settings[follow_twitter_url]    = http://twitter.com/
 settings[follow_linkedin]       = 0
 settings[follow_linkedin_url]   = http://linkedin.com/
+settings[follow_github]			= 0
+settings[follow_github_url]   	= http://github.com/
 
 settings[social_media_share]    = 0
 settings[share_facebook]        = 0

@@ -84,12 +84,13 @@
     ?>
 
     <?php print render($title_prefix); ?>
-    <?php if (!$page): ?>
-        <h2<?php print $title_attributes; ?>>
-            <a href="<?php print $node_url; ?>">
-                <?php print $title; ?>
-            </a>
-        </h2>
+    <?php if (!$page): 
+       if($title){ 
+        print "<h2  $title_attributes >";
+        print '<a href="'.$node_url.'">';
+        print $title;
+        print "</a>\n</h2>";
+      }
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 

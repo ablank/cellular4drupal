@@ -25,23 +25,37 @@ function cellular_preprocess_html(&$vars) {
 
 // Add meta elements to $head
     $meta_tags = array(
+        /*
+          // humans
+          'humans' => array(
+          'type' => 'text/plain',
+          'attr_val' => 'humans',
+          'content' => 'index, follow',
+          'rel' => 'author',
+          'href' => $base_url . '/humans.txt',
+          'weight' => -999
+          ),
+         */
         // robots
         'robots' => array(
-            'type' => 'name',
+            'tag' => 'meta',
+            'attr' => 'name',
             'attr_val' => 'robots',
             'content' => 'index, follow',
             'weight' => -999
         ),
         // viewport
         'viewport' => array(
-            'type' => 'name',
+            'tag' => 'meta',
+            'attr' => 'name',
             'attr_val' => 'viewport',
             'content' => 'width=device-width, initial-scale=1',
             'weight' => -999.1
         ),
         // IE rendering mode- set to lowest weight
         'ie_render_engine' => array(
-            'type' => 'http-equiv',
+            'tag' => 'meta',
+            'attr' => 'http-equiv',
             'attr_val' => 'X-UA-Compatible',
             'content' => 'IE=7; IE=8; IE=9; IE=Edge,chrome=1',
             'weight' => -999.2
@@ -53,50 +67,67 @@ function cellular_preprocess_html(&$vars) {
 
 // Add favicon & apple-touch-icons
 // href is relative to the Icons folder
-    $icons = array(
-        'favicon-16x16' => array(
-            'rel' => 'shortcut icon',
+    $icons = array();
+
+    if (theme_get_setting('favicon')) {
+        $icons['favicon-16x16'] = array(
+            'attr_val' => 'shortcut icon',
             'size' => null,
             'type' => 'image/x-icon',
             'href' => theme_get_setting('favicon'),
             'weight' => 95,
-        ),
-        'favicon-32x32' => array(
-            'rel' => 'shortcut icon',
+        );
+    };
+    if (theme_get_setting('favicon_32')) {
+        $icons['favicon-32x32'] = array(
+            'attr_val' => 'shortcut icon',
             'size' => '32x32',
             'type' => 'image/png',
             'href' => theme_get_setting('favicon_32'),
             'weight' => 96,
-        ),
-        // Older iOS devices don't understand the sizes attribute and use whichever value is last, so 'default' is given more weight.
-        'apple-default' => array(
-            'rel' => 'apple-touch-icon',
+        );
+    };
+
+    // Older iOS devices don't understand the sizes attribute and use whichever value is last, so 'default' is given more weight.
+    if (theme_get_setting('apple_icon_57')) {
+        $icons['apple-default'] = array(
+            'attr_val' => 'apple-touch-icon',
             'size' => null,
             'href' => theme_get_setting('apple_icon_57'),
             'weight' => 100,
-        ),
-        'apple-72x72' => array(
-            'rel' => 'apple-touch-icon',
+        );
+    }
+    if (theme_get_setting('apple_icon_72')) {
+        $icons['apple-72x72'] = array(
+            'attr_val' => 'apple-touch-icon',
             'size' => '72x72',
             'href' => theme_get_setting('apple_icon_72'),
             'weight' => 99,
-        ),
-        'apple-114x114' => array(
-            'rel' => 'apple-touch-icon',
+        );
+    }
+    if (theme_get_setting('apple_icon_114')) {
+        $icons['apple-114x114'] = array(
+            'attr_val' => 'apple-touch-icon',
             'size' => '114x114',
             'href' => theme_get_setting('apple_icon_114'),
             'weight' => 98,
-        ),
-        'apple-144x144' => array(
-            'rel' => 'apple-touch-icon',
+        );
+    }
+    if (theme_get_setting('apple_ico n_144')) {
+        $icons['apple-144x144'] = array(
+            'attr_val' => 'apple-touch-icon',
             'size' => '144x144',
             'href' => theme_get_setting('apple_icon_144'),
             'weight' => 97,
-        ),
-    );
-    cellular_favicon($icons, $vars);
+        );
+    }
+    foreach ($icons as $favicon) {
+        $favicon['attr'] = 'rel';
+        $favicon['href'] = cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
+    }
+    cellular_build_head_tags($icons);
 
-// Add body classes
+//  Add body  classes
     $body_classes_array = array();
 
 // Add sidebar class
@@ -117,7 +148,8 @@ function cellular_preprocess_html(&$vars) {
     );
 
     foreach ($conditional_classes as $key => $val) {
-        $body_classes_array[] = $val;
+        $body_classes_array[
+                ] = $val;
     }
 
     $vars['body_classes'] = cellular_merge($body_classes_array);
@@ -168,8 +200,8 @@ function cellular_preprocess_node(&$vars) {
                         'alt' => t('User .') . $node->name,
                         'title' => t('User ') . $node->name,
                         'attributes' => array('class' => 'author-image'),
-                    )) : null,
-        );
+                    )) :
+                    null,);
 
 // Return $author
         $vars['author'] = $author['image'] . $author['name'] . $author['description'];
@@ -215,7 +247,7 @@ function cellular_preprocess_page(&$vars) {
             "&copy; " . date("Y") . " " . $copyright : null;
 
     // Set custom page templates for CCK Content (page--content-type.tpl.php)
-    if (isset($vars['node']->type)) {
+    if (isset($vars ['node']->type)) {
         $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
     }
 
@@ -229,7 +261,9 @@ function cellular_preprocess_page(&$vars) {
     if (isset($http_status)) {
 
         switch ($http_status) {
-            case "403 Forbidden":
+            case
+
+            "403 Forbidden":
             case "404 Not Found":
             case "500 Internal Server Error":
                 $vars['theme_hook_suggestions'][] = 'page__error';
@@ -265,7 +299,8 @@ function cellular_preprocess_block(&$vars) {
     $vars['classes_array'] = array(
         'block',
     );
-    $vars['title_attributes_array']['class'] = array(
+    $vars['title_attributes_array'] ['class'] = array
+        (
         'block-title',
     );
     $vars['content_attributes_array']['class'] = array(
@@ -281,7 +316,8 @@ function cellular_preprocess_block(&$vars) {
     //|| ($block->region == 'header_top')
     //|| ($block->region == 'header_bottom')
     ) {
-        $vars['title_attributes_array']['class'] = array('hidden');
+        $vars['title_attributes_array']['class'] = array(
+            'hidden');
     }
 }
 

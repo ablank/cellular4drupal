@@ -146,3 +146,20 @@ $form['c']['social_media']['follow']['follow_linkedin_url'] = array(
         ),
     ),
 );
+$form['c']['social_media']['follow']['follow_github'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Follow on Github'),
+    '#description' => t("Provide a link to follow on Github."),
+    '#default_value' => theme_get_setting('follow_github'),
+);
+$form['c']['social_media']['follow']['follow_github_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Github'),
+    '#description' => t("URL of the Github profile."),
+    '#default_value' => theme_get_setting('follow_github_url'),
+    '#states' => array(
+        'visible' => array(
+            ':input[name="follow_github"]' => array('checked' => TRUE),
+        ),
+    ),
+);

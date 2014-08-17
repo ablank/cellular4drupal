@@ -44,6 +44,12 @@ function cellular_social_media_follow() {
                 'class' => 'linkedin',
                 'name' => t('LinkedIn'),
                     ) : null,
+            'github' => theme_get_setting('follow_github') == 1 ?
+                    array(
+                'url' => theme_get_setting('follow_github_url'),
+                'class' => 'github-octo',
+                'name' => t('Github'),
+                    ) : null,
         );
 
         foreach ($links as $link) {

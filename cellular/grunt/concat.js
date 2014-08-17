@@ -14,7 +14,7 @@ module.exports = {
             //'js/cellularUI/js/cellular.jEqualheight.js',
             'js/cellularUI/js/cellular.jFormal.js',
             'js/cellularUI/js/cellular.jMmenu.js',
-            //'js/cellularUI/js/cellular.jParallax.js',
+            'js/cellularUI/js/cellular.jParallax.js',
             'js/cellularUI/js/cellular.jScrolli.js',
             //'js/cellularUI/js/cellular.jScrolltrigger.js',
             //'js/cellularUI/js/cellular.jSticky.js',
