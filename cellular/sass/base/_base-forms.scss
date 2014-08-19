@@ -85,7 +85,7 @@ textarea {
     font-size: 100%;
     vertical-align: middle;
     color: $p_color;
-    background: $c2;
+    background: $white;
     @include border-radius();
     @include transition();
 }
@@ -107,12 +107,12 @@ input {
         width: 90%;
         border: $light_grey $border;
         color: $dark_grey;
-        background: darken($c2, 3%);
+        background: darken($white, 3%);
 
         &:focus {
             color: $p_color;
             border-color: $p_color;
-            background: $c2;
+            background: $white;
         }
     }
     &[type=checkbox],
@@ -168,10 +168,10 @@ textarea {
     width: 90%;
     border: $light_grey $border;
     color: $dark_grey;
-    background: darken($c2, 2%);
+    background: darken($white, 2%);
     &:focus {
         color: $p_color;
-        background: $c2;
+        background: $white;
     }
 }
 
@@ -182,7 +182,7 @@ select {
 }
 
 optgroup {
-    background: darken($c2, 5%);
+    background: darken($white, 5%);
 }
 
 option {
@@ -209,7 +209,7 @@ input[type="submit"] {
     @include border-radius();
     font-weight: bold;
     border: .2em solid;
-    background-color: $c2;
+    background-color: $white;
     li {
         list-style: none;
     }

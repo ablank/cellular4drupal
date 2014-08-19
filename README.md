@@ -66,13 +66,13 @@ Code syntax hilighter.
 
 ## Known Issues
 * __(Warning)__ Drupal doesn't like it when you take control of the logo & favicon 
- __[Solution]__ tbd... 
+ 
+* __[Solution]__ tbd... 
 
 * __(Warning)__ Drupal doesn't like `/node_modules/` used by grunt. 
 
 * __[Solution]__ Don't push `/node_modules/` to production. 
 
-* __Weird__ jBlocklink partially ignores .once? I'm working on it...
 
 ## Planned Updates
 * Cellular Foundation- Cellular theme functions with ZURB Foundation frontend.

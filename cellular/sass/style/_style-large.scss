@@ -21,7 +21,7 @@
     }
 
     #page-wrap {
-        //@include bg_colorover($c2, ../assets/images/bg_photo.jpg);
+        //@include bg_colorover($white, ../assets/images/bg_photo.jpg);
     }
 
     #app {
@@ -31,6 +31,6 @@
     }
 
     #footer {
-        // background: $c1 url(../assets/images/honeycomb_dark.png) repeat;
+        // background: $black url(../assets/images/honeycomb_dark.png) repeat;
     }
 }

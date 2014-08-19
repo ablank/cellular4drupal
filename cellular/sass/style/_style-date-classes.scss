@@ -15,7 +15,7 @@
 .post-date {
     display: inline-block;
     margin: 1em 1em 1em 0;
-    background: $c2;
+    background: $white;
     border: $light_grey $border;
     color: $dark_grey;
     text-align: center;
@@ -37,9 +37,9 @@
 
 .post-day {
     font-size: 1.5em;
-    background: $c2;
+    background: $white;
 
-    @include box-shadow(inset $shadow_small $c2);
+    @include box-shadow(inset $shadow_small $white);
 }
 
 .post-year {
