@@ -75,9 +75,11 @@ Code syntax hilighter.
 
 
 ## Planned Updates
-* Cellular Foundation- Cellular theme functions with ZURB Foundation frontend.
+* jQueryUI from CDN
 
 * Admin theme
+
+* Cellular Foundation- Cellular theme functions with ZURB Foundation frontend.
 
 * Optimize icon build process- fork grunticon, output DirectoryColorfy to svg files (!base-encoded in stylesheet), compile PNG sprite (svg2png, spritesmith), build stylesheet from handlebar template w/ link to files.
 
