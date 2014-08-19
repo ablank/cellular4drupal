@@ -14,8 +14,8 @@
 function cellular_html_head_alter(&$head_elements) {
     // Remove unwanted meta tags
     $exclude = array(
-        //'metatag_shortlink',
         'metatag_generator',
+        'metatag_generator_0'
     );
 
     foreach ($exclude as $element) {

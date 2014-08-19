@@ -43,69 +43,32 @@ function cellular_merge(&$arr) {
   Add <link> & <meta> tags from array
  * ************** */
 
-function cellular_build_head_tags(&$meta_array) {
+function cellular_build_head_tags(&$array) {
     $base_weight = 0;
 
-
-    foreach ($meta_array as $meta) {
-        // Build tag
-        /*
-        $tag = array(
-            '#type' => 'html_tag',
-            '#tag' => isset($meta['tag']) ? $meta['tag'] : 'link',
-            '#attributes' => array(
-                $meta['attr'] => $meta['attr_val'],
-                'content' => $meta['content']
-            ),
-            '#weight' => isset($meta['weight']) ? $meta['weight'] : $base_weight
-        );
-        isset($meta['rel']) ? $tag['#attributes']['rel'] = $meta['rel'] : NULL;
-        isset($meta['type']) ? $tag['#attributes']['type'] = $meta['type'] : NULL;
-        isset($meta['size']) ? $tag['#attributes']['sizes'] = $meta['size'] : NULL;
-        isset($meta['href']) ? $tag['#attributes']['href'] = $meta['href'] : NULL;
-        // Add tag
-        drupal_add_html_head($tag, 'meta_' . $meta['attr_val']);
-*/
-        
+    foreach ($array as $meta => $val) {
+        // Build tag        
           $tag = array(
           '#type' => 'html_tag',
-          '#tag' => 'meta',
+          '#tag' => $val['tag'],
           '#attributes' => array(
-          $meta['attr'] => $meta['attr_val'],
-          'content' => $meta['content']
+            $val['attr'] => $val['attr_val'],
           ),
-          '#weight' => isset($meta['weight']) ? $meta['weight'] : $base_weight
+          '#weight' => isset($val['weight']) ? $val['weight'] : $base_weight
           );
-          drupal_add_html_head($tag, 'meta_' . $meta['attr_val']);
+
+        isset($val['href']) ? $tag['#attributes']['href'] = $val['href'] : NULL;
+        isset($val['rel']) ? $tag['#attributes']['rel'] = $val['rel'] : NULL;
+        isset($val['content']) ? $tag['#attributes']['content'] = $val['content'] : NULL;
+        // 
+        isset($val['size']) ? $tag['#attributes']['sizes'] = $val['size'] : NULL;
+        isset($val['type']) ? $tag['#attributes']['type'] = $val['type'] : NULL;
+
+          drupal_add_html_head($tag, 'meta_' . $meta );
          
     }
 }
 
-/* * ************
-  favicons & apple-touch-icons
- * ************** */
-
-function cellular_favicon(&$icon_array) {
-
-    $icon_dir = cellular_theme_path() . '/assets/icons';
-    $base_weight = 0;
-
-    foreach ($icon_array as $icon) {
-        $link = array(
-            '#type' => 'html_tag',
-            '#tag' => 'link',
-            '#attributes' => array(
-                'rel' => $icon['rel'],
-            ),
-            '#weight' => isset($icon['weight']) ? $icon['weight'] : $base_weight++,
-        );
-        isset($icon['type']) ? $link['#attributes']['type'] = $icon['type'] : NULL;
-        isset($icon['size']) ? $link['#attributes']['sizes'] = $icon['size'] : NULL;
-        isset($icon['href']) ? $link['#attributes']['href'] = $icon_dir . '/' . $icon['href'] : NULL;
-
-        drupal_add_html_head($link, 'icon_' . $link['#attributes']['href']);
-    }
-}
 
 /* * ************
   Main Menu

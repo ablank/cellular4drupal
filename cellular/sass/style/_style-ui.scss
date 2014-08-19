@@ -25,6 +25,7 @@
         padding: $small $normal;
         background: $black;
         color: $white;
+        z-index: 2;
         @include transition();
 
         &:hover {
@@ -55,6 +56,7 @@
             background-color: $white;
             color: $dark_grey;
             border: .1em solid;
+            z-index: 1;
     }
 
     /////
@@ -177,16 +179,36 @@
         display: block;
         clear: both;
         margin: 0;
-        padding: $normal 0 ;
+        padding: $normal 0;
         // background-color: $light_grey;
         li,
-        .tab,
-        .title {
-            display: inline;
+        .tab{
+            float: left;
+            display: block;
             list-style: none;
             margin: 0 0.1em 0 0;
+
+            .title {
+                border: $dark_grey 1px solid;
+                border-bottom: $dark_grey.2em solid;
+            }
+
+            &.active {
+                 background-color: $white;
+                border-bottom: $white 1px solid;
+
+             .title {
+               background: $white;
+               border-bottom: $white 1px solid;
+                a{
+               color: $black;
+            }
+             }
+        }
         }
         .panel {
+            clear: both;
+            bottom: 3px;
         }
     }
 }

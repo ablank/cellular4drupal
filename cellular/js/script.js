@@ -18,11 +18,11 @@
             $('.jScrolli').jScrolli();
             $('.jTabs').jTabs();
             $('#nav').jMmenu();
-
+//$('.jParallax').jParallax();
             //$('.jScrolltrigger').jScrolltrigger();
             //$('.jCarousel').jCarousel();
             //$('.jEqualheight').jEqualheight();
-            //$('.jParallax').jParallax();
+            //
             //$('.jToggle').jToggle();
             //$('.jSticky').jSticky();
 

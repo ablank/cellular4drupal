@@ -25,17 +25,15 @@ function cellular_preprocess_html(&$vars) {
 
 // Add meta elements to $head
     $meta_tags = array(
-        /*
-          // humans
-          'humans' => array(
-          'type' => 'text/plain',
-          'attr_val' => 'humans',
-          'content' => 'index, follow',
-          'rel' => 'author',
-          'href' => $base_url . '/humans.txt',
-          'weight' => -999
-          ),
-         */
+        // humans
+        'humans' => array(
+            'tag' => 'link',
+            'attr' => 'type',
+            'attr_val' => 'text/plain',
+            'rel' => 'author',
+            'href' => $base_url . '/humans.txt',
+            'weight' => -999
+        ),
         // robots
         'robots' => array(
             'tag' => 'meta',
@@ -66,66 +64,56 @@ function cellular_preprocess_html(&$vars) {
 
 
 // Add favicon & apple-touch-icons
-// href is relative to the Icons folder
-    $icons = array();
-
-    if (theme_get_setting('favicon')) {
-        $icons['favicon-16x16'] = array(
+    $favicons = array(
+        'favicon-16x16' => array(
             'attr_val' => 'shortcut icon',
             'size' => null,
             'type' => 'image/x-icon',
             'href' => theme_get_setting('favicon'),
             'weight' => 95,
-        );
-    };
-    if (theme_get_setting('favicon_32')) {
-        $icons['favicon-32x32'] = array(
+        ),
+        'favicon-32x32' => array(
             'attr_val' => 'shortcut icon',
             'size' => '32x32',
             'type' => 'image/png',
             'href' => theme_get_setting('favicon_32'),
             'weight' => 96,
-        );
-    };
-
-    // Older iOS devices don't understand the sizes attribute and use whichever value is last, so 'default' is given more weight.
-    if (theme_get_setting('apple_icon_57')) {
-        $icons['apple-default'] = array(
+        ),
+        // Older iOS devices don't understand the sizes attribute and use whichever value is last, so 'default' is given more weight.
+        'apple-default' => array(
             'attr_val' => 'apple-touch-icon',
             'size' => null,
             'href' => theme_get_setting('apple_icon_57'),
             'weight' => 100,
-        );
-    }
-    if (theme_get_setting('apple_icon_72')) {
-        $icons['apple-72x72'] = array(
+        ),
+        'apple-72x72' => array(
             'attr_val' => 'apple-touch-icon',
             'size' => '72x72',
             'href' => theme_get_setting('apple_icon_72'),
             'weight' => 99,
-        );
-    }
-    if (theme_get_setting('apple_icon_114')) {
-        $icons['apple-114x114'] = array(
+        ),
+        'apple-114x114' => array(
             'attr_val' => 'apple-touch-icon',
             'size' => '114x114',
             'href' => theme_get_setting('apple_icon_114'),
             'weight' => 98,
-        );
-    }
-    if (theme_get_setting('apple_ico n_144')) {
-        $icons['apple-144x144'] = array(
+        ),
+        'apple-144x144' => array(
             'attr_val' => 'apple-touch-icon',
             'size' => '144x144',
             'href' => theme_get_setting('apple_icon_144'),
             'weight' => 97,
-        );
-    }
-    foreach ($icons as $favicon) {
+        )
+    );
+
+    foreach ($favicons as &$favicon) {
+        $favicon['tag'] = 'link';
         $favicon['attr'] = 'rel';
+// Set href relative to /favicons/
         $favicon['href'] = cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
     }
-    cellular_build_head_tags($icons);
+
+    cellular_build_head_tags($favicons);
 
 //  Add body  classes
     $body_classes_array = array();
