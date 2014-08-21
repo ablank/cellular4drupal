@@ -47,20 +47,22 @@ function cellular_build_head_tags(&$array) {
     $base_weight = 0;
 
     foreach ($array as $meta => $val) {
-        // Build tag        
+        // Build tag
           $tag = array(
           '#type' => 'html_tag',
           '#tag' => $val['tag'],
-          '#attributes' => array(
-            $val['attr'] => $val['attr_val'],
-          ),
+          '#attributes' => array(),
           '#weight' => isset($val['weight']) ? $val['weight'] : $base_weight
           );
 
-        isset($val['href']) ? $tag['#attributes']['href'] = $val['href'] : NULL;
+        // Misc. attr/val
+        isset($val['attr']) && isset($val['attr_val']) ? $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
+        // General attributes
+        isset($val['name']) ? $tag['#attributes']['name'] = $val['name'] : NULL;
         isset($val['rel']) ? $tag['#attributes']['rel'] = $val['rel'] : NULL;
         isset($val['content']) ? $tag['#attributes']['content'] = $val['content'] : NULL;
-        // 
+        isset($val['href']) ? $tag['#attributes']['href'] = $val['href'] : NULL;
+        // Attributes for favicons
         isset($val['size']) ? $tag['#attributes']['sizes'] = $val['size'] : NULL;
         isset($val['type']) ? $tag['#attributes']['type'] = $val['type'] : NULL;
 

@@ -1,17 +1,30 @@
 <?php
-
-/* * ************
-  Cellular:: theme.inc
-
-  Override theme functions for templates
-
- * ************** */
-
 /* * ************* *
   theme_file_icon()
  * ************** */
 
-function cellular_file_icon(&$vars) {
+function cellular_field($vars) {
+    $output = '';
+
+    // Render the label, if it's not hidden.
+    if (!$vars['label_hidden']) {
+        $output .= '<h3 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . '</h3>';
+    }
+
+    // Render the items.
+    $output .= '<div class="field-items"' . $vars['content_attributes'] . '>';
+    $output .= '<div class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>';
+    $output .= drupal_render($item);
+    $output .= "</div>\n</div>\n";
+
+    return $output;
+}
+
+    /* * ************* *
+      theme_file_icon()
+     * ************** */
+
+    function cellular_file_icon(&$vars) {
     $file = $vars['file'];
     $mime = check_plain($file->filemime);
     $generic_mime = (string) file_icon_map($file);

@@ -76,23 +76,19 @@
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" <?php print $attributes; ?>>
-    <?php /* if ($author): ?>
-      <p class="author">
-      <?php print $author; ?>
-      </p>
-      <?php endif; */
-    ?>
 
-    <?php print render($title_prefix); ?>
-    <?php if (!$page): 
-       if($title){ 
-        print "<h2  $title_attributes >";
-        print '<a href="'.$node_url.'">';
-        print $title;
-        print "</a>\n</h2>";
-      }
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
+    <?php
+    print render($title_prefix);
+    if (!$page) {
+        if ($title) {
+            print "<h2  $title_attributes >";
+            print '<a href="' . $node_url . '">';
+            print $title;
+            print "</a>\n</h2>";
+        }
+    }
+    print render($title_suffix);
+    ?>
 
     <?php if ($display_submitted): ?>
         <div class="post-date">

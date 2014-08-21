@@ -100,6 +100,9 @@ settings[share_linkedin]        = 0
 settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
 
+;----------// Plugins
+plugins[panels][layouts] = templates/panels
+
 ;----------// Site Features
 ;features[]      = name
 ;features[]      = node_user_picture

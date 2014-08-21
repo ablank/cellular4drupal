@@ -13,10 +13,23 @@
   Add <link> and <meta> tags, html/body attributes, conditional css
  * ************** */
 
-function cellular_preprocess_html(&$vars) {
+function cellular_preprocess_html(&$vars)
+{
     global $language, $base_url;
 
-// Set <HTML> attributes
+    // Set DOCTYPE
+    if (module_exists('rdf')) {
+        $vars['doctype'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN">' . "\n";
+        $vars['rdf_version'] = ' version="HTML+RDFa 1.1"';
+        $vars['rdf_profile'] = ' profile="' . $vars['grddl_profile'] . '"';
+    }
+    else {
+        $vars['doctype'] = "<!DOCTYPE html>\n";
+        $vars['rdf_version'] = '';
+        $vars['rdf_profile'] = '';
+    }
+
+    // Set <HTML> attributes
     $html_attributes = array(
         'lang' => $language->language,
         'dir' => $language->dir,
@@ -25,81 +38,84 @@ function cellular_preprocess_html(&$vars) {
 
 // Add meta elements to $head
     $meta_tags = array(
-        // humans
-        'humans' => array(
-            'tag' => 'link',
-            'attr' => 'type',
-            'attr_val' => 'text/plain',
-            'rel' => 'author',
-            'href' => $base_url . '/humans.txt',
-            'weight' => -999
-        ),
-        // robots
-        'robots' => array(
-            'tag' => 'meta',
-            'attr' => 'name',
-            'attr_val' => 'robots',
-            'content' => 'index, follow',
-            'weight' => -999
-        ),
         // viewport
         'viewport' => array(
             'tag' => 'meta',
-            'attr' => 'name',
-            'attr_val' => 'viewport',
+            'name' => 'viewport',
             'content' => 'width=device-width, initial-scale=1',
-            'weight' => -999.1
+            'weight' => 0
         ),
         // IE rendering mode- set to lowest weight
         'ie_render_engine' => array(
             'tag' => 'meta',
             'attr' => 'http-equiv',
             'attr_val' => 'X-UA-Compatible',
-            'content' => 'IE=7; IE=8; IE=9; IE=Edge,chrome=1',
-            'weight' => -999.2
+            'content' => 'IE=Edge,chrome=1',
+            'weight' => 1
         ),
+        // robots
+        'robots' => array(
+            'tag' => 'meta',
+            'name' => 'robots',
+            'content' => 'index, follow',
+            'weight' => 2
+        ),
+        // humans
+        'humans' => array(
+            'tag' => 'link',
+            'type' => 'text/plain',
+            'rel' => 'author',
+            'href' => $base_url . '/humans.txt',
+            'weight' => 3
+        ),
+        // GRDDL
+        'grddl' => !empty($vars['grddl_profile']) ? array(
+            'tag' => 'link',
+            'rel' => 'profile',
+            'href' => $vars['grddl_profile'],
+            'weight' => 4
+        ) : NULL,
     );
 
     cellular_build_head_tags($meta_tags);
 
-
 // Add favicon & apple-touch-icons
     $favicons = array(
         'favicon-16x16' => array(
-            'attr_val' => 'shortcut icon',
-            'size' => null,
+            'rel' => 'shortcut icon',
             'type' => 'image/x-icon',
+            'size' => null,
             'href' => theme_get_setting('favicon'),
             'weight' => 95,
         ),
         'favicon-32x32' => array(
-            'attr_val' => 'shortcut icon',
-            'size' => '32x32',
+            'rel' => 'shortcut icon',
             'type' => 'image/png',
+            'size' => '32x32',
             'href' => theme_get_setting('favicon_32'),
             'weight' => 96,
         ),
         // Older iOS devices don't understand the sizes attribute and use whichever value is last, so 'default' is given more weight.
         'apple-default' => array(
-            'attr_val' => 'apple-touch-icon',
+            'rel' => 'apple-touch-icon',
             'size' => null,
             'href' => theme_get_setting('apple_icon_57'),
             'weight' => 100,
         ),
         'apple-72x72' => array(
-            'attr_val' => 'apple-touch-icon',
+            'rel' => 'apple-touch-icon',
             'size' => '72x72',
             'href' => theme_get_setting('apple_icon_72'),
             'weight' => 99,
         ),
         'apple-114x114' => array(
-            'attr_val' => 'apple-touch-icon',
+            'rel' => 'apple-touch-icon',
             'size' => '114x114',
             'href' => theme_get_setting('apple_icon_114'),
             'weight' => 98,
         ),
         'apple-144x144' => array(
-            'attr_val' => 'apple-touch-icon',
+            'rel' => 'apple-touch-icon',
             'size' => '144x144',
             'href' => theme_get_setting('apple_icon_144'),
             'weight' => 97,
@@ -108,14 +124,13 @@ function cellular_preprocess_html(&$vars) {
 
     foreach ($favicons as &$favicon) {
         $favicon['tag'] = 'link';
-        $favicon['attr'] = 'rel';
-// Set href relative to /favicons/
+// Set href relative to /assets/favicons/
         $favicon['href'] = cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
     }
 
     cellular_build_head_tags($favicons);
 
-//  Add body  classes
+//  Add classes to <body>
     $body_classes_array = array();
 
 // Add sidebar class
@@ -136,22 +151,21 @@ function cellular_preprocess_html(&$vars) {
     );
 
     foreach ($conditional_classes as $key => $val) {
-        $body_classes_array[
-                ] = $val;
+        $body_classes_array[] = $val;
     }
 
     $vars['body_classes'] = cellular_merge($body_classes_array);
 
     // Add conditional CSS for IE9 and below.
     drupal_add_css(cellular_theme_path() . '/css/ie.css', array(
-        'group' => CSS_THEME,
-        'browsers' => array(
-            'IE' => 'lt IE 10',
-            '!IE' => FALSE
-        ),
-        'weight' => 999,
-        'preprocess' => FALSE,
-            )
+            'group' => CSS_THEME,
+            'browsers' => array(
+                'IE' => 'lt IE 10',
+                '!IE' => FALSE
+            ),
+            'weight' => 999,
+            'preprocess' => FALSE,
+        )
     );
 }
 
@@ -159,7 +173,8 @@ function cellular_preprocess_html(&$vars) {
   preprocess_node()
  * ************** */
 
-function cellular_preprocess_node(&$vars) {
+function cellular_preprocess_node(&$vars)
+{
     $vars['hook'] = 'node';
     $node = $vars['node'];
 
@@ -202,7 +217,8 @@ function cellular_preprocess_node(&$vars) {
   Set vars for page.tpl
  * ************** */
 
-function cellular_preprocess_page(&$vars) {
+function cellular_preprocess_page(&$vars)
+{
     // Link site name to frontpage
     $vars['site_name'] = l($vars['site_name'], '<front>');
 
@@ -232,7 +248,7 @@ function cellular_preprocess_page(&$vars) {
     // Set copyright if provided
     $copyright = theme_get_setting('copyright');
     $vars['copyright'] = isset($copyright) ?
-            "&copy; " . date("Y") . " " . $copyright : null;
+        "&copy; " . date("Y") . " " . $copyright : null;
 
     // Set custom page templates for CCK Content (page--content-type.tpl.php)
     if (isset($vars ['node']->type)) {
@@ -269,7 +285,8 @@ function cellular_preprocess_page(&$vars) {
   preprocess_region()
  * ************** */
 
-function cellular_preprocess_region(&$vars) {
+function cellular_preprocess_region(&$vars)
+{
     /*
 
      */
@@ -279,7 +296,8 @@ function cellular_preprocess_region(&$vars) {
   preprocess_block()
  * ************** */
 
-function cellular_preprocess_block(&$vars) {
+function cellular_preprocess_block(&$vars)
+{
     $vars['hook'] = 'block';
     $block = $vars['block'];
     $vars['title'] = isset($block->subject) ? $block->subject : null;
@@ -288,7 +306,7 @@ function cellular_preprocess_block(&$vars) {
         'block',
     );
     $vars['title_attributes_array'] ['class'] = array
-        (
+    (
         'block-title',
     );
     $vars['content_attributes_array']['class'] = array(
@@ -301,8 +319,8 @@ function cellular_preprocess_block(&$vars) {
 
     // Hide block titles in the headers region.
     if (($block->region == 'header')
-    //|| ($block->region == 'header_top')
-    //|| ($block->region == 'header_bottom')
+        //|| ($block->region == 'header_top')
+        //|| ($block->region == 'header_bottom')
     ) {
         $vars['title_attributes_array']['class'] = array(
             'hidden');
@@ -313,7 +331,8 @@ function cellular_preprocess_block(&$vars) {
   preprocess_comment()
  * ************** */
 
-function cellular_preprocess_comment(&$vars) {
+function cellular_preprocess_comment(&$vars)
+{
     $vars['hook'] = 'comment';
 
     $vars['title_attributes_array']['class'] = array('comment-title');
@@ -331,7 +350,8 @@ function cellular_preprocess_comment(&$vars) {
   preprocess_username()
  * ************** */
 
-function cellular_preprocess_username(&$vars) {
+function cellular_preprocess_username(&$vars)
+{
     if (isset($vars['link_path'])) {
         $vars['link_attributes']['rel'][] = 'author';
     } else {
