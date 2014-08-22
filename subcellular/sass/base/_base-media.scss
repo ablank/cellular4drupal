@@ -41,7 +41,7 @@ a.colorbox {
     display: inline;
     display: inline-block;
     margin: 1em;
-    @include overlay($c1);
+    @include overlay($black);
     @include box-shadow(0 0 .2em .2em $light_grey);
 }
 

@@ -34,14 +34,14 @@ $showDropdowns: true;
             font-weight: bold;
             white-space: nowrap;
             text-decoration: underline;
-            background: lighten($c1, 10%);
-            color: $c2;
+            background: lighten($black, 10%);
+            color: $white;
             border-top: .3em solid;
             &:hover,
                 &:focus,
                 &:active {
                 text-decoration: none;
-                background: lighten($c1, 20%);
+                background: lighten($black, 20%);
                 color: $hilight;
             }
         }
@@ -52,7 +52,7 @@ $showDropdowns: true;
             ul {
                 left: -9999px;
                 position: absolute;
-                @include overlay($c2);
+                @include overlay($white);
             }
             @if ($showDropdowns) == true {
                 // First nested menu
@@ -105,7 +105,7 @@ $showDropdowns: true;
         }
         .home {
             background: url(../assets/images/icon-home.png);
-            color: $c1;
+            color: $black;
             padding: 0 0 0 34px;
         }
         a {

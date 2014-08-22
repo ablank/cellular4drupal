@@ -163,7 +163,7 @@
     }
 }
 
-@mixin textstroke($color: $c2, $size: 1px) {
+@mixin textstroke($color: $white, $size: 1px) {
     text-shadow: -$size -$size 0 $color,
         $size -$size 0 $color,
         -$size $size 0 $color, $size $size 0 $color;
@@ -179,11 +179,11 @@
     padding: $small $normal;
     background-color: $hilight;
     width: auto;
-    color: $c2;
+    color: $white;
     border: darken($hilight, 20%) .2em solid;
     @include border-radius();
     &:visited {
-        color: $c2;
+        color: $white;
     }
     &.active,
     &:active,
@@ -207,8 +207,8 @@
 }
 
 @mixin title {
-    background: $c1;
-    color: $c2;
+    background: $black;
+    color: $white;
     text-decoration: none;
 }
 
@@ -219,21 +219,21 @@
 }
 
 // Horizontal Linear Gradient
-@mixin gradient_x($color_1: $c1, $color_2: $c2) {
+@mixin gradient_x($color_1: $black, $color_2: $white) {
     background: $color_1;
     @include prefix(background-image, linear-gradient(left, $color_1 0%, $color_2 100%));
     background-image: linear-gradient(to right, $color_1 0%, $color_2 100%);
 }
 
 // Vertical Linear Gradient
-@mixin gradient_y($color_1: $c1, $color_2: $c2) {
+@mixin gradient_y($color_1: $black, $color_2: $white) {
     background: $color_1;
     @include prefix(background-image, linear-gradient(top, $color_1 0%, $color_2 100%));
     background-image: linear-gradient(to bottom, $color_1 0%, $color_2 100%);
 }
 
 // Radial Gradient
-@mixin gradient_rad($color_1: $c1, $color_2: $c2) {
+@mixin gradient_rad($color_1: $black, $color_2: $white) {
     background: $color_1;
     @include prefix(background-image, radial-gradient(center top, ellipse farthest-side, $color_1 0%, $color_2 100%));
     background-image: radial-gradient(ellipse farthest-side at center top, $color_1 0%, $color_2 100%);
@@ -263,7 +263,7 @@
     @include prefix(border-bottom-left-radius, $rad);
 }
 
-@mixin tri_left($width: $normal, $height: $normal, $color: $c1) {
+@mixin tri_left($width: $normal, $height: $normal, $color: $black) {
     &:after {
         content: "";
         position: absolute;
@@ -277,7 +277,7 @@
     }
 }
 
-@mixin tri_right($width: $normal, $height: $normal, $color: $c1) {
+@mixin tri_right($width: $normal, $height: $normal, $color: $black) {
     &:after {
         content: "";
         position: absolute;
@@ -291,7 +291,7 @@
     }
 }
 
-@mixin ribbon($width: $normal, $height: $normal, $color: $c1) {
+@mixin ribbon($width: $normal, $height: $normal, $color: $black) {
     position: relative;
     margin: 0 auto $height;
     padding: 0 $width;
@@ -314,7 +314,7 @@
     }
 }
 
-@mixin popout($width: $normal, $height: $normal, $color: $c1) {
+@mixin popout($width: $normal, $height: $normal, $color: $black) {
     position: relative;
     margin: 0 0 $height 0;
     padding: 0 $width;

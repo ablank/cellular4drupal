@@ -29,15 +29,15 @@ Cellular :: drupal pager
     a:link,
         a:visited {
         padding: $normal;
-        color: $c2;
+        color: $white;
         display: block;
         cursor: pointer;
         background: $dark_grey;
-        border: $border $c1;
+        border: $border $black;
     }
     a:hover,
         a:focus {
-        background: $c2;
+        background: $white;
         color: $hilight;
         border: $border $hilight;
     }
@@ -51,7 +51,7 @@ Cellular :: drupal pager
         font-size: 1.2em;
         font-weight: bold;
         outline: 0;
-        background: $c2;
+        background: $white;
         color: $dark_grey;
         border: $border $dark_grey;
     }
@@ -66,10 +66,10 @@ Cellular :: drupal pager
             width: 6em;
             text-align: center;
             color: $dark_grey;
-            background: $c2;
+            background: $white;
             @include border-radius();
             &:hover {
-                background: $c2;
+                background: $white;
                 color: $hilight;
             }
         }

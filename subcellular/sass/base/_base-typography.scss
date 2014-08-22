@@ -88,7 +88,7 @@ h1 {
     padding: $normal $big $big;
     font-size: $h_size;
     text-align: left;
-    color: $c1;
+    color: $black;
     border: none;
 }
 
@@ -150,7 +150,7 @@ blockquote {
     margin: $tiny $big;
     padding: $normal;
     font-style: italic;
-    background-color: darken($c2, 10%);
+    background-color: darken($white, 10%);
     color: $dark_grey;
     border-left: $tiny solid;
     &:before {

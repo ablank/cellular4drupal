@@ -75,11 +75,11 @@ thead {
 }
 
 tr:nth-child(even) {
-    background: darken($c2, 5%);
+    background: darken($white, 5%);
 }
 
 tr:nth-child(odd) {
-    background: $c2;
+    background: $white;
 }
 
 td {

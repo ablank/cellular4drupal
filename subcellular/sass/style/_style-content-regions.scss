@@ -9,9 +9,9 @@ $region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 
 //////
 
 body {
-    background-color: $c2;
+    background-color: $white;
     //background-image: $body_img;
-    //@include gradient_rad($c2, $c2, $light_grey);
+    //@include gradient_rad($white, $white, $light_grey);
     //background-repeat: repeat;
     //background-attachment: fixed;
 
@@ -42,8 +42,8 @@ body {
 #header-top {
     z-index: 4;
     background: darken($hilight, 20%);
-    color: $c2;
-    border-bottom: $c1 $border;
+    color: $white;
+    border-bottom: $black $border;
     // Position contents left or right
     text-align: right;
     @include clearfix();
@@ -81,7 +81,7 @@ body {
     height: 72px;
     padding: .8em;
     background: #AAA;
-    background: rgba($c1, 0.4);
+    background: rgba($black, 0.4);
     // Custom type for region
     h2,
     h3,
@@ -108,8 +108,8 @@ body {
 #header-bottom {
     height: 32px;
     // background: darken($hilight, 20%);
-    color: $c2;
-    border-bottom: $c1 $border;
+    color: $white;
+    border-bottom: $black $border;
     // Custom type for region
     h2,
     h3,
@@ -231,12 +231,12 @@ body {
 
 #footer {
     background: $dark_grey;
-    color: $c2;
+    color: $white;
     // Custom type for region
     h2,
     h3,
     h4 {
-        color: $c2;
+        color: $white;
     }
     h2 {
     }
@@ -245,7 +245,7 @@ body {
     h4 {
     }
     p {
-        color: $c2;
+        color: $white;
     }
     a {
         &:visited {
@@ -310,7 +310,7 @@ body {
     position: relative;
     width: 100%;
     padding: 0 0 1em 0;
-    background: $c2;
+    background: $white;
     border-top: $dark_grey 1em solid;
     overflow: hidden;
     form {
