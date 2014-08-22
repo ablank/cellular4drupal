@@ -12,18 +12,19 @@ The Cellular base theme for Drupal 7 simplifies front-end development of Drupal 
 * Integrated social media follow & share links with custom icons
 
 ## Usage
-Navigate to `/admin/appearance` and enable the Cellular theme
-
-Enable & set SubCellular as the default theme
+1. Navigate to `/admin/appearance`
+  * Enable the Cellular theme
+  * Enable & set SubCellular as the default theme
 
 Modify the theme Settings to suit your needs.
-* __Personalize__ : Set copyright & favicons
-* __Style__ : Add/Edit media query, remove Drupal CSS, configure breadcrumb & menu display settings, set content classes
+* __Personalize__ : Set copyright & favicons ('-precomposed' should be appended to the icon filename to prevent the OS chrome from appearing)
+* __Style__ : Add/Edit media queries, remove (most) core Drupal CSS, configure breadcrumb & menu display settings, set content classes
 * __Javascript__ : Update & configure jQuery, select .js plugins to include.
 * __Social Media__ : Select and configure social media links to include.
 
 ## Styling
-* Tired of fighting styles set by modules? Get rid of that nonsense with `cellular_remove_css()` - Add the module => stylesheet to the array `$exclude` in `/inc/css_alter.inc` 
+* Get rid css added by modules that are interfering or not being used with `cellular_remove_css()`
+  * Add the module => stylesheet to the array `$exclude` in `/inc/css_alter.inc` 
 
 * Load additional css in the order you need with `cellular_add_css()` - Add your stylesheets to the array `$add_css` in `/inc/css_alter.inc`
 
