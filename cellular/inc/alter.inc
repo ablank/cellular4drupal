@@ -12,19 +12,16 @@
  * ************* */
 
 function cellular_html_head_alter(&$head_elements) {
-    // Remove unwanted meta tags
-    $exclude = array(
-        'metatag_generator',
-        'metatag_generator_0'
-    );
+  // Remove unwanted meta tags
+  $exclude = array('metatag_generator', 'metatag_generator_0');
 
-    foreach ($exclude as $element) {
-        if (isset($head_elements[$element])) {
-            unset($head_elements[$element]);
-        }
+  foreach ($exclude as $element) {
+    if (isset($head_elements[$element])) {
+      unset($head_elements[$element]);
     }
+  }
 
-    //dsm($head_elements);
+  //dsm($head_elements);
 }
 
 /* * ************
@@ -32,5 +29,5 @@ function cellular_html_head_alter(&$head_elements) {
  * ************** */
 
 function cellular_page_alter(&$page) {
-    //dsm($page);
+  //dsm($page);
 }

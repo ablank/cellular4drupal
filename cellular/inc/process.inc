@@ -1,7 +1,6 @@
 <?php
 
-/* * ************
-  Cellular:: process.inc
-
-  process variables for templates
- * ************** */
+/*
+ * @file
+ *  process variables for templates
+ */

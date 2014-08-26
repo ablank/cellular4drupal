@@ -2,7 +2,23 @@
 
 The Cellular base theme for Drupal 7 simplifies front-end development of Drupal websites by using the theme layer to control functionality that doesn't require interaction with the database.
 
+The goal of this project is simple- to simplify workflow as much as possible.
+
+#### Get the Cellular library for Drupal
+
+To get the most out of this theme, you will need to add the Cellular libraryto use the more advanced features like updating jQuery, icons, conditionally loading stylesheets, and all the other great things these plugins enable.
+
+
+
+```
+cd sites/all/libraries
+mkdir cellular
+git clone --branch master https://github.com/ablank/cellular.library.git cellular
+```
+
+
 ## Features
+
 
 * Mobile 1st, fluid/jello styling with SASS styling broken into logical partials
 * Full menu tree display, dynamic conditional CSS, & lots of other nifty settings
@@ -12,30 +28,37 @@ The Cellular base theme for Drupal 7 simplifies front-end development of Drupal 
 * Integrated social media follow & share links with custom icons
 
 ## Usage
-1. Navigate to `/admin/appearance`
-  * Enable the Cellular theme
-  * Enable & set SubCellular as the default theme
-
-Modify the theme Settings to suit your needs.
-* __Personalize__ : Set copyright & favicons ('-precomposed' should be appended to the icon filename to prevent the OS chrome from appearing)
-* __Style__ : Add/Edit media queries, remove (most) core Drupal CSS, configure breadcrumb & menu display settings, set content classes
-* __Javascript__ : Update & configure jQuery, select .js plugins to include.
-* __Social Media__ : Select and configure social media links to include.
+1. Navigate to `/admin/appearance` and enable the Cellular theme
+2. Enable & set `subcellular` as the default theme
+3. Modify the theme Settings to suit your needs.
+  * __Personalize__ : Set copyright & favicons
+  * __Style__ : Add/Edit media query, remove Drupal CSS, configure breadcrumb & menu display settings, set content classes
+  * __Javascript__ : Select the javascript libraries to include.
+  * __Social Media__ : Select and configure the social media links to you would like to include.
+  
+  Rather than adding scripts and stylesheets using theme settings/.INFO files as most themes do, theme functions are provided to simplify the process of adding/updating/deleting stylesheets and javascript in the theme using a code-based solution that provides highly granular control. 
+ such as by providing a better way to add multiple meta elements, css, and javascript files in your theme by adding it to a simple array.
+ 
 
 ## Styling
-* Get rid css added by modules that are interfering or not being used with `cellular_remove_css()`
-  * Add the module => stylesheet to the array `$exclude` in `/inc/css_alter.inc` 
+* Get rid of unnecessary stylesheets with `cellular_remove_css()` - Add the module => stylesheet to the array `$exclude` in `/inc/css_alter.inc` 
 
 * Load additional css in the order you need with `cellular_add_css()` - Add your stylesheets to the array `$add_css` in `/inc/css_alter.inc`
 
-SASS is preconfigured & ready to watch (cd /path/to/theme, compass watch)
+* SASS is preconfigured & ready to watch (`cd /path/to/theme`, `compass watch`)
 
 ## Scripting
 * `/js/script.js` is ready for you to add your custom scripting.
 
-* Load scripts in the order you need with `cellular_add_js()` - Add your scripts to the array `$add_js` in `/inc/js_alter.inc` 
+* Load scripts in the order you need with `cellular_add_js()` - Add your scripts to the array `$add_js` in `/inc/js_alter.inc`
+  * ***nice*** if you include the `['cdn']` key, a fallback link is generated directly after the cdn link by querying `['object']` to conditionally load `['file']`
 
 ### Included/Optional Javascript Libraries
+*Requires the javascript libraries at http://github.com/ablank/cellular.jslib
+
+`git clone --branch master https://github.com/ablank/cellular.jslib.git`
+
+
 * __jQuery Update__
 Update jQuery to the version of your choice (1.8.2, 1.7.1, 1.5.1, 1.4.4) without breaking Views from the Google or MS CDN with a local fallback 
 
