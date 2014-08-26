@@ -8,17 +8,13 @@ The goal of this project is simple- to simplify workflow as much as possible.
 
 To get the most out of this theme, you will need to add the Cellular libraryto use the more advanced features like updating jQuery, icons, conditionally loading stylesheets, and all the other great things these plugins enable.
 
-
-
 ```
 cd sites/all/libraries
 mkdir cellular
 git clone --branch master https://github.com/ablank/cellular.library.git cellular
 ```
 
-
 ## Features
-
 
 * Mobile 1st, fluid/jello styling with SASS styling broken into logical partials
 * Full menu tree display, dynamic conditional CSS, & lots of other nifty settings
