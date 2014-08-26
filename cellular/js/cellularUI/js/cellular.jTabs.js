@@ -1,7 +1,8 @@
 /////
 cellular.jTabs = function(opts) {
     var o = jQuery.extend({
-        "active": 0
+        "active": 0, // Array index of initially active tab
+        "orient": "horizontal", // || 'vertical'
     }, opts);
 
     var fn = {};
@@ -26,7 +27,7 @@ cellular.jTabs = function(opts) {
 
         $obj.once('jTabs', function() {
             
-            $obj.addClass(cellular.opts.cclass)
+            $obj.addClass(cellular.opts.cclass + ' ' + o.orient)
                     .append('<div class="' + cellular.opts.cclass + ' panel" />');
             $obj.find('.panel').append('<div class="panel-content" />');
 

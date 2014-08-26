@@ -27,9 +27,9 @@ cellular.jBlocklink = function(opts) {
 
         });
 
-        $obj.hover(function() {
+        $obj.live('mouseenter touchstart', function() {
             jQuery(this).activate();
-        }, function() {
+        }).live('mouseleave touchend', function() {
             jQuery(this).deactivate();
         });
     });

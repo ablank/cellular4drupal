@@ -1,0 +1,71 @@
+/*****
+    Cellular
+
+  // Set appearance common to all UI elements
+
+*****/
+//////
+
+.cellular {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+  li {
+    max-width: 90%;
+  }
+
+  .title {
+    cursor: pointer;
+    margin: 0;
+    max-width: 100%;
+    padding: .6em 1em;
+    background: $title_background;
+    color: $title_color;
+    z-index: 2;
+    @include transition();
+
+    &:hover {
+      background: $active_color;
+    }
+    a,
+    a:visited {
+      font-weight: bold;
+      line-height: 1.4em;
+      text-decoration: none;
+      color: $title_color;
+      border: none;
+
+      &:hover,
+      &:active,
+      &.active {
+        border: none;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .panel {
+    // Area content is displayed in accordions & tabs
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: $normal;
+    background: $panel_background;
+    color: $panel_color;
+    border: .1em solid;
+    z-index: 1;
+  }
+
+  /////
+  // Set appearance of active UI elements
+  /////
+  .active {
+
+    .title {
+      background-color: $active_color;
+    }
+  }
+}

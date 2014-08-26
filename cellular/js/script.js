@@ -16,8 +16,11 @@
             $('.jBlocklink').jBlocklink();
             $('form').jFormal();
             $('.jScrolli').jScrolli();
-            $('.jTabs').jTabs();
+            $('.jTabs').jTabs({
+                "orient" : "vertical"
+            });
             $('#nav').jMmenu();
+            //$('#nav').jStickyheader();
 //$('.jParallax').jParallax();
             //$('.jScrolltrigger').jScrolltrigger();
             //$('.jCarousel').jCarousel();

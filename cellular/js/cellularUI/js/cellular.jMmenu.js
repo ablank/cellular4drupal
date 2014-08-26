@@ -17,9 +17,11 @@ cellular.jMmenu = function(opts) {
 
             menu.click(function() {
                 if ((li.css('display')) === 'none') {
+                    menu.addClass('active');
                     li.show();
                 } else {
                     li.hide();
+                    menu.addClass('active');
                 }
             });
 

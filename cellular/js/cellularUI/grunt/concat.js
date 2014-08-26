@@ -18,6 +18,7 @@ module.exports = {
             'js/cellular.jScrolli.js',
             //'js/cellular.jScrolltrigger.js',
             //'js/cellular.jSticky.js',
+            //'js/cellular.jStickyheader.js',
             'js/cellular.jTabs.js',
             'js/cellular.end.js',
             'js/drupal.end.js',
