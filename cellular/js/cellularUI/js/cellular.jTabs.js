@@ -26,7 +26,7 @@ cellular.jTabs = function(opts) {
         var tab = $obj.find('> li');
 
         $obj.once('jTabs', function() {
-            
+
             $obj.addClass(cellular.opts.cclass + ' ' + o.orient)
                     .append('<div class="' + cellular.opts.cclass + ' panel" />');
             $obj.find('.panel').append('<div class="panel-content" />');
@@ -35,7 +35,7 @@ cellular.jTabs = function(opts) {
                 var li = jQuery(this);
 
                 li.addClass('tab')
-                    .kidWrap();
+                        .kidWrap();
                 //Set 1st child as title
                 li.children().eq(0).addClass('title');
                 //Set 2nd child as content

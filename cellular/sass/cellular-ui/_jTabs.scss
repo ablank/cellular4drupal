@@ -4,81 +4,81 @@
 //////
 .cellular {
 
-  &.jTabs {
-    display: block;
-    clear: both;
-    margin: 0;
-    padding: $normal 0;
-
-    li,
-    .tab {
-      float: left;
-      display: block;
-      list-style: none;
-      margin: 0 0.1em 0 0;
-      z-index: 2;
-
-      .title {
-        padding: .4em .6em;
-        border: $border_color 1px solid;
-      }
-
-      &.active {
-        background-color: $title_color;
-
-        .title {
-          background: $title_color;
-          border-bottom: $title_color 1px solid;
-          a {
-            color: $title_background;
-          }
-        }
-      }
-    }
-    .panel {
-      clear: both;
-      bottom: 1px;
-      z-index: 1;
-    }
-
-    // Vertical Tab Styling
-    &.vertical {
-      float: left;
-      display: block;
-      width: 100%;
-      li,
-      .tab {
-        clear: left;
-        margin: .1em 0;
-        border: none;
-        width: 27%;
-
-        .title {
-          padding: .4em 1%;
-          border: none;
-
-          a{
-            padding: 0 1em;
-          }
-        }
-
-        &.active {
-          border: none;
-
-          .title {
-            border: none;
-          }
-        }
-      }
-      .panel {
-        display: inline;
-        display: inline-block;
-        clear: none;
+    &.jTabs {
+        display: block;
+        clear: both;
         margin: 0;
-        padding: 1%;
-        width: 68%;
-        border: none;
-      }
+        padding: $normal 0;
+
+        li,
+        .tab {
+            float: left;
+            display: block;
+            list-style: none;
+            margin: 0 0.1em 0 0;
+            z-index: 2;
+
+            .title {
+                padding: .4em .6em;
+                border: $border_color 1px solid;
+            }
+
+            &.active {
+                background-color: $title_color;
+
+                .title {
+                    background: $title_color;
+                    border-bottom: $title_color 1px solid;
+                    a {
+                        color: $title_background;
+                    }
+                }
+            }
+        }
+        .panel {
+            clear: both;
+            bottom: 1px;
+            z-index: 1;
+        }
+
+        // Vertical Tab Styling
+        &.vertical {
+            float: left;
+            display: block;
+            width: 100%;
+            li,
+            .tab {
+                clear: left;
+                margin: .1em 0;
+                border: none;
+                width: 27%;
+
+                .title {
+                    padding: .4em 1%;
+                    border: none;
+
+                    a{
+                        padding: 0 1em;
+                    }
+                }
+
+                &.active {
+                    border: none;
+
+                    .title {
+                        border: none;
+                    }
+                }
+            }
+            .panel {
+                display: inline;
+                display: inline-block;
+                clear: none;
+                margin: 0;
+                padding: 1%;
+                width: 68%;
+                border: none;
+            }
+        }
     }
-  }
 }

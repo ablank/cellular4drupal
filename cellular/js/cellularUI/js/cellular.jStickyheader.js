@@ -13,12 +13,12 @@ cellular.jStickyheader = function(opts) {
         var $obj = jQuery(this);
         var vscroll = $(window).scrollTop();
 
-        $obj.once(function(){
+        $obj.once(function() {
             $obj.addClass(cellular.opts.cclass);
         });
 
-        if(vscroll > 0){
-            if(jQuery(window).width() > cellular.opts.breakpoint) {
+        if (vscroll > 0) {
+            if (jQuery(window).width() > cellular.opts.breakpoint) {
                 $obj.addClass("mini");
             }
             $(window).scroll(jStickyheader);

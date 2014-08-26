@@ -19,9 +19,9 @@ cellular.jBlocklink = function(opts) {
                     o.cclass,
                     a.attr('class') ? a.attr('class') : null
                 ]);
-                   // .data(a.data());
+                // .data(a.data());
                 $obj.wrap(bl)
-                    .find('h2, h3').addClass('title');
+                        .find('h2, h3').addClass('title');
 
             }
 

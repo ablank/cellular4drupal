@@ -14,7 +14,11 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="cell" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="cell" <?php
+if (!empty($css_id)) {
+    print "id=\"$css_id\"";
+}
+?>>
 
     <div class="panel cell">
         <div class="panel-content">
@@ -23,16 +27,16 @@
     </div>
 
     <div class="panel cell-50">
-    <div class="panel-content">
-        <?php print $content['left']; ?>
+        <div class="panel-content">
+            <?php print $content['left']; ?>
+        </div>
     </div>
-  </div>
 
-  <div class="panel cell-50">
-    <div class="panel-content">
-        <?php print $content['right']; ?>
+    <div class="panel cell-50">
+        <div class="panel-content">
+            <?php print $content['right']; ?>
+        </div>
     </div>
-  </div>
 
     <div class="panel cell">
         <div class="panel-content">

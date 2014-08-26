@@ -1,33 +1,30 @@
 <?php
 
-/* * ************
-  Cellular:: alter.inc
+/*
+ * @file
+ * Alter variables for templates
+ */
 
-  Alter variables for templates
-
- * ************** */
-
-/* * ************
-  html_head_alter()
- * ************* */
+/*
+ *  hook_html_head_alter()
+ */
 
 function cellular_html_head_alter(&$head_elements) {
-  // Remove unwanted meta tags
-  $exclude = array('metatag_generator', 'metatag_generator_0');
+    // Remove unwanted meta tags
+    $exclude = array('metatag_generator', 'metatag_generator_0');
 
-  foreach ($exclude as $element) {
-    if (isset($head_elements[$element])) {
-      unset($head_elements[$element]);
+    foreach ($exclude as $element) {
+        if (isset($head_elements[$element])) {
+            unset($head_elements[$element]);
+        }
     }
-  }
-
-  //dsm($head_elements);
+    //dsm($head_elements);
 }
 
-/* * ************
-  page_alter()
- * ************** */
+/*
+ *  hook_page_alter()
+ */
 
 function cellular_page_alter(&$page) {
-  //dsm($page);
+    //dsm($page);
 }

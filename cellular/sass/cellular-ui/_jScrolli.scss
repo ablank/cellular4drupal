@@ -4,16 +4,16 @@
 //////
 .cellular {
 
-  &.jScrolli {
-    ul {
-      margin: 0;
-      padding: 0;
+    &.jScrolli {
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 1em;
+        }
     }
-    li {
-      display: block;
-      list-style: none;
-      margin: 0;
-      padding: 1em;
-    }
-  }
 }

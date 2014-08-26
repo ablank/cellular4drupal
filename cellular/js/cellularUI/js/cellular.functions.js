@@ -43,17 +43,17 @@ cellular.classify = function($array) {
 
 
 /*////
-cellular.yPos = function() {
-    return this.each(function() {
-        var $t = jQuery(this);
+ cellular.yPos = function() {
+ return this.each(function() {
+ var $t = jQuery(this);
 
-        $t.offset();
-    });
-};
+ $t.offset();
+ });
+ };
 
-cellular.loop = function($obj, fn) {
-    if ($obj.next().length === 0) {
-        $obj.next = $obj.siblings(0);
-    }
-};
-*/
+ cellular.loop = function($obj, fn) {
+ if ($obj.next().length === 0) {
+ $obj.next = $obj.siblings(0);
+ }
+ };
+ */

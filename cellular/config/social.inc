@@ -1,4 +1,9 @@
 <?php
+/*
+ * @file
+ * Theme-settings: Social media link settings
+ */
+
 
 $form['c']['social_media'] = array(
     '#type' => 'fieldset',

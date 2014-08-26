@@ -12,7 +12,11 @@
  *   $content['middle']: The only panel in the layout.
  */
 ?>
-<div class="panel cell" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="panel cell" <?php
+if (!empty($css_id)) {
+    print "id=\"$css_id\"";
+}
+?>>
     <div class="panel-content">
         <?php print $content['middle']; ?>
     </div>

@@ -22,7 +22,11 @@
  *   - $content['bottom']: Content in the bottom row.
  */
 ?>
-<div class="cell" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="cell" <?php
+if (!empty($css_id)) {
+    print "id=\"$css_id\"";
+}
+?>>
 
     <div class="panel cell">
         <div class="panel-content">

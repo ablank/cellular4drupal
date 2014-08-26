@@ -3,11 +3,11 @@ cellular.jParallax = function(opts) {
         "speed": .1
     }, opts);
     var fn = {};
-    fn.update = function($obj){
-       var bg = $obj.css('background-position').split(' ');
-       var xPos = bg[0];
-       var yPos = parseInt(bg[1]);
-       var winY = $(window).scrollTop();
+    fn.update = function($obj) {
+        var bg = $obj.css('background-position').split(' ');
+        var xPos = bg[0];
+        var yPos = parseInt(bg[1]);
+        var winY = $(window).scrollTop();
 
         var bgPos = xPos + ' ' + yPos + (jQuery(window).scrollTop() * (-o.speed)) + 'px';
 
@@ -15,11 +15,11 @@ cellular.jParallax = function(opts) {
 
         $obj.css({'background-position': bgPos});
 
-function parallax(){
+        function parallax() {
             var yPos = $(window).scrollTop();
-            var bgPos = '-120px ' + ((yPos * (-.1)) -70) + 'px';
-$('#app').css('background-position', bgPos);
-}
+            var bgPos = '-120px ' + ((yPos * (-.1)) - 70) + 'px';
+            $('#app').css('background-position', bgPos);
+        }
     };
 
     return this.each(function() {
@@ -28,5 +28,5 @@ $('#app').css('background-position', bgPos);
         $obj.addClass(cellular.opts.cclass);
 
     });
-$(window).scroll(jParallax);
+    $(window).scroll(jParallax);
 };

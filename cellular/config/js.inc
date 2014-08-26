@@ -1,4 +1,9 @@
 <?php
+/*
+ * @file
+ * Theme-settings: Javascript options
+ */
+
 
 $cdn = array(
     'provider' => array(
