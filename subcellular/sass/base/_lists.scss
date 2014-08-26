@@ -1,0 +1,49 @@
+/* ****
+Cellular :: lists & tables
+**** */
+//////
+
+hr {
+    margin: $p_size 0;
+    height: 1px;
+    border: none;
+    background-image: -webkit-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -moz-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -ms-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: -o-linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+    background-image: linear-gradient(left, rgba($grey,0), rgba($grey,0.75), rgba($grey,0));
+}
+
+/////
+// Lists
+/////
+ol,
+ul,
+dl {
+    margin: 0 0 1em 1.6em;
+    padding: 0;
+    list-style-position: inside;
+    width: auto;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    width: auto;
+    margin: 0.3em auto 0.6em;
+    max-width: $p_max_width * 0.9;
+}
+
+dt {
+    margin: $small 0 0;
+    font-weight: bold;
+}
+
+dd {
+}

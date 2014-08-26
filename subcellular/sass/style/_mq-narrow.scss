@@ -1,0 +1,37 @@
+/*****
+Cellular :: mobile
+*****/
+//////
+
+@media screen and (max-width: $res_mobile) {
+    //////
+    #page-wrap {
+    }
+    #content-wrap {
+        padding: 1em 0;
+    }
+
+    #header {
+        //height: auto;
+    }
+
+    #logo {
+
+        &:hover {
+        }
+        & > a {
+        }
+    }
+
+    #app {
+    }
+
+    #content-wrap {
+    }
+    #content {
+    }
+
+    #sidebar-left,
+    #sidebar-right {
+    }
+}
