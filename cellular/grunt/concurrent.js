@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt concurrent tasks
+ */
+
 module.exports = {
     watch: ['watch'],
     prod1: [

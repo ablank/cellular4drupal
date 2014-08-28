@@ -1,23 +1,19 @@
 <?php
 /**
  * @file
- * Template for a 3 column panel layout.
- *
- * This template provides a very simple "one column" panel display layout.
- *
+ * Template for a single column panel layout.
  * Variables:
- * - $id: An optional CSS id to use for the layout.
- * - $content: An array of content, each item in the array is keyed to one
- *   panel of the layout. This layout supports the following sections:
+ * - $css_id: An optional CSS id to use for the layout.
  *   $content['middle']: The only panel in the layout.
  */
 ?>
+
 <div class="panel cell" <?php
 if (!empty($css_id)) {
-    print "id=\"$css_id\"";
+  print "id=\"$css_id\"";
 }
 ?>>
-    <div class="panel-content">
-        <?php print $content['middle']; ?>
-    </div>
+  <div class="panel-content">
+    <?php print $content['middle']; ?>
+  </div>
 </div>

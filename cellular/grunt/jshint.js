@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt jshint
+ */
+
 module.exports = {
     options: {
         curly: true,

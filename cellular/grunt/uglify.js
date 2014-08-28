@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Configure grunt uglify
+ */
 module.exports = {
     prod: {
         options: {

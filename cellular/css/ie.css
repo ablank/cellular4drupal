@@ -1,48 +1,46 @@
-/*****
-Cellular :: IE (Internet Explorer iz breakin teh internetz...)
-
-(c)2012 Adam Blankenship
-www.abctahoe.net
-*****/
-/* line 12, ../sass/ie.scss */
+/**
+ * @file
+ * Old Internet Explorer is breakin teh internetz...
+ */
+/* line 8, ../sass/ie.scss */
 body, * {
   zoom: 1.0;
 }
 
-/* line 16, ../sass/ie.scss */
+/* line 12, ../sass/ie.scss */
 body {
   word-wrap: break-word;
 }
 
-/* line 20, ../sass/ie.scss */
+/* line 16, ../sass/ie.scss */
 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 24, ../sass/ie.scss */
+/* line 20, ../sass/ie.scss */
 legend {
   color: #bbbab7;
 }
 
-/* line 31, ../sass/ie.scss */
+/* line 27, ../sass/ie.scss */
 input,
 textarea,
 select {
   *font-size: 100%;
 }
 
-/* line 37, ../sass/ie.scss */
+/* line 34, ../sass/ie.scss */
 input[type=checkbox], input[type=radio] {
   display: inline;
   margin: 0.3em;
   vertical-align: middle;
 }
-/* line 42, ../sass/ie.scss */
+/* line 39, ../sass/ie.scss */
 input[type=checkbox]:focus, input[type=radio]:focus {
   border: thin solid;
 }
 
-/* line 62, ../sass/ie.scss */
+/* line 59, ../sass/ie.scss */
 .cell,
 .cell-90,
 .cell-80,
@@ -60,17 +58,17 @@ input[type=checkbox]:focus, input[type=radio]:focus {
   overflow: visible;
 }
 
-/* line 67, ../sass/ie.scss */
+/* line 64, ../sass/ie.scss */
 .center {
   display: block;
 }
 
-/* line 71, ../sass/ie.scss */
+/* line 68, ../sass/ie.scss */
 .jBlocklink {
   margin: 0;
   border: #bbbab7 1px solid;
 }
-/* line 75, ../sass/ie.scss */
+/* line 72, ../sass/ie.scss */
 .jBlocklink:hover {
   border-color: #29b4de;
 }

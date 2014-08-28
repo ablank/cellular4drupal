@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * @file
  *  Set global vars & load all functions for templates
  */
@@ -11,7 +11,7 @@ $include = array(
     'social.inc',
     'preprocess.inc',
     'theme.inc',
-    'theme_forms.inc',
+    'theme_form.inc',
     'theme_pager.inc',
     'alter.inc',
     'alter_form.inc',
@@ -22,7 +22,7 @@ $include = array(
 $inc_path = drupal_get_path('theme', 'cellular') . '/inc';
 
 foreach ($include as $i) {
-    include_once($inc_path . '/' . $i);
+    require_once($inc_path . '/' . $i);
 }
 
 $GLOBALS['theme_path'] = cellular_theme_path();

@@ -1,8 +1,7 @@
 <?php
 /*
-  Cellular:: page--error.tpl
-
-  (c)2012 Adam Blankenship
+ * @file
+ * Automated error page
  */
 /*
 
@@ -76,92 +75,92 @@
  */
 ?>
 
-<div id="skipLinks" class="hidden">
+  <div id="skipLinks" class="hidden">
     <a href="#content-main"><?php print t('Skip to main content'); ?></a>
     <a href="#nav"><?php print t('Skip to navigation'); ?></a>
-</div>
+  </div>
 
-<div id="page-wrap">
+  <div id="page-wrap">
     <div id="header">
-        <div id="logo">
+      <div id="logo">
 
-            <?php
-            if ($site_name) {
-                print "<h2>" . $site_name . "</h2>";
-            }
-            ?>
+        <?php
+        if ($site_name) {
+          print "<h2>" . $site_name . "</h2>";
+        }
+        ?>
+      </div>
+      <?php if (isset($main_menu)) : ?>
+        <div id="nav">
+          <?php print render($main_menu); ?>
         </div>
-        <?php if (isset($main_menu)) : ?>
-            <div id="nav">
-                <?php print render($main_menu); ?>
-            </div>
-        <?php endif; ?>
-        <?php print render($page['header']); ?>
+      <?php endif; ?>
+      <?php print render($page['header']); ?>
     </div>
     <!-- /#header -->
 
     <div id="app">
-        <?php
-        print render($title_prefix);
-        //Error Details
-        print '<h1 id="page-title">' . $http_status . '</h1>';
-        print render($title_suffix);
+      <?php
+      print render($title_prefix);
+      //Error Details
+      print '<h1 id="page-title">' . $http_status . '</h1>';
+      print render($title_suffix);
 
-        if ($action_links) {
-            print '<ul class="links">' . render($action_links) . '</ul>';
-        }
-        ?>
-        <div id="content-wrap">
-            <div id="content" class="<?php print $content_class; ?>">
+      if ($action_links) {
+        print '<ul class="links">' . render($action_links) . '</ul>';
+      }
+      ?>
+      <div id="content-wrap">
+        <div id="content" class="<?php print $content_class; ?>">
 
-                <div class="error-message">
-                    <?php
-                    // Error message
-                    print $messages;
-                    ?>
-                </div>
-                <div id="alternative">
-                    <?php
-                    print render($search_box);
-                    ?>
-                </div>
+          <div class="error-message">
+            <?php
+            // Error message
+            print $messages;
+            ?>
+          </div>
+          <div class="search">
+            <?php
+            print render($search_box);
+            ?>
+          </div>
 
-            </div>
         </div>
-        <!-- /content-wrap-->
+      </div>
+      <!-- /content-wrap-->
     </div>
     <!-- /app-->
 
     <?php
     if ($page['footer_top']) {
-        print render($page['footer_top']);
+      print render($page['footer_top']);
     }
     ?>
     <div id="footer" class="cell">
 
 
-        <?php
-        if ($page['footer']) {
-            print render($page['footer']);
-        }
-        ?>
+      <?php
+      if ($page['footer']) {
+        print render($page['footer']);
+      }
+      ?>
     </div>
     <!-- /#footer -->
 
     <?php if ($page['footer_bottom'] || $copyright) : ?>
-        <div id="footer-bottom" class="cell">
-            <?php if ($page['footer_bottom']) : ?>
-                <?php print render($page['footer_bottom']); ?>
-            <?php endif; ?>
+      <div id="footer-bottom" class="cell">
+        <?php if ($page['footer_bottom']) : ?>
+          <?php print render($page['footer_bottom']); ?>
+        <?php endif; ?>
 
-            <?php if ($copyright): ?>
-                <div id="copyright"><?php print $copyright; ?></div>
-            <?php endif; ?>
-        </div>
-        <!-- /#footer-bottom -->
+        <?php if ($copyright): ?>
+          <div id="copyright"><?php print $copyright; ?></div>
+        <?php endif; ?>
+      </div>
+      <!-- /#footer-bottom -->
     <?php endif; ?>
-</div>
-<!-- /#page-wrap-->
+  </div>
+  <!-- /#page-wrap-->
 <?php
 print "\n";
 

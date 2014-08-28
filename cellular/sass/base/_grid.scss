@@ -1,8 +1,7 @@
-/* ****
-Cellular: :: grid
-
-**** */
-//////
+/**
+ * @file
+ * Cellular Grid
+ */
 
 //////
 // Grid Cells
@@ -22,74 +21,74 @@ Cellular: :: grid
 .cell-25,
 .cell-20,
 .cell-10 {
-    position: relative;
-    float: left;
-    display: block;
-    margin: $cell_margin;
-    padding: $cell_padding;
-    z-index: 1;
+  position: relative;
+  float: left;
+  display: block;
+  margin: $cell_margin;
+  padding: $cell_padding;
+  z-index: 1;
 }
 
 .cell {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .cell-100 {
-    width: 100% - $cell_space;
+  width: 100% - $cell_space;
 }
 
 .cell-90 {
-    width: 90% - $cell_space;
+  width: 90% - $cell_space;
 }
 
 .cell-80 {
-    width: 80% - $cell_space;
+  width: 80% - $cell_space;
 }
 
 .cell-75 {
-    width: 75% - $cell_space;
+  width: 75% - $cell_space;
 }
 
 .cell-70 {
-    width: 70% - $cell_space;
+  width: 70% - $cell_space;
 }
 
 .cell-66 {
-    width: 66.666% - $cell_space;
+  width: 66.666% - $cell_space;
 }
 
 .cell-60 {
-    width: 60% - $cell_space;
+  width: 60% - $cell_space;
 }
 
 .cell-50 {
-    width: 50% - $cell_space;
+  width: 50% - $cell_space;
 }
 
 .cell-40 {
-    width: 40% - $cell_space;
+  width: 40% - $cell_space;
 }
 
 .cell-33 {
-    width: 33.33333% - $cell_space;
+  width: 33.33333% - $cell_space;
 }
 
 .cell-30 {
-    width: 30% - $cell_space;
+  width: 30% - $cell_space;
 }
 
 .cell-25 {
-    width: 25% - $cell_space;
+  width: 25% - $cell_space;
 }
 
 .cell-20 {
-    width: 20% - $cell_space;
+  width: 20% - $cell_space;
 }
 
 .cell-10 {
-    width: 10% - $cell_space;
+  width: 10% - $cell_space;
 }
 
 .cell.center,
@@ -107,75 +106,75 @@ Cellular: :: grid
 .cell-25.center,
 .cell-20.center,
 .cell-10.center {
-    float: none;
-    margin: $cell_margin auto;
+  float: none;
+  margin: $cell_margin auto;
 }
 
 @media screen and (max-width: 650px) {
-    .cell,
-    .cell-100,
-    .cell-90,
-    .cell-80,
-    .cell-75,
-    .cell-70,
-    .cell-66,
-    .cell-60,
-    .cell-50,
-    .cell-40,
-    .cell-33,
-    .cell-30,
-    .cell-25,
-    .cell-20,
-    .cell-10 {
-        width: 100%;
-        margin: 0;
+  .cell,
+  .cell-100,
+  .cell-90,
+  .cell-80,
+  .cell-75,
+  .cell-70,
+  .cell-66,
+  .cell-60,
+  .cell-50,
+  .cell-40,
+  .cell-33,
+  .cell-30,
+  .cell-25,
+  .cell-20,
+  .cell-10 {
+    width: 100%;
+    margin: 0;
+  }
+  .responsive {
+    &.cell-33 {
+      width: 25% - $cell_space;
     }
-    .responsive {
-        &.cell-33 {
-            width: 25% - $cell_space;
-        }
-        &.cell-25 {
-            width: 50% - $cell_space;
-        }
+    &.cell-25 {
+      width: 50% - $cell_space;
     }
+  }
 }
 
 /////
 //Element positioning classes
 /////
 .hidden {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .clearfix {
-    @include clearfix();
+  @include clearfix();
 }
 
 hr.clearfix {
-    visibility: hidden;
-    margin: 0;
-    padding: 0;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .left,
 .right {
-    display: block;
+  display: block;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 
 .center {
-    margin: 0 auto;
-    display: table;
+  margin: 0 auto;
+  display: table;
 }
 
 .center div {
-    display: table-cell;
+  display: table-cell;
 }

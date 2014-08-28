@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt concat
+ */
+
 module.exports = {
     options: {
         separator: '\n \n ///// :) \n',

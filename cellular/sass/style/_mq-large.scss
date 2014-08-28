@@ -1,36 +1,37 @@
-/*****
-    Cellular :: style-large
-*****/
-//////
+/**
+ * @file
+ * Styling for large-screen devices included in style.css
+ */
+
 @media screen and (min-width: $res_large) {
-    body {
-        // background: url(../assets/images/large-background-body.png) no-repeat;
-    }
+  body {
+    // background: url(../assets/images/large-background-body.png) no-repeat;
+  }
 
-    // Layout
+  // Layout
 
-    #header {
-        // background: url(../assets/images/large-background-header.png) no-repeat;
-    }
+  #header {
+    // background: url(../assets/images/large-background-header.png) no-repeat;
+  }
 
-    #logo {
-        &:hover {
-        }
-        & > a {
-        }
+  #logo {
+    &:hover {
     }
+    & > a {
+    }
+  }
 
-    #page-wrap {
-        //@include bg_colorover($white, ../assets/images/bg_photo.jpg);
-    }
+  #page-wrap {
+    //@include bg_colorover($white, ../assets/images/bg_photo.jpg);
+  }
 
-    #app {
-    }
+  #app {
+  }
 
-    #content-main {
-    }
+  #content-main {
+  }
 
-    #footer {
-        // background: $black url(../assets/images/honeycomb_dark.png) repeat;
-    }
+  #footer {
+    // background: $black url(../assets/images/honeycomb_dark.png) repeat;
+  }
 }

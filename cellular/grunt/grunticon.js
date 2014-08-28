@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt grunticon
+ */
+
 module.exports = {
     options: {
         defaultWidth: '32px',

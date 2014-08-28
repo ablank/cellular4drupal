@@ -1,31 +1,31 @@
-/*****
-Cell::Style Regions
-*****/
-//////
-//////
+/**
+ * @file
+ * Provide svg background images for compliant browsers
+ */
 
 .svg {
-    #logo > a {
-        background-image: url($logo_svg);
-    }
+  #logo > a {
+    background-image: url($logo_svg);
+  }
 
-    #nav {
-        &.jMmenu.mini {
-            background-image: url('../assets/icons/svg/menu.svg');
-        }
+  #nav {
+    &.jMmenu.mini {
+      background-image: url('../assets/icons/svg/menu.svg');
     }
+  }
 
-    .ok {
-        list-style-image: url('../assets/images/svg/message_icon_ok.svg');
-    }
-    .warning {
-        list-style-image: url('../assets/images/svg/message_icon_warning.svg');
-    }
-    .error {
-        list-style-image: url('../assets/images/svg/message_icon_error.svg');
-    }
+  .ok {
+    list-style-image: url('../assets/images/svg/message_icon_ok.svg');
+  }
+  .warning {
+    list-style-image: url('../assets/images/svg/message_icon_warning.svg');
+  }
+  .error {
+    list-style-image: url('../assets/images/svg/message_icon_error.svg');
+  }
 
 }
+
 @media screen and (max-width: $res_mobile) {
 
 }

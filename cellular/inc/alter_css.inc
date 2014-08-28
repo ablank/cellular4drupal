@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * @file
  * Add/Update/Delete stylesheets
  */
@@ -10,112 +10,142 @@
  */
 
 function cellular_css_alter(&$css) {
-    global $cellular_lib, $theme_path;
-    // Add stylesheets to theme
-    // Paths are relative to /active_theme/css/
-    $add_css = array(
-        'drupal' => array('file' => 'drupal.css', 'weight' => 1),
-        'style' => array('file' => 'style.css', 'weight' => 2),
-        'print' => array(
-            'file' => 'print.css',
-            'media' => 'print',
-            'weight' => 100,
-            'preprocess' => FALSE,
-        ),
-    );
+  global $cellular_lib, $theme_path;
+  // Add stylesheets to theme
+  // Paths are relative to /active_theme/css/
+  $add_css = array(
+    'drupal' => array('file' => 'drupal.css', 'weight' => 1),
+    'style'  => array('file' => 'style.css', 'weight' => 2),
+    'print'  => array(
+      'file'       => 'print.css',
+      'media'      => 'print',
+      'weight'     => 100,
+      'preprocess' => FALSE,
+    ),
+  );
 
-    cellular_add_css($css, $add_css);
+  cellular_add_css($css, $add_css);
 
 
 // Plugins available through cellular, styles added based on theme settings
 // $plugin_css paths are relative to /libraries/cellular/css/
-    $plugin_css = array(
-        'prism' => theme_get_setting('prism') == 1 ? array(
-            'file' => 'plugins/prism.css' // Path relative to /cellular/css/
-                ) : NULL,
+  $plugin_css = array(
+    'prism' => theme_get_setting('prism') == 1 ? array(
+        'file' => 'plugins/prism.css' // Path relative to /cellular/css/
+      ) : NULL,
+  );
+  cellular_add_css($css, $plugin_css, TRUE);
+
+  if (theme_get_setting('jquery_update') == 1) {
+    // Update the jQuery UI theme
+    $ui = array();
+    $ui['version'] = theme_get_setting('jqueryui_version');
+    $ui['path'] = '/css/jquery-ui/';
+    $ui['theme'] = theme_get_setting('jqueryui_theme');
+    $ui['widgets'] = array(
+      'ui.core',
+      'ui.theme',
+      'ui.accordion',
+      'ui.autocomplete',
+      'ui.button',
+      'ui.datepicker',
+      'ui.dialog',
+      'ui.progressbar',
+      'ui.resizable',
+      'ui.selectable',
+      'ui.slider',
+      'ui.tabs',
     );
-    cellular_add_css($css, $plugin_css, TRUE);
 
+    foreach ($ui['widgets'] as $widget) {
+      $default = "misc/ui/jquery.$widget.css";
+      if (isset($css[$default])) {
+        $style = array();
+        // Construct path based on theme settings
+        if ((theme_get_setting('jqueryui_cdn') == 1) &&( $ui['theme'] !== custom )) {
+          $v = $ui['version'];
+          $t = $ui['theme'] ;
+          // Available cdns & path to scripts
+          $networks = array(
+            'google'    => array(
+              //href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+              'url' => "//ajax.googleapis.com/ajax/libs/jqueryui/$v/themes/$t/jquery-ui.css",
+            ),
+            'microsoft' => array(
+              //href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
+              'url' => '//ajax.aspnetcdn.com/ajax/jquery.ui/$v/themes/$t/jquery-ui.css',
+            ),
+          );
+          // Select cdn to use
+          $cdn = $networks[theme_get_setting('cdn')];
 
-    // get the jQuery UI theme
-    $ui = array(
-        'version' => theme_get_setting('jqueryui_version'),
-        'path' => $cellular_lib . '/css/jquery-ui',
-        'theme' => theme_get_setting('jqueryui_theme'),
-        'files' => array(
-            'ui.core',
-            'ui.theme',
-            'ui.accordion',
-            'ui.autocomplete',
-            'ui.button',
-            'ui.datepicker',
-            'ui.dialog',
-            'ui.progressbar',
-            'ui.resizable',
-            'ui.selectable',
-            'ui.slider',
-            'ui.tabs',
-        ),
-    );
-
-    // Construct path based on theme settings
-    if (theme_get_setting('jquery_update') == 1) {
-
-        if ($ui['theme'] == 'custom') {
-            if ($ui['version'] == '1.10.1') {
-                $ui['path'] .= '1.10.custom.css';
-            } else {
-                $ui['path'] .= '1.9.custom.css';
-            }
-        } else {
-            $ui['path'] .= $ui['version'] . '/' . $ui['theme'];
+          $style['data'] = $cdn['url'];
+        }
+        else {
+          if ($ui['theme'] == 'custom') {
+            $style['path'] = $theme_path . $ui['path'] . 'jquery-ui.';
+            $style['file'] = $ui['version'] == '1.10.1' ? '1.10.css' : '1.9.css';
+          }
+          else {
+            $style['path'] = $cellular_lib . $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
+            $style['file'] = "jquery.$widget.css";
+          }
+          $style['data'] = $style['path'] . $style['file'];
         }
 
-        // Set data source
-        foreach ($ui['files'] as $file) {
-            if (isset($css["misc/ui/jquery.$file.css"])) {
-                if ($ui['theme'] === 'custom') {
-                    $css["misc/ui/jquery.$file.css"]['data'] = $ui['path'];
-                } else {
-                    // Load specific UI theme css
-                    $css["misc/ui/jquery.$file.css"]['data'] = $ui['path'] . "/jquery.$file.css";
-                }
-            }
-        }
+        $css[$default]['data'] = $style['data'];
+
+        //return $css;
+        //cellular_css_override($css, $ui, TRUE);
+      }
     }
 
+
+  }
+
+  // Nuke  all css not a member of group CSS_THEME
+  if (theme_get_setting('remove_all_core_css') == 1) {
+    foreach ($css as $key => $value) {
+      if ($value['group'] != CSS_THEME) {
+        $exclude[$key] = FALSE;
+      }
+    }
+    $css = array_diff_key($css, $exclude);
+  }
+
+  // Nuke  all SYSTEM css
+  if (theme_get_setting('remove_all_core_css') == 1) {
+    foreach ($css as $key => $value) {
+      if ($value['group'] == CSS_SYSTEM) {
+        $exclude[$key] = TRUE;
+      }
+    }
+    $css = array_diff_key($css, $exclude);
+  }
 
 // Remove Drupal's core CSS
-    if (theme_get_setting('remove_core_css') == 1) {
-        /* // Nuke  all SYSTEM css
-          foreach ($css as $key => $value) {
-          if ($value['group'] == CSS_SYSTEM) {
-          $exclude[$key] = TRUE;
-          }
-          }
-          $css = array_diff_key($css, $exclude);
-         */
+  if (theme_get_setting('remove_core_css') == 1) {
+    // Select module css to exclude
+    $exclude = array(
+      'system'   => array(
+        'system.base.css',
+        'system.menus.css',
+        'system.messages.css',
+        'system.theme.css'
+      ),
+      'block'    => 'block.css',
+      'comment'  => 'comment.css',
+      'field'    => 'theme/field.css',
+      'filter'   => 'filter.css',
+      'help'     => 'help.css',
+      'menu'     => 'menu.css',
+      'node'     => 'node.css',
+      'search'   => 'search.css',
+      'shortcut' => 'shorcut.css',
+      'user'     => 'user.css'
+    );
 
-        $exclude = array(
-            'system' => array(
-                'system.base.css',
-                'system.menus.css',
-                'system.messages.css',
-                'system.theme.css'
-            ),
-            'block' => 'block.css',
-            'comment' => 'comment.css',
-            'field' => 'theme/field.css',
-            'filter' => 'filter.css',
-            'help' => 'help.css',
-            'menu' => 'menu.css',
-            'node' => 'node.css',
-            'search' => 'search.css',
-            'shortcut' => 'shorcut.css',
-            'user' => 'user.css'
-        );
-
-        cellular_remove_css($css, $exclude);
-    }
-    //dsm($css);
+    cellular_remove_css($css, $exclude);
+  }
+ // dsm($css);
 }

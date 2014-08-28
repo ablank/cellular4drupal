@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Configure grunt svg2png
+ */
 module.exports = {
     icons: {
         // specify files in array format with multiple src-dest mapping

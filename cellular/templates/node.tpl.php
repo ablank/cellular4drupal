@@ -77,41 +77,41 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" <?php print $attributes; ?>>
 
-    <?php
-    print render($title_prefix);
-    if (!$page) {
-        if ($title) {
-            print "<h2  $title_attributes >";
-            print '<a href="' . $node_url . '">';
-            print $title;
-            print "</a>\n</h2>";
-        }
+  <?php
+  print render($title_prefix);
+  if (!$page) {
+    if ($title) {
+      print "<h2  $title_attributes >";
+      print '<a href="' . $node_url . '">';
+      print $title;
+      print "</a>\n</h2>";
     }
-    print render($title_suffix);
-    ?>
+  }
+  print render($title_suffix);
+  ?>
 
-    <?php if ($display_submitted): ?>
-        <div class="post-date">
-            <span class="day"><?php echo date("j", $node->created); ?></span>
-            <span class="month"><?php echo date("M", $node->created); ?></span>
-            <span class="year"><?php echo date("Y", $node->created); ?></span>
+  <?php if ($display_submitted): ?>
+    <div class="post-date">
+      <span class="day"><?php echo date("j", $node->created); ?></span>
+      <span class="month"><?php echo date("M", $node->created); ?></span>
+      <span class="year"><?php echo date("Y", $node->created); ?></span>
 
-        </div>
-
-        <div class="author">
-            <?php print $name; ?>
-        </div>
-
-    <?php endif; ?>
-
-    <div<?php print $content_attributes; ?>>
-        <?php
-        // Render comments and links after content.
-        hide($content['comments']);
-        hide($content['links']);
-        print render($content);
-        ?>
     </div>
-    <?php print render($content['links']); ?>
-    <?php print render($content['comments']); ?>
+
+    <div class="author">
+      <?php print $name; ?>
+    </div>
+
+  <?php endif; ?>
+
+  <div<?php print $content_attributes; ?>>
+    <?php
+    // Render comments and links after content.
+    hide($content['comments']);
+    hide($content['links']);
+    print render($content);
+    ?>
+  </div>
+  <?php print render($content['links']); ?>
+  <?php print render($content['comments']); ?>
 </div>

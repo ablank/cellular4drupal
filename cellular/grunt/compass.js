@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt compass
+ */
+
 module.exports = {
     options: {
         config: 'config/compass.rb',

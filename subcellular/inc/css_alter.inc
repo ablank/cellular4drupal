@@ -1,8 +1,9 @@
 <?php
-
-/*
- * @info
- * *
+/**
+ * @file
+ * Add/Delete stylesheets
+ *
+ * @author    Adam Blankenship
  */
 
 /*

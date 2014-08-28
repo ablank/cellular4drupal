@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Add/Update/Delete javascript
+ *
+ * @author    Adam Blankenship
+ */
 
 function subcellular_js_alter() {
   /*

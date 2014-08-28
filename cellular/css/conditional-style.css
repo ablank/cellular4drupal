@@ -1,7 +1,4 @@
-/*****
-Cellular :: conditional-style
-Dynamically loaded styling for larger screens.
-
-(c) 2012 Adam Blankenship
-www.abctahoe.net
-*****/
+/**
+ * @file
+ * Dynamically loaded stylesheet served if declared in theme settings
+ */

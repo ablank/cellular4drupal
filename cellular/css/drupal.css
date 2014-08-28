@@ -1,14 +1,11 @@
-/*****
-Cellular :: Drupal
-
-Styling specific to Drupal
-
-(c) 2012 Adam Blankenship
-www.abctahoe.net
-*****/
-/*****
-Cellular :: drupal pager
-*****/
+/**
+ * @file
+ * Collect Drupal specific  styles
+ */
+/**
+ * @file
+ * Drupal pager styling
+ */
 /* line 6, ../sass/drupal/_drupal-pager.scss */
 .pager {
   clear: both;
@@ -113,9 +110,10 @@ Cellular :: drupal pager
   color: #29b4de;
 }
 
-/*****
-Cellular :: Drupal #IDs
-*****/
+/**
+ * @file
+ * Styling DOM id's provided by drupal
+ */
 /* line 7, ../sass/drupal/_drupal-ids.scss */
 #block-system-powered-by {
   float: right;
@@ -179,12 +177,12 @@ Cellular :: Drupal #IDs
   background-position: right center;
   border: #565450 1px solid;
 }
-/* line 185, ../sass/mixins/_cellularmixins.scss */
+/* line 186, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit]:visited,
 #site-search input[type=submit]:visited {
   color: #fefefe;
 }
-/* line 190, ../sass/mixins/_cellularmixins.scss */
+/* line 191, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit].active, #search-form input[type=submit]:active, #search-form input[type=submit]:hover,
 #site-search input[type=submit].active,
 #site-search input[type=submit]:active,
@@ -222,21 +220,22 @@ Cellular :: Drupal #IDs
   -o-border-radius: 0.3em;
   border-radius: 0.3em;
 }
-/* line 185, ../sass/mixins/_cellularmixins.scss */
+/* line 186, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu li a:visited {
   color: #fefefe;
 }
-/* line 190, ../sass/mixins/_cellularmixins.scss */
+/* line 191, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu li a.active, #block-system-navigation .menu li a:active, #block-system-navigation .menu li a:hover {
   background-color: #16708b;
   border-color: #29b4de;
   text-decoration: none;
 }
 
-/*****
-    Cellular :: Drupal Classes
-*****/
-/* line 6, ../sass/drupal/_drupal-classes.scss */
+/**
+ * @file
+ * Styling DOM classes provided by drupal
+ */
+/* line 7, ../sass/drupal/_drupal-classes.scss */
 .element-invisible {
   position: absolute !important;
   left: -999em;
@@ -247,7 +246,7 @@ Cellular :: Drupal #IDs
   height: 1px;
 }
 
-/* line 16, ../sass/drupal/_drupal-classes.scss */
+/* line 17, ../sass/drupal/_drupal-classes.scss */
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus {
   position: static !important;
@@ -256,21 +255,21 @@ Cellular :: Drupal #IDs
   height: auto;
 }
 
-/* line 26, ../sass/drupal/_drupal-classes.scss */
+/* line 27, ../sass/drupal/_drupal-classes.scss */
 .ctools-locked {
   color: #8c0d00;
   border: 1px solid #8c0d00;
   padding: 1em;
 }
 
-/* line 32, ../sass/drupal/_drupal-classes.scss */
+/* line 33, ../sass/drupal/_drupal-classes.scss */
 .ctools-owns-lock {
   background: white;
   border: 1px solid #eecc22;
   padding: 1em;
 }
 
-/* line 42, ../sass/drupal/_drupal-classes.scss */
+/* line 43, ../sass/drupal/_drupal-classes.scss */
 a.ctools-ajaxing,
 input.ctools-ajaxing,
 button.ctools-ajaxing,
@@ -279,26 +278,26 @@ select.ctools-ajaxing {
   background: url("../assets/images/gif/throbber.gif") center center no-repeat;
 }
 
-/* line 49, ../sass/drupal/_drupal-classes.scss */
+/* line 50, ../sass/drupal/_drupal-classes.scss */
 div.ctools-ajaxing {
   float: left;
   width: 18px;
   background: url("../assets/images/gif/throbber.gif") center center no-repeat;
 }
 
-/* line 56, ../sass/drupal/_drupal-classes.scss */
+/* line 57, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary {
   margin: 2em 0 1em;
   background-color: #edeceb;
   border-bottom: #8a8882 1px solid;
 }
-/* line 61, ../sass/drupal/_drupal-classes.scss */
+/* line 62, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary li {
   list-style: none;
   display: inline;
   margin: 0 .4em;
 }
-/* line 66, ../sass/drupal/_drupal-classes.scss */
+/* line 67, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a {
   padding: .4em .8em 0.2em;
   color: #565450;

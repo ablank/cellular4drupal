@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Dynamically loaded styling for narrow screens
+ */
+
+@import "variables";
+
+@media screen and (min-width: $res_narrow) and (max-width: $res_normal) {
+  body {
+    // background: url(../assets/images/large-background-body.png) no-repeat;
+  }
+
+  #header {
+    // background: url(../assets/images/large-background-header.png) no-repeat;
+  }
+
+  #logo {
+
+    &:hover {
+    }
+    & > a {
+    }
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+  }
+  #content {
+  }
+
+  #sidebar-left,
+  #sidebar-right {
+  }
+  #footer {
+
+  }
+}

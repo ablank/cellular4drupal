@@ -1,41 +1,39 @@
-/*****
-Cellular :: mobile
-*****/
-//////
+/**
+ * @file
+ * Dynamically loaded styling for mobile devices
+ */
+
 @import "variables";
-/////
 
 @media screen and (max-width: $res_mobile) {
-    body {
-    }
-    //////
-    #page-wrap {
-    }
-    #content-wrap {
-        padding: 1em 0;
-    }
 
-    #header {
-        height: auto;
-    }
+  #page-wrap {
+  }
+  #content-wrap {
+    padding: 1em 0;
+  }
 
-    #logo {
+  #header {
+    height: auto;
+  }
 
-        &:hover {
-        }
-        & > a {
-        }
-    }
+  #logo {
 
-    #app {
+    &:hover {
     }
+    & > a {
+    }
+  }
 
-    #content-wrap {
-    }
-    #content {
-    }
+  #app {
+  }
 
-    #sidebar-left,
-    #sidebar-right {
-    }
+  #content-wrap {
+  }
+  #content {
+  }
+
+  #sidebar-left,
+  #sidebar-right {
+  }
 }

@@ -1,47 +1,45 @@
-/*****
- Cellular :: Date Classes
-*****/
-//////
+/**
+ * @file
+ * Date related class styling
+ */
 
 .day,
 .date,
 .time {
 
 }
-/////
-// Date styling
-/////
+
 // Used for comments & posts
 .post-date {
-    display: inline-block;
-    margin: 1em 1em 1em 0;
-    background: $white;
-    border: $light_grey $border;
-    color: $dark_grey;
-    text-align: center;
-    z-index: 10;
+  display: inline-block;
+  margin: 1em 1em 1em 0;
+  background: $white;
+  border: $light_grey $border;
+  color: $dark_grey;
+  text-align: center;
+  z-index: 10;
 
-    @include border-radius(.5em);
+  @include border-radius(.5em);
 }
 
 .post-day,
 .post-month,
 .post-year {
-    display: block;
-    padding: .2em .5em;
+  display: block;
+  padding: .2em .5em;
 }
 
 .post-month {
-    font-size: .8em;
+  font-size: .8em;
 }
 
 .post-day {
-    font-size: 1.5em;
-    background: $white;
+  font-size: 1.5em;
+  background: $white;
 
-    @include box-shadow(inset $shadow_small $white);
+  @include box-shadow(inset $shadow_small $white);
 }
 
 .post-year {
-    font-size: 1em;
+  font-size: 1em;
 }

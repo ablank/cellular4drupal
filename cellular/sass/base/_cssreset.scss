@@ -1,11 +1,12 @@
-/* ****
-Cellular :: CSS RESET
-**** */
+/**
+ * @file
+ * CSS Reset
+ */
 
 html {
-    background: transparent;
-    // Force scrollbar display to prevent flicker
-    overflow: scroll;
+  background: transparent;
+  // Force scrollbar display to prevent flicker
+  overflow: scroll;
 }
 
 body,
@@ -34,12 +35,12 @@ dd,
 ul,
 ol,
 li {
-    position: relative;
-    margin: 0;
-    padding: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 fieldset,
 img {
-    border: 0;
+  border: 0;
 }

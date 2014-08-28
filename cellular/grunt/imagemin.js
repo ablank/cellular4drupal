@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt imagemin
+ */
+
 module.exports = {
     options: {
         cache: false,

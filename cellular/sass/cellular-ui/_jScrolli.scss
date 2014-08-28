@@ -1,19 +1,20 @@
-/*****
-    Cellular :: jTabs
-*****/
-//////
+/**
+ * @file
+ * CellularUI : jScrolli
+ */
+
 .cellular {
 
-    &.jScrolli {
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-        li {
-            display: block;
-            list-style: none;
-            margin: 0;
-            padding: 1em;
-        }
+  &.jScrolli {
+    ul {
+      margin: 0;
+      padding: 0;
     }
+    li {
+      display: block;
+      list-style: none;
+      margin: 0;
+      padding: 1em;
+    }
+  }
 }

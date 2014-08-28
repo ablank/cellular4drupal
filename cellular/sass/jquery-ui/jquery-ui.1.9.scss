@@ -1,16 +1,22 @@
-/*! jQuery UI - v1.10.4 - 2014-04-12
+/**
+ * @file
+ * Custom styles for jQueryUI v.1.9
+ */
+ /*! jQuery UI - v1.9.2 - 2014-04-12
 * http://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
 * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRadius=.4em&bgColorHeader=%23fff&bgTextureHeader=flat&bgImgOpacityHeader=0&borderColorHeader=%23222&fcHeader=%23222&iconColorHeader=%23222&bgColorContent=%23fff&bgTextureContent=flat&bgImgOpacityContent=0&borderColorContent=%23aaa&fcContent=%23222&iconColorContent=%23222&bgColorDefault=%23f50&bgTextureDefault=flat&bgImgOpacityDefault=0&borderColorDefault=%23fff&fcDefault=%23fff&iconColorDefault=%23fff&bgColorHover=%23d50&bgTextureHover=flat&bgImgOpacityHover=0&borderColorHover=%23fff&fcHover=%23fff&iconColorHover=%23fff&bgColorActive=%23fff&bgTextureActive=flat&bgImgOpacityActive=0&borderColorActive=%23f50&fcActive=%23f50&iconColorActive=%23f50&bgColorHighlight=%23ffd&bgTextureHighlight=flat&bgImgOpacityHighlight=0&borderColorHighlight=%23fd1&fcHighlight=%23222&iconColorHighlight=%2315f&bgColorError=%23fee&bgTextureError=flat&bgImgOpacityError=0&borderColorError=%23c00&fcError=%23c00&iconColorError=%23c00&bgColorOverlay=%23aaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23aaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=.8em&offsetTopShadow=-.8em&offsetLeftShadow=-.8em&cornerRadiusShadow=.4em
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
+@import "../variables";
+@import "config_ui";
+
 /* Layout helpers
 ----------------------------------*/
-/* line 11, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-helper-hidden {
   display: none;
 }
 
-/* line 15, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-helper-hidden-accessible {
   border: 0;
   clip: rect(0 0 0 0);
@@ -22,7 +28,6 @@
   width: 1px;
 }
 
-/* line 26, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-helper-reset {
   margin: 0;
   padding: 0;
@@ -34,26 +39,20 @@
   list-style: none;
 }
 
-/* line 38, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-helper-clearfix:before,
 .ui-helper-clearfix:after {
   content: "";
   display: table;
-  border-collapse: collapse;
 }
 
-/* line 44, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-helper-clearfix:after {
   clear: both;
 }
 
-/* line 48, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-helper-clearfix {
-  min-height: 0;
-  /* support: IE7 */
+  zoom: 1;
 }
 
-/* line 52, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-helper-zfix {
   width: 100%;
   height: 100%;
@@ -64,22 +63,18 @@
   filter: Alpha(Opacity=0);
 }
 
-/* line 62, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-front {
-  z-index: 100;
-}
-
 /* Interaction Cues
 ----------------------------------*/
-/* line 68, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-state-disabled {
   cursor: default !important;
 }
 
 /* Icons
 ----------------------------------*/
+
 /* states and images */
-/* line 76, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-icon {
   display: block;
   text-indent: -99999px;
@@ -89,35 +84,32 @@
 
 /* Misc visuals
 ----------------------------------*/
+
 /* Overlays */
-/* line 87, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-widget-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
-/* line 95, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable {
   position: relative;
 }
 
-/* line 99, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-handle {
   position: absolute;
   font-size: 0.1px;
   display: block;
 }
 
-/* line 106, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-disabled .ui-resizable-handle,
 .ui-resizable-autohide .ui-resizable-handle {
   display: none;
 }
 
-/* line 110, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-n {
   cursor: n-resize;
   height: 7px;
@@ -126,7 +118,6 @@
   left: 0;
 }
 
-/* line 118, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-s {
   cursor: s-resize;
   height: 7px;
@@ -135,7 +126,6 @@
   left: 0;
 }
 
-/* line 126, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-e {
   cursor: e-resize;
   width: 7px;
@@ -144,7 +134,6 @@
   height: 100%;
 }
 
-/* line 134, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-w {
   cursor: w-resize;
   width: 7px;
@@ -153,7 +142,6 @@
   height: 100%;
 }
 
-/* line 142, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-se {
   cursor: se-resize;
   width: 12px;
@@ -162,7 +150,6 @@
   bottom: 1px;
 }
 
-/* line 150, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-sw {
   cursor: sw-resize;
   width: 9px;
@@ -171,7 +158,6 @@
   bottom: -5px;
 }
 
-/* line 158, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-nw {
   cursor: nw-resize;
   width: 9px;
@@ -180,7 +166,6 @@
   top: -5px;
 }
 
-/* line 166, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-resizable-ne {
   cursor: ne-resize;
   width: 9px;
@@ -189,40 +174,33 @@
   top: -5px;
 }
 
-/* line 174, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-selectable-helper {
   position: absolute;
   z-index: 100;
   border: 1px dotted black;
 }
 
-/* line 180, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-accordion .ui-accordion-header {
   display: block;
   cursor: pointer;
   position: relative;
   margin-top: 2px;
   padding: .5em .5em .5em .7em;
-  min-height: 0;
-  /* support: IE7 */
+  zoom: 1;
 }
 
-/* line 189, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-accordion .ui-accordion-icons {
   padding-left: 2.2em;
 }
 
-/* line 193, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-accordion .ui-accordion-noicons {
   padding-left: .7em;
 }
 
-/* line 197, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-accordion .ui-accordion-icons .ui-accordion-icons {
   padding-left: 2.2em;
 }
 
-/* line 201, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
   position: absolute;
   left: .5em;
@@ -230,14 +208,13 @@
   margin-top: -8px;
 }
 
-/* line 208, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-accordion .ui-accordion-content {
   padding: 1em 2.2em;
   border-top: 0;
   overflow: auto;
+  zoom: 1;
 }
 
-/* line 214, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-autocomplete {
   position: absolute;
   top: 0;
@@ -245,21 +222,27 @@
   cursor: default;
 }
 
-/* line 221, ../../sass/jquery-ui/1.10.custom.scss */
+/* workarounds */
+
+* html .ui-autocomplete {
+  width: 1px;
+}
+
+/* without this, the menu expands to 100% in IE6 */
+
 .ui-button {
   display: inline-block;
   position: relative;
   padding: 0;
-  line-height: normal;
   margin-right: .1em;
   cursor: pointer;
-  vertical-align: middle;
   text-align: center;
+  zoom: 1;
   overflow: visible;
-  /* removes extra width in IE */
 }
 
-/* line 237, ../../sass/jquery-ui/1.10.custom.scss */
+/* the overflow property removes extra width in IE */
+
 .ui-button,
 .ui-button:link,
 .ui-button:visited,
@@ -268,73 +251,66 @@
   text-decoration: none;
 }
 
-/* to make room for the icon, a width needs to be set here */
-/* line 242, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-icon-only {
   width: 2.2em;
 }
 
-/* button elements seem to need a little more width */
-/* line 247, ../../sass/jquery-ui/1.10.custom.scss */
+/* to make room for the icon, a width needs to be set here */
+
 button.ui-button-icon-only {
   width: 2.4em;
 }
 
-/* line 251, ../../sass/jquery-ui/1.10.custom.scss */
+/* button elements seem to need a little more width */
+
 .ui-button-icons-only {
   width: 3.4em;
 }
 
-/* line 255, ../../sass/jquery-ui/1.10.custom.scss */
 button.ui-button-icons-only {
   width: 3.7em;
 }
 
-/* button text element */
-/* line 260, ../../sass/jquery-ui/1.10.custom.scss */
+/*button text element */
+
 .ui-button .ui-button-text {
   display: block;
-  line-height: normal;
+  line-height: 1.4;
 }
 
-/* line 265, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-text-only .ui-button-text {
   padding: .4em 1em;
 }
 
-/* line 270, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-icon-only .ui-button-text,
 .ui-button-icons-only .ui-button-text {
   padding: .4em;
   text-indent: -9999999px;
 }
 
-/* line 276, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-text-icon-primary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
   padding: .4em 1em .4em 2.1em;
 }
 
-/* line 281, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-text-icon-secondary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
   padding: .4em 2.1em .4em 1em;
 }
 
-/* line 285, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-text-icons .ui-button-text {
   padding-left: 2.1em;
   padding-right: 2.1em;
 }
 
 /* no icon support for input elements, provide padding by default */
-/* line 291, ../../sass/jquery-ui/1.10.custom.scss */
+
 input.ui-button {
   padding: .4em 1em;
 }
 
-/* button icon element(s) */
-/* line 300, ../../sass/jquery-ui/1.10.custom.scss */
+/*button icon element(s) */
+
 .ui-button-icon-only .ui-icon,
 .ui-button-text-icon-primary .ui-icon,
 .ui-button-text-icon-secondary .ui-icon,
@@ -345,61 +321,59 @@ input.ui-button {
   margin-top: -8px;
 }
 
-/* line 306, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-icon-only .ui-icon {
   left: 50%;
   margin-left: -8px;
 }
 
-/* line 313, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-text-icon-primary .ui-button-icon-primary,
 .ui-button-text-icons .ui-button-icon-primary,
 .ui-button-icons-only .ui-button-icon-primary {
   left: .5em;
 }
 
-/* line 319, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-button-text-icon-secondary .ui-button-icon-secondary,
 .ui-button-text-icons .ui-button-icon-secondary,
 .ui-button-icons-only .ui-button-icon-secondary {
   right: .5em;
 }
 
-/* button sets */
-/* line 324, ../../sass/jquery-ui/1.10.custom.scss */
+.ui-button-text-icons .ui-button-icon-secondary,
+.ui-button-icons-only .ui-button-icon-secondary {
+  right: .5em;
+}
+
+/*button sets*/
+
 .ui-buttonset {
   margin-right: 7px;
 }
 
-/* line 328, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-buttonset .ui-button {
   margin-left: 0;
   margin-right: -.3em;
 }
 
 /* workarounds */
-/* reset extra padding in Firefox, see h5bp.com/l */
-/* line 336, ../../sass/jquery-ui/1.10.custom.scss */
-input.ui-button::-moz-focus-inner,
+
 button.ui-button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 341, ../../sass/jquery-ui/1.10.custom.scss */
+/* reset extra padding in Firefox */
+
 .ui-datepicker {
   width: 17em;
   padding: .2em .2em 0;
   display: none;
 }
 
-/* line 347, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: .2em 0;
 }
 
-/* line 353, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
   position: absolute;
@@ -408,33 +382,27 @@ button.ui-button::-moz-focus-inner {
   height: 1.8em;
 }
 
-/* line 361, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
   top: 1px;
 }
 
-/* line 365, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-prev {
   left: 2px;
 }
 
-/* line 369, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-next {
   right: 2px;
 }
 
-/* line 373, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-prev-hover {
   left: 1px;
 }
 
-/* line 377, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-next-hover {
   right: 1px;
 }
 
-/* line 382, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-prev span,
 .ui-datepicker .ui-datepicker-next span {
   display: block;
@@ -445,26 +413,26 @@ button.ui-button::-moz-focus-inner {
   margin-top: -8px;
 }
 
-/* line 391, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-title {
   margin: 0 2.3em;
   line-height: 1.8em;
   text-align: center;
 }
 
-/* line 397, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-title select {
   font-size: 1em;
   margin: 1px 0;
 }
 
-/* line 403, ../../sass/jquery-ui/1.10.custom.scss */
+.ui-datepicker select.ui-datepicker-month-year {
+  width: 100%;
+}
+
 .ui-datepicker select.ui-datepicker-month,
 .ui-datepicker select.ui-datepicker-year {
   width: 49%;
 }
 
-/* line 407, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker table {
   width: 100%;
   font-size: .9em;
@@ -472,7 +440,6 @@ button.ui-button::-moz-focus-inner {
   margin: 0 0 .4em;
 }
 
-/* line 414, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker th {
   padding: .7em .3em;
   text-align: center;
@@ -480,13 +447,11 @@ button.ui-button::-moz-focus-inner {
   border: 0;
 }
 
-/* line 421, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker td {
   border: 0;
   padding: 1px;
 }
 
-/* line 427, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker td span,
 .ui-datepicker td a {
   display: block;
@@ -495,7 +460,6 @@ button.ui-button::-moz-focus-inner {
   text-decoration: none;
 }
 
-/* line 434, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-buttonpane {
   background-image: none;
   margin: .7em 0 0 0;
@@ -505,7 +469,6 @@ button.ui-button::-moz-focus-inner {
   border-bottom: 0;
 }
 
-/* line 443, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-buttonpane button {
   float: right;
   margin: .5em .2em .4em;
@@ -515,195 +478,202 @@ button.ui-button::-moz-focus-inner {
   overflow: visible;
 }
 
-/* line 452, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
   float: left;
 }
 
 /* with multiple calendars */
-/* line 457, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-datepicker.ui-datepicker-multi {
   width: auto;
 }
 
-/* line 461, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-multi .ui-datepicker-group {
   float: left;
 }
 
-/* line 465, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-multi .ui-datepicker-group table {
   width: 95%;
   margin: 0 auto .4em;
 }
 
-/* line 470, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-multi-2 .ui-datepicker-group {
   width: 50%;
 }
 
-/* line 474, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-multi-3 .ui-datepicker-group {
   width: 33.3%;
 }
 
-/* line 478, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-multi-4 .ui-datepicker-group {
   width: 25%;
 }
 
-/* line 483, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header {
+  border-left-width: 0;
+}
+
 .ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
   border-left-width: 0;
 }
 
-/* line 487, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-multi .ui-datepicker-buttonpane {
   clear: left;
 }
 
-/* line 491, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-row-break {
   clear: both;
   width: 100%;
-  font-size: 0;
+  font-size: 0em;
 }
 
 /* RTL support */
-/* line 498, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-datepicker-rtl {
   direction: rtl;
 }
 
-/* line 502, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-rtl .ui-datepicker-prev {
   right: 2px;
   left: auto;
 }
 
-/* line 507, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-rtl .ui-datepicker-next {
   left: 2px;
   right: auto;
 }
 
-/* line 512, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-rtl .ui-datepicker-prev:hover {
   right: 1px;
   left: auto;
 }
 
-/* line 517, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-rtl .ui-datepicker-next:hover {
   left: 1px;
   right: auto;
 }
 
-/* line 522, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-rtl .ui-datepicker-buttonpane {
   clear: right;
 }
 
-/* line 526, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-datepicker-rtl .ui-datepicker-buttonpane button {
   float: left;
 }
 
-/* line 531, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: right;
+}
+
 .ui-datepicker-rtl .ui-datepicker-group {
   float: right;
 }
 
-/* line 536, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+
 .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
   border-right-width: 0;
   border-left-width: 1px;
 }
 
-/* line 541, ../../sass/jquery-ui/1.10.custom.scss */
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+
+.ui-datepicker-cover {
+  position: absolute;
+  /*must have*/
+  z-index: -1;
+  /*must have*/
+  filter: mask();
+  /*must have*/
+  top: -4px;
+  /*must have*/
+  left: -4px;
+  /*must have*/
+  width: 200px;
+  /*must have*/
+  height: 200px;
+  /*must have*/
+}
+
 .ui-dialog {
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   padding: .2em;
-  outline: 0;
+  width: 300px;
+  overflow: hidden;
 }
 
-/* line 550, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-dialog-titlebar {
   padding: .4em 1em;
   position: relative;
 }
 
-/* line 555, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-dialog-title {
   float: left;
-  margin: .1em 0;
-  white-space: nowrap;
-  width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin: .1em 16px .1em 0;
 }
 
-/* line 564, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
   right: .3em;
   top: 50%;
-  width: 20px;
+  width: 19px;
   margin: -10px 0 0 0;
   padding: 1px;
-  height: 20px;
+  height: 18px;
 }
 
-/* line 574, ../../sass/jquery-ui/1.10.custom.scss */
+.ui-dialog .ui-dialog-titlebar-close span {
+  display: block;
+  margin: 1px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover,
+.ui-dialog .ui-dialog-titlebar-close:focus {
+  padding: 0;
+}
+
 .ui-dialog .ui-dialog-content {
   position: relative;
   border: 0;
   padding: .5em 1em;
   background: none;
   overflow: auto;
+  zoom: 1;
 }
 
-/* line 582, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-dialog-buttonpane {
   text-align: left;
   border-width: 1px 0 0 0;
   background-image: none;
-  margin-top: .5em;
+  margin: .5em 0 0 0;
   padding: .3em 1em .5em .4em;
 }
 
-/* line 590, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
   float: right;
 }
 
-/* line 594, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-dialog-buttonpane button {
   margin: .5em .4em .5em 0;
   cursor: pointer;
 }
 
-/* line 599, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-dialog .ui-resizable-se {
-  width: 12px;
-  height: 12px;
-  right: -5px;
-  bottom: -5px;
-  background-position: 16px 16px;
+  width: 14px;
+  height: 14px;
+  right: 3px;
+  bottom: 3px;
 }
 
-/* line 607, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-draggable .ui-dialog-titlebar {
   cursor: move;
 }
 
-/* line 611, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu {
   list-style: none;
   padding: 2px;
@@ -712,22 +682,18 @@ button.ui-button::-moz-focus-inner {
   outline: none;
 }
 
-/* line 619, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-menu {
   margin-top: -3px;
   position: absolute;
 }
 
-/* line 624, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-menu-item {
   margin: 0;
   padding: 0;
+  zoom: 1;
   width: 100%;
-  /* support: IE10, see #8844 */
-  list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
 }
 
-/* line 632, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-menu-divider {
   margin: 5px -2px 5px -2px;
   height: 0;
@@ -736,50 +702,44 @@ button.ui-button::-moz-focus-inner {
   border-width: 1px 0 0 0;
 }
 
-/* line 640, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-menu-item a {
   text-decoration: none;
   display: block;
   padding: 2px .4em;
   line-height: 1.5;
-  min-height: 0;
-  /* support: IE7 */
+  zoom: 1;
   font-weight: normal;
 }
 
-/* line 650, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
   font-weight: normal;
   margin: -1px;
 }
 
-/* line 655, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-state-disabled {
   font-weight: normal;
   margin: .4em 0 .2em;
   line-height: 1.5;
 }
 
-/* line 661, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu .ui-state-disabled a {
   cursor: default;
 }
 
 /* icon support */
-/* line 666, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-menu-icons {
   position: relative;
 }
 
-/* line 670, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-menu-icons .ui-menu-item a {
   position: relative;
   padding-left: 2em;
 }
 
 /* left-aligned */
-/* line 676, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-menu .ui-icon {
   position: absolute;
   top: .2em;
@@ -787,45 +747,28 @@ button.ui-button::-moz-focus-inner {
 }
 
 /* right-aligned */
-/* line 683, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-menu .ui-menu-icon {
   position: static;
   float: right;
 }
 
-/* line 688, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-progressbar {
   height: 2em;
   text-align: left;
   overflow: hidden;
 }
 
-/* line 694, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-progressbar .ui-progressbar-value {
   margin: -1px;
   height: 100%;
 }
 
-/* line 699, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-progressbar .ui-progressbar-overlay {
-  background: url("images/animated-overlay.gif");
-  height: 100%;
-  filter: alpha(opacity=25);
-  opacity: 0.25;
-}
-
-/* line 706, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-progressbar-indeterminate .ui-progressbar-value {
-  background-image: none;
-}
-
-/* line 710, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider {
   position: relative;
   text-align: left;
 }
 
-/* line 715, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider .ui-slider-handle {
   position: absolute;
   z-index: 2;
@@ -834,7 +777,6 @@ button.ui-button::-moz-focus-inner {
   cursor: default;
 }
 
-/* line 723, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider .ui-slider-range {
   position: absolute;
   z-index: 1;
@@ -844,70 +786,52 @@ button.ui-button::-moz-focus-inner {
   background-position: 0 0;
 }
 
-/* For IE8 - See #6727 */
-/* line 734, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-slider.ui-state-disabled .ui-slider-handle,
-.ui-slider.ui-state-disabled .ui-slider-range {
-  filter: inherit;
-}
-
-/* line 738, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-horizontal {
   height: .8em;
 }
 
-/* line 742, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-horizontal .ui-slider-handle {
   top: -.3em;
   margin-left: -.6em;
 }
 
-/* line 747, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-horizontal .ui-slider-range {
   top: 0;
   height: 100%;
 }
 
-/* line 752, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-horizontal .ui-slider-range-min {
   left: 0;
 }
 
-/* line 756, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-horizontal .ui-slider-range-max {
   right: 0;
 }
 
-/* line 760, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-vertical {
   width: .8em;
   height: 100px;
 }
 
-/* line 765, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-vertical .ui-slider-handle {
   left: -.3em;
   margin-left: 0;
   margin-bottom: -.6em;
 }
 
-/* line 771, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-vertical .ui-slider-range {
   left: 0;
   width: 100%;
 }
 
-/* line 776, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-vertical .ui-slider-range-min {
   bottom: 0;
 }
 
-/* line 780, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-slider-vertical .ui-slider-range-max {
   top: 0;
 }
 
-/* line 784, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-spinner {
   position: relative;
   display: inline-block;
@@ -916,11 +840,9 @@ button.ui-button::-moz-focus-inner {
   vertical-align: middle;
 }
 
-/* line 792, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-spinner-input {
   border: none;
   background: none;
-  color: inherit;
   padding: 0;
   margin: .2em 0;
   vertical-align: middle;
@@ -928,7 +850,6 @@ button.ui-button::-moz-focus-inner {
   margin-right: 22px;
 }
 
-/* line 803, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-spinner-button {
   width: 16px;
   height: 50%;
@@ -943,16 +864,14 @@ button.ui-button::-moz-focus-inner {
   right: 0;
 }
 
-/* more specificity required here to override default borders */
-/* line 818, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-spinner a.ui-spinner-button {
   border-top: none;
   border-bottom: none;
   border-right: none;
 }
 
-/* vertically center icon */
-/* line 825, ../../sass/jquery-ui/1.10.custom.scss */
+/* more specificity required here to overide default borders */
+
 .ui-spinner .ui-icon {
   position: absolute;
   margin-top: -8px;
@@ -960,74 +879,71 @@ button.ui-button::-moz-focus-inner {
   left: 0;
 }
 
-/* line 832, ../../sass/jquery-ui/1.10.custom.scss */
+/* vertical centre icon */
+
 .ui-spinner-up {
   top: 0;
 }
 
-/* line 836, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-spinner-down {
   bottom: 0;
 }
 
 /* TR overrides */
-/* line 841, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-spinner .ui-icon-triangle-1-s {
   /* need to fix icons sprite */
   background-position: -65px -16px;
 }
 
-/* line 846, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-tabs {
   position: relative;
-  /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
   padding: .2em;
+  zoom: 1;
 }
 
-/* line 851, ../../sass/jquery-ui/1.10.custom.scss */
+/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+
 .ui-tabs .ui-tabs-nav {
   margin: 0;
   padding: .2em .2em 0;
 }
 
-/* line 856, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-tabs .ui-tabs-nav li {
   list-style: none;
   float: left;
   position: relative;
   top: 0;
   margin: 1px .2em 0 0;
-  border-bottom-width: 0;
+  border-bottom: 0;
   padding: 0;
   white-space: nowrap;
 }
 
-/* line 867, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+.ui-tabs .ui-tabs-nav li a {
   float: left;
   padding: .5em 1em;
   text-decoration: none;
 }
 
-/* line 873, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
   margin-bottom: -1px;
   padding-bottom: 1px;
 }
 
-/* line 880, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
-.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
-.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
   cursor: text;
 }
 
-/* line 884, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+.ui-tabs .ui-tabs-nav li a,
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
   cursor: pointer;
 }
 
-/* line 888, ../../sass/jquery-ui/1.10.custom.scss */
+/* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+
 .ui-tabs .ui-tabs-panel {
   display: block;
   border-width: 0;
@@ -1035,161 +951,164 @@ button.ui-button::-moz-focus-inner {
   background: none;
 }
 
-/* line 895, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-tooltip {
   padding: 8px;
   position: absolute;
   z-index: 9999;
   max-width: 300px;
-  -webkit-box-shadow: 0 0 5px #aaa;
-  box-shadow: 0 0 5px #aaa;
+  -webkit-box-shadow: 0 0 5px $shadow;
+  box-shadow: 0 0 5px $shadow;
 }
 
-/* line 904, ../../sass/jquery-ui/1.10.custom.scss */
+/* Fades and background-images don't work well together in IE6, drop the image */
+
+* html .ui-tooltip {
+  background-image: none;
+}
+
 body .ui-tooltip {
   border-width: 2px;
 }
 
 /* Component containers
 ----------------------------------*/
-/* line 927, ../../sass/jquery-ui/1.10.custom.scss */
+
+.ui-widget {
+  // font-family: inherit;
+  //font-size: 1em;
+}
+
+.ui-widget .ui-widget {
+  // font-size: 1em;
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-family: inherit;
+  font-size: 1em;
+}
+
 .ui-widget-content {
-  border: 1px solid #aaa;
-  background: #fefefe;
-  color: #565450;
+  border: 1px solid $shadow;
+  background: $background_default;
+  color: $color_default;
 }
 
-/* line 933, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-widget-content a {
-  color: #565450;
+  color: $color_default;
 }
 
-/* line 937, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-widget-header {
-  background: #fefefe;
-  color: #565450;
+  border: 1px solid $color_default;
+  background: $background_default;
+  color: $color_default;
   font-weight: bold;
-  border: 1px solid;
 }
 
-/* line 944, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-widget-header a {
-  color: #565450;
+  color: $color_default;
 }
 
 /* Interaction states
 ----------------------------------*/
-/* line 952, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  border: 1px solid #fefefe;
-  background: #29b4de;
+  border: 1px solid $background_default;
+  background: $hilight;
   font-weight: normal;
-  color: #fefefe;
+  color: $background_default;
 }
 
-/* line 961, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-  color: #fefefe;
+  color: $background_default;
   text-decoration: none;
 }
 
-/* line 971, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fefefe;
-  background: #1982a2;
+  border: 1px solid $background_default;
+  background: $hilight;
   font-weight: normal;
-  color: #fefefe;
+  color: $background_default;
 }
 
-/* line 985, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
-.ui-state-hover a:visited,
-.ui-state-focus a,
-.ui-state-focus a:hover,
-.ui-state-focus a:link,
-.ui-state-focus a:visited {
-  color: #fefefe;
+.ui-state-hover a:visited {
+  color: $background_default;
   text-decoration: none;
 }
 
-/* line 992, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-  background: #fefefe;
+  border: 1px solid $hilight;
+  background: $background_default;
   font-weight: normal;
-  color: #29b4de;
-  border: 1px solid;
+  color: $hilight;
 }
 
-/* line 1001, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-  color: #29b4de;
+  color: $hilight;
   text-decoration: none;
 }
 
 /* Interaction Cues
 ----------------------------------*/
-/* line 1010, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  border: 1px solid #fd1;
-  background: #ffd;
-  color: #565450;
+  border: 1px solid $yellow;
+  background: darken($white, 5%);
+  color: $color_default;
 }
 
-/* line 1018, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-  color: #565450;
+  color: $color_default;
 }
 
-/* line 1024, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  border: 1px solid #8c0d00;
-  background: white;
-  color: #8c0d00;
+  border: 1px solid $error_color;
+  background: darken($white, 5%);
+  color: $error_color;
 }
 
-/* line 1032, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
-  color: #8c0d00;
+  color: $error_color;
 }
 
-/* line 1038, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
-  color: #8c0d00;
+  color: $error_color;
 }
 
-/* line 1044, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-priority-primary,
 .ui-widget-content .ui-priority-primary,
 .ui-widget-header .ui-priority-primary {
   font-weight: bold;
 }
 
-/* line 1050, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
@@ -1198,7 +1117,6 @@ body .ui-tooltip {
   font-weight: normal;
 }
 
-/* line 1058, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
@@ -1207,985 +1125,814 @@ body .ui-tooltip {
   background-image: none;
 }
 
-/* line 1064, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-disabled .ui-icon {
   filter: Alpha(Opacity=35);
-  /* For IE8 - See #6059 */
 }
+
+/* For IE8 - See #6059 */
 
 /* Icons
 ----------------------------------*/
+
 /* states and images */
-/* line 1072, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-icon {
   width: 16px;
   height: 16px;
+  background-image: $i_dark_grey;
 }
 
-/* line 1078, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-icon,
 .ui-widget-content .ui-icon {
-  background-image: url("images/ui-icons_444_256x240.png");
+  background-image: $i_dark_grey;
 }
 
-/* line 1082, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-widget-header .ui-icon {
-  background-image: url("images/ui-icons_444_256x240.png");
+  background-image: $i_dark_grey;
 }
 
-/* line 1086, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-default .ui-icon {
-  background-image: url("images/ui-icons_fff_256x240.png");
+  background-image: $i_white;
 }
 
-/* line 1091, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {
-  background-image: url("images/ui-icons_fff_256x240.png");
+  background-image: $i_white;
 }
 
-/* line 1095, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-active .ui-icon {
-  background-image: url("images/ui-icons_f50_256x240.png");
+  background-image: $i_orange;
 }
 
-/* line 1099, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-highlight .ui-icon {
-  background-image: url("images/ui-icons_15f_256x240.png");
+  background-image: $i_blue;
 }
 
-/* line 1104, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url("images/ui-icons_c00_256x240.png");
+  background-image: $i_red;
 }
 
 /* positioning */
-/* line 1109, ../../sass/jquery-ui/1.10.custom.scss */
-.ui-icon-blank {
-  background-position: 16px 16px;
-}
 
-/* line 1113, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-n {
   background-position: 0 0;
 }
 
-/* line 1117, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-ne {
   background-position: -16px 0;
 }
 
-/* line 1121, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-e {
   background-position: -32px 0;
 }
 
-/* line 1125, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-se {
   background-position: -48px 0;
 }
 
-/* line 1129, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-s {
   background-position: -64px 0;
 }
 
-/* line 1133, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-sw {
   background-position: -80px 0;
 }
 
-/* line 1137, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-w {
   background-position: -96px 0;
 }
 
-/* line 1141, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-1-nw {
   background-position: -112px 0;
 }
 
-/* line 1145, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-2-n-s {
   background-position: -128px 0;
 }
 
-/* line 1149, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-carat-2-e-w {
   background-position: -144px 0;
 }
 
-/* line 1153, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-n {
   background-position: 0 -16px;
 }
 
-/* line 1157, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-ne {
   background-position: -16px -16px;
 }
 
-/* line 1161, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-e {
   background-position: -32px -16px;
 }
 
-/* line 1165, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-se {
   background-position: -48px -16px;
 }
 
-/* line 1169, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-s {
   background-position: -64px -16px;
 }
 
-/* line 1173, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-sw {
   background-position: -80px -16px;
 }
 
-/* line 1177, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-w {
   background-position: -96px -16px;
 }
 
-/* line 1181, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-1-nw {
   background-position: -112px -16px;
 }
 
-/* line 1185, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-2-n-s {
   background-position: -128px -16px;
 }
 
-/* line 1189, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-triangle-2-e-w {
   background-position: -144px -16px;
 }
 
-/* line 1193, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-n {
   background-position: 0 -32px;
 }
 
-/* line 1197, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-ne {
   background-position: -16px -32px;
 }
 
-/* line 1201, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-e {
   background-position: -32px -32px;
 }
 
-/* line 1205, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-se {
   background-position: -48px -32px;
 }
 
-/* line 1209, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-s {
   background-position: -64px -32px;
 }
 
-/* line 1213, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-sw {
   background-position: -80px -32px;
 }
 
-/* line 1217, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-w {
   background-position: -96px -32px;
 }
 
-/* line 1221, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-1-nw {
   background-position: -112px -32px;
 }
 
-/* line 1225, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-2-n-s {
   background-position: -128px -32px;
 }
 
-/* line 1229, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-2-ne-sw {
   background-position: -144px -32px;
 }
 
-/* line 1233, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-2-e-w {
   background-position: -160px -32px;
 }
 
-/* line 1237, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-2-se-nw {
   background-position: -176px -32px;
 }
 
-/* line 1241, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowstop-1-n {
   background-position: -192px -32px;
 }
 
-/* line 1245, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowstop-1-e {
   background-position: -208px -32px;
 }
 
-/* line 1249, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowstop-1-s {
   background-position: -224px -32px;
 }
 
-/* line 1253, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowstop-1-w {
   background-position: -240px -32px;
 }
 
-/* line 1257, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-n {
   background-position: 0 -48px;
 }
 
-/* line 1261, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-ne {
   background-position: -16px -48px;
 }
 
-/* line 1265, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-e {
   background-position: -32px -48px;
 }
 
-/* line 1269, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-se {
   background-position: -48px -48px;
 }
 
-/* line 1273, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-s {
   background-position: -64px -48px;
 }
 
-/* line 1277, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-sw {
   background-position: -80px -48px;
 }
 
-/* line 1281, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-w {
   background-position: -96px -48px;
 }
 
-/* line 1285, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-1-nw {
   background-position: -112px -48px;
 }
 
-/* line 1289, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-2-n-s {
   background-position: -128px -48px;
 }
 
-/* line 1293, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-2-ne-sw {
   background-position: -144px -48px;
 }
 
-/* line 1297, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-2-e-w {
   background-position: -160px -48px;
 }
 
-/* line 1301, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthick-2-se-nw {
   background-position: -176px -48px;
 }
 
-/* line 1305, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthickstop-1-n {
   background-position: -192px -48px;
 }
 
-/* line 1309, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthickstop-1-e {
   background-position: -208px -48px;
 }
 
-/* line 1313, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthickstop-1-s {
   background-position: -224px -48px;
 }
 
-/* line 1317, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowthickstop-1-w {
   background-position: -240px -48px;
 }
 
-/* line 1321, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturnthick-1-w {
   background-position: 0 -64px;
 }
 
-/* line 1325, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturnthick-1-n {
   background-position: -16px -64px;
 }
 
-/* line 1329, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturnthick-1-e {
   background-position: -32px -64px;
 }
 
-/* line 1333, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturnthick-1-s {
   background-position: -48px -64px;
 }
 
-/* line 1337, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturn-1-w {
   background-position: -64px -64px;
 }
 
-/* line 1341, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturn-1-n {
   background-position: -80px -64px;
 }
 
-/* line 1345, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturn-1-e {
   background-position: -96px -64px;
 }
 
-/* line 1349, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowreturn-1-s {
   background-position: -112px -64px;
 }
 
-/* line 1353, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowrefresh-1-w {
   background-position: -128px -64px;
 }
 
-/* line 1357, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowrefresh-1-n {
   background-position: -144px -64px;
 }
 
-/* line 1361, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowrefresh-1-e {
   background-position: -160px -64px;
 }
 
-/* line 1365, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrowrefresh-1-s {
   background-position: -176px -64px;
 }
 
-/* line 1369, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-4 {
   background-position: 0 -80px;
 }
 
-/* line 1373, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-arrow-4-diag {
   background-position: -16px -80px;
 }
 
-/* line 1377, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-extlink {
   background-position: -32px -80px;
 }
 
-/* line 1381, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-newwin {
   background-position: -48px -80px;
 }
 
-/* line 1385, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-refresh {
   background-position: -64px -80px;
 }
 
-/* line 1389, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-shuffle {
   background-position: -80px -80px;
 }
 
-/* line 1393, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-transfer-e-w {
   background-position: -96px -80px;
 }
 
-/* line 1397, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-transferthick-e-w {
   background-position: -112px -80px;
 }
 
-/* line 1401, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-folder-collapsed {
   background-position: 0 -96px;
 }
 
-/* line 1405, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-folder-open {
   background-position: -16px -96px;
 }
 
-/* line 1409, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-document {
   background-position: -32px -96px;
 }
 
-/* line 1413, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-document-b {
   background-position: -48px -96px;
 }
 
-/* line 1417, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-note {
   background-position: -64px -96px;
 }
 
-/* line 1421, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-mail-closed {
   background-position: -80px -96px;
 }
 
-/* line 1425, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-mail-open {
   background-position: -96px -96px;
 }
 
-/* line 1429, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-suitcase {
   background-position: -112px -96px;
 }
 
-/* line 1433, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-comment {
   background-position: -128px -96px;
 }
 
-/* line 1437, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-person {
   background-position: -144px -96px;
 }
 
-/* line 1441, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-print {
   background-position: -160px -96px;
 }
 
-/* line 1445, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-trash {
   background-position: -176px -96px;
 }
 
-/* line 1449, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-locked {
   background-position: -192px -96px;
 }
 
-/* line 1453, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-unlocked {
   background-position: -208px -96px;
 }
 
-/* line 1457, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-bookmark {
   background-position: -224px -96px;
 }
 
-/* line 1461, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-tag {
   background-position: -240px -96px;
 }
 
-/* line 1465, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-home {
   background-position: 0 -112px;
 }
 
-/* line 1469, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-flag {
   background-position: -16px -112px;
 }
 
-/* line 1473, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-calendar {
   background-position: -32px -112px;
 }
 
-/* line 1477, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-cart {
   background-position: -48px -112px;
 }
 
-/* line 1481, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-pencil {
   background-position: -64px -112px;
 }
 
-/* line 1485, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-clock {
   background-position: -80px -112px;
 }
 
-/* line 1489, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-disk {
   background-position: -96px -112px;
 }
 
-/* line 1493, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-calculator {
   background-position: -112px -112px;
 }
 
-/* line 1497, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-zoomin {
   background-position: -128px -112px;
 }
 
-/* line 1501, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-zoomout {
   background-position: -144px -112px;
 }
 
-/* line 1505, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-search {
   background-position: -160px -112px;
 }
 
-/* line 1509, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-wrench {
   background-position: -176px -112px;
 }
 
-/* line 1513, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-gear {
   background-position: -192px -112px;
 }
 
-/* line 1517, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-heart {
   background-position: -208px -112px;
 }
 
-/* line 1521, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-star {
   background-position: -224px -112px;
 }
 
-/* line 1525, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-link {
   background-position: -240px -112px;
 }
 
-/* line 1529, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-cancel {
   background-position: 0 -128px;
 }
 
-/* line 1533, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-plus {
   background-position: -16px -128px;
 }
 
-/* line 1537, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-plusthick {
   background-position: -32px -128px;
 }
 
-/* line 1541, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-minus {
   background-position: -48px -128px;
 }
 
-/* line 1545, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-minusthick {
   background-position: -64px -128px;
 }
 
-/* line 1549, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-close {
   background-position: -80px -128px;
 }
 
-/* line 1553, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-closethick {
   background-position: -96px -128px;
 }
 
-/* line 1557, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-key {
   background-position: -112px -128px;
 }
 
-/* line 1561, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-lightbulb {
   background-position: -128px -128px;
 }
 
-/* line 1565, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-scissors {
   background-position: -144px -128px;
 }
 
-/* line 1569, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-clipboard {
   background-position: -160px -128px;
 }
 
-/* line 1573, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-copy {
   background-position: -176px -128px;
 }
 
-/* line 1577, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-contact {
   background-position: -192px -128px;
 }
 
-/* line 1581, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-image {
   background-position: -208px -128px;
 }
 
-/* line 1585, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-video {
   background-position: -224px -128px;
 }
 
-/* line 1589, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-script {
   background-position: -240px -128px;
 }
 
-/* line 1593, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-alert {
   background-position: 0 -144px;
 }
 
-/* line 1597, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-info {
   background-position: -16px -144px;
 }
 
-/* line 1601, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-notice {
   background-position: -32px -144px;
 }
 
-/* line 1605, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-help {
   background-position: -48px -144px;
 }
 
-/* line 1609, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-check {
   background-position: -64px -144px;
 }
 
-/* line 1613, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-bullet {
   background-position: -80px -144px;
 }
 
-/* line 1617, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-radio-on {
   background-position: -96px -144px;
 }
 
-/* line 1621, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-radio-off {
   background-position: -112px -144px;
 }
 
-/* line 1625, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-pin-w {
   background-position: -128px -144px;
 }
 
-/* line 1629, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-pin-s {
   background-position: -144px -144px;
 }
 
-/* line 1633, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-play {
   background-position: 0 -160px;
 }
 
-/* line 1637, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-pause {
   background-position: -16px -160px;
 }
 
-/* line 1641, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-seek-next {
   background-position: -32px -160px;
 }
 
-/* line 1645, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-seek-prev {
   background-position: -48px -160px;
 }
 
-/* line 1649, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-seek-end {
   background-position: -64px -160px;
 }
 
-/* line 1653, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-seek-start {
   background-position: -80px -160px;
 }
 
 /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
-/* line 1658, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-icon-seek-first {
   background-position: -80px -160px;
 }
 
-/* line 1662, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-stop {
   background-position: -96px -160px;
 }
 
-/* line 1666, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-eject {
   background-position: -112px -160px;
 }
 
-/* line 1670, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-volume-off {
   background-position: -128px -160px;
 }
 
-/* line 1674, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-volume-on {
   background-position: -144px -160px;
 }
 
-/* line 1678, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-power {
   background-position: 0 -176px;
 }
 
-/* line 1682, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-signal-diag {
   background-position: -16px -176px;
 }
 
-/* line 1686, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-signal {
   background-position: -32px -176px;
 }
 
-/* line 1690, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-battery-0 {
   background-position: -48px -176px;
 }
 
-/* line 1694, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-battery-1 {
   background-position: -64px -176px;
 }
 
-/* line 1698, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-battery-2 {
   background-position: -80px -176px;
 }
 
-/* line 1702, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-battery-3 {
   background-position: -96px -176px;
 }
 
-/* line 1706, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-plus {
   background-position: 0 -192px;
 }
 
-/* line 1710, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-minus {
   background-position: -16px -192px;
 }
 
-/* line 1714, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-close {
   background-position: -32px -192px;
 }
 
-/* line 1718, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-triangle-e {
   background-position: -48px -192px;
 }
 
-/* line 1722, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-triangle-s {
   background-position: -64px -192px;
 }
 
-/* line 1726, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-triangle-w {
   background-position: -80px -192px;
 }
 
-/* line 1730, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-triangle-n {
   background-position: -96px -192px;
 }
 
-/* line 1734, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-arrow-e {
   background-position: -112px -192px;
 }
 
-/* line 1738, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-arrow-s {
   background-position: -128px -192px;
 }
 
-/* line 1742, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-arrow-w {
   background-position: -144px -192px;
 }
 
-/* line 1746, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-arrow-n {
   background-position: -160px -192px;
 }
 
-/* line 1750, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-zoomin {
   background-position: -176px -192px;
 }
 
-/* line 1754, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-zoomout {
   background-position: -192px -192px;
 }
 
-/* line 1758, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circle-check {
   background-position: -208px -192px;
 }
 
-/* line 1762, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circlesmall-plus {
   background-position: 0 -208px;
 }
 
-/* line 1766, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circlesmall-minus {
   background-position: -16px -208px;
 }
 
-/* line 1770, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-circlesmall-close {
   background-position: -32px -208px;
 }
 
-/* line 1774, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-squaresmall-plus {
   background-position: -48px -208px;
 }
 
-/* line 1778, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-squaresmall-minus {
   background-position: -64px -208px;
 }
 
-/* line 1782, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-squaresmall-close {
   background-position: -80px -208px;
 }
 
-/* line 1786, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-grip-dotted-vertical {
   background-position: 0 -224px;
 }
 
-/* line 1790, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-grip-dotted-horizontal {
   background-position: -16px -224px;
 }
 
-/* line 1794, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-grip-solid-vertical {
   background-position: -32px -224px;
 }
 
-/* line 1798, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-grip-solid-horizontal {
   background-position: -48px -224px;
 }
 
-/* line 1802, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-gripsmall-diagonal-se {
   background-position: -64px -224px;
 }
 
-/* line 1806, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-icon-grip-diagonal-se {
   background-position: -80px -224px;
 }
 
 /* Misc visuals
 ----------------------------------*/
+
 /* Corner radius */
-/* line 1817, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
+  -moz-border-radius-topleft: .4em;
+  -webkit-border-top-left-radius: .4em;
+  -khtml-border-top-left-radius: .4em;
   border-top-left-radius: .4em;
 }
 
-/* line 1824, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
+  -moz-border-radius-topright: .4em;
+  -webkit-border-top-right-radius: .4em;
+  -khtml-border-top-right-radius: .4em;
   border-top-right-radius: .4em;
 }
 
-/* line 1831, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
+  -moz-border-radius-bottomleft: .4em;
+  -webkit-border-bottom-left-radius: .4em;
+  -khtml-border-bottom-left-radius: .4em;
   border-bottom-left-radius: .4em;
 }
 
-/* line 1838, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
+  -moz-border-radius-bottomright: .4em;
+  -webkit-border-bottom-right-radius: .4em;
+  -khtml-border-bottom-right-radius: .4em;
   border-bottom-right-radius: .4em;
 }
 
 /* Overlays */
-/* line 1843, ../../sass/jquery-ui/1.10.custom.scss */
+
 .ui-widget-overlay {
-  background: #bbbab7;
+  background: $light_grey;
   opacity: .3;
   filter: Alpha(Opacity=30);
 }
 
-/* line 1849, ../../sass/jquery-ui/1.10.custom.scss */
 .ui-widget-shadow {
   margin: -.8em 0 0 -.8em;
   padding: .8em;
-  background: #bbbab7;
+  background: $light_grey;
   opacity: .3;
   filter: Alpha(Opacity=30);
+  -moz-border-radius: .4em;
+  -khtml-border-radius: .4em;
+  -webkit-border-radius: .4em;
   border-radius: .4em;
 }

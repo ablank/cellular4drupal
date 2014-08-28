@@ -24,7 +24,19 @@ cellular.jTabs = function(opts) {
 
         var $obj = jQuery(this);
         var tab = $obj.find('> li');
+        var maxHeight = 0;
 
+
+        $i.each(function() {
+            $t = jQuery(this);
+            if ($t.height() > maxHeight) {
+                maxHeight = $t.height();
+            }
+            $t.hide();
+        });
+
+        $obj.addClass(cellular.opts.cclass)
+            .height(maxHeight);
         $obj.once('jTabs', function() {
 
             $obj.addClass(cellular.opts.cclass + ' ' + o.orient)

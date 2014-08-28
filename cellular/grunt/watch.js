@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt watch
+ */
+
 module.exports = {
     scripts: {
         files: ['js/cellularUI/js/*.js'],
