@@ -63,11 +63,11 @@ legend {
 }
 
 label {
-  display: inline;
+  display: inline-block;
   font-family: $h_font;
   font-weight: $h_weight;
-  margin: 0;
-  padding: 0;
+  margin: .4em 0 0;
+  padding: 1em .4em .4em;
 }
 
 input,
@@ -186,6 +186,7 @@ option {
 button,
 input[type="button"],
 input[type="submit"] {
+  margin: 1.4em .4em .4em;
   @include button();
 }
 

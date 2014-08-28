@@ -70,9 +70,14 @@ div {
     border: $grey 1px solid;
     border-bottom: none;
     background-color: $light_grey;
+    @include round_top();
 
     &.active {
       background-color: $white;
+    }
+    &:hover {
+      background-color: lighten($light_grey, 20%);
+
     }
   }
 }

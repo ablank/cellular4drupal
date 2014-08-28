@@ -421,11 +421,11 @@ legend {
 
 /* line 65, ../sass/base/_forms.scss */
 label {
-  display: inline;
+  display: inline-block;
   font-family: "Quicksand";
   font-weight: bold;
-  margin: 0;
-  padding: 0;
+  margin: .4em 0 0;
+  padding: 1em .4em .4em;
 }
 
 /* line 75, ../sass/base/_forms.scss */
@@ -588,6 +588,7 @@ optgroup {
 button,
 input[type="button"],
 input[type="submit"] {
+  margin: 1.4em .4em .4em;
   cursor: pointer;
   display: inline;
   display: inline-block;
@@ -624,13 +625,13 @@ input[type="submit"]:hover {
   text-decoration: none;
 }
 
-/* line 195, ../sass/base/_forms.scss */
+/* line 196, ../sass/base/_forms.scss */
 .required:after {
   content: ' *';
   font-weight: bold;
 }
 
-/* line 203, ../sass/base/_forms.scss */
+/* line 204, ../sass/base/_forms.scss */
 .ok,
 .warning,
 .error {
@@ -643,26 +644,26 @@ input[type="submit"]:hover {
   border: .2em solid;
   background-color: #fefefe;
 }
-/* line 208, ../sass/base/_forms.scss */
+/* line 209, ../sass/base/_forms.scss */
 .ok li,
 .warning li,
 .error li {
   list-style: none;
 }
 
-/* line 213, ../sass/base/_forms.scss */
+/* line 214, ../sass/base/_forms.scss */
 .ok {
   color: #61d43f;
   border-color: #398d20;
 }
 
-/* line 218, ../sass/base/_forms.scss */
+/* line 219, ../sass/base/_forms.scss */
 .warning {
   color: #eecc22;
   border-color: #9e860c;
 }
 
-/* line 223, ../sass/base/_forms.scss */
+/* line 224, ../sass/base/_forms.scss */
 .error {
   color: #8c0d00;
   border-color: #260400;

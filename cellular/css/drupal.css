@@ -304,8 +304,22 @@ div.ctools-ajaxing {
   border: #8a8882 1px solid;
   border-bottom: none;
   background-color: #bbbab7;
+  -webkit-border-top-left-radius: 0.3em;
+  -moz-border-top-left-radius: 0.3em;
+  -ms-border-top-left-radius: 0.3em;
+  -o-border-top-left-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  -webkit-border-top-right-radius: 0.3em;
+  -moz-border-top-right-radius: 0.3em;
+  -ms-border-top-right-radius: 0.3em;
+  -o-border-top-right-radius: 0.3em;
+  border-top-right-radius: 0.3em;
 }
-/* line 74, ../sass/drupal/_drupal-classes.scss */
+/* line 75, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a.active {
   background-color: #fefefe;
+}
+/* line 78, ../sass/drupal/_drupal-classes.scss */
+.tabs.primary a:hover {
+  background-color: #edeceb;
 }

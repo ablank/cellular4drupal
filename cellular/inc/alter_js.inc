@@ -13,7 +13,6 @@ function cellular_js_alter(&$javascript) {
 
 // Pass variable from drupal to js
 //  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
-
   /* myVar will be available in Javascript as:
     <script>
     if (Drupal.settings.myVar.key == value){
@@ -32,7 +31,6 @@ function cellular_js_alter(&$javascript) {
 
   cellular_add_js($scripts);
 
-
 // Scripts to add, linking to /libraries/cellular/js/script.js
   $js_plugins = array(
     'modernizr' => theme_get_setting('modernizr') == 1 ? array(
@@ -44,31 +42,37 @@ function cellular_js_alter(&$javascript) {
     'cellular'  => theme_get_setting('cellularjs') == 1 ? array(
         'object' => 'cellular',
         'file'   => 'plugins/jquery.cellular.min.js',
+        'weight' => -10,
       ) : NULL,
     'd3'        => theme_get_setting('d3js') == 1 ? array(
         'object' => 'd3',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js',
         'file'   => 'plugins/d3.min.js',
+        'weight' => -9,
       ) : NULL,
     'masonry'   => theme_get_setting('masonry') == 1 ? array(
         'object' => NULL,
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js',
         'file'   => 'plugins/jquery.masonry.min.js',
+        'weight' => -8,
       ) : NULL,
     'prism'     => theme_get_setting('prism') == 1 ? array(
         'object' => 'Prism',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js',
         'file'   => 'plugins/prism.min.js',
+        'weight' => -7,
       ) : NULL,
     'smoove'    => theme_get_setting('smoove') == 1 ? array(
         'object' => 'smoove',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
         'file'   => 'plugins/jquery.smoove.min.js',
+        'weight' => -6,
       ) : NULL,
     'threejs'   => theme_get_setting('threejs') == 1 ? array(
         'object' => 'THREE',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js',
         'file'   => 'plugins/three.min.js',
+        'weight' => -5,
       ) : NULL,
   );
 
@@ -78,25 +82,25 @@ function cellular_js_alter(&$javascript) {
         'object' => 'CSSPlugin',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/plugins/CSSPlugin.min.js',
         'file'   => 'plugins/gsap/minified/plugins/CSSPlugin.min.js',
-        'weight' => -80,
+        'weight' => -10,
       ),
       'gsap_easing' => array(
         'object' => 'EasePack',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/easing/EasePack.min.js',
         'file'   => 'plugins/gsap/minified/easing/EasePack.min.js',
-        'weight' => -79,
+        'weight' => -9,
       ),
       'gsap_tweens' => array(
         'object' => 'TweenLite',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenLite.min.js',
         'file'   => 'plugins/gsap/minified/TweenLite.min.js',
-        'weight' => -78,
+        'weight' => -8,
       ),
       'gsap'        => array(
         'object' => 'gsap',
         'cdn'    => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/jquery.gsap.min.js',
         'file'   => 'plugins/gsap/minified/jquery.gsap.min.js',
-        'weight' => -77,
+        'weight' => -7,
       ),
     );
 
