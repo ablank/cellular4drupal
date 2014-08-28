@@ -2,7 +2,6 @@
 /**
  * @file
  * Add/Update/Delete javascript
- * @author    Adam Blankenship
  */
 
 /*

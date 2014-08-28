@@ -1,14 +1,12 @@
-/*!/////
+/*** @file* CellularUI functions* * @author Adam Blankenship*//*!/////
  Cellular UI functions
  (c)2012 Adam Blankenship
  /////*/
 (function ($) {
- 
- ///// :) 
+ // :) //
 Drupal.behaviors.cellular = {
     attach: function(context, settings) {
- 
- ///// :) 
+ // :) //
 var cellular = {};
 
 cellular.opts = {
@@ -19,8 +17,7 @@ cellular.opts = {
     "speed": 300,
     "breakpoint": 650
 };
- 
- ///// :) 
+ // :) //
 cellular.activate = function() {
     return this.each(function() {
         var $t = jQuery(this);
@@ -81,8 +78,7 @@ cellular.classify = function($array) {
  };
  */
 
- 
- ///// :) 
+ // :) //
 cellular.jAccordion = function(opts) {
     var o = jQuery.extend({
         "active": 0,
@@ -134,8 +130,7 @@ cellular.jAccordion = function(opts) {
     });
 };
 
- 
- ///// :) 
+ // :) //
 /////
 cellular.jBlocklink = function(opts) {
     var o = jQuery.extend({
@@ -173,8 +168,7 @@ cellular.jBlocklink = function(opts) {
     });
 };
 
- 
- ///// :) 
+ // :) //
 cellular.jFormal = function(opts) {
     var o = jQuery.extend({
         "inputs": [
@@ -205,8 +199,7 @@ cellular.jFormal = function(opts) {
         });
     });
 };
- 
- ///// :) 
+ // :) //
 /////
 cellular.jMmenu = function(opts) {
     var o = jQuery.extend({
@@ -252,8 +245,7 @@ cellular.jMmenu = function(opts) {
         });
     });
 };
- 
- ///// :) 
+ // :) //
 /////
 cellular.jScrolli = function(opts) {
     o = $.extend({
@@ -301,8 +293,7 @@ cellular.jScrolli = function(opts) {
                 });
     });
 };
- 
- ///// :) 
+ // :) //
 /////
 cellular.jTabs = function(opts) {
     var o = jQuery.extend({
@@ -375,15 +366,12 @@ cellular.jTabs = function(opts) {
         fn.showContent(tab.eq([o.active]));
     });
 };
- 
- ///// :) 
+ // :) //
 jQuery.fn.extend(cellular);
- 
- ///// :) 
+ // :) //
 //Drupal.behaviors.cellular = {
 //attach: function (context, settings) {
 }
 };
- 
- ///// :) 
+ // :) //
 })(jQuery);

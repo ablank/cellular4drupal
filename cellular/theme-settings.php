@@ -1,12 +1,15 @@
 <?php
+/**
+ * @file
+ * Get theme-settings
+ *
+ * @param $form
+ * @param $form_state
+ */
 
-/* * ************
-  Cellular:: theme-settings.php
-
-  Form layout for theme settings controls
-
- * ************** */
-
+/*
+ * hook_form_system_theme_settings_alter()
+ */
 function cellular_form_system_theme_settings_alter(&$form, $form_state) {
 
     // $inc_path = drupal_get_path('theme', 'cellular') . '/inc/';

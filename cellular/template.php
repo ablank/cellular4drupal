@@ -4,7 +4,6 @@
  *  Set global vars & load all functions for templates
  */
 
-
 $include = array(
     //'dev-functions.inc',
     'functions.inc',

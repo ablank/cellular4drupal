@@ -5,7 +5,13 @@
 
 module.exports = {
     options: {
-        separator: '\n \n ///// :) \n',
+        banner: '/**' +
+            '* @file' +
+            '* CellularUI functions' +
+            '* ' +
+            '* @author Adam Blankenship' +
+            '*/',
+        separator: '\n // :) //\n',
     },
     cellularUI: {
         src: [

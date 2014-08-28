@@ -9,8 +9,8 @@
 $cdn = array(
   'provider' => array(
     'cloudflare' => t('Cloudflare'),
-    'google'    => t('Google'),
-    'microsoft' => t('Microsoft'),
+    'google'     => t('Google'),
+    'microsoft'  => t('Microsoft'),
   ),
   'jquery'   => array(
     '1.11.1' => t('1.11.1'),
@@ -83,7 +83,7 @@ $form['c']['js']['Modernizr'] = array(
   '#description' => t("Browser testing & conditional resource loading."),
   '#collapsible' => TRUE,
   '#collapsed'   => TRUE,
-  '#states'        => array(
+  '#states'      => array(
     'visible' => array(
       ':input[name="mdrnzr"]' => array('checked' => TRUE),
     ),
@@ -159,24 +159,22 @@ $form['c']['js']['Modernizr']['mq_large'] = array(
   ),
 );
 
-// jQuery stuff
-
+// Update jQuery?
 $form['c']['js']['jquery_update'] = array(
   '#type'          => 'checkbox',
-  '#title'         => t('Update jQuery'),
+  '#title'         => t('Update jQuery & jQuery UI'),
   '#description'   => t("Update jQuery & jQueryUI to newer version,
   loading first from CDN with a local fallback source if the CDN script
    is unavailable."),
   '#default_value' => theme_get_setting('jquery_update'),
 );
 
-$form['c']['js']['jquery']['jquery_cdn'] = array(
-  '#type'          => 'checkbox',
-  '#title'         => t('Update jQuery via CDN'),
-  '#description'   => t("Update jQuery & jQuery.ui from a selected Content
-   Distribution Network host."),
-  '#options'       => $cdn['provider'],
-  '#default_value' => theme_get_setting('jquery_cdn'),
+// jQuery & jQuery.ui update settings
+$form['c']['js']['update'] = array(
+  '#type'        => 'fieldset',
+  '#title'       => t('jQuery & jQuery.ui Settings'),
+  '#collapsible' => TRUE,
+  '#collapsed'   => FALSE,
   '#states'      => array(
     'visible' => array(
       ':input[name="jquery_update"]' => array('checked' => TRUE),
@@ -184,32 +182,37 @@ $form['c']['js']['jquery']['jquery_cdn'] = array(
   ),
 );
 
-$form['c']['js']['jquery']['cdn'] = array(
+$form['c']['js']['update']['jquery_cdn'] = array(
+  '#type'          => 'checkbox',
+  '#title'         => t('Update jQuery via CDN'),
+  '#description'   => t("Update jQuery & jQuery.ui from a selected Content
+   Distribution Network host, falling back to local source
+    if CDN is unavailable."),
+  '#default_value' => theme_get_setting('jquery_cdn'),
+);
+
+$form['c']['js']['update']['cdn'] = array(
   '#type'          => 'select',
   '#title'         => t('CDN Provider'),
   '#description'   => t("Select which CDN your site will use."),
   '#options'       => $cdn['provider'],
   '#default_value' => theme_get_setting('cdn'),
-  '#states'      => array(
+  '#states'        => array(
     'visible' => array(
       ':input[name="jquery_cdn"]' => array('checked' => TRUE),
-    ),
-),
-);
-
-$form['c']['js']['jquery']['opts'] = array(
-  '#type'        => 'fieldset',
-  '#title'       => t('jQuery'),
-  '#collapsible' => TRUE,
-  '#collapsed'   => TRUE,
-  '#states'      => array(
-    'visible' => array(
-      ':input[name="jquery_update"]' => array('checked' => TRUE),
     ),
   ),
 );
 
-$form['c']['js']['jquery']['opts']['jquery_version'] = array(
+// jQuery stuff
+$form['c']['js']['update']['jquery'] = array(
+  '#type'        => 'fieldset',
+  '#title'       => t('jQuery'),
+  '#collapsible' => TRUE,
+  '#collapsed'   => FALSE,
+);
+
+$form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#type'          => 'select',
   '#title'         => t('jQuery Version'),
   '#description'   => t("Select the version of jQuery your site will use."),
@@ -217,27 +220,22 @@ $form['c']['js']['jquery']['opts']['jquery_version'] = array(
   '#default_value' => theme_get_setting('jquery_version'),
 );
 
-
-$form['c']['js']['jqueryui'] = array(
+// jQuery.ui stuff
+$form['c']['js']['update']['jqueryui'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('jQuery UI'),
   '#collapsible' => TRUE,
-  '#collapsed'   => TRUE,
-  '#states'      => array(
-    'visible' => array(
-      ':input[name="jquery_update"]' => array('checked' => TRUE),
-    ),
-  ),
+  '#collapsed'   => FALSE,
 );
 
-$form['c']['js']['jqueryui']['jqueryui_version'] = array(
+$form['c']['js']['update']['jqueryui']['jqueryui_version'] = array(
   '#type'          => 'select',
   '#title'         => t('jQueryUI Version'),
   '#description'   => t("Select the version of jQueryUI your site will use. \nYou will need to match a  version compatible with the selected jQuery version."),
   '#options'       => $cdn['jqueryui'],
   '#default_value' => theme_get_setting('jqueryui_version'),
 );
-$form['c']['js']['jqueryui']['jqueryui_theme'] = array(
+$form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
   '#type'          => 'select',
   '#title'         => t('jQueryUI Theme'),
   '#description'   => t("Select the jQueryUI theme your site will use.  \nCustom themes can be used by copying the contents (css & /images) of the themeroller css directory to \n/sites/all/themes/cellular/css/jquery-ui/%version/custom\n
@@ -248,11 +246,10 @@ $form['c']['js']['jqueryui']['jqueryui_theme'] = array(
   '#default_value' => theme_get_setting('jqueryui_theme'),
 );
 
-
 $form['c']['js']['plugins'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('JS Plugins'),
-  '#description'   => t("Javascript plugins will load from the Cloudflare CDN,
+  '#description' => t("Javascript plugins will load from the Cloudflare CDN,
     or use local source as fallback if CDN is unavailable."),
   '#collapsible' => TRUE,
   '#collapsed'   => TRUE

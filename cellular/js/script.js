@@ -1,17 +1,13 @@
-/*****
- script.js
+/**
+ * @file
+ *  Custom javascript for use in your theme
+ */
 
- Custom javascript functions
- *****/
-(function($) {
+(function ($) {
 
     Drupal.behaviors.theme = {
-        attach: function(context, settings) {
-
-            /////
+        attach: function (context, settings) {
             /// Call cellular functions
-            /////
-
             $('.jAccordion').jAccordion();
             $('.jBlocklink').jBlocklink();
             $('form').jFormal();
@@ -21,7 +17,7 @@
             });
             $('#nav').jMmenu();
             //$('#nav').jStickyheader();
-//$('.jParallax').jParallax();
+            // $('.jParallax').jParallax();
             //$('.jScrolltrigger').jScrolltrigger();
             //$('.jCarousel').jCarousel();
             //$('.jEqualheight').jEqualheight();
@@ -29,10 +25,7 @@
             //$('.jToggle').jToggle();
             //$('.jSticky').jSticky();
 
-            /////
-            /// Call Masonry
-            /////       
-
+            // Call Masonry
             /*
              $('.block-content').masonry({
              containerStyle: null,
@@ -42,9 +35,7 @@
              });
              */
 
-            /////
-            /// End Drupal.behaviors.theme
-            ///// 
+            // End Drupal.behaviors.theme
         }
     };
 })(jQuery);
