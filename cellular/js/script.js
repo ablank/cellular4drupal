@@ -20,6 +20,8 @@
             $('form').jFormal();
             $('#nav').jMmenu();
             $('.jScrolli').jScrolli();
+
+            /* // Functions under development:
             // $('#nav').jStickyheader();
             // $('.jParallax').jParallax();
             // $('.jScrolltrigger').jScrolltrigger();
@@ -27,9 +29,9 @@
             // $('.jEqualheight').jEqualheight();
             // $('.jToggle').jToggle();
             // $('.jSticky').jSticky();
-
-            // Call Masonry:
+            */
             /*
+            // Call Masonry:
              $('.block-content').masonry({
              containerStyle: null,
              itemSelector: '.blocklink-wrap',

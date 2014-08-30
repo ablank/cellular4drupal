@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Add/Update javascript.

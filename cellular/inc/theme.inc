@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Set element markup.
@@ -43,8 +44,7 @@ function cellular_breadcrumb(&$vars) {
       foreach ($breadcrumb as $key => $val) {
         if ($key == 0) {
           $output .= '<li class="icon home">' . $val . "</li>\n";
-        }
-        else {
+        } else {
           $output .= '<li>' . $separator . $val . "</li>\n";
         }
       }
@@ -86,17 +86,17 @@ function cellular_file_icon(&$vars) {
  */
 function cellular_feed_icon($vars) {
   $text = t('Subscribe to !feed-title', array(
-    '!feed-title' => $vars['title'],
+      '!feed-title' => $vars['title'],
   ));
 
   return l($text, $vars['url'], array(
-    'html'       => TRUE,
-    'attributes' => array(
-      'class' => array(
-        'icon',
-        'rss',
+      'html' => TRUE,
+      'attributes' => array(
+          'class' => array(
+              'icon',
+              'rss',
+          ),
+          'title' => $text
       ),
-      'title' => $text
-    ),
   ));
 }

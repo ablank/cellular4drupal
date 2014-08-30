@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
  * Add/Update/Delete stylesheets from theme. *
  */
-
 /*
  * hook_css_alter()
  *
@@ -11,22 +11,22 @@
 function subcellular_css_alter(&$css) {
   /*
     $add_css = array(
-      'styleName'  => array( //  default params
-        'file'       => 'my.awesome.css',
-        'preprocess' => TRUE,
-        'media'      => 'all',
-        'every_page' => TRUE,
-        'group'      => CSS_THEME,
-        'weight'     => 10
-      ),
-      'otherStyle' => array( // minimum setup
-        'file' => 'moar.css',
-      ),
+    'styleName'  => array( //  default params
+    'file'       => 'my.awesome.css',
+    'preprocess' => TRUE,
+    'media'      => 'all',
+    'every_page' => TRUE,
+    'group'      => CSS_THEME,
+    'weight'     => 10
+    ),
+    'otherStyle' => array( // minimum setup
+    'file' => 'moar.css',
+    ),
     );
 
     cellular_add_css($css, $add_css);
 
-    */
+   */
 
 
   /*

@@ -3,7 +3,6 @@
  * @file
  * Automated error page.
  */
-
 /* Regions:
   - $page['console']: Help, warnings, & other system notifications
   - $page['header']: Page Header
@@ -47,9 +46,9 @@
   Page Layout:
   - $content_width : Grid class to set width of main content.
   - $content_class_single_sidebar : Grid class to set width of main content
-with one sidebar displayed.
+  with one sidebar displayed.
   - $content_class_dual_sidebar : Grid class to set width of main content with
-two sidebars displayed.
+  two sidebars displayed.
   - $sidebar_width : Grid class to set width of sidebars.
   - $triptych_class : Grid class to set width of triptych elements.
 
@@ -76,91 +75,93 @@ two sidebars displayed.
  */
 ?>
 
-  <div id="skipLinks" class="hidden">
-    <a href="#content-main"><?php print t('Skip to main content'); ?></a>
-    <a href="#nav"><?php print t('Skip to navigation'); ?></a>
-  </div>
+<div id="skipLinks" class="hidden">
+  <a href="#content-main"><?php print t('Skip to main content'); ?></a>
+  <a href="#nav"><?php print t('Skip to navigation'); ?></a>
+</div>
 
-  <div id="page-wrap">
-    <div id="header">
-      <div id="logo">
+<div id="page-wrap">
+  <div id="header">
+    <div id="logo">
 
-        <?php
-        if ($site_name) :
-          print "<h2>" . $site_name . "</h2>";
-        endif;
-        ?>
-      </div>
-      <?php if (isset($main_menu)) : ?>
-        <div id="nav">
-          <?php print render($main_menu); ?>
-        </div>
-      <?php endif; ?>
-      <?php print render($page['header']); ?>
-    </div>
-    <!-- /#header -->
-
-    <div id="app">
       <?php
-      print render($title_prefix);
-      // Error Details.
-      print '<h1 id="page-title">' . $http_status . '</h1>';
-      print render($title_suffix);
-
-      if ($action_links) :
-        print '<ul class="links">' . render($action_links) . '</ul>';
+      if ($site_name) :
+        print "<h2>" . $site_name . "</h2>";
       endif;
       ?>
-      <div id="content-wrap">
-        <div id="content" class="<?php print $content_class; ?>">
-
-          <div class="error-message">
-            <?php
-            // Error message.
-            print $messages;
-            ?>
-          </div>
-          <div class="search">
-            <?php
-            print render($search_box);
-            ?>
-          </div>
-
-        </div>
-      </div>
-      <!-- /content-wrap-->
     </div>
-    <!-- /app-->
+    <?php if (isset($main_menu)) : ?>
+      <div id="nav">
+        <?php print render($main_menu); ?>
+      </div>
+    <?php endif; ?>
+    <?php print render($page['header']); ?>
+  </div>
+  <!-- /#header -->
 
+  <div id="app">
     <?php
-    if ($page['footer_top']) :
-      print render($page['footer_top']);
+    print render($title_prefix);
+    // Error Details.
+    print '<h1 id="page-title">' . $http_status . '</h1>';
+    print render($title_suffix);
+
+    if ($action_links) :
+      print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
     ?>
-    <div id="footer" class="cell">
+    <div id="content-wrap">
+      <div id="content" class="<?php print $content_class; ?>">
+
+        <div class="error-message">
+          <?php
+          // Error message.
+          print $messages;
+          ?>
+        </div>
+        <div class="search">
+          <?php
+          print render($search_box);
+          ?>
+        </div>
+
+      </div>
+    </div>
+    <!-- /content-wrap-->
+  </div>
+  <!-- /app-->
+
+  <?php
+  if ($page['footer_top']) :
+    print render($page['footer_top']);
+  endif;
+  ?>
+  <div id="footer" class="cell">
 
 
+    <?php
+    if ($page['footer']) :
+      print render($page['footer']);
+    endif;
+    ?>
+  </div>
+  <!-- /#footer -->
+
+  <?php if ($page['footer_bottom'] || $copyright) : ?>
+    <div id="footer-bottom" class="cell">
       <?php
-      if ($page['footer']) :
-        print render($page['footer']);
+      if ($page['footer_bottom']) :
+        print render($page['footer_bottom']);
       endif;
       ?>
+
+      <?php if ($copyright): ?>
+        <div id="copyright"><?php print $copyright; ?></div>
+      <?php endif; ?>
     </div>
-    <!-- /#footer -->
-
-    <?php if ($page['footer_bottom'] || $copyright) : ?>
-      <div id="footer-bottom" class="cell">
-        <?php if ($page['footer_bottom']) :
-          print render($page['footer_bottom']);
-        endif; ?>
-
-        <?php if ($copyright): ?>
-          <div id="copyright"><?php print $copyright; ?></div>
-        <?php endif; ?>
-      </div>
-      <!-- /#footer-bottom -->
-    <?php endif; ?>
-  </div>
-  <!-- /#page-wrap-->
+    <!-- /#footer-bottom -->
+  <?php endif; ?>
+</div>
+<!-- /#page-wrap-->
 <?php
 print "\n";

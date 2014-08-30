@@ -2,15 +2,14 @@
 
 /**
  * @file
- * Alter misc. hooks for templates
+ * Alter misc. hooks for templates.
  */
 
 /**
- *  hook_html_head_alter()
+ * hook_html_head_alter()
  */
-
 function cellular_html_head_alter(&$head_elements) {
-  // Remove unwanted meta tags
+  // Remove unwanted meta tags.
   $exclude = array('metatag_generator', 'metatag_generator_0');
 
   foreach ($exclude as $element) {
@@ -24,7 +23,6 @@ function cellular_html_head_alter(&$head_elements) {
 /**
  *  hook_page_alter()
  */
-
 function cellular_page_alter(&$page) {
   // dsm($page);
 }
