@@ -1,8 +1,7 @@
 <?php
 /**
  * @file
- * Set markup of form elements
- * @author    Adam Blankenship
+ * Theme markup of form elements
  */
 
 /*
@@ -34,8 +33,6 @@ function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
 
-  // Set attributes
-  isset($element['#title']) ? $attributes['title'] = ($element['#title']) : NULL;
   //$attributes['class'] = array();
   //isset($element['#name']) ? $attributes['class'][] = 'form-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => '')) : '';
   isset($element['#disabled']) ? $element['#attributes']['class'][] = 'disabled' : NULL;

@@ -85,9 +85,9 @@
       <div id="logo">
 
         <?php
-        if ($site_name) {
+        if ($site_name) :
           print "<h2>" . $site_name . "</h2>";
-        }
+        endif;
         ?>
       </div>
       <?php if (isset($main_menu)) : ?>
@@ -106,9 +106,9 @@
       print '<h1 id="page-title">' . $http_status . '</h1>';
       print render($title_suffix);
 
-      if ($action_links) {
+      if ($action_links) :
         print '<ul class="links">' . render($action_links) . '</ul>';
-      }
+      endif;
       ?>
       <div id="content-wrap">
         <div id="content" class="<?php print $content_class; ?>">
@@ -132,26 +132,26 @@
     <!-- /app-->
 
     <?php
-    if ($page['footer_top']) {
+    if ($page['footer_top']) :
       print render($page['footer_top']);
-    }
+    endif;
     ?>
     <div id="footer" class="cell">
 
 
       <?php
-      if ($page['footer']) {
+      if ($page['footer']) :
         print render($page['footer']);
-      }
+      endif;
       ?>
     </div>
     <!-- /#footer -->
 
     <?php if ($page['footer_bottom'] || $copyright) : ?>
       <div id="footer-bottom" class="cell">
-        <?php if ($page['footer_bottom']) : ?>
-          <?php print render($page['footer_bottom']); ?>
-        <?php endif; ?>
+        <?php if ($page['footer_bottom']) :
+          print render($page['footer_bottom']);
+        endif; ?>
 
         <?php if ($copyright): ?>
           <div id="copyright"><?php print $copyright; ?></div>

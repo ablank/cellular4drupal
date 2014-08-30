@@ -15,6 +15,6 @@ $plugin = array(
     'left'   => t('Left Column'),
     'middle' => t('Middle Column'),
     'right'  => t('Right Column'),
-    'bottom' => t('Bottom')
+    'bottom' => t('Bottom'),
   ),
 );

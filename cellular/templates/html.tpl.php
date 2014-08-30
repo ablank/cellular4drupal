@@ -1,6 +1,7 @@
 <?php
-/* @file
- * html.tpl
+/**
+ * @file
+ * HTML Template
  */
 
 /*
@@ -37,6 +38,7 @@
   - $theme_path Path to current theme
  */
 ?>
+
 <?php print $doctype; ?>
 <html<?php print $html_attributes . $rdf_namespaces ?>>
 <head>

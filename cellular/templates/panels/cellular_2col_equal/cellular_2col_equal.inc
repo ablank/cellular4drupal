@@ -15,6 +15,6 @@ $plugin = array(
     'top'    => t('Top Region'),
     'left'   => t('Left side'),
     'right'  => t('Right side'),
-    'bottom' => t('Bottom Region')
+    'bottom' => t('Bottom Region'),
   ),
 );

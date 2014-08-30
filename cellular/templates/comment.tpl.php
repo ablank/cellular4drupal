@@ -1,8 +1,7 @@
 <?php
-/*
-  Cellular comment.tpl
-
-  (c)2012 Adam Blankenship
+/**
+ * @file
+ * Comment template
  */
 /*
   Variables:

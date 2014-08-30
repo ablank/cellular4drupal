@@ -1,30 +1,20 @@
 <?php
-/*
+/**
  * @file
- *  page.tpl
+ *  Page Template
  */
-/*
-  Custom page templates can be created for content types by adding the template:
- * /templates/page--content-type.tpl.php
-  Render cck fields:
- *  <?php print render(field_view_field('node', $node, 'field_name', array('label' => 'hidden'))); ?>
 
-  VARIABLES
-
+ /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
-
   - $page['header_top']
   - $page['header']
   - $page['header_bottom']
-
   - $page['sidebar_left']
   - $page['sidebar_right']
-
   - $page['content_top']
   - $page['content']// Main page content
   - $page['content_bottom']
-
   - $page['footer_top']: Footer Top
   - $page['footer']: Footer
   - $page['footer_bottom']: Footer Bottom
@@ -57,14 +47,18 @@
 
   Social Media
  * Set in theme settings
-  - $social_media_share : links for users to share current page with their own social media network.
-  - $social_media_follow : links for users to subscribe to your social media outlets.
+  - $social_media_share : links for users to share current page with their own
+  social media network.
+  - $social_media_follow : links for users to subscribe to your
+ social media outlets.
 
   Page Layout
  * Set in theme settings
   - $content_width : Grid class to set width of main content.
-  - $content_class_single_sidebar : Grid class to set width of main content with one sidebar displayed.
-  - $content_class_dual_sidebar : Grid class to set width of main content with two sidebars displayed.
+  - $content_class_single_sidebar : Grid class to set width of main content with
+  one sidebar displayed.
+  - $content_class_dual_sidebar : Grid class to set width of main content with
+ two sidebars displayed.
   - $sidebar_width : Grid class to set width of sidebars.
 
   Page Content:
@@ -86,7 +80,6 @@
   - $tabs (array): Tabs linking to any sub-pages beneath the current page
   (e.g., the view and edit tabs when displaying a node).
   - $feed_icons: A string of all feed icons for the current page.
-
  */
 ?>
 
@@ -105,10 +98,9 @@
     <div id="header">
       <div id="logo">
         <?php
-        if ($site_name) {
+        if ($site_name) :
           print "<h2>" . $site_name . "</h2>";
-        }
-        ?>
+        endif; ?>
       </div>
       <?php if (isset($main_menu)) : ?>
         <div id="nav">
@@ -129,7 +121,6 @@
     <div id="app">
       <?php
       print render($title_prefix);
-      // Page Title
       if ($title) {
         print '<h1 id="page-title">' . $title . '</h1>';
       }
@@ -144,18 +135,18 @@
         <div id="content-wrap" class="cell">
 
           <?php
-          if ($action_links) {
+          if ($action_links) :
             print '<ul class="links">' . render($action_links) . '</ul>';
-          }
+          endif;
 
           if ($page['console'] || ($show_messages && $messages)) :
             ?>
             <div id="console">
               <?php
               print render($page['console']);
-              if ($show_messages && $messages) {
+              if ($show_messages && $messages) :
                 print $messages;
-              }
+              endif;
               ?>
             </div>
           <?php endif; ?>
@@ -176,9 +167,9 @@
 
             <?php
             // Breadcrumb Navigation
-            if (theme_get_setting('breadcrumb_display' && !$is_front)) {
+            if (theme_get_setting('breadcrumb_display' && !$is_front)) :
               print $breadcrumb;
-            }
+            endif;
             ?>
 
             <?php
@@ -221,9 +212,9 @@
       <?php print $social_media_follow; ?>
 
       <?php
-      if ($page['footer']) {
+      if ($page['footer']) :
         print render($page['footer']);
-      }
+      endif;
       ?>
 
       <div id="footer-bottom" class="cell">

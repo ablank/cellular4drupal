@@ -1,11 +1,9 @@
 <?php
-/*
-  Cellular::  block.tpl
-
-  (c)2012 Adam Blankenship
+/**
+ * @file
+ * Block template
  */
 /*
-  $title: Block title.
 
   Variables:
   - $block->subject: Block title.

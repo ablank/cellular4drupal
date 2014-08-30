@@ -13,10 +13,10 @@ $plugin = array(
   'admin css'       => 'admin.css',
   'regions'         => array(
     'top'    => t('Top'),
-    'left'   => t('Left Column'),
+    'left'   => t('Left Inset'),
     'middle' => t('Middle Column'),
     'right'  => t('Right Column'),
-    'bottom' => t('Bottom')
+    'bottom' => t('Bottom'),
   ),
 );
 
