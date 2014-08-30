@@ -30,7 +30,7 @@ module.exports = {
     ],
     dev3: [
         'svg2png',
-                //'grunticon'
+        //'grunticon'
     ],
     // dev4: [],
 };

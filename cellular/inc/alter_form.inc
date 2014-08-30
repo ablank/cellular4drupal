@@ -106,16 +106,16 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
 function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
 
-  // Set field sizes
+  // Set field sizes.
   $field_size = 32;
   $form['author']['name']['#size'] = $field_size;
   $form['subject']['#size'] = $field_size;
 
-  // Remove text format option
+  // Remove text format option.
   $form['comment_body']['#after_build'][] = 'cellular_form_strip_access';
 
 
-  // Customize buttons
+  // Customize Submit & Preview buttons.
   $form['actions']['preview'] = array(
     '#type'       => 'submit',
     '#value'      => t('Preview'),

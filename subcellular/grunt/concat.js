@@ -1,13 +1,24 @@
+/**
+ * @file
+ * Configure grunt concat
+ */
+
 module.exports = {
     options: {
-        separator: '\n \n ///// \n',
+        banner: '/**\n' +
+            '* @file\n' +
+            '* Javascript\n' +
+            '* \n' +
+            '* @author \n' +
+            '*/\n',
+        separator: '\n\n // :)\n',
     },
-    prod: {
+    script: {
         src: [
-            'js/init.js',
-            'js/functions.js',
-            'js/close.js'
+            'js/script1.js',
+            'js/script2.js',
+            'js/etc.js',
         ],
-        dest: 'js/concatScript.js',
+        dest: 'js/concat.js',
     },
 };

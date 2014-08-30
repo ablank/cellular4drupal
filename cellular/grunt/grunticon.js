@@ -16,11 +16,13 @@ module.exports = {
             datapngcss: 'icons-png-data.css',
             urlpngcss: 'icons-png.css'
         },
-        files: [{
+        files: [
+            {
                 expand: true,
                 cwd: 'assets/icons/svg/',
                 src: ['*.svg'],
                 dest: 'grunt/grunticons/'
-            }]
+            }
+        ]
     }
 };

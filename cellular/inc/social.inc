@@ -1,12 +1,10 @@
 <?php
 /**
  * @file
- * Generate social media links
- *
- * @author    Adam Blankenship
+ * Generate social media links.
  */
 
-/*
+/**
  * Social media follow links
  */
 
@@ -17,7 +15,8 @@ function cellular_social_media_follow() {
 
     $media_block = array(
       'title'       => t('Follow Us'),
-      'id'          => 'social-media-follow', //'class' => '',
+      'id'          => 'social-media-follow',
+      // 'class' => '',
       'description' => t('Follow our current posts'),
       'links'       => array(),
       'link_class'  => 'social icon',
@@ -58,21 +57,22 @@ function cellular_social_media_follow() {
       }
     }
     foreach ($media_block['links'] as $link) {
-      $media_block['markup'] .= l("Follow us on " . $link['name'], $link['url'], array(
+      $media_block['markup'] .= l(t("Follow us on " . $link['name']),
+        $link['url'], array(
         'attributes' => array(
           'class' => array(
-            $media_block ['link_class'],
+            $media_block['link_class'],
             $link['class']
-          )
+          ),
         ),
       ));
     }
 
     if (!empty($media_block['links'])) {
 
-      $output .= "\n<div id=\"" . $media_block ['id'] . "\">\n";
-      $output .= "<h3>" . $media_block ['title'] . "</h3>\n";
-      $output .= $media_block ['markup'] . "\n";
+      $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
+      $output .= "<h3>" . $media_block['title'] . "</h3>\n";
+      $output .= $media_block['markup'] . "\n";
       $output .= "</div>\n\n";
     }
   }
@@ -80,7 +80,7 @@ function cellular_social_media_follow() {
   return $output;
 }
 
-/*
+/**
  *  Social media share links
  */
 
@@ -90,8 +90,9 @@ function cellular_social_media_share() {
 
   if (theme_get_setting('social_media_share') == 1) {
 
-    $page = array('url'   => $base_url . '/' . current_path(),
-                  'title' => drupal_get_title(),
+    $page = array(
+      'url'   => $base_url . '/' . current_path(),
+      'title' => drupal_get_title(),
     );
     $media_block = array(
       'title'       => t('Share this page'),
@@ -106,34 +107,35 @@ function cellular_social_media_share() {
           'title'  => 'Google+',
           'script' => NULL,
           'url'    => 'http://plus.google.com/share?url=' . $page['url'],
-          'class'  => 'google'
+          'class'  => 'google',
         ) : NULL,
       'twitter'   => theme_get_setting('share_twitter') == 1 ? array(
           'title'  => 'Twitter',
           'script' => NULL,
           'url'    => 'https://twitter.com/share',
-          'class'  => 'twitter-bird'
+          'class'  => 'twitter-bird',
         ) : NULL,
       'linkedin'  => theme_get_setting('share_linkedin') == 1 ? array(
           'title'  => '',
           'script' => NULL,
-          'url'    => 'http://www.linkedin.com/shareArticle?mini=true&url=' . $page ['url'] . '&title=' . $page ['title'] . '&source=' . $base_url,
-          'class'  => 'linkedin'
+          'url'    => 'http://www.linkedin.com/shareArticle?mini=true&url=' .
+            $page ['url'] . '&title=' . $page ['title'] . '&source=' . $base_url,
+          'class'  => 'linkedin',
         ) : NULL,
       'pinterest' => theme_get_setting('share_pinterest') == 1 ? array(
           'title'  => 'Pinterest',
           'script' => NULL,
-          'url'    => 'http://pinterest.com/pin/create/bookmarklet/?media=&url=' . $page ['url'] . '&is_video=false&description=' . $page['title'],
-          'class'  => 'pinterest'
+          'url'    => 'http://pinterest.com/pin/create/bookmarklet/?media=&url=' .
+            $page ['url'] . '&is_video=false&description=' . $page['title'],
+          'class'  => 'pinterest',
         ) : NULL,
       'reddit'    => theme_get_setting('share_reddit') == 1 ? array(
           'title'  => 'Reddit',
           'script' => NULL,
           'url'    => 'http://www.reddit.com/submit?url=' . $page['url'],
-          'class'  => 'reddit'
+          'class'  => 'reddit',
         ) : NULL
     );
-
 
     $facebook = theme_get_setting('share_facebook') == 1 ? array(
       'script' => '(function(d, s, id) {
@@ -143,10 +145,12 @@ function cellular_social_media_share() {
                             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
                             fjs.parentNode.insertBefore(js, fjs);
                             }(document, \'script\', \'facebook-jssdk\'));',
-      'tag'    => '<div class="fb-like" data-href="' . $page['url'] . '" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div><div id="fb-root"></div>',
+      'tag'    => '<div class="fb-like" data-href="' . $page['url'] . '"
+       data-layout="button" data-action="like" data-show-faces="false"
+       data-share="true">
+       </div><div id="fb-root"></div>',
       'weight' => 1000,
     ) : NULL;
-
 
     if (!empty($facebook)) {
       $links[] = $facebook;
@@ -162,14 +166,15 @@ function cellular_social_media_share() {
         ));
       }
       if (!empty($link['url'])) {
-        $media_block['markup'] .= l('Share this page on ' . $link['title'], $link['url'], array(
-          'attributes' => array(
-            'class' => array(
-              $media_block['link_class'],
-              $link['class']
-            )
-          ),
-        ));
+        $media_block['markup'] .= l(t('Share this page on ' . $link['title']),
+          $link['url'], array(
+            'attributes' => array(
+              'class' => array(
+                $media_block['link_class'],
+                $link['class'],
+              ),
+            ),
+          ));
       }
       if (!empty($link['tag'])) {
         $media_block['markup'] .= "\n " . $link['tag'] . "\n";

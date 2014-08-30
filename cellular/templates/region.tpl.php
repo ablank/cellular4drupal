@@ -2,7 +2,6 @@
 /**
  * @file
  * Default theme implementation to display a region.
- *
  * Available variables:
  * - $content: The content for this region, typically blocks.
  * - $classes: String of classes that can be used to style contextually through

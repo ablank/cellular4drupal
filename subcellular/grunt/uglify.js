@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Configure grunt uglify
+ */
 module.exports = {
     prod: {
         options: {
@@ -5,28 +9,20 @@ module.exports = {
             beautify: false,
             preserveComments: 'some',
             compress: true,
+            expand: true,
         },
-        files: [{
-                expand: true,
-                cwd: 'js/',
-                src: ['**/*.js'],
-                dest: 'js/min/'
-            }, ]
+        files: {
+            'js/script.min.js': ['js/script.js'],
+        },
     },
     dev: {
         options: {
             mangle: false,
             beautify: true,
-            mangle: false,
-                    beautify: true,
-                    preserveComments: 'all',
-            comments: 'all'
+            preserveComments: 'all'
         },
-        files: [{
-                expand: true,
-                cwd: 'js/',
-                src: ['**/*.js'],
-                dest: 'js/dev/'
-            }]
+        files: {
+            'js/script.dev.js': ['js/script.js'],
+        }
     }
 };

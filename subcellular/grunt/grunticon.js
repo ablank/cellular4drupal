@@ -1,8 +1,13 @@
+/**
+ * @file
+ * Configure grunt grunticon
+ */
+
 module.exports = {
     options: {
         defaultWidth: '32px',
         defaultHeight: '32px',
-        pngfolder: 'png/',
+        pngfolder: 'png',
         template: 'grunt/templates/icon-template.hbs'
     },
     prod: {
@@ -11,11 +16,13 @@ module.exports = {
             datapngcss: 'icons-png-data.css',
             urlpngcss: 'icons-png.css'
         },
-        files: [{
+        files: [
+            {
                 expand: true,
                 cwd: 'assets/icons/svg/',
                 src: ['*.svg'],
                 dest: 'grunt/grunticons/'
-            }]
+            }
+        ]
     }
 };

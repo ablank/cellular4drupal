@@ -2,17 +2,16 @@
 /**
  * @file
  * template_preprocess variables
- *
  * @author    Adam Blankenship
  */
 
-/*
+/**
  * template_preprocess_html()
- *  Add <link> and <meta> tags, html/body attributes, conditional css
+ *  Add <link> and <meta> tags, html/body attributes, conditional styles
  */
 
 function cellular_preprocess_html(&$vars) {
-  global $language, $base_url;
+  global $language, $base_url, $theme_path;
 
   // Set DOCTYPE
   if (module_exists('rdf')) {
@@ -115,20 +114,22 @@ function cellular_preprocess_html(&$vars) {
   );
 
   foreach ($favicons as &$favicon) {
+// Set tag type to <link>
     $favicon['tag'] = 'link';
 // Set href relative to /assets/favicons/
-    $favicon['href'] = cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
+    $favicon['href'] = $theme_path . '/assets/favicons/' . $favicon['href'];
   }
 
   cellular_build_head_tags($favicons);
 
 //  Add classes to <body>
   $body_classes_array = array();
-
-// Add sidebar class
+// Sidebar class is generated if region is used on page
   $body_classes_array[] = cellular_test_sidebar($vars);
 
-  // Add body class based on URL alias
+  // Add URL alias based body classes
+  // i.e. http://host.com/content/widget
+  // = <body class="content widget">
   $path = drupal_get_path_alias($_GET['q']);
   $aliases = explode('/', $path);
 
@@ -136,7 +137,7 @@ function cellular_preprocess_html(&$vars) {
     $body_classes_array[] = $alias;
   }
 
-  // Add body conditional classes
+  // Add other body conditional classes
   $conditional_classes = array(
     'frontpage' => drupal_is_front_page() ? 'frontpage' : NULL,
     'user'      => user_is_logged_in() ? 'user' : NULL,
@@ -148,8 +149,10 @@ function cellular_preprocess_html(&$vars) {
 
   $vars['body_classes'] = cellular_merge($body_classes_array);
 
-  // Add conditional CSS for IE9 and below.
-  drupal_add_css(cellular_theme_path() . '/css/ie.css', array(
+  // Add conditional CSS for old IE.
+  // Minimal support for deprecated breowsers is fine imo,
+  // considering MS doesn't support it either...
+  drupal_add_css($theme_path . '/css/ie.css', array(
     'group'      => CSS_THEME,
     'browsers'   => array('IE' => 'lt IE 10', '!IE' => FALSE),
     'weight'     => 999,
@@ -157,7 +160,7 @@ function cellular_preprocess_html(&$vars) {
   ));
 }
 
-/*
+/**
  *  template_preprocess_node()
  */
 
@@ -169,9 +172,9 @@ function cellular_preprocess_node(&$vars) {
   $vars['content_attributes_array']['class'] = array('node-content',);
 
 
-// Customize articles & blog posts
+// Customize articles & blog posts.
   if ($node->type == 'article' || 'blog') {
-// Get $author info
+// Get $author info.
     $uid = user_load($node->uid);
     $author = array(
       'name'        => l($node->name, 'user/' . $node->uid),
@@ -179,7 +182,7 @@ function cellular_preprocess_node(&$vars) {
           '<div class="author-description">' . $uid->field_description['LANGUAGE_NONE'][0]['safe_value'] . '</div>'
           : NULL,
       'image'       => !empty($uid->picture->uri) ? theme('image_style', array(
-       //'style_name' => 'blog-author-image',
+          //'style_name' => 'blog-author-image',
           'path'       => $node->picture->uri,
           'width'      => NULL,
           'height'     => NULL,
@@ -194,17 +197,16 @@ function cellular_preprocess_node(&$vars) {
   }
 }
 
-/*
+/**
  * template_preprocess_page()
- *
  *  Set vars for page.tpl
  */
 
 function cellular_preprocess_page(&$vars) {
-  // Link site name to frontpage
+  // Link site name to frontpage.
   $vars['site_name'] = l($vars['site_name'], '<front>');
 
-  // Set main_menu as full-tree or top-level as defined in settings
+  // Set main_menu as full-tree or top-level as defined in settings.
   $vars['main_menu'] = cellular_main_menu($vars);
 
   switch (cellular_test_sidebar($vars)) {
@@ -223,24 +225,24 @@ function cellular_preprocess_page(&$vars) {
       break;
   }
 
-  // Set Social Media links
+  // Set Social Media links.
   $vars['social_media_share'] = cellular_social_media_share();
   $vars['social_media_follow'] = cellular_social_media_follow();
 
-  // Set copyright if provided
+  // Set copyright if provided.
   $copyright = theme_get_setting('copyright');
   $vars['copyright'] = isset($copyright) ? "&copy; " . date("Y") . " " . $copyright : NULL;
 
-  // Set custom page templates for CCK Content (page--content-type.tpl.php)
+  // Set custom page templates for CCK Content (page--content-type.tpl.php).
   if (isset($vars ['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
 
-  // Set search block for addition to templates
+  // Set search block for addition to templates.
   $search_box = drupal_get_form('search_form');
   $vars['search_box'] = $search_box;
 
-  // Set custom error template
+  // Set custom error template.
   $http_status = drupal_get_http_header("status");
 
   if (isset($http_status)) {
@@ -262,7 +264,7 @@ function cellular_preprocess_page(&$vars) {
   }
 }
 
-/*
+/**
  * template_preprocess_region()
  */
 
@@ -270,7 +272,7 @@ function cellular_preprocess_region(&$vars) {
 
 }
 
-/*
+/**
  * template_preprocess_block()
  */
 
@@ -289,14 +291,14 @@ function cellular_preprocess_block(&$vars) {
 
   // Hide block titles in the headers region.
   if (($block->region == 'header')
-    //|| ($block->region == 'header_top')
-    //|| ($block->region == 'header_bottom')
+    // || ($block->region == 'header_top')
+    // || ($block->region == 'header_bottom')
   ) {
     $vars['title_attributes_array']['class'] = array('hidden');
   }
 }
 
-/*
+/**
  * template_preprocess_comment()
  */
 
@@ -314,7 +316,7 @@ function cellular_preprocess_comment(&$vars) {
   $vars['comment_wrapper'] = FALSE;
 }
 
-/*
+/**
  * template_ preprocess_username()
  */
 

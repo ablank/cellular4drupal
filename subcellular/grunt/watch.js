@@ -1,10 +1,14 @@
+/**
+ * @file
+ * Configure grunt watch.
+ */
+
 module.exports = {
     scripts: {
         files: ['js/**/*.js'],
         tasks: [
-            //'jshint',
-            //'concat',
-            'uglify:dev'
+            'uglify'
+            'jshint',
         ],
         options: {
             interrupt: true,

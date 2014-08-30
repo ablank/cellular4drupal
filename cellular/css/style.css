@@ -1075,7 +1075,7 @@ hr.clearfix {
   text-indent: -999em;
   background: none;
 }
-/* line 22, ../sass/style/_branding.scss */
+/* line 23, ../sass/style/_branding.scss */
 #logo a {
   display: block;
   text-indent: -999em;
@@ -1089,7 +1089,7 @@ hr.clearfix {
   background-repeat: no-repeat;
 }
 
-/* line 40, ../sass/style/_branding.scss */
+/* line 42, ../sass/style/_branding.scss */
 .svg #logo > a {
   background-image: url("../assets/images/min/svg/logo.svg");
 }

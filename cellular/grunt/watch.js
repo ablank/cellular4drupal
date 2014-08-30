@@ -1,22 +1,21 @@
 /**
  * @file
- * Configure grunt watch
+ * Configure grunt watch.
  */
 
 module.exports = {
     scripts: {
-        files: ['js/cellularUI/js/*.js'],
+        files: ['js/*.js', 'js/**/*.js'],
         tasks: [
-            //'jshint',
-            'concat',
-            'uglify'
+            'uglify',
+            'jshint',
         ],
         options: {
             interrupt: true,
         },
     },
     styles: {
-        files: 'sass/**/*.scss',
+        files: ['sass/*.scss', 'sass/**/*.scss'],
         tasks: ['compass:dev']
     },
 };

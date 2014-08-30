@@ -3,436 +3,349 @@
     background-image: url('assets/icons/png/android.png');
 }
 
-
 &.angular {
     background-image: url('assets/icons/png/angular.png');
 }
-
 
 &.apple {
     background-image: url('assets/icons/png/apple.png');
 }
 
-
 &.arrow-down {
     background-image: url('assets/icons/png/arrow-down.png');
 }
-
 
 &.arrow-left {
     background-image: url('assets/icons/png/arrow-left.png');
 }
 
-
 &.arrow-right {
     background-image: url('assets/icons/png/arrow-right.png');
 }
-
 
 &.arrow-up {
     background-image: url('assets/icons/png/arrow-up.png');
 }
 
-
 &.audio {
     background-image: url('assets/icons/png/audio.png');
 }
-
 
 &.behance {
     background-image: url('assets/icons/png/behance.png');
 }
 
-
 &.blogger {
     background-image: url('assets/icons/png/blogger.png');
 }
-
 
 &.camera {
     background-image: url('assets/icons/png/camera.png');
 }
 
-
 &.cart {
     background-image: url('assets/icons/png/cart.png');
 }
-
 
 &.cell-phone {
     background-image: url('assets/icons/png/cell-phone.png');
 }
 
-
 &.chat {
     background-image: url('assets/icons/png/chat.png');
 }
-
 
 &.chrome {
     background-image: url('assets/icons/png/chrome.png');
 }
 
-
 &.cloud {
     background-image: url('assets/icons/png/cloud.png');
 }
-
 
 &.creativecommons {
     background-image: url('assets/icons/png/creativecommons.png');
 }
 
-
 &.css3 {
     background-image: url('assets/icons/png/css3.png');
 }
-
 
 &.delicious {
     background-image: url('assets/icons/png/delicious.png');
 }
 
-
 &.desktop {
     background-image: url('assets/icons/png/desktop.png');
 }
-
 
 &.deviantart {
     background-image: url('assets/icons/png/deviantart.png');
 }
 
-
 &.digg {
     background-image: url('assets/icons/png/digg.png');
 }
-
 
 &.doc {
     background-image: url('assets/icons/png/doc.png');
 }
 
-
 &.drupal {
     background-image: url('assets/icons/png/drupal.png');
 }
-
 
 &.email {
     background-image: url('assets/icons/png/email.png');
 }
 
-
 &.eye {
     background-image: url('assets/icons/png/eye.png');
 }
-
 
 &.facebook {
     background-image: url('assets/icons/png/facebook.png');
 }
 
-
 &.film {
     background-image: url('assets/icons/png/film.png');
 }
-
 
 &.firefox {
     background-image: url('assets/icons/png/firefox.png');
 }
 
-
 &.flickr {
     background-image: url('assets/icons/png/flickr.png');
 }
-
 
 &.folder {
     background-image: url('assets/icons/png/folder.png');
 }
 
-
 &.gear {
     background-image: url('assets/icons/png/gear.png');
 }
-
 
 &.github-octo {
     background-image: url('assets/icons/png/github-octo.png');
 }
 
-
 &.globe {
     background-image: url('assets/icons/png/globe.png');
 }
-
 
 &.google {
     background-image: url('assets/icons/png/google.png');
 }
 
-
 &.grooveshark {
     background-image: url('assets/icons/png/grooveshark.png');
 }
-
 
 &.hi5 {
     background-image: url('assets/icons/png/hi5.png');
 }
 
-
 &.home {
     background-image: url('assets/icons/png/home.png');
 }
-
 
 &.html5 {
     background-image: url('assets/icons/png/html5.png');
 }
 
-
 &.internetexplorer {
     background-image: url('assets/icons/png/internetexplorer.png');
 }
-
 
 &.jquery {
     background-image: url('assets/icons/png/jquery.png');
 }
 
-
 &.js {
     background-image: url('assets/icons/png/js.png');
 }
-
 
 &.key {
     background-image: url('assets/icons/png/key.png');
 }
 
-
 &.laptop {
     background-image: url('assets/icons/png/laptop.png');
 }
-
 
 &.linkedin {
     background-image: url('assets/icons/png/linkedin.png');
 }
 
-
 &.linux {
     background-image: url('assets/icons/png/linux.png');
 }
-
 
 &.lock {
     background-image: url('assets/icons/png/lock.png');
 }
 
-
 &.mac {
     background-image: url('assets/icons/png/mac.png');
 }
-
 
 &.mail {
     background-image: url('assets/icons/png/mail.png');
 }
 
-
 &.mail2 {
     background-image: url('assets/icons/png/mail2.png');
 }
-
 
 &.menu {
     background-image: url('assets/icons/png/menu.png');
 }
 
-
 &.message-error {
     background-image: url('assets/icons/png/message-error.png');
 }
-
 
 &.message-ok {
     background-image: url('assets/icons/png/message-ok.png');
 }
 
-
 &.message-warning {
     background-image: url('assets/icons/png/message-warning.png');
 }
-
 
 &.minus {
     background-image: url('assets/icons/png/minus.png');
 }
 
-
 &.mobile {
     background-image: url('assets/icons/png/mobile.png');
 }
-
 
 &.myspace {
     background-image: url('assets/icons/png/myspace.png');
 }
 
-
 &.opera {
     background-image: url('assets/icons/png/opera.png');
 }
-
 
 &.pdf {
     background-image: url('assets/icons/png/pdf.png');
 }
 
-
 &.phone {
     background-image: url('assets/icons/png/phone.png');
 }
-
 
 &.phone2 {
     background-image: url('assets/icons/png/phone2.png');
 }
 
-
 &.picture {
     background-image: url('assets/icons/png/picture.png');
 }
-
 
 &.pinterest {
     background-image: url('assets/icons/png/pinterest.png');
 }
 
-
 &.plus {
     background-image: url('assets/icons/png/plus.png');
 }
-
 
 &.print {
     background-image: url('assets/icons/png/print.png');
 }
 
-
 &.reddit {
     background-image: url('assets/icons/png/reddit.png');
 }
-
 
 &.rss {
     background-image: url('assets/icons/png/rss.png');
 }
 
-
 &.safari {
     background-image: url('assets/icons/png/safari.png');
 }
-
 
 &.search {
     background-image: url('assets/icons/png/search.png');
 }
 
-
 &.skype {
     background-image: url('assets/icons/png/skype.png');
 }
-
 
 &.slashdot {
     background-image: url('assets/icons/png/slashdot.png');
 }
 
-
 &.soundcloud {
     background-image: url('assets/icons/png/soundcloud.png');
 }
-
 
 &.spreadsheet {
     background-image: url('assets/icons/png/spreadsheet.png');
 }
 
-
 &.stackoverflow {
     background-image: url('assets/icons/png/stackoverflow.png');
 }
-
 
 &.stumbleupon {
     background-image: url('assets/icons/png/stumbleupon.png');
 }
 
-
 &.technorati {
     background-image: url('assets/icons/png/technorati.png');
 }
-
 
 &.tumblr {
     background-image: url('assets/icons/png/tumblr.png');
 }
 
-
 &.twitter-bird {
     background-image: url('assets/icons/png/twitter-bird.png');
 }
-
 
 &.twitter-t {
     background-image: url('assets/icons/png/twitter-t.png');
 }
 
-
 &.user-social {
     background-image: url('assets/icons/png/user-social.png');
 }
-
 
 &.user {
     background-image: url('assets/icons/png/user.png');
 }
 
-
 &.video {
     background-image: url('assets/icons/png/video.png');
 }
-
 
 &.w3 {
     background-image: url('assets/icons/png/w3.png');
 }
 
-
 &.windows {
     background-image: url('assets/icons/png/windows.png');
 }
-
 
 &.wordpress {
     background-image: url('assets/icons/png/wordpress.png');
 }
 
-
 &.wrench {
     background-image: url('assets/icons/png/wrench.png');
 }
 
-
 &.youtube {
     background-image: url('assets/icons/png/youtube.png');
 }
-
 
 &.zip {
     background-image: url('assets/icons/png/zip.png');

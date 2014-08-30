@@ -5,28 +5,30 @@
  * Set  element markup
  */
 
-/*
- * theme_file_icon()
+/**
+ * theme_field()
  */
 
 function cellular_field($vars) {
-  $output = '';
-
-  // Render the label, if it's not hidden.
+  $content = '';
+// Render the label, if it's not hidden.
   if (!$vars['label_hidden']) {
-    $output .= '<h3 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . '</h3>';
+    $content .= '<h5 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . '</h5>';
+  }
+  // Render the items.
+  $content .= '<div class="field-items"' . $vars['content_attributes'] . '>';
+  foreach ($vars['items'] as $delta => $item) {
+    // $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+    $content .= '<div' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
   }
 
-  // Render the items.
-  $output .= '<div class="field-items"' . $vars['content_attributes'] . '>';
-  $output .= '<div class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>';
-  $output .= drupal_render($item);
-  $output .= "</div>\n</div>\n";
+  // Wrap the field & add content.
+  $output = '<div class="' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $content . '</div>';
 
   return $output;
 }
 
-/*
+/**
  * theme_breadcrumb()
  */
 
@@ -37,7 +39,7 @@ function cellular_breadcrumb(&$vars) {
     $separator = '&#187;';
 
     if (isset($breadcrumb)) {
-      // Add the current page to breadcrumb trail
+      // Add the current page to breadcrumb trail.
       $breadcrumb[] = drupal_get_title();
 
       $output = '<ol id="breadcrumb">' . "\n";
@@ -56,9 +58,9 @@ function cellular_breadcrumb(&$vars) {
   }
 }
 
-/*
+/**
  * theme_file_icon()
- * use css classes instead of images to style file icons
+ * Use css classes to style output instead of <img>
  */
 
 function cellular_file_icon(&$vars) {
@@ -83,15 +85,23 @@ function cellular_file_icon(&$vars) {
   return '<span class="icon ' . $cname . '"></span>' . "\n";
 }
 
-/*
+/**
  * theme_feed_icon()
  */
 
 function cellular_feed_icon($vars) {
-  $text = t('Subscribe to !feed-title', array('!feed-title' => $vars['title']));
+  $text = t('Subscribe to !feed-title', array(
+    '!feed-title' => $vars['title'],
+  ));
 
-  return l('', $vars['url'], array(
+  return l($text, $vars['url'], array(
     'html'       => TRUE,
-    'attributes' => array('class' => array('icon', 'rss'), 'title' => $text)
+    'attributes' => array(
+      'class' => array(
+        'icon',
+        'rss',
+      ),
+      'title' => $text
+    ),
   ));
 }

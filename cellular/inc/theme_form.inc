@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Theme markup of form elements
+ * Theme markup of form elements.
  */
 
-/*
+/**
  *  theme_container()
  */
 
@@ -25,7 +25,7 @@ function cellular_container(&$vars) {
   return $element['#children'];
 }
 
-/*
+/**
  * theme_form_element()
  */
 
@@ -33,12 +33,12 @@ function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
 
-  //$attributes['class'] = array();
-  //isset($element['#name']) ? $attributes['class'][] = 'form-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => '')) : '';
+  // $attributes['class'] = array();
+  // isset($element['#name']) ? $attributes['class'][] = 'form-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => '')) : '';
   isset($element['#disabled']) ? $element['#attributes']['class'][] = 'disabled' : NULL;
 
   $element['#theme_wrappers'] = NULL;
-  //$output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+  // $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
   $output = '';
   $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
   $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
@@ -68,7 +68,7 @@ function cellular_form_element(&$vars) {
   return $output;
 }
 
-/*
+/**
  * theme_fieldset()
  */
 
@@ -93,7 +93,7 @@ function cellular_fieldset(&$vars) {
   return $output;
 }
 
-/*
+/**
  *  theme_select()
  */
 
@@ -108,7 +108,7 @@ function cellular_select(&$vars) {
   return $output;
 }
 
-/*
+/**
  * theme_checkboxes()
  */
 
@@ -128,7 +128,7 @@ function cellular_checkboxes(&$vars) {
   return $output;
 }
 
-/*
+/**
  * theme_radios()
  */
 
@@ -148,7 +148,7 @@ function cellular_radios(&$vars) {
   return $output;
 }
 
-/*
+/**
  *  theme_checkbox()
  */
 
@@ -163,13 +163,13 @@ function cellular_checkbox(&$vars) {
     'name',
     'id',
     '#return_value' => 'value',
-    'class'
+    'class',
   ));
 
   return "<input" . drupal_attributes($element['#attributes']) . " />";
 }
 
-/*
+/**
  * theme_radio()
  */
 
@@ -195,7 +195,7 @@ function cellular_radio(&$vars) {
   return "<input" . drupal_attributes($element['#attributes']) . " />";
 }
 
-/*
+/**
  * theme_textfield()
  */
 
@@ -210,7 +210,7 @@ function cellular_textfield(&$vars) {
     'type'      => 'text',
     'size'      => isset($element['#size']) ? $element['#size'] : 32,
     'maxlength' => isset($element['#maxlength']) ? $element['#maxlength'] : 64,
-    //'class' => array(/* 'class1', 'class2', 'etc' */),
+    // 'class' => array(/* 'class1', 'class2', 'etc' */),
   );
 
   $output = '<input' . drupal_attributes($element['#attributes']) . ' />';
@@ -218,7 +218,7 @@ function cellular_textfield(&$vars) {
   return $output;
 }
 
-/*
+/**
  * theme_textarea()
  */
 
@@ -232,7 +232,7 @@ function cellular_textarea(&$vars) {
     'value' => isset($element['#value']) ? $element['#value'] : '',
     'cols'  => isset($element['#cols']) ? $element['#cols'] : 60,
     'rows'  => isset($element['#rows']) ? $element['#rows'] : 5,
-    //'class' => array(/* 'class1', 'class2', 'etc' */),
+    // 'class' => array(/* 'class1', 'class2', 'etc' */),
   );
 
   $output = '<textarea' . drupal_attributes($element['#attributes']) . '>';

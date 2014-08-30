@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Configure grunt jshint
+ */
+
 module.exports = {
     options: {
         curly: true,
@@ -8,5 +13,5 @@ module.exports = {
             jQuery: true
         },
     },
-    files: ['js/*.js']
+    files: ['js/*.js', 'js/**/*.js']
 };

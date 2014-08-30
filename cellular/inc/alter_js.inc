@@ -107,11 +107,11 @@ function cellular_js_alter(&$javascript) {
 
 // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
-      $v_jq = theme_get_setting('jquery_version');
-      $v_jqui = theme_get_setting('jqueryui_version');
-    $jq_cdn =  theme_get_setting('jquery_cdn');
+    $v_jq = theme_get_setting('jquery_version');
+    $v_jqui = theme_get_setting('jqueryui_version');
+    $jq_cdn = theme_get_setting('jquery_cdn');
 
-    if($jq_cdn === 1) {
+    if ($jq_cdn === 1) {
       // Available cdns & path to scripts.
       $networks = array(
         'google'     => array(
@@ -135,114 +135,115 @@ function cellular_js_alter(&$javascript) {
     }
 
 // Add jQuery.migrate to support older plugins if v >= 1.9
-    if($v_jq === '1.9.1' ||
+    if ($v_jq === '1.9.1' ||
       $v_jq === '1.10.2' ||
-      $v_jq === '1.11.1') {
+      $v_jq === '1.11.1'
+    ) {
 
       $js_plugins['migrate'] = array(
         'version' => '1.2.1',
-        'file' => 'plugins/jquery.migrate.min.js',
-        'weight' => -96,
+        'file'    => 'plugins/jquery.migrate.min.js',
+        'weight'  => -96,
       );
     }
 
-// Override jQuery.
-      $jquery = array(
-        'default'    => 'misc/jquery.js', //default script
-        'object'     => 'jQuery', // window.object
-        'version'    => $v_jq,
-        'cdn'        => $jq_cdn ?  $cdn['base_url'] . $cdn['jquery'] : NULL,
-        'file'       => "jquery-$v_jq.min.js",
-        'group'      => JS_LIBRARY,
-        'every_page' => TRUE,
-        'weight'     => -100,
-      );
+// Override jQuery
+    $jquery = array(
+      'default'    => 'misc/jquery.js',
+      'object'     => 'jQuery',
+      'version'    => $v_jq,
+      'cdn'        => $jq_cdn ? $cdn['base_url'] . $cdn['jquery'] : NULL,
+      'file'       => "jquery-$v_jq.min.js",
+      'group'      => JS_LIBRARY,
+      'every_page' => TRUE,
+      'weight'     => -100,
+    );
 
-      cellular_js_override($javascript, $jquery, TRUE);
+    cellular_js_override($javascript, $jquery, TRUE);
 
 // Override jQuery.once
-      $jqueryonce = array(
-        'default' => 'misc/jquery.once.js',
-        'version' => '1.2.6',
-        'file'    => 'plugins/jquery.once.min.js',
-      );
+    $jqueryonce = array(
+      'default' => 'misc/jquery.once.js',
+      'version' => '1.2.6',
+      'file'    => 'plugins/jquery.once.min.js',
+    );
 
-      cellular_js_override($javascript, $jqueryonce, TRUE);
+    cellular_js_override($javascript, $jqueryonce, TRUE);
 
 // Override jQuery.form
-      $jqueryform = array(
-        'default' => 'misc/jquery.form.js',
-        'version' => '3.48',
-        'file'    => 'plugins/jquery.form.min.js',
-      );
+    $jqueryform = array(
+      'default' => 'misc/jquery.form.js',
+      'version' => '3.48',
+      'file'    => 'plugins/jquery.form.min.js',
+    );
 
     cellular_js_override($javascript, $jqueryform, TRUE);
 // Override jQueryUI
-      $ui_widgets = array(
-        'ui.core',
-        'ui.accordion',
-        'ui.autocomplete',
-        'ui.button',
-        'ui.datepicker',
-        'ui.dialog',
-        'ui.draggable',
-        'ui.droppable',
-        'ui.mouse',
-        'ui.position',
-        'ui.progressbar',
-        'ui.resizable',
-        'ui.selectable',
-        'ui.slider',
-        'ui.sortable',
-        'ui.tabs',
-        'ui.widget',
-        'effects.blind',
-        'effects.bounce',
-        'effects.clip',
-        'effects.drop',
-        'effects.explode',
-        'effects.fade',
-        'effects.fold',
-        'effects.highlight',
-        'effects.pulsate',
-        'effects.scale',
-        'effects.shake',
-        'effects.slide',
-        'effects.transfer',
-      );
+    $ui_widgets = array(
+      'ui.core',
+      'ui.accordion',
+      'ui.autocomplete',
+      'ui.button',
+      'ui.datepicker',
+      'ui.dialog',
+      'ui.draggable',
+      'ui.droppable',
+      'ui.mouse',
+      'ui.position',
+      'ui.progressbar',
+      'ui.resizable',
+      'ui.selectable',
+      'ui.slider',
+      'ui.sortable',
+      'ui.tabs',
+      'ui.widget',
+      'effects.blind',
+      'effects.bounce',
+      'effects.clip',
+      'effects.drop',
+      'effects.explode',
+      'effects.fade',
+      'effects.fold',
+      'effects.highlight',
+      'effects.pulsate',
+      'effects.scale',
+      'effects.shake',
+      'effects.slide',
+      'effects.transfer',
+    );
 
-      foreach ($ui_widgets as $widget) {
-        $default = 'misc/ui/jquery.' . $widget . '.min.js';
-        if (isset($javascript[$default])) {
-          $script = array(
-            'jqueryui' => array(
-              'default'    => $default,
-              'object'     => 'jQuery.ui',
-              'version'    => $v_jqui,
-              'group'      => JS_LIBRARY,
-              'every_page' => FALSE,
-              'weight'     => isset($javascript[$default]['weight']) ?
-                  $javascript[$default]['weight'] : -9,
-              'file'       => "jquery-ui/$v_jqui/minified/jquery.$widget.min.js",
-              'preprocess' => TRUE,
-            ),
-          );
+    foreach ($ui_widgets as $widget) {
+      $default = 'misc/ui/jquery.' . $widget . '.min.js';
+      if (isset($javascript[$default])) {
+        $script = array(
+          'jqueryui' => array(
+            'default'    => $default,
+            'object'     => 'jQuery.ui',
+            'version'    => $v_jqui,
+            'group'      => JS_LIBRARY,
+            'every_page' => FALSE,
+            'weight'     => isset($javascript[$default]['weight']) ?
+                $javascript[$default]['weight'] : -9,
+            'file'       => "jquery-ui/$v_jqui/minified/jquery.$widget.min.js",
+            'preprocess' => TRUE,
+          ),
+        );
 
-          if (theme_get_setting('jquery_cdn') === 1) {
-            // If updating from cdn unset each widget so a single call can be made.
-            unset($javascript[$default]);
-            // Set cdn source.
-            $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
-            // Set lower weight so cdn is delivered before fallbacks.
-            $script['jqueryui']['weight'] = -10;
-            // Add single link to cdn, with local fallback to each file.
-            cellular_add_js($script, TRUE);
-          }
-          else {
-            cellular_js_override($javascript, $script['jqueryui'], TRUE);
-          }
+        if (theme_get_setting('jquery_cdn') === 1) {
+          // If updating from cdn unset each widget so a single call can be made.
+          unset($javascript[$default]);
+          // Set cdn source.
+          $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
+          // Set lower weight so cdn is delivered before fallbacks.
+          $script['jqueryui']['weight'] = -10;
+          // Add single link to cdn, with local fallback to each file.
+          cellular_add_js($script, TRUE);
+        }
+        else {
+          cellular_js_override($javascript, $script['jqueryui'], TRUE);
         }
       }
+    }
   }
 
 // Add js after override.

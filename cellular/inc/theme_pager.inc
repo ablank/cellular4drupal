@@ -4,8 +4,10 @@
  * Drupal pager
  */
 
-/*
+/**
  *  theme_pager()
+ *
+ * Ripped off from Tao :)
  */
 
 function cellular_pager($vars) {

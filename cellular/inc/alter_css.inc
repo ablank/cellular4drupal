@@ -5,8 +5,8 @@
  */
 
 /**
-* hook_css_alter()
-*/
+ * hook_css_alter()
+ */
 
 function cellular_css_alter(&$css) {
 // Add stylesheets to theme.
@@ -14,11 +14,11 @@ function cellular_css_alter(&$css) {
 // Paths are relative to /active_theme/css/
     'drupal' => array(
       'file'   => 'drupal.css',
-      'weight' => 1
+      'weight' => 1,
     ),
     'style'  => array(
       'file'   => 'style.css',
-      'weight' => 2
+      'weight' => 2,
     ),
     'print'  => array(
       'file'       => 'print.css',
@@ -33,7 +33,7 @@ function cellular_css_alter(&$css) {
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ? array(
-        'file' => 'plugins/prism.css' // Path relative to /cellular/css/
+        'file' => 'plugins/prism.css',
       ) : NULL,
   );
 
@@ -82,11 +82,8 @@ function cellular_css_alter(&$css) {
           //$plugin_css['jquery-ui']['cdn'] = isset($cdn) ? $cdn : NULL;
           $plugin_css['jquery-ui']['file'] = $file;
         }
-        //}
-        //dsm($plugin_css);
-        /*/
 
-
+        /* CDN stuff
         // Construct path based on theme settings
                 if (($ui['use_cdn'] == 1) && ($ui['theme'] !== custom)) {
                   $v = $ui['version'];
@@ -94,11 +91,11 @@ function cellular_css_alter(&$css) {
         // Available cdns & path to scripts
                   $networks = array(
                     'google'    => array(
-        //href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+        // href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
                       'base_url' => "//ajax.googleapis.com/ajax/libs/jqueryui/",
                     ),
                     'microsoft' => array(
-        //href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
+        // href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
                       'base_url' => "//ajax.aspnetcdn.com/ajax/jquery.ui/",
                     ),
                   );
@@ -143,7 +140,7 @@ function cellular_css_alter(&$css) {
         'system.base.css',
         'system.menus.css',
         'system.messages.css',
-        'system.theme.css'
+        'system.theme.css',
       ),
       'block'    => 'block.css',
       'comment'  => 'comment.css',
@@ -154,7 +151,7 @@ function cellular_css_alter(&$css) {
       'node'     => 'node.css',
       'search'   => 'search.css',
       'shortcut' => 'shorcut.css',
-      'user'     => 'user.css'
+      'user'     => 'user.css',
     );
 
     cellular_remove_css($css, $exclude);

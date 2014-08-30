@@ -1,6 +1,5 @@
 <?php
-
 /**
  * @file
- *  process variables for templates
+ * Process variables for templates.
  */
