@@ -1,30 +1,31 @@
 <?php
 
-/*
+/**
  * @file
  * Alter specific forms
  */
 
-/*
+/**
  *  hook_form_alter()
  */
 
 function cellular_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
-    // Site Search block
+    // Site Search block:
     case 'search_block_form' :
 
       $form['#attributes'] = array(
         'id'    => 'site-search',
-        'class' => array( //
+        'class' => array( // 'class-name',
         )
       );
       $form['search_block_form'] = array(
         '#type'          => 'textfield',
-        '#size'          => 25, //'#value' => t('Search'),
+        '#size'          => 25,
+        // '#value' => t('Search'),
         '#default_value' => 'Search keywords',
-        '#attributes'    => array('title' => 'Search this site',),
+        '#attributes'    => array('title' => 'Search this site'),
       );
 
       $form['actions']['submit'] = array(
@@ -32,41 +33,43 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
         '#value'      => t('Search'),
         '#attributes' => array(
           'id'    => 'site-search-submit',
-          'class' => array('icon', 'search',),
+          'class' => array('icon', 'search'),
         ),
       );
 
       break;
-// User Login block
+
+// User Login block:
     case 'user_login_block' :
       $field_size = 20;
       $orient = theme_get_setting('login_block_orientation');
-      $form['#attributes'] = array('class' => array($orient,),);
+      $form['#attributes'] = array('class' => array($orient));
 
       $form['#title_display'] = 'invisible';
 
       $form['name'] = array(
         '#type'       => 'textfield',
         '#title'      => t('Name'),
-        '#attributes' => array('value' => t('Username'),),
+        '#attributes' => array('value' => t('Username')),
         '#size'       => $field_size,
       );
       $form['pass'] = array(
         '#type'       => 'password',
         '#title'      => t('Password'),
-        '#attributes' => array('value' => t('Password'),),
+        '#attributes' => array('value' => t('Password')),
         '#size'       => $field_size,
       );
-      $form['actions']['submit'][] = array( // Change the text on the submit button
+      $form['actions']['submit'][] = array(
+        // Change the text on the submit button:
         '#value'      => t('Log in'),
         '#attributes' => array(
           'class' => array(
-            $orient === 'vertical' ? 'clearfix' : 'null',
+            $orient === 'vertical' ? 'clearfix' : NULL,
           ),
         ),
       );
 
-      // Remove Request New Password and other links from Block form
+      // Remove Request New Password and other links from Block form:
       $ureg = theme_get_setting('login_block_register');
       $upass = theme_get_setting('login_block_password');
 
@@ -83,7 +86,8 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
           );
         }
         if ($upass == 1) {
-          $ulmarkup .= l('Forgotten Password?', "user/password", array('attributes' => array('class' => array('password',),),));
+          $ulmarkup .= l('Forgotten Password?', "user/password",
+            array('attributes' => array('class' => array('password'))));
         }
         $ulmarkup .= '</div>';
       }
@@ -93,17 +97,20 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       $form['links']['#markup'] = $ulmarkup;
       // Register New User Account
-      //$form['links']['#markup'][] = t('Register') . ' <a href="/user/register">' . t('Register') . '</a>';
+      // $form['links']['#markup'][] = t('Register') . ' <a href="/user/register">' . t('Register') . '</a>';
       // Forgot Password
-      //$form['links']['#markup'][] = t('Forgotten Password?') . ' <a href="/user/password">' . t('Forgotten Password?') . '</a>';
+      // $form['links']['#markup'][] = t('Forgotten Password?') . ' <a href="/user/password">' . t('Forgotten Password?') . '</a>';
       // Register New User Account &&  Forgot Password
-      //$form['links']['#markup'] = '<hr/>' . ' <a class="user-register" href="/user/register">' . t('Register') . '</a>' . '<hr/>' . ' <a class="user-password" href="/user/password">' . t('Forgotten Password?') . '</a>'; // Remove Request New Password from Block form
+      // $form['links']['#markup'] = '<hr/>' . ' <a class="user-register" href="/user/register">' . t('Register') . '</a>' . '<hr/>' . ' <a class="user-password" href="/user/password">' . t('Forgotten Password?') . '</a>'; // Remove Request New Password from Block form
       break;
   }
 
-  //dsm($form);
+  // dsm($form);
 }
 
+/**
+ * hook__form_comment_form_alter()
+ */
 function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
 
   // Set field sizes.
@@ -120,7 +127,7 @@ function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
     '#type'       => 'submit',
     '#value'      => t('Preview'),
     '#weight'     => 19,
-    '#attributes' => array('class' => array('submit', 'preview'),),
+    '#attributes' => array('class' => array('submit', 'preview')),
   );
   $form['actions']['submit'] = array(
     '#type'       => 'submit',

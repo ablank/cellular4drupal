@@ -32,8 +32,9 @@ function cellular_css_alter(&$css) {
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ?
         array(
-        'file' => 'plugins/prism.css',
-      ) : NULL,
+          'file' => 'plugins/prism.css',
+        )
+        : NULL,
   );
 
   if (theme_get_setting('jquery_update') == 1) {
@@ -64,14 +65,12 @@ function cellular_css_alter(&$css) {
       if (isset($css[$default])) {
         // Unset default style.
         unset ($css[$default]);
-        // Check if stylesheet is already added.
-        // Set path to updated file.
-        $file = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
-        $file .= 'jquery.ui.theme.css';
 
+        // Set path to updated file.
         if ($ui['theme'] === 'custom') {
           $ui['version'] === '1.10.4' ?
-            $v = '1.10' : '1.9';
+            $v = '1.10'
+            : '1.9';
           $file = $ui['path'] . "jquery-ui.$v.css";
 
           $add_css['jquery-ui']['file'] = $file;
