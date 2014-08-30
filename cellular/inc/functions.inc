@@ -151,7 +151,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
         $data = $style['cdn'];
       }
       else {
-        $data = $cellular ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+        $data = $cellular === TRUE ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
         $data .= '/css/' . $style['file'];
       }
 
@@ -196,7 +196,7 @@ function cellular_remove_css(&$css, $exclude) {
  */
 
 function cellular_css_override(&$css, $style, $cellular = FALSE) {
-  $ocss = $script['default'];
+  $ocss = $style['default'];
   // only override if style is being called
   if (isset($css[$ocss])) {
     if (isset($style['cdn'])) {

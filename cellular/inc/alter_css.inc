@@ -1,18 +1,17 @@
 <?php
-
 /**
  * @file
  * Add/Update/Delete stylesheets
  */
 
 /*
- * hook_css_alter()
- */
+* hook_css_alter()
+*/
 
 function cellular_css_alter(&$css) {
   global $cellular_lib, $theme_path;
-  // Add stylesheets to theme
-  // Paths are relative to /active_theme/css/
+// Add stylesheets to theme
+// Paths are relative to /active_theme/css/
   $add_css = array(
     'drupal' => array('file' => 'drupal.css', 'weight' => 1),
     'style'  => array('file' => 'style.css', 'weight' => 2),
@@ -24,8 +23,6 @@ function cellular_css_alter(&$css) {
     ),
   );
 
-  cellular_add_css($css, $add_css);
-
 
 // Plugins available through cellular, styles added based on theme settings
 // $plugin_css paths are relative to /libraries/cellular/css/
@@ -34,14 +31,15 @@ function cellular_css_alter(&$css) {
         'file' => 'plugins/prism.css' // Path relative to /cellular/css/
       ) : NULL,
   );
-  cellular_add_css($css, $plugin_css, TRUE);
 
   if (theme_get_setting('jquery_update') == 1) {
-    // Update the jQuery UI theme
+// Update the jQuery UI theme
     $ui = array();
+    $ui['update'] = NULL;
     $ui['version'] = theme_get_setting('jqueryui_version');
-    $ui['path'] = '/css/jquery-ui/';
     $ui['theme'] = theme_get_setting('jqueryui_theme');
+    $ui['use_cdn'] = theme_get_setting('jquery_cdn');
+    $ui['path'] = 'jquery-ui/';
     $ui['widgets'] = array(
       'ui.core',
       'ui.theme',
@@ -60,50 +58,59 @@ function cellular_css_alter(&$css) {
     foreach ($ui['widgets'] as $widget) {
       $default = "misc/ui/jquery.$widget.css";
       if (isset($css[$default])) {
-        $style = array();
-        // Construct path based on theme settings
-        if ((theme_get_setting('jqueryui_cdn') == 1) &&( $ui['theme'] !== custom )) {
-          $v = $ui['version'];
-          $t = $ui['theme'] ;
-          // Available cdns & path to scripts
-          $networks = array(
-            'google'    => array(
-              //href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
-              'url' => "//ajax.googleapis.com/ajax/libs/jqueryui/$v/themes/$t/jquery-ui.css",
-            ),
-            'microsoft' => array(
-              //href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
-              'url' => '//ajax.aspnetcdn.com/ajax/jquery.ui/$v/themes/$t/jquery-ui.css',
-            ),
-          );
-          // Select cdn to use
-          $cdn = $networks[theme_get_setting('cdn')];
+        // Unset default style
+        unset ($css[$default]);
+        // Check if stylesheet is already added
+        // Set path to updated file
+        $file = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
+        $file .= 'jquery.ui.theme.css';
 
-          $style['data'] = $cdn['url'];
+        if ($ui['theme'] === 'custom') {
+          $ui['version'] === '1.10.4' ? $v = '1.10' : '1.9';
+          $file = $ui['path'] . "jquery-ui.$v.css";
+
+          $add_css['jquery-ui']['file'] = $file;
         }
         else {
-          if ($ui['theme'] == 'custom') {
-            $style['path'] = $theme_path . $ui['path'] . 'jquery-ui.';
-            $style['file'] = $ui['version'] == '1.10.1' ? '1.10.css' : '1.9.css';
-          }
-          else {
-            $style['path'] = $cellular_lib . $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
-            $style['file'] = "jquery.$widget.css";
-          }
-          $style['data'] = $style['path'] . $style['file'];
+          $file = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
+          $file .= 'jquery.ui.theme.css';
+          //$plugin_css['jquery-ui']['cdn'] = isset($cdn) ? $cdn : NULL;
+          $plugin_css['jquery-ui']['file'] = $file;
         }
+        //}
+        //dsm($plugin_css);
+        /*/
 
-        $css[$default]['data'] = $style['data'];
 
-        //return $css;
-        //cellular_css_override($css, $ui, TRUE);
+        // Construct path based on theme settings
+                if (($ui['use_cdn'] == 1) && ($ui['theme'] !== custom)) {
+                  $v = $ui['version'];
+                  $t = $ui['theme'];
+        // Available cdns & path to scripts
+                  $networks = array(
+                    'google'    => array(
+        //href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+                      'base_url' => "//ajax.googleapis.com/ajax/libs/jqueryui/",
+                    ),
+                    'microsoft' => array(
+        //href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
+                      'base_url' => "//ajax.aspnetcdn.com/ajax/jquery.ui/",
+                    ),
+                  );
+        // Select cdn to use
+                  $cdn = $networks[theme_get_setting('cdn')];
+
+                  $style = $cdn['base_url'] . "$v/themes/$t/jquery-ui.css";
+                }
+*/
       }
     }
-
-
   }
 
-  // Nuke  all css not a member of group CSS_THEME
+  cellular_add_css($css, $plugin_css, TRUE);
+  cellular_add_css($css, $add_css);
+
+// Nuke  all css not a member of group CSS_THEME
   if (theme_get_setting('remove_all_core_css') == 1) {
     foreach ($css as $key => $value) {
       if ($value['group'] != CSS_THEME) {
@@ -113,7 +120,7 @@ function cellular_css_alter(&$css) {
     $css = array_diff_key($css, $exclude);
   }
 
-  // Nuke  all SYSTEM css
+// Nuke  all SYSTEM css
   if (theme_get_setting('remove_all_core_css') == 1) {
     foreach ($css as $key => $value) {
       if ($value['group'] == CSS_SYSTEM) {
@@ -125,7 +132,7 @@ function cellular_css_alter(&$css) {
 
 // Remove Drupal's core CSS
   if (theme_get_setting('remove_core_css') == 1) {
-    // Select module css to exclude
+// Select module css to exclude
     $exclude = array(
       'system'   => array(
         'system.base.css',
@@ -147,5 +154,5 @@ function cellular_css_alter(&$css) {
 
     cellular_remove_css($css, $exclude);
   }
- // dsm($css);
+// dsm($css);
 }

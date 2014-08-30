@@ -13,7 +13,6 @@ module.exports = {
         },
         files: {
             'js/script.min.js': ['js/script.js'],
-            'js/plugins/jquery.cellular.min.js': ['js/plugins/jquery.cellular.js'],
         },
     },
     dev: {
@@ -24,7 +23,6 @@ module.exports = {
         },
         files: {
             'js/script.dev.js': ['js/script.js'],
-            'js/plugins/jquery.cellular.min.js': ['js/plugins/jquery.cellular.js'],
         }
     }
 };

@@ -13,7 +13,7 @@
             $('form').jFormal();
             $('.jScrolli').jScrolli();
             $('.jTabs').jTabs({
-                "orient": "vertical"
+                //"orient": "vertical"
             });
             $('#nav').jMmenu();
             //$('#nav').jStickyheader();

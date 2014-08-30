@@ -29,8 +29,6 @@ function cellular_js_alter(&$javascript) {
     ),
   );
 
-  cellular_add_js($scripts);
-
 // Scripts to add, linking to /libraries/cellular/js/script.js
   $js_plugins = array(
     'modernizr' => theme_get_setting('modernizr') == 1 ? array(
@@ -41,7 +39,7 @@ function cellular_js_alter(&$javascript) {
       ) : NULL,
     'cellular'  => theme_get_setting('cellularjs') == 1 ? array(
         'object' => 'cellular',
-        'file'   => 'plugins/jquery.cellular.min.js',
+        'file'   => 'plugins/jquery.cellular.js',
         'weight' => -10,
       ) : NULL,
     'd3'        => theme_get_setting('d3js') == 1 ? array(
@@ -106,7 +104,6 @@ function cellular_js_alter(&$javascript) {
 
     $js_plugins = array_merge($js_plugins, $gsap);
   }
-  cellular_add_js($js_plugins, TRUE);
 
 // Update jQuery & jQueryUI
   if (theme_get_setting('jquery_update') == 1) {
@@ -136,6 +133,19 @@ function cellular_js_alter(&$javascript) {
       // Select cdn to use
       $cdn = $networks[theme_get_setting('cdn')];
     }
+
+// Add jQuery.migrate to support older plugins if v >= 1.9
+    if($v_jq === '1.9.1' ||
+      $v_jq === '1.10.2' ||
+      $v_jq === '1.11.1') {
+
+      $js_plugins['migrate'] = array(
+        'version' => '1.2.1',
+        'file' => 'plugins/jquery.migrate.min.js',
+        'weight' => -96,
+      );
+    }
+
 // Override jQuery
       $jquery = array(
         'default'    => 'misc/jquery.js', //default script
@@ -233,8 +243,12 @@ function cellular_js_alter(&$javascript) {
           }
         }
       }
-
   }
+
+// Add js after override
+  cellular_add_js($js_plugins, TRUE);
+  cellular_add_js($scripts);
+  //dsm($javascript);
 
   if (theme_get_setting('modernizr') == 1) {
 // Get full path to css directory
@@ -288,6 +302,4 @@ function cellular_js_alter(&$javascript) {
       'weight'     => -999
     ));
   }
-
-  //dsm($javascript);
 }

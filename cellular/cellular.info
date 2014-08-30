@@ -47,9 +47,9 @@ settings[cellularjs]                = 1
 settings[gsap]                      = 0
 
 ;----------// Display Settings
-settings[remove_core_css]           = 1
-settings[remove_all_core_css]       = 0
-settings[remove_nontheme_css]       = 0
+settings[remove_all_css]            = 1
+settings[remove_all_system_css]     = 0
+settings[remove_core_css]           = 0
 settings[favicons]                  = 1
 settings[icons_type]                = svg
 settings[full_menu]                 = 1
@@ -93,7 +93,7 @@ settings[follow_twitter]        = 0
 settings[follow_twitter_url]    = http://twitter.com/
 settings[follow_linkedin]       = 0
 settings[follow_linkedin_url]   = http://linkedin.com/
-settings[follow_github]			= 0
+settings[follow_github]			    = 0
 settings[follow_github_url]   	= http://github.com/
 
 settings[social_media_share]    = 0
