@@ -13,11 +13,7 @@
 */
 ?>
 
-<div class="cell" <?php
-if (!empty($css_id)) {
-  print "id=\"$css_id\"";
-}
-?>>
+<div class="cell" <?php if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
 
   <div class="cell-75">
     <div class="cell">

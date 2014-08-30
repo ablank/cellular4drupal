@@ -13,11 +13,8 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="cell" <?php
-if (!empty($css_id)) {
-  print 'id=\"$css_id\"';
-}
-?>>
+
+<div class="cell" <?php if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
 
   <div class="panel cell">
     <div class="panel-content">

@@ -17,5 +17,5 @@ $plugin = array(
     'middle' => t('Middle Column'),
     'right'  => t('Right Column'),
     'bottom' => t('Bottom'),
-  )
+  ),
 );

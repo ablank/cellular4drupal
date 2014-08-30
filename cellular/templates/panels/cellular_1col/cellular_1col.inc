@@ -12,6 +12,6 @@ $plugin = array(
   'theme arguments' => array('id', 'content'),
   'admin css'       => 'admin.css',
   'regions'         => array(
-    'middle' => t('Middle Column')
+    'middle' => t('Middle Column'),
   ),
 );

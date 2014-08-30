@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt compass
+ * Configure grunt compass.
  */
 
 module.exports = {
@@ -12,14 +12,14 @@ module.exports = {
     dev: {
         options: {
             noLineComments: false,
-            //clean: true,
+            // clean: true,
             environment: 'development'
         }
     },
     prod: {
         options: {
             noLineComments: true,
-            //clean: true,
+            // clean: true,
             environment: 'production'
         }
     }

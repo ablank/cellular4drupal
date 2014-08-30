@@ -12,7 +12,7 @@
   - $page['sidebar_right']: Right Sidebar
   - $page['content']: The main content of the current page.
   - $page['footer_top']: Footer Right Column
-  - $page['footer']: Items for the full footer region, the last elements rendered.
+  - $page['footer']: Items for the footer region
   - $page['footer_bottom']: Footer Middle Column
 
   VARIABLES
@@ -46,8 +46,10 @@
 
   Page Layout:
   - $content_width : Grid class to set width of main content.
-  - $content_class_single_sidebar : Grid class to set width of main content with one sidebar displayed.
-  - $content_class_dual_sidebar : Grid class to set width of main content with two sidebars displayed.
+  - $content_class_single_sidebar : Grid class to set width of main content
+with one sidebar displayed.
+  - $content_class_dual_sidebar : Grid class to set width of main content with
+two sidebars displayed.
   - $sidebar_width : Grid class to set width of sidebars.
   - $triptych_class : Grid class to set width of triptych elements.
 

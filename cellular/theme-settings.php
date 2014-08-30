@@ -1,9 +1,7 @@
 <?php
 /**
  * @file
- * Get theme-settings
- * @param $form
- * @param $form_state
+ * Get theme-settings.
  */
 
 /**

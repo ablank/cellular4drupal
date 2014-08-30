@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Node template
+ * Node template.
  */
 
 /* Variables:
