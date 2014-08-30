@@ -68,8 +68,6 @@ function cellular_form_element(&$vars) {
 
   isset($element['#description']) ? $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
 
-  //$output .= "</div>\n";
-
   return $output;
 }
 
@@ -160,7 +158,6 @@ function cellular_radios(&$vars) {
 function cellular_checkbox(&$vars) {
   $element = $vars['element'];
   //$element['#theme_wrappers'] = null;
-
   $element['#attributes']['type'] = 'checkbox';
   if (!empty($element['#checked'])) {
     $element['#attributes']['checked'] = 'checked';

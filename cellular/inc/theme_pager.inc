@@ -40,7 +40,6 @@ function cellular_pager($vars) {
     $i = 1;
   }
   // End of generation loop preparation.
-
   $li_first = theme('pager_first', array(
     'text'       => (isset($tags[0]) ? $tags[0] : t('« first')),
     'element'    => $element,

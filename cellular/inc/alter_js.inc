@@ -9,7 +9,7 @@
  */
 
 function cellular_js_alter(&$javascript) {
-  global $base_url, $theme_path, $cellular_lib;
+  global $base_url, $theme_path;
 
 // Pass a variable from drupal to js:
 //  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
@@ -127,7 +127,7 @@ function cellular_js_alter(&$javascript) {
         'cloudflare' => array( //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
           'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
           'jquery'   => "jquery/$v_jq/jquery.min.js",
-          'jqueryui' => "jquery.ui/$vjqui/jquery-ui.min.js"
+          'jqueryui' => "jquery.ui/$v_jqui/jquery-ui.min.js"
         ),
       );
       // Select cdn to use.

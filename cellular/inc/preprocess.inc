@@ -176,7 +176,7 @@ function cellular_preprocess_node(&$vars) {
     $author = array(
       'name'        => l($node->name, 'user/' . $node->uid),
       'description' => isset($author->field_description['und'][0]['safe_value']) ? '<div class="author-description">' . $uid->field_description['und'][0]['safe_value'] . '</div>' : NULL,
-      'image'       => !empty($uid->picture->uri) ? theme_image_style(array( //'style_name' => 'blog-author-image',
+      'image'       => !empty($uid->picture->uri) ? theme('image_style', array( //'style_name' => 'blog-author-image',
           'path'       => $node->picture->uri,
           'width'      => NULL,
           'height'     => NULL,

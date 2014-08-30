@@ -234,15 +234,11 @@
         <?php if ($copyright): ?>
           <div id="copyright"><?php print $copyright; ?></div>
         <?php endif; ?>
-
       </div>
       <!-- /#footer-bottom -->
-
     </div>
     <!-- /#footer -->
   </div>
   <!-- /#page-wrap-->
 <?php
 print "\n";
-
-// End of File

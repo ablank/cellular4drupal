@@ -98,7 +98,6 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       //$form['links']['#markup'][] = t('Forgotten Password?') . ' <a href="/user/password">' . t('Forgotten Password?') . '</a>';
       // Register New User Account &&  Forgot Password
       //$form['links']['#markup'] = '<hr/>' . ' <a class="user-register" href="/user/register">' . t('Register') . '</a>' . '<hr/>' . ' <a class="user-password" href="/user/password">' . t('Forgotten Password?') . '</a>'; // Remove Request New Password from Block form
-
       break;
   }
 

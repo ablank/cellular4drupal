@@ -163,5 +163,3 @@
   <!-- /#page-wrap-->
 <?php
 print "\n";
-
-// End of File
