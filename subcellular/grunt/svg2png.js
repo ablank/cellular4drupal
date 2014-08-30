@@ -1,23 +1,11 @@
 /**
  * @file
- * Configure grunt svg2png
+ * Configure grunt svg2png.
  */
+
 module.exports = {
-    icons: {
-        // specify files in array format with multiple src-dest mapping
-        files: [
-            // rasterize all SVG files in "img" and its subdirectories to "img/png"
-            {
-                cwd: 'assets/icons/svg/',
-                src: ['*.svg'],
-                dest: 'assets/icons/png/'
-            }
-        ]
-    },
     images: {
-        // specify files in array format with multiple src-dest mapping
         files: [
-            // rasterize all SVG files in "img" and its subdirectories to "img/png"
             {
                 cwd: 'assets/images/svg/',
                 src: ['*.svg'],
@@ -25,4 +13,13 @@ module.exports = {
             }
         ]
     },
+    icons: {
+        files: [
+            {
+                cwd: 'assets/icons/svg/',
+                src: ['*.svg'],
+                dest: 'assets/icons/png/'
+            }
+        ]
+    }
 };

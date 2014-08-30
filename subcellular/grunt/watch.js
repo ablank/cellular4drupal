@@ -5,17 +5,17 @@
 
 module.exports = {
     scripts: {
-        files: ['js/**/*.js'],
+        files: ['js/*.js', 'js/**/*.js'],
         tasks: [
-            'uglify'
-            'jshint',
+            'uglify',
+            'jshint'
         ],
         options: {
             interrupt: true,
-        },
+        }
     },
     styles: {
-        files: 'sass/**/*.scss',
+        files: ['sass/*.scss', 'sass/**/*.scss'],
         tasks: ['compass:dev']
-    },
+    }
 };

@@ -5,9 +5,9 @@
  */
 
 /**
+ * cellular_social_media_follow()
  * Social media follow links
  */
-
 function cellular_social_media_follow() {
   $output = '';
 
@@ -57,15 +57,16 @@ function cellular_social_media_follow() {
       }
     }
     foreach ($media_block['links'] as $link) {
-      $media_block['markup'] .= l(t("Follow us on " . $link['name']),
+      $text = "Follow us on " . $link['name'];
+      $media_block['markup'] .= l(t($text),
         $link['url'], array(
-        'attributes' => array(
-          'class' => array(
-            $media_block['link_class'],
-            $link['class']
+          'attributes' => array(
+            'class' => array(
+              $media_block['link_class'],
+              $link['class']
+            ),
           ),
-        ),
-      ));
+        ));
     }
 
     if (!empty($media_block['links'])) {
@@ -81,9 +82,9 @@ function cellular_social_media_follow() {
 }
 
 /**
+ * cellular_social_media_share()
  *  Social media share links
  */
-
 function cellular_social_media_share() {
   global $base_url;
   $output = '';
@@ -166,7 +167,8 @@ function cellular_social_media_share() {
         ));
       }
       if (!empty($link['url'])) {
-        $media_block['markup'] .= l(t('Share this page on ' . $link['title']),
+        $text = 'Share this page on ' . $link['title'];
+        $media_block['markup'] .= l(t($text),
           $link['url'], array(
             'attributes' => array(
               'class' => array(

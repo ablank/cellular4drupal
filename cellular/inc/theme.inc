@@ -1,14 +1,12 @@
 <?php
-
 /**
  * @file
- * Set  element markup
+ * Set element markup.
  */
 
 /**
  * theme_field()
  */
-
 function cellular_field($vars) {
   $content = '';
 // Render the label, if it's not hidden.
@@ -31,7 +29,6 @@ function cellular_field($vars) {
 /**
  * theme_breadcrumb()
  */
-
 function cellular_breadcrumb(&$vars) {
 
   if (theme_get_setting('breadcrumb_display') == 1) {
@@ -62,14 +59,13 @@ function cellular_breadcrumb(&$vars) {
  * theme_file_icon()
  * Use css classes to style output instead of <img>
  */
-
 function cellular_file_icon(&$vars) {
   $file = $vars['file'];
   $mime = check_plain($file->filemime);
   $generic_mime = (string) file_icon_map($file);
 
-  //$dashed_mime = strtr($file->filemime, array('/' => '-'));
-  //$icon_path = $icon_directory . '/' . $dashed_mime . '.png';
+  // $dashed_mime = strtr($file->filemime, array('/' => '-'));
+  // $icon_path = $icon_directory . '/' . $dashed_mime . '.png';
   // Use generic icons for each category that provides such icons.
   foreach (array('audio', 'image', 'text', 'video') as $category) {
     if (strpos($file->filemime, $category . '/') === 0) {
@@ -88,7 +84,6 @@ function cellular_file_icon(&$vars) {
 /**
  * theme_feed_icon()
  */
-
 function cellular_feed_icon($vars) {
   $text = t('Subscribe to !feed-title', array(
     '!feed-title' => $vars['title'],

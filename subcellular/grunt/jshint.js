@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt jshint
+ * Configure grunt jshint.
  */
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
         browser: true,
         globals: {
             jQuery: true
-        },
+        }
     },
     files: ['js/*.js', 'js/**/*.js']
 };

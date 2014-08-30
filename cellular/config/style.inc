@@ -67,7 +67,7 @@ $form['c']['display_settings']['r']['remove_all_system_css'] = array(
 $form['c']['display_settings']['r']['remove_core_css'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Remove Drupal Core CSS'),
-  '#description'   => t("Exclude some Drupal core CSS. "),
+  '#description'   => t("Exclude some Drupal core CSS."),
   '#default_value' => theme_get_setting('remove_core_css'),
 );
 

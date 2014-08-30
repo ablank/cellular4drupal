@@ -1,15 +1,13 @@
 <?php
 /**
  * @file
- * General utility functions
- * @author    Adam Blankenship
+ * General utility functions.
  */
 
 /**
  * cellular_theme_path()
- *  Get path to current theme. Call
+ * Get path to current theme. Call
  */
-
 function cellular_theme_path(&$theme_key = NULL) {
   $t_theme = isset($theme_key) ? $theme_key : $GLOBALS['theme'];
   $theme_path = drupal_get_path('theme', $t_theme);
@@ -19,9 +17,8 @@ function cellular_theme_path(&$theme_key = NULL) {
 
 /**
  * cellular_merge()
- *  Merge attributes arrays.
+ * Merge attributes arrays.
  */
-
 function cellular_merge(&$arr) {
   $output = '';
   foreach ($arr as $a) {
@@ -33,14 +30,13 @@ function cellular_merge(&$arr) {
 
 /**
  * cellular_build_head_tags()
- *  Add <link> & <meta> tags from an array.
+ * Add <link> & <meta> tags from an array.
  */
-
 function cellular_build_head_tags(&$array) {
   $base_weight = 0;
 
   foreach ($array as $meta => $val) {
-    // Build tag
+    // Build tag:
     $tag = array(
       '#type'       => 'html_tag',
       '#tag'        => $val['tag'],
@@ -48,14 +44,14 @@ function cellular_build_head_tags(&$array) {
       '#weight'     => isset($val['weight']) ? $val['weight'] : $base_weight
     );
 
-    // Misc. attr/val
+    // Misc. attr/val:
     isset($val['attr']) && isset($val['attr_val']) ? $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
-    // General attributes
+    // General attributes:
     isset($val['name']) ? $tag['#attributes']['name'] = $val['name'] : NULL;
     isset($val['rel']) ? $tag['#attributes']['rel'] = $val['rel'] : NULL;
     isset($val['content']) ? $tag['#attributes']['content'] = $val['content'] : NULL;
     isset($val['href']) ? $tag['#attributes']['href'] = $val['href'] : NULL;
-    // Attributes for favicons
+    // Attributes for favicons:
     isset($val['size']) ? $tag['#attributes']['sizes'] = $val['size'] : NULL;
     isset($val['type']) ? $tag['#attributes']['type'] = $val['type'] : NULL;
 
@@ -69,7 +65,6 @@ function cellular_build_head_tags(&$array) {
  * A fallback link will be automatically generated if using CDN and
  * the 'object' value is provided.
  */
-
 function cellular_add_js($array, $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
@@ -96,9 +91,8 @@ function cellular_add_js($array, $cellular = FALSE) {
 
 /**
  * cellular_js_fallback()
- *  Javascript fallback to local source if CDN fails.
+ * Javascript fallback to local source if CDN fails.
  */
-
 function cellular_js_fallback($script, $cellular = FALSE) {
   $attr = array(
     'group'      => $script['group'],
@@ -119,9 +113,8 @@ function cellular_js_fallback($script, $cellular = FALSE) {
 
 /**
  * cellular_js_override()
- *  Override existing $javascript sources.
+ * Override existing $javascript sources.
  */
-
 function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
   // Only override if js is being called.
   if (isset($javascript[$script['default']])) {
@@ -153,7 +146,6 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
  * cellular_add_css()
  * Add array of stylesheets to $css, using a CDN if provided.
  */
-
 function cellular_add_css(&$css, $array, $cellular = FALSE) {
   foreach ($array as $style) {
     if (isset($style)) {
@@ -185,7 +177,6 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
  * cellular_remove_css()
  * Removes array of stylesheets from $css
  */
-
 function cellular_remove_css(&$css, $exclude) {
 
   foreach ($exclude as $module => $stylesheet) {
@@ -203,10 +194,9 @@ function cellular_remove_css(&$css, $exclude) {
 }
 
 /**
- *  cellular_css_override()
+ * cellular_css_override()
  * Overrides default css values.
  */
-
 function cellular_css_override(&$css, $style, $cellular = FALSE) {
   $ocss = $style['default'];
   // only override if style is being called
@@ -234,7 +224,6 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
  * cellular_form_strip_access()
  * Removes text formatting options from user input
  */
-
 function cellular_form_strip_access(&$form) {
   // Remove individual text format options
   // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
@@ -251,7 +240,6 @@ function cellular_form_strip_access(&$form) {
  * cellular_main_menu()
  * Returns full Main Menu instead of top-level links.
  */
-
 function cellular_main_menu(&$vars) {
   if (theme_get_setting('full_menu') == 1) {
 
@@ -269,7 +257,6 @@ function cellular_main_menu(&$vars) {
  * cellular_test_sidebar()
  * Test if sidebar regions are used and return the appropriate class.
  */
-
 function cellular_test_sidebar(&$vars) {
   $sidebar_left = !empty($vars['page']['sidebar_left']) ? 1 : NULL;
   $sidebar_right = !empty($vars['page']['sidebar_right']) ? 1 : NULL;

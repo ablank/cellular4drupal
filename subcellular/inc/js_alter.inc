@@ -1,14 +1,13 @@
 <?php
 /**
  * @file
- * Add/Update/Delete javascript
+ * Add/Update javascript.
  */
 
+/**
+ * hook_js_alter()
+ */
 function subcellular_js_alter() {
-  /*
-   * Add javascript
-   */
-
   /*
     $add_js = array(
     'localScript' => array( // Local script with minimum setup.
@@ -30,12 +29,9 @@ function subcellular_js_alter() {
     );
 
     cellular_add_js($add_js);
-
    */
 
-  /*
-
-    /* Pass variable from drupal to js: */
+  // Pass variable from drupal to js:
 //  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
   /* myVar will be available in Javascript as:
     <script>

@@ -7,11 +7,10 @@
 /**
  * hook_css_alter()
  */
-
 function cellular_css_alter(&$css) {
 // Add stylesheets to theme.
   $add_css = array(
-// Paths are relative to /active_theme/css/
+// Paths are relative to /yourTheme/css/
     'drupal' => array(
       'file'   => 'drupal.css',
       'weight' => 1,
@@ -27,7 +26,6 @@ function cellular_css_alter(&$css) {
       'preprocess' => FALSE,
     ),
   );
-
 
 // Plugins available through cellular, styles added based on theme settings.
 // $plugin_css paths are relative to /libraries/cellular/css/
@@ -85,26 +83,26 @@ function cellular_css_alter(&$css) {
 
         /* CDN stuff
         // Construct path based on theme settings
-                if (($ui['use_cdn'] == 1) && ($ui['theme'] !== custom)) {
-                  $v = $ui['version'];
-                  $t = $ui['theme'];
-        // Available cdns & path to scripts
-                  $networks = array(
-                    'google'    => array(
-        // href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
-                      'base_url' => "//ajax.googleapis.com/ajax/libs/jqueryui/",
-                    ),
-                    'microsoft' => array(
-        // href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
-                      'base_url' => "//ajax.aspnetcdn.com/ajax/jquery.ui/",
-                    ),
-                  );
-        // Select cdn to use
-                  $cdn = $networks[theme_get_setting('cdn')];
+        if (($ui['use_cdn'] == 1) && ($ui['theme'] !== custom)) {
+          $v = $ui['version'];
+          $t = $ui['theme'];
+          // Available cdns & path to scripts
+          $networks = array(
+            'google'    => array(
+              // href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+              'base_url' => "//ajax.googleapis.com/ajax/libs/jqueryui/",
+            ),
+            'microsoft' => array(
+              // href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
+              'base_url' => "//ajax.aspnetcdn.com/ajax/jquery.ui/",
+            ),
+          );
+          // Select cdn to use
+          $cdn = $networks[theme_get_setting('cdn')];
 
-                  $style = $cdn['base_url'] . "$v/themes/$t/jquery-ui.css";
-                }
-*/
+          $style = $cdn['base_url'] . "$v/themes/$t/jquery-ui.css";
+        }
+        */
       }
     }
   }
@@ -112,7 +110,7 @@ function cellular_css_alter(&$css) {
   cellular_add_css($css, $plugin_css, TRUE);
   cellular_add_css($css, $add_css);
 
-// Nuke  all css not a member of group CSS_THEME
+// Nuke  all css not a member of group CSS_THEME:
   if (theme_get_setting('remove_all_core_css') == 1) {
     foreach ($css as $key => $value) {
       if ($value['group'] != CSS_THEME) {

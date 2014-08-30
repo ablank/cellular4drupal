@@ -1,7 +1,8 @@
 /**
  * @file
- * Configure grunt uglify
+ * Configure grunt uglify.
  */
+
 module.exports = {
     prod: {
         options: {
@@ -13,7 +14,7 @@ module.exports = {
         },
         files: {
             'js/script.min.js': ['js/script.js'],
-        },
+        }
     },
     dev: {
         options: {

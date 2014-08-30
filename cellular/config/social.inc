@@ -7,9 +7,7 @@
 $form['c']['social_media'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('Social Media'),
-  '#description' => is_dir('sites/all/libraries/cellular')
-      ? NULL
-      :
+  '#description' => is_dir('sites/all/libraries/cellular') ? NULL :
       t('<div class="messages error"> <h2>These features require the
 <a href="@url">Cellular Library</a>.</h2>
 </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
@@ -17,7 +15,7 @@ $form['c']['social_media'] = array(
   '#collapsed'   => FALSE,
 );
 
-// Modernizr is used to show icons
+// Modernizr is used to load the correct icon stylesheet for the browser.
 $form['c']['social_media']['social_media_share'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Share this site'),

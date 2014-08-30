@@ -1,19 +1,17 @@
 <?php
 /**
  * @file
- * template_preprocess variables
- * @author    Adam Blankenship
+ * Template preprocess variables.
  */
 
 /**
  * template_preprocess_html()
  *  Add <link> and <meta> tags, html/body attributes, conditional styles
  */
-
 function cellular_preprocess_html(&$vars) {
   global $language, $base_url, $theme_path;
 
-  // Set DOCTYPE
+  // Set DOCTYPE:
   if (module_exists('rdf')) {
     $vars['doctype'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN">' . "\n";
     $vars['rdf_version'] = ' version="HTML+RDFa 1.1"';
@@ -25,41 +23,41 @@ function cellular_preprocess_html(&$vars) {
     $vars['rdf_profile'] = '';
   }
 
-  // Set <HTML> attributes
+  // Set <HTML> attributes:
   $html_attributes = array(
     'lang' => $language->language,
     'dir'  => $language->dir,
   );
   $vars['html_attributes'] = drupal_attributes($html_attributes);
 
-// Add meta elements to $head
-  $meta_tags = array( // viewport
+// Add meta elements to $head:
+  $meta_tags = array(
     'viewport'         => array(
       'tag'     => 'meta',
       'name'    => 'viewport',
       'content' => 'width=device-width, initial-scale=1',
       'weight'  => 0
-    ), // IE rendering mode- set to lowest weight
+    ),
     'ie_render_engine' => array(
       'tag'      => 'meta',
       'attr'     => 'http-equiv',
       'attr_val' => 'X-UA-Compatible',
       'content'  => 'IE=Edge,chrome=1',
       'weight'   => 1
-    ), // robots
+    ),
     'robots'           => array(
       'tag'     => 'meta',
       'name'    => 'robots',
       'content' => 'index, follow',
       'weight'  => 2
-    ), // humans
+    ),
     'humans'           => array(
       'tag'    => 'link',
       'type'   => 'text/plain',
       'rel'    => 'author',
       'href'   => $base_url . '/humans.txt',
       'weight' => 3
-    ), // GRDDL
+    ),
     'grddl'            => !empty($vars['grddl_profile']) ? array(
         'tag'    => 'link',
         'rel'    => 'profile',
@@ -70,7 +68,7 @@ function cellular_preprocess_html(&$vars) {
 
   cellular_build_head_tags($meta_tags);
 
-// Add favicon & apple-touch-icons
+// Add favicon & apple-touch-icons.
   $favicons = array(
     'favicon-16x16' => array(
       'rel'    => 'shortcut icon',
@@ -124,10 +122,10 @@ function cellular_preprocess_html(&$vars) {
 
 //  Add classes to <body>
   $body_classes_array = array();
-// Sidebar class is generated if region is used on page
+// Sidebar class is generated if region is used on page.
   $body_classes_array[] = cellular_test_sidebar($vars);
 
-  // Add URL alias based body classes
+  // Add URL alias based body classes.
   // i.e. http://host.com/content/widget
   // = <body class="content widget">
   $path = drupal_get_path_alias($_GET['q']);
@@ -137,7 +135,7 @@ function cellular_preprocess_html(&$vars) {
     $body_classes_array[] = $alias;
   }
 
-  // Add other body conditional classes
+  // Add other body conditional classes.
   $conditional_classes = array(
     'frontpage' => drupal_is_front_page() ? 'frontpage' : NULL,
     'user'      => user_is_logged_in() ? 'user' : NULL,
@@ -163,7 +161,6 @@ function cellular_preprocess_html(&$vars) {
 /**
  *  template_preprocess_node()
  */
-
 function cellular_preprocess_node(&$vars) {
   $vars['hook'] = 'node';
   $node = $vars['node'];
@@ -182,7 +179,7 @@ function cellular_preprocess_node(&$vars) {
           '<div class="author-description">' . $uid->field_description['LANGUAGE_NONE'][0]['safe_value'] . '</div>'
           : NULL,
       'image'       => !empty($uid->picture->uri) ? theme('image_style', array(
-          //'style_name' => 'blog-author-image',
+          // 'style_name' => 'blog-author-image',
           'path'       => $node->picture->uri,
           'width'      => NULL,
           'height'     => NULL,
@@ -192,7 +189,7 @@ function cellular_preprocess_node(&$vars) {
         )) : NULL,
     );
 
-// Return $author
+// Return $author:
     $vars['author'] = $author['image'] . $author['name'] . $author['description'];
   }
 }
@@ -201,7 +198,6 @@ function cellular_preprocess_node(&$vars) {
  * template_preprocess_page()
  *  Set vars for page.tpl
  */
-
 function cellular_preprocess_page(&$vars) {
   // Link site name to frontpage.
   $vars['site_name'] = l($vars['site_name'], '<front>');
@@ -233,7 +229,7 @@ function cellular_preprocess_page(&$vars) {
   $copyright = theme_get_setting('copyright');
   $vars['copyright'] = isset($copyright) ? "&copy; " . date("Y") . " " . $copyright : NULL;
 
-  // Set custom page templates for CCK Content (page--content-type.tpl.php).
+  // Set custom page templates for CCK Content (page--content-type.tpl.php)
   if (isset($vars ['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
@@ -267,7 +263,6 @@ function cellular_preprocess_page(&$vars) {
 /**
  * template_preprocess_region()
  */
-
 function cellular_preprocess_region(&$vars) {
 
 }
@@ -275,7 +270,6 @@ function cellular_preprocess_region(&$vars) {
 /**
  * template_preprocess_block()
  */
-
 function cellular_preprocess_block(&$vars) {
   $vars['hook'] = 'block';
   $block = $vars['block'];
@@ -301,7 +295,6 @@ function cellular_preprocess_block(&$vars) {
 /**
  * template_preprocess_comment()
  */
-
 function cellular_preprocess_comment(&$vars) {
   $vars['hook'] = 'comment';
 
@@ -319,7 +312,6 @@ function cellular_preprocess_comment(&$vars) {
 /**
  * template_ preprocess_username()
  */
-
 function cellular_preprocess_username(&$vars) {
   if (isset($vars['link_path'])) {
     $vars['link_attributes']['rel'][] = 'author';

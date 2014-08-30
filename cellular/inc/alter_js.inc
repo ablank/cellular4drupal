@@ -1,13 +1,12 @@
 <?php
 /**
  * @file
- * Add/Update/Delete javascript
+ * Add/Update/Delete javascript.
  */
 
 /**
  * hook_js_alter()
  */
-
 function cellular_js_alter(&$javascript) {
   global $base_url, $theme_path;
 
@@ -21,15 +20,15 @@ function cellular_js_alter(&$javascript) {
     </script>
    */
 
-// Scripts to add, linking to /theme/js/script.js
+// Scripts to add, relative to /yourTheme/js/
   $scripts = array(
     'script' => array(
-      'file'   => 'script.js', // Path to file, relative to /yourTheme/js/
+      'file'   => 'script.js',
       'weight' => 99,
     ),
   );
 
-// Scripts to add, linking to /libraries/cellular/js/script.js
+// Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array(
     'modernizr' => theme_get_setting('modernizr') == 1 ? array(
         'group'  => JS_LIBRARY,
@@ -147,7 +146,7 @@ function cellular_js_alter(&$javascript) {
       );
     }
 
-// Override jQuery
+// Override jQuery:
     $jquery = array(
       'default'    => 'misc/jquery.js',
       'object'     => 'jQuery',
@@ -161,7 +160,7 @@ function cellular_js_alter(&$javascript) {
 
     cellular_js_override($javascript, $jquery, TRUE);
 
-// Override jQuery.once
+// Override jQuery.once:
     $jqueryonce = array(
       'default' => 'misc/jquery.once.js',
       'version' => '1.2.6',
@@ -170,7 +169,7 @@ function cellular_js_alter(&$javascript) {
 
     cellular_js_override($javascript, $jqueryonce, TRUE);
 
-// Override jQuery.form
+// Override jQuery.form:
     $jqueryform = array(
       'default' => 'misc/jquery.form.js',
       'version' => '3.48',
@@ -178,7 +177,7 @@ function cellular_js_alter(&$javascript) {
     );
 
     cellular_js_override($javascript, $jqueryform, TRUE);
-// Override jQueryUI
+// Override jQueryUI:
     $ui_widgets = array(
       'ui.core',
       'ui.accordion',
@@ -251,10 +250,10 @@ function cellular_js_alter(&$javascript) {
   cellular_add_js($scripts);
 
   if (theme_get_setting('modernizr') == 1) {
-// Get full path to css directory
-//$base_url needs to be added to reference the correct path
+// Get full path to css directory.
+// $base_url needs to be added to reference the correct path.
     $dir_css = $base_url . '/' . $theme_path . '/css/';
-// Build yepnope query based on theme settings
+// Build yepnope query based on theme settings.
     $mq = array();
     $mq['mobile'] = theme_get_setting('mq_mobile');
     $mq['normal'] = theme_get_setting('mq_normal');
@@ -299,7 +298,7 @@ function cellular_js_alter(&$javascript) {
       'type'       => 'inline',
       'group'      => CSS_SYSTEM,
       'every_page' => TRUE,
-      'weight'     => -999
+      'weight'     => -999,
     ));
   }
   // dsm($javascript);

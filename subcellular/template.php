@@ -2,7 +2,8 @@
 
 /**
  * @file
- * hook_function overrides
+ * Set global vars, load functions for templates, and hook_function overrides.
+ *
  * @author    Adam Blankenship
  */
 

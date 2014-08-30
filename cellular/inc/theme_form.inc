@@ -5,9 +5,8 @@
  */
 
 /**
- *  theme_container()
+ * theme_container()
  */
-
 function cellular_container(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -28,7 +27,6 @@ function cellular_container(&$vars) {
 /**
  * theme_form_element()
  */
-
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -71,7 +69,6 @@ function cellular_form_element(&$vars) {
 /**
  * theme_fieldset()
  */
-
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
 
@@ -96,7 +93,6 @@ function cellular_fieldset(&$vars) {
 /**
  *  theme_select()
  */
-
 function cellular_select(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -111,7 +107,6 @@ function cellular_select(&$vars) {
 /**
  * theme_checkboxes()
  */
-
 function cellular_checkboxes(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -131,7 +126,6 @@ function cellular_checkboxes(&$vars) {
 /**
  * theme_radios()
  */
-
 function cellular_radios(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -151,7 +145,6 @@ function cellular_radios(&$vars) {
 /**
  *  theme_checkbox()
  */
-
 function cellular_checkbox(&$vars) {
   $element = $vars['element'];
   //$element['#theme_wrappers'] = null;
@@ -172,7 +165,6 @@ function cellular_checkbox(&$vars) {
 /**
  * theme_radio()
  */
-
 function cellular_radio(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -198,7 +190,6 @@ function cellular_radio(&$vars) {
 /**
  * theme_textfield()
  */
-
 function cellular_textfield(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;
@@ -221,7 +212,6 @@ function cellular_textfield(&$vars) {
 /**
  * theme_textarea()
  */
-
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
   $element['#theme_wrappers'] = NULL;

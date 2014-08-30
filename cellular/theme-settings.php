@@ -16,7 +16,6 @@ function cellular_form_system_theme_settings_alter(&$form, $form_state) {
     '#attached'    => array(),
   );
 
-  // $inc_path = drupal_get_path('theme', 'cellular') . '/inc/';
   $ipath = drupal_get_path('theme', 'cellular') . '/config/';
   $pages = array(
     'personalize.inc',

@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt grunticon
+ * Configure grunt grunticon.
  */
 
 module.exports = {

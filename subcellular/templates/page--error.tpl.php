@@ -1,11 +1,10 @@
 <?php
-/*
+/**
  * @file
- * Automated error page
+ * Automated error page.
  */
-/*
 
-  Regions:
+/* Regions:
   - $page['console']: Help, warnings, & other system notifications
   - $page['header']: Page Header
   - $page['nav']: System Navigation
@@ -13,7 +12,7 @@
   - $page['sidebar_right']: Right Sidebar
   - $page['content']: The main content of the current page.
   - $page['footer_top']: Footer Right Column
-  - $page['footer']: Items for the full footer region, the last elements rendered.
+  - $page['footer']: Items for the footer region
   - $page['footer_bottom']: Footer Middle Column
 
   VARIABLES
@@ -47,8 +46,10 @@
 
   Page Layout:
   - $content_width : Grid class to set width of main content.
-  - $content_class_single_sidebar : Grid class to set width of main content with one sidebar displayed.
-  - $content_class_dual_sidebar : Grid class to set width of main content with two sidebars displayed.
+  - $content_class_single_sidebar : Grid class to set width of main content
+with one sidebar displayed.
+  - $content_class_dual_sidebar : Grid class to set width of main content with
+two sidebars displayed.
   - $sidebar_width : Grid class to set width of sidebars.
   - $triptych_class : Grid class to set width of triptych elements.
 
@@ -85,9 +86,9 @@
       <div id="logo">
 
         <?php
-        if ($site_name) {
+        if ($site_name) :
           print "<h2>" . $site_name . "</h2>";
-        }
+        endif;
         ?>
       </div>
       <?php if (isset($main_menu)) : ?>
@@ -102,20 +103,20 @@
     <div id="app">
       <?php
       print render($title_prefix);
-      //Error Details
+      // Error Details.
       print '<h1 id="page-title">' . $http_status . '</h1>';
       print render($title_suffix);
 
-      if ($action_links) {
+      if ($action_links) :
         print '<ul class="links">' . render($action_links) . '</ul>';
-      }
+      endif;
       ?>
       <div id="content-wrap">
         <div id="content" class="<?php print $content_class; ?>">
 
           <div class="error-message">
             <?php
-            // Error message
+            // Error message.
             print $messages;
             ?>
           </div>
@@ -132,26 +133,26 @@
     <!-- /app-->
 
     <?php
-    if ($page['footer_top']) {
+    if ($page['footer_top']) :
       print render($page['footer_top']);
-    }
+    endif;
     ?>
     <div id="footer" class="cell">
 
 
       <?php
-      if ($page['footer']) {
+      if ($page['footer']) :
         print render($page['footer']);
-      }
+      endif;
       ?>
     </div>
     <!-- /#footer -->
 
     <?php if ($page['footer_bottom'] || $copyright) : ?>
       <div id="footer-bottom" class="cell">
-        <?php if ($page['footer_bottom']) : ?>
-          <?php print render($page['footer_bottom']); ?>
-        <?php endif; ?>
+        <?php if ($page['footer_bottom']) :
+          print render($page['footer_bottom']);
+        endif; ?>
 
         <?php if ($copyright): ?>
           <div id="copyright"><?php print $copyright; ?></div>

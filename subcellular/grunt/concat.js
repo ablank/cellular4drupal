@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt concat
+ * Configure grunt concat.
  */
 
 module.exports = {
@@ -20,5 +20,5 @@ module.exports = {
             'js/etc.js',
         ],
         dest: 'js/concat.js',
-    },
+    }
 };

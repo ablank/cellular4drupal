@@ -62,23 +62,19 @@ $ui_themes = array(
   'vader'          => t('vader'),
 );
 
-// Start js opts
+// Start js opts.
 $form['c']['js'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('Javascript'),
-  '#description' => is_dir('sites/all/libraries/cellular')
-      ? NULL
-      :
+  '#description' => is_dir('sites/all/libraries/cellular') ? NULL :
       t('<div class="messages error"> <h2>These features require the
 <a href="@url">Cellular Library</a>.</h2>
-</div>', array(
-        '@url' => 'https://github.com/ablank/cellular.library'
-      )),
+</div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,
-  '#collapsed'   => TRUE
+  '#collapsed'   => TRUE,
 );
 
-// Modernizr stuff
+// Modernizr stuff.
 $form['c']['js']['mdrnzr'] = array(
   '#type'          => 'checkbox',
   '#title'         => l(t('Modernizr'), 'http://modernizr.com/'),
@@ -221,7 +217,7 @@ $form['c']['js']['update']['cdn'] = array(
   ),
 );
 
-// jQuery stuff
+// jQuery stuff.
 $form['c']['js']['update']['jquery'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('jQuery'),
@@ -238,7 +234,7 @@ $form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#default_value' => theme_get_setting('jquery_version'),
 );
 
-// jQuery.ui stuff
+// jQuery.ui stuff.
 $form['c']['js']['update']['jqueryui'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('jQuery UI'),
