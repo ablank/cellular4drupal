@@ -4,7 +4,7 @@
  * Default theme implementation to display a region.
  */
 
-/* Available variables:
+/* VARIABLES:
 * - $content: The content for this region, typically blocks.
 * - $classes: String of classes that can be used to style contextually through
 *   CSS. It can be manipulated through the variable $classes_array from
@@ -27,7 +27,7 @@
 ?>
 
 <?php
-
-if ($content) {
+// Just print content, no extra markup.
+if ($content) :
   print $content;
-}
+endif;

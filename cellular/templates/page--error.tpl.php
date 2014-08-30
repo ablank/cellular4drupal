@@ -101,7 +101,7 @@
     <div id="app">
       <?php
       print render($title_prefix);
-      //Error Details
+      // Error Details.
       print '<h1 id="page-title">' . $http_status . '</h1>';
       print render($title_suffix);
 
@@ -114,7 +114,7 @@
 
           <div class="error-message">
             <?php
-            // Error message
+            // Error message.
             print $messages;
             ?>
           </div>

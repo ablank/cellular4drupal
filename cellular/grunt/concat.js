@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt concat
+ * Configure grunt concat.
  */
 
 module.exports = {

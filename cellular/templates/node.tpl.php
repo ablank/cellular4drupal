@@ -75,14 +75,14 @@
 
   <?php
   print render($title_prefix);
-  if (!$page) {
-    if ($title) {
+  if (!$page) :
+    if ($title) :
       print "<h2  $title_attributes >";
       print '<a href="' . $node_url . '">';
       print $title;
       print "</a>\n</h2>";
-    }
-  }
+    endif;
+  endif;
   print render($title_suffix);
   ?>
 
@@ -97,7 +97,6 @@
     <div class="author">
       <?php print $name; ?>
     </div>
-
   <?php endif; ?>
 
   <div<?php print $content_attributes; ?>>

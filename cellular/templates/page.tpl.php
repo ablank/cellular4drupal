@@ -121,9 +121,9 @@ two sidebars displayed.
     <div id="app">
       <?php
       print render($title_prefix);
-      if ($title) {
+      if ($title) :
         print '<h1 id="page-title">' . $title . '</h1>';
-      }
+      endif;
       print render($title_suffix);
       ?>
       <?php if ($tabs): ?>
@@ -166,14 +166,14 @@ two sidebars displayed.
           <div id="content" class="<?php print $content_class; ?>">
 
             <?php
-            // Breadcrumb Navigation
+            // Breadcrumb Navigation.
             if (theme_get_setting('breadcrumb_display' && !$is_front)) :
               print $breadcrumb;
             endif;
             ?>
 
             <?php
-            // Main Content
+            // Main Page Content.
             print render($page['content']);
             ?>
 

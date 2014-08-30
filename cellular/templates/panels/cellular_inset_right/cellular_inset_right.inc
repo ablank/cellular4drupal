@@ -19,4 +19,3 @@ $plugin = array(
     'right'  => t('Right Inset'),
   ),
 );
-
