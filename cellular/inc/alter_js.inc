@@ -4,14 +4,14 @@
  * Add/Update/Delete javascript
  */
 
-/*
+/**
  * hook_js_alter()
  */
 
 function cellular_js_alter(&$javascript) {
   global $base_url, $theme_path, $cellular_lib;
 
-// Pass variable from drupal to js
+// Pass a variable from drupal to js:
 //  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
   /* myVar will be available in Javascript as:
     <script>
@@ -105,14 +105,14 @@ function cellular_js_alter(&$javascript) {
     $js_plugins = array_merge($js_plugins, $gsap);
   }
 
-// Update jQuery & jQueryUI
+// Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
       $v_jq = theme_get_setting('jquery_version');
       $v_jqui = theme_get_setting('jqueryui_version');
     $jq_cdn =  theme_get_setting('jquery_cdn');
 
     if($jq_cdn === 1) {
-      // Available cdns & path to scripts
+      // Available cdns & path to scripts.
       $networks = array(
         'google'     => array(
           'base_url' => '//ajax.googleapis.com/ajax/libs/',
@@ -130,7 +130,7 @@ function cellular_js_alter(&$javascript) {
           'jqueryui' => "jquery.ui/$vjqui/jquery-ui.min.js"
         ),
       );
-      // Select cdn to use
+      // Select cdn to use.
       $cdn = $networks[theme_get_setting('cdn')];
     }
 
@@ -146,7 +146,7 @@ function cellular_js_alter(&$javascript) {
       );
     }
 
-// Override jQuery
+// Override jQuery.
       $jquery = array(
         'default'    => 'misc/jquery.js', //default script
         'object'     => 'jQuery', // window.object
@@ -229,13 +229,13 @@ function cellular_js_alter(&$javascript) {
           );
 
           if (theme_get_setting('jquery_cdn') === 1) {
-            // If updating from cdn unset each widget so a single call can be made
+            // If updating from cdn unset each widget so a single call can be made.
             unset($javascript[$default]);
-            // Set cdn source
+            // Set cdn source.
             $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
-            // Set lower weight so cdn is delivered before fallbacks
+            // Set lower weight so cdn is delivered before fallbacks.
             $script['jqueryui']['weight'] = -10;
-            // Add single link to cdn, with local fallback to each file
+            // Add single link to cdn, with local fallback to each file.
             cellular_add_js($script, TRUE);
           }
           else {
@@ -245,10 +245,9 @@ function cellular_js_alter(&$javascript) {
       }
   }
 
-// Add js after override
+// Add js after override.
   cellular_add_js($js_plugins, TRUE);
   cellular_add_js($scripts);
-  //dsm($javascript);
 
   if (theme_get_setting('modernizr') == 1) {
 // Get full path to css directory
@@ -302,4 +301,5 @@ function cellular_js_alter(&$javascript) {
       'weight'     => -999
     ));
   }
+  // dsm($javascript);
 }

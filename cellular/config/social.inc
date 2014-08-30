@@ -1,18 +1,25 @@
 <?php
 /**
  * @file
- * Theme-settings: Social media link settings
+ * Theme-settings: Social media link settings.
  */
-
 
 $form['c']['social_media'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('Social Media'),
-  '#description' => t("Settings for enabling easy sharing with social media sites."),
+  '#description' => is_dir('sites/all/libraries/cellular')
+      ? NULL
+      :
+      t('<div class="messages error"> <h2>These features require the
+<a href="@url">Cellular Library</a>.</h2>
+</div>', array(
+        '@url' => 'https://github.com/ablank/cellular.library'
+      )),
   '#collapsible' => TRUE,
   '#collapsed'   => FALSE
 );
 
+// Modernizr is used to show icons
 $form['c']['social_media']['social_media_share'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Share this site'),
@@ -168,3 +175,4 @@ $form['c']['social_media']['follow']['follow_github_url'] = array(
     ),
   ),
 );
+

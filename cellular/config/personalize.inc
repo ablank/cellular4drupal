@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Theme-settings: Set copyright & favicons
+ * Theme-settings: Set copyright & favicons.
  */
 
 

@@ -104,6 +104,9 @@ settings[share_linkedin]        = 0
 settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
 
+;----------// Development
+settings[dev]                   = favicon.ico
+
 ;----------// Plugins
 plugins[panels][layouts] = templates/panels
 

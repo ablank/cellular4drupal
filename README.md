@@ -49,12 +49,12 @@ Cellular uses theme functions rather than theme settings (.INFO files) to add/up
 ### Included/Optional Javascript Libraries
 
 * __jQuery Update__
-Update jQuery to the version of your choice (1.8.2, 1.7.1, 1.5.1, 1.4.4) without breaking Views from the Google or MS CDN with a local fallback 
+Update jQuery to the version of your choice (1.11.1, 1.10.2, 1.9.1, 1.8.3, 1.7.2, 1.6.4, 1.5.2, 1.4.4) without breaking Views. Loads from the Cloudflare, Google, or MS CDNs with a local fallback. 
+  * The jquery.migrate module is automatically loaded for versions >= 1.9.x for backward compatibility.
 
 * __jQuery UI Update__
-Update jQueryUI to the version of your choice (1.10.1, 1.9.2, 1.8.11, 1.8.7)
-
-Select the UI theme of your choice, or use the CUSTOM flat UI style for a lightweight theme that matches your site.
+Update jQueryUI to the version of your choice (1.10.4, 1.9.2, 1.8.24).
+  * Select the UI theme of your choice, or use the CUSTOM flat UI style (`/sass/jquery-ui`) for a lightweight theme that matches your site.
 
 * __Cellular UI__
 UI elements (accordions, tabs, mobile menu, etc.) built for easy integration with Views.
@@ -82,13 +82,14 @@ Code syntax hilighter.
 
 ## Known Issues
 
-* __(Warning)__ Drupal doesn't like it when you take control of the logo & favicon 
+* __Notice:__ Undefined index: logo_path__
+* __Notice:__ Undefined index: favicon_path...
  
-* __[Solution]__ Change the Global theme settings at `/admin/appearance/settings/` by deselecting 'Logo' and 'Shortcut icon'.
+  * __[Solution]__ tbd... Drupal doesn't like it when you take control of the logo & favicon. Providing the option to upload files that are never used just to get rid of this seems like a bad idea and confusing for themers.
 
 * __(Warning)__ Drupal doesn't like `/node_modules/` used by grunt. 
 
-* __[Solution]__ Don't push `/node_modules/` to production. 
+  * __[Solution]__ Don't push `/node_modules/` to production. 
 
 
 ## Planned Updates

@@ -1,11 +1,13 @@
 <?php
 /**
  * @file
- * Theme-settings: Javascript options
- * * jQuery & jQuery.ui versions are set here.
+ * Theme-settings: Javascript options.
  */
 
-// jQuery CDN opts
+// jQuery CDN options.
+/*
+ * jQuery & jQuery.ui version options are from this array.
+ */
 $cdn = array(
   'provider' => array(
     'cloudflare' => t('Cloudflare'),
@@ -30,7 +32,7 @@ $cdn = array(
   ),
 );
 
-// jQuery.ui themes
+// Available jQuery.ui themes.
 $ui_themes = array(
   'custom'         => t('CUSTOM'),
   'base'           => t('base'),
@@ -64,15 +66,24 @@ $ui_themes = array(
 $form['c']['js'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('Javascript'),
+  '#description' => is_dir('sites/all/libraries/cellular')
+      ? NULL
+      :
+      t('<div class="messages error"> <h2>These features require the
+<a href="@url">Cellular Library</a>.</h2>
+</div>', array(
+        '@url' => 'https://github.com/ablank/cellular.library'
+      )),
   '#collapsible' => TRUE,
-  '#collapsed'   => FALSE
+  '#collapsed'   => TRUE
 );
 
 // Modernizr stuff
 $form['c']['js']['mdrnzr'] = array(
   '#type'          => 'checkbox',
   '#title'         => l(t('Modernizr'), 'http://modernizr.com/'),
-  '#description'   => t("Include Modernizr.js to test  browser capabilities and load resources as needed."),
+  '#description'   => t("Include Modernizr.js to test  browser capabilities and
+  load resources as needed."),
   '#default_value' => theme_get_setting('modernizr'),
 );
 
@@ -82,7 +93,7 @@ $form['c']['js']['Modernizr'] = array(
   '#title'       => t('Modernizr'),
   '#description' => t("Browser testing & conditional resource loading."),
   '#collapsible' => TRUE,
-  '#collapsed'   => TRUE,
+  '#collapsed'   => FALSE,
   '#states'      => array(
     'visible' => array(
       ':input[name="mdrnzr"]' => array('checked' => TRUE),
@@ -93,7 +104,8 @@ $form['c']['js']['Modernizr'] = array(
 $form['c']['js']['Modernizr']['mq_mobile_enable'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Enable Mobile Media Query'),
-  '#description'   => t("Enable media query to load extra CSS (conditional-mobile.css) for mobile devices."),
+  '#description'   => t("Enable media query to load extra CSS
+  (conditional-mobile.css) for mobile devices."),
   '#default_value' => theme_get_setting('mq_mobile_enable'),
   '#states'        => array(
     'visible' => array(
@@ -104,7 +116,9 @@ $form['c']['js']['Modernizr']['mq_mobile_enable'] = array(
 $form['c']['js']['Modernizr']['mq_mobile'] = array(
   '#type'          => 'textfield',
   '#title'         => t('Mobile Media Query'),
-  '#description'   => t("The media query tested by Modernizr load extra CSS for mobile devices. This should match the @media setting in conditional-mobile.css."),
+  '#description'   => t("The media query tested by Modernizr load
+  extra CSS for mobile devices. This should match the @media setting in
+  conditional-mobile.css."),
   '#default_value' => theme_get_setting('mq_mobile'),
   '#states'        => array(
     'visible' => array(
@@ -116,7 +130,8 @@ $form['c']['js']['Modernizr']['mq_mobile'] = array(
 $form['c']['js']['Modernizr']['mq_normal_enable'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Enable Desktop Media Query'),
-  '#description'   => t("Enable media query to test before loading conditional-style.css."),
+  '#description'   => t("Enable media query to test before loading
+  conditional-style.css."),
   '#default_value' => theme_get_setting('mq_normale_enable'),
   '#states'        => array(
     'visible' => array(
@@ -139,7 +154,8 @@ $form['c']['js']['Modernizr']['mq_normal'] = array(
 $form['c']['js']['Modernizr']['mq_large_enable'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Enable Conditional Large Media Query'),
-  '#description'   => t("Enable media query to load extra CSS (conditional-large.css) for large screen devices."),
+  '#description'   => t("Enable media query to load extra CSS
+  (conditional-large.css) for large screen devices."),
   '#default_value' => theme_get_setting('mq_large_enable'),
   '#states'        => array(
     'visible' => array(
@@ -150,7 +166,9 @@ $form['c']['js']['Modernizr']['mq_large_enable'] = array(
 $form['c']['js']['Modernizr']['mq_large'] = array(
   '#type'          => 'textfield',
   '#title'         => t('Large Screen Media Query'),
-  '#description'   => t("The media query tested by Modernizr load extra CSS for large devices. This should match the @media setting in conditional-large.css."),
+  '#description'   => t("The media query tested by Modernizr load extra CSS for
+   large devices. This should match the @media setting in
+   conditional-large.css."),
   '#default_value' => theme_get_setting('mq_large'),
   '#states'        => array(
     'visible' => array(
@@ -163,13 +181,12 @@ $form['c']['js']['Modernizr']['mq_large'] = array(
 $form['c']['js']['jquery_update'] = array(
   '#type'          => 'checkbox',
   '#title'         => t('Update jQuery & jQuery UI'),
-  '#description'   => t("Update jQuery & jQueryUI to newer version,
-  loading first from CDN with a local fallback source if the CDN script
-   is unavailable."),
+  '#description'   => t("Select the version of jQuery & jQueryUI to use.
+  jquery.once and jquery.form will be updated to current version."),
   '#default_value' => theme_get_setting('jquery_update'),
 );
 
-// jQuery & jQuery.ui update settings
+// jQuery & jQuery.ui update settings.
 $form['c']['js']['update'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('jQuery & jQuery.ui Settings'),
@@ -215,7 +232,8 @@ $form['c']['js']['update']['jquery'] = array(
 $form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#type'          => 'select',
   '#title'         => t('jQuery Version'),
-  '#description'   => t("Select the version of jQuery your site will use."),
+  '#description'   => t("Select the version of jQuery your site will use.
+  The jQuery.migrate module will be loaded automatically for versions > 1.9"),
   '#options'       => $cdn['jquery'],
   '#default_value' => theme_get_setting('jquery_version'),
 );
@@ -231,14 +249,18 @@ $form['c']['js']['update']['jqueryui'] = array(
 $form['c']['js']['update']['jqueryui']['jqueryui_version'] = array(
   '#type'          => 'select',
   '#title'         => t('jQueryUI Version'),
-  '#description'   => t("Select the version of jQueryUI your site will use. \nYou will need to match a  version compatible with the selected jQuery version."),
+  '#description'   => t("Select the version of jQueryUI your site will use.
+  \nYou will need to match a  version compatible with the selected jQuery
+  version."),
   '#options'       => $cdn['jqueryui'],
   '#default_value' => theme_get_setting('jqueryui_version'),
 );
 $form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
   '#type'          => 'select',
   '#title'         => t('jQueryUI Theme'),
-  '#description'   => t("Select the jQueryUI theme your site will use.  \nCustom themes can be used by copying the contents (css & /images) of the themeroller css directory to \n/sites/all/themes/cellular/css/jquery-ui/%version/custom\n
+  '#description'   => t("Select the jQueryUI theme your site will use.
+  \nCustom themes can be used by copying the contents (css & /images) of the themeroller
+  css directory to \n/sites/all/themes/cellular/css/jquery-ui/%version/custom\n
             The custom CSS file must be re-named as: \n
             jquery-ui.custom.css
             "),
@@ -246,6 +268,7 @@ $form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
   '#default_value' => theme_get_setting('jqueryui_theme'),
 );
 
+// Pre-configured 3rd party plugins.
 $form['c']['js']['plugins'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('JS Plugins'),

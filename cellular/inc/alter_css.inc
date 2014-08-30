@@ -1,20 +1,25 @@
 <?php
 /**
  * @file
- * Add/Update/Delete stylesheets
+ * Add/Update/Delete stylesheets.
  */
 
-/*
+/**
 * hook_css_alter()
 */
 
 function cellular_css_alter(&$css) {
-  global $cellular_lib, $theme_path;
-// Add stylesheets to theme
-// Paths are relative to /active_theme/css/
+// Add stylesheets to theme.
   $add_css = array(
-    'drupal' => array('file' => 'drupal.css', 'weight' => 1),
-    'style'  => array('file' => 'style.css', 'weight' => 2),
+// Paths are relative to /active_theme/css/
+    'drupal' => array(
+      'file'   => 'drupal.css',
+      'weight' => 1
+    ),
+    'style'  => array(
+      'file'   => 'style.css',
+      'weight' => 2
+    ),
     'print'  => array(
       'file'       => 'print.css',
       'media'      => 'print',
@@ -24,7 +29,7 @@ function cellular_css_alter(&$css) {
   );
 
 
-// Plugins available through cellular, styles added based on theme settings
+// Plugins available through cellular, styles added based on theme settings.
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ? array(
@@ -33,7 +38,7 @@ function cellular_css_alter(&$css) {
   );
 
   if (theme_get_setting('jquery_update') == 1) {
-// Update the jQuery UI theme
+// Update the jQuery UI theme.
     $ui = array();
     $ui['update'] = NULL;
     $ui['version'] = theme_get_setting('jqueryui_version');
@@ -58,10 +63,10 @@ function cellular_css_alter(&$css) {
     foreach ($ui['widgets'] as $widget) {
       $default = "misc/ui/jquery.$widget.css";
       if (isset($css[$default])) {
-        // Unset default style
+        // Unset default style.
         unset ($css[$default]);
-        // Check if stylesheet is already added
-        // Set path to updated file
+        // Check if stylesheet is already added.
+        // Set path to updated file.
         $file = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
         $file .= 'jquery.ui.theme.css';
 
@@ -120,7 +125,7 @@ function cellular_css_alter(&$css) {
     $css = array_diff_key($css, $exclude);
   }
 
-// Nuke  all SYSTEM css
+// Nuke  all SYSTEM css.
   if (theme_get_setting('remove_all_core_css') == 1) {
     foreach ($css as $key => $value) {
       if ($value['group'] == CSS_SYSTEM) {
@@ -130,9 +135,9 @@ function cellular_css_alter(&$css) {
     $css = array_diff_key($css, $exclude);
   }
 
-// Remove Drupal's core CSS
+// Remove Drupal's core css.
   if (theme_get_setting('remove_core_css') == 1) {
-// Select module css to exclude
+// Select module css to exclude.
     $exclude = array(
       'system'   => array(
         'system.base.css',

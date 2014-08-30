@@ -192,7 +192,7 @@ function cellular_remove_css(&$css, $exclude) {
 }
 
 /*
- *  Override javascript
+ *  Override stylesheets
  */
 
 function cellular_css_override(&$css, $style, $cellular = FALSE) {
@@ -226,13 +226,12 @@ function cellular_form_strip_access(&$form) {
   // Nuke text format options
   $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
 
-  // Remove individual text format options
-  /*
-    $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
-    $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
-    $form[LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
-    $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
-   */
+// Remove individual text format options
+    // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+    // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+    // $form[LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+    // $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
+
 
   return $form;
 }
@@ -276,12 +275,3 @@ function cellular_test_sidebar(&$vars) {
 
   return $sidebars;
 }
-
-/*
- * Get links to cdn jQuery & jQuery.ui
- */
-/*
-function cellular_get_cdn(&$vars) {
-
-}
-*/
