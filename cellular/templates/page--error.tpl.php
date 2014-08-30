@@ -1,11 +1,10 @@
 <?php
-/*
+/**
  * @file
- * Automated error page
+ * Automated error page.
  */
-/*
 
-  Regions:
+/* Regions:
   - $page['console']: Help, warnings, & other system notifications
   - $page['header']: Page Header
   - $page['nav']: System Navigation

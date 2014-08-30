@@ -1,8 +1,7 @@
 <?php
 /**
  * @file
- * Block template
- */
+ * Block template.
 /*
 
   Variables:

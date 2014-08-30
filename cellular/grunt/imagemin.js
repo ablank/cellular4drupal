@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt imagemin
+ * Configure grunt imagemin.
  */
 
 module.exports = {

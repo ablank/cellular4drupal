@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- *  Page Template
+ * Page Template.
  */
 
 /* VARIABLES

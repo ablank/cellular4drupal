@@ -1,7 +1,8 @@
 /**
  * @file
- * Configure grunt svgmin
+ * Configure grunt svgmin.
  */
+
 module.exports = {
     images: {// Dictionary of files
         expand: true, // Enable dynamic expansion.

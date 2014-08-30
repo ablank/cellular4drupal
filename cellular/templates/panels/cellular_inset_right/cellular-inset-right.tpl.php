@@ -2,13 +2,15 @@
 /**
  * @file
  * Template for the Inset Right column panel layout.
- * Variables:
- *  $content['top']
- *  $content['left']
- *  $content['middle']
- *  $content['right']
- *  $content['bottom']
  */
+
+/* Variables:
+*  $content['top']
+*  $content['left']
+*  $content['middle']
+*  $content['right']
+*  $content['bottom']
+*/
 ?>
 
 <div class="cell" <?php

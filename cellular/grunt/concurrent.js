@@ -1,6 +1,6 @@
 /**
  * @file
- * Configure grunt concurrent tasks
+ * Define grunt tasks to run concurrently..
  */
 
 module.exports = {
@@ -8,13 +8,13 @@ module.exports = {
     prod1: [
         'compass:prod',
         'imagemin',
-        'svgmin',
-        //'concat',
+        'svgmin'
+        // 'concat',
     ],
     prod2: [
         'uglify:prod'
-        //'grunticon',
-        //'svg2png',
+        // 'grunticon',
+        // 'svg2png',
     ],
     prod3: [
         'jshint'
@@ -23,14 +23,14 @@ module.exports = {
 
     dev1: [
         'concat',
-        'compass:dev',
+        'compass:dev'
     ],
     dev2: [
-        'newer:uglify:dev',
+        'newer:uglify:dev'
     ],
     dev3: [
-        'svg2png',
-        //'grunticon'
-    ],
+        'svg2png'
+        // 'grunticon'
+    ]
     // dev4: [],
 };

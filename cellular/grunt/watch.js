@@ -8,14 +8,14 @@ module.exports = {
         files: ['js/*.js', 'js/**/*.js'],
         tasks: [
             'uglify',
-            'jshint',
+            'jshint'
         ],
         options: {
             interrupt: true,
-        },
+        }
     },
     styles: {
         files: ['sass/*.scss', 'sass/**/*.scss'],
         tasks: ['compass:dev']
-    },
+    }
 };

@@ -2,12 +2,14 @@
 /**
  * @file
  * Template for a 2 column (70%/30%) panel layout.
- * Variables:
- *  $content['top']
- *  $content['left']
- *  $content['right']
- *  $content['bottom']
  */
+
+/* Variables:
+*  $content['top']
+*  $content['left']
+*  $content['right']
+*  $content['bottom']
+*/
 
 ?>
 <div class="cell" <?php

@@ -20,5 +20,5 @@ module.exports = {
             'js/etc.js',
         ],
         dest: 'js/concat.js',
-    },
+    }
 };

@@ -12,11 +12,9 @@ $form['c']['social_media'] = array(
       :
       t('<div class="messages error"> <h2>These features require the
 <a href="@url">Cellular Library</a>.</h2>
-</div>', array(
-        '@url' => 'https://github.com/ablank/cellular.library'
-      )),
+</div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,
-  '#collapsed'   => FALSE
+  '#collapsed'   => FALSE,
 );
 
 // Modernizr is used to show icons
@@ -175,4 +173,3 @@ $form['c']['social_media']['follow']['follow_github_url'] = array(
     ),
   ),
 );
-

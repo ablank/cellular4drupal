@@ -4,12 +4,11 @@
  * Theme-settings: Set copyright & favicons.
  */
 
-
 $form['c']['personalize'] = array(
   '#type'        => 'fieldset',
   '#title'       => t('Personalize'),
   '#collapsible' => TRUE,
-  '#collapsed'   => FALSE
+  '#collapsed'   => FALSE,
 );
 
 $form['c']['personalize']['copyright'] = array(
@@ -24,7 +23,7 @@ $form['c']['personalize']['favicons'] = array(
   '#title'       => t('Favicons'),
   '#description' => t("Favicons are used by browsers to provide a graphic identity for your site."),
   '#collapsible' => TRUE,
-  '#collapsed'   => TRUE
+  '#collapsed'   => TRUE,
 );
 
 $form['c']['personalize']['favicons']['favicon'] = array(
@@ -45,7 +44,7 @@ $form['c']['personalize']['favicons']['apple_icons'] = array(
   '#title'       => t('Apple-touch-icons'),
   '#description' => t("Apple-touch-icons used by smartphones & tablets. All images should use the .PNG format. Icons that are to be rendered without the default gloss should use the suffix '-precomposed' in the  file name."),
   '#collapsible' => TRUE,
-  '#collapsed'   => FALSE
+  '#collapsed'   => FALSE,
 );
 $form['c']['personalize']['favicons']['apple_icons']['apple_icon_57'] = array(
   '#type'          => 'textfield',

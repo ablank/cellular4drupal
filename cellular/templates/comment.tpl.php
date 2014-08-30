@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Comment template
+ * Comment template.
  */
-/*
-  Variables:
+
+/*  Variables:
  * - $author: Comment author. Can be link or plain text.
  * - $content: An array of comment items. Use render($content) to print them all, or
  *   print a subset such as render($content['field_example']). Use

@@ -2,13 +2,14 @@
 /**
  * @file
  * Template for a 2 equal column (50%/50%) panel layout.
- * Variables:
- *  $content['top']
- *  $content['left']
- *  $content['right']
- *  $content['bottom']
  */
 
+/* Variables:
+*  $content['top']
+*  $content['left']
+*  $content['right']
+*  $content['bottom']
+*/
 ?>
 <div class="cell" <?php
 if (!empty($css_id)) {

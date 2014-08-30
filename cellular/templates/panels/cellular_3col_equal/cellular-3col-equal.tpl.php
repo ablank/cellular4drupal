@@ -2,7 +2,9 @@
 /**
  * @file
  * Template for a 3 equal columns (33%/33%/33%) panel layout.
- * Variables:
+ */
+
+/* Variables:
  *  $content['top']
  *  $content['left']
  *  $content['middle']

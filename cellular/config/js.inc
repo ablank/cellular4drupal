@@ -4,8 +4,8 @@
  * Theme-settings: Javascript options.
  */
 
-// jQuery CDN options.
 /*
+ * jQuery CDN options.
  * jQuery & jQuery.ui version options are from this array.
  */
 $cdn = array(
@@ -32,7 +32,7 @@ $cdn = array(
   ),
 );
 
-// Available jQuery.ui themes.
+// Available jQuery.ui themes:
 $ui_themes = array(
   'custom'         => t('CUSTOM'),
   'base'           => t('base'),
@@ -259,11 +259,11 @@ $form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
   '#type'          => 'select',
   '#title'         => t('jQueryUI Theme'),
   '#description'   => t("Select the jQueryUI theme your site will use.
-  \nCustom themes can be used by copying the contents (css & /images) of the themeroller
-  css directory to \n/sites/all/themes/cellular/css/jquery-ui/%version/custom\n
-            The custom CSS file must be re-named as: \n
-            jquery-ui.custom.css
-            "),
+    \nCustom themes can be used by copying the contents (css & /images) of the
+     themeroller css directory to
+     \n/sites/all/themes/cellular/css/jquery-ui/%version/custom
+     \nThe custom CSS file must be re-named as:
+     \njquery-ui.custom.css"),
   '#options'       => $ui_themes,
   '#default_value' => theme_get_setting('jqueryui_theme'),
 );
@@ -275,24 +275,29 @@ $form['c']['js']['plugins'] = array(
   '#description' => t("Javascript plugins will load from the Cloudflare CDN,
     or use local source as fallback if CDN is unavailable."),
   '#collapsible' => TRUE,
-  '#collapsed'   => TRUE
+  '#collapsed'   => TRUE,
 );
 $form['c']['js']['plugins']['cellularjs'] = array(
   '#type'          => 'checkbox',
   '#title'         => l(t('Cellular UI'), 'http://abctahoe.net/cellular-ui'),
-  '#description'   => t("The Cellular UI library provides common UI elements that work well with Views."),
+  '#description'   => t("The Cellular UI library provides common UI elements
+    that work well with Views."),
   '#default_value' => theme_get_setting('cellularjs'),
 );
 $form['c']['js']['plugins']['d3js'] = array(
   '#type'          => 'checkbox',
   '#title'         => l(t("D3JS"), 'http://d3js.org/'),
-  '#description'   => t('D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG and CSS.'),
+  '#description'   => t('D3.js is a JavaScript library for manipulating
+    documents based on data. D3 helps you bring data to life using
+    HTML, SVG and CSS.'),
   '#default_value' => theme_get_setting('d3js'),
 );
 $form['c']['js']['plugins']['gsap'] = array(
   '#type'          => 'checkbox',
-  '#title'         => l(t('GSAP (GreenSock Animation Platform)'), 'http://www.greensock.com/gsap-js/'),
-  '#description'   => t("GSAP is a suite of tools for scripted, high-performance HTML5 animations that work in all major browsers."),
+  '#title'         => l(t('GSAP (GreenSock Animation Platform)'),
+    'http://www.greensock.com/gsap-js/'),
+  '#description'   => t("GSAP is a suite of tools for scripted,
+    high-performance HTML5 animations that work in all major browsers."),
   '#default_value' => theme_get_setting('gsap'),
 );
 $form['c']['js']['plugins']['masonry'] = array(
@@ -310,7 +315,9 @@ $form['c']['js']['plugins']['prism'] = array(
 $form['c']['js']['plugins']['smoove'] = array(
   '#type'          => 'checkbox',
   '#title'         => l(t("Smoove"), 'http://smoove.donlabs.com/'),
-  '#description'   => t('Smoove makes it easy to implement awesome CSS3 transition effects, making your content smoothly glide into the page as your scroll down the page.'),
+  '#description'   => t('Smoove makes it easy to implement awesome CSS3
+  transition effects, making your content smoothly glide into the page as your
+  scroll down the page.'),
   '#default_value' => theme_get_setting('smoove'),
 );
 $form['c']['js']['plugins']['threejs'] = array(
