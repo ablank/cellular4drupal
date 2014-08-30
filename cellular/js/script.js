@@ -1,31 +1,34 @@
 /**
  * @file
- *  Custom javascript for use in your theme
+ * Custom javascript for use in your theme.
  */
 
 (function ($) {
 
     Drupal.behaviors.theme = {
         attach: function (context, settings) {
-            /// Call cellular functions
-            $('.jAccordion').jAccordion();
-            $('.jBlocklink').jBlocklink();
-            $('form').jFormal();
-            $('.jScrolli').jScrolli();
-            $('.jTabs').jTabs({
-                //"orient": "vertical"
-            });
-            $('#nav').jMmenu();
-            //$('#nav').jStickyheader();
-            // $('.jParallax').jParallax();
-            //$('.jScrolltrigger').jScrolltrigger();
-            //$('.jCarousel').jCarousel();
-            //$('.jEqualheight').jEqualheight();
-            //
-            //$('.jToggle').jToggle();
-            //$('.jSticky').jSticky();
+            // Call cellular UI functions:
+            $('.jAccordion').jAccordion({
 
-            // Call Masonry
+            });
+            $('.jBlocklink').jBlocklink({
+
+            });
+            $('.jTabs').jTabs({
+                // "orient": "vertical"
+            });
+            $('form').jFormal();
+            $('#nav').jMmenu();
+            $('.jScrolli').jScrolli();
+            // $('#nav').jStickyheader();
+            // $('.jParallax').jParallax();
+            // $('.jScrolltrigger').jScrolltrigger();
+            // $('.jCarousel').jCarousel();
+            // $('.jEqualheight').jEqualheight();
+            // $('.jToggle').jToggle();
+            // $('.jSticky').jSticky();
+
+            // Call Masonry:
             /*
              $('.block-content').masonry({
              containerStyle: null,
@@ -35,7 +38,7 @@
              });
              */
 
-            // End Drupal.behaviors.theme
+            /* End Drupal.behaviors.theme */
         }
     };
 })(jQuery);

@@ -32,14 +32,22 @@ function cellular_form_element(&$vars) {
   $element['#theme_wrappers'] = NULL;
 
   // $attributes['class'] = array();
-  // isset($element['#name']) ? $attributes['class'][] = 'form-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => '')) : '';
-  isset($element['#disabled']) ? $element['#attributes']['class'][] = 'disabled' : NULL;
+  // isset($element['#name']) ?
+  // $attributes['class'][] = 'form-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''))
+  // : NULL;
+  isset($element['#disabled']) ?
+    $element['#attributes']['class'][] = 'disabled'
+    : NULL;
 
   $element['#theme_wrappers'] = NULL;
-  // $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+
   $output = '';
-  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
-  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+  $prefix = isset($element['#field_prefix']) ?
+    '<span class="field-prefix">' . $element['#field_prefix'] . '</span> '
+    : NULL;
+  $suffix = isset($element['#field_suffix']) ?
+    '<span class="field-suffix">' . $element['#field_suffix'] . '</span>'
+    : NULL;
 
   if (isset($element['#title_display'])) {
     switch ($element['#title_display']) {
@@ -61,7 +69,9 @@ function cellular_form_element(&$vars) {
     }
   }
 
-  isset($element['#description']) ? $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
+  isset($element['#description']) ?
+    $output .= '<div class="description">' . $element['#description'] . "</div>\n"
+    : NULL;
 
   return $output;
 }
@@ -91,7 +101,7 @@ function cellular_fieldset(&$vars) {
 }
 
 /**
- *  theme_select()
+ * theme_select()
  */
 function cellular_select(&$vars) {
   $element = $vars['element'];
@@ -112,12 +122,19 @@ function cellular_checkboxes(&$vars) {
   $element['#theme_wrappers'] = NULL;
 
   $attributes = array();
-  isset($element['#id']) ? $attributes['id'] = $element['#id'] : '';
-  isset($element['#attributes']['class']) ? $attributes['class'] .= ' ' . implode(' ', $element['#attributes']['class']) : '';
-  isset($element['#attributes']['title']) ? $attributes['title'] = $element['#attributes']['title'] : '';
+  isset($element['#id']) ?
+    $attributes['id'] = $element['#id']
+    : NULL;
+  isset($element['#attributes']['class']) ?
+    $attributes['class'] .= ' ' . implode(' ', $element['#attributes']['class'])
+    : NULL;
+  isset($element['#attributes']['title']) ?
+    $attributes['title'] = $element['#attributes']['title']
+    : NULL;
 
   $output = "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ? $element['#children'] : NULL;
+  $output .= isset($element['#children']) ?
+    $element['#children'] : NULL;
   $output .= "\n</div>\n";
 
   return $output;
@@ -131,23 +148,30 @@ function cellular_radios(&$vars) {
   $element['#theme_wrappers'] = NULL;
 
   $attributes = array();
-  isset($element['#id']) ? $attributes['id'] = $element['#id'] : '';
-  isset($element['#attributes']['class']) ? $attributes['class'] .= ' ' . implode(' ', $element['#attributes']['class']) : '';
-  isset($element['#attributes']['title']) ? $attributes['title'] = $element['#attributes']['title'] : '';
+  isset($element['#id']) ?
+    $attributes['id'] = $element['#id']
+    : NULL;
+  isset($element['#attributes']['class']) ?
+    $attributes['class'] .= ' ' . implode(' ', $element['#attributes']['class'])
+    : NULL;
+  isset($element['#attributes']['title']) ?
+    $attributes['title'] = $element['#attributes']['title']
+    : NULL;
 
   $output = "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ? $element['#children'] : NULL;
+  $output .= isset($element['#children']) ? $element['#children']
+    : NULL;
   $output .= "\n</div>\n";
 
   return $output;
 }
 
 /**
- *  theme_checkbox()
+ * theme_checkbox()
  */
 function cellular_checkbox(&$vars) {
   $element = $vars['element'];
-  //$element['#theme_wrappers'] = null;
+  // $element['#theme_wrappers'] = null;
   $element['#attributes']['type'] = 'checkbox';
   if (!empty($element['#checked'])) {
     $element['#attributes']['checked'] = 'checked';
@@ -170,7 +194,10 @@ function cellular_radio(&$vars) {
   $element['#theme_wrappers'] = NULL;
 
   $element['#attributes']['type'] = 'radio';
-  if (isset($element['#return_value']) && $element['#value'] !== FALSE && $element['#value'] == $element['#return_value']) {
+  if (isset($element['#return_value']) &&
+    $element['#value'] !== FALSE &&
+    $element['#value'] == $element['#return_value']
+  ) {
     $element['#attributes']['checked'] = 'checked';
   }
   /*
@@ -181,7 +208,7 @@ function cellular_radio(&$vars) {
     'name',
     'id',
     '#return_value' => 'value',
-    'class'
+    'class',
   ));
 
   return "<input" . drupal_attributes($element['#attributes']) . " />";
@@ -195,12 +222,22 @@ function cellular_textfield(&$vars) {
   $element['#theme_wrappers'] = NULL;
 
   $element['#attributes'] = array(
-    'name'      => isset($element['#name']) ? $element['#name'] : '',
-    'id'        => isset($element['#id']) ? $element['#id'] : '',
-    'value'     => isset($element['#value']) ? $element['#value'] : NULL,
     'type'      => 'text',
-    'size'      => isset($element['#size']) ? $element['#size'] : 32,
-    'maxlength' => isset($element['#maxlength']) ? $element['#maxlength'] : 64,
+    'name'      => isset($element['#name']) ?
+        $element['#name']
+        : NULL,
+    'id'        => isset($element['#id']) ?
+        $element['#id']
+        : NULL,
+    'value'     => isset($element['#value']) ?
+        $element['#value']
+        : NULL,
+    'size'      => isset($element['#size']) ?
+        $element['#size']
+        : 32,
+    'maxlength' => isset($element['#maxlength']) ?
+        $element['#maxlength']
+        : 64,
     // 'class' => array(/* 'class1', 'class2', 'etc' */),
   );
 
@@ -217,11 +254,21 @@ function cellular_textarea(&$vars) {
   $element['#theme_wrappers'] = NULL;
 
   $element['#attributes'] = array(
-    'name'  => isset($element['#name']) ? $element['#name'] : '',
-    'id'    => isset($element['#id']) ? $element['#id'] : '',
-    'value' => isset($element['#value']) ? $element['#value'] : '',
-    'cols'  => isset($element['#cols']) ? $element['#cols'] : 60,
-    'rows'  => isset($element['#rows']) ? $element['#rows'] : 5,
+    'name'  => isset($element['#name']) ?
+        $element['#name']
+        : NULL,
+    'id'    => isset($element['#id']) ?
+        $element['#id']
+        : NULL,
+    'value' => isset($element['#value']) ?
+        $element['#value']
+        : NULL,
+    'cols'  => isset($element['#cols']) ?
+        $element['#cols']
+        : 60,
+    'rows'  => isset($element['#rows']) ?
+        $element['#rows']
+        : 5,
     // 'class' => array(/* 'class1', 'class2', 'etc' */),
   );
 

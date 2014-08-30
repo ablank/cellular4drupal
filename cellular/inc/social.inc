@@ -5,8 +5,7 @@
  */
 
 /**
- * cellular_social_media_follow()
- * Social media follow links
+ * Generate Social media follow links.
  */
 function cellular_social_media_follow() {
   $output = '';
@@ -82,8 +81,7 @@ function cellular_social_media_follow() {
 }
 
 /**
- * cellular_social_media_share()
- *  Social media share links
+ * Generate Social media share links.
  */
 function cellular_social_media_share() {
   global $base_url;

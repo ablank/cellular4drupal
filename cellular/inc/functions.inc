@@ -1,35 +1,34 @@
 <?php
 /**
  * @file
- * General utility functions.
+ * Cellular utility functions.
  */
 
 /**
- * cellular_theme_path()
  * Get path to current theme. Call
  */
 function cellular_theme_path(&$theme_key = NULL) {
-  $t_theme = isset($theme_key) ? $theme_key : $GLOBALS['theme'];
+  $t_theme = isset($theme_key) ?
+    $theme_key : $GLOBALS['theme'];
   $theme_path = drupal_get_path('theme', $t_theme);
 
   return $theme_path;
 }
 
 /**
- * cellular_merge()
  * Merge attributes arrays.
  */
 function cellular_merge(&$arr) {
   $output = '';
   foreach ($arr as $a) {
-    $output .= (is_array($a)) ? implode_r(' ', $a) : " " . $a;
+    $output .= (is_array($a)) ?
+      implode_r(' ', $a) : " " . $a;
   }
 
   return $output;
 }
 
 /**
- * cellular_build_head_tags()
  * Add <link> & <meta> tags from an array.
  */
 function cellular_build_head_tags(&$array) {
@@ -41,26 +40,33 @@ function cellular_build_head_tags(&$array) {
       '#type'       => 'html_tag',
       '#tag'        => $val['tag'],
       '#attributes' => array(),
-      '#weight'     => isset($val['weight']) ? $val['weight'] : $base_weight
+      '#weight'     => isset($val['weight']) ?
+          $val['weight'] : $base_weight
     );
 
     // Misc. attr/val:
-    isset($val['attr']) && isset($val['attr_val']) ? $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
+    isset($val['attr']) && isset($val['attr_val']) ?
+      $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
     // General attributes:
-    isset($val['name']) ? $tag['#attributes']['name'] = $val['name'] : NULL;
-    isset($val['rel']) ? $tag['#attributes']['rel'] = $val['rel'] : NULL;
-    isset($val['content']) ? $tag['#attributes']['content'] = $val['content'] : NULL;
-    isset($val['href']) ? $tag['#attributes']['href'] = $val['href'] : NULL;
+    isset($val['name']) ?
+      $tag['#attributes']['name'] = $val['name'] : NULL;
+    isset($val['rel']) ?
+      $tag['#attributes']['rel'] = $val['rel'] : NULL;
+    isset($val['content']) ?
+      $tag['#attributes']['content'] = $val['content'] : NULL;
+    isset($val['href']) ?
+      $tag['#attributes']['href'] = $val['href'] : NULL;
     // Attributes for favicons:
-    isset($val['size']) ? $tag['#attributes']['sizes'] = $val['size'] : NULL;
-    isset($val['type']) ? $tag['#attributes']['type'] = $val['type'] : NULL;
+    isset($val['size']) ?
+      $tag['#attributes']['sizes'] = $val['size'] : NULL;
+    isset($val['type']) ?
+      $tag['#attributes']['type'] = $val['type'] : NULL;
 
     drupal_add_html_head($tag, 'meta_' . $meta);
   }
 }
 
 /**
- * cellular_add_js()
  * Add array of javascripts to $javascript, using a CDN if provided.
  * A fallback link will be automatically generated if using CDN and
  * the 'object' value is provided.
@@ -69,18 +75,24 @@ function cellular_add_js($array, $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
       // Set default attributes.
-      $script['type'] = isset($script['cdn']) ? 'external' : 'file';
-      $script['version'] = isset($script['version']) ? $script['version'] : NULL;
-      $script['group'] = isset($script['group']) ? $script['group'] : JS_THEME;
-      $script['every_page'] = isset($script['every_page']) ? $script['every_page'] : TRUE;
-      $script['weight'] = isset($script['weight']) ? $script['weight'] : 0;
+      $script['type'] = isset($script['cdn']) ?
+        'external' : 'file';
+      $script['version'] = isset($script['version']) ?
+        $script['version'] : NULL;
+      $script['group'] = isset($script['group']) ?
+        $script['group'] : JS_THEME;
+      $script['every_page'] = isset($script['every_page']) ?
+        $script['every_page'] : TRUE;
+      $script['weight'] = isset($script['weight']) ?
+        $script['weight'] : 0;
 
       if (!empty($script['cdn'])) {
         $data = $script['cdn'];
         cellular_js_fallback($script, $cellular);
       }
       else {
-        $data = $cellular ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+        $data = $cellular ?
+          $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
         $data .= '/js/' . $script['file'];
       }
 
@@ -90,7 +102,6 @@ function cellular_add_js($array, $cellular = FALSE) {
 }
 
 /**
- * cellular_js_fallback()
  * Javascript fallback to local source if CDN fails.
  */
 function cellular_js_fallback($script, $cellular = FALSE) {
@@ -103,7 +114,8 @@ function cellular_js_fallback($script, $cellular = FALSE) {
   );
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+    $fallback .= $cellular ?
+      $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
     $fallback .= '/js/' . $script['file'];
     $fallback .= '\">\x3C/script>")';
 
@@ -112,7 +124,6 @@ function cellular_js_fallback($script, $cellular = FALSE) {
 }
 
 /**
- * cellular_js_override()
  * Override existing $javascript sources.
  */
 function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
@@ -128,22 +139,29 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     else {
       // Or set data to local file if no CDN.
       // Set path relative to $cellular_lib or $theme path depending on context.
-      $data = $cellular ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
-      $data .= isset($script['file']) ? '/js/' . $script['file'] : NULL;
+      $data = $cellular ?
+        $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+      $data .= isset($script['file']) ?
+        '/js/' . $script['file'] : NULL;
     }
 
     $javascript[$ojs]['data'] = $data;
-    $javascript[$ojs]['version'] = isset($script['version']) ? $script['version'] : NULL;
-    $javascript[$ojs]['group'] = isset($script['group']) ? $script['group'] : JS_LIBRARY;
-    $javascript[$ojs]['every_page'] = isset($script['every_page']) ? $script['every_page'] : TRUE;
-    $javascript[$ojs]['weight'] = isset($script['weight']) ? $script['weight'] : 0;
-    $javascript[$ojs]['type'] = isset($script['cdn']) ? 'external' : 'file';
-    $javascript[$ojs]['preprocess'] = isset($script['preprocess']) ? $script['preprocess'] : FALSE;
+    $javascript[$ojs]['version'] = isset($script['version']) ?
+      $script['version'] : NULL;
+    $javascript[$ojs]['group'] = isset($script['group']) ?
+      $script['group'] : JS_LIBRARY;
+    $javascript[$ojs]['every_page'] = isset($script['every_page']) ?
+      $script['every_page'] : TRUE;
+    $javascript[$ojs]['weight'] = isset($script['weight']) ?
+      $script['weight'] : 0;
+    $javascript[$ojs]['type'] = isset($script['cdn']) ?
+      'external' : 'file';
+    $javascript[$ojs]['preprocess'] = isset($script['preprocess']) ?
+      $script['preprocess'] : FALSE;
   }
 }
 
 /**
- * cellular_add_css()
  * Add array of stylesheets to $css, using a CDN if provided.
  */
 function cellular_add_css(&$css, $array, $cellular = FALSE) {
@@ -153,17 +171,24 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
         $data = $style['cdn'];
       }
       else {
-        $data = $cellular === TRUE ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+        $data = $cellular === TRUE ?
+          $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
         $data .= '/css/' . $style['file'];
       }
 
       $style['data'] = $data;
-      $style['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
-      $style['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
-      $style['group'] = isset($style['group']) ? $style['group'] : CSS_THEME;
-      $style['weight'] = isset($style['weight']) ? $style['weight'] : 10;
-      $style['type'] = isset($style['cdn']) ? 'external' : 'file';
-      $style['media'] = isset($style['media']) ? $style['media'] : 'all';
+      $style['preprocess'] = isset($style['preprocess']) ?
+        $style['preprocess'] : TRUE;
+      $style['every_page'] = isset($style['every_page']) ?
+        $style['every_page'] : TRUE;
+      $style['group'] = isset($style['group']) ?
+        $style['group'] : CSS_THEME;
+      $style['weight'] = isset($style['weight']) ?
+        $style['weight'] : 10;
+      $style['type'] = isset($style['cdn']) ?
+        'external' : 'file';
+      $style['media'] = isset($style['media']) ?
+        $style['media'] : 'all';
       $style['browsers'] = array('IE' => TRUE, '!IE' => TRUE,);
 
       $css[$style['file']] = $style;
@@ -174,7 +199,6 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
 }
 
 /**
- * cellular_remove_css()
  * Removes array of stylesheets from $css
  */
 function cellular_remove_css(&$css, $exclude) {
@@ -194,7 +218,6 @@ function cellular_remove_css(&$css, $exclude) {
 }
 
 /**
- * cellular_css_override()
  * Overrides default css values.
  */
 function cellular_css_override(&$css, $style, $cellular = FALSE) {
@@ -207,21 +230,27 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
     }
     else {
       // or set data to local file
-      $data = $cellular ? $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
-      $data .= isset($style['file']) ? '/css/' . $style['file'] : NULL;
+      $data = $cellular ?
+        $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+      $data .= isset($style['file']) ?
+        '/css/' . $style['file'] : NULL;
     }
 
     $css[$ocss]['data'] = $data;
-    $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
-    $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
-    $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;
-    $css[$ocss]['type'] = isset($style['cdn']) ? 'external' : 'file';
-    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : FALSE;
+    $css[$ocss]['group'] = isset($style['group']) ?
+      $style['group'] : CSS_DEFAULT;
+    $css[$ocss]['every_page'] = isset($style['every_page']) ?
+      $style['every_page'] : TRUE;
+    $css[$ocss]['weight'] = isset($style['weight']) ?
+      $style['weight'] : 0;
+    $css[$ocss]['type'] = isset($style['cdn']) ?
+      'external' : 'file';
+    $css[$ocss]['preprocess'] = isset($style['preprocess']) ?
+      $style['preprocess'] : FALSE;
   }
 }
 
 /**
- * cellular_form_strip_access()
  * Removes text formatting options from user input
  */
 function cellular_form_strip_access(&$form) {
@@ -237,7 +266,6 @@ function cellular_form_strip_access(&$form) {
 }
 
 /**
- * cellular_main_menu()
  * Returns full Main Menu instead of top-level links.
  */
 function cellular_main_menu(&$vars) {
@@ -254,12 +282,13 @@ function cellular_main_menu(&$vars) {
 }
 
 /**
- * cellular_test_sidebar()
  * Test if sidebar regions are used and return the appropriate class.
  */
 function cellular_test_sidebar(&$vars) {
-  $sidebar_left = !empty($vars['page']['sidebar_left']) ? 1 : NULL;
-  $sidebar_right = !empty($vars['page']['sidebar_right']) ? 1 : NULL;
+  $sidebar_left = !empty($vars['page']['sidebar_left']) ?
+    1 : NULL;
+  $sidebar_right = !empty($vars['page']['sidebar_right']) ?
+    1 : NULL;
 
   if (isset($sidebar_left) && isset($sidebar_right)) {
     $sidebars = 'dual-sidebars';

@@ -30,7 +30,8 @@ function cellular_css_alter(&$css) {
 // Plugins available through cellular, styles added based on theme settings.
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
-    'prism' => theme_get_setting('prism') == 1 ? array(
+    'prism' => theme_get_setting('prism') == 1 ?
+        array(
         'file' => 'plugins/prism.css',
       ) : NULL,
   );
@@ -69,7 +70,8 @@ function cellular_css_alter(&$css) {
         $file .= 'jquery.ui.theme.css';
 
         if ($ui['theme'] === 'custom') {
-          $ui['version'] === '1.10.4' ? $v = '1.10' : '1.9';
+          $ui['version'] === '1.10.4' ?
+            $v = '1.10' : '1.9';
           $file = $ui['path'] . "jquery-ui.$v.css";
 
           $add_css['jquery-ui']['file'] = $file;
@@ -77,7 +79,7 @@ function cellular_css_alter(&$css) {
         else {
           $file = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
           $file .= 'jquery.ui.theme.css';
-          //$plugin_css['jquery-ui']['cdn'] = isset($cdn) ? $cdn : NULL;
+          // $plugin_css['jquery-ui']['cdn'] = isset($cdn) ? $cdn : NULL;
           $plugin_css['jquery-ui']['file'] = $file;
         }
 
@@ -89,11 +91,11 @@ function cellular_css_alter(&$css) {
           // Available cdns & path to scripts
           $networks = array(
             'google'    => array(
-              // href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
+// href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"
               'base_url' => "//ajax.googleapis.com/ajax/libs/jqueryui/",
             ),
             'microsoft' => array(
-              // href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
+// href="//ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/black-tie/jquery-ui.css"
               'base_url' => "//ajax.aspnetcdn.com/ajax/jquery.ui/",
             ),
           );
