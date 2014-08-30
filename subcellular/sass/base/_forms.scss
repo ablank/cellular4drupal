@@ -1,188 +1,183 @@
-/* ****
-Cellular :: forms
+/**
+ * @file
+ * Form styling
+ */
 
-**** */
-//////
 $input_size: 2em;
-$ok_color: $green;
-$warning_color: $yellow;
-$error_color: $red;
-/////
 
 form {
-    display: block;
-    max-width: $p_max_width;
-    margin: 0 auto;
-    /////
-    /// Form Alignment Classes
-    /////
-    &.horizontal {
-        display: inline;
-        max-width: none;
-        padding: 0;
+  display: block;
+  max-width: $p_max_width;
+  margin: 0 auto;
 
-        label,
-        input[type=text],
-        input[type=email],
-        input[type=password],
-        input[type=submit] {
-            position: relative;
-            display: inline;
-            clear: none;
-            padding: $tiny;
-        }
-        input[type=submit] {
-            width: 5em;
-            margin: 0 $tiny 0 $tiny;
-            float: none;
-        }
+  // Form Alignment Classes
+  &.horizontal {
+    display: inline;
+    max-width: none;
+    padding: 0;
+
+    label,
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=submit] {
+      position: relative;
+      display: inline;
+      clear: none;
+      padding: $tiny;
     }
-    &.vertical {
-        label,
-        input[type=text],
-        input[type=email],
-        input[type=password] {
-            float: left;
-            clear: left;
-        }
-        input[type=submit] {
-            float: right;
-            clear: left;
-            margin: $tiny 0;
-        }
+    input[type=submit] {
+      width: 5em;
+      margin: 0 $tiny 0 $tiny;
+      float: none;
     }
+  }
+  &.vertical {
+    label,
+    input[type=text],
+    input[type=email],
+    input[type=password] {
+      float: left;
+      clear: left;
+    }
+    input[type=submit] {
+      float: right;
+      clear: left;
+      margin: $tiny 0;
+    }
+  }
 }
 
 fieldset {
-    padding: $normal;
-    margin: $tiny;
-    border: $light_grey $border;
+  padding: $normal;
+  margin: $tiny;
+  border: $light_grey $border;
 }
 
 legend {
-    font-family: $h_font;
-    font-weight: $h_weight;
-    font-size: $big;
-    padding: 0 $small;
-    color: $light_grey;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  font-size: $big;
+  padding: 0 $small;
+  color: $light_grey;
 }
 
 label {
-    display: inline;
-    font-family: $h_font;
-    font-weight: $h_weight;
-    margin: 0;
-    padding: 0;
+  display: inline-block;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  margin: .4em 0 0;
+  padding: 1em .4em .4em;
 }
 
 input,
 select,
 textarea {
-    //display: block;
-    font: 1em/1.6em $p_font;
-    margin: 0 auto;
-    padding: $small;
-    font-size: 100%;
-    vertical-align: middle;
-    color: $p_color;
-    background: $white;
-    @include border-radius();
-    @include transition();
+  //display: block;
+  font: 1em/1.6em $p_font;
+  margin: 0 auto;
+  padding: $small;
+  font-size: 100%;
+  vertical-align: middle;
+  color: $p_color;
+  background: $white;
+  @include border-radius();
+  @include transition();
 }
 
 input {
 
-    &[type=hidden] {
-        display: none;
-    }
+  &[type=hidden] {
+    display: none;
+  }
 
-    &[type=text],
-    &[type=number],
-    &[type=tel],
-    &[type=search],
-    &[type=email],
-    &[type=password] {
-        display: block;
-        margin: $tiny auto $normal;
-        width: 90%;
-        border: $light_grey $border;
-        color: $dark_grey;
-        background: darken($white, 3%);
-
-        &:focus {
-            color: $p_color;
-            border-color: $p_color;
-            background: $white;
-        }
-    }
-    &[type=checkbox],
-    &[type=radio] {
-        @include checkbox();
-    }
-    &[type=checkbox] {
-
-        &:not(:checked),
-            &:checked {
-            + label {
-                &:before {
-                    @include border-radius();
-                }
-            }
-            &:checked {
-                + label {
-                    &:after {
-                        font-size: 1.5em;
-                        content: '\2714';
-                    }
-                }
-            }
-        }
-    }
-    &[type=radio] {
-
-        &:not(:checked),
-            &:checked {
-            + label {
-                &:before {
-                    @include border-radius(50%);
-                }
-            }
-            &:checked {
-                + label {
-                    &:after {
-                        font-size: 1em;
-                        content: '\2B24';
-                        top: -0.14em;
-                        left: .3em;
-                    }
-                }
-            }
-        }
-    }
-}
-
-textarea {
+  &[type=text],
+  &[type=number],
+  &[type=tel],
+  &[type=search],
+  &[type=email],
+  &[type=password] {
     display: block;
-    overflow: auto;
-    vertical-align: top;
+    margin: $tiny auto $normal;
     width: 90%;
     border: $light_grey $border;
     color: $dark_grey;
-    background: darken($white, 2%);
+    background: darken($white, 3%);
+
     &:focus {
-        color: $p_color;
-        background: $white;
+      color: $p_color;
+      border-color: $p_color;
+      background: $white;
     }
+  }
+  &[type=checkbox],
+  &[type=radio] {
+    @include checkbox();
+  }
+  &[type=checkbox] {
+
+    &:not(:checked),
+    &:checked {
+      + label {
+        &:before {
+          @include border-radius();
+        }
+      }
+      &:checked {
+        + label {
+          &:after {
+            font-size: 1.5em;
+            content: '\2714';
+          }
+        }
+      }
+    }
+  }
+  &[type=radio] {
+
+    &:not(:checked),
+    &:checked {
+      + label {
+        &:before {
+          @include border-radius(50%);
+        }
+      }
+      &:checked {
+        + label {
+          &:after {
+            font-size: 1em;
+            content: '\2B24';
+            top: -0.14em;
+            left: .3em;
+          }
+        }
+      }
+    }
+  }
+}
+
+textarea {
+  display: block;
+  overflow: auto;
+  vertical-align: top;
+  width: 90%;
+  border: $light_grey $border;
+  color: $dark_grey;
+  background: darken($white, 2%);
+  &:focus {
+    color: $p_color;
+    background: $white;
+  }
 }
 
 select {
-    cursor: pointer;
-    padding: $tiny;
-    border: $light_grey $border;
+  cursor: pointer;
+  padding: $tiny;
+  border: $light_grey $border;
 }
 
 optgroup {
-    background: darken($white, 5%);
+  background: darken($white, 5%);
 }
 
 option {
@@ -191,41 +186,42 @@ option {
 button,
 input[type="button"],
 input[type="submit"] {
-    @include button();
+  margin: 1.4em .4em .4em;
+  @include button();
 }
 
-/////
-///Form Alert Classes
-/////
+//Form Alert Classes
+
 .required {
-    &:after {
-        content: ' *';
-        font-weight: bold;
-    }
+  &:after {
+    content: ' *';
+    font-weight: bold;
+  }
 }
+
 .ok,
 .warning,
 .error {
-    @include border-radius();
-    font-weight: bold;
-    border: .2em solid;
-    background-color: $white;
-    li {
-        list-style: none;
-    }
+  @include border-radius();
+  font-weight: bold;
+  border: .2em solid;
+  background-color: $white;
+  li {
+    list-style: none;
+  }
 }
 
 .ok {
-    color: $ok_color;
-    border-color: darken($ok_color, $adjust);
+  color: $ok_color;
+  border-color: darken($ok_color, $adjust);
 }
 
 .warning {
-    color: $warning_color;
-    border-color: darken($warning_color, $adjust);
+  color: $warning_color;
+  border-color: darken($warning_color, $adjust);
 }
 
 .error {
-    color: $error_color;
-    border-color: darken($error_color, $adjust);
+  color: $error_color;
+  border-color: darken($error_color, $adjust);
 }

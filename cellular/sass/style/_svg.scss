@@ -10,18 +10,18 @@
 
   #nav {
     &.jMmenu.mini {
-      background-image: url('../assets/icons/svg/menu.svg');
+      background-image: url('../assets/icons/min/svg/menu.svg');
     }
   }
 
   .ok {
-    list-style-image: url('../assets/images/svg/message_icon_ok.svg');
+    list-style-image: url('../assets/icons/min/svg/message-ok.svg');
   }
   .warning {
-    list-style-image: url('../assets/images/svg/message_icon_warning.svg');
+    list-style-image: url('../assets/icons/min/svg/message-warning.svg');
   }
   .error {
-    list-style-image: url('../assets/images/svg/message_icon_error.svg');
+    list-style-image: url('../assets/icons/min/svg/message-error.svg');
   }
 
 }

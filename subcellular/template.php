@@ -3,28 +3,28 @@
 /**
  * @file
  * hook_function overrides
- *
  * @author    Adam Blankenship
  */
 
 global $theme_path;
-
 $include = array(
   //'dev-functions.inc',
   'css_alter.inc',
   'js_alter.inc',
 );
-$theme_path . '/inc';
+
+$inc_path = $theme_path . '/inc';
 foreach ($include as $i) {
   require_once($inc_path . '/' . $i);
 }
+
 /*
 *Override & add hooks
  */
 /*
 function subcellular_preprocess_page(&$vars) {
 
-  // //Do something with content type
+  //Do something with content type
   if (isset($vars['node']) && $vars['node']->type == 'page') {
 
   }

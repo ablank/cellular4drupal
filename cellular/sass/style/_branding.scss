@@ -4,11 +4,12 @@
  */
 
 #logo {
+    // Container for logo
   float: left;
   left: 5%;
   z-index: 9;
 
-  h2 {
+  h2 {// Site title, is hidden w/text indent to remain sccessible
     position: absolute;
     width: $logo_width;
     height: $logo_height;
@@ -18,7 +19,7 @@
     text-indent: -999em;
     background: none;
   }
-  a {
+  a {//
     display: block;
     text-indent: -999em;
     /* Match logo dimensions to create logo button */

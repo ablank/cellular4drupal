@@ -1,6 +1,7 @@
 cellularUI/
 node_modules/
 .sass-cache/
+.gitignore
 
 #################
 ## Eclipse

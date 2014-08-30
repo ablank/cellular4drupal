@@ -1064,7 +1064,7 @@ hr.clearfix {
   left: 5%;
   z-index: 9;
 }
-/* line 11, ../sass/style/_branding.scss */
+/* line 12, ../sass/style/_branding.scss */
 #logo h2 {
   position: absolute;
   width: 72px;
@@ -1075,7 +1075,7 @@ hr.clearfix {
   text-indent: -999em;
   background: none;
 }
-/* line 21, ../sass/style/_branding.scss */
+/* line 22, ../sass/style/_branding.scss */
 #logo a {
   display: block;
   text-indent: -999em;
@@ -1083,15 +1083,15 @@ hr.clearfix {
   width: 72px;
   height: 72px;
   padding: 0.4em;
-  background-image: url("../assets/images/png/logo.png");
+  background-image: url("../assets/images/min/png/logo.png");
   background-position: 0.4em 0.4em;
   background-color: rgba(17, 17, 17, 0.5);
   background-repeat: no-repeat;
 }
 
-/* line 39, ../sass/style/_branding.scss */
+/* line 40, ../sass/style/_branding.scss */
 .svg #logo > a {
-  background-image: url("../assets/images/svg/logo.svg");
+  background-image: url("../assets/images/min/svg/logo.svg");
 }
 
 /**
@@ -1377,13 +1377,14 @@ hr.clearfix {
   height: 3em;
   padding: 1em;
   background-color: #fefefe;
-  background-image: url("../assets/icons/png/menu.png");
+  background-image: url("../assets/icons/min/png/menu.png");
+  background-image: url("../assets/icons/min/png/menu.svg");
   background-size: 2em;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid;
 }
-/* line 25, ../sass/cellular-ui/_jMmenu.scss */
+/* line 26, ../sass/cellular-ui/_jMmenu.scss */
 .cellular.jMmenu.mini ul {
   position: absolute;
   right: 0;
@@ -1392,11 +1393,11 @@ hr.clearfix {
   padding: 0;
   background-color: #f1f1f1;
 }
-/* line 35, ../sass/cellular-ui/_jMmenu.scss */
+/* line 36, ../sass/cellular-ui/_jMmenu.scss */
 .cellular.jMmenu.mini ul li > ul {
   display: none;
 }
-/* line 41, ../sass/cellular-ui/_jMmenu.scss */
+/* line 42, ../sass/cellular-ui/_jMmenu.scss */
 .cellular.jMmenu.mini a {
   display: block;
 }
@@ -1473,17 +1474,21 @@ hr.clearfix {
 }
 /* line 39, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .panel {
+  float: left;
   clear: both;
-  bottom: 1px;
   z-index: 1;
+  width: 96.5%;
+  padding: 2%;
+  bottom: 1px;
+  margin-bottom: 1.4em;
 }
-/* line 46, ../sass/cellular-ui/_jTabs.scss */
+/* line 50, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical {
   float: left;
   display: block;
   width: 100%;
 }
-/* line 51, ../sass/cellular-ui/_jTabs.scss */
+/* line 55, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical li,
 .cellular.jTabs.vertical .tab {
   clear: left;
@@ -1491,28 +1496,28 @@ hr.clearfix {
   border: none;
   width: 27%;
 }
-/* line 57, ../sass/cellular-ui/_jTabs.scss */
+/* line 61, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical li .title,
 .cellular.jTabs.vertical .tab .title {
   padding: .4em 1%;
   border: none;
 }
-/* line 61, ../sass/cellular-ui/_jTabs.scss */
+/* line 65, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical li .title a,
 .cellular.jTabs.vertical .tab .title a {
   padding: 0 1em;
 }
-/* line 66, ../sass/cellular-ui/_jTabs.scss */
+/* line 70, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical li.active,
 .cellular.jTabs.vertical .tab.active {
   border: none;
 }
-/* line 69, ../sass/cellular-ui/_jTabs.scss */
+/* line 73, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical li.active .title,
 .cellular.jTabs.vertical .tab.active .title {
   border: none;
 }
-/* line 74, ../sass/cellular-ui/_jTabs.scss */
+/* line 78, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical .panel {
   display: inline;
   display: inline-block;
@@ -1734,21 +1739,21 @@ body {
  */
 /* line 7, ../sass/style/_svg.scss */
 .svg #logo > a {
-  background-image: url(url("../assets/images/svg/logo.svg"));
+  background-image: url(url("../assets/images/min/svg/logo.svg"));
 }
 /* line 12, ../sass/style/_svg.scss */
 .svg #nav.jMmenu.mini {
-  background-image: url("../assets/icons/svg/menu.svg");
+  background-image: url("../assets/icons/min/svg/menu.svg");
 }
 /* line 17, ../sass/style/_svg.scss */
 .svg .ok {
-  list-style-image: url("../assets/images/svg/message_icon_ok.svg");
+  list-style-image: url("../assets/icons/min/svg/message-ok.svg");
 }
 /* line 20, ../sass/style/_svg.scss */
 .svg .warning {
-  list-style-image: url("../assets/images/svg/message_icon_warning.svg");
+  list-style-image: url("../assets/icons/min/svg/message-warning.svg");
 }
 /* line 23, ../sass/style/_svg.scss */
 .svg .error {
-  list-style-image: url("../assets/images/svg/message_icon_error.svg");
+  list-style-image: url("../assets/icons/min/svg/message-error.svg");
 }

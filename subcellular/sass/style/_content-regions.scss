@@ -1,7 +1,8 @@
-/* ****
-Cellular :: region styles
-**** */
-//////
+/**
+ * @file
+ * Content region styles
+ */
+
 $region_margin: 0;
 $region_padding: 0;
 $region_border: 0;
@@ -9,11 +10,11 @@ $region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 
 //////
 
 body {
-    background-color: $white;
-    //background-image: $body_img;
-    //@include gradient_rad($white, $white, $light_grey);
-    //background-repeat: repeat;
-    //background-attachment: fixed;
+  background-color: $white;
+  //background-image: $body_img;
+  //@include gradient_rad($white, $white, $light_grey);
+  //background-repeat: repeat;
+  //background-attachment: fixed;
 
 }
 
@@ -34,113 +35,113 @@ body {
 #footer_left,
 #footer-right,
 #footer-middle {
-    margin: $region_margin;
-    padding: $region_padding;
-    border: $region_border;
+  margin: $region_margin;
+  padding: $region_padding;
+  border: $region_border;
 }
 
 #header-top {
-    z-index: 4;
-    background: darken($hilight, 20%);
-    color: $white;
-    border-bottom: $black $border;
-    // Position contents left or right
-    text-align: right;
-    @include clearfix();
-    // Custom type for region
-    div {
-        display: inline;
+  z-index: 4;
+  background: darken($hilight, 20%);
+  color: $white;
+  border-bottom: $black $border;
+  // Position contents left or right
+  text-align: right;
+  @include clearfix();
+  // Custom type for region
+  div {
+    display: inline;
+  }
+  h2,
+  h3,
+  h4 {
+    color: lighten($hilight, 20%);
+    font-size: $normal;
+    display: inline;
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2,
-    h3,
-    h4 {
-        color: lighten($hilight, 20%);
-        font-size: $normal;
-        display: inline;
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h2 {
-    }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #header {
-    z-index: 2;
-    height: 96px;
-    background: $white;
-    @include box-shadow(0 0 1em .1em $dark_grey);
-    // Custom type for region
-    h2,
-    h3,
-    h4 {
+  z-index: 2;
+  height: 96px;
+  background: $white;
+  @include box-shadow(0 0 1em .1em $dark_grey);
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2 {
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #header-bottom {
-    height: 32px;
-    // background: darken($hilight, 20%);
-    color: $white;
-    border-bottom: $black $border;
-    // Custom type for region
-    h2,
-    h3,
-    h4 {
+  height: 32px;
+  // background: darken($hilight, 20%);
+  color: $white;
+  border-bottom: $black $border;
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2 {
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #app {
-    z-index: 1;
-    overflow: visible;
+  z-index: 1;
+  overflow: visible;
 }
 
 #content-position {
-    display: block;
-    margin: 0 auto;
-    max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 #content-wrap {
@@ -150,73 +151,73 @@ body {
 }
 
 #content-top {
-    // Custom type for region
-    h2,
-    h3,
-    h4 {
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2 {
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #content,
 #sidebar-left,
 #sidebar-right,
 #footer {
-    position: relative;
-    float: left;
-    display: block;
+  position: relative;
+  float: left;
+  display: block;
 }
 
 #content {
-    z-index: 2;
-    // Custom type for region
-    h2,
-    h3,
-    h4 {
+  z-index: 2;
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2 {
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #comments {
-    text-align: center;
-    form {
-        text-align: left;
-    }
+  text-align: center;
+  form {
+    text-align: left;
+  }
 }
 
 #sidebar-left,
 #sidebar-right {
-    background: $light_grey;
+  background: $light_grey;
 }
 
 #sidebar-left {
@@ -229,31 +230,31 @@ body {
 }
 
 #footer {
-    background: $dark_grey;
+  background: $dark_grey;
+  color: $white;
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
     color: $white;
-    // Custom type for region
-    h2,
-    h3,
-    h4 {
-        color: $white;
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+    color: $white;
+  }
+  a {
+    &:visited {
     }
-    h2 {
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-        color: $white;
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #footer_left,
@@ -271,73 +272,73 @@ body {
 }
 
 #footer-bottom {
-    font-size: $small;
-    background: $dark_grey;
-    color: $light_grey;
-    border-top: $border;
-    // Custom type for region
-    h2,
-    h3,
-    h4 {
+  font-size: $small;
+  background: $dark_grey;
+  color: $light_grey;
+  border-top: $border;
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2 {
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }
 
 #copyright {
-    padding: $small $big $small;
-    text-align: right;
-    font-weight: bold;
+  padding: $small $big $small;
+  text-align: right;
+  font-weight: bold;
 }
 
 #social-media-follow,
 #social-media-share {
-    position: relative;
-    width: 100%;
-    padding: 0 0 1em 0;
-    background: $white;
-    border-top: $dark_grey 1em solid;
-    overflow: hidden;
-    form {
-        margin: 0;
-        padding: 0;
-        display: inline;
+  position: relative;
+  width: 100%;
+  padding: 0 0 1em 0;
+  background: $white;
+  border-top: $dark_grey 1em solid;
+  overflow: hidden;
+  form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+  h2,
+  h3,
+  h4 {
+    font-size: $normal;
+    font-weight: bold;
+    margin: 0;
+  }
+  h2 {
+  }
+  h3 {
+  }
+  h4 {
+  }
+  p {
+  }
+  a {
+    &:visited {
     }
-    h2,
-    h3,
-    h4 {
-        font-size: $normal;
-        font-weight: bold;
-        margin: 0;
+    &:focus,
+    &:hover,
+    &:active {
     }
-    h2 {
-    }
-    h3 {
-    }
-    h4 {
-    }
-    p {
-    }
-    a {
-        &:visited {
-        }
-        &:focus,
-            &:hover,
-            &:active {
-        }
-    }
+  }
 }

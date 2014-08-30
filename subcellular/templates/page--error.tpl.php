@@ -1,10 +1,21 @@
 <?php
 /*
-  subcellular:: page--error.tpl
-
-  (c)2012 Adam Blankenship
+ * @file
+ * Automated error page
  */
 /*
+
+  Regions:
+  - $page['console']: Help, warnings, & other system notifications
+  - $page['header']: Page Header
+  - $page['nav']: System Navigation
+  - $page['sidebar_left']: Left Sidebar
+  - $page['sidebar_right']: Right Sidebar
+  - $page['content']: The main content of the current page.
+  - $page['footer_top']: Footer Right Column
+  - $page['footer']: Items for the full footer region, the last elements rendered.
+  - $page['footer_bottom']: Footer Middle Column
+
   VARIABLES
 
   General Utility Variables:
@@ -61,15 +72,6 @@
   in the page's path (e.g. node/12345 and node/12345/revisions, but not
   comment/reply/12345).
 
-  Regions:
-  - $page['console']: Help, warnings, & other system notifications
-  - $page['header']: Page Header
-  - $page['nav']: System Navigation
-  - $page['hilight']: Items highlighted at the top of the content area.
-  - $page['sidebar_left']: Left Sidebar
-  - $page['content']: The main content of the current pa
-  - $page['footer']: Items for the full footer region, the last elements rendered.
-
  */
 ?>
 
@@ -81,9 +83,10 @@
   <div id="page-wrap">
     <div id="header">
       <div id="logo">
+
         <?php
         if ($site_name) {
-          print $site_name;
+          print "<h2>" . $site_name . "</h2>";
         }
         ?>
       </div>
@@ -116,7 +119,7 @@
             print $messages;
             ?>
           </div>
-          <div id="alternative">
+          <div class="search">
             <?php
             print render($search_box);
             ?>
@@ -128,15 +131,13 @@
     </div>
     <!-- /app-->
 
-    <?php if ($page['footer_top'] || $copyright) : ?>
-      <div id="footer-top" class="cell">
-        <?php if ($page['footer_top']) : ?>
-          <?php print render($page['footer_top']); ?>
-        <?php endif; ?>
-      </div>
-    <?php endif; ?>
-
+    <?php
+    if ($page['footer_top']) {
+      print render($page['footer_top']);
+    }
+    ?>
     <div id="footer" class="cell">
+
 
       <?php
       if ($page['footer']) {
@@ -162,5 +163,3 @@
   <!-- /#page-wrap-->
 <?php
 print "\n";
-
-// End of File

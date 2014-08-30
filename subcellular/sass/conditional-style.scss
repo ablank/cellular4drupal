@@ -1,43 +1,39 @@
-/*****
-Cellular :: conditional-style
-Dynamically loaded styling for larger screens.
+/**
+ * @file
+ * Dynamically loaded stylesheet served if declared in theme settings
+ */
 
-(c) 2012 Adam Blankenship
-www.abctahoe.net
-*****/
-//////
 @import "variables";
-/////
 
-@media screen and (min-width: $res_mobile) and (max-width: $res_large) {
-    body {
-        // background: url(../assets/images/large-background-body.png) no-repeat;
-    }
+@media screen and (min-width: $res_normal) and (max-width: $res_large) {
+  body {
+    // background: url(../assets/images/large-background-body.png) no-repeat;
+  }
 
-    #header {
-        // background: url(../assets/images/large-background-header.png) no-repeat;
-    }
+  #header {
+    // background: url(../assets/images/large-background-header.png) no-repeat;
+  }
 
-    #logo {
+  #logo {
 
-        &:hover {
-        }
-        & > a {
-        }
+    &:hover {
     }
+    & > a {
+    }
+  }
 
-    #app {
-    }
+  #app {
+  }
 
-    #content-wrap {
-    }
-    #content {
-    }
+  #content-wrap {
+  }
+  #content {
+  }
 
-    #sidebar-left,
-    #sidebar-right {
-    }
-    #footer {
+  #sidebar-left,
+  #sidebar-right {
+  }
+  #footer {
 
-    }
+  }
 }

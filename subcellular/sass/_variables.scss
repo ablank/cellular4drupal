@@ -9,7 +9,9 @@
 
 // Set stylesheet breakpoints
 $res_mobile: 650px;
-$res_large: 1024px;
+$res_narrow: 800px;
+$res_normal: 960px;
+$res_large: 2000px;
 
 // Color swatches
 $adjust: 20%;
@@ -27,11 +29,14 @@ $grey: #8A8882;
 $light_grey: lighten($grey, $adjust);
 $dark_grey: darken($grey, $adjust);
 
-
 $c1: $black;
 $c2: $white;
 $hilight: $cyan;
-$shadow: lighten($c1, 20%);
+$shadow: lighten($black, 20%);
+
+$ok_color: $green;
+$warning_color: $yellow;
+$error_color: $red;
 
 // Sizing vars
 $tiny: 0.3em;
@@ -63,8 +68,8 @@ $h_color: $grey;
 $logo_width: 72px;
 $logo_height: 72px;
 $logo_pad: .4em;
-$logo_png: url('../assets/images/png/logo.png');
-$logo_svg: url('../assets/images/svg/logo.svg');
+$logo_png: url('../assets/images/min/png/logo.png');
+$logo_svg: url('../assets/images/min/svg/logo.svg');
 
 // Icons
 $icon_size: 32px;
@@ -73,7 +78,6 @@ $icon_padding: 10px;
 // Images
 $loading: url('../assets/images/gif/throbber.gif');
 $body_img: url('../assets/images/honeycomb_light.png');
-
 
 // Cell grid spacing
 $cell_margin: 0;
@@ -85,3 +89,98 @@ $cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);
 $default-transition-duration: 400ms;
 $default-transition-function: ease-out;
 $default-border-radius: $tiny;
+
+// Set icons to include
+$icons: 
+    // UI
+    search
+    arrow-up
+    arrow-right
+    arrow-down
+    arrow-left
+    audio
+    camera
+    cart
+    chat
+    chrome
+    cloud
+    // Tech
+    android
+    angular
+    apple
+    creativecommons
+    // Social Media
+    behance
+    blogger
+    css3
+    delicious
+    desktop
+    deviantart
+    digg
+    doc
+    drupal
+    email
+    eye
+    facebook
+    film
+    firefox
+    flickr
+    folder
+    gear
+    github-octo
+    globe
+    google
+    grooveshark
+    hi5
+    home
+    html5
+    internetexplorer
+    jquery
+    js
+    key
+    laptop
+    linkedin
+    linux
+    lock
+    mac
+    mail
+    mail2
+    menu
+    message-error
+    message-ok
+    message-warning
+    minus
+    mobile
+    myspace
+    opera
+    pdf
+    phone
+    phone2
+    picture
+    pinterest
+    plus
+    print
+    reddit
+    rss
+    safari
+    search
+    skype
+    slashdot
+    soundcloud
+    spreadsheet
+    stackoverflow
+    stumbleupon
+    technorati
+    tumblr
+    twitter-bird
+    twitter-t
+    user
+    user-social
+    video
+    w3
+    windows
+    wordpress
+    wrench
+    youtube
+    zip
+    ;

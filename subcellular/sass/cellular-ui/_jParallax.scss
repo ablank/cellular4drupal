@@ -1,12 +1,13 @@
-/*****
-    Cellular :: jTabs
-*****/
-//////
+/**
+ * @file
+ * CellularUI : jParallax
+ */
+
 .cellular {
 
-    &.jParallax {
-        background-image: url('../assets/images/png/carousel-arrows.png');
-        background-repeat: no-repeat;
-        background-position: 3px -4px;
-    }
+  &.jParallax {
+    background-image: url('../assets/images/png/carousel-arrows.png');
+    background-repeat: no-repeat;
+    background-position: 3px -4px;
+  }
 }

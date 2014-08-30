@@ -1,43 +1,45 @@
-/////
-// Tables
-/////
+/**
+ * @file
+ * Tables
+ */
+
 table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: $grey $border;
-    img {
-        display: inline;
-        padding: 0;
-    }
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: $grey $border;
+  img {
+    display: inline;
+    padding: 0;
+  }
 }
 
 th,
 thead {
-    padding: $tiny;
-    font-family: $h_font;
-    font-weight: $h_weight;
-    font-size: $normal;
-    text-align: center;
-    background: lighten($light_grey, 15%);
-    color: darken($light_grey, 20%);
-    border: lighten($light_grey, 15%) $border;
+  padding: $tiny;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  font-size: $normal;
+  text-align: center;
+  background: lighten($light_grey, 15%);
+  color: darken($light_grey, 20%);
+  border: lighten($light_grey, 15%) $border;
 }
 
 tr:nth-child(even) {
-    background: darken($white, 5%);
+  background: darken($white, 5%);
 }
 
 tr:nth-child(odd) {
-    background: $white;
+  background: $white;
 }
 
 td {
-    padding: $tiny;
-    border: $light_grey $border;
+  padding: $tiny;
+  border: $light_grey $border;
 }
 
 tfoot {
-    font-style: italic;
-    text-align: center;
+  font-style: italic;
+  text-align: center;
 }

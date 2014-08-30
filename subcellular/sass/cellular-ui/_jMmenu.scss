@@ -1,45 +1,47 @@
-/*****
-    Cellular :: jTabs
-*****/
-//////
+/**
+ * @file
+ * CellularUI : jMMenu
+ */
+
 .cellular {
 
-    &.jMmenu {
+  &.jMmenu {
 
-        &.mini {
-            float: right;
-            cursor: pointer;
-            z-index: 10;
-            width: 3em;
-            height: 3em;
-            padding: 1em;
+    &.mini {
+      float: right;
+      cursor: pointer;
+      z-index: 10;
+      width: 3em;
+      height: 3em;
+      padding: 1em;
 
-            background-color: $white;
-            background-image: url('../assets/icons/png/menu.png');
-            background-size: 2em;
-            background-repeat: no-repeat;
-            background-position: center;
-            border: 1px solid;
+      background-color: $white;
+      background-image: url('../assets/icons/min/png/menu.png');
+      background-image: url('../assets/icons/min/png/menu.svg');
+      background-size: 2em;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 1px solid;
 
-            ul {
-                position: absolute;
-                right: 0;
-                top: 3em;
-                margin: 0;
-                padding: 0;
-                background-color: darken($white, 5%);
+      ul {
+        position: absolute;
+        right: 0;
+        top: 3em;
+        margin: 0;
+        padding: 0;
+        background-color: darken($white, 5%);
 
-                li {
+        li {
 
-                    & > ul {
-                        // Disable deep links on small screens
-                        display: none;
-                    }
-                }
-            }
-            a {
-                display: block;
-            }
+          & > ul {
+            // Disable deep links on small screens
+            display: none;
+          }
         }
+      }
+      a {
+        display: block;
+      }
     }
+  }
 }

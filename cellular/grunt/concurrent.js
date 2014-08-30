@@ -8,7 +8,7 @@ module.exports = {
     prod1: [
         'compass:prod',
         'imagemin',
-        //'svgmin',
+        'svgmin',
         //'concat',
     ],
     prod2: [
