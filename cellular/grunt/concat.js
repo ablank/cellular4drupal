@@ -4,21 +4,21 @@
  */
 
 module.exports = {
-    options: {
-        banner: '/**\n' +
+  options: {
+    banner: '/**\n' +
             '* @file\n' +
             '* Javascript\n' +
             '* \n' +
             '* @author \n' +
             '*/\n',
-        separator: '\n\n // :)\n',
-    },
-    script: {
-        src: [
-            'js/script1.js',
-            'js/script2.js',
-            'js/etc.js',
-        ],
-        dest: 'js/concat.js',
-    }
+    separator: '\n\n // :)\n',
+  },
+  script: {
+    src: [
+      'js/script1.js',
+      'js/script2.js',
+      'js/etc.js',
+    ],
+    dest: 'js/concat.js',
+  }
 };

@@ -97,7 +97,7 @@ function cellular_feed_icon($vars) {
         'icon',
         'rss',
       ),
-      'title' => $text
+      'title' => $text,
     ),
   ));
 }

@@ -21,7 +21,7 @@ function cellular_html_head_alter(&$head_elements) {
 }
 
 /**
- *  hook_page_alter()
+ * hook_page_alter()
  */
 function cellular_page_alter(&$page) {
   // dsm($page);

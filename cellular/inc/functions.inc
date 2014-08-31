@@ -69,6 +69,7 @@ function cellular_build_head_tags(&$array) {
 
 /**
  * Add array of javascripts to $javascript, using a CDN if provided.
+ *
  * A fallback link will be automatically generated if using CDN and
  * the 'object' value is provided.
  */

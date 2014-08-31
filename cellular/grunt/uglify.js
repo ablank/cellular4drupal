@@ -4,26 +4,26 @@
  */
 
 module.exports = {
-    prod: {
-        options: {
-            mangle: true,
-            beautify: false,
-            preserveComments: 'some',
-            compress: true,
-            expand: true,
-        },
-        files: {
-            'js/script.min.js': ['js/script.js'],
-        }
+  prod: {
+    options: {
+      mangle: true,
+      beautify: false,
+      preserveComments: 'some',
+      compress: true,
+      expand: true,
     },
-    dev: {
-        options: {
-            mangle: false,
-            beautify: true,
-            preserveComments: 'all'
-        },
-        files: {
-            'js/script.dev.js': ['js/script.js'],
-        }
+    files: {
+      'js/script.min.js': ['js/script.js'],
     }
+  },
+  dev: {
+    options: {
+      mangle: false,
+      beautify: true,
+      preserveComments: 'all'
+    },
+    files: {
+      'js/script.dev.js': ['js/script.js'],
+    }
+  }
 };

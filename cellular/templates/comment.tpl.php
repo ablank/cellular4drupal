@@ -3,6 +3,7 @@
  * @file
  * Comment template.
  */
+
 /*  Variables:
  * - $author: Comment author. Can be link or plain text.
  * - $content: An array of comment items. Use render($content) to print them all, or

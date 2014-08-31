@@ -118,14 +118,14 @@ function cellular_social_media_share() {
         'title' => '',
         'script' => NULL,
         'url' => 'http://www.linkedin.com/shareArticle?mini=true&url=' .
-        $page ['url'] . '&title=' . $page ['title'] . '&source=' . $base_url,
+        $page['url'] . '&title=' . $page['title'] . '&source=' . $base_url,
         'class' => 'linkedin',
         ) : NULL,
       'pinterest' => theme_get_setting('share_pinterest') == 1 ? array(
         'title' => 'Pinterest',
         'script' => NULL,
         'url' => 'http://pinterest.com/pin/create/bookmarklet/?media=&url=' .
-        $page ['url'] . '&is_video=false&description=' . $page['title'],
+        $page['url'] . '&is_video=false&description=' . $page['title'],
         'class' => 'pinterest',
         ) : NULL,
       'reddit' => theme_get_setting('share_reddit') == 1 ? array(

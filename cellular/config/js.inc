@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Theme-settings: Javascript options.
@@ -67,8 +68,8 @@ $form['c']['js'] = array(
   '#type' => 'fieldset',
   '#title' => t('Javascript'),
   '#description' => is_dir('sites/all/libraries/cellular') ?
-      NULL :
-      t('<div class="messages error"> <h2>These features require the
+    NULL :
+    t('<div class="messages error"> <h2>These features require the
 <a href="@url">Cellular Library</a>.</h2>
 </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,

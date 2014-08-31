@@ -3,6 +3,7 @@
  * @file
  * Template for a single column panel layout.
  */
+
 /* Variables:
  * - $css_id: An optional CSS id to use for the layout.
  *   $content['middle']: The only panel in the layout.

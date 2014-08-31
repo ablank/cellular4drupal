@@ -3,6 +3,7 @@
  * @file
  * Automated error page.
  */
+
 /* Regions:
   - $page['console']: Help, warnings, & other system notifications
   - $page['header']: Page Header

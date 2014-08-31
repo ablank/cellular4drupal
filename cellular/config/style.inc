@@ -4,6 +4,7 @@
  * @file
  * Theme-settings: Display & styling options.
  */
+
 $form['c']['display_settings'] = array(
   '#type' => 'fieldset',
   '#title' => t('Style'),

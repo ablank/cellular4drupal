@@ -4,6 +4,7 @@
  * @file
  * Theme-settings: Set copyright & favicons.
  */
+
 $form['c']['personalize'] = array(
   '#type' => 'fieldset',
   '#title' => t('Personalize'),

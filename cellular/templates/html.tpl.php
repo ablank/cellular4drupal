@@ -3,6 +3,7 @@
  * @file
  * HTML Template.
  */
+
 /*
   Variables:
   - $css: An array of CSS files for the current page.
