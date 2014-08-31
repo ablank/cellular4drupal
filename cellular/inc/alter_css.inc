@@ -13,17 +13,17 @@ function cellular_css_alter(&$css) {
   $add_css = array(
 // Paths are relative to /yourTheme/css/
     'drupal' => array(
-      'file'   => 'drupal.css',
+      'file' => 'drupal.css',
       'weight' => 1,
     ),
-    'style'  => array(
-      'file'   => 'style.css',
+    'style' => array(
+      'file' => 'style.css',
       'weight' => 2,
     ),
-    'print'  => array(
-      'file'       => 'print.css',
-      'media'      => 'print',
-      'weight'     => 100,
+    'print' => array(
+      'file' => 'print.css',
+      'media' => 'print',
+      'weight' => 100,
       'preprocess' => FALSE,
     ),
   );
@@ -32,9 +32,9 @@ function cellular_css_alter(&$css) {
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ?
-        array(
-          'file' => 'plugins/prism.css',
-        ) : NULL,
+      array(
+      'file' => 'plugins/prism.css',
+      ) : NULL,
   );
 
   if (theme_get_setting('jquery_update') == 1) {
@@ -69,7 +69,7 @@ function cellular_css_alter(&$css) {
         // Set path to updated file.
         if ($ui['theme'] === 'custom') {
           $ui['version'] === '1.10.4' ?
-            $v = '1.10' : '1.9';
+              $v = '1.10' : '1.9';
           $file = $ui['path'] . "jquery-ui.$v.css";
 
           $add_css['jquery-ui']['file'] = $file;
@@ -134,26 +134,25 @@ function cellular_css_alter(&$css) {
   if (theme_get_setting('remove_core_css') == 1) {
 // Select module css to exclude.
     $exclude = array(
-      'system'   => array(
+      'system' => array(
         'system.base.css',
         'system.menus.css',
         'system.messages.css',
         'system.theme.css',
       ),
-      'block'    => 'block.css',
-      'comment'  => 'comment.css',
-      'field'    => 'theme/field.css',
-      'filter'   => 'filter.css',
-      'help'     => 'help.css',
-      'menu'     => 'menu.css',
-      'node'     => 'node.css',
-      'search'   => 'search.css',
+      'block' => 'block.css',
+      'comment' => 'comment.css',
+      'field' => 'theme/field.css',
+      'filter' => 'filter.css',
+      'help' => 'help.css',
+      'menu' => 'menu.css',
+      'node' => 'node.css',
+      'search' => 'search.css',
       'shortcut' => 'shorcut.css',
-      'user'     => 'user.css',
+      'user' => 'user.css',
     );
 
     cellular_remove_css($css, $exclude);
   }
 // dsm($css);
-
 }

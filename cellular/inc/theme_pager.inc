@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Drupal pager ripped off from Tao :) Thanks!
@@ -40,25 +41,25 @@ function cellular_pager($vars) {
   }
   // End of generation loop preparation.
   $li_first = theme('pager_first', array(
-    'text'       => (isset($tags[0]) ? $tags[0] : t('« first')),
-    'element'    => $element,
+    'text' => (isset($tags[0]) ? $tags[0] : t('« first')),
+    'element' => $element,
     'parameters' => $parameters,
   ));
   $li_previous = theme('pager_previous', array(
-    'text'       => (isset($tags[1]) ? $tags[1] : t('‹ previous')),
-    'element'    => $element,
-    'interval'   => 1,
+    'text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')),
+    'element' => $element,
+    'interval' => 1,
     'parameters' => $parameters,
   ));
   $li_next = theme('pager_next', array(
-    'text'       => (isset($tags[3]) ? $tags[3] : t('next ›')),
-    'element'    => $element,
-    'interval'   => 1,
+    'text' => (isset($tags[3]) ? $tags[3] : t('next ›')),
+    'element' => $element,
+    'interval' => 1,
     'parameters' => $parameters,
   ));
   $li_last = theme('pager_last', array(
-    'text'       => (isset($tags[4]) ? $tags[4] : t('last »')),
-    'element'    => $element,
+    'text' => (isset($tags[4]) ? $tags[4] : t('last »')),
+    'element' => $element,
     'parameters' => $parameters,
   ));
 
@@ -69,7 +70,7 @@ function cellular_pager($vars) {
     if ($li_previous) {
       $items[] = array(
         'class' => array('pager-previous'),
-        'data'  => $li_previous,
+        'data' => $li_previous,
       );
     }
 
@@ -83,10 +84,10 @@ function cellular_pager($vars) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
-            'data'  => theme('pager_previous', array(
-              'text'       => $i,
-              'element'    => $element,
-              'interval'   => ($pager_current - $i),
+            'data' => theme('pager_previous', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => ($pager_current - $i),
               'parameters' => $parameters,
             )),
           );
@@ -97,10 +98,10 @@ function cellular_pager($vars) {
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
-            'data'  => theme('pager_next', array(
-              'text'       => $i,
-              'element'    => $element,
-              'interval'   => ($i - $pager_current),
+            'data' => theme('pager_next', array(
+              'text' => $i,
+              'element' => $element,
+              'interval' => ($i - $pager_current),
               'parameters' => $parameters,
             )),
           );
@@ -119,14 +120,13 @@ function cellular_pager($vars) {
     }
 
     return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
-      'items'      => $items,
-      'attributes' => array(
-        'class' => array(
-          'pager',
-          'center',
+        'items' => $items,
+        'attributes' => array(
+          'class' => array(
+            'pager',
+            'center',
+          ),
         ),
-      ),
     ));
   }
-
 }

@@ -3,7 +3,6 @@
  * @file
  * Page Template.
  */
-
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -81,6 +80,7 @@
   (e.g., the view and edit tabs when displaying a node).
   - $feed_icons: A string of all feed icons for the current page.
  */
+
 ?>
 
 <div id="page-wrap">

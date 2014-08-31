@@ -15,23 +15,23 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
     case 'search_block_form':
 
       $form['#attributes'] = array(
-        'id'    => 'site-search',
+        'id' => 'site-search',
         'class' => array(// 'class-name',
         ),
       );
       $form['search_block_form'] = array(
-        '#type'          => 'textfield',
-        '#size'          => 25,
+        '#type' => 'textfield',
+        '#size' => 25,
         // '#value' => t('Search'),
         '#default_value' => 'Search keywords',
-        '#attributes'    => array('title' => 'Search this site'),
+        '#attributes' => array('title' => 'Search this site'),
       );
 
       $form['actions']['submit'] = array(
-        '#type'       => 'submit',
-        '#value'      => t('Search'),
+        '#type' => 'submit',
+        '#value' => t('Search'),
         '#attributes' => array(
-          'id'    => 'site-search-submit',
+          'id' => 'site-search-submit',
           'class' => array('icon', 'search'),
         ),
       );
@@ -47,20 +47,20 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $form['#title_display'] = 'invisible';
 
       $form['name'] = array(
-        '#type'       => 'textfield',
-        '#title'      => t('Name'),
+        '#type' => 'textfield',
+        '#title' => t('Name'),
         '#attributes' => array('value' => t('Username')),
-        '#size'       => $field_size,
+        '#size' => $field_size,
       );
       $form['pass'] = array(
-        '#type'       => 'password',
-        '#title'      => t('Password'),
+        '#type' => 'password',
+        '#title' => t('Password'),
         '#attributes' => array('value' => t('Password')),
-        '#size'       => $field_size,
+        '#size' => $field_size,
       );
       $form['actions']['submit'][] = array(
         // Change the text on the submit button:
-        '#value'      => t('Log in'),
+        '#value' => t('Log in'),
         '#attributes' => array(
           'class' => array(
             $orient === 'vertical' ? 'clearfix' : NULL,
@@ -76,11 +76,11 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
         $ulmarkup = '<div id="login-links">';
         if ($ureg == 1) {
           $ulmarkup .= l(t('Register'), "user/register", array(
-              'attributes' => array(
-                'class' => array(
-                  'register',
-                ),
+            'attributes' => array(
+              'class' => array(
+                'register',
               ),
+            ),
             )
           );
         }
@@ -103,7 +103,6 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       break;
   }
   // dsm($form);
-
 }
 
 /**
@@ -118,19 +117,18 @@ function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
   $form['comment_body']['#after_build'][] = 'cellular_form_strip_access';
   // Customize Submit & Preview buttons.
   $form['actions']['preview'] = array(
-    '#type'       => 'submit',
-    '#value'      => t('Preview'),
-    '#weight'     => 19,
+    '#type' => 'submit',
+    '#value' => t('Preview'),
+    '#weight' => 19,
     '#attributes' => array('class' => array('submit', 'preview')),
   );
   $form['actions']['submit'] = array(
-    '#type'       => 'submit',
-    '#value'      => t('Save'),
-    '#weight'     => 20,
+    '#type' => 'submit',
+    '#value' => t('Save'),
+    '#weight' => 20,
     '#attributes' => array(
-      'id'    => 'comment-form-submit',
+      'id' => 'comment-form-submit',
       'class' => array('submit', 'right'),
     ),
   );
-
 }

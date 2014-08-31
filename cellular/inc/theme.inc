@@ -25,7 +25,6 @@ function cellular_field($vars) {
   $output = '<div class="' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $content . '</div>';
 
   return $output;
-
 }
 
 /**
@@ -55,7 +54,6 @@ function cellular_breadcrumb(&$vars) {
       return $output;
     }
   }
-
 }
 
 /**
@@ -82,7 +80,6 @@ function cellular_file_icon(&$vars) {
   isset($cname) ? $cname = $cname : '';
 
   return '<span class="icon ' . $cname . '"></span>' . "\n";
-
 }
 
 /**
@@ -94,7 +91,7 @@ function cellular_feed_icon($vars) {
   ));
 
   return l($text, $vars['url'], array(
-    'html'       => TRUE,
+    'html' => TRUE,
     'attributes' => array(
       'class' => array(
         'icon',
@@ -103,5 +100,4 @@ function cellular_feed_icon($vars) {
       'title' => $text
     ),
   ));
-
 }

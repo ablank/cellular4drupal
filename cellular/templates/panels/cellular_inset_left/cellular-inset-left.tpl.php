@@ -3,7 +3,6 @@
  * @file
  * Template for the Inset Left column panel layout.
  */
-
 /* Variables:
  *  $content['top']
  *  $content['left']

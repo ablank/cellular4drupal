@@ -14,7 +14,6 @@ function cellular_theme_path(&$theme_key = NULL) {
   $theme_path = drupal_get_path('theme', $t_theme);
 
   return $theme_path;
-
 }
 
 /**
@@ -28,7 +27,6 @@ function cellular_merge(&$arr) {
   }
 
   return $output;
-
 }
 
 /**
@@ -40,34 +38,33 @@ function cellular_build_head_tags(&$array) {
   foreach ($array as $meta => $val) {
     // Build tag:
     $tag = array(
-      '#type'       => 'html_tag',
-      '#tag'        => $val['tag'],
+      '#type' => 'html_tag',
+      '#tag' => $val['tag'],
       '#attributes' => array(),
-      '#weight'     => isset($val['weight']) ?
-          $val['weight'] : $base_weight,
+      '#weight' => isset($val['weight']) ?
+        $val['weight'] : $base_weight,
     );
 
     // Misc. attr/val:
     isset($val['attr']) && isset($val['attr_val']) ?
-      $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
+        $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
     // General attributes:
     isset($val['name']) ?
-      $tag['#attributes']['name'] = $val['name'] : NULL;
+        $tag['#attributes']['name'] = $val['name'] : NULL;
     isset($val['rel']) ?
-      $tag['#attributes']['rel'] = $val['rel'] : NULL;
+        $tag['#attributes']['rel'] = $val['rel'] : NULL;
     isset($val['content']) ?
-      $tag['#attributes']['content'] = $val['content'] : NULL;
+        $tag['#attributes']['content'] = $val['content'] : NULL;
     isset($val['href']) ?
-      $tag['#attributes']['href'] = $val['href'] : NULL;
+        $tag['#attributes']['href'] = $val['href'] : NULL;
     // Attributes for favicons:
     isset($val['size']) ?
-      $tag['#attributes']['sizes'] = $val['size'] : NULL;
+        $tag['#attributes']['sizes'] = $val['size'] : NULL;
     isset($val['type']) ?
-      $tag['#attributes']['type'] = $val['type'] : NULL;
+        $tag['#attributes']['type'] = $val['type'] : NULL;
 
     drupal_add_html_head($tag, 'meta_' . $meta);
   }
-
 }
 
 /**
@@ -103,7 +100,6 @@ function cellular_add_js($array, $cellular = FALSE) {
       drupal_add_js($data, $script);
     }
   }
-
 }
 
 /**
@@ -111,11 +107,11 @@ function cellular_add_js($array, $cellular = FALSE) {
  */
 function cellular_js_fallback($script, $cellular = FALSE) {
   $attr = array(
-    'group'      => $script['group'],
-    'weight'     => $script['weight'] + 0.1,
-    'type'       => 'inline',
+    'group' => $script['group'],
+    'weight' => $script['weight'] + 0.1,
+    'type' => 'inline',
     'every_page' => isset($script['every_page']) ?
-        $script['every_page'] : TRUE,
+      $script['every_page'] : TRUE,
   );
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
@@ -126,7 +122,6 @@ function cellular_js_fallback($script, $cellular = FALSE) {
 
     drupal_add_js($fallback, $attr);
   }
-
 }
 
 /**
@@ -165,7 +160,6 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     $javascript[$ojs]['preprocess'] = isset($script['preprocess']) ?
       $script['preprocess'] : FALSE;
   }
-
 }
 
 /**
@@ -203,7 +197,6 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
   }
 
   return $css;
-
 }
 
 /**
@@ -223,7 +216,6 @@ function cellular_remove_css(&$css, $exclude) {
       unset($css[drupal_get_path('module', $module) . '/' . $stylesheet]);
     }
   }
-
 }
 
 /**
@@ -257,7 +249,6 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
     $css[$ocss]['preprocess'] = isset($style['preprocess']) ?
       $style['preprocess'] : FALSE;
   }
-
 }
 
 /**
@@ -273,7 +264,6 @@ function cellular_form_strip_access(&$form) {
   $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
 
   return $form;
-
 }
 
 /**
@@ -290,7 +280,6 @@ function cellular_main_menu(&$vars) {
   }
 
   return menu_tree_output($main_menu_tree);
-
 }
 
 /**
@@ -313,5 +302,4 @@ function cellular_test_sidebar(&$vars) {
   }
 
   return $sidebars;
-
 }

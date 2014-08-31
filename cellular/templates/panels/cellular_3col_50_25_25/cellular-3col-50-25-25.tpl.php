@@ -3,7 +3,6 @@
  * @file
  * This template provides a three column 50%-25%-25% panel display layout.
  */
-
 /* Variables:
  * - $id: An optional CSS id to use for the layout.
  * - $content: An array of content, each item in the array is keyed to one

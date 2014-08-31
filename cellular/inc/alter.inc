@@ -18,7 +18,6 @@ function cellular_html_head_alter(&$head_elements) {
     }
   }
   // dsm($head_elements);
-
 }
 
 /**
@@ -26,5 +25,4 @@ function cellular_html_head_alter(&$head_elements) {
  */
 function cellular_page_alter(&$page) {
   // dsm($page);
-
 }
