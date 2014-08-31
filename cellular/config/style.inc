@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
  * Theme-settings: Display & styling options.
  */
-
 $form['c']['display_settings'] = array(
   '#type' => 'fieldset',
   '#title' => t('Style'),
@@ -35,9 +35,9 @@ $form['c']['display_settings']['breadcrumb_separator'] = array(
   '#description' => t('Symbol used to separate breadcrumb links.'),
   '#default_value' => theme_get_setting('breadcrumb_separator'),
   '#states' => array(
-      'visible' => array(
-          ':input[name="breadcrumb_display"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="breadcrumb_display"]' => array('checked' => TRUE),
+    ),
   ),
 );
 
@@ -84,8 +84,8 @@ $form['c']['display_settings']['login']['login_block_orientation'] = array(
   '#description' => t('This setting adds a class (horizontal || vertical)
  to the user login block.'),
   '#options' => array(
-      'vertical' => t('vertical'),
-      'horizontal' => t('horizontal'),
+    'vertical' => t('vertical'),
+    'horizontal' => t('horizontal'),
   ),
   '#default_value' => theme_get_setting('login_block_orientation '),
 );

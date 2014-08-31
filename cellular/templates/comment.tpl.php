@@ -3,6 +3,7 @@
  * @file
  * Comment template.
  */
+
 /*  Variables:
  * - $author: Comment author. Can be link or plain text.
  * - $content: An array of comment items. Use render($content) to print them all, or
@@ -55,6 +56,7 @@
  * @see template_process()
  * @see theme_comment()
  */
+
 ?>
 
 <div class="<?php print $classes; ?>" <?php print $attributes; ?>>
@@ -78,6 +80,7 @@
     // We hide the comments and links now so that we can render them later.
     hide($content['links']);
     print render($content);
+
     ?>
 
     <?php if ($signature): ?>

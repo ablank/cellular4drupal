@@ -1,15 +1,15 @@
 <?php
-/**
-* @file
-* Theme-settings: Social media link settings.
-*/
 
+/**
+ * @file
+ * Theme-settings: Social media link settings.
+ */
 $form['c']['social_media'] = array(
   '#type' => 'fieldset',
   '#title' => t('Social Media'),
   '#description' => is_dir('sites/all/libraries/cellular') ?
-  NULL :
-  t('<div class="messages error"> <h2>These features require the
+      NULL :
+      t('<div class="messages error"> <h2>These features require the
 <a href="@url">Cellular Library</a>.</h2>
 </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,

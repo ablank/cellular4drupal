@@ -3,6 +3,7 @@
  * @file
  * Node template.
  */
+
 /* Variables:
  * - $title: the (sanitized) title of the node.
  * - $content: An array of node items. Use render($content) to print them all,
@@ -69,6 +70,7 @@
  * language, e.g. $node->body['en'], thus overriding any language negotiation
  * rule that was previously applied.
  */
+
 ?>
 <div id="node-<?php print $node->nid; ?>" <?php print $attributes; ?>>
 
@@ -83,6 +85,7 @@
     endif;
   endif;
   print render($title_suffix);
+
   ?>
 
   <?php if ($display_submitted): ?>
@@ -104,6 +107,7 @@
     hide($content['comments']);
     hide($content['links']);
     print render($content);
+
     ?>
   </div>
   <?php print render($content['links']); ?>

@@ -25,6 +25,7 @@ function cellular_field($vars) {
   $output = '<div class="' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $content . '</div>';
 
   return $output;
+
 }
 
 /**
@@ -44,7 +45,8 @@ function cellular_breadcrumb(&$vars) {
       foreach ($breadcrumb as $key => $val) {
         if ($key == 0) {
           $output .= '<li class="icon home">' . $val . "</li>\n";
-        } else {
+        }
+        else {
           $output .= '<li>' . $separator . $val . "</li>\n";
         }
       }
@@ -53,6 +55,7 @@ function cellular_breadcrumb(&$vars) {
       return $output;
     }
   }
+
 }
 
 /**
@@ -79,6 +82,7 @@ function cellular_file_icon(&$vars) {
   isset($cname) ? $cname = $cname : '';
 
   return '<span class="icon ' . $cname . '"></span>' . "\n";
+
 }
 
 /**
@@ -86,17 +90,18 @@ function cellular_file_icon(&$vars) {
  */
 function cellular_feed_icon($vars) {
   $text = t('Subscribe to !feed-title', array(
-      '!feed-title' => $vars['title'],
+    '!feed-title' => $vars['title'],
   ));
 
   return l($text, $vars['url'], array(
-      'html' => TRUE,
-      'attributes' => array(
-          'class' => array(
-              'icon',
-              'rss',
-          ),
-          'title' => $text
+    'html'       => TRUE,
+    'attributes' => array(
+      'class' => array(
+        'icon',
+        'rss',
       ),
+      'title' => $text
+    ),
   ));
+
 }

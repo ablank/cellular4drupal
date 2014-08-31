@@ -3,6 +3,7 @@
  * @file
  * Automated error page.
  */
+
 /* Regions:
   - $page['console']: Help, warnings, & other system notifications
   - $page['header']: Page Header
@@ -73,6 +74,7 @@
   comment/reply/12345).
 
  */
+
 ?>
 
 <div id="skipLinks" class="hidden">
@@ -88,6 +90,7 @@
       if ($site_name) :
         print "<h2>" . $site_name . "</h2>";
       endif;
+
       ?>
     </div>
     <?php if (isset($main_menu)) : ?>
@@ -109,6 +112,7 @@
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
+
     ?>
     <div id="content-wrap">
       <div id="content" class="<?php print $content_class; ?>">
@@ -117,11 +121,13 @@
           <?php
           // Error message.
           print $messages;
+
           ?>
         </div>
         <div class="search">
           <?php
           print render($search_box);
+
           ?>
         </div>
 
@@ -135,6 +141,7 @@
   if ($page['footer_top']) :
     print render($page['footer_top']);
   endif;
+
   ?>
   <div id="footer" class="cell">
 
@@ -143,6 +150,7 @@
     if ($page['footer']) :
       print render($page['footer']);
     endif;
+
     ?>
   </div>
   <!-- /#footer -->
@@ -153,6 +161,7 @@
       if ($page['footer_bottom']) :
         print render($page['footer_bottom']);
       endif;
+
       ?>
 
       <?php if ($copyright): ?>
@@ -163,5 +172,3 @@
   <?php endif; ?>
 </div>
 <!-- /#page-wrap-->
-<?php
-print "\n";

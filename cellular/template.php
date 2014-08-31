@@ -1,9 +1,9 @@
 <?php
-
 /**
  * @file
  * Set global vars & load all functions for templates.
  */
+
 $inc_path = drupal_get_path('theme', 'cellular') . '/inc';
 $include = array(
   // 'dev-functions.inc',

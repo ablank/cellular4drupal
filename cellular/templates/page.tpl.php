@@ -3,6 +3,7 @@
  * @file
  * Page Template.
  */
+
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -100,6 +101,7 @@
       if ($site_name) :
         print "<h2>" . $site_name . "</h2>";
       endif;
+
       ?>
     </div>
     <?php if (isset($main_menu)) : ?>
@@ -125,6 +127,7 @@
       print '<h1 id="page-title">' . $title . '</h1>';
     endif;
     print render($title_suffix);
+
     ?>
     <?php if ($tabs): ?>
       <div id="page-tabs">
@@ -140,6 +143,7 @@
         endif;
 
         if ($page['console'] || ($show_messages && $messages)) :
+
           ?>
           <div id="console">
             <?php
@@ -147,6 +151,7 @@
             if ($show_messages && $messages) :
               print $messages;
             endif;
+
             ?>
           </div>
         <?php endif; ?>
@@ -170,11 +175,13 @@
           if (theme_get_setting('breadcrumb_display' && !$is_front)) :
             print $breadcrumb;
           endif;
+
           ?>
 
           <?php
           // Main Page Content.
           print render($page['content']);
+
           ?>
 
           <?php if ($page['content_bottom']) : ?>
@@ -215,6 +222,7 @@
     if ($page['footer']) :
       print render($page['footer']);
     endif;
+
     ?>
 
     <div id="footer-bottom" class="cell">
@@ -231,5 +239,3 @@
   <!-- /#footer -->
 </div>
 <!-- /#page-wrap-->
-<?php
-print "\n";

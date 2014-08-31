@@ -67,8 +67,8 @@ $form['c']['js'] = array(
   '#type' => 'fieldset',
   '#title' => t('Javascript'),
   '#description' => is_dir('sites/all/libraries/cellular') ?
-          NULL :
-          t('<div class="messages error"> <h2>These features require the
+      NULL :
+      t('<div class="messages error"> <h2>These features require the
 <a href="@url">Cellular Library</a>.</h2>
 </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,
@@ -92,9 +92,9 @@ $form['c']['js']['Modernizr'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
   '#states' => array(
-      'visible' => array(
-          ':input[name="mdrnzr"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="mdrnzr"]' => array('checked' => TRUE),
+    ),
   ),
 );
 
@@ -105,9 +105,9 @@ $form['c']['js']['Modernizr']['mq_mobile_enable'] = array(
 (conditional-mobile.css) for mobile devices."),
   '#default_value' => theme_get_setting('mq_mobile_enable'),
   '#states' => array(
-      'visible' => array(
-          ':input[name="modernizr"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="modernizr"]' => array('checked' => TRUE),
+    ),
   ),
 );
 $form['c']['js']['Modernizr']['mq_mobile'] = array(
@@ -118,9 +118,9 @@ extra CSS for mobile devices. This should match the @media setting in
 conditional-mobile.css."),
   '#default_value' => theme_get_setting('mq_mobile'),
   '#states' => array(
-      'visible' => array(
-          ':input[name="mq_mobile_enable"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="mq_mobile_enable"]' => array('checked' => TRUE),
+    ),
   ),
 );
 
@@ -131,9 +131,9 @@ $form['c']['js']['Modernizr']['mq_normal_enable'] = array(
 conditional-style.css."),
   '#default_value' => theme_get_setting('mq_normale_enable'),
   '#states' => array(
-      'visible' => array(
-          ':input[name="modernizr"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="modernizr"]' => array('checked' => TRUE),
+    ),
   ),
 );
 $form['c']['js']['Modernizr']['mq_normal'] = array(
@@ -142,9 +142,9 @@ $form['c']['js']['Modernizr']['mq_normal'] = array(
   '#description' => t("The media query tested by Modernizr load style.css."),
   '#default_value' => theme_get_setting('mq_normal'),
   '#states' => array(
-      'visible' => array(
-          ':input[name="mq_normal_enable"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="mq_normal_enable"]' => array('checked' => TRUE),
+    ),
   ),
 );
 
@@ -155,9 +155,9 @@ $form['c']['js']['Modernizr']['mq_large_enable'] = array(
 (conditional-large.css) for large screen devices."),
   '#default_value' => theme_get_setting('mq_large_enable'),
   '#states' => array(
-      'visible' => array(
-          ':input[name="modernizr"]' => array('checked' => TRUE),
-      ),
+    'visible' => array(
+      ':input[name="modernizr"]' => array('checked' => TRUE),
+    ),
   ),
 );
 $form['c']['js']['Modernizr']['mq_large'] = array(
