@@ -35,7 +35,7 @@
              $('.block-content').masonry({
              containerStyle: null,
              itemSelector: '.blocklink-wrap',
-             isWitWidth: true, 
+             isWitWidth: true,
              columnWidth: 240
              });
              */
