@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Cellular functions to set content attributes.
@@ -23,7 +24,7 @@ function cellular_html_attributes(&$vars, $language) {
   // Set <HTML> attributes:
   $html_attributes = array(
     'lang' => $language->language,
-    'dir'  => $language->dir,
+    'dir' => $language->dir,
   );
   $vars['html_attributes'] = drupal_attributes($html_attributes);
 }
@@ -47,9 +48,9 @@ function cellular_body_attributes(&$vars) {
 // Sidebar class is generated if region is used on page.
   $body_attributes['class'][] = cellular_test_sidebar($vars);
   drupal_is_front_page() ?
-    $body_attributes['class'][] = 'frontpage' : NULL;
+      $body_attributes['class'][] = 'frontpage' : NULL;
   user_is_logged_in() ?
-    $body_attributes['class'][] = 'user' : NULL;
+      $body_attributes['class'][] = 'user' : NULL;
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
 }
@@ -60,44 +61,44 @@ function cellular_body_attributes(&$vars) {
 function cellular_favicons() {
   $favicons = array(
     'favicon-16x16' => array(
-      'rel'    => 'shortcut icon',
-      'type'   => 'image/x-icon',
-      'size'   => NULL,
-      'href'   => theme_get_setting('favicon'),
+      'rel' => 'shortcut icon',
+      'type' => 'image/x-icon',
+      'size' => NULL,
+      'href' => theme_get_setting('favicon'),
       'weight' => 95,
     ),
     'favicon-32x32' => array(
-      'rel'    => 'shortcut icon',
-      'type'   => 'image/png',
-      'size'   => '32x32',
-      'href'   => theme_get_setting('favicon_32'),
+      'rel' => 'shortcut icon',
+      'type' => 'image/png',
+      'size' => '32x32',
+      'href' => theme_get_setting('favicon_32'),
       'weight' => 96,
     ),
     /* Older iOS devices don't understand the sizes attribute and use
      * whichever value is last, so 'default' is given more weight.
      */
     'apple-default' => array(
-      'rel'    => 'apple-touch-icon',
-      'size'   => NULL,
-      'href'   => theme_get_setting('apple_icon_57'),
+      'rel' => 'apple-touch-icon',
+      'size' => NULL,
+      'href' => theme_get_setting('apple_icon_57'),
       'weight' => 100,
     ),
-    'apple-72x72'   => array(
-      'rel'    => 'apple-touch-icon',
-      'size'   => '72x72',
-      'href'   => theme_get_setting('apple_icon_72'),
+    'apple-72x72' => array(
+      'rel' => 'apple-touch-icon',
+      'size' => '72x72',
+      'href' => theme_get_setting('apple_icon_72'),
       'weight' => 99,
     ),
     'apple-114x114' => array(
-      'rel'    => 'apple-touch-icon',
-      'size'   => '114x114',
-      'href'   => theme_get_setting('apple_icon_114'),
+      'rel' => 'apple-touch-icon',
+      'size' => '114x114',
+      'href' => theme_get_setting('apple_icon_114'),
       'weight' => 98,
     ),
     'apple-144x144' => array(
-      'rel'    => 'apple-touch-icon',
-      'size'   => '144x144',
-      'href'   => theme_get_setting('apple_icon_144'),
+      'rel' => 'apple-touch-icon',
+      'size' => '144x144',
+      'href' => theme_get_setting('apple_icon_144'),
       'weight' => 97,
     ),
   );
@@ -118,37 +119,37 @@ function cellular_favicons() {
  */
 function cellular_metatags() {
   $meta_tags = array(
-    'viewport'         => array(
-      'tag'     => 'meta',
-      'name'    => 'viewport',
+    'viewport' => array(
+      'tag' => 'meta',
+      'name' => 'viewport',
       'content' => 'width=device-width, initial-scale=1',
-      'weight'  => 0,
+      'weight' => 0,
     ),
     'ie_render_engine' => array(
-      'tag'      => 'meta',
-      'attr'     => 'http-equiv',
+      'tag' => 'meta',
+      'attr' => 'http-equiv',
       'attr_val' => 'X-UA-Compatible',
-      'content'  => 'IE=Edge,chrome=1',
-      'weight'   => 1,
+      'content' => 'IE=Edge,chrome=1',
+      'weight' => 1,
     ),
-    'robots'           => array(
-      'tag'     => 'meta',
-      'name'    => 'robots',
+    'robots' => array(
+      'tag' => 'meta',
+      'name' => 'robots',
       'content' => 'index, follow',
-      'weight'  => 2,
+      'weight' => 2,
     ),
-    'humans'           => array(
-      'tag'    => 'link',
-      'type'   => 'text/plain',
-      'rel'    => 'author',
-      'href'   => $GLOBALS['base_url'] . '/humans.txt',
+    'humans' => array(
+      'tag' => 'link',
+      'type' => 'text/plain',
+      'rel' => 'author',
+      'href' => $GLOBALS['base_url'] . '/humans.txt',
       'weight' => 3,
     ),
-    'grddl'            => !empty($vars['grddl_profile']) ? array(
-        'tag'    => 'link',
-        'rel'    => 'profile',
-        'href'   => $vars['grddl_profile'],
-        'weight' => 4,
+    'grddl' => !empty($vars['grddl_profile']) ? array(
+      'tag' => 'link',
+      'rel' => 'profile',
+      'href' => $vars['grddl_profile'],
+      'weight' => 4,
       ) : NULL,
   );
 
@@ -200,13 +201,12 @@ function cellular_sidebar_classes(&$vars) {
  *
  * @param $css
  */
-function cellular_remove_default_css(&$css){
+function cellular_remove_default_css(&$css) {
   // Nuke all css not a member of group CSS_THEME:
   $exclude = array();
   if (theme_get_setting('remove_drupal_css') === 'theme_only') {
     foreach ($css as $key => $value) {
-      if ($value['group'] !== CSS_THEME
-        && $key !== 'admin_menu') {
+      if ($value['group'] !== CSS_THEME && $key !== 'admin_menu') {
         $exclude[$key] = FALSE;
       }
     }
@@ -225,22 +225,22 @@ function cellular_remove_default_css(&$css){
   if (theme_get_setting('remove_drupal_css') === 'select') {
 // Select module css to exclude.
     $exclude = array(
-      'system'   => array(
+      'system' => array(
         'system.base.css',
         'system.menus.css',
         'system.messages.css',
         'system.theme.css',
       ),
-      'block'    => 'block.css',
-      'comment'  => 'comment.css',
-      'field'    => 'theme/field.css',
-      'filter'   => 'filter.css',
-      'help'     => 'help.css',
-      'menu'     => 'menu.css',
-      'node'     => 'node.css',
-      'search'   => 'search.css',
+      'block' => 'block.css',
+      'comment' => 'comment.css',
+      'field' => 'theme/field.css',
+      'filter' => 'filter.css',
+      'help' => 'help.css',
+      'menu' => 'menu.css',
+      'node' => 'node.css',
+      'search' => 'search.css',
       'shortcut' => 'shorcut.css',
-      'user'     => 'user.css',
+      'user' => 'user.css',
     );
   }
 

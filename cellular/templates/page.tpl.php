@@ -3,7 +3,6 @@
  * @file
  * Page Template.
  */
-
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -159,8 +158,9 @@
 
         <?php if ($page['sidebar_left']) : ?>
           <div id="sidebar-left" class="<?php print $page['sidebar_class'];
+
           ?>">
-            <?php print render($page['sidebar_left']); ?>
+                 <?php print render($page['sidebar_left']); ?>
           </div>
         <?php endif; ?>
 
@@ -196,8 +196,9 @@
 
         <?php if ($page['sidebar_right']) : ?>
           <div id="sidebar-right" class="<?php print $page['sidebar_class'];
+
           ?>">
-            <?php print render($page['sidebar_right']); ?>
+                 <?php print render($page['sidebar_right']); ?>
           </div>
         <?php endif; ?>
 
@@ -218,17 +219,21 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($page['social_media_share']) :
+    <?php
+    if ($page['social_media_share']) :
       print $page['social_media_share'];
     endif;
     if ($page['social_media_follow']):
       print $page['social_media_follow'];
-    endif; ?>
+    endif;
+
+    ?>
 
     <?php
     if ($page['footer']) :
       print render($page['footer']);
     endif;
+
     ?>
 
     <div id="footer-bottom" class="cell">

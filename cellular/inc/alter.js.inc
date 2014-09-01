@@ -22,7 +22,7 @@ function cellular_js_alter(&$javascript) {
 // Scripts to add, relative to /yourTheme/js/
   $scripts = array(
     'script' => array(
-      'file'   => 'script.js',
+      'file' => 'script.js',
       'weight' => 99,
     ),
   );
@@ -35,11 +35,11 @@ function cellular_js_alter(&$javascript) {
     cellular_jquery_update($javascript, $js_plugins);
     cellular_jqueryui_js($javascript, $js_plugins);
     // Add jQuery.migrate to support older plugins if v >= 1.9
-    if ($jquery['version'] !== '1.8.24' ) {
+    if ($jquery['version'] !== '1.8.24') {
       $js_plugins['migrate'] = array(
         'version' => '1.2.1',
-        'file'    => 'plugins/jquery.migrate.min.js',
-        'weight'  => -96,
+        'file' => 'plugins/jquery.migrate.min.js',
+        'weight' => -96,
       );
     }
   }

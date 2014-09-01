@@ -4,7 +4,6 @@
  * @file
  * Theme-settings: Javascript options.
  */
-
 /*
  * jQuery CDN options.
  * jQuery & jQuery.ui version options are from this array.
@@ -84,7 +83,6 @@ $form['c']['js']['mdrnzr'] = array(
 load resources as needed."),
   '#default_value' => theme_get_setting('modernizr'),
 );
-
 
 $form['c']['js']['Modernizr'] = array(
   '#type' => 'fieldset',

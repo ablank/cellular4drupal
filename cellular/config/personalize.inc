@@ -4,7 +4,6 @@
  * @file
  * Theme-settings: Set copyright & favicons.
  */
-
 $form['c']['personalize'] = array(
   '#type' => 'fieldset',
   '#title' => t('Personalize'),
@@ -14,8 +13,7 @@ $form['c']['personalize'] = array(
 
 $form['c']['personalize']['dev'] = array(
   '#type' => 'checkbox',
-  '#title' => module_exists('devel') ? t('Development Mode')
-    : t('<div class=\"warning\">This option requires the Devel module to be
+  '#title' => module_exists('devel') ? t('Development Mode') : t('<div class=\"warning\">This option requires the Devel module to be
     installed/enabled.</div>'),
   '#description' => t("Use the dsm() function to return page variables."),
   '#default_value' => theme_get_setting('dev'),

@@ -8,9 +8,9 @@ $inc_path = drupal_get_path('theme', 'cellular') . '/inc';
 $include = array(
   // 'dev-functions.inc',
   'fn.inc',
-  'fn.attributes.inc',
   'fn.javascript.inc',
   'fn.jquery.inc',
+  'fn.preprocess.inc',
   'alter.inc',
   'alter.form.inc',
   'alter.css.inc',

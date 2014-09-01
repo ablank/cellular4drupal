@@ -3,7 +3,6 @@
  * @file
  * Theme the more link rendered by views.
  */
-
 /* - $view: The view object.
  * - $more_url: the url for the more link.
  * - $link_text: the text for the more link.

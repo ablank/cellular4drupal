@@ -16,25 +16,25 @@ function cellular_css_alter(&$css) {
   $add_css = array(
 // Paths are relative to /yourTheme/css/
     'drupal' => array(
-      'file'   => 'drupal.css',
+      'file' => 'drupal.css',
       'weight' => 1,
     ),
-    'style'  => array(
-      'file'   => 'style.css',
+    'style' => array(
+      'file' => 'style.css',
       'weight' => 2,
     ),
-    'print'  => array(
-      'file'       => 'print.css',
-      'media'      => 'print',
-      'weight'     => 100,
+    'print' => array(
+      'file' => 'print.css',
+      'media' => 'print',
+      'weight' => 100,
       'preprocess' => FALSE,
     ),
     'ie' => array(
       // Single stylesheet used to hack old internet explorer quirks.
       // Minimal support for deprecated breowsers is fine imo...
       'file' => 'ie.css',
-      'browsers'   => array('IE' => 'lt IE 10', '!IE' => FALSE),
-      'weight'     => 999,
+      'browsers' => array('IE' => 'lt IE 10', '!IE' => FALSE),
+      'weight' => 999,
     ),
   );
   cellular_add_css($css, $add_css);

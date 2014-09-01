@@ -33,16 +33,16 @@ function cellular_preprocess_node(&$vars) {
     $uid = user_load($node->uid);
     $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";
     $author = array(
-      'name'        => l($node->name, 'user/' . $node->uid),
+      'name' => l($node->name, 'user/' . $node->uid),
       'description' => isset($author->field_description[$safe_value]) ?
-          '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
-      'image'       => !empty($uid->picture->uri) ? theme('image_style', array(
+        '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
+      'image' => !empty($uid->picture->uri) ? theme('image_style', array(
           // 'style_name' => 'blog-author-image',
-          'path'       => $node->picture->uri,
-          'width'      => NULL,
-          'height'     => NULL,
-          'alt'        => t('User') . ' ' . $node->name,
-          'title'      => t('User') . ' ' . $node->name,
+          'path' => $node->picture->uri,
+          'width' => NULL,
+          'height' => NULL,
+          'alt' => t('User') . ' ' . $node->name,
+          'title' => t('User') . ' ' . $node->name,
           'attributes' => array('class' => 'author-image'),
         )) : NULL,
     );
@@ -70,8 +70,7 @@ function cellular_preprocess_page(&$vars) {
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ?
-    "&copy; " . date("Y") . " " . $copyright
-    : NULL;
+    "&copy; " . date("Y") . " " . $copyright : NULL;
   // Set search block variable for addition to templates:
   $vars['page']['search_box'] = drupal_get_form('search_form');
 
@@ -105,8 +104,8 @@ function cellular_preprocess_block(&$vars) {
   $block = $vars['block'];
   // Hide block titles in the headers region:
   if (($block->region == 'header')
-    // || ($block->region == 'header_top')
-    // || ($block->region == 'header_bottom')
+  // || ($block->region == 'header_top')
+  // || ($block->region == 'header_bottom')
   ) {
     $vars['title_attributes_array']['class'] = array('hidden');
   }
