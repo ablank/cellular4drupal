@@ -206,12 +206,12 @@ $form['c']['js']['update']['jquery_cdn'] = array(
   '#default_value' => theme_get_setting('jquery_cdn'),
 );
 
-$form['c']['js']['update']['cdn'] = array(
+$form['c']['js']['update']['jquery_cdn_source'] = array(
   '#type' => 'select',
   '#title' => t('CDN Provider'),
   '#description' => t("Select which CDN your site will use."),
   '#options' => $cdn['provider'],
-  '#default_value' => theme_get_setting('cdn'),
+  '#default_value' => theme_get_setting('jquery_cdn_source'),
   '#states' => array(
     'visible' => array(
       ':input[name="jquery_cdn"]' => array('checked' => TRUE),

@@ -5,6 +5,14 @@
  * Theme-settings: Display & styling options.
  */
 
+$remove_core_css = array(
+  0 => t('Leave CSS intact.'),
+  'system' => t('Remove all system CSS.'),
+  'select' => t('Remove some system & core module CSS.'),
+  'theme_only' => t('Remove all module & system CSS,
+  only using the theme CSS.'),
+);
+
 $form['c']['display_settings'] = array(
   '#type' => 'fieldset',
   '#title' => t('Style'),
@@ -47,29 +55,16 @@ $form['c']['display_settings']['r'] = array(
   '#title' => t('Remove Drupal CSS'),
   '#description' => t('Prevent stylesheet groups from loading. Individual
  stylesheets can be removed by adding the module & stylesheet to the array
- $exclude and calling function cellular_remove_css() in /inc/css_alter.inc'),
+ $exclude and calling function cellular_remove_css() in /inc/css_alter
+ .inc <hr/>'),
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
-$form['c']['display_settings']['r']['remove_all_css'] = array(
-  '#type' => 'checkbox',
-  '#title' => t('Remove All Non-Theme CSS'),
-  '#description' => t("Removes all stylesheets that are not a member of group
-'CSS_THEME'."),
-  '#default_value' => theme_get_setting('remove_all_css'),
-);
-$form['c']['display_settings']['r']['remove_all_system_css'] = array(
-  '#type' => 'checkbox',
+$form['c']['display_settings']['r']['remove_drupal_css'] = array(
+  '#type' => 'radios',
   '#title' => t('Remove Drupal CSS'),
-  '#description' => t("Removes all stylesheets that are a member of group
-'CSS_SYSTEM'"),
-  '#default_value' => theme_get_setting('remove_all_system_css'),
-);
-$form['c']['display_settings']['r']['remove_core_css'] = array(
-  '#type' => 'checkbox',
-  '#title' => t('Remove Drupal Core CSS'),
-  '#description' => t("Exclude some Drupal core CSS."),
-  '#default_value' => theme_get_setting('remove_core_css'),
+  '#default_value' => theme_get_setting('remove_drupal_css'),
+  '#options' => $remove_core_css,
 );
 
 $form['c']['display_settings']['login'] = array(

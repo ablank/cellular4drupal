@@ -196,13 +196,8 @@
 #block-system-navigation .block-title {
   display: none;
 }
-/* line 69, ../sass/drupal/_drupal-ids.scss */
-#block-system-navigation .menu li {
-  display: inline;
-  list-style: none;
-}
-/* line 73, ../sass/drupal/_drupal-ids.scss */
-#block-system-navigation .menu li a {
+/* line 70, ../sass/drupal/_drupal-ids.scss */
+#block-system-navigation .menu a {
   cursor: pointer;
   display: inline;
   display: inline-block;
@@ -219,16 +214,25 @@
   -ms-border-radius: 0.3em;
   -o-border-radius: 0.3em;
   border-radius: 0.3em;
+  padding: 0 1em;
 }
 /* line 186, ../sass/mixins/_cellularmixins.scss */
-#block-system-navigation .menu li a:visited {
+#block-system-navigation .menu a:visited {
   color: #fefefe;
 }
 /* line 191, ../sass/mixins/_cellularmixins.scss */
-#block-system-navigation .menu li a.active, #block-system-navigation .menu li a:active, #block-system-navigation .menu li a:hover {
+#block-system-navigation .menu a.active, #block-system-navigation .menu a:active, #block-system-navigation .menu a:hover {
   background-color: #16708b;
   border-color: #29b4de;
   text-decoration: none;
+}
+/* line 74, ../sass/drupal/_drupal-ids.scss */
+#block-system-navigation .menu li {
+  display: inline-block;
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -269,7 +273,7 @@
   padding: 1em;
 }
 
-/* line 43, ../sass/drupal/_drupal-classes.scss */
+/* line 44, ../sass/drupal/_drupal-classes.scss */
 a.ctools-ajaxing,
 input.ctools-ajaxing,
 button.ctools-ajaxing,
@@ -278,26 +282,26 @@ select.ctools-ajaxing {
   background: url("../assets/images/gif/throbber.gif") center center no-repeat;
 }
 
-/* line 50, ../sass/drupal/_drupal-classes.scss */
+/* line 51, ../sass/drupal/_drupal-classes.scss */
 div.ctools-ajaxing {
   float: left;
   width: 18px;
   background: url("../assets/images/gif/throbber.gif") center center no-repeat;
 }
 
-/* line 57, ../sass/drupal/_drupal-classes.scss */
+/* line 58, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary {
   margin: 2em 0 1em;
   background-color: #edeceb;
   border-bottom: #8a8882 1px solid;
 }
-/* line 62, ../sass/drupal/_drupal-classes.scss */
+/* line 63, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary li {
   list-style: none;
   display: inline;
   margin: 0 .4em;
 }
-/* line 67, ../sass/drupal/_drupal-classes.scss */
+/* line 68, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a {
   padding: .4em .8em 0.2em;
   color: #565450;
@@ -315,11 +319,11 @@ div.ctools-ajaxing {
   -o-border-top-right-radius: 0.3em;
   border-top-right-radius: 0.3em;
 }
-/* line 75, ../sass/drupal/_drupal-classes.scss */
+/* line 76, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a.active {
   background-color: #fefefe;
 }
-/* line 78, ../sass/drupal/_drupal-classes.scss */
+/* line 79, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a:hover {
   background-color: #edeceb;
 }

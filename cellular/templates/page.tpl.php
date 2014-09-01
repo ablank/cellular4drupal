@@ -158,7 +158,8 @@
         <?php endif; ?>
 
         <?php if ($page['sidebar_left']) : ?>
-          <div id="sidebar-left" class="<?php print $sidebar_class; ?>">
+          <div id="sidebar-left" class="<?php print $page['sidebar_class'];
+          ?>">
             <?php print render($page['sidebar_left']); ?>
           </div>
         <?php endif; ?>
@@ -169,7 +170,7 @@
           </div>
         <?php endif; ?>
 
-        <div id="content" class="<?php print $content_class; ?>">
+        <div id="content" class="<?php print $page['content_class']; ?>">
 
           <?php
           // Breadcrumb Navigation.
@@ -194,7 +195,8 @@
         </div>
 
         <?php if ($page['sidebar_right']) : ?>
-          <div id="sidebar-right" class="<?php print $sidebar_class; ?>">
+          <div id="sidebar-right" class="<?php print $page['sidebar_class'];
+          ?>">
             <?php print render($page['sidebar_right']); ?>
           </div>
         <?php endif; ?>
@@ -216,14 +218,17 @@
       </div>
     <?php endif; ?>
 
-    <?php print $social_media_share; ?>
-    <?php print $social_media_follow; ?>
+    <?php if ($page['social_media_share']) :
+      print $page['social_media_share'];
+    endif;
+    if ($page['social_media_follow']):
+      print $page['social_media_follow'];
+    endif; ?>
 
     <?php
     if ($page['footer']) :
       print render($page['footer']);
     endif;
-
     ?>
 
     <div id="footer-bottom" class="cell">
@@ -231,8 +236,8 @@
         <?php print render($page['footer_bottom']); ?>
       <?php endif; ?>
 
-      <?php if ($copyright): ?>
-        <div id="copyright"><?php print $copyright; ?></div>
+      <?php if ($page['copyright']): ?>
+        <div id="copyright"><?php print $page['copyright']; ?></div>
       <?php endif; ?>
     </div>
     <!-- /#footer-bottom -->

@@ -115,7 +115,7 @@
 
     ?>
     <div id="content-wrap">
-      <div id="content" class="<?php print $content_class; ?>">
+      <div id="content" class="<?php print $page['content_class']; ?>">
 
         <div class="error-message">
           <?php
@@ -126,7 +126,7 @@
         </div>
         <div class="search">
           <?php
-          print render($search_box);
+          print render($page['search_box']);
 
           ?>
         </div>
@@ -164,8 +164,8 @@
 
       ?>
 
-      <?php if ($copyright): ?>
-        <div id="copyright"><?php print $copyright; ?></div>
+      <?php if ($page['copyright']): ?>
+        <div id="copyright"><?php print $page['copyright']; ?></div>
       <?php endif; ?>
     </div>
     <!-- /#footer-bottom -->

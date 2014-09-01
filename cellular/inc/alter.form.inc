@@ -109,6 +109,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
  * hook__form_comment_form_alter()
  */
 function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
+
   // Set field sizes.
   $field_size = 32;
   $form['author']['name']['#size'] = $field_size;

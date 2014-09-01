@@ -1,9 +1,11 @@
+/**
+ * @file
+ * Pull in required grunt modules.
+ */
+
 module.exports = function(grunt) {
-
-// measure the time each task takes
+// Measure the time each task takes.
     require('time-grunt')(grunt);
-
-// load grunt config
+// Load grunt config.
     require('load-grunt-config')(grunt);
-
 };

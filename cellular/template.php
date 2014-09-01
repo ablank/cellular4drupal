@@ -7,17 +7,19 @@
 $inc_path = drupal_get_path('theme', 'cellular') . '/inc';
 $include = array(
   // 'dev-functions.inc',
-  'functions.inc',
-  'social.inc',
+  'fn.inc',
+  'fn.attributes.inc',
+  'fn.javascript.inc',
+  'fn.jquery.inc',
+  'alter.inc',
+  'alter.form.inc',
+  'alter.css.inc',
+  'alter.js.inc',
   'preprocess.inc',
   'theme.inc',
-  'theme_form.inc',
-  'theme_pager.inc',
-  'alter.inc',
-  'alter_form.inc',
-  'alter_css.inc',
-  'alter_js.inc',
-  'process.inc',
+  'theme.form.inc',
+  'theme.pager.inc',
+  'social.inc',
 );
 
 foreach ($include as $i) {

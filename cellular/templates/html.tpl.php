@@ -41,7 +41,7 @@
 ?>
 
 <?php print $doctype; ?>
-<html<?php print $html_attributes . $rdf_namespaces ?>>
+<html<?php print $html_attributes . $rdf_namespaces; ?>>
   <head>
     <!--[if IE]><![endif]-->
     <title><?php print $head_title; ?></title>
@@ -49,7 +49,7 @@
     <?php print $styles; ?>
   </head>
 
-  <body class="<?php print $body_classes; ?>" <?php print $attributes; ?>>
+  <body <?php print $body_attributes; ?>>
 
     <?php print $page_top; ?>
     <?php print $page; ?>

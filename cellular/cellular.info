@@ -33,7 +33,7 @@ regions[footer_bottom]      = Footer Bottom
 ;----------// Javascript Updates & Plugins
 settings[jquery_update]             = 1
 settings[jquery_cdn]                = 1
-settings[cdn]                       = google
+settings[jquery_cdn_source]         = google
 settings[jquery_version]            = 1.9.1
 settings[jqueryui_version]          = 1.10.4
 settings[jqueryui_theme]            = custom
@@ -47,9 +47,7 @@ settings[cellularjs]                = 1
 settings[gsap]                      = 0
 
 ;----------// Display Settings
-settings[remove_all_css]            = 1
-settings[remove_all_system_css]     = 0
-settings[remove_core_css]           = 0
+settings[remove_drupal_css]         = 0
 settings[favicons]                  = 1
 settings[icons_type]                = svg
 settings[full_menu]                 = 1
@@ -105,7 +103,7 @@ settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
 
 ;----------// Development
-settings[dev]                   = favicon.ico
+settings[dev]                   = 0
 
 ;----------// Plugins
 plugins[panels][layouts] = templates/panels

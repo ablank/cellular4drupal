@@ -12,17 +12,28 @@ $form['c']['personalize'] = array(
   '#collapsed' => FALSE,
 );
 
+$form['c']['personalize']['dev'] = array(
+  '#type' => 'checkbox',
+  '#title' => module_exists('devel') ? t('Development Mode')
+    : t('<div class=\"warning\">This option requires the Devel module to be
+    installed/enabled.</div>'),
+  '#description' => t("Use the dsm() function to return page variables."),
+  '#default_value' => theme_get_setting('dev'),
+);
+
 $form['c']['personalize']['copyright'] = array(
   '#type' => 'textfield',
   '#title' => t('Copyright'),
-  '#description' => t("The name of the person or organization to display indicating copyright ownership. Leave field empty to disable display."),
+  '#description' => t("The name of the person or organization to display
+  indicating copyright ownership. Leave field empty to disable display."),
   '#default_value' => theme_get_setting('copyright'),
 );
 
 $form['c']['personalize']['favicons'] = array(
   '#type' => 'fieldset',
   '#title' => t('Favicons'),
-  '#description' => t("Favicons are used by browsers to provide a graphic identity for your site."),
+  '#description' => t("Favicons are used by browsers to provide a graphic
+  identity for your site."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
@@ -43,7 +54,9 @@ $form['c']['personalize']['favicons']['favicon_32'] = array(
 $form['c']['personalize']['favicons']['apple_icons'] = array(
   '#type' => 'fieldset',
   '#title' => t('Apple-touch-icons'),
-  '#description' => t("Apple-touch-icons used by smartphones & tablets. All images should use the .PNG format. Icons that are to be rendered without the default gloss should use the suffix '-precomposed' in the  file name."),
+  '#description' => t("Apple-touch-icons used by smartphones & tablets. All
+  images should use the .PNG format. Icons that are to be rendered without
+  the default gloss should use the suffix '-precomposed' in the  file name."),
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
