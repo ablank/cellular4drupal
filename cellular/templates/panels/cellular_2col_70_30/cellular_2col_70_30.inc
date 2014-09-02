@@ -4,6 +4,7 @@
  * @file
  * Vars & regions for 2 column (70%/30%) panel layout.
  */
+
 $plugin = array(
   'category' => t('Cellular'),
   'title' => t('2 Columns @ 70/30'),

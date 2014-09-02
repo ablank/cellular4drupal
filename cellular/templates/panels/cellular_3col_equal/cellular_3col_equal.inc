@@ -1,9 +1,10 @@
 <?php
-
 /**
  * @file
  * Vars & regions for 3 equal columns (33%/33%/33%) panel layout.
  */
+
+/**/
 $plugin = array(
   'category' => t('Cellular'),
   'title' => t('3 Equal Columns @ 33%'),

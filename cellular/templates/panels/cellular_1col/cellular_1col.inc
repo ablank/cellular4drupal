@@ -4,6 +4,7 @@
  * @file
  * Vars & regions for single column panel layout.
  */
+
 $plugin = array(
   'category' => t('Cellular'),
   'title' => t('1 Column'),

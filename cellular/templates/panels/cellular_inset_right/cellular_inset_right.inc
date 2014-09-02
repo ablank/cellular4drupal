@@ -1,9 +1,10 @@
 <?php
-
 /**
  * @file
  * Vars & regions for right inset panel layout.
  */
+
+/**/
 $plugin = array(
   'category' => t('Cellular'),
   'title' => t('Inset Right'),
