@@ -65,14 +65,19 @@
   .block-title {
     display: none;
   }
-  .menu {
-    li {
-      display: inline;
-      list-style: none;
 
-      a {
-        @include button();
-      }
+  .menu {
+    a {
+      @include button();
+      padding: 0 1em;
     }
+    li {
+      display: inline-block;
+      text-align: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
   }
 }

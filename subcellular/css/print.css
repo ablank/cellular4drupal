@@ -1,1 +1,54 @@
-@media print{img,p{page-break-inside:avoid}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}a,a:visited{color:#00598e;text-decoration:underline}a:after{content:" (" attr(href) ")"}pre,blockquote{border:1px solid #565450;page-break-inside:avoid}#app,#content-wrap,#content-main{width:100%}#header,#footer,.hidden{visibility:hidden;display:none}}
+/**
+ * @file
+ * Styling for printed pages
+ */
+@media print {
+  /* line 9, ../sass/print.scss */
+  img, p {
+    page-break-inside: avoid;
+  }
+
+  /* line 12, ../sass/print.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 16, ../sass/print.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  /* line 21, ../sass/print.scss */
+  a,
+  a:visited {
+    color: #00598e;
+    text-decoration: underline;
+  }
+
+  /* line 25, ../sass/print.scss */
+  a:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 28, ../sass/print.scss */
+  pre, blockquote {
+    border: 1px solid #565450;
+    page-break-inside: avoid;
+  }
+
+  /* line 35, ../sass/print.scss */
+  #app,
+  #content-wrap,
+  #content-main {
+    width: 100%;
+  }
+
+  /* line 40, ../sass/print.scss */
+  #header,
+  #footer,
+  .hidden {
+    visibility: hidden;
+    display: none;
+  }
+}

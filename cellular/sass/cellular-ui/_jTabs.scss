@@ -30,6 +30,7 @@
         .title {
           background: $title_color;
           border-bottom: $title_color 1px solid;
+
           a {
             color: $title_background;
           }
@@ -51,6 +52,7 @@
       float: left;
       display: block;
       width: 100%;
+
       li,
       .tab {
         clear: left;
@@ -75,6 +77,7 @@
           }
         }
       }
+      
       .panel {
         display: inline;
         display: inline-block;

@@ -25,11 +25,11 @@ module.exports = {
     'compass:dev'
   ],
   dev2: [
-    'newer:uglify:dev'
+    'uglify:dev'
   ],
   dev3: [
-    'newer:svg2png',
-    'newer:jshint'
+    'svg2png',
+    'jshint'
     // 'grunticon'
   ]
   // dev4: [],

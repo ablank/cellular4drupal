@@ -15,7 +15,6 @@ body {
   //@include gradient_rad($white, $white, $light_grey);
   //background-repeat: repeat;
   //background-attachment: fixed;
-
 }
 
 #page-wrap {
@@ -42,37 +41,45 @@ body {
 
 #header-top {
   z-index: 4;
-  background: darken($hilight, 20%);
+  background: $black;
   color: $white;
   border-bottom: $black $border;
   // Position contents left or right
   text-align: right;
   @include clearfix();
+
   // Custom type for region
   div {
     display: inline;
   }
+
   h2,
   h3,
   h4 {
-    color: lighten($hilight, 20%);
-    font-size: $normal;
+    color: $white;
+    font-size: 1em;
     display: inline;
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
@@ -87,20 +94,26 @@ body {
   h3,
   h4 {
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
@@ -115,20 +128,26 @@ body {
   h3,
   h4 {
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
@@ -156,20 +175,26 @@ body {
   h3,
   h4 {
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
@@ -190,26 +215,33 @@ body {
   h3,
   h4 {
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
 
 #comments {
   text-align: center;
+
   form {
     text-align: left;
   }
@@ -229,46 +261,71 @@ body {
 #content-bottom {
 }
 
-#footer {
+#footer-top {
+  font-size: $small;
   background: $dark_grey;
-  color: $white;
+  color: $light_grey;
   // Custom type for region
   h2,
   h3,
   h4 {
-    color: $white;
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
-    color: $white;
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
 
-#footer_left,
-#footer-middle,
-#footer_right {
-}
+#footer {
+  background: $dark_grey;
+  color: $white;
 
-#footer_left {
-}
+  // Custom type for region
+  h2,
+  h3,
+  h4 {
+  }
 
-#footer-middle {
-}
+  h2 {
+  }
 
-#footer_right {
+  h3 {
+  }
+
+  h4 {
+  }
+
+  p {
+    color: $white;
+  }
+
+  a {
+    &:visited {
+    }
+
+    &:focus,
+      &:hover,
+      &:active {
+    }
+  }
 }
 
 #footer-bottom {
@@ -281,20 +338,26 @@ body {
   h3,
   h4 {
   }
+
   h2 {
   }
+
   h3 {
   }
+
   h4 {
   }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }
@@ -313,11 +376,13 @@ body {
   background: $white;
   border-top: $dark_grey 1em solid;
   overflow: hidden;
+
   form {
     margin: 0;
     padding: 0;
     display: inline;
   }
+
   h2,
   h3,
   h4 {
@@ -325,20 +390,17 @@ body {
     font-weight: bold;
     margin: 0;
   }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
+
   p {
   }
+
   a {
     &:visited {
     }
+
     &:focus,
-    &:hover,
-    &:active {
+      &:hover,
+      &:active {
     }
   }
 }

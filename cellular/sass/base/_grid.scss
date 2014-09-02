@@ -129,19 +129,19 @@
     width: 100%;
     margin: 0;
   }
+
   .responsive {
     &.cell-33 {
       width: 25% - $cell_space;
     }
+
     &.cell-25 {
       width: 50% - $cell_space;
     }
   }
 }
 
-/////
 //Element positioning classes
-/////
 .hidden {
   position: absolute;
   left: -9999px;

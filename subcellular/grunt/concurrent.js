@@ -21,15 +21,16 @@ module.exports = {
   ],
   // prod4: [],
   dev1: [
-    'concat',
+    // 'newer:concat',
     'compass:dev'
   ],
   dev2: [
-    'newer:uglify:dev'
+    'uglify:dev'
   ],
   dev3: [
-    'svg2png'
-            // 'grunticon'
+    'svg2png',
+    'jshint'
+    // 'grunticon'
   ]
-          // dev4: [],
+  // dev4: [],
 };

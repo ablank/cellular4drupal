@@ -39,35 +39,32 @@ small {
   font-size: $small;
 }
 
-//////
-// Links
-//////
 a {
   color: $hilight;
   text-decoration: none;
   outline: none;
   display: inline-block;
   @include transition();
+
   &:visited {
     color: darken($hilight, $adjust);
   }
+
   &:hover,
-  &:active,
-  &:focus {
+    &:active,
+    &:focus {
     outline: thin dotted;
     outline: .4em -webkit-focus-ring-color;
     outline-offset: -.1em;
     text-decoration: underline;
     color: lighten($hilight, $adjust);
   }
+
   &:hover {
     outline: 0;
   }
 }
 
-/////
-// Headings
-/////
 h1,
 h2,
 h3,
@@ -117,10 +114,6 @@ h6 {
   color: darken($h_color, $adjust * 4);
 }
 
-/////
-// Etc.
-/////
-
 sub,
 sup {
   position: relative;
@@ -137,8 +130,8 @@ sub {
   bottom: -0.25em;
 }
 
-// Quotes
-q, quote {
+q,
+quote {
   font-size: $big;
   font-style: italic;
   color: $dark_grey;
@@ -153,6 +146,7 @@ blockquote {
   background-color: darken($white, 10%);
   color: $dark_grey;
   border-left: $tiny solid;
+
   &:before {
     content: "\201C";
   }

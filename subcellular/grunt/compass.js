@@ -13,14 +13,16 @@ module.exports = {
     options: {
       noLineComments: false,
       // clean: true,
-      environment: 'development'
+      environment: 'development',
+      outputStyle: 'nested'
     }
   },
   prod: {
     options: {
       noLineComments: true,
       // clean: true,
-      environment: 'production'
+      environment: 'production',
+      outputStyle: 'compressed'
     }
   }
 };

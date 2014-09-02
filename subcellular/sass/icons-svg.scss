@@ -2,11 +2,10 @@
  * @file
  * SVG icons
  */
-
 @import "variables";
 
 @each $icon in $icons {
-  .icon .#{$icon} {
+  .icon.#{$icon} {
     background-image: url('../assets/icons/min/svg/#{$icon}.svg');
   }
 }

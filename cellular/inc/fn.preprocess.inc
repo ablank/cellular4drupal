@@ -117,7 +117,7 @@ function cellular_favicons() {
 /**
  * Add meta tags to <head>:
  */
-function cellular_metatags() {
+function cellular_metatags(&$vars) {
   $meta_tags = array(
     'viewport' => array(
       'tag' => 'meta',
@@ -145,7 +145,7 @@ function cellular_metatags() {
       'href' => $GLOBALS['base_url'] . '/humans.txt',
       'weight' => 3,
     ),
-    'grddl' => !empty($vars['grddl_profile']) ? array(
+    'grddl' => isset($vars['grddl_profile']) ? array(
       'tag' => 'link',
       'rel' => 'profile',
       'href' => $vars['grddl_profile'],

@@ -12,7 +12,7 @@ function cellular_preprocess_html(&$vars) {
   global $language, $theme_path;
 
   cellular_html_attributes($vars, $language);
-  cellular_metatags();
+  cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
 }
@@ -96,12 +96,12 @@ function cellular_preprocess_region(&$vars) {
  */
 function cellular_preprocess_block(&$vars) {
   $vars['hook'] = 'block';
+  $block = $vars['block'];
   $vars['title'] = isset($block->subject) ? $block->subject : NULL;
   $vars['classes_array'] = array('block');
   $vars['title_attributes_array'] ['class'] = array('block-title');
   $vars['content_attributes_array']['class'] = array('block-content');
 
-  $block = $vars['block'];
   // Hide block titles in the headers region:
   if (($block->region == 'header')
   // || ($block->region == 'header_top')

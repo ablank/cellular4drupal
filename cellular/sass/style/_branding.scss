@@ -20,6 +20,7 @@
     text-indent: -999em;
     background: none;
   }
+
   a {
     //
     display: block;
@@ -34,11 +35,8 @@
     background-repeat: no-repeat;
     //@include box-shadow(inset 0 0 4em $dark_grey);
   }
+
   & > a:hover {
     //@include box-shadow(inset 0 0 2em $black);
   }
-}
-
-.svg #logo > a {
-  background-image: $logo_svg;
 }

@@ -73,6 +73,7 @@
   comment/reply/12345).
 
  */
+
 ?>
 
 <div id="skipLinks" class="hidden">
@@ -88,6 +89,7 @@
       if ($site_name) :
         print "<h2>" . $site_name . "</h2>";
       endif;
+
       ?>
     </div>
     <?php if (isset($main_menu)) : ?>
@@ -109,19 +111,22 @@
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
+
     ?>
     <div id="content-wrap">
-      <div id="content" class="<?php print $content_class; ?>">
+      <div id="content" class="<?php print $page['content_class']; ?>">
 
         <div class="error-message">
           <?php
           // Error message.
           print $messages;
+
           ?>
         </div>
         <div class="search">
           <?php
-          print render($search_box);
+          print render($page['search_box']);
+
           ?>
         </div>
 
@@ -135,6 +140,7 @@
   if ($page['footer_top']) :
     print render($page['footer_top']);
   endif;
+
   ?>
   <div id="footer" class="cell">
 
@@ -143,6 +149,7 @@
     if ($page['footer']) :
       print render($page['footer']);
     endif;
+
     ?>
   </div>
   <!-- /#footer -->
@@ -153,15 +160,14 @@
       if ($page['footer_bottom']) :
         print render($page['footer_bottom']);
       endif;
+
       ?>
 
-      <?php if ($copyright): ?>
-        <div id="copyright"><?php print $copyright; ?></div>
+      <?php if ($page['copyright']): ?>
+        <div id="copyright"><?php print $page['copyright']; ?></div>
       <?php endif; ?>
     </div>
     <!-- /#footer-bottom -->
   <?php endif; ?>
 </div>
 <!-- /#page-wrap-->
-<?php
-print "\n";
