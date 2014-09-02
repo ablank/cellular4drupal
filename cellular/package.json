@@ -16,11 +16,11 @@
     "grunt-contrib-concat": "^0.4.0",
     "grunt-concurrent": "*",
     "load-grunt-config": "*",
-    "grunt-newer": "^0.7.0",
     "svg2png": "^1.1.0",
     "grunt-contrib-imagemin": "^0.8.1"
   },
   "dependencies": {
-    "time-grunt": "*"
+    "time-grunt": "*",
+    "grunt-newer": "^0.7.0"
   }
 }
