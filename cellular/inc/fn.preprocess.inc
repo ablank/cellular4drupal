@@ -30,7 +30,7 @@ function cellular_html_attributes(&$vars, $language) {
 }
 
 /**
- * Add variable classes to <body>
+ * Add variable classes to <body>.
  */
 function cellular_body_attributes(&$vars) {
   $body_attributes = array();
@@ -56,7 +56,7 @@ function cellular_body_attributes(&$vars) {
 }
 
 /**
- * Build links to favicons & apple-touch-icons,
+ * Build links to favicons & apple-touch-icons.
  */
 function cellular_favicons() {
   $favicons = array(
@@ -115,7 +115,7 @@ function cellular_favicons() {
 }
 
 /**
- * Add meta tags to <head>:
+ * Add meta tags to <head>.
  */
 function cellular_metatags(&$vars) {
   $meta_tags = array(
@@ -161,9 +161,9 @@ function cellular_metatags(&$vars) {
  */
 function cellular_test_sidebar(&$vars) {
   $sidebar_left = !empty($vars['page']['sidebar_left']) ?
-    1 : NULL;
+  1 : NULL;
   $sidebar_right = !empty($vars['page']['sidebar_right']) ?
-    1 : NULL;
+  1 : NULL;
 
   if (isset($sidebar_left) && isset($sidebar_right)) {
     return 'dual-sidebars';

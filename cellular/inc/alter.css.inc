@@ -6,7 +6,7 @@
  */
 
 /**
- * hook_css_alter()
+ * Cellular hook_css_alter().
  */
 function cellular_css_alter(&$css) {
   // Show $css before alteration.

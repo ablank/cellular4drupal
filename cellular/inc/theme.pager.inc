@@ -6,7 +6,7 @@
  */
 
 /**
- * theme_pager()
+ * Cellular theme_pager().
  */
 function cellular_pager($vars) {
   $tags = $vars['tags'];

@@ -6,7 +6,7 @@
  */
 
 /**
- * hook_js_alter()
+ * Cellular hook_js_alter().
  */
 function cellular_js_alter(&$javascript) {
 // Pass a variable from drupal to js:

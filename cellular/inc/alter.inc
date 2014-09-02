@@ -6,7 +6,7 @@
  */
 
 /**
- * hook_html_head_alter()
+ * Cellular hook_html_head_alter().
  */
 function cellular_html_head_alter(&$head_elements) {
   // Remove unwanted meta tags.
@@ -21,7 +21,7 @@ function cellular_html_head_alter(&$head_elements) {
 }
 
 /**
- * hook_page_alter()
+ * Cellular hook_page_alter().
  */
 function cellular_page_alter(&$page) {
   // dsm($page);

@@ -6,7 +6,7 @@
  */
 
 /**
- * hook_form_system_theme_settings_alter()
+ * Cellular hook_form_system_theme_settings_alter().
  */
 function cellular_form_system_theme_settings_alter(&$form, $form_state) {
   // Define form to hold pages as tabs.

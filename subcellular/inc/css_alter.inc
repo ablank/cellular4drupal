@@ -5,7 +5,7 @@
  */
 
 /**
- * hook_css_alter()
+ * Subcellular hook_css_alter().
  */
 function subcellular_css_alter(&$css) {
   /*

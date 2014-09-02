@@ -6,7 +6,7 @@
  */
 
 /**
- * hook_js_alter()
+ * Subcellular hook_js_alter().
  */
 function subcellular_js_alter() {
   /*

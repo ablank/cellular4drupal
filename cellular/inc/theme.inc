@@ -6,7 +6,7 @@
  */
 
 /**
- * theme_field()
+ * Cellular theme_field().
  */
 function cellular_field($vars) {
   $content = '';
@@ -28,7 +28,7 @@ function cellular_field($vars) {
 }
 
 /**
- * theme_breadcrumb()
+ * Cellular theme_breadcrumb().
  */
 function cellular_breadcrumb(&$vars) {
 
@@ -57,8 +57,7 @@ function cellular_breadcrumb(&$vars) {
 }
 
 /**
- * theme_file_icon()
- * Use css classes to style output instead of <img>
+ * Cellular theme_file_icon() * Use css classes to style output instead of <img>
  */
 function cellular_file_icon(&$vars) {
   $file = $vars['file'];
@@ -83,7 +82,7 @@ function cellular_file_icon(&$vars) {
 }
 
 /**
- * theme_feed_icon()
+ * Cellular theme_feed_icon().
  */
 function cellular_feed_icon($vars) {
   $text = t('Subscribe to !feed-title', array(

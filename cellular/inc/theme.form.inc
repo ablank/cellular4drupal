@@ -6,7 +6,35 @@
  */
 
 /**
- * theme_container()
+ * Return array of attributes.
+ */
+function cellular_form_element_attributes(&$element) {
+  // $element['#theme_wrappers'] = NULL;
+  $attributes = array();
+  !empty($element['#name']) ?
+  $attributes['name'] = $element['#name'] : NULL;
+  !empty($element['#id']) ?
+  $attributes['id'] = $element['#id'] : NULL;
+  !empty($element['#attributes']['class']) ?
+  $attributes['class'] = cellular_merge($element['#attributes']['class']) : NULL;
+  !empty($element['#title']) ?
+  $attributes['title'] = $element['#title'] : NULL;
+  !empty($element['#required']) ?
+  $attributes['required'] = $element['#required'] : NULL;
+  !empty($element['#checked']) ?
+  $attributes['checked'] = 'checked' : NULL;
+  !empty($element['#value']) ?
+  $attributes['value'] = $element['#value'] : NULL;
+  !empty($element['#size']) ?
+  $attributes['size'] = $element['#size'] : NULL;
+  !empty($element['#maxlength']) ?
+  $attributes['maxlength'] = $element['#maxlength'] : NULL;
+
+  return $attributes;
+}
+
+/**
+ * Cellular theme_container().
  */
 function cellular_container(&$vars) {
   $element = $vars['element'];
@@ -26,7 +54,7 @@ function cellular_container(&$vars) {
 }
 
 /**
- * theme_form_element()
+ * Cellular theme_form_element().
  */
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
@@ -35,7 +63,7 @@ function cellular_form_element(&$vars) {
   // $attributes['class'] = array();
   // isset($element['#name']) ?
   // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
-  //  ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
+  // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
   // : NULL;
   isset($element['#disabled']) ?
   $element['#attributes']['class'][] = 'disabled' : NULL;
@@ -78,35 +106,7 @@ function cellular_form_element(&$vars) {
 }
 
 /**
- * Return array of attributes.
- */
-function cellular_form_element_attributes(&$element) {
-  // $element['#theme_wrappers'] = NULL;
-  $attributes = array();
-  !empty($element['#name']) ?
-  $attributes['name'] = $element['#name'] : NULL;
-  !empty($element['#id']) ?
-  $attributes['id'] = $element['#id'] : NULL;
-  !empty($element['#attributes']['class']) ?
-  $attributes['class'] = cellular_merge($element['#attributes']['class']) : NULL;
-  !empty($element['#title']) ?
-  $attributes['title'] = $element['#title'] : NULL;
-  !empty($element['#required']) ?
-  $attributes['required'] = $element['#required'] : NULL;
-  !empty($element['#checked']) ?
-  $attributes['checked'] = 'checked' : NULL;
-  !empty($element['#value']) ?
-  $attributes['value'] = $element['#value'] : NULL;
-  !empty($element['#size']) ?
-  $attributes['size'] = $element['#size'] : NULL;
-  !empty($element['#maxlength']) ?
-  $attributes['maxlength'] = $element['#maxlength'] : NULL;
-
-  return $attributes;
-}
-
-/**
- * theme_fieldset()
+ * Cellular theme_fieldset().
  */
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
@@ -130,7 +130,7 @@ function cellular_fieldset(&$vars) {
 }
 
 /**
- * theme_select()
+ * Cellular theme_select().
  */
 function cellular_select(&$vars) {
   $element = $vars['element'];
@@ -145,7 +145,7 @@ function cellular_select(&$vars) {
 }
 
 /**
- * theme_checkboxes()
+ * Cellular theme_checkboxes().
  */
 function cellular_checkboxes(&$vars) {
   $element = $vars['element'];
@@ -160,7 +160,7 @@ function cellular_checkboxes(&$vars) {
 }
 
 /**
- * theme_checkbox()
+ * Cellular theme_checkbox().
  */
 function cellular_checkbox(&$vars) {
   $element = $vars['element'];
@@ -175,7 +175,7 @@ function cellular_checkbox(&$vars) {
 }
 
 /**
- * theme_radios()
+ * Cellular theme_radios().
  */
 function cellular_radios(&$vars) {
   $element = $vars['element'];
@@ -190,7 +190,7 @@ function cellular_radios(&$vars) {
 }
 
 /**
- * theme_radio()
+ * Cellular theme_radio().
  */
 function cellular_radio(&$vars) {
   $element = $vars['element'];
@@ -205,7 +205,7 @@ function cellular_radio(&$vars) {
 }
 
 /**
- * theme_textfield()
+ * Cellular theme_textfield().
  */
 function cellular_textfield(&$vars) {
   $element = $vars['element'];
@@ -218,7 +218,7 @@ function cellular_textfield(&$vars) {
 }
 
 /**
- * theme_textarea()
+ * Cellular theme_textarea().
  */
 function cellular_textarea(&$vars) {
   $element = $vars['element'];

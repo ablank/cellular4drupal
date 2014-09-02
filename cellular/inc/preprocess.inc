@@ -6,7 +6,7 @@
  */
 
 /**
- * template_preprocess_html()
+ * Cellular template_preprocess_html().
  */
 function cellular_preprocess_html(&$vars) {
   global $language;
@@ -18,7 +18,7 @@ function cellular_preprocess_html(&$vars) {
 }
 
 /**
- * template_preprocess_node()
+ * Cellular template_preprocess_node().
  */
 function cellular_preprocess_node(&$vars) {
   $vars['hook'] = 'node';
@@ -53,7 +53,7 @@ function cellular_preprocess_node(&$vars) {
 }
 
 /**
- * template_preprocess_page()
+ * Cellular template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
   // Set custom page templates for CCK Content (page--content-type.tpl.php)
@@ -85,14 +85,14 @@ function cellular_preprocess_page(&$vars) {
 }
 
 /**
- * template_preprocess_region()
+ * Cellular template_preprocess_region().
  */
 function cellular_preprocess_region(&$vars) {
 
 }
 
 /**
- * template_preprocess_block()
+ * Cellular template_preprocess_block().
  */
 function cellular_preprocess_block(&$vars) {
   $vars['hook'] = 'block';
@@ -112,7 +112,7 @@ function cellular_preprocess_block(&$vars) {
 }
 
 /**
- * template_preprocess_comment()
+ * Cellular template_preprocess_comment().
  */
 function cellular_preprocess_comment(&$vars) {
   $vars['hook'] = 'comment';
@@ -129,7 +129,7 @@ function cellular_preprocess_comment(&$vars) {
 }
 
 /**
- * template_ preprocess_username()
+ * Cellular template_ preprocess_username().
  */
 function cellular_preprocess_username(&$vars) {
   if (isset($vars['link_path'])) {

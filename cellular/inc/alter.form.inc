@@ -6,7 +6,7 @@
  */
 
 /**
- * hook_form_alter()
+ * Cellular hook_form_alter().
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
 
@@ -115,7 +115,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       // Register New User Account &&  Forgot Password:
       /*
-       $form['links']['#markup'] = '<hr/>' 
+       $form['links']['#markup'] = '<hr/>'
        . ' <a class="user-register" href="/user/register">'
          . t('Register') . '</a>' . '<hr/>'
          . ' <a class="user-password" href="/user/password">'
@@ -128,7 +128,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * hook__form_comment_form_alter()
+ * Cellular hook__form_comment_form_alter().
  */
 function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
 
