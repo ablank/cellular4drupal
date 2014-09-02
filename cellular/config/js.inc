@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme-settings: Javascript options.
@@ -290,7 +289,8 @@ $form['c']['js']['plugins']['d3js'] = array(
 );
 $form['c']['js']['plugins']['gsap'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('GSAP (GreenSock Animation Platform)'), 'http://www.greensock.com/gsap-js/'),
+  '#title' => l(t('GSAP (GreenSock Animation Platform)'),
+'http://www.greensock.com/gsap-js/'),
   '#description' => t("GSAP is a suite of tools for scripted,
   high-performance HTML5 animations that work in all major browsers."),
   '#default_value' => theme_get_setting('gsap'),

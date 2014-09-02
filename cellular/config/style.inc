@@ -1,9 +1,9 @@
 <?php
-
 /**
  * @file
- * Theme-settings: Display & styling options.
+ * Theme-settings: Display & styling settings.
  */
+
 $remove_core_css = array(
   0 => t('Leave CSS intact.'),
   'system' => t('Remove all system CSS.'),

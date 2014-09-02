@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Cellular utility functions.
@@ -68,7 +67,7 @@ function cellular_build_head_tags(&$array) {
 
 /**
  * Add array of javascripts to $javascript, using a CDN if provided.
- * 
+ *
  * A fallback link will be automatically generated if using CDN and
  * the 'object' value is provided.
  */
@@ -289,7 +288,7 @@ function cellular_error_page(&$vars) {
 }
 
 /**
- *
+ * Add stylesheets used with javascript plugins, including jQuery.ui.
  */
 function cellular_add_plugin_css(&$css) {
   // Plugins available through cellular, styles added based on theme settings.
