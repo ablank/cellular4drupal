@@ -177,12 +177,12 @@
   background-position: right center;
   border: #565450 1px solid;
 }
-/* line 203, ../sass/mixins/_cellularmixins.scss */
+/* line 204, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit]:visited,
 #site-search input[type=submit]:visited {
   color: #fefefe;
 }
-/* line 209, ../sass/mixins/_cellularmixins.scss */
+/* line 210, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit].active, #search-form input[type=submit]:active, #search-form input[type=submit]:hover,
 #site-search input[type=submit].active,
 #site-search input[type=submit]:active,
@@ -216,11 +216,11 @@
   border-radius: 0.3em;
   padding: 0 1em;
 }
-/* line 203, ../sass/mixins/_cellularmixins.scss */
+/* line 204, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu a:visited {
   color: #fefefe;
 }
-/* line 209, ../sass/mixins/_cellularmixins.scss */
+/* line 210, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu a.active, #block-system-navigation .menu a:active, #block-system-navigation .menu a:hover {
   background-color: #16708b;
   border-color: #29b4de;
@@ -327,7 +327,6 @@ div.ctools-ajaxing {
   background-color: #fefefe;
 }
 /* line 82, ../sass/drupal/_drupal-classes.scss */
-w
 .tabs.primary a:hover {
   background-color: #edeceb;
 }

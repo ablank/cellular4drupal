@@ -50,7 +50,8 @@
 }
 
 .ui-helper-clearfix {
-  min-height: 0; /* support: IE7 */
+  /* support: IE7 */
+  min-height: 0; 
 }
 
 .ui-helper-zfix {
@@ -187,7 +188,8 @@
   position: relative;
   margin-top: 2px;
   padding: .5em .5em .5em .7em;
-  min-height: 0; /* support: IE7 */
+  /* support: IE7 */
+  min-height: 0;
 }
 
 .ui-accordion .ui-accordion-icons {
@@ -231,7 +233,8 @@
   cursor: pointer;
   vertical-align: middle;
   text-align: center;
-  overflow: visible; /* removes extra width in IE */
+  /* removes extra width in IE */
+  overflow: visible; 
 }
 
 .ui-button,
@@ -912,20 +915,20 @@ body .ui-tooltip {
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-  //font-family: inherit;
-  //font-size: 1em;
+  // font-family: inherit;
+  // font-size: 1em;
 }
 
 .ui-widget .ui-widget {
-  //font-size: 1em;
+  // font-size: 1em;
 }
 
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-  //font-family: inherit;
-  //font-size: 1em;
+  // font-family: inherit;
+  // font-size: 1em;
 }
 
 .ui-widget-content {
@@ -1066,7 +1069,8 @@ body .ui-tooltip {
 }
 
 .ui-state-disabled .ui-icon {
-  filter: Alpha(Opacity=35); /* For IE8 - See #6059 */
+  /* For IE8 - See #6059 */
+  filter: Alpha(Opacity=35); 
 }
 
 /* Icons

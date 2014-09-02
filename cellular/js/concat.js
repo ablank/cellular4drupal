@@ -1,6 +1,0 @@
-/**
-* @file
-* Javascript
-* 
-* @author 
-*/

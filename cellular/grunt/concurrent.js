@@ -25,7 +25,7 @@ module.exports = {
     'compass:dev'
   ],
   dev2: [
-    'uglify:dev'
+    // 'uglify:dev'
   ],
   dev3: [
     'svg2png',

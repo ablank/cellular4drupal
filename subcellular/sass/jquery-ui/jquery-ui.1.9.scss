@@ -582,20 +582,14 @@ button.ui-button::-moz-focus-inner {
 /* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
 
 .ui-datepicker-cover {
+  /*must have*/
   position: absolute;
-  /*must have*/
-  z-index: -1;
-  /*must have*/
+  z-index: -1;  
   filter: mask();
-  /*must have*/
   top: -4px;
-  /*must have*/
   left: -4px;
-  /*must have*/
   width: 200px;
-  /*must have*/
   height: 200px;
-  /*must have*/
 }
 
 .ui-dialog {
