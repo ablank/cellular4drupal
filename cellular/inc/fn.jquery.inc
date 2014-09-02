@@ -68,9 +68,6 @@ function cellular_cdn() {
  */
 function cellular_jquery_update(&$javascript, $js_plugins) {
   $jq = cellular_jquery_info();
-  $v_jq = theme_get_setting('jquery_version');
-  $jq_cdn = theme_get_setting('jquery_cdn');
-
 // Override jQuery.
   $jquery = array(
     'default' => 'misc/jquery.js',
@@ -217,19 +214,7 @@ function cellular_jqueryui_css(&$css) {
           $css[$default]['every_page'] : FALSE,
           'weight' => isset($css[$default]['weight']) ?
           $css[$default]['weight'] : -9,
-          'file' => $ui['path'] . $jq['version'] . '/'
-          . $jq['theme'] . "/jquery-ui.css",
-        ),
-        'theme' => array(
-          'default' => $default,
-          'version' => $jq['version'],
-          'group' => CSS_SYSTEM,
-          'every_page' => isset($css[$default]['every_page']) ?
-          $css[$default]['every_page'] : FALSE,
-          'weight' => isset($css[$default]['weight']) ?
-          $css[$default]['weight'] : -9,
-          'file' => $ui['path'] . $jq['version'] . '/'
-          . $jq['theme'] . "/jquery-ui.css",
+          'file' => NULL,
         ),
       );
 
@@ -251,13 +236,11 @@ function cellular_jqueryui_css(&$css) {
         unset($css[$default]);
         // Set cdn source.
         $style['core']['cdn'] = $cdn['base_url'] . $cdn['theme'];
-        $style['theme']['cdn'] = $cdn['base_url'] . $cdn['theme'];
       }
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
 
         $style['core']['file'] = $ui_path . 'jquery-ui.css';
-        $style['theme']['file'] = $ui_path . 'jquery.ui.theme.css';
       }
       cellular_add_css($css, $style, TRUE);
     }
