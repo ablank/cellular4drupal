@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Add/Update javascript.
+ * Add and update javascript.
  */
 
 /**

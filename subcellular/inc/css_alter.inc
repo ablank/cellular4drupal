@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Add/Update/Delete stylesheets from theme. *
+ * Add/Update/Delete stylesheets.
  */
 
 /**

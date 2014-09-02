@@ -57,7 +57,7 @@ function cellular_breadcrumb(&$vars) {
 }
 
 /**
- * Cellular theme_file_icon() * Use css classes to style output instead of <img>
+ * Cellular theme_file_icon()- Use css classes to style output instead of <img>.
  */
 function cellular_file_icon(&$vars) {
   $file = $vars['file'];

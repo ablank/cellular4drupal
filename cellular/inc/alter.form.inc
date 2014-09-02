@@ -88,9 +88,9 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
             'attributes' => array(
               'class' => array(
                 'password',
-                ),
               ),
-            ));
+            ),
+          ));
         }
         $ulmarkup .= '</div>';
       }

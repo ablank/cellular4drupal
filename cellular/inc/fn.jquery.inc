@@ -242,9 +242,6 @@ function cellular_jqueryui_css(&$css) {
         // Set cdn source.
         $style['core']['cdn'] = $cdn['base_url'] . $cdn['theme'];
         $style['theme']['cdn'] = $cdn['base_url'] . $cdn['theme'];
-        // Set lower weight so cdn is delivered before fallbacks.
-        $style['jqueryui']['weight'] = -10;
-        // Add single link to cdn, with local fallback to each file.
       }
       // Set path to updated file.
       if ($jq['theme'] === 'custom') {

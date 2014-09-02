@@ -1,12 +1,10 @@
 <?php
-
 /**
  * @file
  * Set global vars, load functions for templates, and hook_function overrides.
  * @author Adam Blankenship
  */
 
-/**/
 global $theme_path;
 $include = array(
   // 'dev-functions.inc',
@@ -20,7 +18,7 @@ foreach ($include as $i) {
 }
 
 /**
- * template_preprocess_page()
+ * Subcellular template_preprocess_page().
  */
 function subcellular_preprocess_page(&$vars) {
 
@@ -36,35 +34,35 @@ function subcellular_preprocess_page(&$vars) {
 }
 
 /**
- * template_preprocess_html()
+ * Subcellular template_preprocess_html().
  */
 function subcellular_preprocess_html(&$vars) {
 
 }
 
 /**
- * template_preprocess_node()
+ * Subcellular template_preprocess_node().
  */
 function subcellular_preprocess_node(&$vars) {
 
 }
 
 /**
- * template_preprocess_region()
+ * Subcellular template_preprocess_region().
  */
 function subcellular_preprocess_region(&$vars) {
 
 }
 
 /**
- * template_preprocess_block()
+ * Subcellular template_preprocess_block().
  */
 function subcellular_preprocess_block(&$vars) {
 
 }
 
 /**
- * template_preprocess_comment()
+ * Subcellular template_preprocess_comment().
  */
 function subcellular_preprocess_comment(&$vars) {
 
