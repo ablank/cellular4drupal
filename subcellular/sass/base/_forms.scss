@@ -26,6 +26,7 @@ form {
       clear: none;
       padding: $tiny;
     }
+
     input[type=submit] {
       width: 5em;
       margin: 0 $tiny 0 $tiny;
@@ -40,6 +41,7 @@ form {
       float: left;
       clear: left;
     }
+
     input[type=submit] {
       float: right;
       clear: left;
@@ -114,6 +116,7 @@ input {
   &[type=radio] {
     @include checkbox();
   }
+
   &[type=checkbox] {
 
     &:not(:checked),
@@ -123,6 +126,7 @@ input {
           @include border-radius();
         }
       }
+
       &:checked {
         + label {
           &:after {
@@ -142,6 +146,7 @@ input {
           @include border-radius(50%);
         }
       }
+
       &:checked {
         + label {
           &:after {
@@ -164,6 +169,7 @@ textarea {
   border: $light_grey $border;
   color: $dark_grey;
   background: darken($white, 2%);
+
   &:focus {
     color: $p_color;
     background: $white;
@@ -206,6 +212,7 @@ input[type="submit"] {
   font-weight: bold;
   border: .2em solid;
   background-color: $white;
+  
   li {
     list-style: none;
   }

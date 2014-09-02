@@ -8,6 +8,7 @@
   float: right;
   margin: 0 1em;
   color: $white;
+
   .block-content a {
     text-indent: -999em;
     float: right;
@@ -39,6 +40,7 @@
 #site-search {
   display: inline;
   text-align: right;
+
   input {
     display: inline;
     display: inline-block;
@@ -62,15 +64,18 @@
 }
 
 #block-system-navigation {
+
   .block-title {
     display: none;
   }
 
   .menu {
+
     a {
       @include button();
       padding: 0 1em;
     }
+    
     li {
       display: inline-block;
       text-align: center;

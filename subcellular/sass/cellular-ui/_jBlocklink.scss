@@ -14,23 +14,26 @@
     @include transition();
     @include box-shadow(0 0 .1em .1em $light_grey);
 
-    p, a {
+    p,
+    a {
       color: $light_grey;
       text-decoration: none;
     }
+
     img {
       //@include transition();
     }
 
     &.active,
     &:active,
-    &:hover,
-    &:focus {
+      &:hover,
+      &:focus {
       color: $active_color;
       text-decoration: none;
       @include box-shadow(0 0 .3em .3em $light_grey);
 
-      p, a {
+      p,
+      a {
         color: $active_color;
         text-decoration: none;
       }

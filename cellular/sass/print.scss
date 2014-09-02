@@ -6,14 +6,20 @@
 
 @media print {
 
-  img, p {
+  img,
+  p {
     page-break-inside: avoid;
   }
-  p, h2, h3 {
+
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
-  h2, h3 {
+
+  h2,
+  h3 {
     page-break-after: avoid;
   }
 
@@ -21,11 +27,15 @@
   a:visited {
     color: $blue;
     text-decoration: underline;
+
+    &:after {
+      content: " (" attr(href) ")";
+    }
   }
-  a:after {
-    content: " (" attr(href) ")";
-  }
-  pre, blockquote {
+
+  pre,
+  code,
+  blockquote {
     border: 1px solid $dark_grey;
     page-break-inside: avoid;
   }
@@ -35,6 +45,7 @@
   #content-main {
     width: 100%;
   }
+
   #header,
   #footer,
   .hidden {

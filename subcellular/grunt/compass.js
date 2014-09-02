@@ -14,7 +14,7 @@ module.exports = {
       noLineComments: false,
       // clean: true,
       environment: 'development',
-      outputStyle: 'nested'
+      outputStyle: 'expanded'
     }
   },
   prod: {

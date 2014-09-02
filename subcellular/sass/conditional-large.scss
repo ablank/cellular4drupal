@@ -6,26 +6,30 @@ Dynamically loaded styling for small screens
 (c) 2012 Adam Blankenship
 www.abctahoe.net
 *****/
-//////
-@import "variables";
 
-/////
+@import "variables";
 
 @media screen and (min-width: $res_large) {
   body {
     // background: url(../assets/images/large-background-body.png) no-repeat;
   }
 
-  #header {
-    // background: url(../assets/images/large-background-header.png) no-repeat;
-  }
-
   #logo {
 
     &:hover {
     }
+
     & > a {
     }
+  }
+
+  #header-top {
+  }
+
+  #header {
+  }
+
+  #header-bottom {
   }
 
   #app {
@@ -33,13 +37,26 @@ www.abctahoe.net
 
   #content-wrap {
   }
+
+  #content-top {
+  }
+
   #content {
+  }
+
+  #content-bottom {
   }
 
   #sidebar-left,
   #sidebar-right {
   }
-  #footer {
 
+  #footer-top {
+  }
+
+  #footer {
+  }
+
+  #footer-bottom {
   }
 }

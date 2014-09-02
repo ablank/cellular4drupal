@@ -4,12 +4,10 @@
  */
 @import "variables";
 
-body, * {
-  zoom: 1.0;
-}
-
-body {
+body,
+* {
   word-wrap: break-word;
+  zoom: 1.0;
 }
 
 img {

@@ -16,6 +16,7 @@ $showDropdowns: true;
     ul {
       margin: 0;
     }
+
     li {
       float: left;
       display: block;
@@ -28,6 +29,7 @@ $showDropdowns: true;
       &:first-child {
         margin-left: 0;
       }
+
       &:last-child {
         margin-right: 0;
       }
@@ -69,6 +71,7 @@ $showDropdowns: true;
         background: rgba($white, 0.9);
         @include transition();
       }
+
       @if ($showDropdowns) == true {
         // First nested menu
         &:hover > ul {
@@ -76,6 +79,7 @@ $showDropdowns: true;
           opacity: 1;
           z-index: 2;
         }
+
         li {
           float: left;
           padding: .1em 0 0 0;
@@ -108,21 +112,25 @@ $showDropdowns: true;
     display: inline;
     display: inline-block;
     height: 2em;
-    li: {
+
+    li {
       list-style: none;
       line-height: 2em;
       margin: 0 0 0 .2em;
       width: 100%;
     }
+
     .home {
       background: url(../assets/images/icon-home.png);
       color: $black;
       padding: 0 0 0 34px;
     }
+
     a {
       &:visited {
         color: darken($hilight, 20%);
       }
+
       &:hover,
       &:focus,
       &:active {
@@ -140,7 +148,6 @@ $showDropdowns: true;
       float: none;
 
       // Adjuct margins not set by jMmenu
-      margin: .1em 0;
       &:first-child,
       &:last-child {
         margin: 0;
