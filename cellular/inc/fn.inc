@@ -40,7 +40,7 @@ function cellular_build_head_tags(&$array) {
         '#tag' => $val['tag'],
         '#attributes' => array(),
         '#weight' => isset($val['weight']) ?
-          $val['weight'] : 0,
+        $val['weight'] : 0,
       );
       // Misc. attr/val:
       isset($val['attr']) && isset($val['attr_val']) ?
@@ -110,7 +110,7 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     'weight' => $script['weight'] + 0.1,
     'type' => 'inline',
     'every_page' => isset($script['every_page']) ?
-      $script['every_page'] : TRUE,
+    $script['every_page'] : TRUE,
   );
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
@@ -295,9 +295,9 @@ function cellular_add_plugin_css(&$css) {
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ?
-      array(
+    array(
       'file' => 'plugins/prism.css',
-      ) : NULL,
+    ) : NULL,
   );
 
   if (theme_get_setting('jquery_update') == 1) {

@@ -17,12 +17,13 @@ function subcellular_js_alter() {
     'weight' => 10,
    ),
     'cdnScript' => array( // CDN script w/ local fallback
-    'object' => 'CDNscript', // javascript object to test for generating fallback from cdn
+    'object' => 'CDNscript', // javascript object to test for generating
+                                                              fallback from cdn
     'cdn'    => '//ajax.googleapis.com/ajax/libs/cdnScript.js',
-    'file'   => 'fallback-script.js', // Path to file, relative to /yourTheme/js/
+    'file'   => 'fallback-script.js', // Path to file from /yourTheme/js/
     ),
     'anotherScript'  => array( // default params
-    'file'       => 'anotherScript.js', // Path to file, relative to /yourTheme/js/
+    'file'       => 'anotherScript.js', // Path to file, from /yourTheme/js/
     ),
     );
 

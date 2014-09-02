@@ -1045,17 +1045,55 @@ hr.clearfix {
   transform: skew(5deg) rotate(5deg);
 }
 
-/*
+/* line 99, ../sass/style/_classes.scss */
 .ribbon {
-    @include ribbon(1.2em, 1em, $black);
-    color: $white;
+  position: relative;
+  margin: 0 auto 1em;
+  padding: 0 1.2em;
+  border-bottom: black 1px solid;
+  background-color: #111111;
+  color: #fefefe;
+}
+/* line 324, ../sass/mixins/_cellularmixins.scss */
+.ribbon:before, .ribbon:after {
+  content: " ";
+  position: absolute;
+  bottom: -1em;
+  border-top: black 1em solid;
+}
+/* line 331, ../sass/mixins/_cellularmixins.scss */
+.ribbon:before {
+  left: 0;
+  border-left: 1.2em solid transparent;
+}
+/* line 336, ../sass/mixins/_cellularmixins.scss */
+.ribbon:after {
+  right: 0;
+  border-right: 1.2em solid transparent;
 }
 
+/* line 104, ../sass/style/_classes.scss */
 .popout {
-    @include popout(1.2em, 1em, $black);
-    color: $white;
+  position: relative;
+  margin: 0 0 1em 0;
+  padding: 0 1.2em;
+  background: #111111;
+  border-bottom: black 1px solid;
+  color: #fefefe;
 }
-*/
+/* line 349, ../sass/mixins/_cellularmixins.scss */
+.popout:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1em;
+  height: 0;
+  border-top: 1em solid black;
+  border-left: 1.2em solid transparent;
+  border-right: 1.2em solid transparent;
+}
+
 /**
  * @file
  * Logo link style

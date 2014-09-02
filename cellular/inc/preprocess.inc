@@ -35,7 +35,7 @@ function cellular_preprocess_node(&$vars) {
     $author = array(
       'name' => l($node->name, 'user/' . $node->uid),
       'description' => isset($author->field_description[$safe_value]) ?
-        '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
+      '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
       'image' => !empty($uid->picture->uri) ? theme('image_style', array(
           // 'style_name' => 'blog-author-image',
           'path' => $node->picture->uri,
@@ -99,7 +99,7 @@ function cellular_preprocess_block(&$vars) {
   $block = $vars['block'];
   $vars['title'] = isset($block->subject) ? $block->subject : NULL;
   $vars['classes_array'] = array('block');
-  $vars['title_attributes_array'] ['class'] = array('block-title');
+  $vars['title_attributes_array']['class'] = array('block-title');
   $vars['content_attributes_array']['class'] = array('block-content');
 
   // Hide block titles in the headers region:

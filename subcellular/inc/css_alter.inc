@@ -4,7 +4,7 @@
  * Add/Update/Delete stylesheets from theme. *
  */
 
-/*
+/**
  * hook_css_alter()
  */
 function subcellular_css_alter(&$css) {
@@ -27,7 +27,6 @@ function subcellular_css_alter(&$css) {
     cellular_add_css($css, $add_css);
    */
 
-
   /* Remove stylesheets set by modules.
    * @params $key : Module name.
    * @params $value : Path relative to each module's directory.
@@ -46,12 +45,11 @@ function subcellular_css_alter(&$css) {
 
    cellular_remove_css($css, $exclude);
   */
-    //  Remove a single stylesheet set by a module:
-    //    'stupidModule' => 'path/to/stupid.css'
-    //
-    // Remove multiple stylesheets set by a module:
-    //   'stupidModule' => array(
-    //     'path/to/stupid.css',
-    //     'other/path/to/more/stupid.css'
-    //   );
+// Remove a single stylesheet set by a module:
+// 'stupidModule' => 'path/to/stupid.css'
+// Remove multiple stylesheets set by a module:
+// 'stupidModule' => array(
+// 'path/to/stupid.css',
+// 'other/path/to/more/stupid.css'
+// );
 }

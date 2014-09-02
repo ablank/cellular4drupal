@@ -2,11 +2,11 @@
 
 /**
  * @file
- * Functions for updating jQuery & jQuery.ui
+ * Functions for updating jQuery & jQuery.ui.
  */
 
 /**
- * Get info from theme settings
+ * Get info from theme settings.
  */
 function cellular_jquery_info() {
   $jquery = array(
@@ -64,7 +64,7 @@ function cellular_cdn() {
 }
 
 /**
- * Update jQuery & essential plugins..
+ * Update jQuery & essential plugins.
  */
 function cellular_jquery_update(&$javascript, $js_plugins) {
   $v_jq = theme_get_setting('jquery_version');
@@ -74,7 +74,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
     // Select cdn to use:
     $cdn = cellular_cdn();
   }
-// Override jQuery:
+// Override jQuery.
   $jquery = array(
     'default' => 'misc/jquery.js',
     'object' => 'jQuery',
@@ -88,7 +88,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 
   cellular_js_override($javascript, $jquery, TRUE);
 
-// Override jQuery.once:
+// Override jQuery.once.
   $jqueryonce = array(
     'default' => 'misc/jquery.once.js',
     'version' => '1.2.6',
@@ -97,7 +97,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 
   cellular_js_override($javascript, $jqueryonce, TRUE);
 
-// Override jQuery.form:
+// Override jQuery.form.
   $jqueryform = array(
     'default' => 'misc/jquery.form.js',
     'version' => '3.48',
@@ -108,7 +108,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 }
 
 /**
- * Override jQueryUI javascript
+ * Override jQueryUI javascript.
  */
 function cellular_jqueryui_js(&$javascript) {
   $jq = cellular_jquery_info();
@@ -156,7 +156,7 @@ function cellular_jqueryui_js(&$javascript) {
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
           'weight' => isset($javascript[$default]['weight']) ?
-            $javascript[$default]['weight'] : -9,
+          $javascript[$default]['weight'] : -9,
           'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
         ),
@@ -212,9 +212,9 @@ function cellular_jqueryui_css(&$css) {
           'version' => $jq['version'],
           'group' => CSS_SYSTEM,
           'every_page' => isset($css[$default]['every_page']) ?
-            $css[$default]['every_page'] : FALSE,
+          $css[$default]['every_page'] : FALSE,
           'weight' => isset($css[$default]['weight']) ?
-            $css[$default]['weight'] : -9,
+          $css[$default]['weight'] : -9,
           'file' => $ui['path'] . $jq['version'] . '/'
           . $jq['theme'] . "/jquery-ui.css",
         ),
@@ -223,9 +223,9 @@ function cellular_jqueryui_css(&$css) {
           'version' => $jq['version'],
           'group' => CSS_SYSTEM,
           'every_page' => isset($css[$default]['every_page']) ?
-            $css[$default]['every_page'] : FALSE,
+          $css[$default]['every_page'] : FALSE,
           'weight' => isset($css[$default]['weight']) ?
-            $css[$default]['weight'] : -9,
+          $css[$default]['weight'] : -9,
           'file' => $ui['path'] . $jq['version'] . '/'
           . $jq['theme'] . "/jquery-ui.css",
         ),
@@ -249,7 +249,7 @@ function cellular_jqueryui_css(&$css) {
       // Set path to updated file.
       if ($jq['theme'] === 'custom') {
         $jq['version'] === '1.10.4' ?
-            $v = '1.10' : '1.9';
+        $v = '1.10' : '1.9';
         $file = $ui['path'] . "jquery-ui.$v.css";
 
         $style['core']['file'] = $file;
