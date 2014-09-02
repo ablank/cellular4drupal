@@ -139,17 +139,17 @@ function cellular_social_media_share() {
     $facebook = theme_get_setting('share_facebook') == 1 ? array(
       // Facebook javascript.
       'script' => '(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-            }(document, \'script\', \'facebook-jssdk\'));',
-            // Set fb markup.
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, \'script\', \'facebook-jssdk\'));',
+  // Set fb markup.
       'tag' => '<div class="fb-like" data-href="' . $page['url'] . '"
-            data-layout="button" data-action="like" data-show-faces="false"
-            data-share="true">
-            </div><div id="fb-root"></div>',
+  data-layout="button" data-action="like" data-show-faces="false"
+  data-share="true">
+  </div><div id="fb-root"></div>',
       'weight' => 1000,
     ) : NULL;
 

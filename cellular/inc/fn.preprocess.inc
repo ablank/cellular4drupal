@@ -204,7 +204,10 @@ function cellular_remove_default_css(&$css) {
   $exclude = array();
   if (theme_get_setting('remove_drupal_css') === 'theme_only') {
     foreach ($css as $key => $value) {
-      if ($value['group'] !== CSS_THEME && $key !== 'admin_menu') {
+      if ($value['group'] !== CSS_THEME
+        // Keep admin stuff.
+        && ($key !== 'admin_menu'
+        || $key !== 'toolbar')) {
         $exclude[$key] = FALSE;
       }
     }

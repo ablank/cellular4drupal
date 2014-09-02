@@ -23,6 +23,8 @@ function cellular_preprocess_html(&$vars) {
 function cellular_preprocess_node(&$vars) {
   $vars['hook'] = 'node';
   $node = $vars['node'];
+  // Push modified Sstyles onto page.
+  $vars['styles'] = drupal_get_css();
 
   $vars['title_attributes_array']['class'] = array('node-title');
   $vars['content_attributes_array']['class'] = array('node-content');

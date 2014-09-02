@@ -16,7 +16,7 @@ function cellular_jquery_info() {
     'cdn' => theme_get_setting('jquery_cdn_source'),
     'ui' => array(
       'version' => theme_get_setting('jqueryui_version'),
-      'theme' => theme_get_setting('jquery_theme'),
+      'theme' => theme_get_setting('jqueryui_theme'),
     ),
   );
 
@@ -33,27 +33,27 @@ function cellular_cdn() {
    * //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
    */
   $jq = cellular_jquery_info();
-
+  $ui = $jq['ui'];
   $networks = array(
     'google' => array(
       'base_url' => '//ajax.googleapis.com/ajax/libs/',
       'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
-      'jqueryui' => 'jqueryui/' . $jq['ui']['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $jq['ui']['version'] . '/themes/'
-      . $jq['ui']['theme'] . 'jquery-ui.css',
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui.min.js',
+      'theme' => 'jqueryui/' . $ui['version'] . '/themes/'
+      . $ui['theme'] . '/jquery-ui.css',
     ),
     'microsoft' => array(
       'base_url' => '//ajax.aspnetcdn.com/ajax/',
       'jquery' => 'jquery/jquery-' . $jq['version'] . '.min.js',
-      'jqueryui' => 'jquery.ui/' . $jq['ui']['version'] . '/jquery-ui.min.js',
-      'theme' => 'jquery.ui/' . $jq['ui']['version'] . '/themes/'
-      . $jq['ui']['theme'] . 'jquery-ui.css',
+      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui.min.js',
+      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/'
+      . $ui['theme'] . '/jquery-ui.css',
     ),
     'cloudflare' => array(
       'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
       'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
-      'jqueryui' => 'jqueryui/' . $jq['ui']['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $jq['ui']['version'] . '/css/jquery-ui.min.css',
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui.min.js',
+      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui.min.css',
     ),
   );
 
@@ -67,24 +67,26 @@ function cellular_cdn() {
  * Update jQuery & essential plugins.
  */
 function cellular_jquery_update(&$javascript, $js_plugins) {
+  $jq = cellular_jquery_info();
   $v_jq = theme_get_setting('jquery_version');
   $jq_cdn = theme_get_setting('jquery_cdn');
 
-  if ($jq_cdn === 1) {
-    // Select cdn to use:
-    $cdn = cellular_cdn();
-  }
 // Override jQuery.
   $jquery = array(
     'default' => 'misc/jquery.js',
     'object' => 'jQuery',
-    'version' => $v_jq,
-    'cdn' => $jq_cdn ? $cdn['base_url'] . $cdn['jquery'] : NULL,
-    'file' => "jquery-$v_jq.min.js",
+    'version' => $jq['version'],
+    'file' => 'jquery-' . $jq['version'] . '.min.js',
     'group' => JS_LIBRARY,
     'every_page' => TRUE,
     'weight' => -100,
   );
+
+  if ($jq['use_cdn'] === 1) {
+    // Select cdn to use:
+    $cdn = cellular_cdn();
+    $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
+  }
 
   cellular_js_override($javascript, $jquery, TRUE);
 
@@ -234,8 +236,16 @@ function cellular_jqueryui_css(&$css) {
       // Unset default style after getting needed parameters.
       unset($css[$default]);
 
-      // Set data source of stylesheets.
-      if (theme_get_setting('jquery_cdn') === 1) {
+      // Set path to local custom file if selected.
+      if ($jq['theme'] === 'custom') {
+        $jq['version'] === '1.10.4' ?
+          $v = '1.10' : '1.9';
+        $file = $ui['path'] . "jquery-ui.$v.css";
+
+        $style['core']['file'] = $file;
+      }
+      elseif (theme_get_setting('jquery_cdn') === 1
+      && $jq['theme'] !== 'custom') {
         $cdn = cellular_cdn();
         // If updating from cdn unset each widget so a single call can be made.
         unset($css[$default]);
@@ -243,19 +253,11 @@ function cellular_jqueryui_css(&$css) {
         $style['core']['cdn'] = $cdn['base_url'] . $cdn['theme'];
         $style['theme']['cdn'] = $cdn['base_url'] . $cdn['theme'];
       }
-      // Set path to updated file.
-      if ($jq['theme'] === 'custom') {
-        $jq['version'] === '1.10.4' ?
-        $v = '1.10' : '1.9';
-        $file = $ui['path'] . "jquery-ui.$v.css";
-
-        $style['core']['file'] = $file;
-      }
       else {
-        $theme_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
+        $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
 
-        $style['core']['file'] = $theme_path . 'jquery-ui.css';
-        $style['theme']['file'] = $cdn['base_url'] . $cdn['theme'];
+        $style['core']['file'] = $ui_path . 'jquery-ui.css';
+        $style['theme']['file'] = $ui_path . 'jquery.ui.theme.css';
       }
       cellular_add_css($css, $style, TRUE);
     }
