@@ -9,7 +9,7 @@
  * template_preprocess_html()
  */
 function cellular_preprocess_html(&$vars) {
-  global $language, $theme_path;
+  global $language;
 
   cellular_html_attributes($vars, $language);
   cellular_metatags($vars);

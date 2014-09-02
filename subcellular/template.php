@@ -5,11 +5,13 @@
  * Set global vars, load functions for templates, and hook_function overrides.
  * @author Adam Blankenship
  */
+
+/**/
 global $theme_path;
 $include = array(
-    // 'dev-functions.inc',
-    'css_alter.inc',
-    'js_alter.inc',
+  // 'dev-functions.inc',
+  'css_alter.inc',
+  'js_alter.inc',
 );
 
 $inc_path = $theme_path . '/inc';
