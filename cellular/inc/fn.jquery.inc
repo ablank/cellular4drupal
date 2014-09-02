@@ -53,8 +53,7 @@ function cellular_cdn() {
       'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
       'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
       'jqueryui' => 'jqueryui/' . $jq['ui']['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $jq['ui']['version'] . '/css/jquery-ui
-      .min.css',
+      'theme' => 'jqueryui/' . $jq['ui']['version'] . '/css/jquery-ui.min.css',
     ),
   );
 
@@ -261,7 +260,7 @@ function cellular_jqueryui_css(&$css) {
         $style['core']['file'] = $theme_path . 'jquery-ui.css';
         $style['theme']['file'] = $cdn['base_url'] . $cdn['theme'];
       }
-      cellular_add_css($css, $style, true);
+      cellular_add_css($css, $style, TRUE);
     }
   }
 }

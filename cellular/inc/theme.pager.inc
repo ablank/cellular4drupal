@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Drupal pager ripped off from Tao :) Thanks!
+ * Drupal pager, basically ripped off from Tao :) Thanks!
  */
 
 /**

@@ -150,7 +150,7 @@ function cellular_metatags(&$vars) {
       'rel' => 'profile',
       'href' => $vars['grddl_profile'],
       'weight' => 4,
-      ) : NULL,
+    ) : NULL,
   );
 
   cellular_build_head_tags($meta_tags);
@@ -198,8 +198,6 @@ function cellular_sidebar_classes(&$vars) {
 
 /**
  * Remove core stylesheets based on theme settings.
- *
- * @param $css
  */
 function cellular_remove_default_css(&$css) {
   // Nuke all css not a member of group CSS_THEME:

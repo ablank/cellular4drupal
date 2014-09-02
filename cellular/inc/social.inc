@@ -28,27 +28,27 @@ function cellular_social_media_follow() {
         'url' => theme_get_setting('follow_facebook_url'),
         'class' => 'facebook',
         'name' => t('Facebook'),
-        ) : NULL,
+      ) : NULL,
       'google+' => theme_get_setting('follow_google_plus') == 1 ? array(
         'url' => theme_get_setting('follow_google_plus_url'),
         'class' => 'google',
         'name' => t('Google+'),
-        ) : NULL,
+      ) : NULL,
       'twitter' => theme_get_setting('follow_twitter') == 1 ? array(
         'url' => theme_get_setting('follow_twitter_url'),
         'class' => 'twitter-bird',
         'name' => t('Twitter'),
-        ) : NULL,
+      ) : NULL,
       'linkedin' => theme_get_setting('follow_linkedin') == 1 ? array(
         'url' => theme_get_setting('follow_linkedin_url'),
         'class' => 'linkedin',
         'name' => t('LinkedIn'),
-        ) : NULL,
+      ) : NULL,
       'github' => theme_get_setting('follow_github') == 1 ? array(
         'url' => theme_get_setting('follow_github_url'),
         'class' => 'github-octo',
         'name' => t('Github'),
-        ) : NULL,
+      ) : NULL,
     );
 
     foreach ($links as $link) {
@@ -107,20 +107,20 @@ function cellular_social_media_share() {
         'script' => NULL,
         'url' => 'http://plus.google.com/share?url=' . $page['url'],
         'class' => 'google',
-        ) : NULL,
+      ) : NULL,
       'twitter' => theme_get_setting('share_twitter') == 1 ? array(
         'title' => 'Twitter',
         'script' => NULL,
         'url' => 'https://twitter.com/share',
         'class' => 'twitter-bird',
-        ) : NULL,
+      ) : NULL,
       'linkedin' => theme_get_setting('share_linkedin') == 1 ? array(
         'title' => '',
         'script' => NULL,
         'url' => 'http://www.linkedin.com/shareArticle?mini=true&url=' .
         $page['url'] . '&title=' . $page['title'] . '&source=' . $base_url,
         'class' => 'linkedin',
-        ) : NULL,
+      ) : NULL,
       'pinterest' => theme_get_setting('share_pinterest') == 1 ? array(
         'title' => 'Pinterest',
         'script' => NULL,
@@ -133,23 +133,25 @@ function cellular_social_media_share() {
         'script' => NULL,
         'url' => 'http://www.reddit.com/submit?url=' . $page['url'],
         'class' => 'reddit',
-        ) : NULL,
+      ) : NULL,
     );
 
     $facebook = theme_get_setting('share_facebook') == 1 ? array(
+      // fb javascript.
       'script' => '(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, \'script\', \'facebook-jssdk\'));',
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, \'script\', \'facebook-jssdk\'));',
+      // Set fb markup.
       'tag' => '<div class="fb-like" data-href="' . $page['url'] . '"
-       data-layout="button" data-action="like" data-show-faces="false"
-       data-share="true">
-       </div><div id="fb-root"></div>',
+      data-layout="button" data-action="like" data-show-faces="false"
+      data-share="true">
+      </div><div id="fb-root"></div>',
       'weight' => 1000,
-      ) : NULL;
+    ) : NULL;
 
     if (!empty($facebook)) {
       $links[] = $facebook;

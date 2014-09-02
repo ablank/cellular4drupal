@@ -72,42 +72,42 @@ function cellular_add_js_plugins() {
       'object' => 'Modernizr',
       'file' => 'modernizr.js',
       'weight' => -1000,
-      ) : NULL,
+    ) : NULL,
     'cellular' => theme_get_setting('cellularjs') == 1 ? array(
       'object' => 'cellular',
       'file' => 'plugins/jquery.cellular.js',
       'weight' => -10,
-      ) : NULL,
+    ) : NULL,
     'd3' => theme_get_setting('d3js') == 1 ? array(
       'object' => 'd3',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js',
       'file' => 'plugins/d3.min.js',
       'weight' => -9,
-      ) : NULL,
+    ) : NULL,
     'masonry' => theme_get_setting('masonry') == 1 ? array(
       'object' => NULL,
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js',
       'file' => 'plugins/jquery.masonry.min.js',
       'weight' => -8,
-      ) : NULL,
+    ) : NULL,
     'prism' => theme_get_setting('prism') == 1 ? array(
       'object' => 'Prism',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js',
       'file' => 'plugins/prism.min.js',
       'weight' => -7,
-      ) : NULL,
+    ) : NULL,
     'smoove' => theme_get_setting('smoove') == 1 ? array(
       'object' => 'smoove',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
       'file' => 'plugins/jquery.smoove.min.js',
       'weight' => -6,
-      ) : NULL,
+    ) : NULL,
     'threejs' => theme_get_setting('threejs') == 1 ? array(
       'object' => 'THREE',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js',
       'file' => 'plugins/three.min.js',
       'weight' => -5,
-      ) : NULL,
+    ) : NULL,
   );
 
   if (theme_get_setting('gsap') == 1) {

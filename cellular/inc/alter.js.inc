@@ -10,7 +10,7 @@
  */
 function cellular_js_alter(&$javascript) {
 // Pass a variable from drupal to js:
-//  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
+// drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
   /* myVar will be available in Javascript as:
     <script>
     if (Drupal.settings.myVar.key == value){

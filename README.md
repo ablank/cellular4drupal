@@ -55,7 +55,8 @@ module => stylesheet to the array `$exclude` in `/inc/css_alter.inc`
 
 * `/js/script.js` is ready for you to add your custom scripting.
 
-* Load scripts in the order you need with `cellular_add_js()` - Add your scripts to the array `$add_js` in `/inc/js_alter.inc`
+* Load scripts in the order you need with `cellular_add_js()` - Add your
+scripts to the array `$add_js` in `/inc/js_alter.inc`
   * ***nice*** Link to a CDN script by including the `['cdn']` key. If the
   `['object']` & `['file']` keys are also present, a local fallback link will
    be automatically generated after the cdn link.
