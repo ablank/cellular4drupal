@@ -2,38 +2,42 @@
  * @file
  * Old Internet Explorer is breakin teh internetz...
  */
-/* line 7, ../sass/ie.scss */
-body, * {
-  zoom: 1.0; }
+/* line 8, ../sass/ie.scss */
+body,
+* {
+  word-wrap: break-word;
+  zoom: 1.0;
+}
 
-/* line 11, ../sass/ie.scss */
-body {
-  word-wrap: break-word; }
-
-/* line 15, ../sass/ie.scss */
+/* line 13, ../sass/ie.scss */
 img {
-  -ms-interpolation-mode: bicubic; }
+  -ms-interpolation-mode: bicubic;
+}
 
-/* line 19, ../sass/ie.scss */
+/* line 17, ../sass/ie.scss */
 legend {
-  color: #bbbab7; }
+  color: #bbbab7;
+}
 
-/* line 26, ../sass/ie.scss */
+/* line 24, ../sass/ie.scss */
 input,
 textarea,
 select {
-  *font-size: 100%; }
+  *font-size: 100%;
+}
 
-/* line 33, ../sass/ie.scss */
+/* line 32, ../sass/ie.scss */
 input[type=checkbox], input[type=radio] {
   display: inline;
   margin: 0.3em;
-  vertical-align: middle; }
-  /* line 38, ../sass/ie.scss */
-  input[type=checkbox]:focus, input[type=radio]:focus {
-    border: thin solid; }
+  vertical-align: middle;
+}
+/* line 37, ../sass/ie.scss */
+input[type=checkbox]:focus, input[type=radio]:focus {
+  border: thin solid;
+}
 
-/* line 58, ../sass/ie.scss */
+/* line 57, ../sass/ie.scss */
 .cell,
 .cell-90,
 .cell-80,
@@ -48,16 +52,20 @@ input[type=checkbox], input[type=radio] {
 .cell-25,
 .cell-20,
 .cell-10 {
-  overflow: visible; }
+  overflow: visible;
+}
 
-/* line 63, ../sass/ie.scss */
+/* line 62, ../sass/ie.scss */
 .center {
-  display: block; }
+  display: block;
+}
 
-/* line 67, ../sass/ie.scss */
+/* line 66, ../sass/ie.scss */
 .jBlocklink {
   margin: 0;
-  border: #bbbab7 1px solid; }
-  /* line 71, ../sass/ie.scss */
-  .jBlocklink:hover {
-    border-color: #29b4de; }
+  border: #bbbab7 1px solid;
+}
+/* line 70, ../sass/ie.scss */
+.jBlocklink:hover {
+  border-color: #29b4de;
+}
