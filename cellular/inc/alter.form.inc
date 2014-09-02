@@ -16,14 +16,13 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       $form['#attributes'] = array(
         'id' => 'site-search',
-        'class' => array(// 'class-name',
-        ),
+        'class' => array(),
       );
       $form['search_block_form'] = array(
         '#type' => 'textfield',
         '#size' => 25,
         // '#value' => t('Search'),
-        '#default_value' => 'Search keywords',
+        '#default_value' => 'Search keywords: ',
         '#attributes' => array('title' => 'Search this site'),
       );
 
@@ -85,7 +84,13 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
           );
         }
         if ($upass == 1) {
-          $ulmarkup .= l(t('Forgotten Password?'), "user/password", array('attributes' => array('class' => array('password'))));
+          $ulmarkup .= l(t('Forgotten Password?'), "user/password", array(
+            'attributes' => array(
+              'class' => array(
+                'password',
+                ),
+              ),
+            ));
         }
         $ulmarkup .= '</div>';
       }
@@ -95,11 +100,28 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       $form['links']['#markup'] = $ulmarkup;
       // Register New User Account:
-      // $form['links']['#markup'][] = t('Register') . ' <a href="/user/register">' . t('Register') . '</a>';
+      /*
+         $form['links']['#markup'][] = t('Register')
+       . ' <a href="/user/register">'
+       . t('Register') . '</a>';
+      */
+
       // Forgot Password:
-      // $form['links']['#markup'][] = t('Forgotten Password?') . ' <a href="/user/password">' . t('Forgotten Password?') . '</a>';
+      /*
+       $form['links']['#markup'][] = t('Forgotten Password?')
+       . ' <a href="/user/password">'
+       . t('Forgotten Password?') . '</a>';
+       */
+
       // Register New User Account &&  Forgot Password:
-      // $form['links']['#markup'] = '<hr/>' . ' <a class="user-register" href="/user/register">' . t('Register') . '</a>' . '<hr/>' . ' <a class="user-password" href="/user/password">' . t('Forgotten Password?') . '</a>'; // Remove Request New Password from Block form
+      /*
+       $form['links']['#markup'] = '<hr/>' 
+       . ' <a class="user-register" href="/user/register">'
+         . t('Register') . '</a>' . '<hr/>'
+         . ' <a class="user-password" href="/user/password">'
+         . t('Forgotten Password?') . '</a>';
+      */
+
       break;
   }
   // dsm($form);

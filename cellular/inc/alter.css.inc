@@ -14,7 +14,7 @@ function cellular_css_alter(&$css) {
 
 // Add stylesheets to theme.
   $add_css = array(
-// Paths are relative to /yourTheme/css/
+  // Paths are relative to /yourTheme/css/
     'drupal' => array(
       'file' => 'drupal.css',
       'weight' => 1,

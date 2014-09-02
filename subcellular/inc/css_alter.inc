@@ -1,15 +1,15 @@
 <?php
-
 /**
  * @file
  * Add/Update/Delete stylesheets from theme. *
  */
+
 /*
  * hook_css_alter()
- *
  */
 function subcellular_css_alter(&$css) {
   /*
+   * // Uncomment this block to add stylesheets to theme.
     $add_css = array(
     'styleName'  => array( //  default params
     'file'       => 'my.awesome.css',
@@ -29,16 +29,19 @@ function subcellular_css_alter(&$css) {
    */
 
 
-  /*
-   * Remove stylesheets set by modules.
-   * Array $key = module name.
-   * Array $value = Path relative to each module's directory.
+  /* Remove stylesheets set by modules.
+   * @params $key : Module name.
+   * @params $value : Path relative to each module's directory.
     //  Remove a single stylesheet set by a module:
-   * 'stupidModule' => 'path/to/stupid.css'
+    //    'stupidModule' => 'path/to/stupid.css'
+    //
     // Remove multiple stylesheets set by a module:
-   * 'stupidModule' => array('path/to/stupid.css', 'other/path/to/more/stupid.css');
+    //   'stupidModule' => array(
+    //     'path/to/stupid.css',
+    //     'other/path/to/more/stupid.css'
+    //   );
    */
-  /*
+   /* // Uncomment this block to remove module stylesheets.
     $exclude = array(
     'calendar' => 'css/calendar_multiday.css',
     'ctools' => 'css/ctools.css',
@@ -51,5 +54,5 @@ function subcellular_css_alter(&$css) {
     );
 
     cellular_remove_css($css, $exclude);
-   */
+   
 }
