@@ -43,7 +43,7 @@
  */
 
 ?>
-<div <?php 
+<div <?php
  print "id=\"$block_html_id\" class=\"$classes\" $attributes" ?>>
        <?php
        if ($block->subject):

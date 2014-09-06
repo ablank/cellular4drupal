@@ -80,6 +80,7 @@ function cellular_preprocess_region(&$vars) {
  */
 function cellular_preprocess_block(&$vars) {
   $vars['hook'] = 'block';
+  dsm($vars);
   $block = $vars['block'];
   $vars['block_title'] = isset($block->subject) ? $block->subject : NULL;
   $vars['classes_array'] = array('block');

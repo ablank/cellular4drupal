@@ -210,11 +210,11 @@
   <?php
   // Social Media share links.
   if ($page['social_media_share']) :
-  //  print $page['social_media_share'];
+    print $page['social_media_share'];
   endif;
   // Social Media follow links.
   if ($page['social_media_follow']):
-  //  print $page['social_media_follow'];
+    print $page['social_media_follow'];
   endif; ?>
 
   <div id="footer" class="cell">
