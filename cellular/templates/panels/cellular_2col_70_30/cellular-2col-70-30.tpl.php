@@ -12,34 +12,38 @@
 
 ?>
 
-<div class="cell" <?php
-if (!empty($css_id)): print "id=\"$css_id\"";
-endif;
+<div class="cell" <?php if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
 
-?>>
-
-  <div class="panel cell">
-    <div class="panel-content">
-      <?php print $content['top']; ?>
+  <?php if ($content['top']): ?>
+    <div class="panel cell">
+      <div class="panel-content">
+        <?php print $content['top']; ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
-  <div class="panel cell-70">
-    <div class="panel-content">
-      <?php print $content['left']; ?>
+  <?php if ($content['left']): ?>
+    <div class="panel cell-70">
+      <div class="panel-content">
+        <?php print $content['left']; ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
-  <div class="panel cell-30">
-    <div class="panel-content">
-      <?php print $content['right']; ?>
+  <?php if ($content['right']): ?>
+    <div class="panel cell-30">
+      <div class="panel-content">
+        <?php print $content['right']; ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
-  <div class="panel cell">
-    <div class="panel-content">
-      <?php print $content['bottom']; ?>
+  <?php if ($content['bottom']): ?>
+    <div class="panel cell">
+      <div class="panel-content">
+        <?php print $content['bottom']; ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 
 </div>

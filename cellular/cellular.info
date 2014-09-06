@@ -11,10 +11,10 @@
 settings[copyright]     = AB Creative
 
 ;----------// Stylesheets
-; CSS is added in /inc/alter_css.inc to control granularity
+; CSS is added in /inc/alter.css.inc to control granularity
 
 ;----------// Javascript
-; JS is added in /inc/alter_js.inc to control granularity
+; JS is added in /inc/alter.js.inc to control granularity
 
 ;----------// Regions
 regions[header_top]         = Header Top
@@ -31,25 +31,26 @@ regions[footer]             = Footer
 regions[footer_bottom]      = Footer Bottom
 
 ;----------// Javascript Updates & Plugins
-settings[jquery_update]             = 1
+settings[jquery_update]             = 0
 settings[jquery_cdn]                = 1
 settings[jquery_cdn_source]         = google
 settings[jquery_version]            = 1.9.1
 settings[jqueryui_version]          = 1.10.4
 settings[jqueryui_theme]            = custom
-settings[modernizr]                 = 1
+settings[modernizr]                 = 0
 settings[d3js]                      = 0
 settings[threejs]                   = 0
 settings[smoove]                    = 0
 settings[prism]                     = 0
 settings[masonry]                   = 0
-settings[cellularjs]                = 1
+settings[cellularjs]                = 0
 settings[gsap]                      = 0
+settings[reveal]                    = 0
 
 ;----------// Display Settings
 settings[remove_drupal_css]         = 0
-settings[favicons]                  = 1
-settings[icons_type]                = svg
+;settings[favicons]                  = 1
+;settings[icons_type]                = svg
 settings[full_menu]                 = 1
 settings[breadcrumb_display]        = 0
 settings[breadcrumb_separator]      = &#187;

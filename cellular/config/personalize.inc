@@ -13,10 +13,8 @@ $form['c']['personalize'] = array(
 
 $form['c']['personalize']['dev'] = array(
   '#type' => 'checkbox',
-  '#title' => module_exists('devel') ? t('Development Mode')
-  : t('<div class=\"warning\">This option requires the Devel module to be
-    installed/enabled.</div>'),
-  '#description' => t("Use the dsm() function to return page variables."),
+  '#title' => t('Development Mode'),
+  '#description' => t("Return page variables."),
   '#default_value' => theme_get_setting('dev'),
 );
 

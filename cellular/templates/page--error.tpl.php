@@ -154,7 +154,7 @@
   </div>
   <!-- /#footer -->
 
-  <?php if ($page['footer_bottom'] || $copyright) : ?>
+  <?php if ($page['footer_bottom'] || $page['copyright']) : ?>
     <div id="footer-bottom" class="cell">
       <?php
       if ($page['footer_bottom']) :

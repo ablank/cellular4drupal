@@ -55,7 +55,7 @@ function cellular_modernizr() {
 
   drupal_add_js($yepnope, array(
     'type' => 'inline',
-    'group' => CSS_SYSTEM,
+    'group' => JS_LIBRARY,
     'every_page' => TRUE,
     'weight' => -999,
   ));
@@ -95,6 +95,12 @@ function cellular_add_js_plugins() {
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js',
       'file' => 'plugins/prism.min.js',
       'weight' => -7,
+    ) : NULL,
+    'reveal' => theme_get_setting('reveal') == 1 ? array(
+      'object' => 'smoove',
+      'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
+      'file' => 'plugins/jquery.smoove.min.js',
+      'weight' => -6,
     ) : NULL,
     'smoove' => theme_get_setting('smoove') == 1 ? array(
       'object' => 'smoove',

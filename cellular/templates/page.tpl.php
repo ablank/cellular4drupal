@@ -3,6 +3,7 @@
  * @file
  * Page Template.
  */
+
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -84,6 +85,7 @@
 ?>
 
 <div id="page-wrap">
+
   <div id="skipLinks" class="hidden">
     <a href="#content"><?php print t('Skip to main content'); ?></a>
     <a href="#nav"><?php print t('Skip to navigation'); ?></a>
@@ -96,14 +98,14 @@
   <?php endif; ?>
 
   <div id="header">
+
     <div id="logo">
       <?php
-      if ($site_name) :
+      if (!empty($site_name)) :
         print "<h2>" . $site_name . "</h2>";
-      endif;
-
-      ?>
+      endif; ?>
     </div>
+
     <?php if (isset($main_menu)) : ?>
       <div id="nav">
         <?php print render($main_menu); ?>
@@ -111,6 +113,7 @@
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
+
   </div>
   <!-- /#header -->
 
@@ -121,19 +124,21 @@
   <?php endif; ?>
 
   <div id="app">
+
     <?php
     print render($title_prefix);
     if ($title) :
       print '<h1 id="page-title">' . $title . '</h1>';
     endif;
     print render($title_suffix);
-
     ?>
-    <?php if ($tabs): ?>
+
+    <?php if (!empty($tabs)): ?>
       <div id="page-tabs">
         <?php print render($tabs); ?>
       </div>
     <?php endif; ?>
+
     <div id="content-position">
       <div id="content-wrap" class="cell">
 
@@ -142,26 +147,22 @@
           print '<ul class="links">' . render($action_links) . '</ul>';
         endif;
 
-        if ($page['console'] || ($show_messages && $messages)) :
-
-          ?>
+        if ($page['console'] || ($show_messages && $messages)) : ?>
           <div id="console">
             <?php
             print render($page['console']);
             if ($show_messages && $messages) :
               print $messages;
-            endif;
-
-            ?>
+            endif; ?>
           </div>
         <?php endif; ?>
 
         <?php if ($page['sidebar_left']) : ?>
-          <div id="sidebar-left" class="<?php print $page['sidebar_class'];
-
-          ?>">
+          <div id="sidebar-left" class="<?php print $page['sidebar_class'];?>">
                  <?php print render($page['sidebar_left']); ?>
           </div>
+
+          <!-- /#sidebar-left -->
         <?php endif; ?>
 
         <?php if ($page['content_top']) : ?>
@@ -176,14 +177,11 @@
           // Breadcrumb Navigation.
           if (theme_get_setting('breadcrumb_display' && !$is_front)) :
             print $breadcrumb;
-          endif;
-
-          ?>
+          endif; ?>
 
           <?php
           // Main Page Content.
           print render($page['content']);
-
           ?>
 
           <?php if ($page['content_bottom']) : ?>
@@ -193,14 +191,14 @@
           <?php endif; ?>
 
         </div>
+        <!-- /#content -->
 
         <?php if ($page['sidebar_right']) : ?>
-          <div id="sidebar-right" class="<?php print $page['sidebar_class'];
-
-          ?>">
+          <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
                  <?php print render($page['sidebar_right']); ?>
           </div>
         <?php endif; ?>
+        <!-- /#sidebar-right -->
 
       </div>
       <!-- /#content-wrap-->
@@ -209,9 +207,7 @@
   </div>
   <!-- /#app-->
 
-
   <div id="footer" class="cell">
-
 
     <?php if ($page['footer_top']) : ?>
       <div id="footer-top" class="cell">
@@ -225,16 +221,12 @@
     endif;
     if ($page['social_media_follow']):
       print $page['social_media_follow'];
-    endif;
-
-    ?>
+    endif; ?>
 
     <?php
     if ($page['footer']) :
       print render($page['footer']);
-    endif;
-
-    ?>
+    endif; ?>
 
     <div id="footer-bottom" class="cell">
       <?php if ($page['footer_bottom']) : ?>
@@ -242,7 +234,7 @@
       <?php endif; ?>
 
       <?php if ($page['copyright']): ?>
-        <div id="copyright"><?php print $page['copyright']; ?></div>
+        <?php print $page['copyright']; ?>
       <?php endif; ?>
     </div>
     <!-- /#footer-bottom -->

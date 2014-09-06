@@ -84,7 +84,6 @@
     endif;
   endif;
   print render($title_suffix);
-
   ?>
 
   <?php if ($display_submitted): ?>
@@ -92,7 +91,6 @@
       <span class="day"><?php echo date("j", $node->created); ?></span>
       <span class="month"><?php echo date("M", $node->created); ?></span>
       <span class="year"><?php echo date("Y", $node->created); ?></span>
-
     </div>
 
     <div class="author">
@@ -106,7 +104,6 @@
     hide($content['comments']);
     hide($content['links']);
     print render($content);
-
     ?>
   </div>
   <?php print render($content['links']); ?>

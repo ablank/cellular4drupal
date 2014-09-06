@@ -29,10 +29,10 @@ $form['c']['social_media']['share'] = array(
   '#description' => t("Select the social media sites to include in the
 'Share this site' bar."),
   '#collapsible' => TRUE,
-  '#collapsed' => TRUE,
+  '#collapsed' => FALSE,
   '#states' => array(
     'visible' => array(
-      ':input[name="enable_sharing"]' => array('checked' => TRUE),
+      ':input[name="social_media_share"]' => array('checked' => TRUE),
     ),
   ),
 );
@@ -74,15 +74,16 @@ $form['c']['social_media']['social_media_follow'] = array(
   '#default_value' => theme_get_setting('social_media_follow'),
 );
 
+// Social media follow config.
 $form['c']['social_media']['follow'] = array(
   '#type' => 'fieldset',
   '#title' => t('Follow on Social Media'),
   '#description' => t("Links for following your activity on social media sites."),
   '#collapsible' => TRUE,
-  '#collapsed' => TRUE,
+  '#collapsed' => FALSE,
   '#states' => array(
     'visible' => array(
-      ':input[name="enable_follow"]' => array('checked' => TRUE),
+      ':input[name="social_media_follow"]' => array('checked' => TRUE),
     ),
   ),
 );

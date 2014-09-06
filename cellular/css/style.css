@@ -79,7 +79,7 @@ body {
   -ms-text-size-adjust: 100%;
   font-size: 100%;
   font-family: 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
-  line-height: 1.8em;
+  line-height: 1.4em;
   color: #111111;
 }
 
@@ -88,7 +88,7 @@ p {
   display: block;
   max-width: 32em;
   margin: 0 auto;
-  padding: 0 1em 0.9em 1em;
+  padding: 0 1em 0.7em;
   color: #111111;
 }
 
@@ -1263,8 +1263,9 @@ hr.clearfix {
   #nav li {
     width: 100%;
     float: none;
+    margin: 0;
   }
-  /* line 152, ../sass/style/_navigation.scss */
+  /* line 153, ../sass/style/_navigation.scss */
   #nav li:first-child, #nav li:last-child {
     margin: 0;
   }
@@ -1293,6 +1294,7 @@ hr.clearfix {
 /* line 18, ../sass/cellular-ui/_jCellular.scss */
 .cellular .title {
   cursor: pointer;
+  display: block;
   margin: 0;
   max-width: 100%;
   padding: .6em 1em;
@@ -1304,11 +1306,11 @@ hr.clearfix {
   -o-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 28, ../sass/cellular-ui/_jCellular.scss */
+/* line 29, ../sass/cellular-ui/_jCellular.scss */
 .cellular .title:hover {
   background: #1c94b8;
 }
-/* line 33, ../sass/cellular-ui/_jCellular.scss */
+/* line 34, ../sass/cellular-ui/_jCellular.scss */
 .cellular .title a,
 .cellular .title a:visited {
   font-weight: bold;
@@ -1317,7 +1319,7 @@ hr.clearfix {
   color: #fefefe;
   border: none;
 }
-/* line 42, ../sass/cellular-ui/_jCellular.scss */
+/* line 43, ../sass/cellular-ui/_jCellular.scss */
 .cellular .title a:hover, .cellular .title a:active, .cellular .title a.active,
 .cellular .title a:visited:hover,
 .cellular .title a:visited:active,
@@ -1325,7 +1327,7 @@ hr.clearfix {
   border: none;
   text-decoration: none;
 }
-/* line 49, ../sass/cellular-ui/_jCellular.scss */
+/* line 50, ../sass/cellular-ui/_jCellular.scss */
 .cellular .panel {
   display: block;
   overflow: hidden;
@@ -1336,7 +1338,7 @@ hr.clearfix {
   border: .1em solid;
   z-index: 1;
 }
-/* line 64, ../sass/cellular-ui/_jCellular.scss */
+/* line 65, ../sass/cellular-ui/_jCellular.scss */
 .cellular .active .title {
   background-color: #1c94b8;
 }
@@ -1356,8 +1358,12 @@ hr.clearfix {
   background-size: 1em;
   background-repeat: no-repeat;
   background-position: .4em center;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
 }
-/* line 27, ../sass/cellular-ui/_jAccordion.scss */
+/* line 28, ../sass/cellular-ui/_jAccordion.scss */
 .cellular.jAccordion .active .title {
   background-size: 1em;
   background-image: url(../assets/icons/svg/minus.svg);
@@ -1473,9 +1479,9 @@ hr.clearfix {
 }
 
 /**
- * @file
- * CellularUI : jTabs
- */
+  * @file
+  * CellularUI : jTabs
+*/
 /* line 8, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs {
   display: block;
@@ -1484,7 +1490,7 @@ hr.clearfix {
   padding: 1em 0;
 }
 /* line 15, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs li,
+.cellular.jTabs > li,
 .cellular.jTabs .tab {
   float: left;
   display: block;
@@ -1493,73 +1499,76 @@ hr.clearfix {
   z-index: 2;
 }
 /* line 22, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs li .title,
+.cellular.jTabs > li .title,
 .cellular.jTabs .tab .title {
+  float: left;
   padding: .4em .6em;
   border: #bbbab7 1px solid;
 }
-/* line 27, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs li.active,
+/* line 28, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs > li.active,
 .cellular.jTabs .tab.active {
-  background-color: #fefefe;
-}
-/* line 30, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs li.active .title,
-.cellular.jTabs .tab.active .title {
-  background: #fefefe;
-  border-bottom: #fefefe 1px solid;
-}
-/* line 34, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs li.active .title a,
-.cellular.jTabs .tab.active .title a {
+  background-c4olor: #fefefe;
   color: #565450;
 }
-/* line 40, ../sass/cellular-ui/_jTabs.scss */
+/* line 32, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs > li.active .title,
+.cellular.jTabs .tab.active .title {
+  color: #8a8882;
+  background: #fefefe;
+  border-bottom-color: #fefefe;
+}
+/* line 37, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs > li.active .title a,
+.cellular.jTabs .tab.active .title a {
+  color: #8a8882;
+}
+/* line 44, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .panel {
   float: left;
   clear: both;
   z-index: 1;
-  width: 96.5%;
+  width: 95.5%;
   padding: 2%;
   bottom: 1px;
   margin-bottom: 1.4em;
 }
-/* line 51, ../sass/cellular-ui/_jTabs.scss */
+/* line 55, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical {
   float: left;
   display: block;
   width: 100%;
 }
-/* line 57, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs.vertical li,
+/* line 61, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs.vertical > li,
 .cellular.jTabs.vertical .tab {
   clear: left;
   margin: .1em 0;
   border: none;
   width: 27%;
 }
-/* line 63, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs.vertical li .title,
+/* line 67, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs.vertical > li .title,
 .cellular.jTabs.vertical .tab .title {
   padding: .4em 1%;
   border: none;
 }
-/* line 67, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs.vertical li .title a,
+/* line 71, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs.vertical > li .title a,
 .cellular.jTabs.vertical .tab .title a {
   padding: 0 1em;
 }
-/* line 72, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs.vertical li.active,
+/* line 76, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs.vertical > li.active,
 .cellular.jTabs.vertical .tab.active {
   border: none;
 }
-/* line 75, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs.vertical li.active .title,
+/* line 79, ../sass/cellular-ui/_jTabs.scss */
+.cellular.jTabs.vertical > li.active .title,
 .cellular.jTabs.vertical .tab.active .title {
   border: none;
 }
-/* line 81, ../sass/cellular-ui/_jTabs.scss */
+/* line 85, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical .panel {
   display: inline;
   display: inline-block;

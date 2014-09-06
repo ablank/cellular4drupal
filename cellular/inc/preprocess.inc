@@ -23,7 +23,7 @@ function cellular_preprocess_html(&$vars) {
 function cellular_preprocess_node(&$vars) {
   $vars['hook'] = 'node';
   $node = $vars['node'];
-  // Push modified Sstyles onto page.
+  // Push modified $css onto page.
   $vars['styles'] = drupal_get_css();
 
   $vars['title_attributes_array']['class'] = array('node-title');
@@ -32,25 +32,7 @@ function cellular_preprocess_node(&$vars) {
 // Customize articles & blog posts:
   if ($node->type == 'article' || 'blog') {
 // Get $author info:
-    $uid = user_load($node->uid);
-    $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";
-    $author = array(
-      'name' => l($node->name, 'user/' . $node->uid),
-      'description' => isset($author->field_description[$safe_value]) ?
-      '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
-      'image' => !empty($uid->picture->uri) ? theme('image_style', array(
-          // 'style_name' => 'blog-author-image',
-          'path' => $node->picture->uri,
-          'width' => NULL,
-          'height' => NULL,
-          'alt' => t('User') . ' ' . $node->name,
-          'title' => t('User') . ' ' . $node->name,
-          'attributes' => array('class' => 'author-image'),
-        )) : NULL,
-    );
-
-// Return $author:
-    $vars['author'] = $author['image'] . $author['name'] . $author['description'];
+    cellular_set_author($vars);
   }
 }
 
@@ -65,7 +47,7 @@ function cellular_preprocess_page(&$vars) {
   // Link site name to frontpage:
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set main_menu as full-tree or top-level as defined in settings:
-  $vars['main_menu'] = cellular_main_menu($vars);
+  cellular_main_menu($vars);
   // Set Social Media links:
   $vars['page']['social_media_share'] = cellular_social_media_share();
   $vars['page']['social_media_follow'] = cellular_social_media_follow();
@@ -83,7 +65,7 @@ function cellular_preprocess_page(&$vars) {
   cellular_error_page($vars);
 
   // Dev.
-  // cellular_dev($vars);
+  cellular_dev($vars);
 }
 
 /**
@@ -99,15 +81,15 @@ function cellular_preprocess_region(&$vars) {
 function cellular_preprocess_block(&$vars) {
   $vars['hook'] = 'block';
   $block = $vars['block'];
-  $vars['title'] = isset($block->subject) ? $block->subject : NULL;
+  $vars['block_title'] = isset($block->subject) ? $block->subject : NULL;
   $vars['classes_array'] = array('block');
   $vars['title_attributes_array']['class'] = array('block-title');
   $vars['content_attributes_array']['class'] = array('block-content');
 
   // Hide block titles in the headers region:
   if (($block->region == 'header')
-  // || ($block->region == 'header_top')
-  // || ($block->region == 'header_bottom')
+    // || ($block->region == 'header_top')
+    // || ($block->region == 'header_bottom')
   ) {
     $vars['title_attributes_array']['class'] = array('hidden');
   }

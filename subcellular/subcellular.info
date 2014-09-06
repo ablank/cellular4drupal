@@ -8,15 +8,15 @@
   screenshot  = screenshot.png
 ;----------// General Settings
 
-settings[copyright]     = ABcreative
+;----------// General Settings
+
+settings[copyright]     = AB Creative
 
 ;----------// Stylesheets
-stylesheets[all][]      = css/drupal.css
-stylesheets[all][]      = css/style.css
-stylesheets[print][]    = css/print.css
+; CSS is added in /inc/alter_css.inc to control granularity
 
 ;----------// Javascript
-; JS is added through template functions to control granularity
+; JS is added in /inc/alter_js.inc to control granularity
 
 ;----------// Regions
 regions[header_top]         = Header Top
@@ -28,26 +28,29 @@ regions[content]            = Content Main
 regions[content_bottom]     = Content Bottom
 regions[sidebar_left]       = Left Sidebar
 regions[sidebar_right]      = Right Sidebar
-regions[footer_top]      	= Footer Top
+regions[footer_top]         = Footer Top
 regions[footer]             = Footer
 regions[footer_bottom]      = Footer Bottom
 
-;----------// Javascript Settings
-settings[jquery_update]             = 1
-settings[cdn]                       = google
-settings[jquery_version]            = 1.8.2
-settings[jqueryui_version]          = 1.10.1
+;----------// Javascript Updates & Plugins
+settings[jquery_update]             = 0
+settings[jquery_cdn]                = 1
+settings[jquery_cdn_source]         = google
+settings[jquery_version]            = 1.9.1
+settings[jqueryui_version]          = 1.10.4
 settings[jqueryui_theme]            = custom
 settings[modernizr]                 = 1
-settings[google_analytics]          = 0
 settings[d3js]                      = 0
+settings[threejs]                   = 0
+settings[smoove]                    = 0
 settings[prism]                     = 0
 settings[masonry]                   = 0
-settings[subcellularjs]                = 1
+settings[cellularjs]                = 0
 settings[gsap]                      = 0
+settings[reveal]                    = 0
 
 ;----------// Display Settings
-settings[remove_core_css]           = 1
+settings[remove_drupal_css]         = 0
 settings[favicons]                  = 1
 settings[icons_type]                = svg
 settings[full_menu]                 = 1
@@ -57,9 +60,12 @@ settings[login_block_register]      = 0
 settings[login_block_password]      = 0
 settings[login_block_orientation]   = vertical
 
-settings[enable_media_query]        = 0
-settings[media_query_mobile]    	= screen and (max-width: 650px)
-settings[media_query_large]    		= screen and (min-width: 1024px)
+settings[mq_mobile_enable]       	= 0
+settings[mq_normal_enable]       	= 0
+settings[mq_large_enable]       	= 0
+settings[mq_mobile]    			= screen and (max-width: 650px)
+settings[mq_normal]    			= screen and (min-width: 650px) and (max-width: 1024px)
+settings[mq_large]    			= screen and (min-width: 1024px)
 
 settings[content_class_no_sidebars]     = cell
 settings[content_class_single_sidebar]  = cell-70
@@ -88,6 +94,8 @@ settings[follow_twitter]        = 0
 settings[follow_twitter_url]    = http://twitter.com/
 settings[follow_linkedin]       = 0
 settings[follow_linkedin_url]   = http://linkedin.com/
+settings[follow_github]			    = 0
+settings[follow_github_url]   	= http://github.com/
 
 settings[social_media_share]    = 0
 settings[share_facebook]        = 0
@@ -96,6 +104,9 @@ settings[share_twitter]         = 0
 settings[share_linkedin]        = 0
 settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
+
+;----------// Development
+settings[dev]                   = 0
 
 ;----------// Site Features
 ;features[]      = name

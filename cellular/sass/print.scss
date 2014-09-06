@@ -32,6 +32,9 @@
       content: " (" attr(href) ")";
     }
   }
+  code a:after {
+    content: none;
+  }
 
   pre,
   code,

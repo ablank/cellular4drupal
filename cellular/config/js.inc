@@ -76,7 +76,7 @@ $form['c']['js'] = array(
 );
 
 // Modernizr stuff.
-$form['c']['js']['mdrnzr'] = array(
+$form['c']['js']['modernizr'] = array(
   '#type' => 'checkbox',
   '#title' => l(t('Modernizr'), 'http://modernizr.com/'),
   '#description' => t("Include Modernizr.js to test  browser capabilities and
@@ -84,20 +84,20 @@ load resources as needed."),
   '#default_value' => theme_get_setting('modernizr'),
 );
 
-$form['c']['js']['Modernizr'] = array(
+$form['c']['js']['mdrnzr'] = array(
   '#type' => 'fieldset',
   '#title' => t('Modernizr'),
   '#description' => t("Browser testing & conditional resource loading."),
   '#collapsible' => TRUE,
-  '#collapsed' => FALSE,
+  '#collapsed' => TRUE,
   '#states' => array(
     'visible' => array(
-      ':input[name="mdrnzr"]' => array('checked' => TRUE),
+      ':input[name="modernizr"]' => array('checked' => TRUE),
     ),
   ),
 );
 
-$form['c']['js']['Modernizr']['mq_mobile_enable'] = array(
+$form['c']['js']['mdrnzr']['mq_mobile_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Mobile Media Query'),
   '#description' => t("Enable media query to load extra CSS
@@ -109,7 +109,7 @@ $form['c']['js']['Modernizr']['mq_mobile_enable'] = array(
     ),
   ),
 );
-$form['c']['js']['Modernizr']['mq_mobile'] = array(
+$form['c']['js']['mdrnzr']['mq_mobile'] = array(
   '#type' => 'textfield',
   '#title' => t('Mobile Media Query'),
   '#description' => t("The media query tested by Modernizr load
@@ -123,7 +123,7 @@ conditional-mobile.css."),
   ),
 );
 
-$form['c']['js']['Modernizr']['mq_normal_enable'] = array(
+$form['c']['js']['mdrnzr']['mq_normal_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Desktop Media Query'),
   '#description' => t("Enable media query to test before loading
@@ -135,7 +135,7 @@ conditional-style.css."),
     ),
   ),
 );
-$form['c']['js']['Modernizr']['mq_normal'] = array(
+$form['c']['js']['mdrnzr']['mq_normal'] = array(
   '#type' => 'textfield',
   '#title' => t('Normal Media Query'),
   '#description' => t("The media query tested by Modernizr load style.css."),
@@ -147,7 +147,7 @@ $form['c']['js']['Modernizr']['mq_normal'] = array(
   ),
 );
 
-$form['c']['js']['Modernizr']['mq_large_enable'] = array(
+$form['c']['js']['mdrnzr']['mq_large_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Conditional Large Media Query'),
   '#description' => t("Enable media query to load extra CSS
@@ -159,7 +159,7 @@ $form['c']['js']['Modernizr']['mq_large_enable'] = array(
     ),
   ),
 );
-$form['c']['js']['Modernizr']['mq_large'] = array(
+$form['c']['js']['mdrnzr']['mq_large'] = array(
   '#type' => 'textfield',
   '#title' => t('Large Screen Media Query'),
   '#description' => t("The media query tested by Modernizr load extra CSS for
@@ -187,7 +187,7 @@ $form['c']['js']['update'] = array(
   '#type' => 'fieldset',
   '#title' => t('jQuery & jQuery.ui Settings'),
   '#collapsible' => TRUE,
-  '#collapsed' => FALSE,
+  '#collapsed' => TRUE,
   '#states' => array(
     'visible' => array(
       ':input[name="jquery_update"]' => array('checked' => TRUE),
@@ -197,9 +197,9 @@ $form['c']['js']['update'] = array(
 
 $form['c']['js']['update']['jquery_cdn'] = array(
   '#type' => 'checkbox',
-  '#title' => t('Update jQuery via CDN'),
+  '#title' => t('Update via CDN'),
   '#description' => t("Update jQuery & jQuery.ui from a selected Content
- Distribution Network host, falling back to local source
+ Distribution Network host, falling back to local javascript sources
   if CDN is unavailable."),
   '#default_value' => theme_get_setting('jquery_cdn'),
 );
@@ -307,6 +307,14 @@ $form['c']['js']['plugins']['prism'] = array(
   '#title' => l(t('Prism Syntax Hilighter'), 'http://prismjs.com/'),
   '#description' => t("Prism code syntax hilighter."),
   '#default_value' => theme_get_setting('prism'),
+);
+$form['c']['js']['plugins']['reveal'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t("Reveal"), 'http://lab.hakim.se/reveal-js/#/'),
+  '#description' => t('reveal.js is a framework for easily creating beautiful
+   presentations using HTML. You\'ll need a browser with support for CSS 3D
+   transforms to see it in its full glory.'),
+  '#default_value' => theme_get_setting('reveal'),
 );
 $form['c']['js']['plugins']['smoove'] = array(
   '#type' => 'checkbox',

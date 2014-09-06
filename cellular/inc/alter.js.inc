@@ -28,6 +28,11 @@ function cellular_js_alter(&$javascript) {
   );
   cellular_add_js($scripts);
 
+// Add Modernizr & query based on theme settings.
+  if (theme_get_setting('modernizr') == 1) {
+    cellular_modernizr();
+  }
+
 // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     $jquery = cellular_jquery_info();
@@ -47,9 +52,6 @@ function cellular_js_alter(&$javascript) {
 // Add js after override.
   cellular_add_js($js_plugins, TRUE);
 
-  if (theme_get_setting('modernizr') == 1) {
-    cellular_modernizr();
-  }
   // Dev.
-  cellular_dev($javascript);
+   cellular_dev($javascript);
 }

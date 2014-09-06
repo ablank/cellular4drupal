@@ -23,7 +23,7 @@ $form['c']['display_settings']['full_menu'] = array(
   '#type' => 'checkbox',
   '#title' => t('Display All Links in Main Menu'),
   '#description' => t('Print the full main_menu tree instead of only top
-level links.'),
+level links. Useful for styling with custom scripts/stylesheets.'),
   '#default_value' => theme_get_setting('full_menu'),
 );
 
@@ -57,7 +57,7 @@ $form['c']['display_settings']['r'] = array(
  $exclude and calling function cellular_remove_css() in /inc/css_alter
  .inc <hr/>'),
   '#collapsible' => TRUE,
-  '#collapsed' => FALSE,
+  '#collapsed' => TRUE,
 );
 $form['c']['display_settings']['r']['remove_drupal_css'] = array(
   '#type' => 'radios',

@@ -10,6 +10,7 @@ $include = array(
   'fn.inc',
   'fn.javascript.inc',
   'fn.jquery.inc',
+  'fn.menu.inc',
   'fn.preprocess.inc',
   'alter.inc',
   'alter.form.inc',
@@ -19,6 +20,7 @@ $include = array(
   'theme.inc',
   'theme.form.inc',
   'theme.pager.inc',
+  'theme.panels.inc',
   'social.inc',
 );
 

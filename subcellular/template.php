@@ -8,8 +8,8 @@
 global $theme_path;
 $include = array(
   // 'dev-functions.inc',
-  'css_alter.inc',
-  'js_alter.inc',
+  'alter.css.inc',
+  'alter.js.inc',
 );
 
 $inc_path = $theme_path . '/inc';

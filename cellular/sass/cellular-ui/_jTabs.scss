@@ -1,7 +1,7 @@
 /**
- * @file
- * CellularUI : jTabs
- */
+  * @file
+  * CellularUI : jTabs
+*/
 
 .cellular {
 
@@ -11,7 +11,7 @@
     margin: 0;
     padding: $normal 0;
 
-    li,
+    > li,
     .tab {
       float: left;
       display: block;
@@ -20,28 +20,32 @@
       z-index: 2;
 
       .title {
+        float: left;
         padding: .4em .6em;
         border: $border_color 1px solid;
       }
 
       &.active {
-        background-color: $title_color;
+        background-c4olor: $title_color;
+        color: $dark_grey;
 
         .title {
+          color: $grey;
           background: $title_color;
-          border-bottom: $title_color 1px solid;
+          border-bottom-color: $title_color;
 
           a {
-            color: $title_background;
+            color: $grey;
           }
         }
       }
     }
+
     .panel {
       float: left;
       clear: both;
       z-index: 1;
-      width: 96.5%;
+      width: 95.5%;
       padding: 2%;
       bottom: 1px;
       margin-bottom: 1.4em
@@ -53,7 +57,7 @@
       display: block;
       width: 100%;
 
-      li,
+      > li,
       .tab {
         clear: left;
         margin: .1em 0;
@@ -77,7 +81,7 @@
           }
         }
       }
-      
+
       .panel {
         display: inline;
         display: inline-block;

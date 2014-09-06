@@ -17,12 +17,12 @@ function cellular_html_head_alter(&$head_elements) {
       unset($head_elements[$element]);
     }
   }
-  // dsm($head_elements);
+  // cellular_dev($head_elements);
 }
 
 /**
  * Cellular hook_page_alter().
  */
 function cellular_page_alter(&$page) {
-  // dsm($page);
+  // cellular_dev($page);
 }

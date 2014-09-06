@@ -16,7 +16,7 @@ function cellular_theme_path(&$theme_key = NULL) {
 }
 
 /**
- * Merge attributes arrays.
+ * Merge arrays & concat ' ' separated values to string.
  */
 function cellular_merge(&$arr) {
   $output = '';
@@ -248,22 +248,6 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
 }
 
 /**
- * Returns full Main Menu instead of top-level links.
- */
-function cellular_main_menu(&$vars) {
-  if (theme_get_setting('full_menu') == 1) {
-
-    // Render the full main menu tree, use css / js to show/hide sub-menus.
-    $main_menu_tree = menu_tree_all_data('main-menu');
-  }
-  else {
-    $main_menu_tree = menu_main_menu();
-  }
-
-  return menu_tree_output($main_menu_tree);
-}
-
-/**
  * Set path to page-error.tpl if http error is returned.
  */
 function cellular_error_page(&$vars) {
@@ -296,7 +280,11 @@ function cellular_add_plugin_css(&$css) {
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ?
     array(
-      'file' => 'plugins/prism.css',
+      'file' => 'prism.css',
+    ) : NULL,
+    'reveal' => theme_get_setting('reveal') == 1 ?
+    array(
+      'file' => 'reveal/reveal.min.css',
     ) : NULL,
   );
 
