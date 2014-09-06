@@ -109,6 +109,11 @@ settings[dev]                   = 0
 ;----------// Plugins
 plugins[panels][layouts] = templates/panels
 
+breakpoints[mobile] = (min-width: 0px)and (max-width: 650px)
+breakpoints[narrow] = (min-width: 650px) and (max-width: 800px)
+breakpoints[wide] = (min-width: 800px) and (max-width: 1400px)
+breakpoints[tv] = only screen and (min-width: 1401px)
+
 ;----------// Site Features
 ;features[]      = name
 ;features[]      = node_user_picture

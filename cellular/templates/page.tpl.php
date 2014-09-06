@@ -207,6 +207,16 @@
   </div>
   <!-- /#app-->
 
+  <?php
+  // Social Media share links.
+  if ($page['social_media_share']) :
+  //  print $page['social_media_share'];
+  endif;
+  // Social Media follow links.
+  if ($page['social_media_follow']):
+  //  print $page['social_media_follow'];
+  endif; ?>
+
   <div id="footer" class="cell">
 
     <?php if ($page['footer_top']) : ?>
@@ -214,14 +224,6 @@
         <?php print render($page['footer_top']); ?>
       </div>
     <?php endif; ?>
-
-    <?php
-    if ($page['social_media_share']) :
-      print $page['social_media_share'];
-    endif;
-    if ($page['social_media_follow']):
-      print $page['social_media_follow'];
-    endif; ?>
 
     <?php
     if ($page['footer']) :
@@ -234,7 +236,7 @@
       <?php endif; ?>
 
       <?php if ($page['copyright']): ?>
-        <?php print $page['copyright']; ?>
+        <p id="copyright"><?php print $page['copyright']; ?></p>
       <?php endif; ?>
     </div>
     <!-- /#footer-bottom -->

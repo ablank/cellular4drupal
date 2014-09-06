@@ -22,7 +22,7 @@ function cellular_preprocess_html(&$vars) {
  */
 function cellular_preprocess_node(&$vars) {
   $vars['hook'] = 'node';
-  $node = $vars['node'];
+  $node = $vars['elements']['#node'];
   // Push modified $css onto page.
   $vars['styles'] = drupal_get_css();
 
@@ -51,12 +51,12 @@ function cellular_preprocess_page(&$vars) {
   // Set Social Media links:
   $vars['page']['social_media_share'] = cellular_social_media_share();
   $vars['page']['social_media_follow'] = cellular_social_media_follow();
+  // Set search block variable for addition to templates, i.e. error page.
+  $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ?
     "&copy; " . date("Y") . " " . $copyright : NULL;
-  // Set search block variable for addition to templates:
-  $vars['page']['search_box'] = drupal_get_form('search_form');
 
   // Set classes for content & sidebars.
   cellular_sidebar_classes($vars);

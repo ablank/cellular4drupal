@@ -4,6 +4,7 @@
  * @file
  * Default theme implementation to display a region.
  */
+
 /* VARIABLES:
  * - $content: The content for this region, typically blocks.
  * - $classes: String of classes that can be used to style contextually through
@@ -24,12 +25,9 @@
  * @see     template_process()
  * @ingroup themeable
  */
-
 ?>
-
 <?php
-
 // Just print content, no extra markup.
-if ($content) :
+if (!empty($content)) :
   print $content;
 endif;
