@@ -40,10 +40,8 @@
 ?>
 <?php print $doctype; ?>
 <html<?php print $html_attributes
-// . $rdf_namespaces;
-?>
-  >
-<head<?php print $head_attributes; ?>>
+  // . $rdf_namespaces; ?>>
+<head>
   <!--[if IE]><![endif]-->
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>

@@ -9,10 +9,10 @@
  * Build modernizr query.
  */
 function cellular_modernizr() {
-  global $base_url, $theme_path;
+  global $base_url;
 // Get full path to css directory.
 // $base_url needs to be added to reference the correct path.
-  $dir_css = $base_url . '/' . $theme_path . '/css/';
+  $dir_css = $base_url . '/' . path_to_theme() . '/css/';
 // Build yepnope query based on theme settings.
   $mq = array();
   $mq['mobile'] = theme_get_setting('mq_mobile');

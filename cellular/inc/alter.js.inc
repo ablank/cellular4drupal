@@ -53,5 +53,5 @@ function cellular_js_alter(&$javascript) {
   cellular_add_js($js_plugins, TRUE);
 
   // Dev.
-   cellular_dev($javascript);
+  // cellular_dev($javascript);
 }

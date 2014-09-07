@@ -41,18 +41,16 @@
   @see template_preprocess_block()
   @see template_process()
  */
-
 ?>
-<div <?php
- print "id=\"$block_html_id\" class=\"$classes\" $attributes" ?>>
-       <?php
-       if ($block->subject):
-         print render($title_prefix);
-         print '<h2' . $title_attributes . '>' . $block->subject . '</h2>';
-         print render($title_suffix);
-       endif; ?>
+<div<?php print " id=\"$block_html_id\" class=\"$classes\" $attributes" ?>>
+  <?php
+  if ($block->subject):
+    print render($title_prefix);
+    print '<h2' . $title_attributes . '>' . $block->subject . '</h2>';
+    print render($title_suffix);
+  endif; ?>
 
   <div<?php print $content_attributes; ?>>
-<?php print $content . "\n"; ?>
+    <?php print $content ?>
   </div>
 </div>

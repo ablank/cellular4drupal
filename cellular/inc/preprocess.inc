@@ -21,7 +21,6 @@ function cellular_preprocess_html(&$vars) {
  * Cellular template_preprocess_node().
  */
 function cellular_preprocess_node(&$vars) {
-  $vars['hook'] = 'node';
   $node = $vars['elements']['#node'];
   // Push modified $css onto page.
   $vars['styles'] = drupal_get_css();
@@ -79,29 +78,23 @@ function cellular_preprocess_region(&$vars) {
  * Cellular template_preprocess_block().
  */
 function cellular_preprocess_block(&$vars) {
-  $vars['hook'] = 'block';
-  dsm($vars);
-  $block = $vars['block'];
-  $vars['block_title'] = isset($block->subject) ? $block->subject : NULL;
-  $vars['classes_array'] = array('block');
-  $vars['title_attributes_array']['class'] = array('block-title');
-  $vars['content_attributes_array']['class'] = array('block-content');
-
+  $block = $vars['elements']['#block'];
+  $title_attributes = array();
   // Hide block titles in the headers region:
   if (($block->region == 'header')
     // || ($block->region == 'header_top')
     // || ($block->region == 'header_bottom')
   ) {
-    $vars['title_attributes_array']['class'] = array('hidden');
+    $title_attributes['class'][] = 'hidden';
   }
+
+  $vars['title_attributes'][] = $title_attributes;
 }
 
 /**
  * Cellular template_preprocess_comment().
  */
 function cellular_preprocess_comment(&$vars) {
-  $vars['hook'] = 'comment';
-
   $vars['title_attributes_array']['class'] = array('comment-title');
   $vars['content_attributes_array']['class'] = array('comment-content');
 

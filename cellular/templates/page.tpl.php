@@ -197,8 +197,8 @@
           <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
                  <?php print render($page['sidebar_right']); ?>
           </div>
+          <!-- /#sidebar-right -->
         <?php endif; ?>
-        <!-- /#sidebar-right -->
 
       </div>
       <!-- /#content-wrap-->

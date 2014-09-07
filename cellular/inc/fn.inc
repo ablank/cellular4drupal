@@ -5,17 +5,6 @@
  */
 
 /**
- * Get path to current theme.
- */
-function cellular_theme_path(&$theme_key = NULL) {
-  $t_theme = isset($theme_key) ?
-    $theme_key : $GLOBALS['theme'];
-  $theme_path = drupal_get_path('theme', $t_theme);
-
-  return $theme_path;
-}
-
-/**
  * Merge arrays & concat ' ' separated values to string.
  */
 function cellular_merge(&$arr) {
@@ -36,29 +25,29 @@ function cellular_build_head_tags(&$array) {
     if (isset($val)) {
       // Build tag:
       $tag = array(
-        '#type' => 'html_tag',
-        '#tag' => $val['tag'],
+        '#type'       => 'html_tag',
+        '#tag'        => $val['tag'],
         '#attributes' => array(),
-        '#weight' => isset($val['weight']) ?
-        $val['weight'] : 0,
+        '#weight'     => isset($val['weight']) ?
+            $val['weight'] : 0,
       );
       // Misc. attr/val:
       isset($val['attr']) && isset($val['attr_val']) ?
-          $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
+        $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
       // General attributes:
       isset($val['name']) ?
-          $tag['#attributes']['name'] = $val['name'] : NULL;
+        $tag['#attributes']['name'] = $val['name'] : NULL;
       isset($val['rel']) ?
-          $tag['#attributes']['rel'] = $val['rel'] : NULL;
+        $tag['#attributes']['rel'] = $val['rel'] : NULL;
       isset($val['content']) ?
-          $tag['#attributes']['content'] = $val['content'] : NULL;
+        $tag['#attributes']['content'] = $val['content'] : NULL;
       isset($val['href']) ?
-          $tag['#attributes']['href'] = $val['href'] : NULL;
+        $tag['#attributes']['href'] = $val['href'] : NULL;
       // Attributes for favicons:
       isset($val['size']) ?
-          $tag['#attributes']['sizes'] = $val['size'] : NULL;
+        $tag['#attributes']['sizes'] = $val['size'] : NULL;
       isset($val['type']) ?
-          $tag['#attributes']['type'] = $val['type'] : NULL;
+        $tag['#attributes']['type'] = $val['type'] : NULL;
 
       drupal_add_html_head($tag, 'meta_' . $meta);
     }
@@ -67,7 +56,6 @@ function cellular_build_head_tags(&$array) {
 
 /**
  * Add array of javascripts to $javascript, using a CDN if provided.
- *
  * A fallback link will be automatically generated if using CDN and
  * the 'object' value is provided.
  */
@@ -106,11 +94,11 @@ function cellular_add_js($array, $cellular = FALSE) {
  */
 function cellular_js_fallback($script, $cellular = FALSE) {
   $attr = array(
-    'group' => $script['group'],
-    'weight' => $script['weight'] + 0.1,
-    'type' => 'inline',
+    'group'      => $script['group'],
+    'weight'     => $script['weight'] + 0.1,
+    'type'       => 'inline',
     'every_page' => isset($script['every_page']) ?
-    $script['every_page'] : TRUE,
+        $script['every_page'] : TRUE,
   );
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
@@ -278,14 +266,14 @@ function cellular_add_plugin_css(&$css) {
   // Plugins available through cellular, styles added based on theme settings.
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
-    'prism' => theme_get_setting('prism') == 1 ?
-    array(
-      'file' => 'prism.css',
-    ) : NULL,
+    'prism'  => theme_get_setting('prism') == 1 ?
+        array(
+          'file' => 'prism.css',
+        ) : NULL,
     'reveal' => theme_get_setting('reveal') == 1 ?
-    array(
-      'file' => 'reveal/reveal.min.css',
-    ) : NULL,
+        array(
+          'file' => 'reveal/reveal.min.css',
+        ) : NULL,
   );
 
   if (theme_get_setting('jquery_update') == 1) {

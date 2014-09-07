@@ -14,7 +14,7 @@ function cellular_social_media_follow() {
   if (theme_get_setting('social_media_follow') == 1) {
 
     $media_block = array(
-      'title' => t('Follow Us'),
+      'title' => theme_get_setting('sm_follow_title'),
       'id' => 'social-media-follow',
       // 'class' => '',
       'description' => t('Follow our current posts'),
@@ -93,7 +93,7 @@ function cellular_social_media_share() {
       'title' => drupal_get_title(),
     );
     $media_block = array(
-      'title' => t('Share this page'),
+      'title' => theme_get_setting('sm_share_title'),
       'id' => 'social-media-share',
       // 'class' => '',
       'description' => t('Share this page with your network.'),

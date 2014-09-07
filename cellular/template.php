@@ -28,5 +28,4 @@ foreach ($include as $i) {
   require_once($inc_path . '/' . $i);
 }
 
-$GLOBALS['theme_path'] = cellular_theme_path();
 $GLOBALS['cellular_lib'] = $GLOBALS['base_url'] . '/sites/all/libraries/cellular';

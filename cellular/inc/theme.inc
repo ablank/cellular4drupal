@@ -20,6 +20,7 @@ function cellular_field($vars) {
     // $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
     $content .= '<div' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
   }
+  $content .= "</div>\n";
 
   // Wrap the field & add content.
   $output = '<div class="' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $content . '</div>';

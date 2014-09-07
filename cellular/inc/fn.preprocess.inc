@@ -11,22 +11,18 @@ function cellular_html_attributes(&$vars, $language) {
 
   $html_attributes = array(
     'lang' => $language->language,
+    'xml:lang' => $language->language,
     'dir' => $language->dir,
   );
-  $head_attributes = array();
-  // Check support for RDF & addDOCTYPE:
-  // xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+  // Check support for RDF & add DOCTYPE:
   if (module_exists('rdf')) {
     // Set <HTML> attributes:
+    cellular_rdf($vars);
     $html_attributes['xmlns'] = 'http://www.w3.org/1999/xhtml';
-    // $html_attributes['version'] = 'HTML+RDFa 1.1';
-    // $head_attributes['profile'] = $vars['grddl_profile'];
-    $head_attributes['profile'] = 'http://www.w3.org/1999/xhtml/vocab/';
   }
 
   $vars['doctype'] = "<!DOCTYPE html>\n";
   $vars['html_attributes'] = drupal_attributes($html_attributes);
-  $vars['head_attributes'] = drupal_attributes($head_attributes);
   //dsm($vars);
 }
 
@@ -54,6 +50,27 @@ function cellular_body_attributes(&$vars) {
       $body_attributes['class'][] = 'user' : NULL;
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
+}
+
+/**
+ * Generate links to rdf namespaces.
+ */
+function cellular_rdf(&$vars){
+  // http://www.phase2technology.com/?p=552
+  $prefixes = array();
+  $namespaces = explode("n", trim($vars['rdf_namespaces']));
+  foreach ($namespaces as $name) {
+    list($key,$url) = explode('=', $name, 2);
+    list($xml,$space) = explode(':',$key, 2);
+    $url = trim($url, '"');
+    if (!empty($space) && !empty($url)) {
+      $prefixes[] = $space . ': ' . $url;
+    }
+  }
+  $prefix = implode(" ", $prefixes);
+  //$vars['rdf']->version = '';
+  //$vars['rdf']->namespaces = ' xmlns="http://www.w3.org/1999/xhtml" prefix="' . $prefix . '"';
+  //$vars['rdf']->profile = '';
 }
 
 /**

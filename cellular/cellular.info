@@ -82,6 +82,8 @@ settings[apple_icon_144]        = apple-touch-icon-144.png
 
 
 ;----------// Social Media
+settings[sm_follow_title]       = Follow Us
+settings[sm_share_title]        = Share this page
 
 settings[social_media_follow]   = 0
 settings[follow_facebook]       = 0

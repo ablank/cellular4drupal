@@ -4,6 +4,10 @@
  * Theme-settings: Social media link settings.
  */
 
+/*
+settings[sm_follow_title]       = Follow Us
+settings[sm_share_title]        = Share this page
+*/
 $form['c']['social_media'] = array(
   '#type' => 'fieldset',
   '#title' => t('Social Media'),
@@ -21,6 +25,17 @@ $form['c']['social_media']['social_media_share'] = array(
   '#title' => t('Share this site'),
   '#description' => t("Enable the 'Share this site' bar."),
   '#default_value' => theme_get_setting('social_media_share'),
+);
+
+$form['c']['social_media']['sm_share_title'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Share on Social Media Title'),
+  '#default_value' => theme_get_setting('sm_share_title'),
+  '#states' => array(
+    'visible' => array(
+      ':input[name="social_media_share"]' => array('checked' => TRUE),
+    ),
+  ),
 );
 
 $form['c']['social_media']['share'] = array(
@@ -74,6 +89,16 @@ $form['c']['social_media']['social_media_follow'] = array(
   '#default_value' => theme_get_setting('social_media_follow'),
 );
 
+$form['c']['social_media']['sm_follow_title'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Follow on Social Media Title'),
+  '#default_value' => theme_get_setting('sm_follow_title'),
+  '#states' => array(
+    'visible' => array(
+      ':input[name="social_media_follow"]' => array('checked' => TRUE),
+    ),
+  ),
+);
 // Social media follow config.
 $form['c']['social_media']['follow'] = array(
   '#type' => 'fieldset',
