@@ -123,3 +123,13 @@ breakpoints[tv] = only screen and (min-width: 1401px)
 ;features[]      = comment_user_verification
 features[]      = main_menu
 features[]      = slogan
+
+features[] = name
+features[] = main_menu
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+;features[] = logo
+;features[] = favicon
+;features[] = secondary_menu

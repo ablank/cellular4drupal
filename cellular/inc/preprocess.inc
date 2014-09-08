@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Template preprocess variables.
@@ -9,9 +8,8 @@
  * Cellular template_preprocess_html().
  */
 function cellular_preprocess_html(&$vars) {
-  global $language;
-
-  cellular_html_attributes($vars, $language);
+  cellular_html_attributes($vars);
+  cellular_rdf($vars);
   cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
@@ -22,6 +20,8 @@ function cellular_preprocess_html(&$vars) {
  */
 function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
+  // Prevent empty datatype from rendering
+  unset($vars['title_attributes_array']['datatype']);
   // Push modified $css onto page.
   $vars['styles'] = drupal_get_css();
 
@@ -82,8 +82,8 @@ function cellular_preprocess_block(&$vars) {
   $title_attributes = array();
   // Hide block titles in the headers region:
   if (($block->region == 'header')
-    // || ($block->region == 'header_top')
-    // || ($block->region == 'header_bottom')
+  // || ($block->region == 'header_top')
+  // || ($block->region == 'header_bottom')
   ) {
     $title_attributes['class'][] = 'hidden';
   }
@@ -108,8 +108,7 @@ function cellular_preprocess_comment(&$vars) {
 
 /**
  * Cellular template_ preprocess_username().
- */
-function cellular_preprocess_username(&$vars) {
+function cellular_preprocess_username(&$vars) {  
   if (isset($vars['link_path'])) {
     $vars['link_attributes']['rel'][] = 'author';
   }
@@ -117,3 +116,4 @@ function cellular_preprocess_username(&$vars) {
     $vars['attributes_array']['rel'][] = 'author';
   }
 }
+ */

@@ -38,7 +38,7 @@ function cellular_menu_tree(&$vars){
 function cellular__main_menu(&$vars) {
   $attr = array(
     'id' => 'nav',
-    'class' => 'zzzzzz',
+    'class' => 'zzzz',
   );
   return '<ul'.drupal_attributes($attr).'>' . $vars['tree'] . '</ul>';
 }

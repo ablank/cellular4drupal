@@ -1,29 +1,51 @@
 <?php
-
 /**
  * @file
  * Set element markup.
  */
 
 /**
+ * Cellular theme_link().
+ */
+function cellular_link(&$vars) {
+  $link = $vars['options']['attributes'];
+  if (empty($link['xml:lang'])) {
+    unset($link['xml:lang']);
+  }
+  if (empty($link['datatype'])) {
+    unset($link['datatype']);
+  }
+  $output = '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>';
+  $output .= $variables['options']['html'] ?
+    $variables['text'] : check_plain($variables['text']);
+  $output .= "</a>";
+
+  dsm($output);
+  return $output;
+}
+
+/**
  * Cellular theme_field().
  */
-function cellular_field($vars) {
+function cellular_field(&$vars) {
   $content = '';
 // Render the label, if it's not hidden.
   if (!$vars['label_hidden']) {
-    $content .= '<h5 class="field-label"' . $vars['title_attributes'] . '>' . $vars['label'] . '</h5>';
+    $content .= "<h5 class=\"field-label\"" . $vars['title_attributes'] . ">";
+    $content .= $vars['label'] . '</h5>';
   }
   // Render the items.
-  $content .= '<div class="field-items"' . $vars['content_attributes'] . '>';
+  $content .= "<div class=\"field-items\"" . $vars['content_attributes'] . ">";
   foreach ($vars['items'] as $delta => $item) {
     // $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
-    $content .= '<div' . $vars['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+    $content .= "\n<div" . $vars['item_attributes'][$delta] . ">\n";
+    $content .= drupal_render($item) . "\n</div>";
   }
-  $content .= "</div>\n";
+  $content .= "\n</div>\n";
 
   // Wrap the field & add content.
-  $output = '<div class="' . $vars['classes'] . '"' . $vars['attributes'] . '>' . $content . '</div>';
+  $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">";
+  $output .= "\n" . $content . "\n</div>\n";
 
   return $output;
 }
@@ -44,10 +66,10 @@ function cellular_breadcrumb(&$vars) {
       $output = '<ol id="breadcrumb">' . "\n";
       foreach ($breadcrumb as $key => $val) {
         if ($key == 0) {
-          $output .= '<li class="icon home">' . $val . "</li>\n";
+          $output .= "<li class=\"icon home\">" . $val . "</li>\n";
         }
         else {
-          $output .= '<li>' . $separator . $val . "</li>\n";
+          $output .= "<li>" . $separator . $val . "</li>\n";
         }
       }
       $output .= "</ol>\n";
@@ -85,7 +107,7 @@ function cellular_file_icon(&$vars) {
 /**
  * Cellular theme_feed_icon().
  */
-function cellular_feed_icon($vars) {
+function cellular_feed_icon(&$vars) {
   $text = t('Subscribe to !feed-title', array(
     '!feed-title' => $vars['title'],
   ));

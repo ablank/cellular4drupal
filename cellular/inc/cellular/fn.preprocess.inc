@@ -7,8 +7,8 @@
 /**
  * Set html attributes.
  */
-function cellular_html_attributes(&$vars, $language) {
-
+function cellular_html_attributes(&$vars) {
+  global $language;
   $html_attributes = array(
     'lang' => $language->language,
     'xml:lang' => $language->language,
@@ -16,14 +16,37 @@ function cellular_html_attributes(&$vars, $language) {
   );
   // Check support for RDF & add DOCTYPE:
   if (module_exists('rdf')) {
-    // Set <HTML> attributes:
-    cellular_rdf($vars);
+    // Set RDFa namespace.
     $html_attributes['xmlns'] = 'http://www.w3.org/1999/xhtml';
   }
 
   $vars['doctype'] = "<!DOCTYPE html>\n";
   $vars['html_attributes'] = drupal_attributes($html_attributes);
-  //dsm($vars);
+}
+
+/**
+ * 
+ */
+function cellular_rdf(&$vars) {
+  // More info @ http://phase2technology.com/?p=552
+  // Check support for RDF & add DOCTYPE:
+  if (module_exists('rdf')) {
+
+    $head_attributes = array();
+    $prefixes = array();
+    $namespaces = explode("\n", trim($vars['rdf_namespaces']));
+
+    foreach ($namespaces as $name) {
+      list($key, $url) = explode('=', $name, 2);
+      list($xml, $space) = explode(':', $key, 2);
+
+      $url = trim(str_replace('"', '', $url));
+      $prefixes[] = $space . ": " . $url . "\n";
+    }
+    $head_attributes['prefix'] = implode(' ', $prefixes);
+
+    $vars['rdf_prefixes'] = drupal_attributes($head_attributes);
+  }
 }
 
 /**
@@ -50,27 +73,6 @@ function cellular_body_attributes(&$vars) {
       $body_attributes['class'][] = 'user' : NULL;
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
-}
-
-/**
- * Generate links to rdf namespaces.
- */
-function cellular_rdf(&$vars){
-  // http://www.phase2technology.com/?p=552
-  $prefixes = array();
-  $namespaces = explode("n", trim($vars['rdf_namespaces']));
-  foreach ($namespaces as $name) {
-    list($key,$url) = explode('=', $name, 2);
-    list($xml,$space) = explode(':',$key, 2);
-    $url = trim($url, '"');
-    if (!empty($space) && !empty($url)) {
-      $prefixes[] = $space . ': ' . $url;
-    }
-  }
-  $prefix = implode(" ", $prefixes);
-  //$vars['rdf']->version = '';
-  //$vars['rdf']->namespaces = ' xmlns="http://www.w3.org/1999/xhtml" prefix="' . $prefix . '"';
-  //$vars['rdf']->profile = '';
 }
 
 /**
@@ -269,7 +271,6 @@ function cellular_remove_default_css(&$css) {
  * Set content author attributes.
  */
 function cellular_set_author(&$vars) {
-  // dsm($vars);
   $node = $vars['elements']['#node'];
   $uid = user_load($node->uid);
   $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";

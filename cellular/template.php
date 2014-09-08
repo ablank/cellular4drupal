@@ -6,22 +6,24 @@
 
 $inc_path = drupal_get_path('theme', 'cellular') . '/inc';
 $include = array(
-  // 'dev-functions.inc',
-  'fn.inc',
-  'fn.javascript.inc',
-  'fn.jquery.inc',
-  'fn.menu.inc',
-  'fn.preprocess.inc',
-  'alter.inc',
-  'alter.form.inc',
-  'alter.css.inc',
-  'alter.js.inc',
+  'cellular/fn.inc',
+  'cellular/fn.javascript.inc',
+  'cellular/fn.stylesheets.inc',
+  theme_get_setting('social_media_follow') == 1 ? 
+  'cellular/fn.jquery.inc' : NULL,
+  'cellular/fn.menu.inc',
+  'cellular/fn.preprocess.inc',
+  'alter/alter.inc',
+  'alter/alter.form.inc',
+  'alter/alter.css.inc',
+  'alter/alter.js.inc',
   'preprocess.inc',
-  'theme.inc',
-  'theme.form.inc',
-  'theme.pager.inc',
-  'theme.panels.inc',
-  'social.inc',
+  'theme/theme.inc',
+  'theme/theme.form.inc',
+  'theme/theme.pager.inc',
+  theme_get_setting('social_media_follow') == 1 ||
+  theme_get_setting('social_media_share') == 1 ? 
+  'cellular/social.inc' : NULL,
 );
 
 foreach ($include as $i) {

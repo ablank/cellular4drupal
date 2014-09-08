@@ -38,7 +38,7 @@ function cellular_form_element_attributes(&$element) {
  */
 function cellular_container(&$vars) {
   $element = $vars['element'];
-  $element['#theme_wrappers'] = NULL;
+  // $element['#theme_wrappers'] = NULL;
 
   // Special handling for form elements.
   if (isset($element['#array_parents'])) {
@@ -58,17 +58,18 @@ function cellular_container(&$vars) {
  */
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
-  $element['#theme_wrappers'] = NULL;
+  // $element['#theme_wrappers'] = NULL;
 
   // $attributes['class'] = array();
   // isset($element['#name']) ?
   // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
   // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
   // : NULL;
+  // $element['#theme_wrappers'] = NULL;
+
   isset($element['#disabled']) ?
     $element['#attributes']['class'][] = 'disabled' : NULL;
 
-  $element['#theme_wrappers'] = NULL;
 
   $output = '';
   $prefix = isset($element['#field_prefix']) ?
