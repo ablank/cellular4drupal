@@ -15,9 +15,9 @@ function cellular_link(&$vars) {
   if (empty($link['datatype'])) {
     unset($link['datatype']);
   }
-  $output = '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>';
-  $output .= $variables['options']['html'] ?
-    $variables['text'] : check_plain($variables['text']);
+  $output = '<a href="' . check_plain(url($vars['path'], $vars['options'])) . '"' . drupal_attributes($vars['options']['attributes']) . '>';
+  $output .= $vars['options']['html'] ?
+    $vars['text'] : check_plain($vars['text']);
   $output .= "</a>";
 
   dsm($output);

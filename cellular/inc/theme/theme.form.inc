@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme markup of form elements.
@@ -12,23 +11,23 @@ function cellular_form_element_attributes(&$element) {
   // $element['#theme_wrappers'] = NULL;
   $attributes = array();
   !empty($element['#name']) ?
-    $attributes['name'] = $element['#name'] : NULL;
+      $attributes['name'] = $element['#name'] : NULL;
   !empty($element['#id']) ?
-    $attributes['id'] = $element['#id'] : NULL;
+      $attributes['id'] = $element['#id'] : NULL;
   !empty($element['#attributes']['class']) ?
-    $attributes['class'] = cellular_merge($element['#attributes']['class']) : NULL;
+      $attributes['class'] = cellular_merge($element['#attributes']['class']) : NULL;
   !empty($element['#title']) ?
-    $attributes['title'] = $element['#title'] : NULL;
+      $attributes['title'] = $element['#title'] : NULL;
   !empty($element['#required']) ?
-    $attributes['required'] = $element['#required'] : NULL;
+      $attributes['required'] = $element['#required'] : NULL;
   !empty($element['#checked']) ?
-    $attributes['checked'] = 'checked' : NULL;
+      $attributes['checked'] = 'checked' : NULL;
   !empty($element['#value']) ?
-    $attributes['value'] = $element['#value'] : NULL;
+      $attributes['value'] = $element['#value'] : NULL;
   !empty($element['#size']) ?
-    $attributes['size'] = $element['#size'] : NULL;
+      $attributes['size'] = $element['#size'] : NULL;
   !empty($element['#maxlength']) ?
-    $attributes['maxlength'] = $element['#maxlength'] : NULL;
+      $attributes['maxlength'] = $element['#maxlength'] : NULL;
 
   return $attributes;
 }
@@ -39,7 +38,6 @@ function cellular_form_element_attributes(&$element) {
 function cellular_container(&$vars) {
   $element = $vars['element'];
   // $element['#theme_wrappers'] = NULL;
-
   // Special handling for form elements.
   if (isset($element['#array_parents'])) {
     // Assign an html ID.
@@ -58,26 +56,23 @@ function cellular_container(&$vars) {
  */
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
+  /* May decide to include later:
   // $element['#theme_wrappers'] = NULL;
-
   // $attributes['class'] = array();
   // isset($element['#name']) ?
   // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
   // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
   // : NULL;
   // $element['#theme_wrappers'] = NULL;
-
+   */
   isset($element['#disabled']) ?
-    $element['#attributes']['class'][] = 'disabled' : NULL;
-
+      $element['#attributes']['class'][] = 'disabled' : NULL;
 
   $output = '';
   $prefix = isset($element['#field_prefix']) ?
-    '<span class="field-prefix">' . $element['#field_prefix'] . '</span> '
-    : NULL;
+    '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
   $suffix = isset($element['#field_suffix']) ?
-    '<span class="field-suffix">' . $element['#field_suffix'] . '</span>'
-    : NULL;
+    '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
 
   if (isset($element['#title_display'])) {
     switch ($element['#title_display']) {
@@ -100,8 +95,7 @@ function cellular_form_element(&$vars) {
   }
 
   isset($element['#description']) ?
-    $output .= '<div class="description">' . $element['#description'] . "</div>\n"
-    : NULL;
+      $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
 
   return $output;
 }
@@ -114,16 +108,16 @@ function cellular_fieldset(&$vars) {
   $fieldset = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
 
   !empty($element['#title']) ?
-    $fieldset .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
+      $fieldset .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
   !empty($element['#description']) ?
-    $fieldset .= '<div class="description">' . $element['#description']
+      $fieldset .= '<div class="description">' . $element['#description']
       . "</div>\n" : NULL;
 
   // Add form elements.
   $fieldset .= $element['#children'];
 
   !empty($element['#value']) ?
-    $element['#value'] . "\n" : NULL;
+      $element['#value'] . "\n" : NULL;
 
   $fieldset .= "</fieldset>\n";
 

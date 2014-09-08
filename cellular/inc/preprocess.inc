@@ -20,7 +20,7 @@ function cellular_preprocess_html(&$vars) {
  */
 function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
-  // Prevent empty datatype from rendering
+  // Prevent empty datatype from rendering.
   unset($vars['title_attributes_array']['datatype']);
   // Push modified $css onto page.
   $vars['styles'] = drupal_get_css();

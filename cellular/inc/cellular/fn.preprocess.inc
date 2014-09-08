@@ -25,7 +25,7 @@ function cellular_html_attributes(&$vars) {
 }
 
 /**
- * 
+ * Convert @xmlns to @profile.
  */
 function cellular_rdf(&$vars) {
   // More info @ http://phase2technology.com/?p=552
