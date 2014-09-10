@@ -55,7 +55,7 @@ $opacity: 0.8;
 // Typography
 $p_font: 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
 $p_size: $normal;
-$p_line_height: $normal * 1.8;
+$p_line_height: 1.4em;
 $p_max_width: 32em;
 $p_color: $c1;
 
@@ -67,7 +67,7 @@ $h_color: $grey;
 // Branding
 $logo_width: 72px;
 $logo_height: 72px;
-$logo_pad: .4em;
+$logo_pad: 12px;
 $logo_png: url('../assets/images/min/png/logo.png');
 $logo_svg: url('../assets/images/min/svg/logo.svg');
 

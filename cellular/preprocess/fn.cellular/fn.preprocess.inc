@@ -28,10 +28,11 @@ function cellular_html_attributes(&$vars) {
  * Convert @xmlns to @profile.
  */
 function cellular_rdf(&$vars) {
-  // More info @ http://phase2technology.com/?p=552
+  // Add namespaces if needed:
+  // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
   // Check support for RDF & add DOCTYPE:
   if (module_exists('rdf')) {
-
+    // @ http://phase2technology.com/?p=552
     $head_attributes = array();
     $prefixes = array();
     $namespaces = explode("\n", trim($vars['rdf_namespaces']));

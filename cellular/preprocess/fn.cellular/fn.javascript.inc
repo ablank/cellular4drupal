@@ -44,7 +44,7 @@ function cellular_add_js($array, $cellular = FALSE) {
  * Javascript fallback to local source if CDN fails.
  */
 function cellular_js_fallback($script, $cellular = FALSE) {
-  $attr = array(
+  $attributes = array(
     'group' => $script['group'],
     'weight' => $script['weight'] + 0.1,
     'type' => 'inline',
@@ -58,7 +58,7 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     $fallback .= '/js/' . $script['file'];
     $fallback .= '\">\x3C/script>")';
 
-    drupal_add_js($fallback, $attr);
+    drupal_add_js($fallback, $attributes);
   }
 }
 

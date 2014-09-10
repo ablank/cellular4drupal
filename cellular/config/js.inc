@@ -10,9 +10,10 @@
  */
 $cdn = array(
   'provider' => array(
-    'cloudflare' => t('Cloudflare'),
+    'jquery' => t('jQuery.com'),
     'google' => t('Google'),
     'microsoft' => t('Microsoft'),
+    'cloudflare' => t('Cloudflare'),
   ),
   'jquery' => array(
     '1.11.1' => t('1.11.1'),

@@ -58,7 +58,7 @@
 
 // Page curl effect
 .box-shadow {
-  //max-width: 720px; // constrain width to prevent pseudo elements from showing outside of box
+  // max-width: 720px; // constrain width to prevent pseudo elements from showing outside of box
   margin: 0 auto;
   padding: 3em 1.4em;
   background-color: $white;
@@ -95,7 +95,7 @@
 }
 
 // Pseudo 3-d elements
-/*
+
 .ribbon {
     @include ribbon(1.2em, 1em, $black);
     color: $white;
@@ -105,4 +105,3 @@
     @include popout(1.2em, 1em, $black);
     color: $white;
 }
-*/

@@ -35,7 +35,12 @@
     content: " (" attr(href) ")";
   }
 
-  /* line 38, ../sass/print.scss */
+  /* line 35, ../sass/print.scss */
+  code a:after {
+    content: none;
+  }
+
+  /* line 41, ../sass/print.scss */
   pre,
   code,
   blockquote {
@@ -43,14 +48,14 @@
     page-break-inside: avoid;
   }
 
-  /* line 45, ../sass/print.scss */
+  /* line 48, ../sass/print.scss */
   #app,
   #content-wrap,
   #content-main {
     width: 100%;
   }
 
-  /* line 51, ../sass/print.scss */
+  /* line 54, ../sass/print.scss */
   #header,
   #footer,
   .hidden {

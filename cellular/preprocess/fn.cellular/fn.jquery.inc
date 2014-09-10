@@ -35,6 +35,13 @@ function cellular_cdn() {
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
   $networks = array(
+    'jquery' => array(
+      'base_url' => '//code.jquery.com/',
+      'jquery' => 'jquery-' . $jq['version'] . '.min.js',
+      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui.min.js',
+      'theme' => 'ui/' . $ui['version'] . '/themes/'
+      . $ui['theme'] .'/jquery-ui.css',
+    ),
     'google' => array(
       'base_url' => '//ajax.googleapis.com/ajax/libs/',
       'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',

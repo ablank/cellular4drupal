@@ -31,7 +31,7 @@ p {
   display: block;
   max-width: $p_max_width;
   margin: 0 auto;
-  padding: 0 $normal ($p_line_height * 0.5) $normal;
+  padding: 0 $normal ($p_line_height * 0.5);
   color: $p_color;
 }
 
