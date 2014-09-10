@@ -1140,29 +1140,7 @@ hr.clearfix {
     margin: 2em 5% 0 92px;
     padding: 0;
   }
-  /* line 16, ../sass/style/_navigation.scss */
-  #nav ul {
-    margin: 0;
-  }
-  /* line 20, ../sass/style/_navigation.scss */
-  #nav li {
-    float: left;
-    display: block;
-    width: auto;
-    max-width: none;
-    list-style: none;
-    margin: 0 .5em;
-    padding: 0;
-  }
-  /* line 29, ../sass/style/_navigation.scss */
-  #nav li:first-child {
-    margin-left: 0;
-  }
-  /* line 33, ../sass/style/_navigation.scss */
-  #nav li:last-child {
-    margin-right: 0;
-  }
-  /* line 39, ../sass/style/_navigation.scss */
+  /* line 17, ../sass/style/_navigation.scss */
   #nav a,
   #nav a:visited {
     display: block;
@@ -1176,7 +1154,7 @@ hr.clearfix {
     color: #bbbab7;
     border-bottom: #bbbab7 1px solid;
   }
-  /* line 55, ../sass/style/_navigation.scss */
+  /* line 33, ../sass/style/_navigation.scss */
   #nav a:hover, #nav a:focus, #nav a:active,
   #nav a:visited:hover,
   #nav a:visited:focus,
@@ -1186,8 +1164,19 @@ hr.clearfix {
     color: #fefefe;
     border-bottom: .1em solid;
   }
-  /* line 64, ../sass/style/_navigation.scss */
+  /* line 41, ../sass/style/_navigation.scss */
+  #nav ul {
+    margin: 0;
+  }
+  /* line 45, ../sass/style/_navigation.scss */
   #nav li {
+    float: left;
+    display: block;
+    width: auto;
+    max-width: none;
+    list-style: none;
+    margin: 0 .5em;
+    padding: 0;
     /*
     // Second nested menu
     &:hover > ul {
@@ -1199,7 +1188,15 @@ hr.clearfix {
     }
     */
   }
-  /* line 65, ../sass/style/_navigation.scss */
+  /* line 54, ../sass/style/_navigation.scss */
+  #nav li:first-child {
+    margin-left: 0;
+  }
+  /* line 58, ../sass/style/_navigation.scss */
+  #nav li:last-child {
+    margin-right: 0;
+  }
+  /* line 63, ../sass/style/_navigation.scss */
   #nav li ul {
     left: 0;
     position: absolute;
@@ -1212,60 +1209,60 @@ hr.clearfix {
     -o-transition: all 400ms ease-out;
     transition: all 400ms ease-out;
   }
-  /* line 77, ../sass/style/_navigation.scss */
+  /* line 75, ../sass/style/_navigation.scss */
   #nav li:hover > ul {
     visibility: visible;
     opacity: 1;
     z-index: 2;
   }
-  /* line 83, ../sass/style/_navigation.scss */
+  /* line 81, ../sass/style/_navigation.scss */
   #nav li li {
     float: left;
     padding: .1em 0 0 0;
     z-index: 2;
   }
-  /* line 88, ../sass/style/_navigation.scss */
+  /* line 86, ../sass/style/_navigation.scss */
   #nav li li ul {
     visibility: hidden;
     display: none;
   }
 
-  /* line 111, ../sass/style/_navigation.scss */
+  /* line 109, ../sass/style/_navigation.scss */
   #breadcrumb {
     display: inline;
     display: inline-block;
     height: 2em;
   }
-  /* line 116, ../sass/style/_navigation.scss */
+  /* line 114, ../sass/style/_navigation.scss */
   #breadcrumb li {
     list-style: none;
     line-height: 2em;
     margin: 0 0 0 .2em;
     width: 100%;
   }
-  /* line 123, ../sass/style/_navigation.scss */
+  /* line 121, ../sass/style/_navigation.scss */
   #breadcrumb .home {
     background: url(../assets/images/icon-home.png);
     color: #111111;
     padding: 0 0 0 34px;
   }
-  /* line 130, ../sass/style/_navigation.scss */
+  /* line 128, ../sass/style/_navigation.scss */
   #breadcrumb a:visited {
     color: #16708b;
   }
-  /* line 136, ../sass/style/_navigation.scss */
+  /* line 134, ../sass/style/_navigation.scss */
   #breadcrumb a:hover, #breadcrumb a:focus, #breadcrumb a:active {
     color: #29b4de;
   }
 }
 @media screen and (max-width: 650px) {
-  /* line 146, ../sass/style/_navigation.scss */
+  /* line 144, ../sass/style/_navigation.scss */
   #nav li {
     width: 100%;
     float: none;
     margin: 0;
   }
-  /* line 153, ../sass/style/_navigation.scss */
+  /* line 151, ../sass/style/_navigation.scss */
   #nav li:first-child, #nav li:last-child {
     margin: 0;
   }
@@ -1725,12 +1722,13 @@ body {
 
 /* line 365, ../sass/style/_content-regions.scss */
 #copyright {
+  max-width: 100%;
   padding: 0.75em 1.4em 0.75em;
   text-align: right;
   font-weight: bold;
 }
 
-/* line 372, ../sass/style/_content-regions.scss */
+/* line 373, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1740,14 +1738,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 380, ../sass/style/_content-regions.scss */
+/* line 381, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 388, ../sass/style/_content-regions.scss */
+/* line 389, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,

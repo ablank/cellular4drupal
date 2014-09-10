@@ -5,26 +5,6 @@
  */
 
 /**
- * Cellular theme_link().
- */
-function cellular_link(&$vars) {
-  $link = $vars['options']['attributes'];
-  if (empty($link['xml:lang'])) {
-    unset($link['xml:lang']);
-  }
-  if (empty($link['datatype'])) {
-    unset($link['datatype']);
-  }
-  $output = '<a href="' . check_plain(url($vars['path'], $vars['options'])) . '"' . drupal_attributes($vars['options']['attributes']) . '>';
-  $output .= $vars['options']['html'] ?
-    $vars['text'] : check_plain($vars['text']);
-  $output .= "</a>";
-
-  dsm($output);
-  return $output;
-}
-
-/**
  * Cellular theme_field().
  */
 function cellular_field(&$vars) {
@@ -63,13 +43,13 @@ function cellular_breadcrumb(&$vars) {
       // Add the current page to breadcrumb trail.
       $breadcrumb[] = drupal_get_title();
 
-      $output = '<ol id="breadcrumb">' . "\n";
+      $output = "<ol id=\"breadcrumb\">\n";
       foreach ($breadcrumb as $key => $val) {
         if ($key == 0) {
-          $output .= "<li class=\"icon home\">" . $val . "</li>\n";
+          $output .= "<li class=\"icon home\">$val</li>\n";
         }
         else {
-          $output .= "<li>" . $separator . $val . "</li>\n";
+          $output .= "<li>$separator $val</li>\n";
         }
       }
       $output .= "</ol>\n";

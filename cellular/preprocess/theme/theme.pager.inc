@@ -9,11 +9,11 @@
  * Cellular theme_pager().
  */
 function cellular_pager($vars) {
+  global $pager_page_array, $pager_total;
   $tags = $vars['tags'];
   $element = $vars['element'];
   $parameters = $vars['parameters'];
   $quantity = $vars['quantity'];
-  global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
   // Middle is used to "center" pages around the current page.

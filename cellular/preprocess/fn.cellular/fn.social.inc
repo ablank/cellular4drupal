@@ -45,11 +45,10 @@ function cellular_build_links(array $links, array $parent) {
 function cellular_social_media_follow() {
   if (theme_get_setting('social_media_follow') == 1) {
     $output = '';
-    $title = theme_get_setting('sm_follow_title');
+    $block_title = theme_get_setting('sm_follow_title');
     $media_block = array(
-      'title' => !empty($title) ? "<h3>" . $title . "</h3>\n" : '',
+      'title' => !empty($block_title) ? "<h3>$block_title</h3>\n" : '',
       'id' => 'social-media-follow',
-      // 'class' => '',
       'description' => t('Follow our current posts'),
       'link_class' => 'social icon',
       'link_text' => 'Share this page on ',
@@ -100,17 +99,14 @@ function cellular_social_media_share() {
   if (theme_get_setting('social_media_share') == 1) {
     global $base_url;
     $output = '';
-
     $page = array(
       'url' => $base_url . '/' . current_path(),
       'title' => drupal_get_title(),
     );
-    $title = theme_get_setting('sm_share_title');
+    $block_title = theme_get_setting('sm_share_title');
     $media_block = array(
-      'title' => !empty($title) ? "<h3>" . $title . "</h3>\n" : '',
+      'title' => !empty($block_title) ? "<h3>$block_title</h3>\n" : '',
       'id' => 'social-media-share',
-      // 'class' => '',
-      'description' => t('Share this page with your network.'),
       'link_class' => 'social icon',
       'link_text' => 'Share this page on ',
     );
@@ -172,6 +168,7 @@ function cellular_social_media_share() {
     }
 
     $content = cellular_build_links($links, $media_block);
+    
     if (!empty($content)) {
       $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
       $output .= $media_block['title'] . $content . "\n</div>\n";

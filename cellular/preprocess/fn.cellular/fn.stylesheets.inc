@@ -15,7 +15,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       }
       elseif (isset($style['file'])) {
         $data = $cellular === TRUE ?
-          $GLOBALS['cellular_lib'] : $GLOBALS['theme_path'];
+          constant('cellular_lib') : path_to_theme();
         $data .= '/css/' . $style['file'];
       }
       if (isset($data)) {
@@ -73,7 +73,7 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
     }
     else {
       // Or set data to local file.
-      $data = $GLOBALS['theme_path'] . 'css/' . $style['file'];
+      $data = path_to_theme() . 'css/' . $style['file'];
     }
 
     $css[$ocss]['data'] = $data;

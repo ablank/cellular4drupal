@@ -5,14 +5,12 @@
  * @author Adam Blankenship
  */
 
-global $theme_path;
+$inc_path = drupal_get_path('theme', 'subcellular') . '/inc';
 $include = array(
-  // 'dev-functions.inc',
   'alter.css.inc',
   'alter.js.inc',
 );
 
-$inc_path = $theme_path . '/inc';
 foreach ($include as $i) {
   require_once($inc_path . '/' . $i);
 }

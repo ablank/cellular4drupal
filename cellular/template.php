@@ -4,15 +4,14 @@
  * Set global vars & load all functions for templates.
  */
 
-$inc_path = drupal_get_path('theme', 'cellular') . '/inc';
+$inc_path = drupal_get_path('theme', 'cellular') . '/preprocess';
 $include = array(
-  'cellular/fn.inc',
-  'cellular/fn.javascript.inc',
-  'cellular/fn.stylesheets.inc',
-  theme_get_setting('social_media_follow') == 1 ? 
-  'cellular/fn.jquery.inc' : NULL,
-  'cellular/fn.menu.inc',
-  'cellular/fn.preprocess.inc',
+  'fn.cellular/fn.inc',
+  'fn.cellular/fn.javascript.inc',
+  'fn.cellular/fn.stylesheets.inc',
+  'fn.cellular/fn.jquery.inc',
+  'fn.cellular/fn.menu.inc',
+  'fn.cellular/fn.preprocess.inc',
   'alter/alter.inc',
   'alter/alter.form.inc',
   'alter/alter.css.inc',
@@ -21,13 +20,11 @@ $include = array(
   'theme/theme.inc',
   'theme/theme.form.inc',
   'theme/theme.pager.inc',
-  theme_get_setting('social_media_follow') == 1 ||
-  theme_get_setting('social_media_share') == 1 ? 
-  'cellular/social.inc' : NULL,
+  'fn.cellular/fn.social.inc',
 );
 
 foreach ($include as $i) {
   require_once($inc_path . '/' . $i);
 }
 
-$GLOBALS['cellular_lib'] = $GLOBALS['base_url'] . '/sites/all/libraries/cellular';
+define('cellular_lib', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');

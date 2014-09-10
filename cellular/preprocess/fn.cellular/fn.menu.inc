@@ -26,13 +26,6 @@ function cellular_main_menu(&$vars) {
 }
 
 /**
- * General menu styling.
- */
-function cellular_menu_tree(&$vars) {
-  return '<ul class="menu">' . $vars['tree'] . '</ul>';
-}
-
-/**
  * Theme wrapper function for the primary menu links.
  */
 function cellular__main_menu(&$vars) {
