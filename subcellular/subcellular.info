@@ -6,17 +6,16 @@
   core        = 7.x
   engine      = phptemplate
   screenshot  = screenshot.png
-;----------// General Settings
 
 ;----------// General Settings
 
 settings[copyright]     = AB Creative
 
 ;----------// Stylesheets
-; CSS is added in /inc/alter_css.inc to control granularity
+; CSS is added in /inc/alter.css.inc to control granularity
 
 ;----------// Javascript
-; JS is added in /inc/alter_js.inc to control granularity
+; JS is added in /inc/alter.js.inc to control granularity
 
 ;----------// Regions
 regions[header_top]         = Header Top
@@ -39,7 +38,7 @@ settings[jquery_cdn_source]         = google
 settings[jquery_version]            = 1.9.1
 settings[jqueryui_version]          = 1.10.4
 settings[jqueryui_theme]            = custom
-settings[modernizr]                 = 1
+settings[modernizr]                 = 0
 settings[d3js]                      = 0
 settings[threejs]                   = 0
 settings[smoove]                    = 0
@@ -51,8 +50,6 @@ settings[reveal]                    = 0
 
 ;----------// Display Settings
 settings[remove_drupal_css]         = 0
-settings[favicons]                  = 1
-settings[icons_type]                = svg
 settings[full_menu]                 = 1
 settings[breadcrumb_display]        = 0
 settings[breadcrumb_separator]      = &#187;
@@ -84,6 +81,8 @@ settings[apple_icon_144]        = apple-touch-icon-144.png
 
 
 ;----------// Social Media
+settings[sm_follow_title]       = Follow Us
+settings[sm_share_title]        = Share this page
 
 settings[social_media_follow]   = 0
 settings[follow_facebook]       = 0
@@ -109,9 +108,12 @@ settings[share_reddit]          = 0
 settings[dev]                   = 0
 
 ;----------// Site Features
-;features[]      = name
-;features[]      = node_user_picture
-;features[]      = comment_user_picture
-;features[]      = comment_user_verification
-features[]      = main_menu
-features[]      = slogan
+features[] = name
+features[] = main_menu
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+;features[] = logo
+;features[] = favicon
+;features[] = secondary_menu
