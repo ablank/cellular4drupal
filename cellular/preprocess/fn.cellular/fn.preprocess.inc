@@ -28,7 +28,7 @@ function cellular_html_attributes(&$vars) {
  * Convert @xmlns to @profile.
  */
 function cellular_rdf(&$vars) {
-  // Add namespaces if needed:
+  // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
   // Check support for RDF & add DOCTYPE:
   if (module_exists('rdf')) {
@@ -40,9 +40,9 @@ function cellular_rdf(&$vars) {
     foreach ($namespaces as $name) {
       list($key, $url) = explode('=', $name, 2);
       list($xml, $space) = explode(':', $key, 2);
-
+      unset($xml);
       $url = trim(str_replace('"', '', $url));
-      $prefixes[] = $space . ": " . $url . "\n";
+      $prefixes[] = "\n" . $space . ": " . $url;
     }
     $head_attributes['prefix'] = implode(' ', $prefixes);
 
@@ -58,7 +58,7 @@ function cellular_body_attributes(&$vars) {
   $path = drupal_get_path_alias($_GET['q']);
   $aliases = explode('/', $path);
 
-  $body_attributes['id'] = str_replace(' ', '_', $vars['head_title']);
+  $body_attributes['id'] = str_replace(' ', '-', $vars['head_title']);
   // Add URL alias based body classes.
   // i.e. http://host.com/content/widget
   // = <body class="content widget">

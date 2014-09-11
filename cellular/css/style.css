@@ -7,6 +7,29 @@
  * Adam Blankenship
  */
 /**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+/**
  * @file
  * CSS Reset
  */
@@ -357,9 +380,9 @@ tfoot {
 }
 
 /**
- * @file
- * Form styling
- */
+  * @file
+  * Form styling
+*/
 /* line 8, ../sass/base/_forms.scss */
 form {
   display: block;
@@ -435,7 +458,7 @@ select,
 textarea {
   font: 1em/1.6em 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
   margin: 0 auto;
-  padding: 0.75em;
+  padding: .4em;
   font-size: 100%;
   vertical-align: middle;
   color: #111111;
@@ -494,70 +517,63 @@ input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked 
   vertical-align: middle;
   background: #fefefe;
   border: #bbbab7 thin solid;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-  -webkit-box-shadow: inset 0 1px 2px #bbbab7;
-  -moz-box-shadow: inset 0 1px 2px #bbbab7;
-  box-shadow: inset 0 1px 2px #bbbab7;
+  -webkit-box-shadow: inset 0 0 1px 1px #bbbab7;
+  -moz-box-shadow: inset 0 0 1px 1px #bbbab7;
+  box-shadow: inset 0 0 1px 1px #bbbab7;
 }
-/* line 149, ../sass/mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked):checked + label:before, input[type=checkbox]:checked:checked + label:before, input[type=radio]:not(:checked):checked + label:before, input[type=radio]:checked:checked + label:before {
-  border-color: #565450;
-}
-/* line 153, ../sass/mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked):checked + label:after, input[type=checkbox]:checked:checked + label:after, input[type=radio]:not(:checked):checked + label:after, input[type=radio]:checked:checked + label:after {
+/* line 143, ../sass/mixins/_cellularmixins.scss */
+input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked + label:after, input[type=radio]:not(:checked) + label:after, input[type=radio]:checked + label:after {
+  content: '';
   position: absolute;
-  left: .1em;
-  top: 0;
-  font-size: 1.4em;
-  color: #61d43f;
+  top: .25em;
+  left: .25em;
+  width: 1em;
+  height: 1em;
+  background-position: center;
+  background-size: 1em;
+  background-repeat: no-repeat;
+}
+/* line 158, ../sass/mixins/_cellularmixins.scss */
+input[type=checkbox]:not(:checked):focus + label:before, input[type=checkbox]:checked:focus + label:before, input[type=radio]:not(:checked):focus + label:before, input[type=radio]:checked:focus + label:before {
+  border: 1px dotted #29b4de;
 }
 /* line 165, ../sass/mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked):focus + label:before, input[type=checkbox]:checked:focus + label:before, input[type=radio]:not(:checked):focus + label:before, input[type=radio]:checked:focus + label:before {
-  border: 1px dotted #00598e;
-}
-/* line 172, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):disabled + label, input[type=checkbox]:checked:disabled + label, input[type=radio]:not(:checked):disabled + label, input[type=radio]:checked:disabled + label {
   color: #bbbab7;
 }
-/* line 175, ../sass/mixins/_cellularmixins.scss */
+/* line 168, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):disabled + label:before, input[type=checkbox]:checked:disabled + label:before, input[type=radio]:not(:checked):disabled + label:before, input[type=radio]:checked:disabled + label:before {
   background: #bbbab7;
   color: #565450;
 }
-/* line 125, ../sass/base/_forms.scss */
-input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked + label:before {
+/* line 122, ../sass/base/_forms.scss */
+input[type=checkbox] + label:before {
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
   -ms-border-radius: 0.3em;
   -o-border-radius: 0.3em;
   border-radius: 0.3em;
 }
-/* line 132, ../sass/base/_forms.scss */
-input[type=checkbox]:not(:checked):checked + label:after, input[type=checkbox]:checked:checked + label:after {
-  font-size: 1.5em;
-  content: '\2714';
+/* line 129, ../sass/base/_forms.scss */
+input[type=checkbox]:checked + label:after {
+  background-image: url("../assets/icons/min/png/check.png");
+  background-image: url("../assets/icons/min/svg/check.svg");
 }
-/* line 145, ../sass/base/_forms.scss */
-input[type=radio]:not(:checked) + label:before, input[type=radio]:checked + label:before {
+/* line 138, ../sass/base/_forms.scss */
+input[type=radio] + label:before {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 152, ../sass/base/_forms.scss */
-input[type=radio]:not(:checked):checked + label:after, input[type=radio]:checked:checked + label:after {
-  font-size: 1em;
-  content: '\2B24';
-  top: -0.14em;
-  left: .3em;
+/* line 145, ../sass/base/_forms.scss */
+input[type=radio]:checked + label:after {
+  background-image: url("../assets/icons/min/png/radio.png");
+  background-image: url("../assets/icons/min/svg/radio.svg");
 }
 
-/* line 164, ../sass/base/_forms.scss */
+/* line 155, ../sass/base/_forms.scss */
 textarea {
   display: block;
   overflow: auto;
@@ -567,25 +583,25 @@ textarea {
   color: #565450;
   background: #f9f9f9;
 }
-/* line 173, ../sass/base/_forms.scss */
+/* line 164, ../sass/base/_forms.scss */
 textarea:focus {
   color: #111111;
   background: #fefefe;
 }
 
-/* line 179, ../sass/base/_forms.scss */
+/* line 170, ../sass/base/_forms.scss */
 select {
   cursor: pointer;
   padding: 0.3em;
   border: #bbbab7 thin solid;
 }
 
-/* line 185, ../sass/base/_forms.scss */
+/* line 176, ../sass/base/_forms.scss */
 optgroup {
   background: #f1f1f1;
 }
 
-/* line 194, ../sass/base/_forms.scss */
+/* line 185, ../sass/base/_forms.scss */
 button,
 input[type="button"],
 input[type="submit"] {
@@ -607,13 +623,13 @@ input[type="submit"] {
   -o-border-radius: 0.3em;
   border-radius: 0.3em;
 }
-/* line 204, ../sass/mixins/_cellularmixins.scss */
+/* line 197, ../sass/mixins/_cellularmixins.scss */
 button:visited,
 input[type="button"]:visited,
 input[type="submit"]:visited {
   color: #fefefe;
 }
-/* line 210, ../sass/mixins/_cellularmixins.scss */
+/* line 203, ../sass/mixins/_cellularmixins.scss */
 button.active, button:active, button:hover,
 input[type="button"].active,
 input[type="button"]:active,
@@ -626,13 +642,13 @@ input[type="submit"]:hover {
   text-decoration: none;
 }
 
-/* line 202, ../sass/base/_forms.scss */
+/* line 193, ../sass/base/_forms.scss */
 .required:after {
   content: ' *';
   font-weight: bold;
 }
 
-/* line 210, ../sass/base/_forms.scss */
+/* line 201, ../sass/base/_forms.scss */
 .ok,
 .warning,
 .error {
@@ -645,26 +661,26 @@ input[type="submit"]:hover {
   border: .2em solid;
   background-color: #fefefe;
 }
-/* line 216, ../sass/base/_forms.scss */
+/* line 207, ../sass/base/_forms.scss */
 .ok li,
 .warning li,
 .error li {
   list-style: none;
 }
 
-/* line 221, ../sass/base/_forms.scss */
+/* line 212, ../sass/base/_forms.scss */
 .ok {
   color: #61d43f;
   border-color: #398d20;
 }
 
-/* line 226, ../sass/base/_forms.scss */
+/* line 217, ../sass/base/_forms.scss */
 .warning {
   color: #eecc22;
   border-color: #9e860c;
 }
 
-/* line 231, ../sass/base/_forms.scss */
+/* line 222, ../sass/base/_forms.scss */
 .error {
   color: #8c0d00;
   border-color: #260400;
@@ -1054,19 +1070,19 @@ hr.clearfix {
   background-color: #111111;
   color: #fefefe;
 }
-/* line 324, ../sass/mixins/_cellularmixins.scss */
+/* line 317, ../sass/mixins/_cellularmixins.scss */
 .ribbon:before, .ribbon:after {
   content: " ";
   position: absolute;
   bottom: -1em;
   border-top: black 1em solid;
 }
-/* line 331, ../sass/mixins/_cellularmixins.scss */
+/* line 324, ../sass/mixins/_cellularmixins.scss */
 .ribbon:before {
   left: 0;
   border-left: 1.2em solid transparent;
 }
-/* line 336, ../sass/mixins/_cellularmixins.scss */
+/* line 329, ../sass/mixins/_cellularmixins.scss */
 .ribbon:after {
   right: 0;
   border-right: 1.2em solid transparent;
@@ -1081,7 +1097,7 @@ hr.clearfix {
   border-bottom: black 1px solid;
   color: #fefefe;
 }
-/* line 349, ../sass/mixins/_cellularmixins.scss */
+/* line 342, ../sass/mixins/_cellularmixins.scss */
 .popout:after {
   content: " ";
   position: absolute;
@@ -1141,14 +1157,14 @@ hr.clearfix {
 }
 
 /**
- * @file
- * Primary #nav styling
- */
+  * @file
+  * Primary #nav styling
+*/
 @media screen {
   /* line 11, ../sass/style/_navigation.scss */
   #nav {
     float: right;
-    margin: 2em 5% 0 92px;
+    margin: 2em 5% 0 96px;
     padding: 0;
   }
   /* line 17, ../sass/style/_navigation.scss */
@@ -1189,14 +1205,14 @@ hr.clearfix {
     margin: 0 .5em;
     padding: 0;
     /*
-    // Second nested menu
-    &:hover > ul {
+      // Second nested menu
+      &:hover > ul {
       top: 0;
       right: -100%;
       visibility: visible;
       opacity: 1;
       z-index: 1;
-    }
+      }
     */
   }
   /* line 54, ../sass/style/_navigation.scss */
@@ -1511,7 +1527,7 @@ hr.clearfix {
 .cellular.jTabs .tab .title {
   float: left;
   padding: .4em .6em;
-  border: #bbbab7 1px solid;
+  border: #8a8882 1px solid;
 }
 /* line 28, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs > li.active,

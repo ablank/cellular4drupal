@@ -1,7 +1,7 @@
 /**
- * @file
- * Primary #nav styling
- */
+  * @file
+  * Primary #nav styling
+*/
 
 // Display multi-level links using css dropdowns?
 $showDropdowns: true;
@@ -10,9 +10,9 @@ $showDropdowns: true;
   // Primary Navigation
   #nav {
     float: right;
-    margin: 2em 5% 0 ($logo_width + 20px);
+    margin: 2em 5% 0 ($logo_width + 24px);
     padding: 0;
-    
+
     a,
     a:visited {
       // Common link styling
@@ -37,7 +37,7 @@ $showDropdowns: true;
         border-bottom: .1em solid;
       }
     }
-    
+
     ul {
       margin: 0;
     }
@@ -59,7 +59,7 @@ $showDropdowns: true;
         margin-right: 0;
       }
 
-    // Secondary Navigation
+     // Nested menus.
       ul {
         left: 0;
         position: absolute;
@@ -90,21 +90,21 @@ $showDropdowns: true;
           }
         }
         /*
-        // Second nested menu
-        &:hover > ul {
+          // Second nested menu
+          &:hover > ul {
           top: 0;
           right: -100%;
           visibility: visible;
           opacity: 1;
           z-index: 1;
-        }
+          }
         */
       }
     }
 
   }
 
-  // Breadcrumb navigation
+  // Breadcrumb navigation.
 
   #breadcrumb {
     display: inline;
@@ -146,7 +146,7 @@ $showDropdowns: true;
       float: none;
       margin: 0;
 
-      // Adjuct margins not set by jMmenu
+      // Adjuct margins not set by jMmenu.
       &:first-child,
       &:last-child {
         margin: 0;

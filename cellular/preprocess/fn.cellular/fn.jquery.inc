@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Functions for updating jQuery & jQuery.ui.
@@ -27,7 +26,7 @@ function cellular_jquery_info() {
  * Generate links to CDN sources.
  */
 function cellular_cdn() {
-  /* Available cdns & path to scripts:
+  /* Available cdns:
    * //ajax.googleapis.com/ajax/libs/jquery/1.10.4/jquery.min.js
    * //ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js
    * //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
@@ -40,7 +39,7 @@ function cellular_cdn() {
       'jquery' => 'jquery-' . $jq['version'] . '.min.js',
       'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui.min.js',
       'theme' => 'ui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] .'/jquery-ui.css',
+      . $ui['theme'] . '/jquery-ui.css',
     ),
     'google' => array(
       'base_url' => '//ajax.googleapis.com/ajax/libs/',
@@ -162,7 +161,7 @@ function cellular_jqueryui_js(&$javascript) {
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
           'weight' => isset($javascript[$default]['weight']) ?
-          $javascript[$default]['weight'] : -9,
+            $javascript[$default]['weight'] : -9,
           'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
         ),
@@ -218,9 +217,9 @@ function cellular_jqueryui_css(&$css) {
           'version' => $jq['version'],
           'group' => CSS_SYSTEM,
           'every_page' => isset($css[$default]['every_page']) ?
-          $css[$default]['every_page'] : FALSE,
+            $css[$default]['every_page'] : FALSE,
           'weight' => isset($css[$default]['weight']) ?
-          $css[$default]['weight'] : -9,
+            $css[$default]['weight'] : -9,
           'file' => NULL,
         ),
       );
@@ -231,13 +230,12 @@ function cellular_jqueryui_css(&$css) {
       // Set path to local custom file if selected.
       if ($jq['theme'] === 'custom') {
         $jq['version'] === '1.10.4' ?
-          $v = '1.10' : '1.9';
+            $v = '1.10' : '1.9';
         $file = $ui['path'] . "jquery-ui.$v.css";
 
         $style['core']['file'] = $file;
       }
-      elseif (theme_get_setting('jquery_cdn') === 1
-      && $jq['theme'] !== 'custom') {
+      elseif (theme_get_setting('jquery_cdn') === 1 && $jq['theme'] !== 'custom') {
         $cdn = cellular_cdn();
         // If updating from cdn unset each widget so a single call can be made.
         unset($css[$default]);

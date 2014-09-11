@@ -3,6 +3,7 @@
  * @file
  * Page Template.
  */
+
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications

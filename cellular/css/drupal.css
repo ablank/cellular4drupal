@@ -3,6 +3,29 @@
  * Collect Drupal specific  styles
  */
 /**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+/**
  * @file
  * Drupal pager styling
  */
@@ -177,12 +200,12 @@
   background-position: right center;
   border: #565450 1px solid;
 }
-/* line 204, ../sass/mixins/_cellularmixins.scss */
+/* line 197, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit]:visited,
 #site-search input[type=submit]:visited {
   color: #fefefe;
 }
-/* line 210, ../sass/mixins/_cellularmixins.scss */
+/* line 203, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit].active, #search-form input[type=submit]:active, #search-form input[type=submit]:hover,
 #site-search input[type=submit].active,
 #site-search input[type=submit]:active,
@@ -216,11 +239,11 @@
   border-radius: 0.3em;
   padding: 0 1em;
 }
-/* line 204, ../sass/mixins/_cellularmixins.scss */
+/* line 197, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu a:visited {
   color: #fefefe;
 }
-/* line 210, ../sass/mixins/_cellularmixins.scss */
+/* line 203, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu a.active, #block-system-navigation .menu a:active, #block-system-navigation .menu a:hover {
   background-color: #16708b;
   border-color: #29b4de;
@@ -302,7 +325,7 @@ div.ctools-ajaxing {
 .tabs.primary li {
   list-style: none;
   display: inline;
-  margin: 0 .4em;
+  margin: 0 .1em;
 }
 /* line 70, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a {
