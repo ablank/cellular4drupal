@@ -15,7 +15,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       }
       elseif (isset($style['file'])) {
         $data = $cellular === TRUE ?
-          constant('cellular_lib') : path_to_theme();
+          constant('CELLULAR_LIB') : path_to_theme();
         $data .= '/css/' . $style['file'];
       }
       if (isset($data)) {

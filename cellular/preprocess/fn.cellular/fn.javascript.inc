@@ -31,7 +31,7 @@ function cellular_add_js($array, $cellular = FALSE) {
       }
       else {
         $data = $cellular ?
-          constant('cellular_lib') : path_to_theme();
+          constant('CELLULAR_LIB') : path_to_theme();
         $data .= '/js/' . $script['file'];
       }
 
@@ -54,7 +54,7 @@ function cellular_js_fallback($script, $cellular = FALSE) {
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
     $fallback .= $cellular ?
-      constant('cellular_lib') : path_to_theme();
+      constant('CELLULAR_LIB') : path_to_theme();
     $fallback .= '/js/' . $script['file'];
     $fallback .= '\">\x3C/script>")';
 
@@ -79,7 +79,7 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
       // Or set data to local file if no CDN.
       // Set path relative to $cellular_lib or $theme path depending on context.
       $data = $cellular ?
-        constant('cellular_lib') : path_to_theme();
+        constant('CELLULAR_LIB') : path_to_theme();
       $data .= isset($script['file']) ?
         '/js/' . $script['file'] : NULL;
     }

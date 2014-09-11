@@ -198,6 +198,7 @@
   font-size: 0.75em;
   text-align: left;
   background-position: right center;
+  background-size: 1em;
   border: #565450 1px solid;
 }
 /* line 197, ../sass/mixins/_cellularmixins.scss */
@@ -215,11 +216,11 @@
   text-decoration: none;
 }
 
-/* line 68, ../sass/drupal/_drupal-ids.scss */
+/* line 67, ../sass/drupal/_drupal-ids.scss */
 #block-system-navigation .block-title {
   display: none;
 }
-/* line 74, ../sass/drupal/_drupal-ids.scss */
+/* line 73, ../sass/drupal/_drupal-ids.scss */
 #block-system-navigation .menu a {
   cursor: pointer;
   display: inline;
@@ -249,7 +250,7 @@
   border-color: #29b4de;
   text-decoration: none;
 }
-/* line 79, ../sass/drupal/_drupal-ids.scss */
+/* line 78, ../sass/drupal/_drupal-ids.scss */
 #block-system-navigation .menu li {
   display: inline-block;
   text-align: center;

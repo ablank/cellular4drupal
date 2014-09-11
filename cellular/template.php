@@ -27,4 +27,4 @@ foreach ($include as $i) {
   require_once($inc_path . '/' . $i);
 }
 
-define('cellular_lib', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');
+define('CELLULAR_LIB', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');

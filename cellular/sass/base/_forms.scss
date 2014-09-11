@@ -104,7 +104,7 @@ input {
     width: 90%;
     border: $light_grey $border;
     color: $dark_grey;
-    background: darken($white, 3%);
+    background: lighten($light_grey, 30%);
 
     &:focus {
       color: $p_color;
