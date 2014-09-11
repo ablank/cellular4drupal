@@ -81,7 +81,13 @@
   (e.g., the view and edit tabs when displaying a node).
   - $feed_icons: A string of all feed icons for the current page.
  */
-
+/*
+ Custom page templates can be created for content types by adding the template:
+ * /templates/page--content-type.tpl.php
+ * Render cck fields:
+ <?php print render(field_view_field('node', $node, 'field_name', array(
+  'label' => 'hidden'))); ?>
+ */
 ?>
 
 <div id="page-wrap">

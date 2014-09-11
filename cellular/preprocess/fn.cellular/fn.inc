@@ -5,19 +5,6 @@
  */
 
 /**
- * Merge arrays & concat ' ' separated values to string.
- */
-function cellular_merge(&$arr) {
-  $output = '';
-  foreach ($arr as $a) {
-    $output .= (is_array($a)) ?
-      implode_r(' ', $a) : " " . $a;
-  }
-
-  return $output;
-}
-
-/**
  * Add <link> & <meta> tags from an array.
  */
 function cellular_build_head_tags(&$array) {

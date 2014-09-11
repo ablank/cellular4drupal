@@ -30,7 +30,8 @@ $showDropdowns: true;
 
       &:hover,
       &:focus,
-      &:active {
+      &:active,
+            &.active {
         text-decoration: none;
         background: $hilight;
         color: $white;
