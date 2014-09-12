@@ -7,11 +7,11 @@ module.exports = {
   scripts: {
     files: ['js/*.js', 'js/**/*.js'],
     tasks: [
-      'uglify',
+      // 'uglify',
       'jshint'
     ],
     options: {
-      interrupt: true,
+      interrupt: false
     }
   },
   styles: {

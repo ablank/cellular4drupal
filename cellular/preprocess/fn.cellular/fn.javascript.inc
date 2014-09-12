@@ -159,7 +159,7 @@ function cellular_modernizr() {
 /**
  * Add javascript plugins using the cellular libraary.
  */
-function cellular_add_js_plugins() {
+function cellular_plugins_js() {
 // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array(
     'modernizr' => theme_get_setting('modernizr') == 1 ? array(

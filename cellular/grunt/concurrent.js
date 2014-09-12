@@ -9,28 +9,26 @@ module.exports = {
     'compass:prod',
     'imagemin',
     'svgmin'
-            // 'concat',
+    // 'concat',
   ],
   prod2: [
-    'uglify:prod'
-            // 'grunticon',
-            // 'svg2png',
+    'uglify:prod',
+    'svg2png'
   ],
   prod3: [
     'jshint'
   ],
   // prod4: [],
   dev1: [
-    // 'newer:concat',
+    // 'concat',
     'compass:dev'
   ],
   dev2: [
-    // 'uglify:dev'
+    'uglify:dev'
   ],
   dev3: [
-    'svg2png',
+    // 'svg2png',
     'jshint'
-    // 'grunticon'
   ]
-  // dev4: [],
+  // dev4: []
 };

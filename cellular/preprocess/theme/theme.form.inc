@@ -15,7 +15,7 @@ function cellular_form_element_attributes(&$element) {
   !empty($element['#id']) ?
       $attributes['id'] = $element['#id'] : NULL;
   !empty($element['#attributes']['class']) ?
-      $attributes['class'] = cellular_merge($element['#attributes']['class']) : NULL;
+      $attributes['class'] = implode(' ', $element['#attributes']['class']) : NULL;
   !empty($element['#title']) ?
       $attributes['title'] = $element['#title'] : NULL;
   !empty($element['#required']) ?

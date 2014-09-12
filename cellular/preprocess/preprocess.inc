@@ -13,6 +13,10 @@ function cellular_preprocess_html(&$vars) {
   cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
+
+  dsm($vars);
+  // Setup styles for process.
+  $vars['styles'] = drupal_render($vars['styles']);
 }
 
 /**
@@ -20,10 +24,6 @@ function cellular_preprocess_html(&$vars) {
  */
 function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
-  // Prevent empty datatype from rendering.
-  unset($vars['title_attributes_array']['datatype']);
-  // Push modified $css onto page.
-  $vars['styles'] = drupal_get_css();
 
   $vars['title_attributes_array']['class'] = array('node-title');
   $vars['content_attributes_array']['class'] = array('node-content');
@@ -62,9 +62,6 @@ function cellular_preprocess_page(&$vars) {
 
   // Use page--error.tpl if http error status is returned.
   cellular_error_page($vars);
-
-  // Dev.
-  cellular_dev($vars);
 }
 
 /**

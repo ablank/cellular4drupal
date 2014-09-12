@@ -27,7 +27,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
         $style['group'] = isset($style['group']) ?
           $style['group'] : CSS_THEME;
         $style['weight'] = isset($style['weight']) ?
-          $style['weight'] : 10;
+          $style['weight'] : 1;
         $style['type'] = isset($style['cdn']) ?
           'external' : 'file';
         $style['media'] = isset($style['media']) ?
@@ -93,23 +93,23 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
 /**
  * Add stylesheets used with javascript plugins, including jQuery.ui.
  */
-function cellular_add_plugin_css(&$css) {
+function cellular_plugin_css() {
   // Plugins available through cellular, styles added based on theme settings.
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ?
       array(
       'file' => 'prism.css',
+      'weight' => 1,
+      'preprocess' => FALSE,
       ) : NULL,
     'reveal' => theme_get_setting('reveal') == 1 ?
       array(
       'file' => 'reveal/reveal.min.css',
+      'weight' => 1,
+      'preprocess' => FALSE,
       ) : NULL,
   );
 
-  if (theme_get_setting('jquery_update') == 1) {
-    cellular_jqueryui_css($css);
-  }
-
-  cellular_add_css($css, $plugin_css, TRUE);
+  return $plugin_css;
 }

@@ -104,11 +104,10 @@ input {
     width: 90%;
     border: $light_grey $border;
     color: $dark_grey;
-    background: lighten($light_grey, 30%);
-
+    background: darken($white, 2%);
+      
     &:focus {
       color: $p_color;
-      border-color: $p_color;
       background: $white;
     }
   }
@@ -150,7 +149,6 @@ input {
     }
   }
 }
-
 
 textarea {
   display: block;

@@ -21,6 +21,7 @@ $include = array(
   'theme/theme.form.inc',
   'theme/theme.pager.inc',
   'fn.cellular/fn.social.inc',
+  'process.inc',
 );
 
 foreach ($include as $i) {

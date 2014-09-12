@@ -14,11 +14,11 @@ function cellular_css_alter(&$css) {
   // Paths are relative to /yourTheme/css/
     'drupal' => array(
       'file' => 'drupal.css',
-      'weight' => 1,
+      'weight' => 10,
     ),
     'style' => array(
       'file' => 'style.css',
-      'weight' => 2,
+      'weight' => 11,
     ),
     'print' => array(
       'file' => 'print.css',
@@ -36,14 +36,15 @@ function cellular_css_alter(&$css) {
   );
   cellular_add_css($css, $add_css);
 
+  if (theme_get_setting('jquery_update') == 1) {
+    cellular_jqueryui_css($css);
+  }
+
   // Add stylesheets for js plugins (including jQueryUI).
-  cellular_add_plugin_css($css);
+  $plugins = cellular_plugin_css();
+
+  cellular_add_css($css, $plugins, TRUE);
 
   // Remove stylesheets based on theme settings.
   cellular_remove_default_css($css);
-
-  // Push styles to page.
-  // $css = drupal_get_css($css);
-  // Show $css after alteration.
-  // cellular_dev($css);
 }

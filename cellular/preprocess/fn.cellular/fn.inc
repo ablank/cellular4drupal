@@ -7,7 +7,7 @@
 /**
  * Add <link> & <meta> tags from an array.
  */
-function cellular_build_head_tags(&$array) {
+function cellular_build_head_tags($array) {
   foreach ($array as $meta => $val) {
     if (isset($val)) {
       // Build tag:

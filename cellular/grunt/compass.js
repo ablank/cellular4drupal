@@ -7,20 +7,20 @@ module.exports = {
   options: {
     config: 'config/compass.rb',
     sassDir: 'sass',
-    cssDir: 'css',
+    cssDir: 'css'
   },
   dev: {
     options: {
       noLineComments: false,
-      // clean: true,
+      // clean: false,
       environment: 'development',
-      outputStyle: 'expanded'
+      outputStyle: 'expanded' // | nested | compact | compressed
     }
   },
   prod: {
     options: {
       noLineComments: true,
-      // clean: true,
+      clean: true,
       environment: 'production',
       outputStyle: 'compressed'
     }

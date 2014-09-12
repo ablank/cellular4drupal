@@ -36,7 +36,7 @@ function cellular_js_alter(&$javascript) {
 // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     $jquery = cellular_jquery_info();
-    $js_plugins = cellular_add_js_plugins();
+    $js_plugins = cellular_plugins_js();
     cellular_jquery_update($javascript, $js_plugins);
     cellular_jqueryui_js($javascript, $js_plugins);
     // Add jQuery.migrate to support older plugins if v >= 1.9
