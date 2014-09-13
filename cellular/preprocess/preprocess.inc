@@ -13,9 +13,6 @@ function cellular_preprocess_html(&$vars) {
   cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
-
-  // Setup styles for process.
-//  $vars['styles'] = drupal_render($vars['styles']);
 }
 
 /**
