@@ -61,39 +61,37 @@ function cellular_error_page(&$vars) {
         $vars['error_message'] = drupal_get_messages();
         $vars['classes_array'][] = 'page-error';
 
-        cellular_merge($vars['classes_array']);
+        $vars['classes_array'] = implode(' ', $vars['classes_array']);
         break;
     }
   }
 }
 
-/**
- * Removes text formatting options from user input.
- */
-function cellular_form_strip_access(&$form) {
-  // Remove individual text format options:
-  // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
-  // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
-  // $form[LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
-  // $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
-  // Or Nuke text format options:
-  $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
+  /**
+   * Removes text formatting options from user input.
+   */
+  function cellular_form_strip_access(&$form) {
+    // Remove individual text format options:
+    // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+    // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+    // $form[LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+    // $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
+    // Or Nuke text format options:
+    $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
 
-  return $form;
-}
+    return $form;
+  }
 
-/**
- * Print variables if dsm is enabled.
- */
-function cellular_dev($element) {
-  if (theme_get_setting('dev') === 1) {
-    if (module_exists('devel')) {
-      dsm($element);
-    }
-    else {
-      print '<div class="cell-70 center">';
-      print_r($element);
-      print '</div>';
+  /**
+   * Print variables if dsm is enabled.
+   */
+  function cellular_dev($element) {
+    if (theme_get_setting('dev') === 1) {
+      if (module_exists('devel')) {
+        dsm($element);
+      }
+      else {
+        drupal_set_message('<pre>'. print_r($element, TRUE) .'</pre>');
+      }
     }
   }
-}

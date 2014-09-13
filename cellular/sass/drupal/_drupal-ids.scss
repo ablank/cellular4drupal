@@ -1,7 +1,7 @@
 /**
- * @file
- * Styling DOM id's provided by drupal
- */
+  * @file
+  * Styling DOM id's provided by drupal
+*/
 
 // "Powered by Drupal" block
 #block-system-powered-by {
@@ -9,7 +9,7 @@
   margin: 0 1em;
   color: $white;
 
-  .block-content a {
+  a {
     text-indent: -999em;
     float: right;
     display: block;
@@ -74,7 +74,7 @@
       @include button();
       padding: 0 1em;
     }
-    
+
     li {
       display: inline-block;
       text-align: center;

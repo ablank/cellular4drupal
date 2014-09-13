@@ -80,48 +80,63 @@ function cellular_body_attributes(&$vars) {
  * Build links to favicons & apple-touch-icons.
  */
 function cellular_favicons() {
+  $settings = array(
+    'favicon' => theme_get_setting('favicon'),
+    'favicon-32' => theme_get_setting('favicon_32'),
+    'apple-default' => theme_get_setting('apple_icon_57'),
+    'apple-72' => theme_get_setting('apple_icon_72'),
+    'apple-114' => theme_get_setting('apple_icon_114'),
+    'apple-144' => theme_get_setting('apple_icon_144')
+  );
+
   $favicons = array(
-    'favicon-16x16' => array(
+    'favicon-16x16' => !empty($settings['favicon']) ?
+      array(
       'rel' => 'shortcut icon',
       'type' => 'image/x-icon',
       'size' => NULL,
-      'href' => theme_get_setting('favicon'),
+      'href' => $settings['favicon'],
       'weight' => 95,
-    ),
-    'favicon-32x32' => array(
+      ) : NULL,
+    'favicon-32x32' => !empty($settings['favicon-32']) ?
+      array(
       'rel' => 'shortcut icon',
       'type' => 'image/png',
       'size' => '32x32',
-      'href' => theme_get_setting('favicon_32'),
+      'href' => $settings['favicon-32'],
       'weight' => 96,
-    ),
+      ) : NULL,
     /* Older iOS devices don't understand the sizes attribute and use
      * whichever value is last, so 'default' is given more weight.
      */
-    'apple-default' => array(
+    'apple-default' => !empty($settings['apple-default']) ?
+      array(
       'rel' => 'apple-touch-icon',
       'size' => NULL,
-      'href' => theme_get_setting('apple_icon_57'),
+      'href' => $settings['apple-default'],
       'weight' => 100,
-    ),
-    'apple-72x72' => array(
+      ) : NULL,
+    'apple-72x72' => !empty($settings['apple-72']) ?
+      array(
       'rel' => 'apple-touch-icon',
       'size' => '72x72',
-      'href' => theme_get_setting('apple_icon_72'),
+      'href' => $settings['apple-72'],
       'weight' => 99,
-    ),
-    'apple-114x114' => array(
+      ) : NULL,
+    'apple-114x114' => !empty($settings['apple-114']) ?
+      array(
       'rel' => 'apple-touch-icon',
       'size' => '114x114',
-      'href' => theme_get_setting('apple_icon_114'),
+      'href' => $settings['apple-114'],
       'weight' => 98,
-    ),
-    'apple-144x144' => array(
+      ) : NULL,
+    'apple-144x144' => !empty($settings['apple-144']) ?
+      array(
       'rel' => 'apple-touch-icon',
       'size' => '144x144',
-      'href' => theme_get_setting('apple_icon_144'),
+      'href' => $settings['apple-144'],
       'weight' => 97,
-    ),
+      ) : NULL,
   );
 
   foreach ($favicons as &$favicon) {

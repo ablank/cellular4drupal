@@ -23,7 +23,7 @@ function cellular_add_js($array, $cellular = FALSE) {
       $script['every_page'] = isset($script['every_page']) ?
         $script['every_page'] : TRUE;
       $script['weight'] = isset($script['weight']) ?
-        $script['weight'] : 0;
+        $script['weight'] : 1;
 
       if (!empty($script['cdn'])) {
         $data = $script['cdn'];

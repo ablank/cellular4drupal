@@ -134,9 +134,9 @@
 }
 
 /**
- * @file
- * Styling DOM id's provided by drupal
- */
+  * @file
+  * Styling DOM id's provided by drupal
+*/
 /* line 7, ../sass/drupal/_drupal-ids.scss */
 #block-system-powered-by {
   float: right;
@@ -144,7 +144,7 @@
   color: #fefefe;
 }
 /* line 12, ../sass/drupal/_drupal-ids.scss */
-#block-system-powered-by .block-content a {
+#block-system-powered-by a {
   text-indent: -999em;
   float: right;
   display: block;
