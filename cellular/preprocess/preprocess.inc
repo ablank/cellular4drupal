@@ -35,10 +35,11 @@ function cellular_preprocess_node(&$vars) {
  * Cellular template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
-  // Set custom page templates for CCK Content (page--content-type.tpl.php)
+  // Add template suggestions for custom Content types(page--content-type.tpl.php)
   if (isset($vars['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
+
   // Link site name to frontpage:
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set main_menu as full-tree or top-level as defined in settings:
@@ -61,23 +62,13 @@ function cellular_preprocess_page(&$vars) {
 }
 
 /**
- * Cellular template_preprocess_region().
- */
-function cellular_preprocess_region(&$vars) {
-
-}
-
-/**
  * Cellular template_preprocess_block().
  */
 function cellular_preprocess_block(&$vars) {
   $block = $vars['elements']['#block'];
   $title_attributes = array();
   // Hide block titles in the headers region:
-  if (($block->region == 'header')
-  // || ($block->region == 'header_top')
-  // || ($block->region == 'header_bottom')
-  ) {
+  if ($block->region == 'header') {
     $title_attributes['class'][] = 'hidden';
   }
 
@@ -96,12 +87,13 @@ function cellular_preprocess_comment(&$vars) {
     '!datetime' => $vars['created'],
   ));
 
-  $vars['comment_wrapper'] = FALSE;
+  $vars['comment_wrapper'] = NULL;
 }
 
 /**
  * Cellular template_ preprocess_username().
-function cellular_preprocess_username(&$vars) {  
+ */
+function cellular_preprocess_username(&$vars) {
   if (isset($vars['link_path'])) {
     $vars['link_attributes']['rel'][] = 'author';
   }
@@ -109,4 +101,3 @@ function cellular_preprocess_username(&$vars) {
     $vars['attributes_array']['rel'][] = 'author';
   }
 }
- */

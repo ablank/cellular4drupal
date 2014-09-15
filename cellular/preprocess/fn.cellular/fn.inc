@@ -60,8 +60,6 @@ function cellular_error_page(&$vars) {
         $vars['http_status'] = "Error: " . $http_status;
         $vars['error_message'] = drupal_get_messages();
         $vars['classes_array'][] = 'page-error';
-
-        $vars['classes_array'] = implode(' ', $vars['classes_array']);
         break;
     }
   }
@@ -83,12 +81,12 @@ function cellular_error_page(&$vars) {
   }
 
   /**
-   * Print variables if dsm is enabled.
+   * Print variables.
    */
   function cellular_dev($element) {
-    if (theme_get_setting('dev') === 1) {
+    if (theme_get_setting('dev') == 1) {
       if (module_exists('devel')) {
-        dsm($element);
+        dpm($element);
       }
       else {
         drupal_set_message('<pre>'. print_r($element, TRUE) .'</pre>');

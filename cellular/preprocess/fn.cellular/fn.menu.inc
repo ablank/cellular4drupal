@@ -16,26 +16,8 @@ function cellular_main_menu(&$vars) {
     $main_menu_tree = menu_main_menu();
   }
 
-  // $main_menu['#theme_wrappers'] = 'cellular_menu_tree__main_menu';
   $main_menu = menu_tree_output($main_menu_tree);
-
   $vars['main_menu'] = $main_menu;
-  // $vars['main_menu']['#attributes']['class'] = '1';
-  // $vars['main_menu']['#theme_wrappers'] = 'cellular__main_menu';
+
   return $vars;
-}
-
-/**
- * Theme wrapper function for the primary menu links.
- */
-function cellular__main_menu(&$vars) {
-  $attr = array(
-    'id' => 'nav',
-    // 'class' => 'zzzz',
-  );
-  return '<ul' . drupal_attributes($attr) . '>' . $vars['tree'] . '</ul>';
-}
-
-function cellular__main_menu_link(&$vars) {
-
 }
