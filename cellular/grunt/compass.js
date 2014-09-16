@@ -4,13 +4,9 @@
  */
 
 module.exports = {
-  options: {
-    config: 'config/compass.rb',
-    sassDir: 'sass',
-    cssDir: 'css'
-  },
   dev: {
     options: {
+      config: 'config/compass.rb',
       noLineComments: false,
       // clean: false,
       environment: 'development',
@@ -19,8 +15,9 @@ module.exports = {
   },
   prod: {
     options: {
+      config: 'config/compass.rb',
       noLineComments: true,
-      clean: true,
+      // clean: true,
       environment: 'production',
       outputStyle: 'compressed'
     }
