@@ -98,17 +98,17 @@ function cellular_plugin_css() {
 // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array(
     'prism' => theme_get_setting('prism') == 1 ?
-      array(
+    array(
       'file' => 'prism.css',
       'weight' => 1,
       'preprocess' => FALSE,
-      ) : NULL,
+    ) : NULL,
     'reveal' => theme_get_setting('reveal') == 1 ?
-      array(
+    array(
       'file' => 'reveal/reveal.min.css',
       'weight' => 1,
       'preprocess' => FALSE,
-      ) : NULL,
+    ) : NULL,
   );
 
   return $plugin_css;

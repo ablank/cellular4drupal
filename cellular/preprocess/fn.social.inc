@@ -120,27 +120,27 @@ function cellular_social_media_follow() {
         'url' => $url['fb'],
         'class' => 'facebook',
         'name' => 'Facebook',
-        ) : NULL,
+      ) : NULL,
       'google+' => $set['google'] == 1 ? array(
         'url' => $url['google'],
         'class' => 'google',
         'name' => 'Google+',
-        ) : NULL,
+      ) : NULL,
       'twitter' => $set['twitter'] == 1 ? array(
         'url' => $url['twitter'],
         'class' => 'twitter-bird',
         'name' => 'Twitter',
-        ) : NULL,
+      ) : NULL,
       'linkedin' => $set['linkedin'] == 1 ? array(
         'url' => $url['linkedin'],
         'class' => 'linkedin',
         'name' => 'LinkedIn',
-        ) : NULL,
+      ) : NULL,
       'github' => $set['github'] == 1 ? array(
         'url' => $url['github'],
         'class' => 'github-octo',
         'name' => 'Github',
-        ) : NULL,
+      ) : NULL,
     );
 
     $content = cellular_build_links($links, $media_block);

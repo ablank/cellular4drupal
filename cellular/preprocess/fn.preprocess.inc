@@ -86,57 +86,57 @@ function cellular_favicons() {
     'apple-default' => theme_get_setting('apple_icon_57'),
     'apple-72' => theme_get_setting('apple_icon_72'),
     'apple-114' => theme_get_setting('apple_icon_114'),
-    'apple-144' => theme_get_setting('apple_icon_144')
+    'apple-144' => theme_get_setting('apple_icon_144'),
   );
 
   $favicons = array(
     'favicon-16x16' => !empty($settings['favicon']) ?
-      array(
+    array(
       'rel' => 'shortcut icon',
       'type' => 'image/x-icon',
       'size' => NULL,
       'href' => $settings['favicon'],
       'weight' => 95,
-      ) : NULL,
+    ) : NULL,
     'favicon-32x32' => !empty($settings['favicon-32']) ?
-      array(
+    array(
       'rel' => 'shortcut icon',
       'type' => 'image/png',
       'size' => '32x32',
       'href' => $settings['favicon-32'],
       'weight' => 96,
-      ) : NULL,
+    ) : NULL,
     /* Older iOS devices don't understand the sizes attribute and use
      * whichever value is last, so 'default' is given more weight.
      */
     'apple-default' => !empty($settings['apple-default']) ?
-      array(
+    array(
       'rel' => 'apple-touch-icon',
       'size' => NULL,
       'href' => $settings['apple-default'],
       'weight' => 100,
-      ) : NULL,
+    ) : NULL,
     'apple-72x72' => !empty($settings['apple-72']) ?
-      array(
+    array(
       'rel' => 'apple-touch-icon',
       'size' => '72x72',
       'href' => $settings['apple-72'],
       'weight' => 99,
-      ) : NULL,
+    ) : NULL,
     'apple-114x114' => !empty($settings['apple-114']) ?
-      array(
+    array(
       'rel' => 'apple-touch-icon',
       'size' => '114x114',
       'href' => $settings['apple-114'],
       'weight' => 98,
-      ) : NULL,
+    ) : NULL,
     'apple-144x144' => !empty($settings['apple-144']) ?
-      array(
+    array(
       'rel' => 'apple-touch-icon',
       'size' => '144x144',
       'href' => $settings['apple-144'],
       'weight' => 97,
-      ) : NULL,
+    ) : NULL,
   );
 
   foreach ($favicons as &$favicon) {
@@ -197,10 +197,8 @@ function cellular_metatags(&$vars) {
  * Test if sidebar regions are used and return the appropriate class.
  */
 function cellular_test_sidebar(&$vars) {
-  $sidebar_left = !empty($vars['page']['sidebar_left']) ?
-    1 : NULL;
-  $sidebar_right = !empty($vars['page']['sidebar_right']) ?
-    1 : NULL;
+  $sidebar_left = !empty($vars['page']['sidebar_left']) ? 1 : NULL;
+  $sidebar_right = !empty($vars['page']['sidebar_right']) ? 1 : NULL;
 
   if (isset($sidebar_left) && isset($sidebar_right)) {
     return 'dual-sidebars';

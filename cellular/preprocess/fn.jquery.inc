@@ -161,7 +161,7 @@ function cellular_jqueryui_js(&$javascript) {
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
           'weight' => isset($javascript[$default]['weight']) ?
-            $javascript[$default]['weight'] : -9,
+          $javascript[$default]['weight'] : -9,
           'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
         ),
@@ -217,9 +217,9 @@ function cellular_jqueryui_css(&$css) {
           'version' => $jq['version'],
           'group' => CSS_SYSTEM,
           'every_page' => isset($css[$default]['every_page']) ?
-            $css[$default]['every_page'] : FALSE,
+          $css[$default]['every_page'] : FALSE,
           'weight' => isset($css[$default]['weight']) ?
-            $css[$default]['weight'] : -9,
+          $css[$default]['weight'] : -9,
           'file' => NULL,
         ),
       );
@@ -229,8 +229,7 @@ function cellular_jqueryui_css(&$css) {
 
       // Set path to local custom file if selected.
       if ($jq['theme'] === 'custom') {
-        $jq['version'] === '1.10.4' ?
-            $v = '1.10' : '1.9';
+        $jq['version'] === '1.10.4' ? $v = '1.10' : '1.9';
         $file = $ui['path'] . "jquery-ui.$v.css";
 
         $style['core']['file'] = $file;
