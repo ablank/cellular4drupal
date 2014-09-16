@@ -204,25 +204,29 @@ function cellular_social_media_share() {
         'class' => 'reddit',
       ) : NULL,
     );
+    if($set['fb'] == 1) {
+      // Set variables to appease PAReview.
+      $fbscript = '(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, \'script\', \'facebook-jssdk\'));';
+      $fbtag = '<div class="fb-like" data-href="' . $page['url'] . '"
+          data-layout="button" data-action="like" data-show-faces="false"
+          data-share="true"></div><div id="fb-root"></div>';
 
-    $facebook = $set['fb'] == 1 ? array(
-      // Facebook javascript.
-      'script' => '(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, \'script\', \'facebook-jssdk\'));',
-      // Set fb markup.
-      'tag' => '<div class="fb-like" data-href="' . $page['url'] . '"
-        data-layout="button" data-action="like" data-show-faces="false"
-        data-share="true"></div><div id="fb-root"></div>',
-      'weight' => 1000,
-    ) : NULL;
-
-    if (!empty($facebook)) {
-      $links[] = $facebook;
+      $facebook = array(
+        // Facebook javascript.
+        'script' => $fbscript,
+        // Set fb markup.
+        'tag' => $fbtag,
+        'weight' => 1000,
+      );
+      if (!empty($facebook)) {
+        $links[] = $facebook;
+      }
     }
 
     $content = cellular_build_links($links, $media_block);

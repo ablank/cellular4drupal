@@ -15,8 +15,7 @@ function cellular_build_head_tags($array) {
         '#type' => 'html_tag',
         '#tag' => $val['tag'],
         '#attributes' => array(),
-        '#weight' => isset($val['weight']) ?
-          $val['weight'] : 0,
+        '#weight' => isset($val['weight']) ? $val['weight'] : 0,
       );
       // Misc. attr/val:
       isset($val['attr']) && isset($val['attr_val']) ?
@@ -89,7 +88,7 @@ function cellular_error_page(&$vars) {
         dpm($element);
       }
       else {
-        drupal_set_message('<pre>'. print_r($element, TRUE) .'</pre>');
+        drupal_set_message('<pre>' . print_r($element, TRUE) . '</pre>');
       }
     }
   }

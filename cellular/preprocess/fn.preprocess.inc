@@ -140,7 +140,7 @@ function cellular_favicons() {
   );
 
   foreach ($favicons as &$favicon) {
-    if(isset($favicon)){
+    if(isset($favicon)) {
 // Set tag type to <link>
     $favicon['tag'] = 'link';
 // Set href relative to /assets/favicons/
@@ -187,7 +187,7 @@ function cellular_metatags(&$vars) {
       'rel' => 'profile',
       'href' => $vars['grddl_profile'],
       'weight' => 4,
-      ) : NULL,
+    ) : NULL,
   );
 
   cellular_build_head_tags($meta_tags);
@@ -293,7 +293,7 @@ function cellular_set_author(&$vars) {
   $author = array(
     'name' => l($node->name, 'user/' . $node->uid),
     'description' => isset($author->field_description[$safe_value]) ?
-      '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
+    '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
     'image' => !empty($uid->picture->uri) ? theme('image_style', array(
         // 'style_name' => 'blog-author-image',
         'path' => $node->picture->uri,

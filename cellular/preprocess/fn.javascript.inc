@@ -49,7 +49,7 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     'weight' => $script['weight'] + 0.1,
     'type' => 'inline',
     'every_page' => isset($script['every_page']) ?
-      $script['every_page'] : TRUE,
+    $script['every_page'] : TRUE,
   );
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
