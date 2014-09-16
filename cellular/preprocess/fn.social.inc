@@ -23,7 +23,7 @@ function cellular_build_links(array $links, array $parent) {
             'class' => array(
               $parent['link_class'],
               $link['class'],
-        ))));
+            ))));
       }
     }
 
@@ -44,7 +44,7 @@ function cellular_build_links(array $links, array $parent) {
  */
 function cellular_sm_settings($type) {
   switch ($type) {
-    case 'follow' :
+    case 'follow':
       $output = array(
         'title' => theme_get_setting('sm_follow_title'),
         'fb' => theme_get_setting('follow_facebook'),
@@ -54,7 +54,8 @@ function cellular_sm_settings($type) {
         'github' => theme_get_setting('follow_github'),
       );
       break;
-    case 'share' :
+
+    case 'share':
       $output = array(
         'title' => theme_get_setting('sm_share_title'),
         'fb' => theme_get_setting('share_facebook'),
@@ -75,7 +76,7 @@ function cellular_sm_settings($type) {
  */
 function cellular_sm_urls($type) {
   switch ($type) {
-    case 'follow' :
+    case 'follow':
       $output = array(
         'fb' => theme_get_setting('follow_facebook_url'),
         'google' => theme_get_setting('follow_google_plus_url'),
@@ -84,7 +85,8 @@ function cellular_sm_urls($type) {
         'github' => theme_get_setting('follow_github_url'),
       );
       break;
-    case 'share' :
+
+    case 'share':
       $output = array(
         'fb' => theme_get_setting('share_facebook_url'),
         'google' => theme_get_setting('share_google_plus_url'),

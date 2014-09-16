@@ -9,8 +9,8 @@
  * Cellular hook_js_alter().
  */
 function cellular_js_alter(&$javascript) {
-// Pass a variable from drupal to js:
-// drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
+  // Pass a variable from drupal to js:
+  // drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
   /* myVar will be available in Javascript as:
     <script>
     if (Drupal.settings.myVar.key == value){
@@ -19,7 +19,7 @@ function cellular_js_alter(&$javascript) {
     </script>
    */
 
-// Scripts to add, relative to /yourTheme/js/
+  // Scripts to add, relative to /yourTheme/js/
   $scripts = array(
     'script' => array(
       'file' => 'script.js',
@@ -28,12 +28,12 @@ function cellular_js_alter(&$javascript) {
   );
   cellular_add_js($scripts);
 
-// Add Modernizr & query based on theme settings.
+  // Add Modernizr & query based on theme settings.
   if (theme_get_setting('modernizr') == 1) {
     cellular_modernizr();
   }
 
-// Update jQuery & jQueryUI.
+  // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     $jquery = cellular_jquery_info();
     $js_plugins = cellular_plugins_js();
@@ -49,7 +49,7 @@ function cellular_js_alter(&$javascript) {
     }
   }
 
-// Add js after override.
+  // Add js after override.
   cellular_add_js($js_plugins, TRUE);
 
   // Dev.
