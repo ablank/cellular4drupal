@@ -66,12 +66,10 @@ function cellular_body_attributes(&$vars) {
     $body_attributes['class'][] = $alias;
   }
 
-// Sidebar class is generated if region is used on page.
+  // Sidebar class is generated if region is used on page.
   $body_attributes['class'][] = cellular_test_sidebar($vars);
-  drupal_is_front_page() ?
-      $body_attributes['class'][] = 'frontpage' : NULL;
-  user_is_logged_in() ?
-      $body_attributes['class'][] = 'user' : NULL;
+  drupal_is_front_page() ? $body_attributes['class'][] = 'frontpage' : NULL;
+  user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
 }
@@ -141,10 +139,10 @@ function cellular_favicons() {
 
   foreach ($favicons as &$favicon) {
     if(isset($favicon)) {
-// Set tag type to <link>
-    $favicon['tag'] = 'link';
-// Set href relative to /assets/favicons/
-    $favicon['href'] = path_to_theme() . '/assets/favicons/' . $favicon['href'];
+      // Set tag type to <link>
+      $favicon['tag'] = 'link';
+      // Set href relative to /assets/favicons/
+      $favicon['href'] = path_to_theme() . '/assets/favicons/' . $favicon['href'];
     }
   }
 
