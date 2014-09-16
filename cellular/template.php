@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Set global vars & load all functions for templates.
+ * Load all functions for templates & set theme constants.
  */
 
 $inc_path = drupal_get_path('theme', 'cellular') . '/preprocess';

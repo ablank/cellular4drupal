@@ -1,6 +1,8 @@
 /**
  * @file
  * Configure grunt compass.
+ *
+ * OutputStyle: expanded | nested | compact | compressed
  */
 
 module.exports = {
@@ -10,7 +12,7 @@ module.exports = {
       noLineComments: false,
       // clean: false,
       environment: 'development',
-      outputStyle: 'expanded' // | nested | compact | compressed
+      outputStyle: 'expanded' 
     }
   },
   prod: {
