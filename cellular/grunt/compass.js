@@ -10,18 +10,17 @@ module.exports = {
     options: {
       config: 'config/compass.rb',
       noLineComments: false,
-      // clean: false,
+        trace: true,
       environment: 'development',
-      outputStyle: 'expanded' 
+      outputStyle: 'expanded'
     }
   },
   prod: {
     options: {
       config: 'config/compass.rb',
       noLineComments: true,
-      // clean: true,
-      environment: 'production',
-      outputStyle: 'compressed'
+        trace: true,
+      outputStyle: 'expanded'
     }
   }
 };
