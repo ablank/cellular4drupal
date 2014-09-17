@@ -71,7 +71,6 @@ function cellular_body_attributes(&$vars) {
   user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
-  dsm($vars);
 }
 
 /**
