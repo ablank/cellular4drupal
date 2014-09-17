@@ -23,7 +23,7 @@ function cellular_build_links(array $links, array $parent) {
             'class' => array(
               $parent['link_class'],
               $link['class'],
-        ))));
+            ))));
       }
     }
 
