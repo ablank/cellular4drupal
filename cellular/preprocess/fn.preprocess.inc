@@ -4,6 +4,14 @@
  * Cellular functions to set content attributes.
  */
 
+
+/**
+ * Add HTTP Headers.
+ */
+function cellular_http_headers() {
+  drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
+}
+
 /**
  * Set html attributes.
  */
@@ -16,7 +24,7 @@ function cellular_html_attributes(&$vars) {
   );
   // Check support for RDF & add DOCTYPE:
   if (module_exists('rdf')) {
-    // Set RDFa namespace.
+    // Set namespace.
     $html_attributes['xmlns'] = 'http://www.w3.org/1999/xhtml';
   }
 
@@ -152,13 +160,6 @@ function cellular_metatags(&$vars) {
       'name' => 'viewport',
       'content' => 'width=device-width, initial-scale=1',
       'weight' => 0,
-    ),
-    'ie_render_engine' => array(
-      'tag' => 'meta',
-      'attr' => 'http-equiv',
-      'attr_val' => 'X-UA-Compatible',
-      'content' => 'IE=Edge,chrome=1',
-      'weight' => 1,
     ),
     'robots' => array(
       'tag' => 'meta',

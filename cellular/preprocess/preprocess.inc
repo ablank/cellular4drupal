@@ -8,6 +8,7 @@
  * Cellular template_preprocess_html().
  */
 function cellular_preprocess_html(&$vars) {
+  cellular_http_headers();
   cellular_html_attributes($vars);
   cellular_rdf($vars);
   cellular_metatags($vars);
