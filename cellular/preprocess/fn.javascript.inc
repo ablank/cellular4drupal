@@ -97,10 +97,10 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
  */
 function cellular_modernizr() {
   global $base_url;
-// Get full path to css directory.
-// $base_url needs to be added to reference the correct path.
+  // Get full path to css directory.
+  // $base_url needs to be added to reference the correct path.
   $dir_css = $base_url . '/' . path_to_theme() . '/css/';
-// Build yepnope query based on theme settings.
+  // Build yepnope query based on theme settings.
   $mq = array();
   $mq['mobile'] = theme_get_setting('mq_mobile');
   $mq['normal'] = theme_get_setting('mq_normal');
@@ -152,7 +152,7 @@ function cellular_modernizr() {
  * Add javascript plugins using the cellular libraary.
  */
 function cellular_plugins_js() {
-// Scripts to add, relative to /libraries/cellular/js/
+  // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array(
     'modernizr' => theme_get_setting('modernizr') == 1 ? array(
       'group' => JS_LIBRARY,

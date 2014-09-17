@@ -30,11 +30,11 @@ function subcellular_css_alter(&$css) {
   /* Remove stylesheets set by modules.
    * @params $key : Module name.
    * @params $value : Path relative to each module's directory.
-   * 
-   * 
+   *
+   *
    * Remove a single stylesheet set by a module:
     'stupidModule' => 'path/to/stupid.css'
-   * 
+   *
    * Remove multiple stylesheets set by a module:
     'stupidModule' => array(
     'path/to/stupid.css',

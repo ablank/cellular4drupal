@@ -55,9 +55,8 @@ function cellular_rdf(&$vars) {
  */
 function cellular_body_attributes(&$vars) {
   $body_attributes = array();
-  $path = drupal_get_path_alias($_GET['q']);
+  $path = drupal_get_path_alias();
   $aliases = explode('/', $path);
-
   $body_attributes['id'] = str_replace(' ', '-', $vars['head_title']);
   // Add URL alias based body classes.
   // i.e. http://host.com/content/widget
@@ -132,7 +131,7 @@ function cellular_favicons() {
   );
 
   foreach ($favicons as &$favicon) {
-    if(isset($favicon)) {
+    if (isset($favicon)) {
       // Set tag type to <link>
       $favicon['tag'] = 'link';
       // Set href relative to /assets/favicons/
@@ -232,8 +231,8 @@ function cellular_remove_default_css(&$css) {
   if (theme_get_setting('remove_drupal_css') === 'theme_only') {
     foreach ($css as $key => $value) {
       if ($value['group'] !== CSS_THEME
-        // Keep admin stuff.
-        && ($key !== 'admin_menu' || $key !== 'toolbar')
+      // Keep admin stuff.
+      && ($key !== 'admin_menu' || $key !== 'toolbar')
       ) {
         $exclude[$key] = FALSE;
       }
@@ -287,14 +286,14 @@ function cellular_set_author(&$vars) {
     'description' => isset($author->field_description[$safe_value]) ?
     '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
     'image' => !empty($uid->picture->uri) ? theme('image_style', array(
-        // 'style_name' => 'blog-author-image',
-        'path' => $node->picture->uri,
-        'width' => NULL,
-        'height' => NULL,
-        'alt' => t('User') . ' ' . $node->name,
-        'title' => t('User') . ' ' . $node->name,
-        'attributes' => array('class' => 'author-image'),
-      )) : NULL,
+      // 'style_name' => 'blog-author-image',
+      'path' => $node->picture->uri,
+      'width' => NULL,
+      'height' => NULL,
+      'alt' => t('User') . ' ' . $node->name,
+      'title' => t('User') . ' ' . $node->name,
+      'attributes' => array('class' => 'author-image'),
+    )) : NULL,
   );
 
   $vars['author'] = $author['image'] . $author['name'] . $author['description'];

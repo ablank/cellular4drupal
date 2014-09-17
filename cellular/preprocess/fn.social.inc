@@ -23,7 +23,7 @@ function cellular_build_links(array $links, array $parent) {
             'class' => array(
               $parent['link_class'],
               $link['class'],
-            ))));
+        ))));
       }
     }
 
@@ -206,7 +206,7 @@ function cellular_social_media_share() {
         'class' => 'reddit',
       ) : NULL,
     );
-    if($set['fb'] == 1) {
+    if ($set['fb'] == 1) {
       // Set variables to appease PAReview.
       $fbscript = '(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
