@@ -160,8 +160,7 @@ function cellular_jqueryui_js(&$javascript) {
           'version' => $jq['ui']['version'],
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
-          'weight' => isset($javascript[$default]['weight']) ?
-          $javascript[$default]['weight'] : -9,
+          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -9,
           'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
         ),

@@ -26,6 +26,6 @@ function cellular_form_system_theme_settings_alter(&$form, $form_state) {
   );
 
   foreach ($pages as $page) {
-    require_once($ipath . $page);
+    require_once $ipath . $page;
   }
 }

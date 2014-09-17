@@ -26,7 +26,7 @@ function cellular_preprocess_node(&$vars) {
 
   // Customize articles & blog posts:
   if ($node->type == 'article' || 'blog') {
-  // Get $author info:
+    // Get $author info:
     cellular_set_author($vars);
   }
 }
