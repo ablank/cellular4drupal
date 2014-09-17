@@ -89,7 +89,6 @@
       if ($site_name) :
         print "<h2>" . $site_name . "</h2>";
       endif;
-
       ?>
     </div>
     <?php if (isset($main_menu)) : ?>
@@ -154,7 +153,7 @@
   </div>
   <!-- /#footer -->
 
-  <?php if ($page['footer_bottom'] || $copyright) : ?>
+  <?php if ($page['footer_bottom'] || $page['copyright']) : ?>
     <div id="footer-bottom" class="cell">
       <?php
       if ($page['footer_bottom']) :

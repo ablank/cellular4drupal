@@ -24,96 +24,167 @@
     <?php print $scripts; ?>
   </head>
   <body class="<?php print $classes; ?>">
-    <div id="page">
+    <div id="page-wrap">
+
+      <div id="skipLinks" class="hidden">
+        <a href="#content"><?php print t('Skip to main content'); ?></a>
+        <a href="#nav"><?php print t('Skip to navigation'); ?></a>
+      </div>
+
+      <?php if ($page['header_top']) : ?>
+        <div id="header-top">
+          <?php print render($page['header_top']); ?>
+        </div>
+      <?php endif; ?>
+
       <div id="header">
-        <div id="logo-title">
 
-          <?php if (!empty($logo)): ?>
-            <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>"
-               rel="home" id="logo">
-              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
-            </a>
-          <?php endif; ?>
-
-          <div id="name-and-slogan">
-            <?php if (!empty($site_name)): ?>
-              <h1 id="site-name">
-                <a href="<?php print $base_path ?>"
-                   title="<?php print t('Home'); ?>"
-                   rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
-            <?php endif; ?>
-
-            <?php if (!empty($site_slogan)): ?>
-              <div id="site-slogan"><?php print $site_slogan; ?></div>
-            <?php endif; ?>
-          </div>
-          <!-- /name-and-slogan -->
-        </div>
-        <!-- /logo-title -->
-
-        <?php if (!empty($header)): ?>
-          <div id="header-region">
-            <?php print $header; ?>
-          </div>
-        <?php endif; ?>
-
-      </div>
-      <!-- /header -->
-
-      <div id="container" class="clearfix">
-
-        <?php if (!empty($sidebar_first)): ?>
-          <div id="sidebar-first" class="column sidebar">
-            <?php print $sidebar_first; ?>
-          </div> <!-- /sidebar-first -->
-        <?php endif; ?>
-
-        <div id="main" class="column">
-          <div id="main-squeeze">
-
-            <div id="content">
-              <?php if (!empty($title)): ?><h1 class="title"
-                    id="page-title"><?php print $title; ?></h1><?php endif; ?>
-                  <?php
-                  if (!empty($messages)): print $messages;
-                  endif;
-
-                  ?>
-              <div id="content-content" class="clearfix">
-                <?php print $content; ?>
-              </div>
-              <!-- /content-content -->
-            </div>
-            <!-- /content -->
-
-          </div>
-        </div>
-        <!-- /main-squeeze /main -->
-
-        <?php if (!empty($sidebar_second)): ?>
-          <div id="sidebar-second" class="column sidebar">
-            <?php print $sidebar_second; ?>
-          </div> <!-- /sidebar-second -->
-        <?php endif; ?>
-
-      </div>
-      <!-- /container -->
-
-      <div id="footer-wrapper">
-        <div id="footer">
+        <div id="logo">
           <?php
-          if (!empty($footer)): print $footer;
+          if (!empty($site_name)) :
+            print "<h2>" . $site_name . "</h2>";
           endif;
 
           ?>
         </div>
-        <!-- /footer -->
+
+          <?php if (isset($main_menu)) : ?>
+          <div id="nav">
+          <?php print render($main_menu); ?>
+          </div>
+        <?php endif; ?>
+
+<?php print render($page['header']); ?>
+
       </div>
-      <!-- /footer-wrapper -->
+      <!-- /#header -->
 
+        <?php if ($page['header_bottom']) : ?>
+        <div id="header-bottom">
+        <?php print render($page['header_bottom']); ?>
+        </div>
+<?php endif; ?>
+
+      <div id="app">
+
+        <?php
+        print render($title_prefix);
+        if ($title) :
+          print '<h1 id="page-title">' . $title . '</h1>';
+        endif;
+        print render($title_suffix);
+
+        ?>
+
+        <?php if (!empty($tabs)): ?>
+          <div id="page-tabs">
+  <?php print render($tabs); ?>
+          </div>
+<?php endif; ?>
+
+        <div id="content-position">
+          <div id="content-wrap" class="cell">
+
+            <?php
+            if ($action_links) :
+              print '<ul class="links">' . render($action_links) . '</ul>';
+            endif;
+
+            if ($page['console'] || ($show_messages && $messages)) :
+
+              ?>
+              <div id="console">
+              <?php
+              print render($page['console']);
+              if ($show_messages && $messages) :
+                print $messages;
+              endif;
+
+              ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if ($page['sidebar_left']) : ?>
+              <div id="sidebar-left" class="<?php print $page['sidebar_class']; ?>">
+                <?php print render($page['sidebar_left']); ?>
+              </div>
+
+              <!-- /#sidebar-left -->
+<?php endif; ?>
+
+              <?php if ($page['content_top']) : ?>
+              <div id="content-top" class="cell">
+                <?php print render($page['content_top']); ?>
+              </div>
+              <?php endif; ?>
+
+            <div id="content" class="<?php print $page['content_class']; ?>">
+
+              <?php
+              // Breadcrumb Navigation.
+              if (theme_get_setting('breadcrumb_display' && !$is_front)) :
+                print $breadcrumb;
+              endif;
+
+              ?>
+
+              <?php
+              // Main Page Content.
+              print render($page['content']);
+
+              ?>
+
+              <?php if ($page['content_bottom']) : ?>
+                <div id="content-bottom" class="cell">
+  <?php print render($page['content_bottom']); ?>
+                </div>
+            <?php endif; ?>
+
+            </div>
+            <!-- /#content -->
+
+<?php if ($page['sidebar_right']) : ?>
+              <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
+  <?php print render($page['sidebar_right']); ?>
+              </div>
+              <!-- /#sidebar-right -->
+      <?php endif; ?>
+
+          </div>
+          <!-- /#content-wrap-->
+        </div>
+        <!-- /#content-position -->
+      </div>
+      <!-- /#app-->
+
+      <div id="footer" class="cell">
+
+          <?php if ($page['footer_top']) : ?>
+          <div id="footer-top" class="cell">
+            <?php print render($page['footer_top']); ?>
+          </div>
+          <?php endif; ?>
+
+          <?php
+          if ($page['footer']) :
+            print render($page['footer']);
+          endif;
+
+          ?>
+
+        <div id="footer-bottom" class="cell">
+<?php if ($page['footer_bottom']) : ?>
+  <?php print render($page['footer_bottom']); ?>
+<?php endif; ?>
+
+<?php if ($page['copyright']): ?>
+            <p id="copyright"><?php print $page['copyright']; ?></p>
+<?php endif; ?>
+        </div>
+        <!-- /#footer-bottom -->
+      </div>
+      <!-- /#footer -->
     </div>
-    <!-- /page -->
-
+    <!-- /#page-wrap-->
   </body>
 </html>

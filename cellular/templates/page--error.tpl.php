@@ -89,7 +89,6 @@
       if ($site_name) :
         print "<h2>" . $site_name . "</h2>";
       endif;
-
       ?>
     </div>
     <?php if (isset($main_menu)) : ?>

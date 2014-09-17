@@ -57,7 +57,7 @@ function cellular_body_attributes(&$vars) {
   $body_attributes = array();
   $path = drupal_get_path_alias();
   $aliases = explode('/', $path);
-  $body_attributes['id'] = str_replace(' ', '-', $vars['head_title']);
+  $body_attributes['id'] = str_replace(' ', '-', strtolower(drupal_get_title()));
   // Add URL alias based body classes.
   // i.e. http://host.com/content/widget
   // = <body class="content widget">
@@ -71,6 +71,7 @@ function cellular_body_attributes(&$vars) {
   user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
+  dsm($vars);
 }
 
 /**
