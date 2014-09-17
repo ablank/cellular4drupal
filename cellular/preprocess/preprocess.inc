@@ -24,9 +24,9 @@ function cellular_preprocess_node(&$vars) {
   $vars['title_attributes_array']['class'] = array('node-title');
   $vars['content_attributes_array']['class'] = array('node-content');
 
-// Customize articles & blog posts:
+  // Customize articles & blog posts:
   if ($node->type == 'article' || 'blog') {
-// Get $author info:
+  // Get $author info:
     cellular_set_author($vars);
   }
 }
@@ -51,8 +51,7 @@ function cellular_preprocess_page(&$vars) {
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ?
-    "&copy; " . date("Y") . " " . $copyright : NULL;
+  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " " . $copyright : NULL;
 
   // Set classes for content & sidebars.
   cellular_sidebar_classes($vars);

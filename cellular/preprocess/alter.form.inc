@@ -37,7 +37,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       break;
 
-// User Login block:
+    // User Login block:
     case 'user_login_block':
       $field_size = 20;
       $orient = theme_get_setting('login_block_orientation');

@@ -74,7 +74,7 @@ function cellular_cdn() {
  */
 function cellular_jquery_update(&$javascript, $js_plugins) {
   $jq = cellular_jquery_info();
-// Override jQuery.
+  // Override jQuery.
   $jquery = array(
     'default' => 'misc/jquery.js',
     'object' => 'jQuery',
@@ -93,7 +93,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 
   cellular_js_override($javascript, $jquery, TRUE);
 
-// Override jQuery.once.
+  // Override jQuery.once.
   $jqueryonce = array(
     'default' => 'misc/jquery.once.js',
     'version' => '1.2.6',
@@ -102,7 +102,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 
   cellular_js_override($javascript, $jqueryonce, TRUE);
 
-// Override jQuery.form.
+  // Override jQuery.form.
   $jqueryform = array(
     'default' => 'misc/jquery.form.js',
     'version' => '3.48',

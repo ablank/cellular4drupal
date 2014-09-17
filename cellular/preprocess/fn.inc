@@ -19,23 +19,23 @@ function cellular_build_head_tags($array) {
       );
       // Misc. attr/val:
       isset($val['attr']) && isset($val['attr_val']) ?
-          $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
+      $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
       isset($val['profile']) ?
-          $tag['#attributes']['profile'] = $val['profile'] : NULL;
+      $tag['#attributes']['profile'] = $val['profile'] : NULL;
       // General attributes:
       isset($val['name']) ?
-          $tag['#attributes']['name'] = $val['name'] : NULL;
+      $tag['#attributes']['name'] = $val['name'] : NULL;
       isset($val['rel']) ?
-          $tag['#attributes']['rel'] = $val['rel'] : NULL;
+      $tag['#attributes']['rel'] = $val['rel'] : NULL;
       isset($val['content']) ?
-          $tag['#attributes']['content'] = $val['content'] : NULL;
+      $tag['#attributes']['content'] = $val['content'] : NULL;
       isset($val['href']) ?
-          $tag['#attributes']['href'] = $val['href'] : NULL;
+      $tag['#attributes']['href'] = $val['href'] : NULL;
       // Attributes for favicons:
       isset($val['size']) ?
-          $tag['#attributes']['sizes'] = $val['size'] : NULL;
+      $tag['#attributes']['sizes'] = $val['size'] : NULL;
       isset($val['type']) ?
-          $tag['#attributes']['type'] = $val['type'] : NULL;
+      $tag['#attributes']['type'] = $val['type'] : NULL;
 
       drupal_add_html_head($tag, 'meta_' . $meta);
     }
@@ -46,7 +46,7 @@ function cellular_build_head_tags($array) {
  * Set path to page-error.tpl if http error is returned.
  */
 function cellular_error_page(&$vars) {
-// Set custom error template:
+  // Set custom error template:
   $http_status = drupal_get_http_header("status");
 
   if (isset($http_status)) {
@@ -64,31 +64,31 @@ function cellular_error_page(&$vars) {
   }
 }
 
-  /**
-   * Removes text formatting options from user input.
-   */
-  function cellular_form_strip_access(&$form) {
-    // Remove individual text format options:
-    // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
-    // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
-    // $form[LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
-    // $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
-    // Or Nuke text format options:
-    $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
+/**
+ * Removes text formatting options from user input.
+ */
+function cellular_form_strip_access(&$form) {
+  // Remove individual text format options:
+  // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
+  // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
+  // $form[LANGUAGE_NONE][0]['format']['help']['#access'] = FALSE;
+  // $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
+  // Or Nuke text format options:
+  $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
 
-    return $form;
-  }
+  return $form;
+}
 
-  /**
-   * Print variables.
-   */
-  function cellular_dev($element) {
-    if (theme_get_setting('dev') == 1) {
-      if (module_exists('devel')) {
-        dpm($element);
-      }
-      else {
-        drupal_set_message('<pre>' . print_r($element, TRUE) . '</pre>');
-      }
+/**
+ * Print variables.
+ */
+function cellular_dev($element) {
+  if (theme_get_setting('dev') == 1) {
+    if (module_exists('devel')) {
+      dpm($element);
+    }
+    else {
+      drupal_set_message('<pre>' . print_r($element, TRUE) . '</pre>');
     }
   }
+}

@@ -88,16 +88,14 @@ function cellular_favicons() {
   );
 
   $favicons = array(
-    'favicon-16x16' => !empty($settings['favicon']) ?
-    array(
+    'favicon-16x16' => !empty($settings['favicon']) ? array(
       'rel' => 'shortcut icon',
       'type' => 'image/x-icon',
       'size' => NULL,
       'href' => $settings['favicon'],
       'weight' => 95,
     ) : NULL,
-    'favicon-32x32' => !empty($settings['favicon-32']) ?
-    array(
+    'favicon-32x32' => !empty($settings['favicon-32']) ? array(
       'rel' => 'shortcut icon',
       'type' => 'image/png',
       'size' => '32x32',
@@ -107,29 +105,25 @@ function cellular_favicons() {
     /* Older iOS devices don't understand the sizes attribute and use
      * whichever value is last, so 'default' is given more weight.
      */
-    'apple-default' => !empty($settings['apple-default']) ?
-    array(
+    'apple-default' => !empty($settings['apple-default']) ? array(
       'rel' => 'apple-touch-icon',
       'size' => NULL,
       'href' => $settings['apple-default'],
       'weight' => 100,
     ) : NULL,
-    'apple-72x72' => !empty($settings['apple-72']) ?
-    array(
+    'apple-72x72' => !empty($settings['apple-72']) ? array(
       'rel' => 'apple-touch-icon',
       'size' => '72x72',
       'href' => $settings['apple-72'],
       'weight' => 99,
     ) : NULL,
-    'apple-114x114' => !empty($settings['apple-114']) ?
-    array(
+    'apple-114x114' => !empty($settings['apple-114']) ? array(
       'rel' => 'apple-touch-icon',
       'size' => '114x114',
       'href' => $settings['apple-114'],
       'weight' => 98,
     ) : NULL,
-    'apple-144x144' => !empty($settings['apple-144']) ?
-    array(
+    'apple-144x144' => !empty($settings['apple-144']) ? array(
       'rel' => 'apple-touch-icon',
       'size' => '144x144',
       'href' => $settings['apple-144'],

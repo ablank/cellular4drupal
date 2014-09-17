@@ -9,7 +9,7 @@
  */
 function cellular_field(&$vars) {
   $content = '';
-// Render the label, if it's not hidden.
+  // Render the label, if it's not hidden.
   if (!$vars['label_hidden']) {
     $content .= "<h5 class=\"field-label\"" . $vars['title_attributes'] . ">";
     $content .= $vars['label'] . '</h5>';

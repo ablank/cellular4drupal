@@ -9,7 +9,7 @@
  * Cellular hook_css_alter().
  */
 function cellular_css_alter(&$css) {
-// Add stylesheets to theme.
+  // Add stylesheets to theme.
   $add_css = array(
   // Paths are relative to /yourTheme/css/
     'drupal' => array(

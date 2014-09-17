@@ -10,24 +10,16 @@
 function cellular_form_element_attributes(&$element) {
   // $element['#theme_wrappers'] = NULL;
   $attributes = array();
-  !empty($element['#name']) ?
-      $attributes['name'] = $element['#name'] : NULL;
+  !empty($element['#name']) ? $attributes['name'] = $element['#name'] : NULL;
   !empty($element['#id']) ?
       $attributes['id'] = $element['#id'] : NULL;
-  !empty($element['#attributes']['class']) ?
-      $attributes['class'] = implode(' ', $element['#attributes']['class']) : NULL;
-  !empty($element['#title']) ?
-      $attributes['title'] = $element['#title'] : NULL;
-  !empty($element['#required']) ?
-      $attributes['required'] = $element['#required'] : NULL;
-  !empty($element['#checked']) ?
-      $attributes['checked'] = 'checked' : NULL;
-  !empty($element['#value']) ?
-      $attributes['value'] = $element['#value'] : NULL;
-  !empty($element['#size']) ?
-      $attributes['size'] = $element['#size'] : NULL;
-  !empty($element['#maxlength']) ?
-      $attributes['maxlength'] = $element['#maxlength'] : NULL;
+  !empty($element['#attributes']['class']) ? $attributes['class'] = implode(' ', $element['#attributes']['class']) : NULL;
+  !empty($element['#title']) ? $attributes['title'] = $element['#title'] : NULL;
+  !empty($element['#required']) ? $attributes['required'] = $element['#required'] : NULL;
+  !empty($element['#checked']) ? $attributes['checked'] = 'checked' : NULL;
+  !empty($element['#value']) ? $attributes['value'] = $element['#value'] : NULL;
+  !empty($element['#size']) ? $attributes['size'] = $element['#size'] : NULL;
+  !empty($element['#maxlength']) ? $attributes['maxlength'] = $element['#maxlength'] : NULL;
 
   return $attributes;
 }
@@ -57,13 +49,13 @@ function cellular_container(&$vars) {
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
   /* May decide to include later:
-  // $element['#theme_wrappers'] = NULL;
-  // $attributes['class'] = array();
-  // isset($element['#name']) ?
-  // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
-  // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
-  // : NULL;
-  // $element['#theme_wrappers'] = NULL;
+    // $element['#theme_wrappers'] = NULL;
+    // $attributes['class'] = array();
+    // isset($element['#name']) ?
+    // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
+    // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
+    // : NULL;
+    // $element['#theme_wrappers'] = NULL;
    */
   isset($element['#disabled']) ?
       $element['#attributes']['class'][] = 'disabled' : NULL;

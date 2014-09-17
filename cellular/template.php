@@ -25,7 +25,7 @@ $include = array(
 );
 
 foreach ($include as $i) {
-  require_once($inc_path . '/' . $i);
+  require_once $inc_path . '/' . $i;
 }
 
 define('CELLULAR_LIB', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');
