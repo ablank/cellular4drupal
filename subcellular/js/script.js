@@ -7,27 +7,20 @@
 
   Drupal.behaviors.theme = {
     attach: function(context, settings) {
-      // Call cellular UI functions:
-      $('.jAccordion').jAccordion({
-      });
-      $('.jBlocklink').jBlocklink({
-      });
-      $('.jTabs').jTabs({
-        // "orient": "vertical"
-      });
-      $('form').jFormal();
-      $('#nav').jMmenu();
-      $('.jScrolli').jScrolli();
-
-      /* // Functions under development:
-       // $('#nav').jStickyheader();
-       // $('.jParallax').jParallax();
-       // $('.jScrolltrigger').jScrolltrigger();
-       // $('.jCarousel').jCarousel();
-       // $('.jEqualheight').jEqualheight();
-       // $('.jToggle').jToggle();
-       // $('.jSticky').jSticky();
+      /*
+       // Call cellular UI functions:
+       $('.jAccordion').jAccordion({
+       });
+       $('.jBlocklink').jBlocklink({
+       });
+       $('.jTabs').jTabs({
+       // "orient": "vertical"
+       });
+       $('form').jFormal();
+       $('#nav').jMmenu();
+       $('.jScrolli').jScrolli();
        */
+      
       /*
        // Call Masonry:
        $('.block-content').masonry({
