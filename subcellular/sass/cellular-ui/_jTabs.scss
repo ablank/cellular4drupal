@@ -22,17 +22,17 @@
       .title {
         float: left;
         padding: .4em .6em;
-        border: $border_color 1px solid;
+        border: $grey 1px solid;
       }
 
       &.active {
-        background-c4olor: $title_color;
+        background-c4olor: $white;
         color: $dark_grey;
 
         .title {
           color: $grey;
-          background: $title_color;
-          border-bottom-color: $title_color;
+          background: $white;
+          border-bottom-color: $white;
 
           a {
             color: $grey;

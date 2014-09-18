@@ -1,7 +1,7 @@
 /**
- * @file
- * Form styling
- */
+  * @file
+  * Form styling
+*/
 
 $input_size: 2em;
 
@@ -78,7 +78,7 @@ textarea {
   //display: block;
   font: 1em/1.6em $p_font;
   margin: 0 auto;
-  padding: $small;
+  padding:.4em;
   font-size: 100%;
   vertical-align: middle;
   color: $p_color;
@@ -104,11 +104,10 @@ input {
     width: 90%;
     border: $light_grey $border;
     color: $dark_grey;
-    background: darken($white, 3%);
-
+    background: darken($white, 2%);
+      
     &:focus {
       color: $p_color;
-      border-color: $p_color;
       background: $white;
     }
   }
@@ -118,43 +117,33 @@ input {
   }
 
   &[type=checkbox] {
+    + label {
+      &:before {
+        @include border-radius();
+      }
+    }
 
-    &:not(:checked),
     &:checked {
       + label {
-        &:before {
-          @include border-radius();
-        }
-      }
-
-      &:checked {
-        + label {
-          &:after {
-            font-size: 1.5em;
-            content: '\2714';
-          }
+        &:after {
+          background-image: url('../assets/icons/min/png/check.png');
+          background-image: url('../assets/icons/min/svg/check.svg');
         }
       }
     }
   }
   &[type=radio] {
+    + label {
+      &:before {
+        @include border-radius(50%);
+      }
+    }
 
-    &:not(:checked),
     &:checked {
       + label {
-        &:before {
-          @include border-radius(50%);
-        }
-      }
-
-      &:checked {
-        + label {
-          &:after {
-            font-size: 1em;
-            content: '\2B24';
-            top: -0.14em;
-            left: .3em;
-          }
+        &:after {
+          background-image: url('../assets/icons/min/png/radio.png');
+          background-image: url('../assets/icons/min/svg/radio.svg');
         }
       }
     }
@@ -212,7 +201,7 @@ input[type="submit"] {
   font-weight: bold;
   border: .2em solid;
   background-color: $white;
-  
+
   li {
     list-style: none;
   }

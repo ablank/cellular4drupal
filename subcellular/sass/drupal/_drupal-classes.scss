@@ -3,7 +3,7 @@
  * Styling DOM classes provided by drupal
  */
 
-// Declared here in case the core css is disabled
+// Declared here in case the core css is disabled.
 .element-invisible {
   position: absolute !important;
   left: -999em;
@@ -64,7 +64,7 @@ div.ctools-ajaxing {
   li {
     list-style: none;
     display: inline;
-    margin: 0 .4em;
+    margin: 0 .1em;
   }
 
   a {

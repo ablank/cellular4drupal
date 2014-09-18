@@ -1,25 +1,25 @@
 /**
- * @file
-// Cellular SASS mixins
-//    tread with caution
-//                      ^    ^
-//                     / \  //\
-//       |\___/|      /   \//  \
-//       /O  O  \__  /    //  | \
-//      /     /  \/_/    //   |  \
-//      @___@'    \/_   //    |   \
-//         |       \/_ //     |    \
-//         |        \///      |     \
-//        _|_ /   )  //       |      \
-//       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
-//       ,-{        _      `-.|.-~-.           .~         `.
-//        '/\      /                 ~-. _ .-~      .-~^-.  \
-//           `.   {            }                   /      \  \
-//         .----~-.\        \-'                 .~   `      \  `. \^-_
-//        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
-//          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
-//
-/////
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
 */
 
 @mixin prefix($name, $value) {
@@ -31,7 +31,7 @@
 @mixin clearfix() {
   zoom: 1;
   &:before,
-    &:after {
+  &:after {
     content: "";
     display: table;
   }
@@ -58,7 +58,7 @@
     p {
       color: darken($color, 70%);
     }
-  } @else {
+    } @else {
     color: lighten($color, 70%);
 
     h2,
@@ -105,7 +105,7 @@
       color: lighten($color, $adjust_large);
     }
 
-  } @else {
+    } @else {
     color: darken($color, 70%);
 
     p {
@@ -115,9 +115,9 @@
 }
 
 @mixin checkbox() {
-  // apply pseudo selectors so old browsers still work
+  // Apply pseudo selectors so old browsers still work
   &:not(:checked),
-    &:checked {
+  &:checked {
     position: absolute;
     left: -999em;
 
@@ -136,34 +136,28 @@
         width: 1.4em;
         height: 1.4em;
         vertical-align: middle;
-        background: $white;
+        background: darken($white, 2%);
         border: $light_grey $border;
-        @include border-radius();
-        @include box-shadow(inset 0 1px 2px $light_grey);
+        @include box-shadow(inset 0 0 1px 1px $light_grey);
       }
-    }
-
-    &:checked {
-
-      + label {
-        &:before {
-          border-color: $dark_grey;
-        }
-
-        &:after {
-          position: absolute;
-          left: .1em;
-          top: 0;
-          font-size: 1.4em;
-          color: $green;
-        }
+        
+      &:after{
+        content: '';
+        position: absolute;
+        top: .25em;
+        left: .25em;
+        width: 1em;
+        height: 1em;
+        background-position: center;
+        background-size: 1em;
+        background-repeat: no-repeat;
       }
     }
 
     &:focus {
       + label {
         &:before {
-          border: 1px dotted $blue;
+          border: 1px dotted $hilight;
         }
       }
     }
@@ -183,8 +177,8 @@
 
 @mixin textstroke($color: $white, $size: 1px) {
   text-shadow: -$size -$size 0 $color,
-    $size -$size 0 $color,
-    -$size $size 0 $color, $size $size 0 $color;
+  $size -$size 0 $color,
+  -$size $size 0 $color, $size $size 0 $color;
 }
 
 @mixin button() {
@@ -207,7 +201,7 @@
 
   &.active,
   &:active,
-    &:hover {
+  &:hover {
     background-color: darken($hilight, 20%);
     border-color: $hilight;
     text-decoration: none;
@@ -222,8 +216,8 @@
   }
 
   &:active,
-    &:hover,
-    &:focus {
+  &:hover,
+  &:focus {
     color: lighten($color, 15%);
   }
 }
@@ -321,7 +315,7 @@
   background-color: $color;
 
   &:before,
-    &:after {
+  &:after {
     content: " ";
     position: absolute;
     bottom: -$height;
