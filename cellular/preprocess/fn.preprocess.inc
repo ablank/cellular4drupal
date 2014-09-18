@@ -4,7 +4,6 @@
  * Cellular functions to set content attributes.
  */
 
-
 /**
  * Add HTTP Headers.
  */
