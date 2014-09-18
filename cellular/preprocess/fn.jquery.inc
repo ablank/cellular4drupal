@@ -93,6 +93,15 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 
   cellular_js_override($javascript, $jquery, TRUE);
 
+    // Override jQuery.cookie.
+  $jquerycookie = array(
+    'default' => 'misc/jquery.cookie.js',
+    'version' => '1.4.1',
+    'file' => 'plugins/jquery.cookie.min.js',
+  );
+
+  cellular_js_override($javascript, $jquerycookie, TRUE);
+
   // Override jQuery.once.
   $jqueryonce = array(
     'default' => 'misc/jquery.once.js',

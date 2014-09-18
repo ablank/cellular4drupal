@@ -12,10 +12,10 @@
 settings[copyright]     = AB Creative
 
 ;----------// Stylesheets
-; CSS is added in /inc/alter.css.inc to control granularity
+; CSS is added in /inc/alter.css.inc for more robust control.
 
 ;----------// Javascript
-; JS is added in /inc/alter.js.inc to control granularity
+; JS is added in /inc/alter.js.inc for more robust control.
 
 ;----------// Regions
 regions[header_top]         = Header Top

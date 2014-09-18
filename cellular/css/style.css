@@ -492,12 +492,12 @@ input[type=text]:focus, input[type=number]:focus, input[type=tel]:focus, input[t
   color: #111111;
   background: #fefefe;
 }
-/* line 120, ../sass/mixins/_cellularmixins.scss */
+/* line 120, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked), input[type=checkbox]:checked, input[type=radio]:not(:checked), input[type=radio]:checked {
   position: absolute;
   left: -999em;
 }
-/* line 124, ../sass/mixins/_cellularmixins.scss */
+/* line 124, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked) + label, input[type=checkbox]:checked + label, input[type=radio]:not(:checked) + label, input[type=radio]:checked + label {
   position: relative;
   cursor: pointer;
@@ -505,7 +505,7 @@ input[type=checkbox]:not(:checked) + label, input[type=checkbox]:checked + label
   padding: 0 0 0 2em;
   vertical-align: middle;
 }
-/* line 131, ../sass/mixins/_cellularmixins.scss */
+/* line 131, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked + label:before, input[type=radio]:not(:checked) + label:before, input[type=radio]:checked + label:before {
   content: '';
   position: absolute;
@@ -520,7 +520,7 @@ input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked 
   -moz-box-shadow: inset 0 0 1px 1px #bbbab7;
   box-shadow: inset 0 0 1px 1px #bbbab7;
 }
-/* line 144, ../sass/mixins/_cellularmixins.scss */
+/* line 144, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked + label:after, input[type=radio]:not(:checked) + label:after, input[type=radio]:checked + label:after {
   content: '';
   position: absolute;
@@ -532,15 +532,15 @@ input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked +
   background-size: 1em;
   background-repeat: no-repeat;
 }
-/* line 159, ../sass/mixins/_cellularmixins.scss */
+/* line 159, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):focus + label:before, input[type=checkbox]:checked:focus + label:before, input[type=radio]:not(:checked):focus + label:before, input[type=radio]:checked:focus + label:before {
   border: 1px dotted #29b4de;
 }
-/* line 166, ../sass/mixins/_cellularmixins.scss */
+/* line 166, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):disabled + label, input[type=checkbox]:checked:disabled + label, input[type=radio]:not(:checked):disabled + label, input[type=radio]:checked:disabled + label {
   color: #bbbab7;
 }
-/* line 169, ../sass/mixins/_cellularmixins.scss */
+/* line 169, ../sass/_mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):disabled + label:before, input[type=checkbox]:checked:disabled + label:before, input[type=radio]:not(:checked):disabled + label:before, input[type=radio]:checked:disabled + label:before {
   background: #bbbab7;
   color: #565450;
@@ -622,13 +622,13 @@ input[type="submit"] {
   -o-border-radius: 0.3em;
   border-radius: 0.3em;
 }
-/* line 198, ../sass/mixins/_cellularmixins.scss */
+/* line 198, ../sass/_mixins/_cellularmixins.scss */
 button:visited,
 input[type="button"]:visited,
 input[type="submit"]:visited {
   color: #fefefe;
 }
-/* line 204, ../sass/mixins/_cellularmixins.scss */
+/* line 204, ../sass/_mixins/_cellularmixins.scss */
 button.active, button:active, button:hover,
 input[type="button"].active,
 input[type="button"]:active,
@@ -735,13 +735,13 @@ a.colorbox {
   -moz-box-shadow: 0 0 0.2em 0.2em #bbbab7;
   box-shadow: 0 0 0.2em 0.2em #bbbab7;
 }
-/* line 54, ../sass/mixins/_cellularmixins.scss */
+/* line 54, ../sass/_mixins/_cellularmixins.scss */
 a.colorbox h2,
 a.colorbox h3,
 a.colorbox h4 {
   color: black;
 }
-/* line 58, ../sass/mixins/_cellularmixins.scss */
+/* line 58, ../sass/_mixins/_cellularmixins.scss */
 a.colorbox p {
   color: black;
 }
@@ -758,7 +758,84 @@ a:focus.colorbox {
  * @file
  * Cellular Grid
  */
-/* line 23, ../sass/base/_grid.scss */
+/* line 6, ../sass/base/_grid.scss */
+.cell {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-100 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-90 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-80 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-75 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-70 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-66 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-60 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-50 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-40 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-33 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-30 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-25 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-20 {
+  width: 100%;
+}
+
+/* line 17, ../sass/base/_grid.scss */
+.cell-10 {
+  width: 100%;
+}
+
+/*
 .cell,
 .cell-100,
 .cell-90,
@@ -777,89 +854,70 @@ a:focus.colorbox {
   position: relative;
   float: left;
   display: block;
-  margin: 0;
-  padding: 0;
+  margin: $cell_margin;
+  padding: $cell_padding;
   z-index: 1;
 }
 
-/* line 32, ../sass/base/_grid.scss */
-.cell {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-/* line 38, ../sass/base/_grid.scss */
+
 .cell-100 {
-  width: 100%;
+  width: 100% - $cell_space;
 }
 
-/* line 42, ../sass/base/_grid.scss */
 .cell-90 {
-  width: 90%;
+  width: 90% - $cell_space;
 }
 
-/* line 46, ../sass/base/_grid.scss */
 .cell-80 {
-  width: 80%;
+  width: 80% - $cell_space;
 }
 
-/* line 50, ../sass/base/_grid.scss */
 .cell-75 {
-  width: 75%;
+  width: 75% - $cell_space;
 }
 
-/* line 54, ../sass/base/_grid.scss */
 .cell-70 {
-  width: 70%;
+  width: 70% - $cell_space;
 }
 
-/* line 58, ../sass/base/_grid.scss */
 .cell-66 {
-  width: 66.666%;
+  width: 66.666% - $cell_space;
 }
 
-/* line 62, ../sass/base/_grid.scss */
 .cell-60 {
-  width: 60%;
+  width: 60% - $cell_space;
 }
 
-/* line 66, ../sass/base/_grid.scss */
 .cell-50 {
-  width: 50%;
+  width: 50% - $cell_space;
 }
 
-/* line 70, ../sass/base/_grid.scss */
 .cell-40 {
-  width: 40%;
+  width: 40% - $cell_space;
 }
 
-/* line 74, ../sass/base/_grid.scss */
 .cell-33 {
-  width: 33.33333%;
+  width: 33.33333% - $cell_space;
 }
 
-/* line 78, ../sass/base/_grid.scss */
 .cell-30 {
-  width: 30%;
+  width: 30% - $cell_space;
 }
 
-/* line 82, ../sass/base/_grid.scss */
 .cell-25 {
-  width: 25%;
+  width: 25% - $cell_space;
 }
 
-/* line 86, ../sass/base/_grid.scss */
 .cell-20 {
-  width: 20%;
+  width: 20% - $cell_space;
 }
 
-/* line 90, ../sass/base/_grid.scss */
 .cell-10 {
-  width: 10%;
+  width: 10% - $cell_space;
 }
-
-/* line 108, ../sass/base/_grid.scss */
+*/
+/* line 117, ../sass/base/_grid.scss */
 .cell.center,
 .cell-100.center,
 .cell-90.center,
@@ -880,7 +938,7 @@ a:focus.colorbox {
 }
 
 @media screen and (max-width: 650px) {
-  /* line 128, ../sass/base/_grid.scss */
+  /* line 137, ../sass/base/_grid.scss */
   .cell,
   .cell-100,
   .cell-90,
@@ -900,65 +958,65 @@ a:focus.colorbox {
     margin: 0;
   }
 
-  /* line 134, ../sass/base/_grid.scss */
+  /* line 143, ../sass/base/_grid.scss */
   .responsive.cell-33 {
     width: 25%;
   }
-  /* line 138, ../sass/base/_grid.scss */
+  /* line 147, ../sass/base/_grid.scss */
   .responsive.cell-25 {
     width: 50%;
   }
 }
-/* line 145, ../sass/base/_grid.scss */
+/* line 154, ../sass/base/_grid.scss */
 .hidden {
   position: absolute;
   left: -9999px;
 }
 
-/* line 150, ../sass/base/_grid.scss */
+/* line 159, ../sass/base/_grid.scss */
 .clearfix {
   zoom: 1;
 }
-/* line 34, ../sass/mixins/_cellularmixins.scss */
+/* line 34, ../sass/_mixins/_cellularmixins.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-/* line 39, ../sass/mixins/_cellularmixins.scss */
+/* line 39, ../sass/_mixins/_cellularmixins.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 154, ../sass/base/_grid.scss */
+/* line 163, ../sass/base/_grid.scss */
 hr.clearfix {
   visibility: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* line 161, ../sass/base/_grid.scss */
+/* line 170, ../sass/base/_grid.scss */
 .left,
 .right {
   display: block;
 }
 
-/* line 165, ../sass/base/_grid.scss */
+/* line 174, ../sass/base/_grid.scss */
 .left {
   float: left;
 }
 
-/* line 169, ../sass/base/_grid.scss */
+/* line 178, ../sass/base/_grid.scss */
 .right {
   float: right;
 }
 
-/* line 173, ../sass/base/_grid.scss */
+/* line 182, ../sass/base/_grid.scss */
 .center {
   margin: 0 auto;
   display: table;
 }
 
-/* line 178, ../sass/base/_grid.scss */
+/* line 187, ../sass/base/_grid.scss */
 .center div {
   display: table-cell;
 }
@@ -1069,19 +1127,19 @@ hr.clearfix {
   background-color: #111111;
   color: #fefefe;
 }
-/* line 318, ../sass/mixins/_cellularmixins.scss */
+/* line 318, ../sass/_mixins/_cellularmixins.scss */
 .ribbon:before, .ribbon:after {
   content: " ";
   position: absolute;
   bottom: -1em;
   border-top: black 1em solid;
 }
-/* line 325, ../sass/mixins/_cellularmixins.scss */
+/* line 325, ../sass/_mixins/_cellularmixins.scss */
 .ribbon:before {
   left: 0;
   border-left: 1.2em solid transparent;
 }
-/* line 330, ../sass/mixins/_cellularmixins.scss */
+/* line 330, ../sass/_mixins/_cellularmixins.scss */
 .ribbon:after {
   right: 0;
   border-right: 1.2em solid transparent;
@@ -1096,7 +1154,7 @@ hr.clearfix {
   border-bottom: black 1px solid;
   color: #fefefe;
 }
-/* line 343, ../sass/mixins/_cellularmixins.scss */
+/* line 343, ../sass/_mixins/_cellularmixins.scss */
 .popout:after {
   content: " ";
   position: absolute;
@@ -1162,7 +1220,7 @@ hr.clearfix {
 /* line 10, ../sass/style/_navigation.scss */
 #nav {
   float: right;
-  margin: 2em 5% 0 96px;
+  margin: 2em 5% 0 144px;
   padding: 0;
 }
 /* line 16, ../sass/style/_navigation.scss */
@@ -1600,7 +1658,7 @@ body {
   background-color: #fefefe;
 }
 
-/* line 36, ../sass/style/_content-regions.scss */
+/* line 35, ../sass/style/_content-regions.scss */
 #console,
 #header-top,
 #header,
@@ -1611,15 +1669,14 @@ body {
 #sidebar-left,
 #sidebar-right,
 #footer,
-#footer_left,
-#footer-right,
-#footer-middle {
+#footer-top,
+#footer-bottom {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 42, ../sass/style/_content-regions.scss */
+/* line 41, ../sass/style/_content-regions.scss */
 #header-top {
   z-index: 4;
   background: #111111;
@@ -1628,20 +1685,20 @@ body {
   text-align: right;
   zoom: 1;
 }
-/* line 34, ../sass/mixins/_cellularmixins.scss */
+/* line 34, ../sass/_mixins/_cellularmixins.scss */
 #header-top:before, #header-top:after {
   content: "";
   display: table;
 }
-/* line 39, ../sass/mixins/_cellularmixins.scss */
+/* line 39, ../sass/_mixins/_cellularmixins.scss */
 #header-top:after {
   clear: both;
 }
-/* line 52, ../sass/style/_content-regions.scss */
+/* line 51, ../sass/style/_content-regions.scss */
 #header-top div {
   display: inline;
 }
-/* line 58, ../sass/style/_content-regions.scss */
+/* line 57, ../sass/style/_content-regions.scss */
 #header-top h2,
 #header-top h3,
 #header-top h4 {
@@ -1650,7 +1707,7 @@ body {
   display: inline;
 }
 
-/* line 87, ../sass/style/_content-regions.scss */
+/* line 86, ../sass/style/_content-regions.scss */
 #header {
   z-index: 2;
   height: 96px;
@@ -1660,27 +1717,27 @@ body {
   box-shadow: 0 0 1em 0.1em #565450;
 }
 
-/* line 121, ../sass/style/_content-regions.scss */
+/* line 120, ../sass/style/_content-regions.scss */
 #header-bottom {
   height: 32px;
   color: #fefefe;
   border-bottom: #111111 thin solid;
 }
 
-/* line 155, ../sass/style/_content-regions.scss */
+/* line 154, ../sass/style/_content-regions.scss */
 #app {
   z-index: 1;
   overflow: visible;
 }
 
-/* line 160, ../sass/style/_content-regions.scss */
+/* line 159, ../sass/style/_content-regions.scss */
 #content-position {
   display: block;
   margin: 0 auto;
   max-width: 1200px;
 }
 
-/* line 205, ../sass/style/_content-regions.scss */
+/* line 204, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1690,44 +1747,44 @@ body {
   display: block;
 }
 
-/* line 211, ../sass/style/_content-regions.scss */
+/* line 210, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 242, ../sass/style/_content-regions.scss */
+/* line 241, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 245, ../sass/style/_content-regions.scss */
+/* line 244, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 251, ../sass/style/_content-regions.scss */
+/* line 250, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
-  background: #bbbab7;
+  background: #f1f1f1;
 }
 
-/* line 264, ../sass/style/_content-regions.scss */
+/* line 263, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #565450;
   color: #bbbab7;
 }
 
-/* line 297, ../sass/style/_content-regions.scss */
+/* line 296, ../sass/style/_content-regions.scss */
 #footer {
   background: #565450;
   color: #fefefe;
 }
-/* line 316, ../sass/style/_content-regions.scss */
+/* line 315, ../sass/style/_content-regions.scss */
 #footer p {
   color: #fefefe;
 }
 
-/* line 331, ../sass/style/_content-regions.scss */
+/* line 330, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #565450;
@@ -1735,7 +1792,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 365, ../sass/style/_content-regions.scss */
+/* line 364, ../sass/style/_content-regions.scss */
 #copyright {
   max-width: 100%;
   padding: 0.75em 1.4em 0.75em;
@@ -1743,7 +1800,7 @@ body {
   font-weight: bold;
 }
 
-/* line 373, ../sass/style/_content-regions.scss */
+/* line 372, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1753,14 +1810,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 381, ../sass/style/_content-regions.scss */
+/* line 380, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 389, ../sass/style/_content-regions.scss */
+/* line 388, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
@@ -1803,7 +1860,7 @@ body {
  * Provide svg background images for compliant browsers
  */
 /* line 7, ../sass/style/_svg.scss */
-.svg #logo > a {
+.svg #logo a {
   background-image: url(url("../assets/images/min/svg/logo.svg"));
 }
 /* line 12, ../sass/style/_svg.scss */

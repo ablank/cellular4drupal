@@ -162,12 +162,12 @@
   background-size: 2em;
   border: #565450 1px solid;
 }
-/* line 198, ../sass/mixins/_cellularmixins.scss */
+/* line 198, ../sass/_mixins/_cellularmixins.scss */
 #search-form input[type=submit]:visited,
 #site-search input[type=submit]:visited {
   color: #fefefe;
 }
-/* line 204, ../sass/mixins/_cellularmixins.scss */
+/* line 204, ../sass/_mixins/_cellularmixins.scss */
 #search-form input[type=submit].active, #search-form input[type=submit]:active, #search-form input[type=submit]:hover,
 #site-search input[type=submit].active,
 #site-search input[type=submit]:active,
@@ -201,11 +201,11 @@
   border-radius: 0.3em;
   padding: 0 1em;
 }
-/* line 198, ../sass/mixins/_cellularmixins.scss */
+/* line 198, ../sass/_mixins/_cellularmixins.scss */
 #block-system-navigation .menu a:visited {
   color: #fefefe;
 }
-/* line 204, ../sass/mixins/_cellularmixins.scss */
+/* line 204, ../sass/_mixins/_cellularmixins.scss */
 #block-system-navigation .menu a.active, #block-system-navigation .menu a:active, #block-system-navigation .menu a:hover {
   background-color: #16708b;
   border-color: #29b4de;
@@ -221,9 +221,9 @@
 }
 
 /**
- * @file
- * Styling DOM classes provided by drupal
- */
+  * @file
+  * Styling DOM classes provided by drupal
+*/
 /* line 7, ../sass/drupal/_drupal-classes.scss */
 .element-invisible {
   position: absolute !important;
@@ -314,4 +314,45 @@ div.ctools-ajaxing {
 /* line 82, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a:hover {
   background-color: #edeceb;
+}
+
+/* line 90, ../sass/drupal/_drupal-classes.scss */
+.node-readmore,
+.comment-add {
+  list-style: none;
+  display: inline-block;
+}
+/* line 94, ../sass/drupal/_drupal-classes.scss */
+.node-readmore a,
+.comment-add a {
+  cursor: pointer;
+  display: inline;
+  display: inline-block;
+  font-family: "Quicksand";
+  font-weight: bold;
+  line-height: auto;
+  padding: 0.75em 1em;
+  background-color: #29b4de;
+  width: auto;
+  color: #fefefe;
+  border: #16708b 0.2em solid;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+/* line 198, ../sass/_mixins/_cellularmixins.scss */
+.node-readmore a:visited,
+.comment-add a:visited {
+  color: #fefefe;
+}
+/* line 204, ../sass/_mixins/_cellularmixins.scss */
+.node-readmore a.active, .node-readmore a:active, .node-readmore a:hover,
+.comment-add a.active,
+.comment-add a:active,
+.comment-add a:hover {
+  background-color: #16708b;
+  border-color: #29b4de;
+  text-decoration: none;
 }

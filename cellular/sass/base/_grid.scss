@@ -3,9 +3,22 @@
  * Cellular Grid
  */
 
+.cell {
+  // Base cell, used as full-size container.
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 //////
 // Grid Cells
 /////
+@each $cell in $grid {
+  .cell-#{$cell} {
+    width: 100% - $cell_space;
+  }
+}
+/*
 .cell,
 .cell-100,
 .cell-90,
@@ -29,11 +42,7 @@
   z-index: 1;
 }
 
-.cell {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+
 
 .cell-100 {
   width: 100% - $cell_space;
@@ -90,7 +99,7 @@
 .cell-10 {
   width: 10% - $cell_space;
 }
-
+*/
 .cell.center,
 .cell-100.center,
 .cell-90.center,
