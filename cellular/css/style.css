@@ -755,87 +755,10 @@ a:focus.colorbox {
 }
 
 /**
- * @file
- * Cellular Grid
- */
-/* line 6, ../sass/base/_grid.scss */
-.cell {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-100 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-90 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-80 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-75 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-70 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-66 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-60 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-50 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-40 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-33 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-30 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-25 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-20 {
-  width: 100%;
-}
-
-/* line 17, ../sass/base/_grid.scss */
-.cell-10 {
-  width: 100%;
-}
-
-/*
+  * @file
+  * Cellular Grid
+*/
+/* line 23, ../sass/base/_grid.scss */
 .cell,
 .cell-100,
 .cell-90,
@@ -854,70 +777,11 @@ a:focus.colorbox {
   position: relative;
   float: left;
   display: block;
-  margin: $cell_margin;
-  padding: $cell_padding;
+  margin: 0;
+  padding: 0;
   z-index: 1;
 }
-
-
-
-.cell-100 {
-  width: 100% - $cell_space;
-}
-
-.cell-90 {
-  width: 90% - $cell_space;
-}
-
-.cell-80 {
-  width: 80% - $cell_space;
-}
-
-.cell-75 {
-  width: 75% - $cell_space;
-}
-
-.cell-70 {
-  width: 70% - $cell_space;
-}
-
-.cell-66 {
-  width: 66.666% - $cell_space;
-}
-
-.cell-60 {
-  width: 60% - $cell_space;
-}
-
-.cell-50 {
-  width: 50% - $cell_space;
-}
-
-.cell-40 {
-  width: 40% - $cell_space;
-}
-
-.cell-33 {
-  width: 33.33333% - $cell_space;
-}
-
-.cell-30 {
-  width: 30% - $cell_space;
-}
-
-.cell-25 {
-  width: 25% - $cell_space;
-}
-
-.cell-20 {
-  width: 20% - $cell_space;
-}
-
-.cell-10 {
-  width: 10% - $cell_space;
-}
-*/
-/* line 117, ../sass/base/_grid.scss */
+/* line 31, ../sass/base/_grid.scss */
 .cell.center,
 .cell-100.center,
 .cell-90.center,
@@ -937,8 +801,85 @@ a:focus.colorbox {
   margin: 0 auto;
 }
 
+/* line 37, ../sass/base/_grid.scss */
+.cell {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-100 {
+  width: 100%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-90 {
+  width: 90%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-80 {
+  width: 80%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-75 {
+  width: 75%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-70 {
+  width: 70%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-66 {
+  width: 66%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-60 {
+  width: 60%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-50 {
+  width: 50%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-40 {
+  width: 40%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-33 {
+  width: 33%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-30 {
+  width: 30%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-25 {
+  width: 25%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-20 {
+  width: 20%;
+}
+
+/* line 45, ../sass/base/_grid.scss */
+.cell-10 {
+  width: 10%;
+}
+
 @media screen and (max-width: 650px) {
-  /* line 137, ../sass/base/_grid.scss */
+  /* line 65, ../sass/base/_grid.scss */
   .cell,
   .cell-100,
   .cell-90,
@@ -958,22 +899,22 @@ a:focus.colorbox {
     margin: 0;
   }
 
-  /* line 143, ../sass/base/_grid.scss */
+  /* line 71, ../sass/base/_grid.scss */
   .responsive.cell-33 {
     width: 25%;
   }
-  /* line 147, ../sass/base/_grid.scss */
+  /* line 75, ../sass/base/_grid.scss */
   .responsive.cell-25 {
     width: 50%;
   }
 }
-/* line 154, ../sass/base/_grid.scss */
+/* line 82, ../sass/base/_grid.scss */
 .hidden {
   position: absolute;
   left: -9999px;
 }
 
-/* line 159, ../sass/base/_grid.scss */
+/* line 87, ../sass/base/_grid.scss */
 .clearfix {
   zoom: 1;
 }
@@ -987,36 +928,35 @@ a:focus.colorbox {
   clear: both;
 }
 
-/* line 163, ../sass/base/_grid.scss */
+/* line 91, ../sass/base/_grid.scss */
 hr.clearfix {
   visibility: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* line 170, ../sass/base/_grid.scss */
+/* line 98, ../sass/base/_grid.scss */
 .left,
 .right {
   display: block;
 }
 
-/* line 174, ../sass/base/_grid.scss */
+/* line 102, ../sass/base/_grid.scss */
 .left {
   float: left;
 }
 
-/* line 178, ../sass/base/_grid.scss */
+/* line 106, ../sass/base/_grid.scss */
 .right {
   float: right;
 }
 
-/* line 182, ../sass/base/_grid.scss */
+/* line 110, ../sass/base/_grid.scss */
 .center {
   margin: 0 auto;
   display: table;
 }
-
-/* line 187, ../sass/base/_grid.scss */
+/* line 114, ../sass/base/_grid.scss */
 .center div {
   display: table-cell;
 }

@@ -9,7 +9,7 @@ $showDropdowns: true;
 // Primary Navigation
 #nav {
   float: right;
-  margin: 2em 5% 0 ($logo_width + 24px);
+  margin: 2em 5% 0 ($logo_width *2);
   padding: 0;
 
   a,

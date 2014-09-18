@@ -31,9 +31,8 @@ body {
 #sidebar-left,
 #sidebar-right,
 #footer,
-#footer_left,
-#footer-right,
-#footer-middle {
+#footer-top,
+#footer-bottom {
   margin: $region_margin;
   padding: $region_padding;
   border: $region_border;
@@ -249,7 +248,7 @@ body {
 
 #sidebar-left,
 #sidebar-right {
-  background: $light_grey;
+  background: darken($white, 5%);
 }
 
 #sidebar-left {

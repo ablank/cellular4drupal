@@ -1,0 +1,26 @@
+// Color swatches
+$adjust: 20%;
+$opacity: 0.8;
+
+$cyan: #29B4DE;
+$magenta: #DD2A99;
+$yellow: #EC2;
+$red: #8C0D00;
+$green: #61D43F;
+$blue: #00598E;
+
+$white: #FEFEFE;
+$black: #111;
+$grey: #8A8882;
+$light_grey: lighten($grey, $adjust);
+$dark_grey: darken($grey, $adjust);
+
+$c1: $black;
+$c2: $white;
+$hilight: $cyan;
+$shadow: lighten($black, $adjust);
+
+$ok_color: $green;
+$warning_color: $yellow;
+$error_color: $red;
+

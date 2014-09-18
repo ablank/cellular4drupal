@@ -1,7 +1,7 @@
 /**
- * @file
- * Styling DOM classes provided by drupal
- */
+  * @file
+  * Styling DOM classes provided by drupal
+*/
 
 // Declared here in case the core css is disabled.
 .element-invisible {
@@ -78,10 +78,20 @@ div.ctools-ajaxing {
     &.active {
       background-color: $white;
     }
-    
+
     &:hover {
       background-color: lighten($light_grey, 20%);
 
     }
+  }
+}
+
+.node-readmore,
+.comment-add {
+  list-style: none;
+  display: inline-block;
+
+  a {
+    @include button();
   }
 }
