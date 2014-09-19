@@ -1,0 +1,23 @@
+#social-media-follow,
+#social-media-share {
+  position: relative;
+  width: 100%;
+  padding: 0 0 1em 0;
+  background: $white;
+  border-top: $dark_grey 1em solid;
+  overflow: hidden;
+
+  form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: $normal;
+    font-weight: bold;
+    margin: 0;
+  }
+}

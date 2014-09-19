@@ -24,8 +24,7 @@ $showDropdowns: true;
     white-space: nowrap;
     text-decoration: none;
     color: $light_grey;
-    border-bottom: $light_grey 1px solid;
-    //background: lighten($light_grey, 20%);
+    border-bottom: $border $light_grey;
 
     &:hover,
     &:focus,
@@ -34,6 +33,10 @@ $showDropdowns: true;
       text-decoration: none;
       background: $hilight;
       color: $white;
+    }
+
+    &.active {
+      cursor: pointer;
     }
   }
 

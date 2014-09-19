@@ -1,9 +1,9 @@
 /**
- * @file
- * CellularUI : jMMenu
- */
+  * @file
+  * CellularUI : jMMenu
+*/
 
-.cellular {
+#nav.cellular {
 
   &.jMmenu {
 
@@ -13,34 +13,43 @@
       z-index: 10;
       width: 3em;
       height: 3em;
-      padding: 1em;
+      border: 1px solid;
       background-color: $white;
-      background-image: url('../assets/icons/min/png/menu.png');
-      background-image: url('../assets/icons/min/png/menu.svg');
       background-size: 2em;
       background-repeat: no-repeat;
       background-position: center;
-      border: 1px solid;
+      background-image: url('../assets/icons/min/png/menu.png');
 
       ul {
-        position: absolute;
-        right: 0;
-        top: 3em;
         margin: 0;
         padding: 0;
-        background-color: darken($white, 5%);
+        position: absolute;
+        right: 999em;
+        top: 3em;
+      }
 
+      > ul > li {
+        &:first-child,
+        &:last-child {
+          margin-left: .4em;
+          margin-right: .4em;
+        }
+      }
+
+      &.active {
+        ul {
+          background-color: darken($white, 5%);
+          right: 0;
+        }
         li {
+          float: none;
+          margin: .1em .4em;
 
           & > ul {
             // Disable deep links on small screens
             display: none;
           }
         }
-      }
-      
-      a {
-        display: block;
       }
     }
   }

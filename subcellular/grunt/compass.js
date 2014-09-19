@@ -1,28 +1,26 @@
 /**
  * @file
  * Configure grunt compass.
+ *
+ * OutputStyle: expanded | nested | compact | compressed
  */
 
 module.exports = {
-  options: {
-    config: 'config/compass.rb',
-    sassDir: 'sass',
-    cssDir: 'css',
-  },
   dev: {
     options: {
+      config: 'config/compass.rb',
       noLineComments: false,
-      // clean: true,
+        trace: true,
       environment: 'development',
       outputStyle: 'expanded'
     }
   },
   prod: {
     options: {
+      config: 'config/compass.rb',
       noLineComments: true,
-      // clean: true,
-      environment: 'production',
-      outputStyle: 'compressed'
+        trace: true,
+      outputStyle: 'expanded'
     }
   }
 };

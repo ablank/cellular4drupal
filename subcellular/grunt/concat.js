@@ -6,11 +6,11 @@
 module.exports = {
   options: {
     banner: '/**\n' +
-            '* @file\n' +
-            '* Javascript\n' +
-            '* \n' +
-            '* @author \n' +
-            '*/\n',
+        '* @file\n' +
+        '* Javascript\n' +
+        '* \n' +
+        '* @author \n' +
+        '*/\n',
     separator: '\n\n // :)\n',
   },
   script: {
