@@ -145,8 +145,7 @@
       </div>
     <?php endif; ?>
 
-    <div id="content-position">
-      <div id="content-wrap" class="cell">
+    <div id="content-wrap" class="clearfix">
 
         <?php
         if ($action_links) :
@@ -208,8 +207,6 @@
 
       </div>
       <!-- /#content-wrap-->
-    </div>
-    <!-- /#content-position -->
   </div>
   <!-- /#app-->
 

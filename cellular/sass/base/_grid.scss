@@ -2,25 +2,24 @@
   * @file
   * Cellular Grid
 */
-
+$cells : ();
+@each $cell in $grid {
+  $cells : append($cells, unquote(".cell-#{$cell}"), comma);
+}
 //////
 // Grid Cells
 /////
-.cell,
-.cell-100,
-.cell-90,
-.cell-80,
-.cell-75,
-.cell-70,
-.cell-66,
-.cell-60,
-.cell-50,
-.cell-40,
-.cell-33,
-.cell-30,
-.cell-25,
-.cell-20,
-.cell-10 {
+.cell {
+  // Full-size container.
+  position: relative;
+  float: left;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#{$cells}{
   position: relative;
   float: left;
   display: block;
@@ -34,13 +33,6 @@
   }
 }
 
-.cell {
-  // Full-size container.
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 @each $cell in $grid {
   .cell-#{$cell} {
     width: percentage($cell / 100) - $cell_space;
@@ -48,21 +40,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  .cell,
-  .cell-100,
-  .cell-90,
-  .cell-80,
-  .cell-75,
-  .cell-70,
-  .cell-66,
-  .cell-60,
-  .cell-50,
-  .cell-40,
-  .cell-33,
-  .cell-30,
-  .cell-25,
-  .cell-20,
-  .cell-10 {
+  #{$cells} {
     width: 100%;
     margin: 0;
   }

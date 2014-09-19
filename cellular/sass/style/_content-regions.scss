@@ -2,11 +2,27 @@
  * @file
  * Content region styles
  */
+//////
+$rarray : (
+console
+header-top
+header
+header-bottom
+content-top
+content
+content-bottom
+comments
+sidebar-left
+sidebar-right
+footer
+footer-top
+footer-bottom
+);
 
-$region_margin: 0;
-$region_padding: 0;
-$region_border: 0;
-$region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 2);
+$regions : ();
+@each $region in $rarray {
+  $regions : append($regions, unquote("##{$region},"), comma);
+}
 //////
 
 body {
@@ -20,29 +36,36 @@ body {
 #page-wrap {
 }
 
+#app {
+  z-index: 1;
+  overflow: visible;
+}
+
+#content-wrap {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 // Set styles common to all regions
-#console,
-#header-top,
-#header,
-#header-bottom,
-#content-top,
-#content,
-#content-bottom,
-#sidebar-left,
-#sidebar-right,
-#footer,
-#footer-top,
-#footer-bottom {
+#{$regions}{
   margin: $region_margin;
   padding: $region_padding;
   border: $region_border;
 }
 
-#header-top {
+#header {
+  z-index: 2;
+  height: 96px;
+  background: $white;
+  @include box-shadow(0 0 1em .1em $dark_grey);
+}
+
+#header-top,
+#header-bottom {
   z-index: 4;
   background: $black;
   color: $white;
-  border-bottom: $black $border;
   // Position contents left or right
   text-align: right;
   @include clearfix();
@@ -59,144 +82,16 @@ body {
     font-size: 1em;
     display: inline;
   }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
   p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
+    color : $light_grey;
   }
 }
 
-#header {
-  z-index: 2;
-  height: 96px;
-  background: $white;
-  @include box-shadow(0 0 1em .1em $dark_grey);
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
 
-  h2 {
-  }
 
-  h3 {
-  }
+#console {}
 
-  h4 {
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
-}
-
-#header-bottom {
-  height: 32px;
-  // background: darken($hilight, 20%);
-  color: $white;
-  border-bottom: $black $border;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
-}
-
-#app {
-  z-index: 1;
-  overflow: visible;
-}
-
-#content-position {
-  display: block;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-#content-wrap {
-}
-
-#console {
-}
-
-#content-top {
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
-}
+#content-top {}
 
 #content,
 #sidebar-left,
@@ -209,33 +104,6 @@ body {
 
 #content {
   z-index: 2;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
 }
 
 #comments {
@@ -264,67 +132,11 @@ body {
   font-size: $small;
   background: $dark_grey;
   color: $light_grey;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
 }
 
 #footer {
   background: $dark_grey;
   color: $white;
-
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
-  p {
-    color: $white;
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
 }
 
 #footer-bottom {
@@ -332,33 +144,6 @@ body {
   background: $dark_grey;
   color: $light_grey;
   border-top: $border;
-  // Custom type for region
-  h2,
-  h3,
-  h4 {
-  }
-
-  h2 {
-  }
-
-  h3 {
-  }
-
-  h4 {
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
 }
 
 #copyright {
@@ -366,41 +151,4 @@ body {
   padding: $small $big $small;
   text-align: right;
   font-weight: bold;
-}
-
-#social-media-follow,
-#social-media-share {
-  position: relative;
-  width: 100%;
-  padding: 0 0 1em 0;
-  background: $white;
-  border-top: $dark_grey 1em solid;
-  overflow: hidden;
-
-  form {
-    margin: 0;
-    padding: 0;
-    display: inline;
-  }
-
-  h2,
-  h3,
-  h4 {
-    font-size: $normal;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  p {
-  }
-
-  a {
-    &:visited {
-    }
-
-    &:focus,
-      &:hover,
-      &:active {
-    }
-  }
 }

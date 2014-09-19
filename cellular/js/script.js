@@ -7,7 +7,7 @@
 
   Drupal.behaviors.theme = {
     attach: function(context, settings) {
-      /*
+      
        // Call cellular UI:
        $('.jAccordion').jAccordion({
        });
@@ -19,7 +19,7 @@
        $('form').jFormal();
        $('#nav').jMmenu();
        $('.jScrolli').jScrolli();
-       */
+      /* */
       /*
        // Call Masonry:
        $('.block-content').masonry({
