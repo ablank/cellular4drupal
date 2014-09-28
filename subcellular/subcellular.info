@@ -33,9 +33,9 @@ regions[footer_bottom]      = Footer Bottom
 
 ;----------// Javascript Updates & Plugins
 settings[jquery_update]             = 0
-settings[jquery_cdn]                = 1
+settings[jquery_cdn]                = 0
 settings[jquery_cdn_source]         = google
-settings[jquery_version]            = 1.9.1
+settings[jquery_version]            = 1.11.1
 settings[jqueryui_version]          = 1.10.4
 settings[jqueryui_theme]            = custom
 settings[modernizr]                 = 0

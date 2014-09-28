@@ -27,7 +27,7 @@ function cellular_js_alter(&$javascript) {
   );
   cellular_add_js($scripts);
 
-  // Get array of js plugins to add
+  // Get array of js plugins to add.
   $js_plugins = cellular_plugins_js();
 
   // Add Modernizr & query based on theme settings.

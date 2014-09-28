@@ -231,7 +231,7 @@ function cellular_set_author(&$vars) {
   $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";
   $author = array(
     'name' => l($node->name, 'user/' . $node->uid),
-    'description' => isset($author->field_description[$safe_value]) ?
+    'description' => isset($vars['author']->field_description[$safe_value]) ?
     '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
     'image' => !empty($uid->picture->uri) ? theme('image_style', array(
       // 'style_name' => 'blog-author-image',
