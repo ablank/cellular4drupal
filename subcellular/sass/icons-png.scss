@@ -6,7 +6,7 @@
 @import "variables";
 
 @each $icon in $icons {
-  .icon .#{$icon} {
+  .icon.#{$icon} {
     background-image: url('../assets/icons/min/png/#{$icon}.png');
   }
 }

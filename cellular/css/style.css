@@ -922,7 +922,7 @@ hr.clearfix {
  * Misc. class styles
  */
 /* line 7, ../sass/style/_classes.scss */
-.icon {
+#page-wrap .icon {
   display: inline;
   display: inline-block;
   width: 32px;
@@ -943,11 +943,11 @@ hr.clearfix {
   border-radius: 0.3em;
 }
 /* line 23, ../sass/style/_classes.scss */
-.icon:hover {
+#page-wrap .icon:hover {
   border-color: #29b4de;
 }
 /* line 30, ../sass/style/_classes.scss */
-.icon.search {
+#page-wrap .icon.search {
   text-indent: 0;
 }
 
@@ -1413,39 +1413,38 @@ hr.clearfix {
 /* line 27, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini ul {
   position: absolute;
-  top: 3em;
+  top: -13em;
   right: 0;
   margin: 0;
   padding: 0;
   opacity: 0;
-  max-height: 0;
   background-color: #f1f1f1;
   -webkit-transition: all 400ms ease-out;
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 44, ../sass/cellular-ui/_jMmenu.scss */
+/* line 42, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini > ul > li:first-child, #nav.cellular.jMmenu.mini > ul > li:last-child {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 50, ../sass/cellular-ui/_jMmenu.scss */
+/* line 48, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini li {
   float: none;
   margin: 0;
 }
-/* line 54, ../sass/cellular-ui/_jMmenu.scss */
+/* line 52, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini li > ul {
   display: none;
 }
-/* line 60, ../sass/cellular-ui/_jMmenu.scss */
+/* line 58, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini.active {
   background-position: right center;
 }
-/* line 63, ../sass/cellular-ui/_jMmenu.scss */
+/* line 61, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini.active ul {
-  max-height: 33em;
+  top: 3em;
   opacity: 1;
 }
 
@@ -1587,14 +1586,27 @@ body {
   background-color: #fefefe;
 }
 
-/* line 24, ../sass/style/_content-regions.scss */
+/* line 23, ../sass/style/_content-regions.scss */
+#app {
+  z-index: 1;
+  overflow: visible;
+}
+
+/* line 28, ../sass/style/_content-regions.scss */
+#content-wrap {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* line 35, ../sass/style/_content-regions.scss */
 #console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 30, ../sass/style/_content-regions.scss */
+/* line 41, ../sass/style/_content-regions.scss */
 #header {
   z-index: 2;
   height: 96px;
@@ -1604,7 +1616,7 @@ body {
   box-shadow: 0 0 1em 0.1em #565450;
 }
 
-/* line 37, ../sass/style/_content-regions.scss */
+/* line 48, ../sass/style/_content-regions.scss */
 #header-top {
   z-index: 4;
   background: #111111;
@@ -1612,11 +1624,11 @@ body {
   border-bottom: #111111 thin solid;
   text-align: right;
 }
-/* line 46, ../sass/style/_content-regions.scss */
+/* line 57, ../sass/style/_content-regions.scss */
 #header-top div {
   display: inline;
 }
-/* line 52, ../sass/style/_content-regions.scss */
+/* line 63, ../sass/style/_content-regions.scss */
 #header-top h2,
 #header-top h3,
 #header-top h4 {
@@ -1625,27 +1637,14 @@ body {
   display: inline;
 }
 
-/* line 59, ../sass/style/_content-regions.scss */
+/* line 70, ../sass/style/_content-regions.scss */
 #header-bottom {
   height: 32px;
   color: #fefefe;
   border-bottom: #111111 thin solid;
 }
 
-/* line 66, ../sass/style/_content-regions.scss */
-#app {
-  z-index: 1;
-  overflow: visible;
-}
-
-/* line 71, ../sass/style/_content-regions.scss */
-#content-wrap {
-  display: block;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* line 84, ../sass/style/_content-regions.scss */
+/* line 83, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1655,44 +1654,44 @@ body {
   display: block;
 }
 
-/* line 90, ../sass/style/_content-regions.scss */
+/* line 89, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 100, ../sass/style/_content-regions.scss */
+/* line 99, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 103, ../sass/style/_content-regions.scss */
+/* line 102, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 109, ../sass/style/_content-regions.scss */
+/* line 108, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
   background: #bbbab7;
 }
 
-/* line 120, ../sass/style/_content-regions.scss */
+/* line 119, ../sass/style/_content-regions.scss */
 #footer {
   background: #565450;
   color: #fefefe;
 }
-/* line 125, ../sass/style/_content-regions.scss */
+/* line 124, ../sass/style/_content-regions.scss */
 #footer p {
   color: #fefefe;
 }
 
-/* line 130, ../sass/style/_content-regions.scss */
+/* line 129, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #565450;
   color: #bbbab7;
 }
 
-/* line 137, ../sass/style/_content-regions.scss */
+/* line 136, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #565450;
@@ -1700,7 +1699,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 144, ../sass/style/_content-regions.scss */
+/* line 143, ../sass/style/_content-regions.scss */
 #copyright {
   max-width: 100%;
   padding: 0.75em 1.4em 0.75em;
@@ -1708,7 +1707,7 @@ body {
   font-weight: bold;
 }
 
-/* line 152, ../sass/style/_content-regions.scss */
+/* line 151, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1718,14 +1717,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 160, ../sass/style/_content-regions.scss */
+/* line 159, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 168, ../sass/style/_content-regions.scss */
+/* line 167, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
