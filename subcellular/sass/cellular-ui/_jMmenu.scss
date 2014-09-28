@@ -8,47 +8,59 @@
   &.jMmenu {
 
     &.mini {
+      // Parent ul, used as menu trigger.
       float: right;
       cursor: pointer;
       z-index: 10;
       width: 3em;
       height: 3em;
-      border: 1px solid;
+      padding: 0;
       background-color: $white;
-      background-size: 2em;
-      background-repeat: no-repeat;
-      background-position: center;
       background-image: url('../assets/icons/min/png/menu.png');
+      background-size: 9em;
+      background-repeat: no-repeat;
+      background-position: left center;
+      border: 1px solid $light_grey;
+      @include border-radius();
+      @include transition();
 
       ul {
+        // Top level ul.
+        position: absolute;
+        top: -13em;
+        right: 0;
         margin: 0;
         padding: 0;
-        position: absolute;
-        right: 999em;
-        top: 3em;
+        opacity: 0;
+        background-color: darken($white, 5%);
+        @include transition();
       }
 
       > ul > li {
+
         &:first-child,
         &:last-child {
-          margin-left: .4em;
-          margin-right: .4em;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+
+      li {
+        float: none;
+        margin: 0;
+
+        & > ul {
+          // Disable deep links.
+          display: none;
         }
       }
 
       &.active {
-        ul {
-          background-color: darken($white, 5%);
-          right: 0;
-        }
-        li {
-          float: none;
-          margin: .1em .4em;
+        background-position: right center;
 
-          & > ul {
-            // Disable deep links on small screens
-            display: none;
-          }
+        ul {
+          top: 3em;
+          opacity: 1;
         }
       }
     }

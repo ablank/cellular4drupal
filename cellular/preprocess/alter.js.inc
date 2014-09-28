@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Add/Update/Delete javascript.
@@ -28,17 +27,17 @@ function cellular_js_alter(&$javascript) {
   );
   cellular_add_js($scripts);
 
-  // Add Modernizr & query based on theme settings.
-  if (theme_get_setting('modernizr') == 1) {
-    cellular_modernizr();
-  }
+  // Get array of js plugins to add
+  $js_plugins = cellular_plugins_js();
 
+  // Add Modernizr & query based on theme settings.
+  theme_get_setting('modernizr') == 1 ? cellular_modernizr() : NULL;
+  
   // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     $jquery = cellular_jquery_info();
-    $js_plugins = cellular_plugins_js();
-    cellular_jquery_update($javascript, $js_plugins);
-    cellular_jqueryui_js($javascript, $js_plugins);
+    cellular_jquery_update($javascript);
+    cellular_jqueryui_update_js($javascript);
     // Add jQuery.migrate to support older plugins if v >= 1.9
     if ($jquery['version'] !== '1.8.24') {
       $js_plugins['migrate'] = array(

@@ -10,7 +10,6 @@
     "grunt-contrib-sass": "*",
     "grunt-contrib-compass": "^0.7.2",
     "grunt-svgmin": "^0.4.0",
-    "grunt-grunticon": "^1.2.1",
     "grunt-contrib-cssmin": "^0.9.0",
     "grunt-svg2png": "^0.2.1",
     "grunt-contrib-concat": "^0.4.0",

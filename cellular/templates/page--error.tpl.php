@@ -112,7 +112,7 @@
     endif;
 
     ?>
-    <div id="content-wrap" class="clearfix">
+    <div id="content-wrap">
       <div id="content" class="<?php print $page['content_class']; ?>">
 
         <div class="error-message">

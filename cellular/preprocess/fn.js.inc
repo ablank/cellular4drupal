@@ -184,9 +184,9 @@ function cellular_plugins_js() {
       'weight' => -7,
     ) : NULL,
     'reveal' => theme_get_setting('reveal') == 1 ? array(
-      'object' => 'smoove',
-      'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
-      'file' => 'plugins/jquery.smoove.min.js',
+      'object' => 'reveal',
+      'cdn' => NULL,
+      'file' => 'plugins/jquery.reveal.min.js',
       'weight' => -6,
     ) : NULL,
     'smoove' => theme_get_setting('smoove') == 1 ? array(

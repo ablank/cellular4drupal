@@ -24,7 +24,8 @@ $showDropdowns: true;
     white-space: nowrap;
     text-decoration: none;
     color: $light_grey;
-    border-bottom: $border $light_grey;
+    border-bottom: $light_grey 1px solid;
+    //background: lighten($light_grey, 20%);
 
     &:hover,
     &:focus,
@@ -33,10 +34,6 @@ $showDropdowns: true;
       text-decoration: none;
       background: $hilight;
       color: $white;
-    }
-
-    &.active {
-      cursor: pointer;
     }
   }
 
@@ -53,7 +50,6 @@ $showDropdowns: true;
     &:last-child {
       margin-right: 0;
     }
-
   }
 
   li {
@@ -67,8 +63,8 @@ $showDropdowns: true;
 
     // Nested menus.
     ul {
-      left: 0;
       position: absolute;
+      right: 0;
       visibility: hidden;
       opacity: 0;
       background: $white;
@@ -110,36 +106,3 @@ $showDropdowns: true;
     }
   }
 }
-
-// Breadcrumb navigation.
-#breadcrumb {
-  display: inline;
-  display: inline-block;
-  height: 2em;
-
-  li {
-    list-style: none;
-    line-height: 2em;
-    margin: 0 0 0 .2em;
-    width: 100%;
-  }
-
-  .home {
-    background: url(../assets/images/icon-home.png);
-    color: $black;
-    padding: 0 0 0 34px;
-  }
-
-  a {
-    &:visited {
-      color: darken($hilight, 20%);
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $hilight;
-    }
-  }
-}
-

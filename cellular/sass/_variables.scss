@@ -1,16 +1,15 @@
 /////
-// Cellular :: Configure SASS Variables
+// Cellular :: SASS Configuration Variables
 /////
 @import "compass";
-//////
-@import "_mixins/cellularmixins";
+@import "mixins/cellularmixins";
 //////
 @import "variables/media_queries";
 @import "variables/swatches";
+@import "variables/grid";
 @import "variables/typography";
 @import "variables/decor";
-@import "variables/grid";
-@import "variables/branding";
-@import "variables/icons";
 @import "variables/content_regions";
 @import "variables/compass_defaults";
+@import "variables/icons";
+@import "variables/branding";

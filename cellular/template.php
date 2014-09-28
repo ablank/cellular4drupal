@@ -7,20 +7,21 @@
 $inc_path = drupal_get_path('theme', 'cellular') . '/preprocess';
 $include = array(
   'fn.inc',
-  'fn.javascript.inc',
-  'fn.stylesheets.inc',
+  'fn.css.inc',
+  'fn.menu.inc',
+  'fn.js.inc',
   'fn.jquery.inc',
   'fn.menu.inc',
   'fn.preprocess.inc',
   'alter.inc',
-  'alter.form.inc',
   'alter.css.inc',
+  'alter.form.inc',
   'alter.js.inc',
   'preprocess.inc',
   'theme.inc',
   'theme.form.inc',
   'theme.pager.inc',
-  'fn.social.inc',
+  'social.inc',
   'process.inc',
 );
 

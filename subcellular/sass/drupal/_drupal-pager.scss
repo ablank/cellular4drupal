@@ -10,54 +10,77 @@
   padding: 0;
   font: bold .8em/1em Arial, sans-serif;
   text-align: center;
+  background: $dark_grey;
+  border: $border;
+  @include border-radius($small);
 
+  .pager-item {
+    margin: .2em;
+  }
 
   li {
     float: left;
+    margin: 0 auto;
     text-align: center;
     padding: 0;
     outline: 0;
     list-style: none;
+    border: $border;
   }
 
   a,
+  a:link,
     a:visited {
     padding: $normal;
-    color: $dark_grey;
+    color: $white;
     display: block;
     cursor: pointer;
-    background: darken($white, 5%);
-    border: $border;
+    background: $dark_grey;
+    border: $border $black;
   }
 
   a:hover,
     a:focus {
     background: $white;
     color: $hilight;
-    border-color: $hilight;
-  }
-
-  .pager-current {
-    margin: .2em;
-    padding: $normal;
-    background: $white;
-    color: $hilight;
     border: $border $hilight;
   }
 
-  .pager-item {
-    margin: .2em;
+  .pager-ellipsis,
+  .pager-current {
+    text-decoration: none;
+  }
+
+  .pager-current {
+    margin: .2em .5em;
+    padding: $normal + .2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    outline: 0;
+    background: $white;
+    color: $dark_grey;
+    border: $border $dark_grey;
   }
 
   .pager-first,
   .pager-previous,
   .pager-next,
   .pager-last {
-    margin: .2em;
+    margin: .5em;
+    border: none;
 
     a,
     a:visited {
       width: 6em;
+      text-align: center;
+      color: $dark_grey;
+      background: $white;
+      @include border-radius();
+
+      &:hover {
+        background: $white;
+        color: $hilight;
+      }
     }
   }
 }

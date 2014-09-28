@@ -492,12 +492,12 @@ input[type=text]:focus, input[type=number]:focus, input[type=tel]:focus, input[t
   color: #111111;
   background: #fefefe;
 }
-/* line 120, ../sass/_mixins/_cellularmixins.scss */
+/* line 120, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked), input[type=checkbox]:checked, input[type=radio]:not(:checked), input[type=radio]:checked {
   position: absolute;
   left: -999em;
 }
-/* line 124, ../sass/_mixins/_cellularmixins.scss */
+/* line 124, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked) + label, input[type=checkbox]:checked + label, input[type=radio]:not(:checked) + label, input[type=radio]:checked + label {
   position: relative;
   cursor: pointer;
@@ -505,7 +505,7 @@ input[type=checkbox]:not(:checked) + label, input[type=checkbox]:checked + label
   padding: 0 0 0 2em;
   vertical-align: middle;
 }
-/* line 131, ../sass/_mixins/_cellularmixins.scss */
+/* line 131, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked + label:before, input[type=radio]:not(:checked) + label:before, input[type=radio]:checked + label:before {
   content: '';
   position: absolute;
@@ -520,7 +520,7 @@ input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked 
   -moz-box-shadow: inset 0 0 1px 1px #bbbab7;
   box-shadow: inset 0 0 1px 1px #bbbab7;
 }
-/* line 144, ../sass/_mixins/_cellularmixins.scss */
+/* line 144, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked + label:after, input[type=radio]:not(:checked) + label:after, input[type=radio]:checked + label:after {
   content: '';
   position: absolute;
@@ -532,15 +532,15 @@ input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked +
   background-size: 1em;
   background-repeat: no-repeat;
 }
-/* line 159, ../sass/_mixins/_cellularmixins.scss */
+/* line 159, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):focus + label:before, input[type=checkbox]:checked:focus + label:before, input[type=radio]:not(:checked):focus + label:before, input[type=radio]:checked:focus + label:before {
   border: 1px dotted #29b4de;
 }
-/* line 166, ../sass/_mixins/_cellularmixins.scss */
+/* line 166, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):disabled + label, input[type=checkbox]:checked:disabled + label, input[type=radio]:not(:checked):disabled + label, input[type=radio]:checked:disabled + label {
   color: #bbbab7;
 }
-/* line 169, ../sass/_mixins/_cellularmixins.scss */
+/* line 169, ../sass/mixins/_cellularmixins.scss */
 input[type=checkbox]:not(:checked):disabled + label:before, input[type=checkbox]:checked:disabled + label:before, input[type=radio]:not(:checked):disabled + label:before, input[type=radio]:checked:disabled + label:before {
   background: #bbbab7;
   color: #565450;
@@ -622,13 +622,13 @@ input[type="submit"] {
   -o-border-radius: 0.3em;
   border-radius: 0.3em;
 }
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
+/* line 198, ../sass/mixins/_cellularmixins.scss */
 button:visited,
 input[type="button"]:visited,
 input[type="submit"]:visited {
   color: #fefefe;
 }
-/* line 204, ../sass/_mixins/_cellularmixins.scss */
+/* line 204, ../sass/mixins/_cellularmixins.scss */
 button.active, button:active, button:hover,
 input[type="button"].active,
 input[type="button"]:active,
@@ -735,13 +735,13 @@ a.colorbox {
   -moz-box-shadow: 0 0 0.2em 0.2em #bbbab7;
   box-shadow: 0 0 0.2em 0.2em #bbbab7;
 }
-/* line 54, ../sass/_mixins/_cellularmixins.scss */
+/* line 54, ../sass/mixins/_cellularmixins.scss */
 a.colorbox h2,
 a.colorbox h3,
 a.colorbox h4 {
   color: black;
 }
-/* line 58, ../sass/_mixins/_cellularmixins.scss */
+/* line 58, ../sass/mixins/_cellularmixins.scss */
 a.colorbox p {
   color: black;
 }
@@ -758,17 +758,8 @@ a:focus.colorbox {
   * @file
   * Cellular Grid
 */
-/* line 12, ../sass/base/_grid.scss */
-.cell {
-  position: relative;
-  float: left;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 22, ../sass/base/_grid.scss */
+/* line 15, ../sass/base/_grid.scss */
+.cell,
 .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
   position: relative;
   float: left;
@@ -777,78 +768,86 @@ a:focus.colorbox {
   padding: 0;
   z-index: 1;
 }
-/* line 30, ../sass/base/_grid.scss */
+/* line 23, ../sass/base/_grid.scss */
+.cell.center,
 .cell-100.center, .cell-90.center, .cell-80.center, .cell-75.center, .cell-70.center, .cell-66.center, .cell-60.center, .cell-50.center, .cell-40.center, .cell-33.center, .cell-30.center, .cell-25.center, .cell-20.center, .cell-10.center {
   float: none;
   margin: 0 auto;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 29, ../sass/base/_grid.scss */
+.cell {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 36, ../sass/base/_grid.scss */
 .cell-100 {
   width: 100%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-90 {
   width: 90%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-80 {
   width: 80%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-75 {
   width: 75%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-70 {
   width: 70%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-66 {
   width: 66%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-60 {
   width: 60%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-50 {
   width: 50%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-40 {
   width: 40%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-33 {
   width: 33%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-30 {
   width: 30%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-25 {
   width: 25%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-20 {
   width: 20%;
 }
 
-/* line 37, ../sass/base/_grid.scss */
+/* line 36, ../sass/base/_grid.scss */
 .cell-10 {
   width: 10%;
 }
@@ -862,7 +861,7 @@ a:focus.colorbox {
 
   /* line 49, ../sass/base/_grid.scss */
   .responsive.cell-33 {
-    width: 25%;
+    width: 33%;
   }
   /* line 53, ../sass/base/_grid.scss */
   .responsive.cell-25 {
@@ -879,12 +878,12 @@ a:focus.colorbox {
 .clearfix {
   zoom: 1;
 }
-/* line 34, ../sass/_mixins/_cellularmixins.scss */
+/* line 34, ../sass/mixins/_cellularmixins.scss */
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-/* line 39, ../sass/_mixins/_cellularmixins.scss */
+/* line 39, ../sass/mixins/_cellularmixins.scss */
 .clearfix:after {
   clear: both;
 }
@@ -896,30 +895,26 @@ hr.clearfix {
   padding: 0;
 }
 
-/* line 76, ../sass/base/_grid.scss */
+/* line 75, ../sass/base/_grid.scss */
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 81, ../sass/base/_grid.scss */
 .left,
 .right {
   display: block;
 }
 
-/* line 80, ../sass/base/_grid.scss */
+/* line 85, ../sass/base/_grid.scss */
 .left {
   float: left;
 }
 
-/* line 84, ../sass/base/_grid.scss */
+/* line 89, ../sass/base/_grid.scss */
 .right {
   float: right;
-}
-
-/* line 88, ../sass/base/_grid.scss */
-.center {
-  margin: 0 auto;
-  display: table;
-}
-/* line 92, ../sass/base/_grid.scss */
-.center div {
-  display: table-cell;
 }
 
 /**
@@ -1028,19 +1023,19 @@ hr.clearfix {
   background-color: #111111;
   color: #fefefe;
 }
-/* line 318, ../sass/_mixins/_cellularmixins.scss */
+/* line 318, ../sass/mixins/_cellularmixins.scss */
 .ribbon:before, .ribbon:after {
   content: " ";
   position: absolute;
   bottom: -1em;
   border-top: black 1em solid;
 }
-/* line 325, ../sass/_mixins/_cellularmixins.scss */
+/* line 325, ../sass/mixins/_cellularmixins.scss */
 .ribbon:before {
   left: 0;
   border-left: 1.2em solid transparent;
 }
-/* line 330, ../sass/_mixins/_cellularmixins.scss */
+/* line 330, ../sass/mixins/_cellularmixins.scss */
 .ribbon:after {
   right: 0;
   border-right: 1.2em solid transparent;
@@ -1055,7 +1050,7 @@ hr.clearfix {
   border-bottom: black 1px solid;
   color: #fefefe;
 }
-/* line 343, ../sass/_mixins/_cellularmixins.scss */
+/* line 343, ../sass/mixins/_cellularmixins.scss */
 .popout:after {
   content: " ";
   position: absolute;
@@ -1116,6 +1111,38 @@ hr.clearfix {
 
 /**
   * @file
+  * Breadcrumb navigation styling.
+*/
+/* line 5, ../sass/style/_breadcrumb.scss */
+#breadcrumb {
+  display: inline;
+  display: inline-block;
+  height: 2em;
+}
+/* line 10, ../sass/style/_breadcrumb.scss */
+#breadcrumb li {
+  list-style: none;
+  line-height: 2em;
+  margin: 0 0 0 .2em;
+  width: 100%;
+}
+/* line 18, ../sass/style/_breadcrumb.scss */
+#breadcrumb a:visited {
+  color: #16708b;
+}
+/* line 24, ../sass/style/_breadcrumb.scss */
+#breadcrumb a:hover, #breadcrumb a:focus, #breadcrumb a:active {
+  color: #29b4de;
+}
+/* line 29, ../sass/style/_breadcrumb.scss */
+#breadcrumb .home {
+  background: url(../assets/images/icon-home.png);
+  color: #111111;
+  padding: 0 0 0 34px;
+}
+
+/**
+  * @file
   * Primary #nav styling
 */
 /* line 10, ../sass/style/_navigation.scss */
@@ -1136,9 +1163,9 @@ hr.clearfix {
   white-space: nowrap;
   text-decoration: none;
   color: #bbbab7;
-  border-bottom: thin solid #bbbab7;
+  border-bottom: #bbbab7 1px solid;
 }
-/* line 32, ../sass/style/_navigation.scss */
+/* line 33, ../sass/style/_navigation.scss */
 #nav a:hover, #nav a:focus, #nav a:active, #nav a.active,
 #nav a:visited:hover,
 #nav a:visited:focus,
@@ -1148,24 +1175,19 @@ hr.clearfix {
   background: #29b4de;
   color: #fefefe;
 }
-/* line 38, ../sass/style/_navigation.scss */
-#nav a.active,
-#nav a:visited.active {
-  cursor: pointer;
-}
-/* line 43, ../sass/style/_navigation.scss */
+/* line 40, ../sass/style/_navigation.scss */
 #nav ul {
   margin: 0;
 }
-/* line 49, ../sass/style/_navigation.scss */
+/* line 46, ../sass/style/_navigation.scss */
 #nav > ul > li:first-child {
   margin-left: 0;
 }
-/* line 53, ../sass/style/_navigation.scss */
+/* line 50, ../sass/style/_navigation.scss */
 #nav > ul > li:last-child {
   margin-right: 0;
 }
-/* line 59, ../sass/style/_navigation.scss */
+/* line 55, ../sass/style/_navigation.scss */
 #nav li {
   float: left;
   display: block;
@@ -1185,10 +1207,10 @@ hr.clearfix {
     }
   */
 }
-/* line 69, ../sass/style/_navigation.scss */
+/* line 65, ../sass/style/_navigation.scss */
 #nav li ul {
-  left: 0;
   position: absolute;
+  right: 0;
   visibility: hidden;
   opacity: 0;
   background: #fefefe;
@@ -1198,13 +1220,13 @@ hr.clearfix {
   -o-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 81, ../sass/style/_navigation.scss */
+/* line 77, ../sass/style/_navigation.scss */
 #nav li:hover > ul {
   visibility: visible;
   opacity: 1;
   z-index: 2;
 }
-/* line 87, ../sass/style/_navigation.scss */
+/* line 83, ../sass/style/_navigation.scss */
 #nav li li {
   padding: .1em 0 0 0;
   z-index: 2;
@@ -1212,38 +1234,10 @@ hr.clearfix {
   float: none;
   margin: 0;
 }
-/* line 94, ../sass/style/_navigation.scss */
+/* line 90, ../sass/style/_navigation.scss */
 #nav li li ul {
   visibility: hidden;
   display: none;
-}
-
-/* line 115, ../sass/style/_navigation.scss */
-#breadcrumb {
-  display: inline;
-  display: inline-block;
-  height: 2em;
-}
-/* line 120, ../sass/style/_navigation.scss */
-#breadcrumb li {
-  list-style: none;
-  line-height: 2em;
-  margin: 0 0 0 .2em;
-  width: 100%;
-}
-/* line 127, ../sass/style/_navigation.scss */
-#breadcrumb .home {
-  background: url(../assets/images/icon-home.png);
-  color: #111111;
-  padding: 0 0 0 34px;
-}
-/* line 134, ../sass/style/_navigation.scss */
-#breadcrumb a:visited {
-  color: #16708b;
-}
-/* line 140, ../sass/style/_navigation.scss */
-#breadcrumb a:hover, #breadcrumb a:focus, #breadcrumb a:active {
-  color: #29b4de;
 }
 
 /**
@@ -1399,39 +1393,60 @@ hr.clearfix {
   z-index: 10;
   width: 3em;
   height: 3em;
-  border: 1px solid;
+  padding: 0;
   background-color: #fefefe;
-  background-size: 2em;
-  background-repeat: no-repeat;
-  background-position: center;
   background-image: url("../assets/icons/min/png/menu.png");
+  background-size: 9em;
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: 1px solid #bbbab7;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
 }
-/* line 23, ../sass/cellular-ui/_jMmenu.scss */
+/* line 27, ../sass/cellular-ui/_jMmenu.scss */
 #nav.cellular.jMmenu.mini ul {
+  position: absolute;
+  top: 3em;
+  right: 0;
   margin: 0;
   padding: 0;
-  position: absolute;
-  right: 999em;
-  top: 3em;
-}
-/* line 33, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini > ul > li:first-child, #nav.cellular.jMmenu.mini > ul > li:last-child {
-  margin-left: .4em;
-  margin-right: .4em;
-}
-/* line 40, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini.active ul {
+  opacity: 0;
+  max-height: 0;
   background-color: #f1f1f1;
-  right: 0;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
 }
 /* line 44, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini.active li {
-  float: none;
-  margin: .1em .4em;
+#nav.cellular.jMmenu.mini > ul > li:first-child, #nav.cellular.jMmenu.mini > ul > li:last-child {
+  margin-left: 0;
+  margin-right: 0;
 }
-/* line 48, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini.active li > ul {
+/* line 50, ../sass/cellular-ui/_jMmenu.scss */
+#nav.cellular.jMmenu.mini li {
+  float: none;
+  margin: 0;
+}
+/* line 54, ../sass/cellular-ui/_jMmenu.scss */
+#nav.cellular.jMmenu.mini li > ul {
   display: none;
+}
+/* line 60, ../sass/cellular-ui/_jMmenu.scss */
+#nav.cellular.jMmenu.mini.active {
+  background-position: right center;
+}
+/* line 63, ../sass/cellular-ui/_jMmenu.scss */
+#nav.cellular.jMmenu.mini.active ul {
+  max-height: 33em;
+  opacity: 1;
 }
 
 /**
@@ -1567,32 +1582,19 @@ hr.clearfix {
  * @file
  * Content region styles
  */
-/* line 28, ../sass/style/_content-regions.scss */
+/* line 12, ../sass/style/_content-regions.scss */
 body {
   background-color: #fefefe;
 }
 
-/* line 39, ../sass/style/_content-regions.scss */
-#app {
-  z-index: 1;
-  overflow: visible;
-}
-
-/* line 44, ../sass/style/_content-regions.scss */
-#content-wrap {
-  display: block;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* line 51, ../sass/style/_content-regions.scss */
-#console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #comments, #sidebar-left, #sidebar-right, #footer, #footer-top, #footer-bottom {
+/* line 24, ../sass/style/_content-regions.scss */
+#console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 57, ../sass/style/_content-regions.scss */
+/* line 30, ../sass/style/_content-regions.scss */
 #header {
   z-index: 2;
   height: 96px;
@@ -1602,50 +1604,48 @@ body {
   box-shadow: 0 0 1em 0.1em #565450;
 }
 
-/* line 65, ../sass/style/_content-regions.scss */
-#header-top,
-#header-bottom {
+/* line 37, ../sass/style/_content-regions.scss */
+#header-top {
   z-index: 4;
   background: #111111;
   color: #fefefe;
+  border-bottom: #111111 thin solid;
   text-align: right;
-  zoom: 1;
 }
-/* line 34, ../sass/_mixins/_cellularmixins.scss */
-#header-top:before, #header-top:after,
-#header-bottom:before,
-#header-bottom:after {
-  content: "";
-  display: table;
-}
-/* line 39, ../sass/_mixins/_cellularmixins.scss */
-#header-top:after,
-#header-bottom:after {
-  clear: both;
-}
-/* line 74, ../sass/style/_content-regions.scss */
-#header-top div,
-#header-bottom div {
+/* line 46, ../sass/style/_content-regions.scss */
+#header-top div {
   display: inline;
 }
-/* line 80, ../sass/style/_content-regions.scss */
+/* line 52, ../sass/style/_content-regions.scss */
 #header-top h2,
 #header-top h3,
-#header-top h4,
-#header-bottom h2,
-#header-bottom h3,
-#header-bottom h4 {
+#header-top h4 {
   color: #fefefe;
   font-size: 1em;
   display: inline;
 }
-/* line 85, ../sass/style/_content-regions.scss */
-#header-top p,
-#header-bottom p {
-  color: #bbbab7;
+
+/* line 59, ../sass/style/_content-regions.scss */
+#header-bottom {
+  height: 32px;
+  color: #fefefe;
+  border-bottom: #111111 thin solid;
 }
 
-/* line 99, ../sass/style/_content-regions.scss */
+/* line 66, ../sass/style/_content-regions.scss */
+#app {
+  z-index: 1;
+  overflow: visible;
+}
+
+/* line 71, ../sass/style/_content-regions.scss */
+#content-wrap {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* line 84, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1655,27 +1655,37 @@ body {
   display: block;
 }
 
-/* line 105, ../sass/style/_content-regions.scss */
+/* line 90, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 109, ../sass/style/_content-regions.scss */
+/* line 100, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 112, ../sass/style/_content-regions.scss */
+/* line 103, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 118, ../sass/style/_content-regions.scss */
+/* line 109, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
-  background: #f1f1f1;
+  background: #bbbab7;
 }
 
-/* line 131, ../sass/style/_content-regions.scss */
+/* line 120, ../sass/style/_content-regions.scss */
+#footer {
+  background: #565450;
+  color: #fefefe;
+}
+/* line 125, ../sass/style/_content-regions.scss */
+#footer p {
+  color: #fefefe;
+}
+
+/* line 130, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #565450;
@@ -1683,12 +1693,6 @@ body {
 }
 
 /* line 137, ../sass/style/_content-regions.scss */
-#footer {
-  background: #565450;
-  color: #fefefe;
-}
-
-/* line 142, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #565450;
@@ -1696,7 +1700,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 149, ../sass/style/_content-regions.scss */
+/* line 144, ../sass/style/_content-regions.scss */
 #copyright {
   max-width: 100%;
   padding: 0.75em 1.4em 0.75em;
@@ -1704,7 +1708,7 @@ body {
   font-weight: bold;
 }
 
-/* line 2, ../sass/style/_social.scss */
+/* line 152, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1714,14 +1718,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 10, ../sass/style/_social.scss */
+/* line 160, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 18, ../sass/style/_social.scss */
+/* line 168, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
@@ -1760,26 +1764,26 @@ body {
  * Styling for large-screen devices included in style.css
  */
 /**
-  * @file
-  * Provide svg background images for compliant browsers
-*/
+ * @file
+ * Provide svg background images for compliant browsers
+ */
 /* line 7, ../sass/style/_svg.scss */
-.svg #logo a {
+.svg #logo > a {
   background-image: url(url("../assets/images/min/svg/logo.svg"));
 }
-/* line 11, ../sass/style/_svg.scss */
+/* line 12, ../sass/style/_svg.scss */
+.svg #nav.jMmenu.mini {
+  background-image: url("../assets/icons/min/svg/menu.svg");
+}
+/* line 17, ../sass/style/_svg.scss */
 .svg .ok {
   list-style-image: url("../assets/icons/min/svg/message-ok.svg");
 }
-/* line 15, ../sass/style/_svg.scss */
+/* line 21, ../sass/style/_svg.scss */
 .svg .warning {
   list-style-image: url("../assets/icons/min/svg/message-warning.svg");
 }
-/* line 19, ../sass/style/_svg.scss */
+/* line 25, ../sass/style/_svg.scss */
 .svg .error {
   list-style-image: url("../assets/icons/min/svg/message-error.svg");
-}
-/* line 24, ../sass/style/_svg.scss */
-.svg .cellular.jMmenu.mini {
-  background-image: url("../assets/icons/min/svg/menu.svg");
 }

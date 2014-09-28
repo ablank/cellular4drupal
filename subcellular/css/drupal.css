@@ -37,52 +37,71 @@
   padding: 0;
   font: bold .8em/1em Arial, sans-serif;
   text-align: center;
+  background: #565450;
+  border: thin solid;
+  -webkit-border-radius: 0.75em;
+  -moz-border-radius: 0.75em;
+  -ms-border-radius: 0.75em;
+  -o-border-radius: 0.75em;
+  border-radius: 0.75em;
 }
-/* line 15, ../sass/drupal/_drupal-pager.scss */
+/* line 17, ../sass/drupal/_drupal-pager.scss */
+.pager .pager-item {
+  margin: .2em;
+}
+/* line 21, ../sass/drupal/_drupal-pager.scss */
 .pager li {
   float: left;
+  margin: 0 auto;
   text-align: center;
   padding: 0;
   outline: 0;
   list-style: none;
-}
-/* line 24, ../sass/drupal/_drupal-pager.scss */
-.pager a,
-.pager a:visited {
-  padding: 1em;
-  color: #565450;
-  display: block;
-  cursor: pointer;
-  background: #f1f1f1;
   border: thin solid;
 }
-/* line 34, ../sass/drupal/_drupal-pager.scss */
+/* line 33, ../sass/drupal/_drupal-pager.scss */
+.pager a,
+.pager a:link,
+.pager a:visited {
+  padding: 1em;
+  color: #fefefe;
+  display: block;
+  cursor: pointer;
+  background: #565450;
+  border: thin solid #111111;
+}
+/* line 43, ../sass/drupal/_drupal-pager.scss */
 .pager a:hover,
 .pager a:focus {
   background: #fefefe;
   color: #29b4de;
-  border-color: #29b4de;
-}
-/* line 40, ../sass/drupal/_drupal-pager.scss */
-.pager .pager-current {
-  margin: .2em;
-  padding: 1em;
-  background: #fefefe;
-  color: #29b4de;
   border: thin solid #29b4de;
 }
-/* line 48, ../sass/drupal/_drupal-pager.scss */
-.pager .pager-item {
-  margin: .2em;
+/* line 50, ../sass/drupal/_drupal-pager.scss */
+.pager .pager-ellipsis,
+.pager .pager-current {
+  text-decoration: none;
 }
-/* line 55, ../sass/drupal/_drupal-pager.scss */
+/* line 54, ../sass/drupal/_drupal-pager.scss */
+.pager .pager-current {
+  margin: .2em .5em;
+  padding: 1.2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  outline: 0;
+  background: #fefefe;
+  color: #565450;
+  border: thin solid #565450;
+}
+/* line 68, ../sass/drupal/_drupal-pager.scss */
 .pager .pager-first,
 .pager .pager-previous,
 .pager .pager-next,
 .pager .pager-last {
-  margin: .2em;
+  margin: .5em;
+  border: none;
 }
-/* line 59, ../sass/drupal/_drupal-pager.scss */
+/* line 73, ../sass/drupal/_drupal-pager.scss */
 .pager .pager-first a,
 .pager .pager-first a:visited,
 .pager .pager-previous a,
@@ -92,6 +111,26 @@
 .pager .pager-last a,
 .pager .pager-last a:visited {
   width: 6em;
+  text-align: center;
+  color: #565450;
+  background: #fefefe;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+/* line 80, ../sass/drupal/_drupal-pager.scss */
+.pager .pager-first a:hover,
+.pager .pager-first a:visited:hover,
+.pager .pager-previous a:hover,
+.pager .pager-previous a:visited:hover,
+.pager .pager-next a:hover,
+.pager .pager-next a:visited:hover,
+.pager .pager-last a:hover,
+.pager .pager-last a:visited:hover {
+  background: #fefefe;
+  color: #29b4de;
 }
 
 /**
@@ -162,12 +201,12 @@
   background-size: 2em;
   border: #565450 1px solid;
 }
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
+/* line 198, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit]:visited,
 #site-search input[type=submit]:visited {
   color: #fefefe;
 }
-/* line 204, ../sass/_mixins/_cellularmixins.scss */
+/* line 204, ../sass/mixins/_cellularmixins.scss */
 #search-form input[type=submit].active, #search-form input[type=submit]:active, #search-form input[type=submit]:hover,
 #site-search input[type=submit].active,
 #site-search input[type=submit]:active,
@@ -201,11 +240,11 @@
   border-radius: 0.3em;
   padding: 0 1em;
 }
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
+/* line 198, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu a:visited {
   color: #fefefe;
 }
-/* line 204, ../sass/_mixins/_cellularmixins.scss */
+/* line 204, ../sass/mixins/_cellularmixins.scss */
 #block-system-navigation .menu a.active, #block-system-navigation .menu a:active, #block-system-navigation .menu a:hover {
   background-color: #16708b;
   border-color: #29b4de;
@@ -221,9 +260,9 @@
 }
 
 /**
-  * @file
-  * Styling DOM classes provided by drupal
-*/
+ * @file
+ * Styling DOM classes provided by drupal
+ */
 /* line 7, ../sass/drupal/_drupal-classes.scss */
 .element-invisible {
   position: absolute !important;
@@ -314,45 +353,4 @@ div.ctools-ajaxing {
 /* line 82, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a:hover {
   background-color: #edeceb;
-}
-
-/* line 90, ../sass/drupal/_drupal-classes.scss */
-.node-readmore,
-.comment-add {
-  list-style: none;
-  display: inline-block;
-}
-/* line 94, ../sass/drupal/_drupal-classes.scss */
-.node-readmore a,
-.comment-add a {
-  cursor: pointer;
-  display: inline;
-  display: inline-block;
-  font-family: "Quicksand";
-  font-weight: bold;
-  line-height: auto;
-  padding: 0.75em 1em;
-  background-color: #29b4de;
-  width: auto;
-  color: #fefefe;
-  border: #16708b 0.2em solid;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-}
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
-.node-readmore a:visited,
-.comment-add a:visited {
-  color: #fefefe;
-}
-/* line 204, ../sass/_mixins/_cellularmixins.scss */
-.node-readmore a.active, .node-readmore a:active, .node-readmore a:hover,
-.comment-add a.active,
-.comment-add a:active,
-.comment-add a:hover {
-  background-color: #16708b;
-  border-color: #29b4de;
-  text-decoration: none;
 }

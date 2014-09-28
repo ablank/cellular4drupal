@@ -2,24 +2,17 @@
   * @file
   * Cellular Grid
 */
-$cells : ();
+
+$cells: ();
 @each $cell in $grid {
-  $cells : append($cells, unquote(".cell-#{$cell}"), comma);
+  $cells : append($cells, unquote('.cell-#{$cell},'));
 }
+
 //////
 // Grid Cells
 /////
-.cell {
-  // Full-size container.
-  position: relative;
-  float: left;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#{$cells}{
+.cell,
+#{$cells} {
   position: relative;
   float: left;
   display: block;
@@ -33,13 +26,20 @@ $cells : ();
   }
 }
 
+.cell {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @each $cell in $grid {
   .cell-#{$cell} {
-    width: percentage($cell / 100) - $cell_space;
+    width: unquote('#{$cell}%');
   }
 }
 
 @media screen and (max-width: 650px) {
+  // Set all cells to single-column
   #{$cells} {
     width: 100%;
     margin: 0;
@@ -47,7 +47,7 @@ $cells : ();
 
   .responsive {
     &.cell-33 {
-      width: 25% - $cell_space;
+      width: 33% - $cell_space;
     }
 
     &.cell-25 {
@@ -72,6 +72,11 @@ hr.clearfix {
   padding: 0;
 }
 
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
 .left,
 .right {
   display: block;
@@ -83,13 +88,4 @@ hr.clearfix {
 
 .right {
   float: right;
-}
-
-.center {
-  margin: 0 auto;
-  display: table;
-
-  div {
-    display: table-cell;
-  }
 }

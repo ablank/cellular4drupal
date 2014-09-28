@@ -2,26 +2,10 @@
  * @file
  * Content region styles
  */
-//////
-$rarray : (
-console
-header-top
-header
-header-bottom
-content-top
-content
-content-bottom
-comments
-sidebar-left
-sidebar-right
-footer
-footer-top
-footer-bottom
-);
 
-$regions : ();
+$regions: ();
 @each $region in $rarray {
-  $regions : append($regions, unquote("##{$region},"), comma);
+  $regions : append($regions, unquote('##{$region},'));
 }
 //////
 
@@ -48,7 +32,7 @@ body {
 }
 
 // Set styles common to all regions
-#{$regions}{
+#{$regions} {
   margin: $region_margin;
   padding: $region_padding;
   border: $region_border;
@@ -61,14 +45,13 @@ body {
   @include box-shadow(0 0 1em .1em $dark_grey);
 }
 
-#header-top,
-#header-bottom {
+#header-top {
   z-index: 4;
   background: $black;
   color: $white;
+  border-bottom: $black $border;
   // Position contents left or right
   text-align: right;
-  @include clearfix();
 
   // Custom type for region
   div {
@@ -82,16 +65,17 @@ body {
     font-size: 1em;
     display: inline;
   }
-  p {
-    color : $light_grey;
-  }
 }
 
+#header-bottom {
+  height: 32px;
+  // background: darken($hilight, 20%);
+  color: $white;
+  border-bottom: $black $border;
+}
 
-
-#console {}
-
-#content-top {}
+#console {
+}
 
 #content,
 #sidebar-left,
@@ -106,6 +90,12 @@ body {
   z-index: 2;
 }
 
+#content-top {
+}
+
+#content-bottom {
+}
+
 #comments {
   text-align: center;
 
@@ -116,7 +106,7 @@ body {
 
 #sidebar-left,
 #sidebar-right {
-  background: darken($white, 5%);
+  background: $light_grey;
 }
 
 #sidebar-left {
@@ -125,18 +115,22 @@ body {
 #sidebar-right {
 }
 
-#content-bottom {
+
+#footer {
+  background: $dark_grey;
+  color: $white;
+
+  
+    p {
+      color: $white;
+    }
 }
 
 #footer-top {
   font-size: $small;
   background: $dark_grey;
   color: $light_grey;
-}
-
-#footer {
-  background: $dark_grey;
-  color: $white;
+  // Custom type for region
 }
 
 #footer-bottom {
@@ -151,4 +145,28 @@ body {
   padding: $small $big $small;
   text-align: right;
   font-weight: bold;
+}
+
+#social-media-follow,
+#social-media-share {
+  position: relative;
+  width: 100%;
+  padding: 0 0 1em 0;
+  background: $white;
+  border-top: $dark_grey 1em solid;
+  overflow: hidden;
+
+  form {
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: $normal;
+    font-weight: bold;
+    margin: 0;
+  }
 }

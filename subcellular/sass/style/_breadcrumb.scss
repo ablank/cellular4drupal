@@ -1,0 +1,34 @@
+/**
+  * @file
+  * Breadcrumb navigation styling.
+*/
+#breadcrumb {
+  display: inline;
+  display: inline-block;
+  height: 2em;
+
+  li {
+    list-style: none;
+    line-height: 2em;
+    margin: 0 0 0 .2em;
+    width: 100%;
+  }
+
+  a {
+    &:visited {
+      color: darken($hilight, 20%);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $hilight;
+    }
+  }
+
+  .home {
+    background: url(../assets/images/icon-home.png);
+    color: $black;
+    padding: 0 0 0 34px;
+  }
+}

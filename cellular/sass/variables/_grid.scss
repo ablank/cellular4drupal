@@ -1,10 +1,5 @@
-// Cell grid spacing
-$cell_margin: 0;
-$cell_padding: 0;
-$cell_border: 0;
-$cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);
-
-$grid :
+// Grid size declarations.
+$grid : (
 100
 90
 80
@@ -19,4 +14,10 @@ $grid :
 25
 20
 10
-;
+);
+
+// Cell grid spacing
+$cell_margin: 0;
+$cell_padding: 0;
+$cell_border: 0;
+$cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);

@@ -1,11 +1,17 @@
 /**
-  * @file
-  * Provide svg background images for compliant browsers
-*/
+ * @file
+ * Provide svg background images for compliant browsers
+ */
 
 .svg {
-  #logo a {
+  #logo > a {
     background-image: url($logo_svg);
+  }
+
+  #nav {
+    &.jMmenu.mini {
+      background-image: url('../assets/icons/min/svg/menu.svg');
+    }
   }
 
   .ok {
@@ -19,10 +25,9 @@
   .error {
     list-style-image: url('../assets/icons/min/svg/message-error.svg');
   }
-  // CellularUI
-  .cellular {
-    &.jMmenu.mini {
-      background-image: url('../assets/icons/min/svg/menu.svg');
-    }
-  }
+
+}
+
+@media screen and (max-width: $res_mobile) {
+
 }

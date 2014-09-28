@@ -72,7 +72,7 @@ function cellular_cdn() {
 /**
  * Update jQuery & essential plugins.
  */
-function cellular_jquery_update(&$javascript, $js_plugins) {
+function cellular_jquery_update(&$javascript) {
   $jq = cellular_jquery_info();
   // Override jQuery.
   $jquery = array(
@@ -93,7 +93,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 
   cellular_js_override($javascript, $jquery, TRUE);
 
-    // Override jQuery.cookie.
+  // Override jQuery.cookie.
   $jquerycookie = array(
     'default' => 'misc/jquery.cookie.js',
     'version' => '1.4.1',
@@ -124,7 +124,7 @@ function cellular_jquery_update(&$javascript, $js_plugins) {
 /**
  * Override jQueryUI javascript.
  */
-function cellular_jqueryui_js(&$javascript) {
+function cellular_jqueryui_update_js(&$javascript) {
   $jq = cellular_jquery_info();
   $ui_widgets = array(
     'ui.core',
@@ -196,7 +196,7 @@ function cellular_jqueryui_js(&$javascript) {
 /**
  * Update jQuery.ui stylesheets.
  */
-function cellular_jqueryui_css(&$css) {
+function cellular_jqueryui_update_css(&$css, &$plugins) {
 
   $ui['path'] = 'jquery-ui/';
   $ui['widgets'] = array(
@@ -220,41 +220,33 @@ function cellular_jqueryui_css(&$css) {
       $jq = cellular_jquery_info();
       $jq = $jq['ui'];
       $style = array(
-        'core' => array(
-          'default' => $default,
-          'version' => $jq['version'],
-          'group' => CSS_SYSTEM,
-          'every_page' => isset($css[$default]['every_page']) ?
-          $css[$default]['every_page'] : FALSE,
-          'weight' => isset($css[$default]['weight']) ?
-          $css[$default]['weight'] : -9,
-          'file' => NULL,
-        ),
+        'default' => $default,
+        'version' => $jq['version'],
+        'group' => CSS_SYSTEM,
+        'every_page' => FALSE,
+        'weight' => isset($css[$default]['weight']) ?
+        $css[$default]['weight'] : -9,
+        'file' => NULL,
       );
 
-      // Unset default style after getting needed parameters.
-      unset($css[$default]);
-
-      // Set path to local custom file if selected.
       if ($jq['theme'] === 'custom') {
-        $jq['version'] === '1.10.4' ? $v = '1.10' : '1.9';
-        $file = $ui['path'] . "jquery-ui.$v.css";
-
-        $style['core']['file'] = $file;
-      }
-      elseif (theme_get_setting('jquery_cdn') === 1 && $jq['theme'] !== 'custom') {
-        $cdn = cellular_cdn();
-        // If updating from cdn unset each widget so a single call can be made.
-        unset($css[$default]);
-        // Set cdn source.
-        $style['core']['cdn'] = $cdn['base_url'] . $cdn['theme'];
+        // Set path to local custom file if selected.
+        $v = $jq['version'] === '1.10.4' ? '1.10' : '1.9';
+        $style['file'] = "/jquery-ui/jquery-ui.$v.css";
+        cellular_add_css($css, $style);
       }
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
-
-        $style['core']['file'] = $ui_path . 'jquery-ui.css';
+        $style['file'] = $ui_path . 'jquery-ui.css';
+        if (theme_get_setting('jquery_cdn') == 1) {
+          $cdn = cellular_cdn();
+          // Set cdn source.
+          $style['cdn'] = $cdn['base_url'] . $cdn['theme'];
+        }
+        cellular_css_override($css, $style, TRUE);
       }
-      cellular_add_css($css, $style, TRUE);
+      // Remove default after updating styles.
+      unset($css[$default]);
     }
   }
 }
