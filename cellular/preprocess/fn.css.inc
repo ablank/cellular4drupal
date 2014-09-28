@@ -71,11 +71,14 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
       $data = $path . '/css/' . $style['file'];
     }
     $css[$ocss]['data'] = $data;
-    $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
+    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : FALSE;
     $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
+    $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
     $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;
     $css[$ocss]['type'] = isset($style['cdn']) ? 'external' : 'file';
-    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : FALSE;
+    $css[$ocss]['media'] = isset($style['media']) ? $style['media'] : 'all';
+    $css[$ocss]['browsers'] = isset($style['browsers']) ? $style['browsers'] :
+    array('IE' => TRUE, '!IE' => TRUE);
   }
 }
 
