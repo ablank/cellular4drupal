@@ -7,10 +7,7 @@
 
   Drupal.behaviors.theme = {
     attach: function (context, settings) {
-jQuery(window).bind('scroll', function(e){
-  e.preventDefault();
-  console.log(e);
-});
+
       // Cellular UI:
       $('.jAccordion').jAccordion({
         "active": 0, // Index value of initial content to display.
