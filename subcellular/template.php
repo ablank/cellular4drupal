@@ -12,7 +12,7 @@ $include = array(
 );
 
 foreach ($include as $i) {
-  require_once $inc_path . '/' . $i;
+  require_once ($inc_path . '/' . $i);
 }
 
 /**
