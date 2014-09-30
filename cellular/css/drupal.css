@@ -284,25 +284,34 @@
 }
 
 /* line 27, ../sass/drupal/_drupal-classes.scss */
+[class*='ui-'],
+[class^='ui-'] {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* line 34, ../sass/drupal/_drupal-classes.scss */
 .ctools-locked {
   color: #8c0d00;
   border: 1px solid #8c0d00;
   padding: 1em;
 }
 
-/* line 33, ../sass/drupal/_drupal-classes.scss */
+/* line 40, ../sass/drupal/_drupal-classes.scss */
 .ctools-owns-lock {
   background: white;
   border: 1px solid #eecc22;
   padding: 1em;
 }
 
-/* line 40, ../sass/drupal/_drupal-classes.scss */
+/* line 47, ../sass/drupal/_drupal-classes.scss */
 .ctools-ajaxing {
   background: url("../assets/images/gif/throbber.gif") center center no-repeat;
 }
 
-/* line 49, ../sass/drupal/_drupal-classes.scss */
+/* line 56, ../sass/drupal/_drupal-classes.scss */
 a.ctools-ajaxing,
 input.ctools-ajaxing,
 button.ctools-ajaxing,
@@ -310,25 +319,25 @@ select.ctools-ajaxing {
   padding-right: 18px;
 }
 
-/* line 54, ../sass/drupal/_drupal-classes.scss */
+/* line 61, ../sass/drupal/_drupal-classes.scss */
 div.ctools-ajaxing {
   float: left;
   width: 18px;
 }
 
-/* line 59, ../sass/drupal/_drupal-classes.scss */
+/* line 66, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary {
   margin: 2em 0 1em;
   background-color: #edeceb;
   border-bottom: #8a8882 1px solid;
 }
-/* line 64, ../sass/drupal/_drupal-classes.scss */
+/* line 71, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary li {
   list-style: none;
   display: inline;
   margin: 0 .1em;
 }
-/* line 70, ../sass/drupal/_drupal-classes.scss */
+/* line 77, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a {
   padding: .4em .8em 0.2em;
   color: #565450;
@@ -346,11 +355,11 @@ div.ctools-ajaxing {
   -o-border-top-right-radius: 0.3em;
   border-top-right-radius: 0.3em;
 }
-/* line 78, ../sass/drupal/_drupal-classes.scss */
+/* line 85, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a.active {
   background-color: #fefefe;
 }
-/* line 82, ../sass/drupal/_drupal-classes.scss */
+/* line 89, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a:hover {
   background-color: #edeceb;
 }

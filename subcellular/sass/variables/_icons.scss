@@ -2,8 +2,7 @@
 $icon_size: 32px;
 $icon_padding: 10px; // Set icons to include
 
-$icons: (
-//UI
+$ui_icons: (
 search
 arrow-up
 arrow-right
@@ -43,7 +42,10 @@ user-social
 video
 wrench
 zip
+);
+
 // Tech
+$tech_icons : (
 android
 angular
 apple
@@ -67,7 +69,10 @@ safari
 w3
 windows
 wordpress
+);
+
 // Social Media Icons
+$social_icons : (
 behance
 blogger
 delicious

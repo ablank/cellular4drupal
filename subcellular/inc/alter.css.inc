@@ -10,22 +10,22 @@
 function subcellular_css_alter(&$css) {
   /*
    * // Uncomment this block to add stylesheets to theme.
-    $add_css = array(
-    'styleName'  => array( //  default params
-    'file'       => 'my.awesome.css',
-    'preprocess' => TRUE,
-    'media'      => 'all',
-    'every_page' => TRUE,
-    'group'      => CSS_THEME,
-    'weight'     => 10
+  $add_css = array(
+    'myStyle' => array(// default params
+      'file' => 'my.awesome.css',
+      'preprocess' => TRUE,
+      'media' => 'all',
+      'every_page' => TRUE,
+      'group' => CSS_THEME,
+      'weight' => 10
     ),
-    'otherStyle' => array( // minimum setup
-    'file' => 'moar.css',
+    'otherStyle' => array(// minimum setup
+      'file' => 'moar.css',
     ),
-    );
+  );
 
-    cellular_add_css($css, $add_css);
-   */
+  cellular_add_css($css, $add_css);
+ */
 
   /* Remove stylesheets set by modules.
    * @params $key : Module name.

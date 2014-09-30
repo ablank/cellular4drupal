@@ -21,6 +21,13 @@
   height: auto;
 }
 
+
+// Prevent transitions of jquery-ui elements.
+[class*='ui-'],
+[class^='ui-'] {
+  @include transition(none);
+}
+
 //////
 // cTools
 //////

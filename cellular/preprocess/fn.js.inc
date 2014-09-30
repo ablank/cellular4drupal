@@ -126,7 +126,7 @@ function cellular_modernizr() {
     $yepnope .= "
         {
           test : Modernizr.mq('" . $mq['normal'] . "'),
-          yep: ['" . $$dir_css . "conditional-style.css']
+          yep: ['" . $dir_css . "conditional-style.css']
           },
         ";
   }
@@ -162,7 +162,8 @@ function cellular_plugins_js() {
     ) : NULL,
     'cellular' => theme_get_setting('cellularjs') == 1 ? array(
       'object' => 'cellular',
-      'file' => 'plugins/jquery.cellular.js',
+      // 'file' => 'plugins/jquery.cellular.min.js',
+      'file' => 'cellularUI/jquery.cellular.js',
       'weight' => -10,
     ) : NULL,
     'd3' => theme_get_setting('d3js') == 1 ? array(
