@@ -154,16 +154,10 @@ function cellular_modernizr() {
 function cellular_plugins_js() {
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array(
-    'modernizr' => theme_get_setting('modernizr') == 1 ? array(
-      'group' => JS_LIBRARY,
-      'object' => 'Modernizr',
-      'file' => 'modernizr.js',
-      'weight' => -1000,
-    ) : NULL,
     'cellular' => theme_get_setting('cellularjs') == 1 ? array(
       'object' => 'cellular',
-      // 'file' => 'plugins/jquery.cellular.min.js',
-      'file' => 'cellularUI/jquery.cellular.js',
+      'file' => 'plugins/jquery.cellular.min.js',
+      // 'file' => 'cellularUI/jquery.cellular.js',
       'weight' => -10,
     ) : NULL,
     'd3' => theme_get_setting('d3js') == 1 ? array(
@@ -177,6 +171,12 @@ function cellular_plugins_js() {
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js',
       'file' => 'plugins/jquery.masonry.min.js',
       'weight' => -8,
+    ) : NULL,
+    'modernizr' => theme_get_setting('modernizr') == 1 ? array(
+      'group' => JS_LIBRARY,
+      'object' => 'Modernizr',
+      'file' => 'modernizr.js',
+      'weight' => -1000,
     ) : NULL,
     'prism' => theme_get_setting('prism') == 1 ? array(
       'object' => 'Prism',
