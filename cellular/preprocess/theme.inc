@@ -34,26 +34,24 @@ function cellular_field(&$vars) {
  * Cellular theme_breadcrumb().
  */
 function cellular_breadcrumb(&$vars) {
-
+  $output = NULL;
   if (theme_get_setting('breadcrumb_display') == 1) {
     if (!empty($vars['breadcrumb'])) {
-      $crumbs = "";
       $vars['breadcrumb'][] = '<span class="active">' . drupal_get_title() . '</span>';
       $breadcrumb = $vars['breadcrumb'];
 
       // Provide a navigational heading to give context for breadcrumb links to
       // screen-reader users. Make the heading invisible with .element-invisible.
-      $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+      $output .= '<h2 class="element-invisible">' . t('You are here') . '</h2>';
 
       $output .= theme('item_list', array(
         'items' => $breadcrumb,
         'type' => 'ul',
         'attributes' => array('id' => 'breadcrumb'),
       ));
-
-      return $output;
     }
   }
+  return $output;
 }
 
 /**

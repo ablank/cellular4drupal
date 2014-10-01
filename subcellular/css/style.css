@@ -1129,20 +1129,21 @@ hr.clearfix {
   line-height: 2em;
   margin: 0 0 0 .4em;
   padding: 0 0 0 1.4em;
+  color: #565450;
   background-repeat: no-repeat;
   background-size: 1em;
   background-position: left center;
   background-image: url(../assets/icons/min/png/arrow-right.png);
 }
-/* line 25, ../sass/style/_breadcrumb.scss */
+/* line 26, ../sass/style/_breadcrumb.scss */
 #breadcrumb li a {
   color: #fefefe;
 }
-/* line 29, ../sass/style/_breadcrumb.scss */
+/* line 30, ../sass/style/_breadcrumb.scss */
 #breadcrumb li.first {
   background-image: none;
 }
-/* line 32, ../sass/style/_breadcrumb.scss */
+/* line 33, ../sass/style/_breadcrumb.scss */
 #breadcrumb li.first a {
   background-image: url(../assets/icons/min/png/home.png);
   background-repeat: no-repeat;
