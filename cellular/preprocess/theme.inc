@@ -36,23 +36,20 @@ function cellular_field(&$vars) {
 function cellular_breadcrumb(&$vars) {
 
   if (theme_get_setting('breadcrumb_display') == 1) {
-    $breadcrumb = $vars['breadcrumb'];
-    $separator = '&#187;';
+    if (!empty($vars['breadcrumb'])) {
+      $crumbs = "";
+      $vars['breadcrumb'][] = '<span class="active">' . drupal_get_title() . '</span>';
+      $breadcrumb = $vars['breadcrumb'];
 
-    if (isset($breadcrumb)) {
-      // Add the current page to breadcrumb trail.
-      $breadcrumb[] = drupal_get_title();
+      // Provide a navigational heading to give context for breadcrumb links to
+      // screen-reader users. Make the heading invisible with .element-invisible.
+      $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
 
-      $output = "<ol id=\"breadcrumb\">\n";
-      foreach ($breadcrumb as $key => $val) {
-        if ($key == 0) {
-          $output .= "<li class=\"icon home\">$val</li>\n";
-        }
-        else {
-          $output .= "<li>$separator $val</li>\n";
-        }
-      }
-      $output .= "</ol>\n";
+      $output .= theme('item_list', array(
+        'items' => $breadcrumb,
+        'type' => 'ul',
+        'attributes' => array('id' => 'breadcrumb'),
+      ));
 
       return $output;
     }

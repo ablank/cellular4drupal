@@ -10,6 +10,7 @@ $regions: ();
 //////
 
 body {
+  overflow: hidden;
   background-color: $white;
   //background-image: $body_img;
   //@include gradient_rad($white, $white, $light_grey);
@@ -18,6 +19,9 @@ body {
 }
 
 #page-wrap {
+  width: 100%;
+  // Transition used by jMmenu.
+  @include transition();
 }
 
 #app {
@@ -106,7 +110,7 @@ body {
 
 #sidebar-left,
 #sidebar-right {
-  background: $light_grey;
+  background: darken($white, 5%);
 }
 
 #sidebar-left {
@@ -141,9 +145,10 @@ body {
 }
 
 #copyright {
-  max-width: 100%;
+  display: block;
   padding: $small $big $small;
   text-align: right;
+  font-size: 1em;
   font-weight: bold;
 }
 

@@ -1115,30 +1115,26 @@ hr.clearfix {
 */
 /* line 5, ../sass/style/_breadcrumb.scss */
 #breadcrumb {
+  width: 90%;
+  height: 2em;
+  margin: 0 0 2em 0;
+  padding: .1em 5%;
+  background: #bbbab7;
+}
+/* line 13, ../sass/style/_breadcrumb.scss */
+#breadcrumb li {
   display: inline;
   display: inline-block;
-  height: 2em;
-}
-/* line 10, ../sass/style/_breadcrumb.scss */
-#breadcrumb li {
   list-style: none;
   line-height: 2em;
-  margin: 0 0 0 .2em;
-  width: 100%;
+  margin: 0 0 0 .4em;
 }
-/* line 18, ../sass/style/_breadcrumb.scss */
-#breadcrumb a:visited {
-  color: #16708b;
-}
-/* line 24, ../sass/style/_breadcrumb.scss */
-#breadcrumb a:hover, #breadcrumb a:focus, #breadcrumb a:active {
-  color: #29b4de;
-}
-/* line 29, ../sass/style/_breadcrumb.scss */
-#breadcrumb .home {
-  background: url(../assets/images/icon-home.png);
-  color: #111111;
-  padding: 0 0 0 34px;
+/* line 21, ../sass/style/_breadcrumb.scss */
+#breadcrumb li.first a {
+  background-image: url(../assets/icons/min/png/home.png);
+  background-repeat: no-repeat;
+  color: #fefefe;
+  padding: 0 0 0 3em;
 }
 
 /**
@@ -1386,8 +1382,8 @@ hr.clearfix {
   * @file
   * CellularUI : jMMenu
 */
-/* line 10, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini {
+/* line 7, ../sass/cellular-ui/_jMmenu.scss */
+.jMmenu.mini {
   float: right;
   cursor: pointer;
   z-index: 10;
@@ -1410,8 +1406,41 @@ hr.clearfix {
   -o-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 27, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini ul {
+/* line 24, ../sass/cellular-ui/_jMmenu.scss */
+.jMmenu.mini.active {
+  background-position: right center;
+}
+
+/* line 30, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  margin: 0;
+  background: #8c0d00;
+  max-width: 0;
+  list-style: none;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 42, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu.right {
+  right: 0;
+}
+/* line 46, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu.left {
+  left: 0;
+}
+/* line 50, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu.menu-active {
+  display: block;
+  max-width: 80%;
+}
+/* line 55, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu ul {
   position: absolute;
   top: -13em;
   right: 0;
@@ -1424,39 +1453,20 @@ hr.clearfix {
   -o-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 42, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini > ul > li:first-child, #nav.cellular.jMmenu.mini > ul > li:last-child {
-  margin-left: 0;
-  margin-right: 0;
-}
-/* line 48, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini li {
+/* line 67, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu li {
   float: none;
+  display: block;
   margin: 0;
 }
-/* line 52, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini li > ul {
+/* line 72, ../sass/cellular-ui/_jMmenu.scss */
+#jMmenu li > ul {
   display: none;
 }
-/* line 58, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini.active {
-  background-position: right center;
-}
-/* line 61, ../sass/cellular-ui/_jMmenu.scss */
-#nav.cellular.jMmenu.mini.active ul {
-  top: 3em;
-  opacity: 1;
-}
 
-/**
- * @file
- * CellularUI : jParallax
- */
-/* line 8, ../sass/cellular-ui/_jParallax.scss */
-.cellular.jParallax {
-  background-image: url("../assets/images/png/carousel-arrows.png");
-  background-repeat: no-repeat;
-  background-position: 3px -4px;
+/* line 82, ../sass/cellular-ui/_jMmenu.scss */
+#page-wrap.menu-active {
+  width: 70%;
 }
 
 /**
@@ -1583,30 +1593,40 @@ hr.clearfix {
  */
 /* line 12, ../sass/style/_content-regions.scss */
 body {
+  overflow: hidden;
   background-color: #fefefe;
 }
 
-/* line 23, ../sass/style/_content-regions.scss */
+/* line 21, ../sass/style/_content-regions.scss */
+#page-wrap {
+  width: 100%;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+
+/* line 27, ../sass/style/_content-regions.scss */
 #app {
   z-index: 1;
   overflow: visible;
 }
 
-/* line 28, ../sass/style/_content-regions.scss */
+/* line 32, ../sass/style/_content-regions.scss */
 #content-wrap {
   display: block;
   margin: 0 auto;
   max-width: 1200px;
 }
 
-/* line 35, ../sass/style/_content-regions.scss */
+/* line 39, ../sass/style/_content-regions.scss */
 #console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 41, ../sass/style/_content-regions.scss */
+/* line 45, ../sass/style/_content-regions.scss */
 #header {
   z-index: 2;
   height: 96px;
@@ -1616,7 +1636,7 @@ body {
   box-shadow: 0 0 1em 0.1em #565450;
 }
 
-/* line 48, ../sass/style/_content-regions.scss */
+/* line 52, ../sass/style/_content-regions.scss */
 #header-top {
   z-index: 4;
   background: #111111;
@@ -1624,11 +1644,11 @@ body {
   border-bottom: #111111 thin solid;
   text-align: right;
 }
-/* line 57, ../sass/style/_content-regions.scss */
+/* line 61, ../sass/style/_content-regions.scss */
 #header-top div {
   display: inline;
 }
-/* line 63, ../sass/style/_content-regions.scss */
+/* line 67, ../sass/style/_content-regions.scss */
 #header-top h2,
 #header-top h3,
 #header-top h4 {
@@ -1637,14 +1657,14 @@ body {
   display: inline;
 }
 
-/* line 70, ../sass/style/_content-regions.scss */
+/* line 74, ../sass/style/_content-regions.scss */
 #header-bottom {
   height: 32px;
   color: #fefefe;
   border-bottom: #111111 thin solid;
 }
 
-/* line 83, ../sass/style/_content-regions.scss */
+/* line 87, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1654,44 +1674,44 @@ body {
   display: block;
 }
 
-/* line 89, ../sass/style/_content-regions.scss */
+/* line 93, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 99, ../sass/style/_content-regions.scss */
+/* line 103, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 102, ../sass/style/_content-regions.scss */
+/* line 106, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 108, ../sass/style/_content-regions.scss */
+/* line 112, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
-  background: #bbbab7;
+  background: #f1f1f1;
 }
 
-/* line 119, ../sass/style/_content-regions.scss */
+/* line 123, ../sass/style/_content-regions.scss */
 #footer {
   background: #565450;
   color: #fefefe;
 }
-/* line 124, ../sass/style/_content-regions.scss */
+/* line 128, ../sass/style/_content-regions.scss */
 #footer p {
   color: #fefefe;
 }
 
-/* line 129, ../sass/style/_content-regions.scss */
+/* line 133, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #565450;
   color: #bbbab7;
 }
 
-/* line 136, ../sass/style/_content-regions.scss */
+/* line 140, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #565450;
@@ -1699,15 +1719,16 @@ body {
   border-top: thin solid;
 }
 
-/* line 143, ../sass/style/_content-regions.scss */
+/* line 147, ../sass/style/_content-regions.scss */
 #copyright {
-  max-width: 100%;
+  display: block;
   padding: 0.75em 1.4em 0.75em;
   text-align: right;
+  font-size: 1em;
   font-weight: bold;
 }
 
-/* line 151, ../sass/style/_content-regions.scss */
+/* line 156, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1717,14 +1738,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 159, ../sass/style/_content-regions.scss */
+/* line 164, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 167, ../sass/style/_content-regions.scss */
+/* line 172, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
@@ -1763,9 +1784,9 @@ body {
  * Styling for large-screen devices included in style.css
  */
 /**
- * @file
- * Provide svg background images for compliant browsers
- */
+  * @file
+  * Provide svg background images for compliant browsers
+*/
 /* line 7, ../sass/style/_svg.scss */
 .svg #logo > a {
   background-image: url(url("../assets/images/min/svg/logo.svg"));
@@ -1785,4 +1806,8 @@ body {
 /* line 25, ../sass/style/_svg.scss */
 .svg .error {
   list-style-image: url("../assets/icons/min/svg/message-error.svg");
+}
+/* line 29, ../sass/style/_svg.scss */
+.svg #breadcrumb li.first a {
+  background-image: url(../assets/icons/min/svg/home.svg);
 }

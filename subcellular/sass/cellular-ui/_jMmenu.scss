@@ -2,67 +2,84 @@
   * @file
   * CellularUI : jMMenu
 */
+.jMmenu {
 
-#nav.cellular {
+  &.mini {
+    // Parent ul, used as menu trigger.
+    float: right;
+    cursor: pointer;
+    z-index: 10;
+    width: 3em;
+    height: 3em;
+    padding: 0;
+    background-color: $white;
+    background-image: url('../assets/icons/min/png/menu.png');
+    background-size: 9em;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border: 1px solid $light_grey;
+    @include border-radius();
+    @include transition();
 
-  &.jMmenu {
-
-    &.mini {
-      // Parent ul, used as menu trigger.
-      float: right;
-      cursor: pointer;
-      z-index: 10;
-      width: 3em;
-      height: 3em;
-      padding: 0;
-      background-color: $white;
-      background-image: url('../assets/icons/min/png/menu.png');
-      background-size: 9em;
-      background-repeat: no-repeat;
-      background-position: left center;
-      border: 1px solid $light_grey;
-      @include border-radius();
-      @include transition();
-
-      ul {
-        // Top level ul.
-        position: absolute;
-        top: -13em;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        opacity: 0;
-        background-color: darken($white, 5%);
-        @include transition();
-      }
-
-      > ul > li {
-
-        &:first-child,
-        &:last-child {
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
-
-      li {
-        float: none;
-        margin: 0;
-
-        & > ul {
-          // Disable deep links.
-          display: none;
-        }
-      }
-
-      &.active {
-        background-position: right center;
-
-        ul {
-          top: 3em;
-          opacity: 1;
-        }
-      }
+    &.active {
+      background-position: right center;
     }
   }
 }
+
+  #jMmenu {
+    //display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    margin: 0;
+    background: $red;
+    max-width: 0;
+    list-style: none;
+    @include transition();
+
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.menu-active {
+      display: block;
+      max-width: 80%;
+    }
+
+    ul {
+      // Top level ul.
+      position: absolute;
+      top: -13em;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      background-color: darken($white, 5%);
+      @include transition();
+    }
+
+    li {
+      float: none;
+      display: block;
+      margin: 0;
+
+      & > ul {
+        // Disable deep links.
+        display: none;
+      }
+    }
+
+
+  }
+
+
+  #page-wrap.menu-active {
+    width: 70%;
+  }
+

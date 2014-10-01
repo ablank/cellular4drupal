@@ -3,32 +3,26 @@
   * Breadcrumb navigation styling.
 */
 #breadcrumb {
-  display: inline;
-  display: inline-block;
+  width: 90%;
   height: 2em;
+  margin: 0 0 2em 0;
+  padding: .1em 5%;
+  background: $light_grey;
+
 
   li {
+    display: inline;
+    display: inline-block;
     list-style: none;
     line-height: 2em;
-    margin: 0 0 0 .2em;
-    width: 100%;
-  }
+    margin: 0 0 0 .4em;
 
-  a {
-    &:visited {
-      color: darken($hilight, 20%);
+    a { }
+    &.first a {
+      background-image: url(../assets/icons/min/png/home.png);
+      background-repeat: no-repeat;
+      color: $white;
+      padding: 0 0 0 3em;
     }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $hilight;
-    }
-  }
-
-  .home {
-    background: url(../assets/images/icon-home.png);
-    color: $black;
-    padding: 0 0 0 34px;
   }
 }

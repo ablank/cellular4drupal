@@ -1115,30 +1115,26 @@ hr.clearfix {
 */
 /* line 5, ../sass/style/_breadcrumb.scss */
 #breadcrumb {
+  width: 90%;
+  height: 2em;
+  margin: 0 0 2em 0;
+  padding: .1em 5%;
+  background: #bbbab7;
+}
+/* line 13, ../sass/style/_breadcrumb.scss */
+#breadcrumb li {
   display: inline;
   display: inline-block;
-  height: 2em;
-}
-/* line 10, ../sass/style/_breadcrumb.scss */
-#breadcrumb li {
   list-style: none;
   line-height: 2em;
-  margin: 0 0 0 .2em;
-  width: 100%;
+  margin: 0 0 0 .4em;
 }
-/* line 18, ../sass/style/_breadcrumb.scss */
-#breadcrumb a:visited {
-  color: #16708b;
-}
-/* line 24, ../sass/style/_breadcrumb.scss */
-#breadcrumb a:hover, #breadcrumb a:focus, #breadcrumb a:active {
-  color: #29b4de;
-}
-/* line 29, ../sass/style/_breadcrumb.scss */
-#breadcrumb .home {
-  background: url(../assets/images/icon-home.png);
-  color: #111111;
-  padding: 0 0 0 34px;
+/* line 21, ../sass/style/_breadcrumb.scss */
+#breadcrumb li.first a {
+  background-image: url(../assets/icons/min/png/home.png);
+  background-repeat: no-repeat;
+  color: #fefefe;
+  padding: 0 0 0 3em;
 }
 
 /**
@@ -1695,7 +1691,7 @@ body {
 /* line 112, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
-  background: #bbbab7;
+  background: #f1f1f1;
 }
 
 /* line 123, ../sass/style/_content-regions.scss */
@@ -1725,13 +1721,14 @@ body {
 
 /* line 147, ../sass/style/_content-regions.scss */
 #copyright {
-  max-width: 100%;
+  display: block;
   padding: 0.75em 1.4em 0.75em;
   text-align: right;
+  font-size: 1em;
   font-weight: bold;
 }
 
-/* line 155, ../sass/style/_content-regions.scss */
+/* line 156, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1741,14 +1738,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 163, ../sass/style/_content-regions.scss */
+/* line 164, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 171, ../sass/style/_content-regions.scss */
+/* line 172, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
@@ -1787,9 +1784,9 @@ body {
  * Styling for large-screen devices included in style.css
  */
 /**
- * @file
- * Provide svg background images for compliant browsers
- */
+  * @file
+  * Provide svg background images for compliant browsers
+*/
 /* line 7, ../sass/style/_svg.scss */
 .svg #logo > a {
   background-image: url(url("../assets/images/min/svg/logo.svg"));
@@ -1809,4 +1806,8 @@ body {
 /* line 25, ../sass/style/_svg.scss */
 .svg .error {
   list-style-image: url("../assets/icons/min/svg/message-error.svg");
+}
+/* line 29, ../sass/style/_svg.scss */
+.svg #breadcrumb li.first a {
+  background-image: url(../assets/icons/min/svg/home.svg);
 }

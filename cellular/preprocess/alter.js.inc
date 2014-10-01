@@ -43,6 +43,7 @@ function cellular_js_alter(&$javascript) {
       $js_plugins['migrate'] = array(
         'version' => '1.2.1',
         'file' => 'plugins/jquery.migrate.min.js',
+        'group' => JS_LIBRARY,
         'weight' => -96,
       );
     }

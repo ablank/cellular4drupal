@@ -1,7 +1,7 @@
 /**
- * @file
- * Provide svg background images for compliant browsers
- */
+  * @file
+  * Provide svg background images for compliant browsers
+*/
 
 .svg {
   #logo > a {
@@ -25,7 +25,10 @@
   .error {
     list-style-image: url('../assets/icons/min/svg/message-error.svg');
   }
-
+  
+  #breadcrumb li.first a {
+    background-image: url(../assets/icons/min/svg/home.svg);
+  }
 }
 
 @media screen and (max-width: $res_mobile) {
