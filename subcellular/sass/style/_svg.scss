@@ -25,9 +25,17 @@
   .error {
     list-style-image: url('../assets/icons/min/svg/message-error.svg');
   }
-  
-  #breadcrumb li.first a {
-    background-image: url(../assets/icons/min/svg/home.svg);
+
+  #breadcrumb li {
+    background-image: url(../assets/icons/min/png/arrow-right.png);
+
+    &.first{
+      background-image: none;
+
+      a {
+        background-image: url(../assets/icons/min/svg/home.svg);
+      }
+    }
   }
 }
 

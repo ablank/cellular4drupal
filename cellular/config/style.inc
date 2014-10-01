@@ -35,20 +35,6 @@ frontpage)"),
   '#default_value' => theme_get_setting('breadcrumb_display'),
 );
 
-$form['c']['display_settings']['breadcrumb_separator'] = array(
-  '#type' => 'textfield',
-  '#size' => 8,
-  '#maxlength' => 10,
-  '#title' => t('Breadcrumb separator'),
-  '#description' => t('Symbol used to separate breadcrumb links.'),
-  '#default_value' => theme_get_setting('breadcrumb_separator'),
-  '#states' => array(
-    'visible' => array(
-      ':input[name="breadcrumb_display"]' => array('checked' => TRUE),
-    ),
-  ),
-);
-
 $form['c']['display_settings']['r'] = array(
   '#type' => 'fieldset',
   '#title' => t('Remove Drupal CSS'),
@@ -59,6 +45,7 @@ $form['c']['display_settings']['r'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
+
 $form['c']['display_settings']['r']['remove_drupal_css'] = array(
   '#type' => 'radios',
   '#title' => t('Remove Drupal CSS'),
@@ -73,6 +60,7 @@ $form['c']['display_settings']['login'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
+
 $form['c']['display_settings']['login']['login_block_orientation'] = array(
   '#type' => 'select',
   '#title' => t('Login Block Orientation'),
@@ -84,6 +72,7 @@ $form['c']['display_settings']['login']['login_block_orientation'] = array(
   ),
   '#default_value' => theme_get_setting('login_block_orientation '),
 );
+
 $form['c']['display_settings']['login']['login_block_register'] = array(
   '#type' => 'checkbox',
   '#title' => t('Show link to Register New User Account'),
@@ -108,6 +97,7 @@ $form['c']['display_settings']['add_classes'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
+
 $form['c']['display_settings']['add_classes']['content_class_no_sidebars'] = array(
   '#type' => 'textfield',
   '#title' => t('Default Content Class'),
@@ -115,6 +105,7 @@ $form['c']['display_settings']['add_classes']['content_class_no_sidebars'] = arr
   // '#options' => $grid_values,
   '#default_value' => theme_get_setting('content_class_no_sidebars'),
 );
+
 $form['c']['display_settings']['add_classes']['content_class_single_sidebar'] = array(
   '#type' => 'textfield',
   '#title' => t('Content Class w/ Single Sidebar'),
@@ -122,6 +113,7 @@ $form['c']['display_settings']['add_classes']['content_class_single_sidebar'] = 
   // '#options' => $grid_values,
   '#default_value' => theme_get_setting('content_class_single_sidebar'),
 );
+
 $form['c']['display_settings']['add_classes']['sidebar_class_single_sidebar'] = array(
   '#type' => 'textfield',
   '#title' => t('Sidebar Class w/ Single Sidebar'),
@@ -130,6 +122,7 @@ $form['c']['display_settings']['add_classes']['sidebar_class_single_sidebar'] = 
   // '#options' => $grid_values,
   '#default_value' => theme_get_setting('sidebar_class_single_sidebar'),
 );
+
 $form['c']['display_settings']['add_classes']['content_class_dual_sidebars'] = array(
   '#type' => 'textfield',
   '#title' => t('Content Class w/ Dual Sidebars'),
@@ -137,6 +130,7 @@ $form['c']['display_settings']['add_classes']['content_class_dual_sidebars'] = a
   // '#options' => $grid_values,
   '#default_value' => theme_get_setting('content_class_dual_sidebars'),
 );
+
 $form['c']['display_settings']['add_classes']['sidebar_class_dual_sidebars'] = array(
   '#type' => 'textfield',
   '#title' => t('Sidebar Class w/ Dual Sidebars'),

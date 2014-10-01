@@ -16,13 +16,26 @@
     list-style: none;
     line-height: 2em;
     margin: 0 0 0 .4em;
+    padding: 0 0 0 1.4em;
+    background-repeat: no-repeat;
+    background-size: 1em;
+    background-position: left center;
+    background-image: url(../assets/icons/min/png/arrow-right.png);
 
-    a { }
-    &.first a {
-      background-image: url(../assets/icons/min/png/home.png);
-      background-repeat: no-repeat;
+    a {
       color: $white;
-      padding: 0 0 0 3em;
+    }
+
+    &.first {
+      background-image: none;
+
+      a {
+        background-image: url(../assets/icons/min/png/home.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 0 0 0 2em;
+        background-size: 1.4em;
+      }
     }
   }
 }

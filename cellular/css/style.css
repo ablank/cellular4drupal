@@ -1128,13 +1128,27 @@ hr.clearfix {
   list-style: none;
   line-height: 2em;
   margin: 0 0 0 .4em;
+  padding: 0 0 0 1.4em;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-position: left center;
+  background-image: url(../assets/icons/min/png/arrow-right.png);
 }
-/* line 21, ../sass/style/_breadcrumb.scss */
+/* line 25, ../sass/style/_breadcrumb.scss */
+#breadcrumb li a {
+  color: #fefefe;
+}
+/* line 29, ../sass/style/_breadcrumb.scss */
+#breadcrumb li.first {
+  background-image: none;
+}
+/* line 32, ../sass/style/_breadcrumb.scss */
 #breadcrumb li.first a {
   background-image: url(../assets/icons/min/png/home.png);
   background-repeat: no-repeat;
-  color: #fefefe;
-  padding: 0 0 0 3em;
+  background-position: left center;
+  padding: 0 0 0 2em;
+  background-size: 1.4em;
 }
 
 /**
@@ -1808,6 +1822,14 @@ body {
   list-style-image: url("../assets/icons/min/svg/message-error.svg");
 }
 /* line 29, ../sass/style/_svg.scss */
+.svg #breadcrumb li {
+  background-image: url(../assets/icons/min/png/arrow-right.png);
+}
+/* line 32, ../sass/style/_svg.scss */
+.svg #breadcrumb li.first {
+  background-image: none;
+}
+/* line 35, ../sass/style/_svg.scss */
 .svg #breadcrumb li.first a {
   background-image: url(../assets/icons/min/svg/home.svg);
 }
