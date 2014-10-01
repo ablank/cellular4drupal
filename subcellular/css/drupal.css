@@ -363,3 +363,46 @@ div.ctools-ajaxing {
 .tabs.primary a:hover {
   background-color: #edeceb;
 }
+
+/**
+  * @file
+  * Breadcrumb navigation styling.
+*/
+/* line 5, ../sass/drupal/_drupal-breadcrumb.scss */
+#breadcrumb {
+  width: 90%;
+  height: 2em;
+  margin: 0 0 2em 0;
+  padding: .1em 5%;
+  background: #bbbab7;
+}
+/* line 13, ../sass/drupal/_drupal-breadcrumb.scss */
+#breadcrumb li {
+  display: inline;
+  display: inline-block;
+  list-style: none;
+  line-height: 2em;
+  margin: 0 0 0 .4em;
+  padding: 0 0 0 1.4em;
+  color: #565450;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-position: left center;
+  background-image: url(../assets/icons/min/png/arrow-right.png);
+}
+/* line 26, ../sass/drupal/_drupal-breadcrumb.scss */
+#breadcrumb li a {
+  color: #fefefe;
+}
+/* line 30, ../sass/drupal/_drupal-breadcrumb.scss */
+#breadcrumb li.first {
+  background-image: none;
+}
+/* line 33, ../sass/drupal/_drupal-breadcrumb.scss */
+#breadcrumb li.first a {
+  background-image: url(../assets/icons/min/png/home.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0 0 0 2em;
+  background-size: 1.4em;
+}
