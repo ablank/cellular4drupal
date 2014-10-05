@@ -83,11 +83,14 @@
 /*
   Custom page templates can be created for content types by adding the template:
  * /templates/page--content-type.tpl.php
+ *
  * Render cck fields:
-  <?php print render(field_view_field('node', $node, 'field_name', array(
-  'label' => 'hidden'))); ?>
+ *
+$field = field_view_field('node', $node, 'field_name', array(
+  'label' => 'hidden'));
+print render($field);
+unset($field);
  */
-
 ?>
 
 <div id="page-wrap">

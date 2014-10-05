@@ -26,30 +26,19 @@
   /////
 */
 /**
- * @file
- * Drupal pager styling
- */
+  * @file
+  * Drupal pager styling
+*/
 /* line 6, ../sass/drupal/_drupal-pager.scss */
 .pager {
   clear: both;
-  display: block;
-  margin: 0;
+  display: table;
+  margin: .4em auto;
   padding: 0;
   font: bold .8em/1em Arial, sans-serif;
   text-align: center;
-  background: #565450;
-  border: thin solid;
-  -webkit-border-radius: 0.75em;
-  -moz-border-radius: 0.75em;
-  -ms-border-radius: 0.75em;
-  -o-border-radius: 0.75em;
-  border-radius: 0.75em;
 }
-/* line 17, ../sass/drupal/_drupal-pager.scss */
-.pager .pager-item {
-  margin: .2em;
-}
-/* line 21, ../sass/drupal/_drupal-pager.scss */
+/* line 14, ../sass/drupal/_drupal-pager.scss */
 .pager li {
   float: left;
   margin: 0 auto;
@@ -57,80 +46,54 @@
   padding: 0;
   outline: 0;
   list-style: none;
-  border: thin solid;
 }
-/* line 33, ../sass/drupal/_drupal-pager.scss */
+/* line 25, ../sass/drupal/_drupal-pager.scss */
 .pager a,
 .pager a:link,
 .pager a:visited {
-  padding: 1em;
-  color: #fefefe;
   display: block;
   cursor: pointer;
-  background: #565450;
-  border: thin solid #111111;
+  padding: 1em;
+  color: #8a8882;
+  background: #f1f1f1;
+  border: #bbbab7 thin solid;
 }
-/* line 43, ../sass/drupal/_drupal-pager.scss */
+/* line 36, ../sass/drupal/_drupal-pager.scss */
+.pager a:active,
 .pager a:hover,
 .pager a:focus {
   background: #fefefe;
   color: #29b4de;
-  border: thin solid #29b4de;
-}
-/* line 50, ../sass/drupal/_drupal-pager.scss */
-.pager .pager-ellipsis,
-.pager .pager-current {
   text-decoration: none;
 }
-/* line 54, ../sass/drupal/_drupal-pager.scss */
+/* line 42, ../sass/drupal/_drupal-pager.scss */
+.pager .pager-item {
+  margin: .2em;
+}
+/* line 46, ../sass/drupal/_drupal-pager.scss */
 .pager .pager-current {
-  margin: .2em .5em;
-  padding: 1.2em;
-  font-size: 1.2em;
+  margin: .2em;
+  padding: 1em;
   font-weight: bold;
   outline: 0;
   background: #fefefe;
-  color: #565450;
-  border: thin solid #565450;
+  color: #bbbab7;
+  border: thin solid;
 }
-/* line 68, ../sass/drupal/_drupal-pager.scss */
+/* line 59, ../sass/drupal/_drupal-pager.scss */
 .pager .pager-first,
 .pager .pager-previous,
 .pager .pager-next,
 .pager .pager-last {
-  margin: .5em;
+  margin: .2em;
   border: none;
 }
-/* line 73, ../sass/drupal/_drupal-pager.scss */
+/* line 63, ../sass/drupal/_drupal-pager.scss */
 .pager .pager-first a,
-.pager .pager-first a:visited,
 .pager .pager-previous a,
-.pager .pager-previous a:visited,
 .pager .pager-next a,
-.pager .pager-next a:visited,
-.pager .pager-last a,
-.pager .pager-last a:visited {
-  width: 6em;
-  text-align: center;
-  color: #565450;
-  background: #fefefe;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-}
-/* line 80, ../sass/drupal/_drupal-pager.scss */
-.pager .pager-first a:hover,
-.pager .pager-first a:visited:hover,
-.pager .pager-previous a:hover,
-.pager .pager-previous a:visited:hover,
-.pager .pager-next a:hover,
-.pager .pager-next a:visited:hover,
-.pager .pager-last a:hover,
-.pager .pager-last a:visited:hover {
-  background: #fefefe;
-  color: #29b4de;
+.pager .pager-last a {
+  width: 5em;
 }
 
 /**

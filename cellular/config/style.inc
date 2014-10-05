@@ -4,14 +4,16 @@
  * Theme-settings: Display & styling settings.
  */
 
+// Array options for select elements.
 $remove_core_css = array(
   0 => t('Leave CSS intact.'),
   'system' => t('Remove all system CSS.'),
-  'select' => t('Remove some system & core module CSS.'),
-  'theme_only' => t('Remove all module & system CSS,
-  only using the theme CSS.'),
+  'select' => t('Remove system & module CSS chosen by Cellular.'),
+  'theme_only' => t('Remove all system & module CSS-
+  Only use theme CSS.'),
 );
 
+//
 $form['c']['display_settings'] = array(
   '#type' => 'fieldset',
   '#title' => t('Style'),
@@ -43,7 +45,7 @@ $form['c']['display_settings']['r'] = array(
  $exclude and calling function cellular_remove_css() in /inc/css_alter
  .inc <hr/>'),
   '#collapsible' => TRUE,
-  '#collapsed' => TRUE,
+  '#collapsed' => FALSE,
 );
 
 $form['c']['display_settings']['r']['remove_drupal_css'] = array(

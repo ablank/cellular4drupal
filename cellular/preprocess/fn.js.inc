@@ -156,8 +156,8 @@ function cellular_plugins_js() {
   $js_plugins = array(
     'cellular' => theme_get_setting('cellularjs') == 1 ? array(
       'object' => 'cellular',
+      //'file' => 'cellularUI/jquery.cellular.js',
       'file' => 'plugins/jquery.cellular.min.js',
-      // 'file' => 'cellularUI/jquery.cellular.js',
       'weight' => -10,
     ) : NULL,
     'd3' => theme_get_setting('d3js') == 1 ? array(

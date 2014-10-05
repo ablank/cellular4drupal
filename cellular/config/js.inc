@@ -33,6 +33,12 @@ $cdn = array(
   ),
 );
 
+$script = array(
+  0 => t('None'),
+  'script.js' => 'script.js',
+  'script.min.js' => 'script.min.js'
+);
+
 // Available jQuery.ui themes:
 $ui_themes = array(
   'custom' => t('CUSTOM'),
@@ -187,7 +193,7 @@ $form['c']['js']['update'] = array(
   '#type' => 'fieldset',
   '#title' => t('jQuery & jQuery.ui Settings'),
   '#collapsible' => TRUE,
-  '#collapsed' => TRUE,
+  '#collapsed' => FALSE,
   '#states' => array(
     'visible' => array(
       ':input[name="jquery_update"]' => array('checked' => TRUE),
@@ -271,7 +277,7 @@ $form['c']['js']['plugins'] = array(
   '#description' => t("Javascript plugins will load from the Cloudflare CDN,
   or use local source as fallback if CDN is unavailable."),
   '#collapsible' => TRUE,
-  '#collapsed' => TRUE,
+  '#collapsed' => FALSE,
 );
 $form['c']['js']['plugins']['cellularjs'] = array(
   '#type' => 'checkbox',

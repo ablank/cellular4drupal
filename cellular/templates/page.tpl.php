@@ -3,6 +3,7 @@
  * @file
  * Page Template.
  */
+
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -80,14 +81,17 @@
   (e.g., the view and edit tabs when displaying a node).
   - $feed_icons: A string of all feed icons for the current page.
  */
+
 /*
   Custom page templates can be created for content types by adding the template:
  * /templates/page--content-type.tpl.php
+ *
  * Render cck fields:
-  <?php print render(field_view_field('node', $node, 'field_name', array(
-  'label' => 'hidden'))); ?>
+$field = field_view_field('node', $node, 'field_name', array(
+  'label' => 'hidden'));
+print render($field);
+unset($field);
  */
-
 ?>
 
 <div id="page-wrap">
@@ -97,11 +101,11 @@
     <a href="#nav"><?php print t('Skip to navigation'); ?></a>
   </div>
 
-  <?php if ($page['header_top']) : ?>
+    <?php if ($page['header_top']) : ?>
     <div id="header-top">
-      <?php print render($page['header_top']); ?>
+    <?php print render($page['header_top']); ?>
     </div>
-  <?php endif; ?>
+<?php endif; ?>
 
   <div id="header">
 
@@ -114,22 +118,22 @@
       ?>
     </div>
 
-    <?php if (isset($main_menu)) : ?>
+      <?php if (isset($main_menu)) : ?>
       <div id="nav">
-        <?php print render($main_menu); ?>
+      <?php print render($main_menu); ?>
       </div>
     <?php endif; ?>
 
-    <?php print render($page['header']); ?>
+<?php print render($page['header']); ?>
 
   </div>
   <!-- /#header -->
 
-  <?php if ($page['header_bottom']) : ?>
+    <?php if ($page['header_bottom']) : ?>
     <div id="header-bottom">
-      <?php print render($page['header_bottom']); ?>
+    <?php print render($page['header_bottom']); ?>
     </div>
-  <?php endif; ?>
+<?php endif; ?>
 
   <div id="app">
 
@@ -139,18 +143,22 @@
       print '<h1 id="page-title">' . $title . '</h1>';
     endif;
     print render($title_suffix);
+
     ?>
 
-    <?php // Breadcrumb Navigation.
+    <?php
+    // Breadcrumb Navigation.
     if ($breadcrumb && !$is_front) :
       print $breadcrumb;
-    endif ?>
+    endif
 
-    <?php if (!empty($tabs)): ?>
+    ?>
+
+<?php if (!empty($tabs)): ?>
       <div id="page-tabs">
         <?php print render($tabs); ?>
       </div>
-    <?php endif; ?>
+      <?php endif; ?>
 
     <div id="content-wrap" class="cell center">
 
@@ -171,20 +179,20 @@
 
           ?>
         </div>
-      <?php endif; ?>
+<?php endif; ?>
 
       <?php if ($page['sidebar_left']) : ?>
         <div id="sidebar-left" class="<?php print $page['sidebar_class']; ?>">
-          <?php print render($page['sidebar_left']); ?>
+        <?php print render($page['sidebar_left']); ?>
         </div>
         <!-- /#sidebar-left -->
       <?php endif; ?>
 
-      <?php if ($page['content_top']) : ?>
+<?php if ($page['content_top']) : ?>
         <div id="content-top" class="cell">
           <?php print render($page['content_top']); ?>
         </div>
-      <?php endif; ?>
+        <?php endif; ?>
 
       <div id="content" class="<?php print $page['content_class']; ?>">
         <?php
@@ -193,9 +201,9 @@
 
         ?>
 
-        <?php if ($page['content_bottom']) : ?>
+<?php if ($page['content_bottom']) : ?>
           <div id="content-bottom" class="cell">
-            <?php print render($page['content_bottom']); ?>
+        <?php print render($page['content_bottom']); ?>
           </div>
         <?php endif; ?>
       </div>
@@ -203,10 +211,10 @@
 
       <?php if ($page['sidebar_right']) : ?>
         <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
-          <?php print render($page['sidebar_right']); ?>
+  <?php print render($page['sidebar_right']); ?>
         </div>
         <!-- /#sidebar-right -->
-      <?php endif; ?>
+<?php endif; ?>
 
     </div>
     <!-- /#content-wrap-->
@@ -229,7 +237,7 @@
 
     <?php if ($page['footer_top']) : ?>
       <div id="footer-top" class="cell">
-        <?php print render($page['footer_top']); ?>
+      <?php print render($page['footer_top']); ?>
       </div>
     <?php endif; ?>
 
@@ -243,11 +251,11 @@
     <div id="footer-bottom" class="cell">
       <?php if ($page['footer_bottom']) : ?>
         <?php print render($page['footer_bottom']); ?>
-      <?php endif; ?>
+<?php endif; ?>
 
-      <?php if ($page['copyright']): ?>
+<?php if ($page['copyright']): ?>
         <small id="copyright"><?php print $page['copyright']; ?></small>
-      <?php endif; ?>
+<?php endif; ?>
     </div>
     <!-- /#footer-bottom -->
   </div>

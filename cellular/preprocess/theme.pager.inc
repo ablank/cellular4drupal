@@ -124,7 +124,6 @@ function cellular_pager($vars) {
         'attributes' => array(
           'class' => array(
             'pager',
-            'center',
           ),
         ),
     ));

@@ -33,8 +33,9 @@ regions[footer]             = Footer
 regions[footer_bottom]      = Footer Bottom
 
 ;----------// Javascript Updates & Plugins
-settings[jquery_update]             = 0
-settings[jquery_cdn]                = 0
+settings[script]                    = 1
+settings[jquery_update]             = 1
+settings[jquery_cdn]                = 1
 settings[jquery_cdn_source]         = google
 settings[jquery_version]            = 1.11.1
 settings[jqueryui_version]          = 1.10.4
@@ -50,7 +51,7 @@ settings[gsap]                      = 0
 settings[reveal]                    = 0
 
 ;----------// Display Settings
-settings[remove_drupal_css]         = 0
+settings[remove_drupal_css]         = select
 settings[full_menu]                 = 1
 settings[breadcrumb_display]        = 0
 settings[breadcrumb_separator]      = &#187;

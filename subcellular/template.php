@@ -4,7 +4,6 @@
  * Set global vars, load functions for templates, and hook_function overrides.
  * @author Adam Blankenship
  */
-
 $inc_path = drupal_get_path('theme', 'subcellular') . '/inc';
 $include = array(
   'alter.css.inc',
@@ -21,14 +20,18 @@ foreach ($include as $i) {
 function subcellular_preprocess_page(&$vars) {
 
   // Do something with content type.
-  if (isset($vars['node']) && $vars['node']->type == 'page') {
+  /*
+    if (isset($vars['node']) && $vars['node']->type == 'page') {
 
-  }
+    }
+   */
 
   // Do something with specific node.
-  if (isset($vars['node']) && $vars['node']->nid === '40') {
+  /*
+    if (isset($vars['node']) && $vars['node']->nid === '40') {
     // Do things:
-  };
+    };
+   */
 }
 
 /**
