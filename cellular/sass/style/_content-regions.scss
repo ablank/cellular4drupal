@@ -70,10 +70,8 @@ body {
 }
 
 #header-bottom {
-  height: 32px;
-  // background: darken($hilight, 20%);
+  background-color: $dark_grey;
   color: $white;
-  border-bottom: $black $border;
 }
 
 #console {

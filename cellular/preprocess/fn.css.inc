@@ -25,8 +25,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
         $style['weight'] = isset($style['weight']) ? $style['weight'] : 1;
         $style['type'] = isset($style['cdn']) ? 'external' : 'file';
         $style['media'] = isset($style['media']) ? $style['media'] : 'all';
-        $style['browsers'] = isset($style['browsers']) ? $style['browsers'] :
-        array('IE' => TRUE, '!IE' => TRUE);
+        $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
 
         $css[$data] = $style;
       }
@@ -77,8 +76,7 @@ function cellular_css_override(&$css, $style, $cellular = FALSE) {
     $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;
     $css[$ocss]['type'] = isset($style['cdn']) ? 'external' : 'file';
     $css[$ocss]['media'] = isset($style['media']) ? $style['media'] : 'all';
-    $css[$ocss]['browsers'] = isset($style['browsers']) ? $style['browsers'] :
-    array('IE' => TRUE, '!IE' => TRUE);
+    $css[$ocss]['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
   }
 }
 

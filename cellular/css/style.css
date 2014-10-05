@@ -1693,12 +1693,11 @@ body {
 
 /* line 72, ../sass/style/_content-regions.scss */
 #header-bottom {
-  height: 32px;
+  background-color: #565450;
   color: #fefefe;
-  border-bottom: #111111 thin solid;
 }
 
-/* line 85, ../sass/style/_content-regions.scss */
+/* line 83, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1708,44 +1707,44 @@ body {
   display: block;
 }
 
-/* line 91, ../sass/style/_content-regions.scss */
+/* line 89, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 101, ../sass/style/_content-regions.scss */
+/* line 99, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 104, ../sass/style/_content-regions.scss */
+/* line 102, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 110, ../sass/style/_content-regions.scss */
+/* line 108, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
   background: #f1f1f1;
 }
 
-/* line 121, ../sass/style/_content-regions.scss */
+/* line 119, ../sass/style/_content-regions.scss */
 #footer {
   background: #565450;
   color: #fefefe;
 }
-/* line 126, ../sass/style/_content-regions.scss */
+/* line 124, ../sass/style/_content-regions.scss */
 #footer p {
   color: #fefefe;
 }
 
-/* line 131, ../sass/style/_content-regions.scss */
+/* line 129, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #565450;
   color: #bbbab7;
 }
 
-/* line 138, ../sass/style/_content-regions.scss */
+/* line 136, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #565450;
@@ -1753,7 +1752,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 145, ../sass/style/_content-regions.scss */
+/* line 143, ../sass/style/_content-regions.scss */
 #copyright {
   display: block;
   padding: 0.75em 1.4em 0.75em;
@@ -1762,7 +1761,7 @@ body {
   font-weight: bold;
 }
 
-/* line 154, ../sass/style/_content-regions.scss */
+/* line 152, ../sass/style/_content-regions.scss */
 #social-media-follow,
 #social-media-share {
   position: relative;
@@ -1772,14 +1771,14 @@ body {
   border-top: #565450 1em solid;
   overflow: hidden;
 }
-/* line 162, ../sass/style/_content-regions.scss */
+/* line 160, ../sass/style/_content-regions.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 170, ../sass/style/_content-regions.scss */
+/* line 168, ../sass/style/_content-regions.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
