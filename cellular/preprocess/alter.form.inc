@@ -13,12 +13,12 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
     // Site Search block:
     case 'search_block_form':
 
-      $form['#attributes'] = array('id' => 'site-search');
+      $form[$form_id]['#attributes'] = array('id' => 'site-search');
 
-      $form['search_block_form']['#title'] = t('Search this site');
-      $form['search_block_form']['#type'] = 'textfield';
-      $form['search_block_form']['#size'] = 25;
-      $form['search_block_form']['#default_value'] = t('Search keywords');
+      $form[$form_id]['#title'] = t('Search this site');
+      $form[$form_id]['#type'] = 'textfield';
+      $form[$form_id]['#size'] = 25;
+      $form[$form_id]['#default_value'] = t('Search keywords');
 
 
       $form['actions']['submit']['#type'] = 'submit';
@@ -35,8 +35,9 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $field_size = 20;
       $orient = theme_get_setting('login_block_orientation');
 
-      $form['#title_display'] = 'invisible';
-      $form['#attributes']['class'][] = $orient;
+      $form[$form_id]['#title'] = t('User Login');
+      $form[$form_id]['#title_display'] = 'invisible';
+      $form[$form_id]['#attributes']['class'][] = $orient;
 
       $form['name'] = array(
         '#type' => 'textfield',
@@ -69,21 +70,14 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
         if ($ureg == 1) {
           $ulmarkup .= l(t('Register'), "user/register", array(
             'attributes' => array(
-              'class' => array(
-                'register',
-              ),
-            ),
-          )
-          );
+              'class' => array('register'),
+          )));
         }
         if ($upass == 1) {
           $ulmarkup .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
-              'class' => array(
-                'password',
-              ),
-            ),
-          ));
+              'class' => array('password'),
+          )));
         }
         $ulmarkup .= '</div>';
       }
@@ -117,7 +111,6 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       break;
   }
-  // dsm($form);
 }
 
 /**

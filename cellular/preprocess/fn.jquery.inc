@@ -214,9 +214,9 @@ function cellular_jqueryui_update_css(&$css, &$plugins) {
     'ui.slider',
     'ui.tabs',
   );
-
+  
   foreach ($ui['widgets'] as $widget) {
-    $default = "misc/ui/jquery.$widget.css";
+    $default = "misc/ui/jquery.ui.$widget.css";
     if (isset($css[$default])) {
       $jq = cellular_jquery_info();
       $jq = $jq['ui'];
