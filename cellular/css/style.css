@@ -1799,13 +1799,18 @@ body {
     * <body class="content audio">
  */
 /**
- * @file
- * Styling for mobile devices included in style.css
- */
+  * @file
+  * Styling for mobile devices included in style.css
+*/
 @media screen and (max-width: 650px) {
   /* line 11, ../sass/style/_mq-mobile.scss */
   #content-wrap {
     padding: 1em 0;
+  }
+
+  /* line 20, ../sass/style/_mq-mobile.scss */
+  #nav ul.menu {
+    visibility: hidden;
   }
 }
 /**

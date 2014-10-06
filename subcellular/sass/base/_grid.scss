@@ -19,6 +19,7 @@ $cells: ();
   margin: $cell_margin;
   padding: $cell_padding;
   z-index: 1;
+  @include transition();
 
   &.center {
     float: none;

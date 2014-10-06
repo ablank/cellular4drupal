@@ -1,7 +1,7 @@
 /**
- * @file
- * Styling for mobile devices included in style.css
- */
+  * @file
+  * Styling for mobile devices included in style.css
+*/
 
 @media screen and (max-width: $res_mobile) {
   //////
@@ -16,11 +16,18 @@
     //height: auto;
   }
 
+  #nav {
+    ul.menu {
+      // Hide the navigation if using jMmenu: remove this if not using jMmenu.
+      visibility: hidden;
+    }
+  }
+
   #logo {
 
     &:hover {
     }
-    
+
     & > a {
     }
   }
