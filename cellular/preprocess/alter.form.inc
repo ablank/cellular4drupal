@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Alter specific forms.
@@ -14,25 +13,19 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
     // Site Search block:
     case 'search_block_form':
 
-      $form['#attributes'] = array(
-        'id' => 'site-search',
-        'class' => array(),
-      );
-      $form['search_block_form'] = array(
-        '#type' => 'textfield',
-        '#size' => 25,
-        // '#value' => t('Search'),
-        '#default_value' => 'Search keywords: ',
-        '#attributes' => array('title' => 'Search this site'),
-      );
+      $form['#attributes'] = array('id' => 'site-search');
 
-      $form['actions']['submit'] = array(
-        '#type' => 'submit',
-        '#value' => t('Search'),
-        '#attributes' => array(
-          'id' => 'site-search-submit',
-          'class' => array('icon', 'search'),
-        ),
+      $form['search_block_form']['#title'] = t('Search this site');
+      $form['search_block_form']['#type'] = 'textfield';
+      $form['search_block_form']['#size'] = 25;
+      $form['search_block_form']['#default_value'] = t('Search keywords');
+
+
+      $form['actions']['submit']['#type'] = 'submit';
+      $form['actions']['submit']['#value'] = t('Search');
+      $form['actions']['submit']['#attributes'] = array(
+        'id' => 'site-search-submit',
+        'class' => array('icon', 'search'),
       );
 
       break;
@@ -41,20 +34,20 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
     case 'user_login_block':
       $field_size = 20;
       $orient = theme_get_setting('login_block_orientation');
-      $form['#attributes'] = array('class' => array($orient));
 
       $form['#title_display'] = 'invisible';
+      $form['#attributes']['class'][] = $orient;
 
       $form['name'] = array(
         '#type' => 'textfield',
         '#title' => t('Name'),
-        '#attributes' => array('value' => t('Username')),
+        '#default_value' => t('Username'),
         '#size' => $field_size,
       );
       $form['pass'] = array(
         '#type' => 'password',
         '#title' => t('Password'),
-        '#attributes' => array('value' => t('Password')),
+        '#default_value' => t('Password'),
         '#size' => $field_size,
       );
       $form['actions']['submit'][] = array(
@@ -80,7 +73,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
                 'register',
               ),
             ),
-            )
+          )
           );
         }
         if ($upass == 1) {
@@ -101,26 +94,26 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $form['links']['#markup'] = $ulmarkup;
       // Register New User Account:
       /*
-         $form['links']['#markup'][] = t('Register')
-       . ' <a href="/user/register">'
-       . t('Register') . '</a>';
-      */
+        $form['links']['#markup'][] = t('Register')
+        . ' <a href="/user/register">'
+        . t('Register') . '</a>';
+       */
 
       // Forgot Password:
       /*
-       $form['links']['#markup'][] = t('Forgotten Password?')
-       . ' <a href="/user/password">'
-       . t('Forgotten Password?') . '</a>';
+        $form['links']['#markup'][] = t('Forgotten Password?')
+        . ' <a href="/user/password">'
+        . t('Forgotten Password?') . '</a>';
        */
 
       // Register New User Account &&  Forgot Password:
       /*
-       $form['links']['#markup'] = '<hr/>'
-       . ' <a class="user-register" href="/user/register">'
-         . t('Register') . '</a>' . '<hr/>'
-         . ' <a class="user-password" href="/user/password">'
-         . t('Forgotten Password?') . '</a>';
-      */
+        $form['links']['#markup'] = '<hr/>'
+        . ' <a class="user-register" href="/user/register">'
+        . t('Register') . '</a>' . '<hr/>'
+        . ' <a class="user-password" href="/user/password">'
+        . t('Forgotten Password?') . '</a>';
+       */
 
       break;
   }
