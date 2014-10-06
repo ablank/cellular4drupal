@@ -13,7 +13,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
     // Site Search block:
     case 'search_block_form':
 
-      $form[$form_id]['#attributes'] = array('id' => 'site-search');
+      $form['#attributes'] = array('id' => 'site-search');
 
       $form[$form_id]['#title'] = t('Search this site');
       $form[$form_id]['#type'] = 'textfield';
