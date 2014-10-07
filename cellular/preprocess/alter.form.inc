@@ -35,9 +35,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $field_size = 20;
       $orient = theme_get_setting('login_block_orientation');
 
-      $form[$form_id]['#title'] = t('User Login');
-      $form[$form_id]['#title_display'] = 'invisible';
-      $form[$form_id]['#attributes']['class'][] = $orient;
+      $form['#attributes']['class'][] = $orient;
 
       $form['name'] = array(
         '#type' => 'textfield',
@@ -116,28 +114,21 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Cellular hook__form_comment_form_alter().
  */
-function cellular_form_comment_form_alter(&$form, &$form_state, &$form_id) {
-
+function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
   // Set field sizes.
   $field_size = 32;
+  // Remove text format option.
+  $form['comment_body'][LANGUAGE_NONE][0]['#default_value'] = t('Add your comment');
+  $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
+  
   $form['author']['name']['#size'] = $field_size;
   $form['subject']['#size'] = $field_size;
-  // Remove text format option.
-  $form['comment_body']['#after_build'][] = 'cellular_form_strip_access';
   // Customize Submit & Preview buttons.
-  $form['actions']['preview'] = array(
-    '#type' => 'submit',
-    '#value' => t('Preview'),
-    '#weight' => 19,
-    '#attributes' => array('class' => array('submit', 'preview')),
-  );
-  $form['actions']['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Save'),
-    '#weight' => 20,
-    '#attributes' => array(
-      'id' => 'comment-form-submit',
-      'class' => array('submit', 'right'),
-    ),
-  );
+  $form['actions']['preview']['#value'] =  t('Preview');
+  $form['actions']['preview']['#weight'] =  19;
+  $form['actions']['preview']['#attributes']['class'][] =  'left';
+
+  $form['actions']['submit']['#value'] =  t('Save');
+  $form['actions']['submit']['#weight'] =  20;
+  $form['actions']['submit']['#attributes']['class'][] = 'right';
 }

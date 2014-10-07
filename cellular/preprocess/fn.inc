@@ -67,7 +67,7 @@ function cellular_error_page(&$vars) {
 /**
  * Removes text formatting options from user input.
  */
-function cellular_form_strip_access(&$form) {
+function cellular_form_format_opt(&$form, $form_state) {
   // Remove individual text format options:
   // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
   // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
@@ -75,7 +75,8 @@ function cellular_form_strip_access(&$form) {
   // $form[LANGUAGE_NONE][0]['format']['#theme_wrappers'] = NULL;
   // Or Nuke text format options:
   $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
-
+  $form[LANGUAGE_NONE][0]['format']['#default_value'] = 'filtered';
+  
   return $form;
 }
 

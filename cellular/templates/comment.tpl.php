@@ -58,7 +58,7 @@
 
 ?>
 
-<div class="<?php print $classes; ?>" <?php print $attributes; ?>>
+<div class="<?php print $classes; ?> " <?php print $attributes; ?>>
   <?php print $picture ?>
 
   <?php if ($new): ?>

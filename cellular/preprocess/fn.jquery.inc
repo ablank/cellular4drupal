@@ -197,59 +197,58 @@ function cellular_jqueryui_update_js(&$javascript) {
 /**
  * Update jQuery.ui stylesheets.
  */
-function cellular_jqueryui_update_css(&$css, &$plugins) {
-
+function cellular_jqueryui_update_css(&$css) {
   $ui['path'] = 'jquery-ui/';
   $ui['widgets'] = array(
-    'ui.core',
-    'ui.theme',
-    'ui.accordion',
-    'ui.autocomplete',
-    'ui.button',
-    'ui.datepicker',
-    'ui.dialog',
-    'ui.progressbar',
-    'ui.resizable',
-    'ui.selectable',
-    'ui.slider',
-    'ui.tabs',
+    'core',
+    'theme',
+    'accordion',
+    'autocomplete',
+    'button',
+    'datepicker',
+    'dialog',
+    'progressbar',
+    'resizable',
+    'selectable',
+    'slider',
+    'tabs',
   );
-  
+
   foreach ($ui['widgets'] as $widget) {
     $default = "misc/ui/jquery.ui.$widget.css";
     if (isset($css[$default])) {
       $jq = cellular_jquery_info();
       $jq = $jq['ui'];
       $style = array(
-        'ui' => array(
-          'default' => $default,
-          'version' => $jq['version'],
-          'group' => CSS_SYSTEM,
-          'every_page' => FALSE,
-          'weight' => isset($css[$default]['weight']) ?
-          $css[$default]['weight'] : -9,
-          'file' => NULL,
-        ),
+        'default' => $default,
+        'version' => $jq['version'],
+        'group' => CSS_SYSTEM,
+        'every_page' => FALSE,
+        'weight' => isset($css[$default]['weight']) ?
+        $css[$default]['weight'] : -9,
+        'file' => NULL,
       );
+      // Remove default after updating styles.
+      unset($css[$default]);
 
       if ($jq['theme'] === 'custom') {
         // Set path to local custom file if selected.
         $v = $jq['version'] === '1.10.4' ? '1.10' : '1.9';
-        $style['ui']['file'] = "/jquery-ui/jquery-ui.$v.css";
+        $style['file'] = "/jquery-ui/jquery-ui.$v.css";
+        $uistyle = array($style);
         cellular_add_css($css, $style);
       }
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
-        $style['ui']['file'] = $ui_path . 'jquery-ui.css';
+        $style['file'] = $ui_path . 'jquery-ui.css';
         if (theme_get_setting('jquery_cdn') == 1) {
           $cdn = cellular_cdn();
           // Set cdn source.
-          $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];
+          $style['cdn'] = $cdn['base_url'] . $cdn['theme'];
         }
-        cellular_css_override($css, $style, TRUE);
+        $uistyle = array($style);
+        cellular_add_css($css, $uistyle, TRUE);
       }
-      // Remove default after updating styles.
-      unset($css[$default]);
     }
   }
 }

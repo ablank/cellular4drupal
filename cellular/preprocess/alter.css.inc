@@ -8,7 +8,6 @@
  * Cellular hook_css_alter().
  */
 function cellular_css_alter(&$css) {
-
   // Remove stylesheets based on theme settings.
   cellular_remove_default_css($css);
 
@@ -16,7 +15,7 @@ function cellular_css_alter(&$css) {
   $plugins = cellular_plugin_css();
   // Update jqueryui styles if needed.
   if (theme_get_setting('jquery_update') == 1) {
-    cellular_jqueryui_update_css($css, $plugins);
+    cellular_jqueryui_update_css($css);
   }
   isset($plugins) ? cellular_add_css($css, $plugins, TRUE) : NULL;
 

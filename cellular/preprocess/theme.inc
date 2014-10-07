@@ -25,7 +25,7 @@ function cellular_field(&$vars) {
 
   // Wrap the field & add content.
   $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">";
-  $output .= "\n" . $content . "\n</div>\n";
+  $output .= "\n$content\n</div>\n";
 
   return $output;
 }

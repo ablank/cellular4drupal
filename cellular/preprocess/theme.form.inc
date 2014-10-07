@@ -22,8 +22,6 @@ function cellular_form_element_attributes(&$element) {
   $attributes['required'] = $element['#required'] : NULL;
   !empty($element['#checked']) ?
   $attributes['checked'] = 'checked' : NULL;
-  !empty($element['#value']) ?
-  $attributes['value'] = $element['#value'] : NULL;
   !empty($element['#size']) ?
   $attributes['size'] = $element['#size'] : NULL;
   !empty($element['#maxlength']) ?
@@ -33,20 +31,41 @@ function cellular_form_element_attributes(&$element) {
 }
 
 /**
+ * Cellular theme_form().
+ * 
+ * @param type $vars
+ * @return type
+ */
+function cellular_form($vars) {
+  $element = $vars['element'];
+  //$element['#attributes']['class'][] = 'cell';
+  
+  if (isset($element['#action'])) {
+    $element['#attributes']['action'] = drupal_strip_dangerous_protocols($element['#action']);
+  }
+  element_set_attributes($element, array('method', 'id'));
+  if (empty($element['#attributes']['accept-charset'])) {
+    $element['#attributes']['accept-charset'] = "UTF-8";
+  }
+  // Anonymous DIV to satisfy XHTML compliance.
+  return '<form' . drupal_attributes($element['#attributes']) . '>' . $element['#children'] . '</form>';
+}
+
+/**
  * Cellular theme_container().
  */
 function cellular_container(&$vars) {
   $element = $vars['element'];
-  // $element['#theme_wrappers'] = NULL;
   // Special handling for form elements.
   if (isset($element['#array_parents'])) {
-    // Assign an html ID.
+    // Add the 'form-wrapper' class.
+    $element['#attributes']['class'][] = array('center');
+    // Assign an html ID if not present.
     if (!isset($element['#attributes']['id'])) {
       $element['#attributes']['id'] = $element['#id'];
     }
-    // Add the 'form-wrapper' class.
-    $element['#attributes']['class'][] = array('cell center');
   }
+  //dsm($element);
 
   return $element['#children'];
 }
@@ -98,6 +117,22 @@ function cellular_form_element(&$vars) {
       $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
 
   return $output;
+}
+
+/**
+ * Cellular theme_button().
+ */
+function cellular_button(&$vars) {
+  $element = $vars['element'];
+  $element['#attributes']['type'] = 'submit';
+  $element['#attributes']['class'][] = 'button';
+  element_set_attributes($element, array('id', 'name', 'value'));
+  
+  if (!empty($element['#attributes']['disabled'])) {
+    $element['#attributes']['class'][] = 'form-button-disabled';
+  }
+
+  return '<input' . drupal_attributes($element['#attributes']) . ' />';
 }
 
 /**

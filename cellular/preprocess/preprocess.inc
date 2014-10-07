@@ -66,28 +66,34 @@ function cellular_preprocess_page(&$vars) {
  */
 function cellular_preprocess_block(&$vars) {
   $block = $vars['elements']['#block'];
-  $title_attributes = array();
   // Hide block titles in the headers region:
-  if ($block->region == 'header') {
-    $title_attributes['class'][] = 'hidden';
+  if ($block->region === 'header' || $block->region === 'header-top' || $block->region === 'header-bottom'
+  ) {
+    $vars['title_attributes']['class'][] = $title_attributes;
   }
-
-  $vars['title_attributes'][] = $title_attributes;
 }
 
 /**
  * Cellular template_preprocess_comment().
  */
 function cellular_preprocess_comment(&$vars) {
-  $vars['title_attributes_array']['class'] = array('comment-title');
-  $vars['content_attributes_array']['class'] = array('comment-content');
+  $comment = $vars['elements']['#comment'];
+
+  $vars['comment_wrapper'] = NULL;
+  $vars['theme_hook_suggestions'][] = 'comment';
+  $vars['title_attributes_array']['class'][] = 'comment-title';
+  $vars['content_attributes_array']['class'][] = 'comment-content';
 
   $vars['submitted'] = t('Submitted by !username on !datetime', array(
     '!username' => $vars['author'],
     '!datetime' => $vars['created'],
   ));
+}
 
-  $vars['comment_wrapper'] = NULL;
+
+function cellular_preprocess_comment_wrapper(&$vars) {
+  //dsm($vars);
+  $vars['classes_array'][] = 'clearfix';
 }
 
 /**

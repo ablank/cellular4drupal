@@ -1,7 +1,7 @@
 /**
- * @file
- * Styling DOM classes provided by drupal
- */
+  * @file
+  * Styling DOM classes provided by drupal
+*/
 
 // Declared here in case the core css is disabled.
 .element-invisible {
@@ -21,11 +21,24 @@
   height: auto;
 }
 
-
 // Prevent transitions of jquery-ui elements.
 [class*='ui-'],
 [class^='ui-'] {
   @include transition(none);
+}
+
+.comment {
+
+  .links {
+    text-align: left;
+    
+    &.inline {
+      li {
+        list-style: none;
+        display: inline
+      }
+    }
+  }
 }
 
 //////
@@ -85,7 +98,7 @@ div.ctools-ajaxing {
     &.active {
       background-color: $white;
     }
-    
+
     &:hover {
       background-color: lighten($light_grey, 20%);
 

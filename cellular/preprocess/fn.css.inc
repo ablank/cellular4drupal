@@ -54,10 +54,10 @@ function cellular_remove_css(&$css, $exclude) {
 /**
  * Overrides default css values.
  */
-function cellular_css_override(&$css, $style, $cellular = FALSE) {
-  // Only override if style is being called.
-  //$ocss = isset($style['default']) ? $style['default'] : NULL;
+function cellular_override_css(&$css, $style, $cellular = FALSE) {
   $ocss =  $style['default'];
+  dsm($css);
+  // Only override if style is being called.
   if (isset($css[$ocss])) {
     if (isset($style['cdn'])) {
       // If cdn is provided, set data to external source.
