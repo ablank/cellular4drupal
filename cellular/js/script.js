@@ -28,9 +28,9 @@
       });
       $('#nav').jMmenu({
         // Window breakpoint trigger:
-        // "breakpoint": cellular.opts.breakpoint,
+        // "breakpoint": cellular.opts.breakpoint, // default
         // Classes added for styling.
-        "cclass": "jMmenu",
+        // "cclass": "jMmenu", // default
         "direction": "right",
         "type": "slide"
       });

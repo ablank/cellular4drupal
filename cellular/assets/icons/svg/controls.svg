@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="192px" height="96px" viewBox="0 0 192 96" enable-background="new 0 0 192 96" xml:space="preserve">
+<symbol  id="active" viewBox="-16.5 -16.5 33 33">
+	<use xlink:href="#background"  width="32" height="32" x="-16" y="-16" overflow="visible"/>
+</symbol>
+<symbol  id="background" viewBox="-16 -16 32 32">
+	<g>
+		<path fill="#ADADAD" d="M0-15c-8.271,0-15,6.729-15,15s6.729,15,15,15S15,8.271,15,0S8.271-15,0-15L0-15z"/>
+		<path fill="#FFFFFF" d="M0,14c7.72,0,14-6.28,14-14S7.72-14,0-14S-14-7.72-14,0S-7.72,14,0,14 M0,16c-8.836,0-16-7.164-16-16
+			s7.164-16,16-16c8.837,0,16,7.164,16,16S8.837,16,0,16L0,16z"/>
+	</g>
+</symbol>
+<symbol  id="square" viewBox="-16 -16 32 32">
+	<g>
+		<path fill="#ADADAD" d="M-13-15c-1.103,0-2,0.897-2,2v26c0,1.103,0.897,2,2,2h26c1.103,0,2-0.897,2-2v-26c0-1.103-0.897-2-2-2H-13
+			z"/>
+		<path fill="#FFFFFF" d="M13,14c0.552,0,1-0.449,1-1v-26c0-0.552-0.448-1-1-1h-26c-0.551,0-1,0.448-1,1v26c0,0.551,0.449,1,1,1H13
+			 M13,16.001h-26c-1.657,0-3-1.343-3-3v-26c0-1.656,1.343-3,3-3h26c1.657,0,3,1.344,3,3v26C16,14.658,14.657,16.001,13,16.001
+			L13,16.001z"/>
+	</g>
+</symbol>
+<g>
+	<use xlink:href="#background"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 16 80)" overflow="visible"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="18.826,74 14.895,74 18.719,78.438 8,78.438 8,81.564 18.719,81.564 14.895,86 18.826,86 24,80 
+							"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#background"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 80 80)" overflow="visible"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="79.262,72 77,72 77,88 79.262,88 87,80 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#background"  width="32" height="32" x="-16" y="-16" transform="matrix(-1 0 0 1 176 80)" overflow="visible"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="173.174,86 177.105,86 173.281,81.564 184,81.564 184,78.436 173.281,78.436 177.105,74 
+				173.174,74 168,80 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#background"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 16 16)" overflow="visible"/>
+	<polygon fill="#FFFFFF" points="24,10 19.804,10 16,13.867 12.197,10 8,10 13.901,16 8,22 12.197,22 16,18.135 19.804,22 24,22 
+		18.1,16 	"/>
+</g>
+<g>
+	<use xlink:href="#active"  width="33" height="33" x="-16.5" y="-16.5" transform="matrix(1 0 0 -1 16 48)" overflow="visible"/>
+	<polygon fill="#FFFFFF" points="24,42 19.804,42 16,45.867 12.197,42 8,42 13.901,48 8,54 12.197,54 16,50.135 19.804,54 24,54 
+		18.1,48 	"/>
+</g>
+<g>
+	
+		<use xlink:href="#active"  width="33" height="33" id="XMLID_1_" x="-16.5" y="-16.5" transform="matrix(1 0 0 -1 48 80)" overflow="visible"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="50.826,74 46.895,74 50.719,78.438 40,78.438 40,81.564 50.719,81.564 46.895,86 50.826,86 
+				56,80 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#active"  width="33" height="33" x="-16.5" y="-16.5" transform="matrix(1 0 0 -1 112 80)" overflow="visible"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="111.262,72 109,72 109,88 111.262,88 119,80 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#background"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 48 16)" overflow="visible"/>
+	<g>
+		<g>
+			<rect x="42.9" y="8" fill="#FFFFFF" width="3.199" height="16"/>
+		</g>
+		<g>
+			<rect x="49.9" y="8" fill="#FFFFFF" width="3.199" height="16"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#active"  width="33" height="33" x="-16.5" y="-16.5" transform="matrix(1 0 0 -1 48 48)" overflow="visible"/>
+	<g>
+		<g>
+			<rect x="42.9" y="40" fill="#FFFFFF" width="3.199" height="16"/>
+		</g>
+		<g>
+			<rect x="49.9" y="40" fill="#FFFFFF" width="3.199" height="16"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#active"  width="33" height="33" x="-16.5" y="-16.5" transform="matrix(-1 0 0 -1 144 80)" overflow="visible"/>
+	<g>
+		<g>
+			<polygon fill="#FFFFFF" points="141.174,74 145.105,74 141.281,78.438 152,78.438 152,81.564 141.281,81.564 145.105,86 
+				141.174,86 136,80 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<use xlink:href="#square"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 80 16.001)" overflow="visible"/>
+	<polygon fill="#FFFFFF" points="88,10 83.804,10 80,13.866 76.197,10 72,10 77.901,15.999 72,22.001 76.197,22.001 80,18.134 
+		83.804,22.001 88,22.001 82.1,15.999 	"/>
+</g>
+<g>
+	<use xlink:href="#square"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 80 48)" overflow="visible"/>
+	<polygon fill="#FFFFFF" points="88,42 83.804,42 80,45.865 76.197,42 72,42 77.901,47.998 72,54 76.197,54 80,50.133 83.804,54 
+		88,54 82.1,47.998 	"/>
+</g>
+</svg>

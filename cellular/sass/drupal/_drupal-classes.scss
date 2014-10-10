@@ -27,20 +27,6 @@
   @include transition(none);
 }
 
-.comment {
-
-  .links {
-    text-align: left;
-    
-    &.inline {
-      li {
-        list-style: none;
-        display: inline
-      }
-    }
-  }
-}
-
 //////
 // cTools
 //////
@@ -102,6 +88,36 @@ div.ctools-ajaxing {
     &:hover {
       background-color: lighten($light_grey, 20%);
 
+    }
+  }
+}
+
+.menu {
+  list-style: none;
+  margin: 0 0 .4em .4em;
+
+  li {
+    display: inline;
+    display: inline-block;
+    margin: .2em;
+    padding: 0;
+  }
+
+  a {
+    @include button();
+  }
+}
+
+.comment {
+
+  .links {
+    text-align: left;
+
+    &.inline {
+      li {
+        list-style: none;
+        display: inline
+      }
     }
   }
 }

@@ -11,9 +11,9 @@ $blue: #00598E;
 
 $white: #FEFEFE;
 $black: #111;
-$grey: #8A8882;
-$light_grey: lighten($grey, $adjust);
-$dark_grey: darken($grey, $adjust);
+$grey: #bbbab7;
+$light_grey: darken($white, 5%);
+$dark_grey: lighten($black, 20%);
 
 $c1: $black;
 $c2: $white;

@@ -1,11 +1,10 @@
 #social-media-follow,
 #social-media-share {
-  position: relative;
-  width: 100%;
-  padding: 0 0 1em 0;
-  background: $white;
-  border-top: $dark_grey 1em solid;
+  float: left;
   overflow: hidden;
+  margin: 1.4em .8em .8em;
+  background: $light_grey;
+  @include border-radius();
 
   form {
     margin: 0;
@@ -17,7 +16,17 @@
   h3,
   h4 {
     font-size: $normal;
-    font-weight: bold;
     margin: 0;
+    padding: .4em;
+    border-bottom: $dark_grey .2em solid;
+    background: $white;
+  }
+
+  .icon:first-child {
+    margin-left: .8em;
+  }
+
+  .icon:last-child {
+    margin-right: .8em;
   }
 }

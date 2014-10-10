@@ -8,8 +8,10 @@ $showDropdowns: true;
 
 // Primary Navigation
 #nav {
-  float: right;
-  margin: 2em 5% 0 ($logo_width *2);
+  position: absolute;
+  top: 2em;
+  right: 5%;
+  margin-left: $logo_width * 2;
   padding: 0;
 
   a,
@@ -23,9 +25,11 @@ $showDropdowns: true;
     font-weight: bold;
     white-space: nowrap;
     text-decoration: none;
-    color: $light_grey;
-    border-bottom: $light_grey 1px solid;
-    //background: lighten($light_grey, 20%);
+    color: $grey;
+    background: transparent;
+    border: none;
+    border-bottom: $grey 1px solid;
+    @include border-radius(0);
 
     &:hover,
     &:focus,

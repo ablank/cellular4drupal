@@ -3,12 +3,12 @@
  * @file
  * Display a single Drupal page while offline.
  */
+
 /* All the available variables are mirrored in html.tpl.php and page.tpl.php.
  * Some may be blank but they are provided for consistency.
  * @see template_preprocess()
  * @see template_preprocess_maintenance_page()
  */
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -42,28 +42,26 @@
         <div id="logo">
           <?php
           if (!empty($site_name)) :
-            print "<h2>" . $site_name . "</h2>";
-          endif;
-
-          ?>
+            print $site_name;
+          endif; ?>
         </div>
 
-          <?php if (isset($main_menu)) : ?>
+        <?php if (isset($main_menu)) : ?>
           <div id="nav">
-          <?php print render($main_menu); ?>
+            <?php print render($main_menu); ?>
           </div>
         <?php endif; ?>
 
-<?php print render($page['header']); ?>
+        <?php print render($page['header']); ?>
 
       </div>
       <!-- /#header -->
 
-        <?php if ($page['header_bottom']) : ?>
+      <?php if ($page['header_bottom']) : ?>
         <div id="header-bottom">
-        <?php print render($page['header_bottom']); ?>
+          <?php print render($page['header_bottom']); ?>
         </div>
-<?php endif; ?>
+      <?php endif; ?>
 
       <div id="app">
 
@@ -78,9 +76,9 @@
 
         <?php if (!empty($tabs)): ?>
           <div id="page-tabs">
-  <?php print render($tabs); ?>
+            <?php print render($tabs); ?>
           </div>
-<?php endif; ?>
+        <?php endif; ?>
 
         <div id="content-position">
           <div id="content-wrap" class="cell">
@@ -94,13 +92,13 @@
 
               ?>
               <div id="console">
-              <?php
-              print render($page['console']);
-              if ($show_messages && $messages) :
-                print $messages;
-              endif;
+                <?php
+                print render($page['console']);
+                if ($show_messages && $messages) :
+                  print $messages;
+                endif;
 
-              ?>
+                ?>
               </div>
             <?php endif; ?>
 
@@ -110,13 +108,13 @@
               </div>
 
               <!-- /#sidebar-left -->
-<?php endif; ?>
+            <?php endif; ?>
 
-              <?php if ($page['content_top']) : ?>
+            <?php if ($page['content_top']) : ?>
               <div id="content-top" class="cell">
                 <?php print render($page['content_top']); ?>
               </div>
-              <?php endif; ?>
+            <?php endif; ?>
 
             <div id="content" class="<?php print $page['content_class']; ?>">
 
@@ -136,19 +134,19 @@
 
               <?php if ($page['content_bottom']) : ?>
                 <div id="content-bottom" class="cell">
-  <?php print render($page['content_bottom']); ?>
+                  <?php print render($page['content_bottom']); ?>
                 </div>
-            <?php endif; ?>
+              <?php endif; ?>
 
             </div>
             <!-- /#content -->
 
-<?php if ($page['sidebar_right']) : ?>
+            <?php if ($page['sidebar_right']) : ?>
               <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
-  <?php print render($page['sidebar_right']); ?>
+                <?php print render($page['sidebar_right']); ?>
               </div>
               <!-- /#sidebar-right -->
-      <?php endif; ?>
+            <?php endif; ?>
 
           </div>
           <!-- /#content-wrap-->
@@ -159,27 +157,25 @@
 
       <div id="footer" class="cell">
 
-          <?php if ($page['footer_top']) : ?>
+        <?php if ($page['footer_top']) : ?>
           <div id="footer-top" class="cell">
             <?php print render($page['footer_top']); ?>
           </div>
-          <?php endif; ?>
+        <?php endif; ?>
 
-          <?php
-          if ($page['footer']) :
-            print render($page['footer']);
-          endif;
-
-          ?>
+        <?php
+        if ($page['footer']) :
+          print render($page['footer']);
+        endif; ?>
 
         <div id="footer-bottom" class="cell">
-<?php if ($page['footer_bottom']) : ?>
-  <?php print render($page['footer_bottom']); ?>
-<?php endif; ?>
+          <?php if ($page['footer_bottom']) : ?>
+            <?php print render($page['footer_bottom']); ?>
+          <?php endif; ?>
 
-<?php if ($page['copyright']): ?>
+          <?php if ($page['copyright']): ?>
             <p id="copyright"><?php print $page['copyright']; ?></p>
-<?php endif; ?>
+          <?php endif; ?>
         </div>
         <!-- /#footer-bottom -->
       </div>

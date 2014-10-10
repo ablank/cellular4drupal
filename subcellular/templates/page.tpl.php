@@ -3,6 +3,7 @@
  * @file
  * Page Template.
  */
+
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -80,17 +81,18 @@
   (e.g., the view and edit tabs when displaying a node).
   - $feed_icons: A string of all feed icons for the current page.
  */
+
 /*
   Custom page templates can be created for content types by adding the template:
  * /templates/page--content-type.tpl.php
  *
  * Render cck fields:
- *
-$field = field_view_field('node', $node, 'field_name', array(
+  $field = field_view_field('node', $node, 'field_name', array(
   'label' => 'hidden'));
-print render($field);
-unset($field);
+  print render($field);
+  unset($field);
  */
+
 ?>
 
 <div id="page-wrap">
@@ -111,10 +113,8 @@ unset($field);
     <div id="logo">
       <?php
       if (!empty($site_name)) :
-        print "<h2>" . $site_name . "</h2>";
-      endif;
-
-      ?>
+        print $site_name;
+      endif; ?>
     </div>
 
     <?php if (isset($main_menu)) : ?>
@@ -144,7 +144,8 @@ unset($field);
     print render($title_suffix);
     ?>
 
-    <?php // Breadcrumb Navigation.
+    <?php
+    // Breadcrumb Navigation.
     if ($breadcrumb && !$is_front) :
       print $breadcrumb;
     endif ?>
@@ -162,9 +163,7 @@ unset($field);
         print '<ul class="links">' . render($action_links) . '</ul>';
       endif;
 
-      if ($page['console'] || ($show_messages && $messages)) :
-
-        ?>
+      if ($page['console'] || ($show_messages && $messages)) : ?>
         <div id="console">
           <?php
           print render($page['console']);
@@ -193,7 +192,6 @@ unset($field);
         <?php
         // Main Page Content.
         print render($page['content']);
-
         ?>
 
         <?php if ($page['content_bottom']) : ?>
@@ -224,9 +222,7 @@ unset($field);
 // Social Media follow links.
   if ($page['social_media_follow']):
     print $page['social_media_follow'];
-  endif;
-
-  ?>
+  endif; ?>
 
   <div id="footer" class="cell">
 
@@ -239,9 +235,7 @@ unset($field);
     <?php
     if ($page['footer']) :
       print render($page['footer']);
-    endif;
-
-    ?>
+    endif; ?>
 
     <div id="footer-bottom" class="cell">
       <?php if ($page['footer_bottom']) : ?>

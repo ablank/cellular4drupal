@@ -185,14 +185,14 @@
   cursor: pointer;
   display: inline;
   display: inline-block;
+  width: auto;
+  padding: $small $normal;
   font-family: $h_font;
   font-weight: bold;
   line-height: auto;
-  padding: $small $normal;
-  background-color: $hilight;
-  width: auto;
-  color: $white;
   border: darken($hilight, 20%) .2em solid;
+  background-color: $hilight;
+  color: $white;
   @include border-radius();
 
   &:visited {
@@ -202,6 +202,7 @@
   &.active,
   &:active,
   &:hover {
+    color: $white;
     background-color: darken($hilight, 20%);
     border-color: $hilight;
     text-decoration: none;

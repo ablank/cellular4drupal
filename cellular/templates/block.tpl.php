@@ -46,7 +46,7 @@
   <?php
   if ($block->subject):
     print render($title_prefix);
-    print '<h2' . $title_attributes . '>' . $block->subject . '</h2>';
+    print '<h3' . $title_attributes . '>' . $block->subject . '</h3>';
     print render($title_suffix);
   endif; ?>
 

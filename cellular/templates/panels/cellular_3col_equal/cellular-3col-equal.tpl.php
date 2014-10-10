@@ -11,12 +11,14 @@
  *  $content['right']
  *  $content['bottom']
  */
+
 ?>
 
-<div class="cell" <?php if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
+<div <?php if (!empty($css_id)): print "id=\"$css_id\"";
+endif; ?> class="panels cell">
 
   <?php if ($content['top']): ?>
-    <div class="panel cell">
+    <div class="panel-top cell">
       <div class="panel-content">
         <?php print $content['top']; ?>
       </div>
@@ -24,7 +26,7 @@
   <?php endif; ?>
 
   <?php if ($content['left']): ?>
-    <div class="panel cell-33">
+    <div class="panel-left cell-33">
       <div class="panel-content">
         <?php print $content['left']; ?>
       </div>
@@ -32,7 +34,7 @@
   <?php endif; ?>
 
   <?php if ($content['middle']): ?>
-    <div class="panel cell-33">
+    <div class="panel-middle cell-33">
       <div class="panel-content">
         <?php print $content['middle']; ?>
       </div>
@@ -40,7 +42,7 @@
   <?php endif; ?>
 
   <?php if ($content['right']): ?>
-    <div class="panel cell-33">
+    <div class="panel-right cell-33">
       <div class="panel-content">
         <?php print $content['right']; ?>
       </div>
@@ -48,7 +50,7 @@
   <?php endif; ?>
 
   <?php if ($content['bottom']): ?>
-    <div class="panel cell">
+    <div class="panel-bottom cell">
       <div class="panel-content">
         <?php print $content['bottom']; ?>
       </div>

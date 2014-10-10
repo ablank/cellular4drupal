@@ -11,10 +11,13 @@
 
 ?>
 
-<div class="cell" <?php if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
+<div<?php if (!empty($css_id)): print " id=\"$css_id\"";
+endif; ?> class="panels cell">
+
   <?php if ($content['middle']): ?>
     <div class="panel-content">
       <?php print $content['middle']; ?>
     </div>
   <?php endif; ?>
+  
 </div>

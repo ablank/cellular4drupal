@@ -1,7 +1,7 @@
 /**
- * @file
- * Content region styles
- */
+  * @file
+  * Content region styles
+*/
 
 $regions: ();
 @each $region in $rarray {
@@ -106,7 +106,15 @@ body {
 
 #sidebar-left,
 #sidebar-right {
-  background: darken($white, 5%);
+  background: $light_grey;
+
+  h3 {
+    margin: 0;
+    padding: .4em;
+    font-size: 1.2em;
+    color: $dark_grey;
+    background-color: $grey;
+  }
 }
 
 #sidebar-left {
@@ -120,10 +128,10 @@ body {
   background: $dark_grey;
   color: $white;
 
-  
-    p {
-      color: $white;
-    }
+
+  p {
+    color: $white;
+  }
 }
 
 #footer-top {
@@ -146,28 +154,4 @@ body {
   text-align: right;
   font-size: 1em;
   font-weight: bold;
-}
-
-#social-media-follow,
-#social-media-share {
-  position: relative;
-  width: 100%;
-  padding: 0 0 1em 0;
-  background: $white;
-  border-top: $dark_grey 1em solid;
-  overflow: hidden;
-
-  form {
-    margin: 0;
-    padding: 0;
-    display: inline;
-  }
-
-  h2,
-  h3,
-  h4 {
-    font-size: $normal;
-    font-weight: bold;
-    margin: 0;
-  }
 }

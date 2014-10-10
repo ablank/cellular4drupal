@@ -140,6 +140,7 @@ function cellular_remove_default_css(&$css) {
         'system.theme.css',
       ),
       'block' => 'block.css',
+      'colorbox' => 'styles/default/colorbox_style.css',
       'comment' => 'comment.css',
       'field' => 'theme/field.css',
       'filter' => 'filter.css',

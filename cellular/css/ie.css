@@ -39,7 +39,7 @@ img {
 
 /* line 17, ../sass/ie.scss */
 legend {
-  color: #bbbab7;
+  color: #f1f1f1;
 }
 
 /* line 24, ../sass/ie.scss */
@@ -86,7 +86,7 @@ input[type=checkbox]:focus, input[type=radio]:focus {
 /* line 66, ../sass/ie.scss */
 .jBlocklink {
   margin: 0;
-  border: #bbbab7 1px solid;
+  border: #f1f1f1 1px solid;
 }
 /* line 70, ../sass/ie.scss */
 .jBlocklink:hover {

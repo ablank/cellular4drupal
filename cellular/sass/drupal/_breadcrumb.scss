@@ -7,7 +7,7 @@
   height: 2em;
   margin: 0 0 2em 0;
   padding: .1em 5%;
-  background: $light_grey;
+  background: $dark_grey;
 
 
   li {
@@ -17,7 +17,7 @@
     line-height: 2em;
     margin: 0 0 0 .4em;
     padding: 0 0 0 1.4em;
-    color: $dark_grey;
+    color: lighten($grey, 20%);
     background-repeat: no-repeat;
     background-size: 1em;
     background-position: left center;

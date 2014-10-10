@@ -1093,25 +1093,25 @@ body .ui-tooltip {
 .ui-widget-content {
   border: 1px solid #aaa;
   background: #fefefe;
-  color: #565450;
+  color: #444444;
 }
 
 /* line 946, ../../sass/jquery-ui/jquery-ui.1.10.scss */
 .ui-widget-content a {
-  color: #565450;
+  color: #444444;
 }
 
 /* line 950, ../../sass/jquery-ui/jquery-ui.1.10.scss */
 .ui-widget-header {
   background: #fefefe;
-  color: #565450;
+  color: #444444;
   font-weight: bold;
   border: 1px solid;
 }
 
 /* line 957, ../../sass/jquery-ui/jquery-ui.1.10.scss */
 .ui-widget-header a {
-  color: #565450;
+  color: #444444;
 }
 
 /* Interaction states
@@ -1186,14 +1186,14 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-highlight {
   border: 1px solid #fd1;
   background: #ffd;
-  color: #565450;
+  color: #444444;
 }
 
 /* line 1031, ../../sass/jquery-ui/jquery-ui.1.10.scss */
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-  color: #565450;
+  color: #444444;
 }
 
 /* line 1037, ../../sass/jquery-ui/jquery-ui.1.10.scss */
@@ -2212,7 +2212,7 @@ body .ui-tooltip {
 /* Overlays */
 /* line 1857, ../../sass/jquery-ui/jquery-ui.1.10.scss */
 .ui-widget-overlay {
-  background: #bbbab7;
+  background: #f1f1f1;
   opacity: .3;
   filter: Alpha(Opacity=30);
 }
@@ -2221,7 +2221,7 @@ body .ui-tooltip {
 .ui-widget-shadow {
   margin: -.8em 0 0 -.8em;
   padding: .8em;
-  background: #565450;
+  background: #444444;
   opacity: .3;
   filter: Alpha(Opacity=30);
   border-radius: .4em;

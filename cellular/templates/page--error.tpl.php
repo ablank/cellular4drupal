@@ -87,9 +87,8 @@
 
       <?php
       if ($site_name) :
-        print "<h2>" . $site_name . "</h2>";
-      endif;
-      ?>
+        print $site_name;
+      endif; ?>
     </div>
     <?php if (isset($main_menu)) : ?>
       <div id="nav">
@@ -138,18 +137,13 @@
   <?php
   if ($page['footer_top']) :
     print render($page['footer_top']);
-  endif;
-
-  ?>
+  endif; ?>
   <div id="footer" class="cell">
-
 
     <?php
     if ($page['footer']) :
       print render($page['footer']);
-    endif;
-
-    ?>
+    endif; ?>
   </div>
   <!-- /#footer -->
 
@@ -158,9 +152,7 @@
       <?php
       if ($page['footer_bottom']) :
         print render($page['footer_bottom']);
-      endif;
-
-      ?>
+      endif; ?>
 
       <?php if ($page['copyright']): ?>
         <div id="copyright"><?php print $page['copyright']; ?></div>

@@ -3,7 +3,12 @@
  * Collect Drupal specific  styles
  */
 @import "variables";
-@import "drupal/drupal-pager";
+
 @import "drupal/drupal-ids";
 @import "drupal/drupal-classes";
-@import "drupal/drupal-breadcrumb";
+@import "drupal/breadcrumb";
+@import "drupal/date-classes";
+@import "drupal/pager";
+// Module styles.
+@import "drupal/colorbox";
+@import "drupal/panels";

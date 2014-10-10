@@ -1101,8 +1101,8 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
   z-index: 9999;
   max-width: 300px;
-  -webkit-box-shadow: 0 0 5px #565450;
-  box-shadow: 0 0 5px #565450;
+  -webkit-box-shadow: 0 0 5px #444444;
+  box-shadow: 0 0 5px #444444;
 }
 
 /* Fades and background-images don't work well together in IE6, drop the image */
@@ -1129,27 +1129,27 @@ body .ui-tooltip {
 
 /* line 993, ../../sass/jquery-ui/jquery-ui.1.9.scss */
 .ui-widget-content {
-  border: 1px solid #565450;
+  border: 1px solid #444444;
   background: #fefefe;
-  color: #565450;
+  color: #444444;
 }
 
 /* line 999, ../../sass/jquery-ui/jquery-ui.1.9.scss */
 .ui-widget-content a {
-  color: #565450;
+  color: #444444;
 }
 
 /* line 1003, ../../sass/jquery-ui/jquery-ui.1.9.scss */
 .ui-widget-header {
-  border: 1px solid #565450;
+  border: 1px solid #444444;
   background: #fefefe;
-  color: #565450;
+  color: #444444;
   font-weight: bold;
 }
 
 /* line 1010, ../../sass/jquery-ui/jquery-ui.1.9.scss */
 .ui-widget-header a {
-  color: #565450;
+  color: #444444;
 }
 
 /* Interaction states
@@ -1220,14 +1220,14 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-highlight {
   border: 1px solid #eecc22;
   background: #f1f1f1;
-  color: #565450;
+  color: #444444;
 }
 
 /* line 1082, ../../sass/jquery-ui/jquery-ui.1.9.scss */
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-  color: #565450;
+  color: #444444;
 }
 
 /* line 1088, ../../sass/jquery-ui/jquery-ui.1.9.scss */
@@ -2253,7 +2253,7 @@ body .ui-tooltip {
 /* Overlays */
 /* line 1922, ../../sass/jquery-ui/jquery-ui.1.9.scss */
 .ui-widget-overlay {
-  background: #bbbab7;
+  background: #f1f1f1;
   opacity: .3;
   filter: Alpha(Opacity=30);
 }
@@ -2262,7 +2262,7 @@ body .ui-tooltip {
 .ui-widget-shadow {
   margin: -.8em 0 0 -.8em;
   padding: .8em;
-  background: #bbbab7;
+  background: #f1f1f1;
   opacity: .3;
   filter: Alpha(Opacity=30);
   -moz-border-radius: .4em;
