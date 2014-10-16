@@ -1,7 +1,7 @@
 ;----------// Theme Information
 
 name        = Cellular
-description = Cellular is a fluid & responsive base theme designed with a mobile first approach.
+description = Cellular is a fluid & responsive base theme designed with a mobile first approach. The theme implements fluid / responsive layouts with SASS / Compass / CSS styling, and simple jquery scripting with a few useful UI functions thrown in.
 core        = 7.x
 engine      = phptemplate
 screenshot  = screenshot.png
