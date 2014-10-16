@@ -18,7 +18,9 @@
 
   #nav {
     ul.menu {
-      // Hide the navigation if using jMmenu: remove this if not using jMmenu.
+      // Remove this if not using the CellularUI jMmenu();
+      // Hides navigation to prevent jankiness caused by js changing the DOM
+      // after html & styles are loaded.
       visibility: hidden;
     }
   }

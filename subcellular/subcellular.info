@@ -8,15 +8,15 @@ core        = 7.x
 engine      = phptemplate
 screenshot  = screenshot.png
 
-;----------// General Settings
-
-settings[copyright]     = AB Creative
 
 ;----------// Stylesheets
 ; CSS is added in /inc/alter.css.inc for more robust control.
 
 ;----------// Javascript
 ; JS is added in /inc/alter.js.inc for more robust control.
+
+;----------// General Settings
+settings[copyright]         = Adam Blankenship
 
 ;----------// Regions
 regions[header_top]         = Header Top
@@ -32,10 +32,42 @@ regions[footer_top]         = Footer Top
 regions[footer]             = Footer
 regions[footer_bottom]      = Footer Bottom
 
+;----------// Meta Settings
+settings[dev]                   = 0
+settings[favicon]               = favicon.ico
+settings[favicon_32]            = favicon-32.png
+settings[apple_icon_57]         = apple-touch-icon-57.png
+settings[apple_icon_72]         = apple-touch-icon-72.png
+settings[apple_icon_114]        = apple-touch-icon-114.png
+settings[apple_icon_144]        = apple-touch-icon-144.png
+
+;----------// Markup Settings
+settings[full_menu]                 = 1
+settings[breadcrumb_display]        = 0
+settings[field_wrappers]            = 0
+settings[login_block_register]      = 0
+settings[login_block_password]      = 0
+settings[login_block_orientation]   = vertical
+
+;----------// Styles
+settings[remove_drupal_css]             = select
+settings[content_class_no_sidebars]     = cell
+settings[content_class_single_sidebar]  = cell-70
+settings[content_class_dual_sidebars]   = cell-60
+settings[sidebar_class_single_sidebar]  = cell-30
+settings[sidebar_class_dual_sidebars]   = cell-20
+
+;----------// Conditional Styles
+settings[mq_mobile_enable]       	= 0
+settings[mq_normal_enable]       	= 0
+settings[mq_large_enable]       	= 0
+settings[mq_mobile]    			= screen and (max-width: 650px)
+settings[mq_normal]    			= screen and (min-width: 650px) and (max-width: 1024px)
+settings[mq_large]    			= screen and (min-width: 1024px)
+
 ;----------// Javascript Updates & Plugins
-settings[script]                    = 1
-settings[jquery_update]             = 1
-settings[jquery_cdn]                = 1
+settings[jquery_update]             = 0
+settings[jquery_cdn]                = 0
 settings[jquery_cdn_source]         = google
 settings[jquery_version]            = 1.11.1
 settings[jqueryui_version]          = 1.10.4
@@ -50,42 +82,12 @@ settings[cellularjs]                = 0
 settings[gsap]                      = 0
 settings[reveal]                    = 0
 
-;----------// Display Settings
-settings[remove_drupal_css]         = select
-settings[full_menu]                 = 1
-settings[breadcrumb_display]        = 0
-settings[breadcrumb_separator]      = &#187;
-settings[login_block_register]      = 0
-settings[login_block_password]      = 0
-settings[login_block_orientation]   = vertical
-
-settings[mq_mobile_enable]       	= 0
-settings[mq_normal_enable]       	= 0
-settings[mq_large_enable]       	= 0
-settings[mq_mobile]    			= screen and (max-width: 650px)
-settings[mq_normal]    			= screen and (min-width: 650px) and (max-width: 1024px)
-settings[mq_large]    			= screen and (min-width: 1024px)
-
-settings[content_class_no_sidebars]     = cell
-settings[content_class_single_sidebar]  = cell-70
-settings[content_class_dual_sidebars]   = cell-60
-
-settings[sidebar_class_single_sidebar]  = cell-30
-settings[sidebar_class_dual_sidebars]   = cell-20
-
-;----------// Favicons
-settings[favicon]               = favicon.ico
-settings[favicon_32]            = favicon-32.png
-settings[apple_icon_57]         = apple-touch-icon-57.png
-settings[apple_icon_72]         = apple-touch-icon-72.png
-settings[apple_icon_114]        = apple-touch-icon-114.png
-settings[apple_icon_144]        = apple-touch-icon-144.png
-
 ;----------// Social Media
+settings[social_media_follow]   = 0
 settings[sm_follow_title]       = Follow Us
+settings[social_media_share]    = 0
 settings[sm_share_title]        = Share this page
 
-settings[social_media_follow]   = 0
 settings[follow_facebook]       = 0
 settings[follow_facebook_url]   = http://facebook.com/
 settings[follow_google_plus]    = 0
@@ -97,16 +99,12 @@ settings[follow_linkedin_url]   = http://linkedin.com/
 settings[follow_github]			    = 0
 settings[follow_github_url]   	= http://github.com/
 
-settings[social_media_share]    = 0
 settings[share_facebook]        = 0
 settings[share_google_plus]     = 0
 settings[share_twitter]         = 0
 settings[share_linkedin]        = 0
 settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
-
-;----------// Development
-settings[dev]                   = 0
 
 ;----------// Site Features
 features[] = name

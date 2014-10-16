@@ -9,25 +9,27 @@
  */
 function cellular_field(&$vars) {
   $content = '';
+  $wrap = theme_get_setting('field_wrappers');
   // Render the label, if it's not hidden.
   if (!$vars['label_hidden']) {
     $content .= "<h5 class=\"field-label\"" . $vars['title_attributes'] . ">";
     $content .= $vars['label'] . '</h5>';
   }
-  // Render the items.
-  $content .= "<div class=\"field-items\"" . $vars['content_attributes'] . ">";
+  // Render the field.
   foreach ($vars['items'] as $delta => $item) {
-    // $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
-    $content .= "\n<div" . $vars['item_attributes'][$delta] . ">\n";
-    $content .= drupal_render($item) . "\n</div>";
+    $content .= drupal_render($item);
+    // Add attributes for each item.
+    if ($wrap == TRUE && !empty($content)) {
+      $content = "\n<div" . $vars['item_attributes'][$delta] . ">\n $content \n</div>";
+    }
   }
-  $content .= "\n</div>\n";
+  // Wrap field if set.
+  if ($wrap == TRUE) {
+    $content = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
+    . "\n $content \n</div>\n";
+  }
 
-  // Wrap the field & add content.
-  $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">";
-  $output .= "\n$content\n</div>\n";
-
-  return $output;
+  return $content;
 }
 
 /**

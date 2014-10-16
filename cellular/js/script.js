@@ -31,8 +31,8 @@
         // "breakpoint": cellular.opts.breakpoint, // default
         // Classes added for styling.
         // "cclass": "jMmenu", // default
-        "direction": "right",
-        "type": "slide"
+        "type": "slide",
+        "direction": "right"
       });
       $('.jScrolli').jScrolli({
         "active": 0, // Array index of initially active content.

@@ -30,7 +30,7 @@
         color: $dark_grey;
 
         .title {
-          color: $grey;
+          color: $dark_grey;
           background: $white;
           border-bottom-color: $white;
 
@@ -48,7 +48,8 @@
       width: 95.5%;
       padding: 2%;
       bottom: 1px;
-      margin-bottom: 1.4em
+      margin-bottom: 1.4em;
+      border-color: $grey;
     }
 
     // Vertical Tab Styling

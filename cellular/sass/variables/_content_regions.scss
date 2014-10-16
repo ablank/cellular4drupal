@@ -1,3 +1,8 @@
+$region_margin: 0;
+$region_padding: 0;
+$region_border: 0;
+$region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 2);
+
 $rarray : (
 console
 header-top
@@ -14,7 +19,8 @@ footer-right
 footer-middle
 );
 
-$region_margin: 0;
-$region_padding: 0;
-$region_border: 0;
-$region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 2);
+// Build regions using list.
+$regions: ();
+@each $region in $rarray {
+  $regions : append($regions, unquote('##{$region},'));
+}

@@ -6,7 +6,7 @@
 .jMmenu-active {
   // Set common styles
   #page-wrap {
-    overflow: hidden;
+    //overflow: hidden;
     @include transition();
     @include translate3d(0,0,0);
   }
@@ -31,7 +31,7 @@
     @include translate3d(0,0,0);
   }
 
-  .menu.jMmenu {
+  .jMmenu.menu {
     //Styling for menu & links.
     position: absolute;
     z-index: 99;
@@ -65,6 +65,7 @@
       font-family: $h_font;
       font-weight: bold;
       color: $white;
+      background-image: none;
       border-bottom: 1px solid;
       background-color: rgba($black, 0.2);
 
@@ -78,26 +79,27 @@
     }
   }
 
+  // Styling common to side navigation.
+  &.push-right,
+  &.push-left,
   &.slide-right,
   &.slide-left {
-
     .menu.jMmenu {
       top: 0;
       bottom: 0;
     }
   }
 
+  // Position left menus.
+  &.push-left,
   &.slide-left {
-
-    #page-wrap {
-      float: right;
-    }
-
     .menu.jMmenu {
       left: 0
     }
   }
 
+  // Position right menus.
+  &.push-right,
   &.slide-right {
     .menu.jMmenu {
       right: 0
@@ -105,30 +107,47 @@
   }
 }
 
-// Active menu / page styles.
-.jMmenu-active {  
-
+// Style specific to menu positioning.
+.push-left {
   #page-wrap {
+    float: right;
   }
+}
 
+// Active menu styles.
+.jMmenu-active {
   #nav {
+    // Shift background to indicate state.
     background-position: right center;
   }
-
-  .menu.jMmenu {
+  // Show the menu.
+  .jMmenu.menu {
     width: 100%;
     max-width: 50%;
     opacity: 1;
+  }
 
-    li {
+  // Styles specific to positioning.
+  &.slide-right {
+    // Move #nav to .menu from obscuring trigger.
+    #nav {
+      position: absolute;
+      right: 51%;
     }
   }
 
-  &.slide-left,
-  &.slide-right {
-
+  &.push-right,
+  &.push-left {
+    // Push #page-wrap over to keep content visible when .jMmenu is active.
     #page-wrap {
       width: 50%;
+    }
+  }
+
+  &.push-left {
+    // Push #page-wrap over to keep content visible when .jMmenu is active.
+    #page-wrap {
+      float: right;
     }
   }
 }

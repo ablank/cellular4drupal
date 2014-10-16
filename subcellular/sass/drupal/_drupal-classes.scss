@@ -92,7 +92,8 @@ div.ctools-ajaxing {
   }
 }
 
-.menu {
+.menu,
+.inline.links {
   list-style: none;
   margin: 0 0 .4em .4em;
 
@@ -105,6 +106,7 @@ div.ctools-ajaxing {
 
   a {
     @include button();
+    padding: .4em .6em;
   }
 }
 

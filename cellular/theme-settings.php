@@ -19,7 +19,8 @@ function cellular_form_system_theme_settings_alter(&$form, $form_state) {
 
   $ipath = drupal_get_path('theme', 'cellular') . '/config/';
   $pages = array(
-    'personalize.inc',
+    'meta.inc',
+    'markup.inc',
     'style.inc',
     'js.inc',
     'social.inc',

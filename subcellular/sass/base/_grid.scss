@@ -2,12 +2,6 @@
   * @file
   * Cellular Grid
 */
-
-$cells: ();
-@each $cell in $grid {
-  $cells : append($cells, unquote('.cell-#{$cell},'));
-}
-
 //////
 // Grid Cells
 /////
@@ -43,7 +37,6 @@ $cells: ();
   // Set all cells to single-column
   #{$cells} {
     width: 100%;
-    margin: 0;
   }
 
   .responsive {

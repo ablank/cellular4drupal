@@ -3,6 +3,7 @@
   float: left;
   overflow: hidden;
   margin: 1.4em .8em .8em;
+  padding: 0 .4em;
   background: $light_grey;
   @include border-radius();
 
@@ -20,13 +21,5 @@
     padding: .4em;
     border-bottom: $dark_grey .2em solid;
     background: $white;
-  }
-
-  .icon:first-child {
-    margin-left: .8em;
-  }
-
-  .icon:last-child {
-    margin-right: .8em;
   }
 }

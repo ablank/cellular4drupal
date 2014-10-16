@@ -7,7 +7,7 @@
 
 $plugin = array(
   'category' => t('Cellular'),
-  'title' => t('3 Columns @ 25/25/50'),
+  'title' => t('Cellular 3 Columns @ 25/25/50'),
   'icon' => 'cellular_3col_25_25_50.png',
   'theme' => 'cellular_3col_25_25_50',
   'theme arguments' => array('id', 'content'),

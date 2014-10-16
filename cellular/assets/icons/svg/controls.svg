@@ -108,13 +108,13 @@
 	</g>
 </g>
 <g>
-	<use xlink:href="#square"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 80 16.001)" overflow="visible"/>
-	<polygon fill="#FFFFFF" points="88,10 83.804,10 80,13.866 76.197,10 72,10 77.901,15.999 72,22.001 76.197,22.001 80,18.134 
-		83.804,22.001 88,22.001 82.1,15.999 	"/>
-</g>
-<g>
 	<use xlink:href="#square"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 80 48)" overflow="visible"/>
 	<polygon fill="#FFFFFF" points="88,42 83.804,42 80,45.865 76.197,42 72,42 77.901,47.998 72,54 76.197,54 80,50.133 83.804,54 
 		88,54 82.1,47.998 	"/>
+</g>
+<g>
+	<use xlink:href="#square"  width="32" height="32" x="-16" y="-16" transform="matrix(1 0 0 -1 80 16.001)" overflow="visible"/>
+	<polygon fill="#FFFFFF" points="88,10 83.804,10 80,13.866 76.197,10 72,10 77.901,15.999 72,22.001 76.197,22.001 80,18.134 
+		83.804,22.001 88,22.001 82.1,15.999 	"/>
 </g>
 </svg>

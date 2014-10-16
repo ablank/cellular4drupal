@@ -13,7 +13,7 @@
     display: inline-block;
     vertical-align: top;
     margin: 1em;
-    color: $grey;
+    color: $dark_grey;
     background: $panel_background;
     @include transition();
     @include box-shadow(0 0 .1em .1em $light_grey);
@@ -41,6 +41,10 @@
         color: $active_color;
         text-decoration: none;
       }
+    }
+
+    &.focus {
+      text-decoration: underline;
     }
   }
 }

@@ -20,4 +20,5 @@ function cellular_main_menu(&$vars) {
   $vars['main_menu'] = $main_menu;
 
   return $vars;
+  dsm($vars['main_menu']);
 }

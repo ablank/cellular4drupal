@@ -10,6 +10,7 @@ $include = array(
   'fn.css.inc',
   'fn.menu.inc',
   'fn.js.inc',
+  'fn.js_plugins.inc',
   'fn.jquery.inc',
   'fn.menu.inc',
   'fn.preprocess.inc',

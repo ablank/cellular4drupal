@@ -7,7 +7,7 @@
 /**/
 $plugin = array(
   'category' => t('Cellular'),
-  'title' => t('Inset Left'),
+  'title' => t('Cellular Inset Left'),
   'icon' => 'cellular_inset_left.png',
   'theme' => 'cellular_inset_left',
   'theme arguments' => array('id', 'content'),

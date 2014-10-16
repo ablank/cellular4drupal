@@ -7,7 +7,7 @@
 
   Drupal.behaviors.theme = {
     attach: function (context, settings) {
-/*
+
       // Cellular UI:
       $('.jAccordion').jAccordion({
         "active": 0, // Index value of initial content to display.
@@ -28,11 +28,11 @@
       });
       $('#nav').jMmenu({
         // Window breakpoint trigger:
-        // "breakpoint": cellular.opts.breakpoint,
+        // "breakpoint": cellular.opts.breakpoint, // default
         // Classes added for styling.
-        "cclass": "jMmenu",
-        "direction": "right",
-        "type": "slide"
+        // "cclass": "jMmenu", // default
+        "type": "slide",
+        "direction": "right"
       });
       $('.jScrolli').jScrolli({
         "active": 0, // Array index of initially active content.
@@ -43,8 +43,7 @@
         "active": 0, // Array index of initially active content.
         "orient": "horizontal" // || 'vertical'
       });
-       */
-
+      /* */
       /*
        // Call Masonry:
        $('.block-content').masonry({

@@ -65,6 +65,18 @@ function cellular_error_page(&$vars) {
 }
 
 /**
+ * Get media query breakpoints from theme settings.
+ */
+function cellular_mq() {
+  $mq = array();
+  $mq['mobile'] = theme_get_setting('mq_mobile');
+  $mq['normal'] = theme_get_setting('mq_normal');
+  $mq['large'] = theme_get_setting('mq_large');
+
+  return $mq;
+}
+
+/**
  * Removes text formatting options from user input.
  */
 function cellular_form_format_opt(&$form, $form_state) {

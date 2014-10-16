@@ -90,9 +90,10 @@ function cellular_preprocess_comment(&$vars) {
   ));
 }
 
-
+/**
+ * Cellular template_preprocess_comment_wrapper.
+ */
 function cellular_preprocess_comment_wrapper(&$vars) {
-  //dsm($vars);
   $vars['classes_array'][] = 'clearfix';
 }
 

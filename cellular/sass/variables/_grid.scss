@@ -21,3 +21,8 @@ $cell_margin: 0;
 $cell_padding: 0;
 $cell_border: 0;
 $cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);
+
+$cells: ();
+@each $cell in $grid {
+  $cells : append($cells, unquote('.cell-#{$cell},'));
+}

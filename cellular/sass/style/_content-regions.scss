@@ -3,10 +3,6 @@
   * Content region styles
 */
 
-$regions: ();
-@each $region in $rarray {
-  $regions : append($regions, unquote('##{$region},'));
-}
 //////
 
 body {
