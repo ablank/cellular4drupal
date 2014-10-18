@@ -66,11 +66,6 @@ hr.clearfix {
   padding: 0;
 }
 
-.center {
-  display: block;
-  margin: 0 auto;
-}
-
 .left,
 .right {
   display: block;
@@ -80,6 +75,22 @@ hr.clearfix {
   float: left;
 }
 
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  &.center {
+    text-align: center;
+  }
+}
 .right {
   float: right;
 }

@@ -23,6 +23,7 @@ body {
   -ms-text-size-adjust: 100%;
   font-size: 100%;
   font-family: $p_font;
+  font-family: 1.1rem;
   line-height: $p_line_height;
   color: $p_color;
 }
@@ -84,6 +85,7 @@ h1 {
   margin: 0;
   padding: 1.4em 5% 1em;
   font-size: $h_size;
+  font-size: 2.4rem;
   text-align: left;
   color: $black;
   border: none;

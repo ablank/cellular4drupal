@@ -8,22 +8,14 @@
  * Cellular hook_js_alter().
  */
 function cellular_js_alter(&$javascript) {
-  // Pass a variable from drupal to js:
-  // drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
-  /* myVar will be available in Javascript as:
-    <script>
-    if (Drupal.settings.myVar.key == value){
-    alert('Got it!');
-    }
-    </script>
-   */
+  // Pass variables from drupal to js.
+  cellular_js_vars();
 
   // Scripts to add, relative to /yourTheme/js/
-  $scripts = array(
-    'script' => array(
-      'file' => 'script.js',
-      'weight' => 99,
-    ),
+  $scripts['script'] = array(
+    'file' => 'script.js',
+    'group' => JS_THEME,
+    'weight' => 100,
   );
   cellular_add_js($scripts);
 
@@ -32,7 +24,7 @@ function cellular_js_alter(&$javascript) {
 
   // Add Modernizr & query based on theme settings.
   theme_get_setting('modernizr') == 1 ? cellular_modernizr() : NULL;
-  
+
   // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     $jquery = cellular_jquery_info();

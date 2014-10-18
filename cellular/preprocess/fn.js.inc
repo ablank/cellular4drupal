@@ -5,6 +5,28 @@
  */
 
 /**
+ * Pass variables to Drupal javascript object.
+ * Used to call js if plugins are selected.
+ */
+function cellular_js_vars() {
+  // Scripts to add, relative to /libraries/cellular/js/
+  $js_plugins = array();
+  theme_get_setting('cellularjs') == 1 ? $js_plugins['cellularui'] = TRUE : NULL;
+  theme_get_setting('masonry') == 1 ? $js_plugins['masonry'] = TRUE : NULL;
+
+  if ($js_plugins) {
+    drupal_add_js(array('cellular' => $js_plugins), 'setting');
+    
+    $scripts['plugins'] = array(
+      'file' => 'plugins.js',
+      'group' => JS_THEME,
+      'weight' => 99,
+    );
+    cellular_add_js($scripts);
+  }
+}
+
+/**
  * Add array of javascripts to $javascript, using a CDN if provided.
  *
  * A fallback link will be automatically generated if using CDN and
@@ -25,8 +47,7 @@ function cellular_add_js($array, $cellular = FALSE) {
         cellular_js_fallback($script, $cellular);
       }
       else {
-        $data = $cellular ?
-        constant('CELLULAR_LIB') : path_to_theme();
+        $data = $cellular ? constant('CELLULAR_LIB') : path_to_theme();
         $data .= '/js/' . $script['file'];
       }
 
