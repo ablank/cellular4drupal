@@ -1246,7 +1246,7 @@ p.center {
 /**
  * @file
  * CellularUI : Cellular
- * Set general UI styling
+ * Set default UI styles.
  */
 /* line 7, ../sass/cellular-ui/_jCellular.scss */
 .cellular {
@@ -1304,7 +1304,7 @@ p.center {
   padding: 1em;
   background: #fefefe;
   color: #444444;
-  border: .1em solid;
+  border: #bbbab7 0.1em solid;
   z-index: 1;
 }
 /* line 65, ../sass/cellular-ui/_jCellular.scss */
@@ -1318,7 +1318,7 @@ p.center {
  */
 /* line 10, ../sass/cellular-ui/_jAccordion.scss */
 .cellular.jAccordion li {
-  margin: 0 auto .1em;
+  margin: 0 auto 1px;
 }
 /* line 14, ../sass/cellular-ui/_jAccordion.scss */
 .cellular.jAccordion .title {
@@ -1327,12 +1327,14 @@ p.center {
   background-size: 1em;
   background-repeat: no-repeat;
   background-position: .4em center;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
+  border: #bbbab7 0.1em solid;
+  border-bottom: none;
+  -webkit-transition: "background-color", 0.4s;
+  -moz-transition: "background-color", 0.4s;
+  -o-transition: "background-color", 0.4s;
+  transition: "background-color", 0.4s;
 }
-/* line 28, ../sass/cellular-ui/_jAccordion.scss */
+/* line 31, ../sass/cellular-ui/_jAccordion.scss */
 .cellular.jAccordion .active .title {
   background-size: 1em;
   background-image: url(../assets/icons/svg/minus.svg);
@@ -1748,7 +1750,12 @@ body {
   color: #fefefe;
 }
 
-/* line 79, ../sass/style/_content-regions.scss */
+/* line 73, ../sass/style/_content-regions.scss */
+#console {
+  padding: 1em 1.4em;
+}
+
+/* line 80, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1758,26 +1765,26 @@ body {
   display: block;
 }
 
-/* line 85, ../sass/style/_content-regions.scss */
+/* line 86, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 95, ../sass/style/_content-regions.scss */
+/* line 96, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 98, ../sass/style/_content-regions.scss */
+/* line 99, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 104, ../sass/style/_content-regions.scss */
+/* line 105, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
   background: #f1f1f1;
 }
-/* line 107, ../sass/style/_content-regions.scss */
+/* line 108, ../sass/style/_content-regions.scss */
 #sidebar-left h3,
 #sidebar-right h3 {
   margin: 0;
@@ -1787,24 +1794,24 @@ body {
   background-color: #bbbab7;
 }
 
-/* line 123, ../sass/style/_content-regions.scss */
+/* line 124, ../sass/style/_content-regions.scss */
 #footer {
   background: #444444;
   color: #fefefe;
 }
-/* line 128, ../sass/style/_content-regions.scss */
+/* line 129, ../sass/style/_content-regions.scss */
 #footer p {
   color: #fefefe;
 }
 
-/* line 133, ../sass/style/_content-regions.scss */
+/* line 134, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #444444;
   color: #f1f1f1;
 }
 
-/* line 140, ../sass/style/_content-regions.scss */
+/* line 141, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #444444;
@@ -1812,7 +1819,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 147, ../sass/style/_content-regions.scss */
+/* line 148, ../sass/style/_content-regions.scss */
 #copyright {
   display: block;
   padding: 0.75em 1.4em 0.75em;

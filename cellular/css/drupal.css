@@ -54,72 +54,84 @@
 #search-form,
 #site-search {
   display: inline;
+  display: inline-block;
+  padding: .1em .8em;
   text-align: right;
+  font-size: .8em;
+  background-color: #f1f1f1;
+  background-color: rgba(241, 241, 241, 0.6);
+  border-bottom: #444444 0.2em solid;
+  -webkit-border-radius: 1em 50%;
+  -moz-border-radius: 1em / 50%;
+  border-radius: 1em / 50%;
 }
-/* line 44, ../sass/drupal/_drupal-ids.scss */
+/* line 52, ../sass/drupal/_drupal-ids.scss */
+#search-form label,
+#site-search label {
+  margin: 0;
+  padding: 0;
+}
+/* line 57, ../sass/drupal/_drupal-ids.scss */
 #search-form input,
 #site-search input {
   display: inline;
   display: inline-block;
   margin: 0;
-  padding: 0.3em;
+  padding: 0;
+  line-height: 2em;
   width: auto;
+  border: none;
 }
-/* line 51, ../sass/drupal/_drupal-ids.scss */
-#search-form input[type=submit],
-#site-search input[type=submit] {
-  cursor: pointer;
-  display: inline;
-  display: inline-block;
-  width: auto;
-  padding: 0.75em 1em;
-  font-family: "Quicksand";
-  font-weight: bold;
-  line-height: auto;
-  border: #bbbab7 1px solid;
-  background-color: #fefefe;
-  color: #444444;
-  background: #f1f1f1;
-  -webkit-background-image: linear-gradient(top, #f1f1f1 0%, #bbbab7 100%);
-  -moz-background-image: linear-gradient(top, #f1f1f1 0%, #bbbab7 100%);
-  -ms-background-image: linear-gradient(top, #f1f1f1 0%, #bbbab7 100%);
-  -o-background-image: linear-gradient(top, #f1f1f1 0%, #bbbab7 100%);
-  background-image: linear-gradient(top, #f1f1f1 0%, #bbbab7 100%);
-  background-image: linear-gradient(to bottom, #f1f1f1 0%, #bbbab7 100%);
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
+/* line 66, ../sass/drupal/_drupal-ids.scss */
+#search-form input[type=text],
+#site-search input[type=text] {
+  font-size: 1em;
+  width: 12em;
+  background: transparent;
+  border-bottom: #444444 0.1em solid;
+}
+/* line 74, ../sass/drupal/_drupal-ids.scss */
+#search-form input[type=submit]
+#search-form input[type=submit].button,
+#site-search input[type=submit]
+#site-search input[type=submit].button {
   float: none;
-  width: 7em;
-  padding: 0 0 0 .4em;
-  font-size: 0.75em;
-  text-align: left;
+  width: 2em;
+  height: 2em;
+  padding: 1em;
+  text-indent: -999em;
   background-position: right center;
-  background-size: 2em;
-  border: #444444 1px solid;
+  background-size: 1.4em;
+  background-repeat: no-repeat;
+  background-image: url("../assets/icons/min/png/search.png");
+  background-image: url("../assets/icons/min/svg/search.svg");
+  background-color: transparent;
+  border: #bbbab7 1px solid;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
 }
-/* line 199, ../sass/_mixins/_cellularmixins.scss */
-#search-form input[type=submit]:visited,
-#site-search input[type=submit]:visited {
-  color: #444444;
-}
-/* line 205, ../sass/_mixins/_cellularmixins.scss */
-#search-form input[type=submit].active, #search-form input[type=submit]:active, #search-form input[type=submit]:hover,
-#site-search input[type=submit].active,
-#site-search input[type=submit]:active,
-#site-search input[type=submit]:hover {
-  color: #29b4de;
+/* line 92, ../sass/drupal/_drupal-ids.scss */
+#search-form input[type=submit]
+#search-form input[type=submit].button:hover, #search-form input[type=submit]
+#search-form input[type=submit].button:active, #search-form input[type=submit]
+#search-form input[type=submit].button:focus,
+#site-search input[type=submit]
+#site-search input[type=submit].button:hover,
+#site-search input[type=submit]
+#site-search input[type=submit].button:active,
+#site-search input[type=submit]
+#site-search input[type=submit].button:focus {
+  outline: none;
+  color: #111111;
   border-color: #29b4de;
-  text-decoration: none;
-  background: #fefefe;
-  -webkit-background-image: linear-gradient(top, #fefefe 0%, #f1f1f1 100%);
-  -moz-background-image: linear-gradient(top, #fefefe 0%, #f1f1f1 100%);
-  -ms-background-image: linear-gradient(top, #fefefe 0%, #f1f1f1 100%);
-  -o-background-image: linear-gradient(top, #fefefe 0%, #f1f1f1 100%);
-  background-image: linear-gradient(top, #fefefe 0%, #f1f1f1 100%);
-  background-image: linear-gradient(to bottom, #fefefe 0%, #f1f1f1 100%);
+  background-size: 1.9em;
 }
 
 /**

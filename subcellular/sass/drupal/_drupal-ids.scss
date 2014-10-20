@@ -39,25 +39,64 @@
 #search-form,
 #site-search {
   display: inline;
+  display: inline-block;
+  padding: .1em .8em;
   text-align: right;
+  font-size: .8em;
+  background-color: $light_grey;
+  background-color: rgba($light_grey, 0.6);
+  //border: none;
+  border-bottom: $dark_grey .2em solid;
+  @include border-radius(1em, 50%);
+
+  label {
+    margin: 0;
+    padding: 0;
+  }
 
   input {
     display: inline;
     display: inline-block;
     margin: 0;
-    padding: $tiny;
+    padding: 0;
+    line-height: 2em;
     width: auto;
+    border: none;
 
-    &[type=submit] {
-      @include button();
+    &[type=text] {
+      font-size: 1em;
+      width: 12em;
+      background: transparent;
+      border-bottom: $dark_grey .1em solid;
+    }
+
+    &[type=submit]
+    &[type=submit].button {
       float: none;
-      width: 7em;
-      padding: 0 0 0 .4em;
-      font-size: $small;
-      text-align: left;
+      width: 2em;
+      height: 2em;
+      padding: 1em;
+      text-indent: -999em;
       background-position: right center;
-      background-size: 2em;
-      border: $dark_grey 1px solid;
+      background-size: 1.4em;
+      background-repeat: no-repeat;
+      background-image: url('../assets/icons/min/png/search.png');
+      background-image: url('../assets/icons/min/svg/search.svg');
+      background-color: transparent;
+      border: $grey 1px solid;
+      @include border-radius(50%);
+      @include transition();
+
+      &:hover,
+      &:active,
+      &:focus {
+        outline: none;
+        color: $black;
+        border-color: $hilight;
+        background-size: 1.9em;
+        //background-position: -.2em -.2em;
+
+      }
     }
   }
 }

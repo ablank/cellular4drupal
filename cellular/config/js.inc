@@ -3,7 +3,6 @@
  * @file
  * Theme-settings: Javascript options.
  */
-
 /*
  * jQuery CDN options.
  * jQuery & jQuery.ui version options are from this array.
@@ -33,10 +32,10 @@ $cdn = array(
   ),
 );
 
-$script = array(
+$script_extension = array(
   0 => t('None'),
-  'script.js' => 'script.js',
-  'script.min.js' => 'script.min.js'
+  '.js' => 'script.js',
+  '.min.js' => 'script.min.js'
 );
 
 // Available jQuery.ui themes:
@@ -79,6 +78,21 @@ $form['c']['js'] = array(
   </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
+);
+
+$form['c']['js']['javascript'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Use javascript.'),
+  '#description' => t("Use plugin.js (if necessary) & script.js"),
+  '#options' => $script_extension,
+  '#default_value' => theme_get_setting('javascript'),
+);
+$form['c']['js']['min_script'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Use minified javascript source.'),
+  '#description' => t("Use plugin.min.js (if necessary) & script.min.js"),
+  '#options' => $script_extension,
+  '#default_value' => theme_get_setting('min_script'),
 );
 
 // Modernizr stuff.
@@ -193,7 +207,7 @@ $form['c']['js']['update'] = array(
   '#type' => 'fieldset',
   '#title' => t('jQuery & jQuery.ui Settings'),
   '#collapsible' => TRUE,
-  '#collapsed' => FALSE,
+  '#collapsed' => TRUE,
   '#states' => array(
     'visible' => array(
       ':input[name="jquery_update"]' => array('checked' => TRUE),
@@ -240,6 +254,14 @@ $form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#default_value' => theme_get_setting('jquery_version'),
 );
 
+$form['c']['js']['update']['jquery']['jquery_migrate'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('jQuery Migrate'),
+  '#description' => t("Include jQuery.migrate for versions > 1.9 to prevent "
+  . "deprecated functions from breaking."),
+  '#default_value' => theme_get_setting('jquery_migrate'),
+);
+
 // jQuery.ui stuff.
 $form['c']['js']['update']['jqueryui'] = array(
   '#type' => 'fieldset',
@@ -273,18 +295,26 @@ $form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
 // Pre-configured 3rd party plugins.
 $form['c']['js']['plugins'] = array(
   '#type' => 'fieldset',
-  '#title' => t('JS Plugins'),
+  '#title' => t('Plugins'),
   '#description' => t("Javascript plugins will load from the Cloudflare CDN,
   or use local source as fallback if CDN is unavailable."),
   '#collapsible' => TRUE,
-  '#collapsed' => FALSE,
+  '#collapsed' => TRUE,
 );
-$form['c']['js']['plugins']['cellularjs'] = array(
+$form['c']['js']['plugins']['backstretch'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('Cellular UI'), 'http://abctahoe.net/cellular-ui'),
+  '#title' => l(t('Backstretch'), 'http://srobbin.com/jquery-plugins/backstretch/'),
+  '#description' => t("A simple jQuery plugin that allows you to add a "
+  . "dynamically resized, slideshow-capable background image to any page or "
+  . "element."),
+  '#default_value' => theme_get_setting('backstretch'),
+);
+$form['c']['js']['plugins']['cellularui'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t('Cellular UI'), 'http://live-cellular.gotpantheon.com/cellular-ui'),
   '#description' => t("The Cellular UI library provides common UI elements
   that work well with Views."),
-  '#default_value' => theme_get_setting('cellularjs'),
+  '#default_value' => theme_get_setting('cellularui'),
 );
 $form['c']['js']['plugins']['d3js'] = array(
   '#type' => 'checkbox',
@@ -296,17 +326,32 @@ $form['c']['js']['plugins']['d3js'] = array(
 );
 $form['c']['js']['plugins']['gsap'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('GSAP (GreenSock Animation Platform)'),
-'http://www.greensock.com/gsap-js/'),
+  '#title' => l(t('GSAP (GreenSock Animation Platform)'), 'http://www.greensock.com/gsap-js/'),
   '#description' => t("GSAP is a suite of tools for scripted,
   high-performance HTML5 animations that work in all major browsers."),
   '#default_value' => theme_get_setting('gsap'),
 );
-$form['c']['js']['plugins']['masonry'] = array(
+$form['c']['js']['plugins']['flowtype'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("Masonry"), 'http://masonry.desandro.com/'),
-  '#description' => t('Masonry cascading grid layouts'),
-  '#default_value' => theme_get_setting('masonry'),
+  '#title' => l(t("Flowtype"), 'http://simplefocus.com/flowtype/'),
+  '#description' => t('Responsive font-size based on element width.'),
+  '#default_value' => theme_get_setting('flowtype'),
+);
+$form['c']['js']['plugins']['freetile'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t("Freetile"), 'http://yconst.com/web/freetile/'),
+  '#description' => t('
+Freetile is a plugin for jQuery that enables the organization of webpage content
+in an efficient, dynamic and responsive layout.'),
+  '#default_value' => theme_get_setting('freetile'),
+);
+$form['c']['js']['plugins']['jparallax'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t("jParallax"), 'http://stephband.info/jparallax/'),
+  '#description' => t('jParallax turns nodes into absolutely positioned layers '
+  . 'that move in response to the mouse. Depending on their dimensions these '
+  . 'layers move at different rates, in a parallaxy kind of way.'),
+  '#default_value' => theme_get_setting('jparallax'),
 );
 $form['c']['js']['plugins']['prism'] = array(
   '#type' => 'checkbox',
@@ -329,6 +374,13 @@ $form['c']['js']['plugins']['smoove'] = array(
 transition effects, making your content smoothly glide into the page as your
 scroll down the page.'),
   '#default_value' => theme_get_setting('smoove'),
+);
+$form['c']['js']['plugins']['snap-svg'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t("Snap.SVG"), 'http://snapsvg.io/'),
+  '#description' => t('The Snap.svg JavaScript library makes working with your '
+  . 'SVG assets as easy as jQuery makes working with the DOM.'),
+  '#default_value' => theme_get_setting('snap-svg'),
 );
 $form['c']['js']['plugins']['threejs'] = array(
   '#type' => 'checkbox',

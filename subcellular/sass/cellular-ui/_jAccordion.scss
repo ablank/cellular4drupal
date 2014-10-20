@@ -8,7 +8,7 @@
   &.jAccordion {
 
     li {
-      margin: 0 auto .1em;
+      margin: 0 auto 1px;
     }
 
     .title {
@@ -17,10 +17,13 @@
       background-size: 1em;
       background-repeat: no-repeat;
       background-position: .4em center;
-      @include transition(none);
+      border: $border_color .1em solid;
+      border-bottom: none;
+      @include transition('background-color', .4s);
     }
 
     .panel {
+     // border-top: .4em solid;
     }
 
     .active {

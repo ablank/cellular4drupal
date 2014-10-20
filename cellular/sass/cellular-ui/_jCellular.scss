@@ -1,7 +1,7 @@
 /**
  * @file
  * CellularUI : Cellular
- * Set general UI styling
+ * Set default UI styles.
  */
 
 .cellular {
@@ -55,7 +55,7 @@
     padding: $normal;
     background: $panel_background;
     color: $panel_color;
-    border: .1em solid;
+    border: $border_color .1em solid;
     z-index: 1;
   }
 

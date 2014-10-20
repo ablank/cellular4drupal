@@ -39,7 +39,6 @@ function cellular_form_element_attributes(&$element) {
 function cellular_form($vars) {
   $element = $vars['element'];
   //$element['#attributes']['class'][] = 'cell';
-  
   if (isset($element['#action'])) {
     $element['#attributes']['action'] = drupal_strip_dangerous_protocols($element['#action']);
   }
@@ -47,8 +46,10 @@ function cellular_form($vars) {
   if (empty($element['#attributes']['accept-charset'])) {
     $element['#attributes']['accept-charset'] = "UTF-8";
   }
-  // Anonymous DIV to satisfy XHTML compliance.
-  return '<form' . drupal_attributes($element['#attributes']) . '>' . $element['#children'] . '</form>';
+  $output = '<form' . drupal_attributes($element['#attributes']) . '>';
+  $output .= $element['#children'] . '</form>';
+
+  return $output;
 }
 
 /**
@@ -75,6 +76,7 @@ function cellular_container(&$vars) {
  */
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
+  $output = '';
   /* May decide to include later:
     // $element['#theme_wrappers'] = NULL;
     // $attributes['class'] = array();
@@ -85,13 +87,12 @@ function cellular_form_element(&$vars) {
     // $element['#theme_wrappers'] = NULL;
    */
   isset($element['#disabled']) ?
-      $element['#attributes']['class'][] = 'disabled' : NULL;
+  $element['#attributes']['class'][] = 'disabled' : NULL;
 
-  $output = '';
   $prefix = isset($element['#field_prefix']) ?
-    '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
+  '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
   $suffix = isset($element['#field_suffix']) ?
-    '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
+  '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
 
   if (isset($element['#title_display'])) {
     switch ($element['#title_display']) {
@@ -114,7 +115,7 @@ function cellular_form_element(&$vars) {
   }
 
   isset($element['#description']) ?
-      $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
+  $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
 
   return $output;
 }
@@ -124,15 +125,18 @@ function cellular_form_element(&$vars) {
  */
 function cellular_button(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $element['#attributes']['type'] = 'submit';
   $element['#attributes']['class'][] = 'button';
+
   element_set_attributes($element, array('id', 'name', 'value'));
-  
+
   if (!empty($element['#attributes']['disabled'])) {
     $element['#attributes']['class'][] = 'form-button-disabled';
   }
+  $output .= '<input' . drupal_attributes($element['#attributes']) . ' />';
 
-  return '<input' . drupal_attributes($element['#attributes']) . ' />';
+  return $output;
 }
 
 /**
@@ -140,23 +144,23 @@ function cellular_button(&$vars) {
  */
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
-  $fieldset = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
+  $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
 
   !empty($element['#title']) ?
-      $fieldset .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
+  $output .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
   !empty($element['#description']) ?
-      $fieldset .= '<div class="description">' . $element['#description']
-      . "</div>\n" : NULL;
+  $output .= '<div class="description">' . $element['#description']
+  . "</div>\n" : NULL;
 
   // Add form elements.
-  $fieldset .= $element['#children'];
+  $output .= $element['#children'];
 
   !empty($element['#value']) ?
-      $element['#value'] . "\n" : NULL;
+  $element['#value'] . "\n" : NULL;
 
-  $fieldset .= "</fieldset>\n";
+  $output .= "</fieldset>\n";
 
-  return $fieldset;
+  return $output;
 }
 
 /**
@@ -164,10 +168,11 @@ function cellular_fieldset(&$vars) {
  */
 function cellular_select(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'select';
 
-  $output = '<select' . drupal_attributes($attributes) . ">\n";
+  $output .= '<select' . drupal_attributes($attributes) . ">\n";
   $output .= form_select_options($element) . "\n";
   $output .= "</select>\n";
 
@@ -179,11 +184,12 @@ function cellular_select(&$vars) {
  */
 function cellular_checkboxes(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
 
-  $output = "<div" . drupal_attributes($attributes) . ">\n";
+  $output .= "<div" . drupal_attributes($attributes) . ">\n";
   $output .= isset($element['#children']) ?
-    $element['#children'] : NULL;
+  $element['#children'] : NULL;
   $output .= "\n</div>\n";
 
   return $output;
@@ -194,14 +200,16 @@ function cellular_checkboxes(&$vars) {
  */
 function cellular_checkbox(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'checkbox';
 
   element_set_attributes($element, array(
     '#return_value' => 'value',
   ));
+  $output .= "<input" . drupal_attributes($attributes) . " />";
 
-  return "<input" . drupal_attributes($attributes) . " />";
+  return $output;
 }
 
 /**
@@ -209,11 +217,11 @@ function cellular_checkbox(&$vars) {
  */
 function cellular_radios(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
 
-  $output = "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ?
-    $element['#children'] : NULL;
+  $output .= "<div" . drupal_attributes($attributes) . ">\n";
+  $output .= isset($element['#children']) ? $element['#children'] : NULL;
   $output .= "\n</div>\n";
 
   return $output;
@@ -224,14 +232,16 @@ function cellular_radios(&$vars) {
  */
 function cellular_radio(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'radio';
 
   element_set_attributes($element, array(
     '#return_value' => 'value',
   ));
+  $output .= "<input" . drupal_attributes($attributes) . " />";
 
-  return "<input" . drupal_attributes($attributes) . " />";
+  return $output;
 }
 
 /**
@@ -239,10 +249,11 @@ function cellular_radio(&$vars) {
  */
 function cellular_textfield(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'text';
 
-  $output = '<input' . drupal_attributes($attributes) . ' />';
+  $output .= '<input' . drupal_attributes($attributes) . ' />';
 
   return $output;
 }
@@ -252,15 +263,16 @@ function cellular_textfield(&$vars) {
  */
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
+  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'textarea';
 
   $attributes['cols'] = isset($element['#cols']) ?
-    $element['#cols'] : 60;
+  $element['#cols'] : 60;
   $attributes['rows'] = isset($element['#rows']) ?
-    $element['#rows'] : 5;
+  $element['#rows'] : 5;
 
-  $output = '<textarea' . drupal_attributes($attributes) . '>';
+  $output .= '<textarea' . drupal_attributes($attributes) . '>';
   $output .= check_plain($element['#value']);
   $output .= '</textarea>';
 

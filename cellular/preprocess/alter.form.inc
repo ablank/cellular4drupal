@@ -19,8 +19,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $form[$form_id]['#type'] = 'textfield';
       $form[$form_id]['#size'] = 25;
       $form[$form_id]['#default_value'] = t('Search keywords');
-
-
+      // Submit button.
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
       $form['actions']['submit']['#attributes'] = array(
@@ -65,13 +64,13 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       if (isset($ureg) || isset($upass)) {
         $ulmarkup = '<div id="login-links">';
-        if ($ureg == 1) {
+        if ($ureg === 1) {
           $ulmarkup .= l(t('Register'), "user/register", array(
             'attributes' => array(
               'class' => array('register'),
           )));
         }
-        if ($upass == 1) {
+        if ($upass === 1) {
           $ulmarkup .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
               'class' => array('password'),
@@ -120,15 +119,15 @@ function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
   // Remove text format option.
   $form['comment_body'][LANGUAGE_NONE][0]['#default_value'] = t('Add your comment');
   $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
-  
+
   $form['author']['name']['#size'] = $field_size;
   $form['subject']['#size'] = $field_size;
   // Customize Submit & Preview buttons.
-  $form['actions']['preview']['#value'] =  t('Preview');
-  $form['actions']['preview']['#weight'] =  19;
-  $form['actions']['preview']['#attributes']['class'][] =  'left';
+  $form['actions']['preview']['#value'] = t('Preview');
+  $form['actions']['preview']['#weight'] = 19;
+  $form['actions']['preview']['#attributes']['class'][] = 'left';
 
-  $form['actions']['submit']['#value'] =  t('Save');
-  $form['actions']['submit']['#weight'] =  20;
+  $form['actions']['submit']['#value'] = t('Save');
+  $form['actions']['submit']['#weight'] = 20;
   $form['actions']['submit']['#attributes']['class'][] = 'right';
 }

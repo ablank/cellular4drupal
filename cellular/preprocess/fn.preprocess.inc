@@ -63,11 +63,12 @@ function cellular_rdf(&$vars) {
 function cellular_body_attributes(&$vars) {
   $body_attributes = array();
   $path = drupal_get_path_alias();
+  // Page URL is used to set id & classes of body.
   $aliases = explode('/', $path);
-  $body_attributes['id'] = str_replace(' ', '-', strtolower(drupal_get_title()));
-  // Add URL alias based body classes.
-  // i.e. http://host.com/content/widget
-  // = <body class="content widget">
+  // Set the current page as body id:
+  $body_attributes['id'] = array_pop($aliases);
+
+  // Add body classes:
   foreach ($aliases as $alias) {
     $body_attributes['class'][] = $alias;
   }
@@ -84,6 +85,7 @@ function cellular_body_attributes(&$vars) {
  * Build links to favicons & apple-touch-icons.
  */
 function cellular_favicons() {
+  // Get icon file names from theme settings.
   $settings = array(
     'favicon' => theme_get_setting('favicon'),
     'favicon-32' => theme_get_setting('favicon_32'),
@@ -93,49 +95,48 @@ function cellular_favicons() {
     'apple-144' => theme_get_setting('apple_icon_144'),
   );
 
-  $favicons = array(
-    'favicon-16x16' => !empty($settings['favicon']) ? array(
-      'rel' => 'shortcut icon',
-      'type' => 'image/x-icon',
-      'size' => NULL,
-      'href' => $settings['favicon'],
-      'weight' => 95,
-    ) : NULL,
-    'favicon-32x32' => !empty($settings['favicon-32']) ? array(
-      'rel' => 'shortcut icon',
-      'type' => 'image/png',
-      'size' => '32x32',
-      'href' => $settings['favicon-32'],
-      'weight' => 96,
-    ) : NULL,
-    /* Older iOS devices don't understand the sizes attribute and use
-     * whichever value is last, so 'default' is given more weight.
-     */
-    'apple-default' => !empty($settings['apple-default']) ? array(
-      'rel' => 'apple-touch-icon',
-      'size' => NULL,
-      'href' => $settings['apple-default'],
-      'weight' => 100,
-    ) : NULL,
-    'apple-72x72' => !empty($settings['apple-72']) ? array(
-      'rel' => 'apple-touch-icon',
-      'size' => '72x72',
-      'href' => $settings['apple-72'],
-      'weight' => 99,
-    ) : NULL,
-    'apple-114x114' => !empty($settings['apple-114']) ? array(
-      'rel' => 'apple-touch-icon',
-      'size' => '114x114',
-      'href' => $settings['apple-114'],
-      'weight' => 98,
-    ) : NULL,
-    'apple-144x144' => !empty($settings['apple-144']) ? array(
-      'rel' => 'apple-touch-icon',
-      'size' => '144x144',
-      'href' => $settings['apple-144'],
-      'weight' => 97,
-    ) : NULL,
-  );
+  $favicons = array();
+  !empty($settings['favicon']) ? $favicons['favicon-16x16'] = array(
+    'rel' => 'shortcut icon',
+    'type' => 'image/x-icon',
+    'size' => NULL,
+    'href' => $settings['favicon'],
+    'weight' => 95,
+  ) : NULL;
+  !empty($settings['favicon-32']) ? $favicons['favicon-32x32'] = array(
+    'rel' => 'shortcut icon',
+    'type' => 'image/png',
+    'size' => '32x32',
+    'href' => $settings['favicon-32'],
+    'weight' => 96,
+  ) : NULL;
+  /* Older iOS devices don't understand the sizes attribute and use
+   * whichever value is last, so 'default' is given more weight.
+   */
+  !empty($settings['apple-default']) ? $favicons['apple-default'] = array(
+    'rel' => 'apple-touch-icon',
+    'size' => NULL,
+    'href' => $settings['apple-default'],
+    'weight' => 100,
+  ) : NULL;
+  !empty($settings['apple-72']) ? $favicons['apple-72x72'] = array(
+    'rel' => 'apple-touch-icon',
+    'size' => '72x72',
+    'href' => $settings['apple-72'],
+    'weight' => 99,
+  ) : NULL;
+  !empty($settings['apple-114']) ? $favicons['apple-114x114'] = array(
+    'rel' => 'apple-touch-icon',
+    'size' => '114x114',
+    'href' => $settings['apple-114'],
+    'weight' => 98,
+  ) : NULL;
+  !empty($settings['apple-144']) ? $favicons['apple-144x144'] = array(
+    'rel' => 'apple-touch-icon',
+    'size' => '144x144',
+    'href' => $settings['apple-144'],
+    'weight' => 97,
+  ) : NULL;
 
   foreach ($favicons as &$favicon) {
     if (isset($favicon)) {
@@ -153,6 +154,7 @@ function cellular_favicons() {
  * Add meta tags to <head>.
  */
 function cellular_metatags(&$vars) {
+  // Add default metatags:
   $meta_tags = array(
     'viewport' => array(
       'tag' => 'meta',
@@ -173,13 +175,15 @@ function cellular_metatags(&$vars) {
       'href' => $GLOBALS['base_url'] . '/humans.txt',
       'weight' => 3,
     ),
-    'grddl' => isset($vars['grddl_profile']) ? array(
-      'tag' => 'link',
-      'rel' => 'profile',
-      'href' => $vars['grddl_profile'],
-      'weight' => 4,
-    ) : NULL,
   );
+
+  // Add conditional metatags:
+  isset($vars['grddl_profile']) ? $meta_tags['grddl'] = array(
+    'tag' => 'link',
+    'rel' => 'profile',
+    'href' => $vars['grddl_profile'],
+    'weight' => 4,
+  ) : NULL;
 
   cellular_build_head_tags($meta_tags);
 }
@@ -188,17 +192,17 @@ function cellular_metatags(&$vars) {
  * Test if sidebar regions are used and return the appropriate class.
  */
 function cellular_test_sidebar(&$vars) {
-  $sidebar_left = !empty($vars['page']['sidebar_left']) ? 1 : NULL;
-  $sidebar_right = !empty($vars['page']['sidebar_right']) ? 1 : NULL;
+  !empty($vars['page']['sidebar_left']) ? $sidebar_left = 1 : NULL;
+  !empty($vars['page']['sidebar_right']) ? $sidebar_right = 1 : NULL;
 
-  if (isset($sidebar_left) && isset($sidebar_right)) {
+  if (!isset($sidebar_left) && !isset($sidebar_right)) {
+    return;
+  }
+  elseif (isset($sidebar_left) && isset($sidebar_right)) {
     return 'dual-sidebars';
   }
   elseif (isset($sidebar_left) || isset($sidebar_right)) {
     return 'single-sidebar';
-  }
-  else {
-    return 'no-sidebars';
   }
 }
 
@@ -234,7 +238,6 @@ function cellular_set_author(&$vars) {
     'description' => isset($vars['author']->field_description[$safe_value]) ?
     '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
     'image' => !empty($uid->picture->uri) ? theme('image_style', array(
-      // 'style_name' => 'blog-author-image',
       'path' => $node->picture->uri,
       'width' => NULL,
       'height' => NULL,

@@ -119,6 +119,21 @@ function cellular_jquery_update(&$javascript) {
   );
 
   cellular_js_override($javascript, $jqueryform, TRUE);
+
+  // Add migrate to prevent deprecated functions from breaking.
+  if (theme_get_setting('jquery_migrate') === 1) {
+    // Add jQuery.migrate to support older plugins if v >= 1.9
+    if ($jquery['version'] !== '1.8.24') {
+      $js_plugins['migrate'] = array(
+        'version' => '1.2.1',
+        'file' => 'plugins/jquery.migrate.min.js',
+        'group' => JS_LIBRARY,
+        'weight' => -96,
+      );
+      // Add js after override.
+      cellular_add_js($js_plugins, TRUE);
+    }
+  }
 }
 
 /**
@@ -243,7 +258,7 @@ function cellular_jqueryui_update_css(&$css) {
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
         $style['ui']['file'] = $ui_path . 'jquery-ui.css';
-        if (theme_get_setting('jquery_cdn') == 1) {
+        if (theme_get_setting('jquery_cdn') === 1) {
           $cdn = cellular_cdn();
           // Set cdn source.
           $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];

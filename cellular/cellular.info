@@ -55,29 +55,38 @@ settings[sidebar_class_single_sidebar]  = cell-30
 settings[sidebar_class_dual_sidebars]   = cell-20
 
 ;----------// Conditional Styles
-settings[mq_mobile_enable]       	= 0
-settings[mq_normal_enable]       	= 0
-settings[mq_large_enable]       	= 0
+settings[mq_mobile_enable]      = 0
+settings[mq_normal_enable]      = 0
+settings[mq_large_enable]       = 0
 settings[mq_mobile]    			= screen and (max-width: 650px)
 settings[mq_normal]    			= screen and (min-width: 650px) and (max-width: 1024px)
 settings[mq_large]    			= screen and (min-width: 1024px)
 
-;----------// Javascript Updates & Plugins
-settings[jquery_update]             = 0
-settings[jquery_cdn]                = 0
-settings[jquery_cdn_source]         = google
-settings[jquery_version]            = 1.11.1
-settings[jqueryui_version]          = 1.10.4
-settings[jqueryui_theme]            = custom
-settings[modernizr]                 = 0
-settings[d3js]                      = 0
-settings[threejs]                   = 0
-settings[smoove]                    = 0
-settings[prism]                     = 0
-settings[masonry]                   = 0
-settings[cellularjs]                = 0
-settings[gsap]                      = 0
-settings[reveal]                    = 0
+;----------// jQuery Update
+settings[jquery_update]         = 0
+settings[jquery_cdn]            = 0
+settings[jquery_cdn_source]     = google
+settings[jquery_version]        = 1.11.1
+settings[jquery_migrate]        = 1
+settings[jqueryui_version]      = 1.10.4
+settings[jqueryui_theme]        = custom
+
+;----------// Javascript Plugins
+settings[javascript]            = 1
+settings[min_script]            = 0
+settings[modernizr]             = 0
+settings[backstretch]           = 0
+settings[cellularui]            = 0
+settings[d3js]                  = 0
+settings[flowtype]              = 0
+settings[freetile]              = 0
+settings[jparallax]             = 0
+settings[gsap]                  = 0
+settings[prism]                 = 0
+settings[smoove]                = 0
+settings[reveal]                = 0
+settings[snap-svg]              = 0
+settings[threejs]               = 0
 
 ;----------// Social Media
 settings[social_media_follow]   = 0

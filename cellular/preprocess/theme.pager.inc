@@ -75,7 +75,7 @@ function cellular_pager($vars) {
     }
 
     // When there is more than one page, create the pager list.
-    if ($i != $pager_max) {
+    if ($i !== $pager_max) {
       if ($i > 1) {
         $items[] = array('class' => array('pager-ellipsis'), 'data' => '…');
       }
@@ -92,7 +92,7 @@ function cellular_pager($vars) {
             )),
           );
         }
-        if ($i == $pager_current) {
+        if ($i === $pager_current) {
           $items[] = array('class' => array('pager-current'), 'data' => $i);
         }
         if ($i > $pager_current) {

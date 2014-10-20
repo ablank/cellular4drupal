@@ -14,6 +14,7 @@ module.exports = {
     },
     files: {
       'js/script.min.js': ['js/script.js'],
+      'js/plugins.min.js': ['js/plugins.js']
     }
   },
   dev: {
@@ -24,6 +25,7 @@ module.exports = {
     },
     files: {
       'js/script.dev.js': ['js/script.js'],
+      'js/plugins.dev.js': ['js/plugins.js']
     }
   }
 };

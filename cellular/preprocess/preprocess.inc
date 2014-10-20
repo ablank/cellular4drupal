@@ -26,7 +26,7 @@ function cellular_preprocess_node(&$vars) {
   $vars['content_attributes_array']['class'] = array('node-content');
 
   // Customize articles & blog posts:
-  if ($node->type == 'article' || 'blog') {
+  if ($node->type === 'article' || 'blog') {
     // Get $author info:
     cellular_set_author($vars);
   }
@@ -37,14 +37,17 @@ function cellular_preprocess_node(&$vars) {
  */
 function cellular_preprocess_page(&$vars) {
   // Add template suggestions for custom Content types(page--content-type.tpl.php)
-  if (isset($vars['node']->type)) {
-    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
-  }
+  isset($vars['node']->type) ? $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type : NULL;
+
+  // Set main_menu as full-tree or top-level as defined in settings:
+  cellular_main_menu($vars);
+  // Set classes for content & sidebars.
+  cellular_sidebar_classes($vars);
+  // Use page--error.tpl if http error status is returned.
+  cellular_error_page($vars);
 
   // Link site name to frontpage:
   $vars['site_name'] = l($vars['site_name'], '<front>');
-  // Set main_menu as full-tree or top-level as defined in settings:
-  cellular_main_menu($vars);
   // Set Social Media links:
   $vars['page']['social_media_share'] = cellular_social_media_share();
   $vars['page']['social_media_follow'] = cellular_social_media_follow();
@@ -52,13 +55,7 @@ function cellular_preprocess_page(&$vars) {
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : NULL;
-
-  // Set classes for content & sidebars.
-  cellular_sidebar_classes($vars);
-
-  // Use page--error.tpl if http error status is returned.
-  cellular_error_page($vars);
+  !empty($copyright) ? $vars['page']['copyright'] = "&copy; " . date("Y") . " $copyright" : NULL;
 }
 
 /**
@@ -67,7 +64,9 @@ function cellular_preprocess_page(&$vars) {
 function cellular_preprocess_block(&$vars) {
   $block = $vars['elements']['#block'];
   // Hide block titles in the headers region:
-  if ($block->region === 'header' || $block->region === 'header-top' || $block->region === 'header-bottom'
+  if ($block->region === 'header' ||
+  $block->region === 'header-top' ||
+  $block->region === 'header-bottom'
   ) {
     $vars['title_attributes']['class'][] = $title_attributes;
   }

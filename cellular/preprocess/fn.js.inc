@@ -8,22 +8,35 @@
  * Pass variables to Drupal javascript object.
  * Used to call js if plugins are selected.
  */
-function cellular_js_vars() {
-  // Scripts to add, relative to /libraries/cellular/js/
+function cellular_js() {
+  $ext = theme_get_setting('min_script') === 1 ? '.min.js' : '.js';
+  $scripts['script'] = array(
+    'file' => 'script' . $ext,
+    'group' => JS_THEME,
+    'weight' => 100,
+  );
+
   $js_plugins = array();
-  theme_get_setting('cellularjs') == 1 ? $js_plugins['cellularui'] = TRUE : NULL;
-  theme_get_setting('masonry') == 1 ? $js_plugins['masonry'] = TRUE : NULL;
+  theme_get_setting('backstretch') === 1 ? $js_plugins['backstretch'] = TRUE : NULL;
+  theme_get_setting('cellularui') === 1 ? $js_plugins['cellularui'] = TRUE : NULL;
+  theme_get_setting('flowtype') === 1 ? $js_plugins['flowtype'] = TRUE : NULL;
+  theme_get_setting('freetile') === 1 ? $js_plugins['freetile'] = TRUE : NULL;
+  theme_get_setting('jparallax') === 1 ? $js_plugins['jparallax'] = TRUE : NULL;
+  theme_get_setting('masonry') === 1 ? $js_plugins['masonry'] = TRUE : NULL;
+  theme_get_setting('smoove') === 1 ? $js_plugins['smoove'] = TRUE : NULL;
 
   if ($js_plugins) {
+    // Add to Drupal.settings javascript.
     drupal_add_js(array('cellular' => $js_plugins), 'setting');
-    
+    // Scripts to add, relative to /yourTheme/js/
     $scripts['plugins'] = array(
-      'file' => 'plugins.js',
+      'file' => 'plugin' . $ext,
       'group' => JS_THEME,
       'weight' => 99,
     );
-    cellular_add_js($scripts);
   }
+  
+  cellular_add_js($scripts);
 }
 
 /**
@@ -37,10 +50,11 @@ function cellular_add_js($array, $cellular = FALSE) {
     if (!empty($script)) {
       // Set default attributes.
       $script['type'] = isset($script['cdn']) ? 'external' : 'file';
-      $script['version'] = isset($script['version']) ? $script['version'] : NULL;
       $script['group'] = isset($script['group']) ? $script['group'] : JS_THEME;
       $script['every_page'] = isset($script['every_page']) ? $script['every_page'] : TRUE;
-      $script['weight'] = isset($script['weight']) ? $script['weight'] : 1;
+      $script['weight'] = isset($script['weight']) ? $script['weight'] : 0;
+      // Conditional attributes.
+      isset($script['version']) ? $script['version'] = $script['version'] : NULL;
 
       if (!empty($script['cdn'])) {
         $data = $script['cdn'];
@@ -66,6 +80,8 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     'type' => 'inline',
     'every_page' => isset($script['every_page']) ? $script['every_page'] : TRUE,
   );
+
+  // Only add the fallback if an object has been provided to test.
   if (isset($script['object'])) {
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
     $fallback .= $cellular ? constant('CELLULAR_LIB') : path_to_theme();
@@ -91,24 +107,19 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     }
     else {
       // Or set data to local file if no CDN.
-      // Set path relative to $cellular_lib or $theme path depending on context.
-      $data = $cellular ?
-      constant('CELLULAR_LIB') : path_to_theme();
+      $data = $cellular ? constant('CELLULAR_LIB') : path_to_theme();
       $data .= isset($script['file']) ? '/js/' . $script['file'] : NULL;
     }
 
+    // Default attributes.
     $javascript[$ojs]['data'] = $data;
-    $javascript[$ojs]['version'] = isset($script['version']) ?
-    $script['version'] : NULL;
-    $javascript[$ojs]['group'] = isset($script['group']) ?
-    $script['group'] : JS_LIBRARY;
-    $javascript[$ojs]['every_page'] = isset($script['every_page']) ?
-    $script['every_page'] : TRUE;
-    $javascript[$ojs]['weight'] = isset($script['weight']) ?
-    $script['weight'] : 0;
-    $javascript[$ojs]['type'] = isset($script['cdn']) ?
-    'external' : 'file';
-    $javascript[$ojs]['preprocess'] = isset($script['preprocess']) ?
-    $script['preprocess'] : FALSE;
+    $javascript[$ojs]['group'] = isset($script['group']) ? $script['group'] : JS_LIBRARY;
+    $javascript[$ojs]['every_page'] = isset($script['every_page']) ? $script['every_page'] : TRUE;
+    $javascript[$ojs]['weight'] = isset($script['weight']) ? $script['weight'] : 0;
+    $javascript[$ojs]['type'] = isset($script['cdn']) ? 'external' : 'file';
+    $javascript[$ojs]['preprocess'] = isset($script['preprocess']) ? $script['preprocess'] : TRUE;
+
+    // Conditional attributes.
+    isset($script['version']) ? $javascript[$ojs]['version'] = $script['version'] : NULL;
   }
 }

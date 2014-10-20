@@ -88,7 +88,7 @@ function cellular_form_format_opt(&$form, $form_state) {
   // Or Nuke text format options:
   $form[LANGUAGE_NONE][0]['format']['#access'] = FALSE;
   $form[LANGUAGE_NONE][0]['format']['#default_value'] = 'filtered';
-  
+
   return $form;
 }
 
@@ -96,7 +96,7 @@ function cellular_form_format_opt(&$form, $form_state) {
  * Print variables.
  */
 function cellular_dev($element) {
-  if (theme_get_setting('dev') == 1) {
+  if (theme_get_setting('dev') === 1) {
     if (module_exists('devel')) {
       dpm($element);
     }

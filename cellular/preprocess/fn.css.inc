@@ -82,30 +82,6 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
 }
 
 /**
- * Return stylesheets array used by javascript plugins.
- */
-function cellular_plugin_css() {
-  // Plugins available through cellular, styles added based on theme settings.
-  // $plugin_css paths are relative to /libraries/cellular/css/
-  $plugin_css = array(
-    'prism' => theme_get_setting('prism') == 1 ?
-    array(
-      'file' => 'prism.css',
-      'weight' => 1,
-      'preprocess' => FALSE,
-    ) : NULL,
-    'reveal' => theme_get_setting('reveal') == 1 ?
-    array(
-      'file' => 'reveal/reveal.min.css',
-      'weight' => 1,
-      'preprocess' => FALSE,
-    ) : NULL,
-  );
-
-  return $plugin_css;
-}
-
-/**
  * Remove core stylesheets based on theme settings.
  */
 function cellular_remove_default_css(&$css) {

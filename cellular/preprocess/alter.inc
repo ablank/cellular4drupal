@@ -10,7 +10,7 @@
  */
 function cellular_html_head_alter(&$head_elements) {
   // Remove unwanted meta tags.
-  $exclude = array('metatag_generator', 'metatag_generator_0');
+  $exclude = array('metatag_generator');
 
   foreach ($exclude as $element) {
     if (isset($head_elements[$element])) {

@@ -14,7 +14,7 @@ function cellular_css_alter(&$css) {
   // Add js plugin styles.
   $plugins = cellular_plugin_css();
   // Update jqueryui styles if needed.
-  if (theme_get_setting('jquery_update') == 1) {
+  if (theme_get_setting('jquery_update') === 1) {
     cellular_jqueryui_update_css($css);
   }
   isset($plugins) ? cellular_add_css($css, $plugins, TRUE) : NULL;

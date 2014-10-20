@@ -19,12 +19,12 @@ function cellular_field(&$vars) {
   foreach ($vars['items'] as $delta => $item) {
     $content .= drupal_render($item);
     // Add attributes for each item.
-    if ($wrap == TRUE && !empty($content)) {
+    if ($wrap === 1 && !empty($content)) {
       $content = "\n<div" . $vars['item_attributes'][$delta] . ">\n $content \n</div>";
     }
   }
   // Wrap field if set.
-  if ($wrap == TRUE) {
+  if ($wrap === 1) {
     $content = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
     . "\n $content \n</div>\n";
   }
@@ -37,7 +37,7 @@ function cellular_field(&$vars) {
  */
 function cellular_breadcrumb(&$vars) {
   $output = NULL;
-  if (theme_get_setting('breadcrumb_display') == 1) {
+  if (theme_get_setting('breadcrumb_display') === 1) {
     if (!empty($vars['breadcrumb'])) {
       $vars['breadcrumb'][] = '<span class="active">' . drupal_get_title() . '</span>';
       $breadcrumb = $vars['breadcrumb'];
