@@ -3,7 +3,6 @@
  * @file
  * Theme-settings: Javascript options.
  */
-
 /*
  * jQuery CDN options.
  * jQuery & jQuery.ui version options are from this array.
@@ -93,7 +92,7 @@ $form['c']['js']['modernizr'] = array(
   '#type' => 'checkbox',
   '#title' => l(t('Modernizr'), 'http://modernizr.com/'),
   '#description' => t("Include Modernizr.js to test  browser capabilities and
-load resources as needed."),
+  load resources as needed."),
   '#default_value' => theme_get_setting('modernizr'),
 );
 
@@ -113,7 +112,7 @@ $form['c']['js']['mdrnzr']['mq_mobile_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Mobile Media Query'),
   '#description' => t("Enable media query to load extra CSS
-(conditional-mobile.css) for mobile devices."),
+  (conditional-mobile.css) for mobile devices."),
   '#default_value' => theme_get_setting('mq_mobile_enable'),
   '#states' => array(
     'visible' => array(
@@ -125,8 +124,8 @@ $form['c']['js']['mdrnzr']['mq_mobile'] = array(
   '#type' => 'textfield',
   '#title' => t('Mobile Media Query'),
   '#description' => t("The media query tested by Modernizr load
-extra CSS for mobile devices. This should match the @media setting in
-conditional-mobile.css."),
+  extra CSS for mobile devices. This should match the @media setting in
+  conditional-mobile.css."),
   '#default_value' => theme_get_setting('mq_mobile'),
   '#states' => array(
     'visible' => array(
@@ -138,7 +137,7 @@ $form['c']['js']['mdrnzr']['mq_normal_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Desktop Media Query'),
   '#description' => t("Enable media query to test before loading
-conditional-style.css."),
+  conditional-style.css."),
   '#default_value' => theme_get_setting('mq_normale_enable'),
   '#states' => array(
     'visible' => array(
@@ -161,7 +160,7 @@ $form['c']['js']['mdrnzr']['mq_large_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Conditional Large Media Query'),
   '#description' => t("Enable media query to load extra CSS
-(conditional-large.css) for large screen devices."),
+  (conditional-large.css) for large screen devices."),
   '#default_value' => theme_get_setting('mq_large_enable'),
   '#states' => array(
     'visible' => array(
@@ -173,8 +172,8 @@ $form['c']['js']['mdrnzr']['mq_large'] = array(
   '#type' => 'textfield',
   '#title' => t('Large Screen Media Query'),
   '#description' => t("The media query tested by Modernizr load extra CSS for
- large devices. This should match the @media setting in
- conditional-large.css."),
+  large devices. This should match the @media setting in
+  conditional-large.css."),
   '#default_value' => theme_get_setting('mq_large'),
   '#states' => array(
     'visible' => array(
@@ -188,7 +187,7 @@ $form['c']['js']['jquery_update'] = array(
   '#type' => 'checkbox',
   '#title' => t('Update jQuery & jQuery UI'),
   '#description' => t("Select the version of jQuery & jQueryUI to use.
-jquery.once and jquery.form will be updated to current version."),
+  jquery.once and jquery.form will be updated to current version."),
   '#default_value' => theme_get_setting('jquery_update'),
 );
 
@@ -208,7 +207,7 @@ $form['c']['js']['update']['jquery_cdn'] = array(
   '#type' => 'checkbox',
   '#title' => t('Update via CDN'),
   '#description' => t("Update jQuery & jQuery.ui from a selected Content
- Distribution Network host, falling back to local javascript sources
+  Distribution Network host, falling back to local javascript sources
   if CDN is unavailable."),
   '#default_value' => theme_get_setting('jquery_cdn'),
 );
@@ -235,16 +234,16 @@ $form['c']['js']['update']['jquery'] = array(
 $form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#type' => 'select',
   '#title' => t('jQuery Version'),
-  '#description' => t("Select the version of jQuery your site will use.
-  The jQuery.migrate module will be loaded automatically for versions > 1.9"),
+  '#description' => t("Select the version of jQuery your site will use. The
+  jQuery.migrate module will be loaded automatically for versions > 1.9"),
   '#options' => $cdn['jquery'],
   '#default_value' => theme_get_setting('jquery_version'),
 );
 $form['c']['js']['update']['jquery']['jquery_migrate'] = array(
   '#type' => 'checkbox',
   '#title' => t('jQuery Migrate'),
-  '#description' => t("Include jQuery.migrate for versions > 1.9 to prevent "
-  . "deprecated functions from breaking."),
+  '#description' => t("Include jQuery.migrate for versions > 1.9 to prevent
+  deprecated functions from breaking."),
   '#default_value' => theme_get_setting('jquery_migrate'),
 );
 
@@ -259,8 +258,8 @@ $form['c']['js']['update']['jqueryui']['jqueryui_version'] = array(
   '#type' => 'select',
   '#title' => t('jQueryUI Version'),
   '#description' => t("Select the version of jQueryUI your site will use.
-\nYou will need to match a  version compatible with the selected jQuery
-version."),
+  \nYou will need to match a  version compatible with the selected jQuery
+  version."),
   '#options' => $cdn['jqueryui'],
   '#default_value' => theme_get_setting('jqueryui_version'),
 );
@@ -281,17 +280,17 @@ $form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
 $form['c']['js']['plugins'] = array(
   '#type' => 'fieldset',
   '#title' => t('jQuery Plugins'),
-  '#description' => t("jQuery plugins will load from CDNJS if possible, "
-  . "or use local source as fallback if CDN is unavailable."),
+  '#description' => t("jQuery plugins will load from CDNJS if possible, or use
+  local source as fallback if the CDN source is unavailable."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
 $form['c']['js']['plugins']['backstretch'] = array(
   '#type' => 'checkbox',
   '#title' => l(t('Backstretch'), 'http://srobbin.com/jquery-plugins/backstretch/'),
-  '#description' => t("A simple jQuery plugin that allows you to add a "
-  . "dynamically resized, slideshow-capable background image to any page or "
-  . "element."),
+  '#description' => t("A simple jQuery plugin that allows you to add a 
+  dynamically resized, slideshow-capable background image to any page or 
+  element."),
   '#default_value' => theme_get_setting('backstretch'),
 );
 $form['c']['js']['plugins']['cellularui'] = array(
@@ -318,17 +317,17 @@ in an efficient, dynamic and responsive layout.'),
 $form['c']['js']['plugins']['jparallax'] = array(
   '#type' => 'checkbox',
   '#title' => l(t("jParallax"), 'http://stephband.info/jparallax/'),
-  '#description' => t('jParallax turns nodes into absolutely positioned layers '
-  . 'that move in response to the mouse. Depending on their dimensions these '
-  . 'layers move at different rates, in a parallaxy kind of way.'),
+  '#description' => t('jParallax turns nodes into absolutely positioned layers 
+  that move in response to the mouse. Depending on their dimensions these 
+  layers move at different rates, in a parallaxy kind of way.'),
   '#default_value' => theme_get_setting('jparallax'),
 );
 $form['c']['js']['plugins']['smoove'] = array(
   '#type' => 'checkbox',
   '#title' => l(t("Smoove"), 'http://smoove.donlabs.com/'),
   '#description' => t('Smoove makes it easy to implement awesome CSS3
-transition effects, making your content smoothly glide into the page as your
-scroll down the page.'),
+  transition effects, making your content smoothly glide into the page as your
+  scroll down the page.'),
   '#default_value' => theme_get_setting('smoove'),
 );
 
@@ -336,8 +335,8 @@ scroll down the page.'),
 $form['c']['js']['lib'] = array(
   '#type' => 'fieldset',
   '#title' => t('Javascript Libraries'),
-  '#description' => t("Javascript libraries will load from CDNJS if possible, "
-  . "or use local source as fallback if CDN is unavailable."),
+  '#description' => t("Javascript libraries will load from CDNJS if possible, 
+  or use local source as fallback if CDN is unavailable."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
@@ -373,8 +372,8 @@ $form['c']['js']['lib']['reveal'] = array(
 $form['c']['js']['lib']['snap-svg'] = array(
   '#type' => 'checkbox',
   '#title' => l(t("Snap.SVG"), 'http://snapsvg.io/'),
-  '#description' => t('The Snap.svg JavaScript library makes working with your '
-  . 'SVG assets as easy as jQuery makes working with the DOM.'),
+  '#description' => t('The Snap.svg JavaScript library makes working with your 
+  SVG assets as easy as jQuery makes working with the DOM.'),
   '#default_value' => theme_get_setting('snap-svg'),
 );
 $form['c']['js']['lib']['threejs'] = array(

@@ -5,8 +5,7 @@
  */
 
 /**
- * Pass variables to Drupal javascript object.
- * Used to call js if plugins are selected.
+ * Pass variables to javascript object, used to call js if plugins are selected.
  */
 function cellular_js() {
   $ext = theme_get_setting('min_script') === 1 ? '.min.js' : '.js';
@@ -35,7 +34,7 @@ function cellular_js() {
       'weight' => 99,
     );
   }
-  
+
   cellular_add_js($scripts);
 }
 

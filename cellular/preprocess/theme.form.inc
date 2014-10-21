@@ -32,13 +32,10 @@ function cellular_form_element_attributes(&$element) {
 
 /**
  * Cellular theme_form().
- * 
- * @param type $vars
- * @return type
  */
 function cellular_form($vars) {
   $element = $vars['element'];
-  //$element['#attributes']['class'][] = 'cell';
+  // $element['#attributes']['class'][] = 'cell';
   if (isset($element['#action'])) {
     $element['#attributes']['action'] = drupal_strip_dangerous_protocols($element['#action']);
   }
@@ -66,7 +63,6 @@ function cellular_container(&$vars) {
       $element['#attributes']['id'] = $element['#id'];
     }
   }
-  //dsm($element);
 
   return $element['#children'];
 }

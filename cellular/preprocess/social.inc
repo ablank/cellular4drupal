@@ -144,7 +144,6 @@ function cellular_social_media_follow() {
       'name' => 'Github',
     ) : NULL;
 
-
     $content = cellular_build_links($links, $media_block);
     if (!empty($content)) {
       $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";

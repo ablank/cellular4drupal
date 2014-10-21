@@ -7,7 +7,6 @@
   Drupal.behaviors.theme = {
     attach: function (context, settings) {
 
-
       /* End Drupal.behaviors.theme */
     }
   };

@@ -27,7 +27,6 @@
         $('#nav').jMmenu({
           // Window breakpoint trigger:
           // "breakpoint": cellular.opts.breakpoint, // 650px
-          //
            "cclass": "jMmenu", // default
           // Classes added for styling- CSS classes control position & animation.
           // Vars concat to class="type-direction".
@@ -74,7 +73,7 @@
         // Smoove functions.
         $('.panels').freetile({
           selector: '.panel-content',
-          //containerAnimate: true,
+          // containerAnimate: true,
           animate: true,
           elementDelay: 30
         });

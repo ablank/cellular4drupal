@@ -6,7 +6,8 @@
 
 ?>
 
-<div<?php if (!empty($css_id)): print " id=\"$css_id\"";
+<div<?php
+if (!empty($css_id)): print " id=\"$css_id\"";
 endif; ?> class="parallax-panels panels cell <?php print($classes); ?>">
 
   <?php if ($content['g1_top'] || $content['g1_base']): ?>

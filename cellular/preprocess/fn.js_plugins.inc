@@ -26,7 +26,7 @@ function cellular_plugins_js() {
   ) : NULL;
   theme_get_setting('cellularui') === 1 ? $js_plugins['cellularui'] = array(
     'object' => 'cellular',
-    //'file' => 'cellularUI/jquery.cellular.js',
+    // 'file' => 'cellularUI/jquery.cellular.js', // Source of dev script.
     'file' => 'plugins/jquery.cellular.min.js',
     'version' => '0.1',
     'weight' => 1,

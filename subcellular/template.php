@@ -4,6 +4,7 @@
  * Set global vars, load functions for templates, and hook_function overrides.
  * @author Adam Blankenship
  */
+
 $inc_path = drupal_get_path('theme', 'subcellular') . '/inc';
 $include = array(
   'alter.css.inc',

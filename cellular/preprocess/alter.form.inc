@@ -15,7 +15,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
       $form['#attributes'] = array(
         'class' => array('site-search'),
-        );
+      );
 
       $form[$form_id]['#title'] = t('Search this site');
       $form[$form_id]['#type'] = 'textfield';
@@ -24,11 +24,11 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       // Submit button.
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
-      //$form['actions']['submit']['#attributes']['class'] = array('search-submit');
+      // $form['actions']['submit']['#attributes']['class'] = array('search-submit');
 
       break;
 
-    // User Login block:
+    // User Login block:FF
     case 'user_login_block':
       $field_size = 20;
       $orient = theme_get_setting('login_block_orientation');
