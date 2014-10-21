@@ -121,7 +121,8 @@ function cellular_jquery_update(&$javascript) {
   cellular_js_override($javascript, $jqueryform, TRUE);
 
   // Add migrate to prevent deprecated functions from breaking.
-  if (theme_get_setting('jquery_migrate') === 1) {
+  $migrate = theme_get_setting('jquery_migrate');
+  if (!empty($migrate)) {
     // Add jQuery.migrate to support older plugins if v >= 1.9
     if ($jquery['version'] !== '1.8.24') {
       $js_plugins['migrate'] = array(

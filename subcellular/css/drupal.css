@@ -29,109 +29,9 @@
   * @file
   * Styling DOM id's provided by drupal
 */
-/* line 7, ../sass/drupal/_drupal-ids.scss */
-#block-system-powered-by {
-  float: right;
-  margin: 0 1em;
-  color: #fefefe;
-}
-/* line 12, ../sass/drupal/_drupal-ids.scss */
-#block-system-powered-by a {
-  text-indent: -999em;
-  float: right;
-  display: block;
-  width: 84px;
-  height: 32px;
-  background: url(../assets/images/png/drupal.png) no-repeat;
-}
-
-/* line 27, ../sass/drupal/_drupal-ids.scss */
+/* line 11, ../sass/drupal/_drupal-ids.scss */
 #user-login-form input {
   width: 9em;
-}
-
-/* line 40, ../sass/drupal/_drupal-ids.scss */
-#search-form,
-#site-search {
-  display: inline;
-  display: inline-block;
-  padding: .1em .8em;
-  text-align: right;
-  font-size: .8em;
-  background-color: #f1f1f1;
-  background-color: rgba(241, 241, 241, 0.6);
-  border-bottom: #444444 0.2em solid;
-  -webkit-border-radius: 1em 50%;
-  -moz-border-radius: 1em / 50%;
-  border-radius: 1em / 50%;
-}
-/* line 52, ../sass/drupal/_drupal-ids.scss */
-#search-form label,
-#site-search label {
-  margin: 0;
-  padding: 0;
-}
-/* line 57, ../sass/drupal/_drupal-ids.scss */
-#search-form input,
-#site-search input {
-  display: inline;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  line-height: 2em;
-  width: auto;
-  border: none;
-}
-/* line 66, ../sass/drupal/_drupal-ids.scss */
-#search-form input[type=text],
-#site-search input[type=text] {
-  font-size: 1em;
-  width: 12em;
-  background: transparent;
-  border-bottom: #444444 0.1em solid;
-}
-/* line 74, ../sass/drupal/_drupal-ids.scss */
-#search-form input[type=submit]
-#search-form input[type=submit].button,
-#site-search input[type=submit]
-#site-search input[type=submit].button {
-  float: none;
-  width: 2em;
-  height: 2em;
-  padding: 1em;
-  text-indent: -999em;
-  background-position: right center;
-  background-size: 1.4em;
-  background-repeat: no-repeat;
-  background-image: url("../assets/icons/min/png/search.png");
-  background-image: url("../assets/icons/min/svg/search.svg");
-  background-color: transparent;
-  border: #bbbab7 1px solid;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition: all 400ms ease-out;
-  -moz-transition: all 400ms ease-out;
-  -o-transition: all 400ms ease-out;
-  transition: all 400ms ease-out;
-}
-/* line 92, ../sass/drupal/_drupal-ids.scss */
-#search-form input[type=submit]
-#search-form input[type=submit].button:hover, #search-form input[type=submit]
-#search-form input[type=submit].button:active, #search-form input[type=submit]
-#search-form input[type=submit].button:focus,
-#site-search input[type=submit]
-#site-search input[type=submit].button:hover,
-#site-search input[type=submit]
-#site-search input[type=submit].button:active,
-#site-search input[type=submit]
-#site-search input[type=submit].button:focus {
-  outline: none;
-  color: #111111;
-  border-color: #29b4de;
-  background-size: 1.9em;
 }
 
 /**
@@ -315,6 +215,26 @@ div.ctools-ajaxing {
 
 /**
   * @file
+  *  "Powered by Drupal" block.
+*/
+/* line 6, ../sass/drupal/_powered-by.scss */
+#block-system-powered-by {
+  float: right;
+  margin: 0 1em;
+  color: #fefefe;
+}
+/* line 11, ../sass/drupal/_powered-by.scss */
+#block-system-powered-by a {
+  text-indent: -999em;
+  float: right;
+  display: block;
+  width: 84px;
+  height: 32px;
+  background: url(../assets/images/png/drupal.png) no-repeat;
+}
+
+/**
+  * @file
   * Breadcrumb navigation styling.
 */
 /* line 5, ../sass/drupal/_breadcrumb.scss */
@@ -469,6 +389,83 @@ div.ctools-ajaxing {
 .pager .pager-next a,
 .pager .pager-last a {
   width: 5em;
+}
+
+/**
+  * @file
+  * Styling DOM classes provided by drupal
+*/
+/* line 6, ../sass/drupal/_search.scss */
+#search-form {
+  display: block;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+}
+
+/* line 11, ../sass/drupal/_search.scss */
+form.site-search {
+  display: inline;
+  display: inline-block;
+  padding: .1em .8em;
+  text-align: right;
+  font-size: .8em;
+  background-color: #f1f1f1;
+  background-color: rgba(241, 241, 241, 0.6);
+  border-bottom: #444444 0.2em solid;
+  -webkit-border-radius: 1em 50%;
+  -moz-border-radius: 1em / 50%;
+  border-radius: 1em / 50%;
+}
+/* line 23, ../sass/drupal/_search.scss */
+form.site-search input {
+  display: inline;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  line-height: 2em;
+  width: auto;
+  border: none;
+}
+/* line 32, ../sass/drupal/_search.scss */
+form.site-search input[type="text"] {
+  font-size: 1em;
+  width: 12em;
+  background: transparent;
+  border-bottom: #444444 0.1em solid;
+}
+/* line 39, ../sass/drupal/_search.scss */
+form.site-search input[type="submit"] {
+  float: none;
+  width: 2em;
+  height: 2em;
+  padding: 1em;
+  text-indent: -999em;
+  background-position: right center;
+  background-size: 1.4em;
+  background-repeat: no-repeat;
+  background-image: url("../assets/icons/min/png/search.png");
+  background-image: url("../assets/icons/min/svg/search.svg");
+  background-color: transparent;
+  border: #bbbab7 1px solid;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 57, ../sass/drupal/_search.scss */
+form.site-search input[type="submit"]:hover, form.site-search input[type="submit"]:active, form.site-search input[type="submit"]:focus {
+  outline: none;
+  color: #111111;
+  border-color: #29b4de;
+  background-size: 1.6em;
 }
 
 /**

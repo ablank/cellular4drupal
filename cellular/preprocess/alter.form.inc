@@ -11,9 +11,11 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     // Site Search block:
-    case 'search_block_form':
+    case 'search_block_form' || 'search_form':
 
-      $form['#attributes'] = array('id' => 'site-search');
+      $form['#attributes'] = array(
+        'class' => array('site-search'),
+        );
 
       $form[$form_id]['#title'] = t('Search this site');
       $form[$form_id]['#type'] = 'textfield';
@@ -22,10 +24,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       // Submit button.
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
-      $form['actions']['submit']['#attributes'] = array(
-        'id' => 'site-search-submit',
-        'class' => array('icon', 'search'),
-      );
+      //$form['actions']['submit']['#attributes']['class'] = array('search-submit');
 
       break;
 

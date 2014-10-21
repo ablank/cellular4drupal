@@ -17,17 +17,17 @@ form {
     padding: 0;
 
     label,
-    input[type=text],
-    input[type=email],
-    input[type=password],
-    input[type=submit] {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
       position: relative;
       display: inline;
       clear: none;
       padding: $tiny;
     }
 
-    input[type=submit] {
+    input[type="submit"] {
       width: 5em;
       margin: 0 $tiny 0 $tiny;
       float: none;
@@ -35,9 +35,9 @@ form {
   }
   &.vertical {
     label,
-    input[type=text],
-    input[type=email],
-    input[type=password] {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
       float: left;
       clear: left;
     }
@@ -89,16 +89,16 @@ textarea {
 
 input {
 
-  &[type=hidden] {
+  &[type="hidden"] {
     display: none;
   }
 
-  &[type=text],
-  &[type=number],
-  &[type=tel],
-  &[type=search],
-  &[type=email],
-  &[type=password] {
+  &[type="text"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="search"],
+  &[type="email"],
+  &[type="password"] {
     display: block;
     margin: $tiny auto $normal;
     width: 90%;
@@ -111,12 +111,12 @@ input {
       background: $white;
     }
   }
-  &[type=checkbox],
-  &[type=radio] {
+  &[type="checkbox"],
+  &[type="radio"] {
     @include checkbox();
   }
 
-  &[type=checkbox] {
+  &[type="checkbox"] {
     + label {
       &:before {
         @include border-radius();

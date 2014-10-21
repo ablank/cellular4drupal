@@ -3,6 +3,7 @@
  * @file
  * Theme-settings: Javascript options.
  */
+
 /*
  * jQuery CDN options.
  * jQuery & jQuery.ui version options are from this array.
@@ -30,12 +31,6 @@ $cdn = array(
     '1.9.2' => t('1.9.2'),
     '1.8.24' => t('1.8.24'),
   ),
-);
-
-$script_extension = array(
-  0 => t('None'),
-  '.js' => 'script.js',
-  '.min.js' => 'script.min.js'
 );
 
 // Available jQuery.ui themes:
@@ -84,14 +79,12 @@ $form['c']['js']['javascript'] = array(
   '#type' => 'checkbox',
   '#title' => t('Use javascript.'),
   '#description' => t("Use plugin.js (if necessary) & script.js"),
-  '#options' => $script_extension,
   '#default_value' => theme_get_setting('javascript'),
 );
 $form['c']['js']['min_script'] = array(
   '#type' => 'checkbox',
   '#title' => t('Use minified javascript source.'),
   '#description' => t("Use plugin.min.js (if necessary) & script.min.js"),
-  '#options' => $script_extension,
   '#default_value' => theme_get_setting('min_script'),
 );
 
@@ -116,7 +109,6 @@ $form['c']['js']['mdrnzr'] = array(
     ),
   ),
 );
-
 $form['c']['js']['mdrnzr']['mq_mobile_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Mobile Media Query'),
@@ -142,7 +134,6 @@ conditional-mobile.css."),
     ),
   ),
 );
-
 $form['c']['js']['mdrnzr']['mq_normal_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Desktop Media Query'),
@@ -166,7 +157,6 @@ $form['c']['js']['mdrnzr']['mq_normal'] = array(
     ),
   ),
 );
-
 $form['c']['js']['mdrnzr']['mq_large_enable'] = array(
   '#type' => 'checkbox',
   '#title' => t('Enable Conditional Large Media Query'),
@@ -214,7 +204,6 @@ $form['c']['js']['update'] = array(
     ),
   ),
 );
-
 $form['c']['js']['update']['jquery_cdn'] = array(
   '#type' => 'checkbox',
   '#title' => t('Update via CDN'),
@@ -223,7 +212,6 @@ $form['c']['js']['update']['jquery_cdn'] = array(
   if CDN is unavailable."),
   '#default_value' => theme_get_setting('jquery_cdn'),
 );
-
 $form['c']['js']['update']['jquery_cdn_source'] = array(
   '#type' => 'select',
   '#title' => t('CDN Provider'),
@@ -244,7 +232,6 @@ $form['c']['js']['update']['jquery'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
-
 $form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#type' => 'select',
   '#title' => t('jQuery Version'),
@@ -253,7 +240,6 @@ $form['c']['js']['update']['jquery']['jquery_version'] = array(
   '#options' => $cdn['jquery'],
   '#default_value' => theme_get_setting('jquery_version'),
 );
-
 $form['c']['js']['update']['jquery']['jquery_migrate'] = array(
   '#type' => 'checkbox',
   '#title' => t('jQuery Migrate'),
@@ -269,7 +255,6 @@ $form['c']['js']['update']['jqueryui'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
-
 $form['c']['js']['update']['jqueryui']['jqueryui_version'] = array(
   '#type' => 'select',
   '#title' => t('jQueryUI Version'),
@@ -295,9 +280,9 @@ $form['c']['js']['update']['jqueryui']['jqueryui_theme'] = array(
 // Pre-configured 3rd party plugins.
 $form['c']['js']['plugins'] = array(
   '#type' => 'fieldset',
-  '#title' => t('Plugins'),
-  '#description' => t("Javascript plugins will load from the Cloudflare CDN,
-  or use local source as fallback if CDN is unavailable."),
+  '#title' => t('jQuery Plugins'),
+  '#description' => t("jQuery plugins will load from CDNJS if possible, "
+  . "or use local source as fallback if CDN is unavailable."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
@@ -315,21 +300,6 @@ $form['c']['js']['plugins']['cellularui'] = array(
   '#description' => t("The Cellular UI library provides common UI elements
   that work well with Views."),
   '#default_value' => theme_get_setting('cellularui'),
-);
-$form['c']['js']['plugins']['d3js'] = array(
-  '#type' => 'checkbox',
-  '#title' => l(t("D3JS"), 'http://d3js.org/'),
-  '#description' => t('D3.js is a JavaScript library for manipulating
-  documents based on data. D3 helps you bring data to life using
-  HTML, SVG and CSS.'),
-  '#default_value' => theme_get_setting('d3js'),
-);
-$form['c']['js']['plugins']['gsap'] = array(
-  '#type' => 'checkbox',
-  '#title' => l(t('GSAP (GreenSock Animation Platform)'), 'http://www.greensock.com/gsap-js/'),
-  '#description' => t("GSAP is a suite of tools for scripted,
-  high-performance HTML5 animations that work in all major browsers."),
-  '#default_value' => theme_get_setting('gsap'),
 );
 $form['c']['js']['plugins']['flowtype'] = array(
   '#type' => 'checkbox',
@@ -353,20 +323,6 @@ $form['c']['js']['plugins']['jparallax'] = array(
   . 'layers move at different rates, in a parallaxy kind of way.'),
   '#default_value' => theme_get_setting('jparallax'),
 );
-$form['c']['js']['plugins']['prism'] = array(
-  '#type' => 'checkbox',
-  '#title' => l(t('Prism Syntax Hilighter'), 'http://prismjs.com/'),
-  '#description' => t("Prism code syntax hilighter."),
-  '#default_value' => theme_get_setting('prism'),
-);
-$form['c']['js']['plugins']['reveal'] = array(
-  '#type' => 'checkbox',
-  '#title' => l(t("Reveal"), 'http://lab.hakim.se/reveal-js/#/'),
-  '#description' => t('reveal.js is a framework for easily creating beautiful
-   presentations using HTML. You\'ll need a browser with support for CSS 3D
-   transforms to see it in its full glory.'),
-  '#default_value' => theme_get_setting('reveal'),
-);
 $form['c']['js']['plugins']['smoove'] = array(
   '#type' => 'checkbox',
   '#title' => l(t("Smoove"), 'http://smoove.donlabs.com/'),
@@ -375,14 +331,53 @@ transition effects, making your content smoothly glide into the page as your
 scroll down the page.'),
   '#default_value' => theme_get_setting('smoove'),
 );
-$form['c']['js']['plugins']['snap-svg'] = array(
+
+// Pre-configured 3rd party plugins.
+$form['c']['js']['lib'] = array(
+  '#type' => 'fieldset',
+  '#title' => t('Javascript Libraries'),
+  '#description' => t("Javascript libraries will load from CDNJS if possible, "
+  . "or use local source as fallback if CDN is unavailable."),
+  '#collapsible' => TRUE,
+  '#collapsed' => TRUE,
+);
+$form['c']['js']['lib']['d3js'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t("D3JS"), 'http://d3js.org/'),
+  '#description' => t('D3.js is a JavaScript library for manipulating
+  documents based on data. D3 helps you bring data to life using
+  HTML, SVG and CSS.'),
+  '#default_value' => theme_get_setting('d3js'),
+);
+$form['c']['js']['lib']['gsap'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t('GSAP (GreenSock Animation Platform)'), 'http://www.greensock.com/gsap-js/'),
+  '#description' => t("GSAP is a suite of tools for scripted,
+  high-performance HTML5 animations that work in all major browsers."),
+  '#default_value' => theme_get_setting('gsap'),
+);
+$form['c']['js']['lib']['prism'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t('Prism Syntax Hilighter'), 'http://prismjs.com/'),
+  '#description' => t("Prism code syntax hilighter."),
+  '#default_value' => theme_get_setting('prism'),
+);
+$form['c']['js']['lib']['reveal'] = array(
+  '#type' => 'checkbox',
+  '#title' => l(t("Reveal"), 'http://lab.hakim.se/reveal-js/#/'),
+  '#description' => t('reveal.js is a framework for easily creating beautiful
+   presentations using HTML. You\'ll need a browser with support for CSS 3D
+   transforms to see it in its full glory.'),
+  '#default_value' => theme_get_setting('reveal'),
+);
+$form['c']['js']['lib']['snap-svg'] = array(
   '#type' => 'checkbox',
   '#title' => l(t("Snap.SVG"), 'http://snapsvg.io/'),
   '#description' => t('The Snap.svg JavaScript library makes working with your '
   . 'SVG assets as easy as jQuery makes working with the DOM.'),
   '#default_value' => theme_get_setting('snap-svg'),
 );
-$form['c']['js']['plugins']['threejs'] = array(
+$form['c']['js']['lib']['threejs'] = array(
   '#type' => 'checkbox',
   '#title' => l(t('THREE.js'), 'http://threejs.org/'),
   '#description' => t("A JavaScript 3D Library which makes WebGL simpler."),

@@ -12,11 +12,11 @@
     }
 
     .title {
-      padding-left: 2em;
-      background-image: url(../assets/icons/svg/plus.svg);
-      background-size: 1em;
-      background-repeat: no-repeat;
-      background-position: .4em center;
+      // padding-left: 2em;
+      // background-size: 1em;
+      // background-repeat: no-repeat;
+      // background-position: left center;
+      // background-image: url(../assets/icons/svg/plus.svg);
       border: $border_color .1em solid;
       border-bottom: none;
       @include transition('background-color', .4s);
@@ -29,8 +29,8 @@
     .active {
 
       .title {
-        background-size: 1em;
-        background-image: url(../assets/icons/svg/minus.svg);
+        // background-size: 1em;
+        // background-image: url(../assets/icons/svg/minus.svg);
       }
     }
   }

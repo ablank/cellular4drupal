@@ -71,19 +71,21 @@ settings[jquery_migrate]        = 1
 settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
-;----------// Javascript Plugins
+;----------// jQuery Plugins
 settings[javascript]            = 1
 settings[min_script]            = 0
-settings[modernizr]             = 0
 settings[backstretch]           = 0
 settings[cellularui]            = 0
-settings[d3js]                  = 0
 settings[flowtype]              = 0
 settings[freetile]              = 0
 settings[jparallax]             = 0
+settings[smoove]                = 0
+
+;----------// Javascript Libraries
+settings[modernizr]             = 0
+settings[d3js]                  = 0
 settings[gsap]                  = 0
 settings[prism]                 = 0
-settings[smoove]                = 0
 settings[reveal]                = 0
 settings[snap-svg]              = 0
 settings[threejs]               = 0

@@ -399,26 +399,26 @@ form.horizontal {
 }
 /* line 23, ../sass/base/_forms.scss */
 form.horizontal label,
-form.horizontal input[type=text],
-form.horizontal input[type=email],
-form.horizontal input[type=password],
-form.horizontal input[type=submit] {
+form.horizontal input[type="text"],
+form.horizontal input[type="email"],
+form.horizontal input[type="password"],
+form.horizontal input[type="submit"] {
   position: relative;
   display: inline;
   clear: none;
   padding: 0.3em;
 }
 /* line 30, ../sass/base/_forms.scss */
-form.horizontal input[type=submit] {
+form.horizontal input[type="submit"] {
   width: 5em;
   margin: 0 0.3em 0 0.3em;
   float: none;
 }
 /* line 40, ../sass/base/_forms.scss */
 form.vertical label,
-form.vertical input[type=text],
-form.vertical input[type=email],
-form.vertical input[type=password] {
+form.vertical input[type="text"],
+form.vertical input[type="email"],
+form.vertical input[type="password"] {
   float: left;
   clear: left;
 }
@@ -477,11 +477,11 @@ textarea {
 }
 
 /* line 92, ../sass/base/_forms.scss */
-input[type=hidden] {
+input[type="hidden"] {
   display: none;
 }
 /* line 101, ../sass/base/_forms.scss */
-input[type=text], input[type=number], input[type=tel], input[type=search], input[type=email], input[type=password] {
+input[type="text"], input[type="number"], input[type="tel"], input[type="search"], input[type="email"], input[type="password"] {
   display: block;
   margin: 0.3em auto 1em;
   width: 90%;
@@ -490,17 +490,17 @@ input[type=text], input[type=number], input[type=tel], input[type=search], input
   background: #f9f9f9;
 }
 /* line 109, ../sass/base/_forms.scss */
-input[type=text]:focus, input[type=number]:focus, input[type=tel]:focus, input[type=search]:focus, input[type=email]:focus, input[type=password]:focus {
+input[type="text"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="email"]:focus, input[type="password"]:focus {
   color: #111111;
   background: #fefefe;
 }
 /* line 120, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked), input[type=checkbox]:checked, input[type=radio]:not(:checked), input[type=radio]:checked {
+input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked, input[type="radio"]:not(:checked), input[type="radio"]:checked {
   position: absolute;
   left: -999em;
 }
 /* line 124, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked) + label, input[type=checkbox]:checked + label, input[type=radio]:not(:checked) + label, input[type=radio]:checked + label {
+input[type="checkbox"]:not(:checked) + label, input[type="checkbox"]:checked + label, input[type="radio"]:not(:checked) + label, input[type="radio"]:checked + label {
   position: relative;
   cursor: pointer;
   margin: 0;
@@ -508,7 +508,7 @@ input[type=checkbox]:not(:checked) + label, input[type=checkbox]:checked + label
   vertical-align: middle;
 }
 /* line 131, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked + label:before, input[type=radio]:not(:checked) + label:before, input[type=radio]:checked + label:before {
+input[type="checkbox"]:not(:checked) + label:before, input[type="checkbox"]:checked + label:before, input[type="radio"]:not(:checked) + label:before, input[type="radio"]:checked + label:before {
   content: '';
   position: absolute;
   left: 0;
@@ -523,7 +523,7 @@ input[type=checkbox]:not(:checked) + label:before, input[type=checkbox]:checked 
   box-shadow: inset 0 0 1px 1px #f1f1f1;
 }
 /* line 144, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked + label:after, input[type=radio]:not(:checked) + label:after, input[type=radio]:checked + label:after {
+input[type="checkbox"]:not(:checked) + label:after, input[type="checkbox"]:checked + label:after, input[type="radio"]:not(:checked) + label:after, input[type="radio"]:checked + label:after {
   content: '';
   position: absolute;
   top: .25em;
@@ -535,20 +535,20 @@ input[type=checkbox]:not(:checked) + label:after, input[type=checkbox]:checked +
   background-repeat: no-repeat;
 }
 /* line 159, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked):focus + label:before, input[type=checkbox]:checked:focus + label:before, input[type=radio]:not(:checked):focus + label:before, input[type=radio]:checked:focus + label:before {
+input[type="checkbox"]:not(:checked):focus + label:before, input[type="checkbox"]:checked:focus + label:before, input[type="radio"]:not(:checked):focus + label:before, input[type="radio"]:checked:focus + label:before {
   border: 1px dotted #29b4de;
 }
 /* line 166, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked):disabled + label, input[type=checkbox]:checked:disabled + label, input[type=radio]:not(:checked):disabled + label, input[type=radio]:checked:disabled + label {
+input[type="checkbox"]:not(:checked):disabled + label, input[type="checkbox"]:checked:disabled + label, input[type="radio"]:not(:checked):disabled + label, input[type="radio"]:checked:disabled + label {
   color: #f1f1f1;
 }
 /* line 169, ../sass/_mixins/_cellularmixins.scss */
-input[type=checkbox]:not(:checked):disabled + label:before, input[type=checkbox]:checked:disabled + label:before, input[type=radio]:not(:checked):disabled + label:before, input[type=radio]:checked:disabled + label:before {
+input[type="checkbox"]:not(:checked):disabled + label:before, input[type="checkbox"]:checked:disabled + label:before, input[type="radio"]:not(:checked):disabled + label:before, input[type="radio"]:checked:disabled + label:before {
   background: #f1f1f1;
   color: #444444;
 }
 /* line 121, ../sass/base/_forms.scss */
-input[type=checkbox] + label:before {
+input[type="checkbox"] + label:before {
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
   -ms-border-radius: 0.3em;
@@ -556,7 +556,7 @@ input[type=checkbox] + label:before {
   border-radius: 0.3em;
 }
 /* line 128, ../sass/base/_forms.scss */
-input[type=checkbox]:checked + label:after {
+input[type="checkbox"]:checked + label:after {
   background-image: url("../assets/icons/min/png/check.png");
   background-image: url("../assets/icons/min/svg/check.svg");
 }
@@ -1322,22 +1322,12 @@ p.center {
 }
 /* line 14, ../sass/cellular-ui/_jAccordion.scss */
 .cellular.jAccordion .title {
-  padding-left: 2em;
-  background-image: url(../assets/icons/svg/plus.svg);
-  background-size: 1em;
-  background-repeat: no-repeat;
-  background-position: .4em center;
   border: #bbbab7 0.1em solid;
   border-bottom: none;
   -webkit-transition: "background-color", 0.4s;
   -moz-transition: "background-color", 0.4s;
   -o-transition: "background-color", 0.4s;
   transition: "background-color", 0.4s;
-}
-/* line 31, ../sass/cellular-ui/_jAccordion.scss */
-.cellular.jAccordion .active .title {
-  background-size: 1em;
-  background-image: url(../assets/icons/svg/minus.svg);
 }
 
 /**

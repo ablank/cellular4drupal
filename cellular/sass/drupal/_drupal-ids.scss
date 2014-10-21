@@ -3,22 +3,6 @@
   * Styling DOM id's provided by drupal
 */
 
-// "Powered by Drupal" block
-#block-system-powered-by {
-  float: right;
-  margin: 0 1em;
-  color: $white;
-
-  a {
-    text-indent: -999em;
-    float: right;
-    display: block;
-    width: 84px;
-    height: 32px;
-    background: url(../assets/images/png/drupal.png) no-repeat;
-  }
-}
-
 #block-system-main {
 }
 
@@ -34,69 +18,4 @@
 }
 
 #login-links {
-}
-
-#search-form,
-#site-search {
-  display: inline;
-  display: inline-block;
-  padding: .1em .8em;
-  text-align: right;
-  font-size: .8em;
-  background-color: $light_grey;
-  background-color: rgba($light_grey, 0.6);
-  //border: none;
-  border-bottom: $dark_grey .2em solid;
-  @include border-radius(1em, 50%);
-
-  label {
-    margin: 0;
-    padding: 0;
-  }
-
-  input {
-    display: inline;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    line-height: 2em;
-    width: auto;
-    border: none;
-
-    &[type=text] {
-      font-size: 1em;
-      width: 12em;
-      background: transparent;
-      border-bottom: $dark_grey .1em solid;
-    }
-
-    &[type=submit]
-    &[type=submit].button {
-      float: none;
-      width: 2em;
-      height: 2em;
-      padding: 1em;
-      text-indent: -999em;
-      background-position: right center;
-      background-size: 1.4em;
-      background-repeat: no-repeat;
-      background-image: url('../assets/icons/min/png/search.png');
-      background-image: url('../assets/icons/min/svg/search.svg');
-      background-color: transparent;
-      border: $grey 1px solid;
-      @include border-radius(50%);
-      @include transition();
-
-      &:hover,
-      &:active,
-      &:focus {
-        outline: none;
-        color: $black;
-        border-color: $hilight;
-        background-size: 1.9em;
-        //background-position: -.2em -.2em;
-
-      }
-    }
-  }
 }
