@@ -1689,21 +1689,14 @@ body {
   overflow: visible;
 }
 
-/* line 26, ../sass/style/_content-regions.scss */
-#content-wrap {
-  display: block;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-/* line 33, ../sass/style/_content-regions.scss */
+/* line 32, ../sass/style/_content-regions.scss */
 #console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 39, ../sass/style/_content-regions.scss */
+/* line 38, ../sass/style/_content-regions.scss */
 #header {
   z-index: 2;
   height: 96px;
@@ -1713,7 +1706,7 @@ body {
   box-shadow: 0 0 1em 0.1em #444444;
 }
 
-/* line 46, ../sass/style/_content-regions.scss */
+/* line 45, ../sass/style/_content-regions.scss */
 #header-top {
   z-index: 4;
   background: #111111;
@@ -1721,11 +1714,11 @@ body {
   border-bottom: #111111 thin solid;
   text-align: right;
 }
-/* line 55, ../sass/style/_content-regions.scss */
+/* line 54, ../sass/style/_content-regions.scss */
 #header-top div {
   display: inline;
 }
-/* line 61, ../sass/style/_content-regions.scss */
+/* line 60, ../sass/style/_content-regions.scss */
 #header-top h2,
 #header-top h3,
 #header-top h4 {
@@ -1734,18 +1727,18 @@ body {
   display: inline;
 }
 
-/* line 68, ../sass/style/_content-regions.scss */
+/* line 67, ../sass/style/_content-regions.scss */
 #header-bottom {
   background-color: #444444;
   color: #fefefe;
 }
 
-/* line 73, ../sass/style/_content-regions.scss */
+/* line 72, ../sass/style/_content-regions.scss */
 #console {
   padding: 1em 1.4em;
 }
 
-/* line 80, ../sass/style/_content-regions.scss */
+/* line 79, ../sass/style/_content-regions.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1755,26 +1748,26 @@ body {
   display: block;
 }
 
-/* line 86, ../sass/style/_content-regions.scss */
+/* line 85, ../sass/style/_content-regions.scss */
 #content {
   z-index: 2;
 }
 
-/* line 96, ../sass/style/_content-regions.scss */
+/* line 95, ../sass/style/_content-regions.scss */
 #comments {
   text-align: center;
 }
-/* line 99, ../sass/style/_content-regions.scss */
+/* line 98, ../sass/style/_content-regions.scss */
 #comments form {
   text-align: left;
 }
 
-/* line 105, ../sass/style/_content-regions.scss */
+/* line 104, ../sass/style/_content-regions.scss */
 #sidebar-left,
 #sidebar-right {
   background: #f1f1f1;
 }
-/* line 108, ../sass/style/_content-regions.scss */
+/* line 107, ../sass/style/_content-regions.scss */
 #sidebar-left h3,
 #sidebar-right h3 {
   margin: 0;
@@ -1784,24 +1777,24 @@ body {
   background-color: #bbbab7;
 }
 
-/* line 124, ../sass/style/_content-regions.scss */
+/* line 123, ../sass/style/_content-regions.scss */
 #footer {
   background: #444444;
   color: #fefefe;
 }
-/* line 129, ../sass/style/_content-regions.scss */
+/* line 128, ../sass/style/_content-regions.scss */
 #footer p {
   color: #fefefe;
 }
 
-/* line 134, ../sass/style/_content-regions.scss */
+/* line 133, ../sass/style/_content-regions.scss */
 #footer-top {
   font-size: 0.75em;
   background: #444444;
   color: #f1f1f1;
 }
 
-/* line 141, ../sass/style/_content-regions.scss */
+/* line 140, ../sass/style/_content-regions.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #444444;
@@ -1809,7 +1802,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 148, ../sass/style/_content-regions.scss */
+/* line 147, ../sass/style/_content-regions.scss */
 #copyright {
   display: block;
   padding: 0.75em 1.4em 0.75em;

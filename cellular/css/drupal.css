@@ -59,8 +59,8 @@
 }
 
 /* line 26, ../sass/drupal/_drupal-classes.scss */
-[class*='ui-'],
-[class^='ui-'] {
+[class*="ui-"],
+[class^="ui-"] {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
