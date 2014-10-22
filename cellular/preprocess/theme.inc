@@ -6,34 +6,46 @@
 
 /**
  * Cellular theme_field().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_field(&$vars) {
-  $content = '';
+  $output = '';
   $wrap = theme_get_setting('field_wrappers');
   // Render the label, if it's not hidden.
   if (!$vars['label_hidden']) {
-    $content .= "<h5 class=\"field-label\"" . $vars['title_attributes'] . ">";
-    $content .= $vars['label'] . '</h5>';
+    $output .= "<h5 class=\"field-label\"" . $vars['title_attributes'] . ">";
+    $output .= $vars['label'] . '</h5>';
   }
   // Render the field.
   foreach ($vars['items'] as $delta => $item) {
-    $content .= drupal_render($item);
+    $output .= drupal_render($item);
     // Add attributes for each item.
-    if ($wrap === 1 && !empty($content)) {
-      $content = "\n<div" . $vars['item_attributes'][$delta] . ">\n $content \n</div>";
+    if (!empty($wrap) && !empty($output)) {
+      $output = "\n<div" . $vars['item_attributes'][$delta] . ">\n $output \n</div>";
     }
   }
   // Wrap field if set.
   if ($wrap === 1) {
-    $content = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
-    . "\n $content \n</div>\n";
+    $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
+    . "\n $output \n</div>\n";
   }
 
-  return $content;
+  return $output;
 }
 
 /**
  * Cellular theme_breadcrumb().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML || NULL.
  */
 function cellular_breadcrumb(&$vars) {
   $output = NULL;
@@ -57,7 +69,13 @@ function cellular_breadcrumb(&$vars) {
 }
 
 /**
- * Cellular theme_file_icon()- Use css classes to style output instead of <img>.
+ * Cellular theme_file_icon(). Use css classes to style output instead of <img>.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_file_icon(&$vars) {
   $file = $vars['file'];
@@ -83,13 +101,19 @@ function cellular_file_icon(&$vars) {
 
 /**
  * Cellular theme_feed_icon().
+ *
+ * @param array $vars
+ *  Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_feed_icon(&$vars) {
   $text = t('Subscribe to !feed-title', array(
     '!feed-title' => $vars['title'],
   ));
 
-  return l($text, $vars['url'], array(
+  $icon = l($text, $vars['url'], array(
     'html' => TRUE,
     'attributes' => array(
       'class' => array(
@@ -99,4 +123,6 @@ function cellular_feed_icon(&$vars) {
       'title' => $text,
     ),
   ));
+
+  return $icon;
 }

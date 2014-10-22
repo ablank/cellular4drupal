@@ -6,32 +6,36 @@
 
 /**
  * Return array of attributes.
+ *
+ * @param array $element
+ *  Variable on which to set attributes.
+ *
+ * @return array
+ *  Attributes to render.
  */
 function cellular_form_element_attributes(&$element) {
   // $element['#theme_wrappers'] = NULL;
   $attributes = array();
-  !empty($element['#name']) ?
-  $attributes['name'] = $element['#name'] : NULL;
-  !empty($element['#id']) ?
-  $attributes['id'] = $element['#id'] : NULL;
-  !empty($element['#attributes']['class']) ?
-  $attributes['class'] = implode(' ', $element['#attributes']['class']) : NULL;
-  !empty($element['#title']) ?
-  $attributes['title'] = $element['#title'] : NULL;
-  !empty($element['#required']) ?
-  $attributes['required'] = $element['#required'] : NULL;
-  !empty($element['#checked']) ?
-  $attributes['checked'] = 'checked' : NULL;
-  !empty($element['#size']) ?
-  $attributes['size'] = $element['#size'] : NULL;
-  !empty($element['#maxlength']) ?
-  $attributes['maxlength'] = $element['#maxlength'] : NULL;
+  empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
+  empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
+  empty($element['#attributes']['class']) ? NULL : $attributes['class'] = implode(' ', $element['#attributes']['class']);
+  empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
+  empty($element['#required']) ? NULL : $attributes['required'] = $element['#required'];
+  empty($element['#checked']) ? NULL : $attributes['checked'] = 'checked';
+  empty($element['#size']) ? NULL : $attributes['size'] = $element['#size'];
+  empty($element['#maxlength']) ? NULL : $attributes['maxlength'] = $element['#maxlength'];
 
   return $attributes;
 }
 
 /**
  * Cellular theme_form().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_form($vars) {
   $element = $vars['element'];
@@ -51,6 +55,12 @@ function cellular_form($vars) {
 
 /**
  * Cellular theme_container().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return array
+ *  Render array of children.
  */
 function cellular_container(&$vars) {
   $element = $vars['element'];
@@ -69,6 +79,12 @@ function cellular_container(&$vars) {
 
 /**
  * Cellular theme_form_element().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
@@ -118,6 +134,12 @@ function cellular_form_element(&$vars) {
 
 /**
  * Cellular theme_button().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_button(&$vars) {
   $element = $vars['element'];
@@ -137,6 +159,12 @@ function cellular_button(&$vars) {
 
 /**
  * Cellular theme_fieldset().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
@@ -161,6 +189,12 @@ function cellular_fieldset(&$vars) {
 
 /**
  * Cellular theme_select().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_select(&$vars) {
   $element = $vars['element'];
@@ -177,6 +211,12 @@ function cellular_select(&$vars) {
 
 /**
  * Cellular theme_checkboxes().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_checkboxes(&$vars) {
   $element = $vars['element'];
@@ -193,6 +233,12 @@ function cellular_checkboxes(&$vars) {
 
 /**
  * Cellular theme_checkbox().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_checkbox(&$vars) {
   $element = $vars['element'];
@@ -210,6 +256,12 @@ function cellular_checkbox(&$vars) {
 
 /**
  * Cellular theme_radios().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_radios(&$vars) {
   $element = $vars['element'];
@@ -225,6 +277,12 @@ function cellular_radios(&$vars) {
 
 /**
  * Cellular theme_radio().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_radio(&$vars) {
   $element = $vars['element'];
@@ -242,6 +300,12 @@ function cellular_radio(&$vars) {
 
 /**
  * Cellular theme_textfield().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_textfield(&$vars) {
   $element = $vars['element'];
@@ -256,6 +320,12 @@ function cellular_textfield(&$vars) {
 
 /**
  * Cellular theme_textarea().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
@@ -263,10 +333,8 @@ function cellular_textarea(&$vars) {
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'textarea';
 
-  $attributes['cols'] = isset($element['#cols']) ?
-  $element['#cols'] : 60;
-  $attributes['rows'] = isset($element['#rows']) ?
-  $element['#rows'] : 5;
+  $attributes['cols'] = isset($element['#cols']) ? $element['#cols'] : 60;
+  $attributes['rows'] = isset($element['#rows']) ? $element['#rows'] : 5;
 
   $output .= '<textarea' . drupal_attributes($attributes) . '>';
   $output .= check_plain($element['#value']);

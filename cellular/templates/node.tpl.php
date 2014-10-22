@@ -3,6 +3,7 @@
  * @file
  * Node template.
  */
+
 /* Variables:
  * - $title: the (sanitized) title of the node.
  * - $content: An array of node items. Use render($content) to print them all,
@@ -71,16 +72,15 @@
  */
 
 ?>
-<div id="node-<?php print $node->nid; ?>" <?php print $attributes; ?>>
-
+<div id="node-<?php print $node->nid; ?>"<?php print $attributes; ?>>
   <?php
   print render($title_prefix);
   if (!$page) :
     if ($title) :
-      print "<h2  $title_attributes >";
-      print '<a href="' . $node_url . '">';
+      print "<h2$title_attributes >\n";
+      print "<a href=\"$node_url\">\n";
       print $title;
-      print "</a>\n</h2>";
+      print "\n</a></h2>";
     endif;
   endif;
   print render($title_suffix);

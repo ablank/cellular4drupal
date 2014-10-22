@@ -6,6 +6,15 @@
 
 /**
  * Add array of stylesheets to $css, using a CDN if provided.
+ *
+ * @param array $css
+ *  Associative array of stylesheets to merge with defaults from theme registry.
+ *
+ * @param array $array
+ *  Associative array of stylesheets data.
+ *
+ * @param bool $cellular
+ *  Reference cellular library if TRUE.
  */
 function cellular_add_css(&$css, $array, $cellular = FALSE) {
   foreach ($array as $style) {
@@ -35,6 +44,12 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
 
 /**
  * Removes array of stylesheets from $css.
+ *
+ * @param array $css
+ *  Associative array of stylesheets to merge with defaults from theme registry.
+ *
+ * @param array $exclude
+ *  Array of stylesheets to remove.
  */
 function cellular_remove_css(&$css, $exclude) {
   foreach ($exclude as $module => $stylesheet) {
@@ -53,6 +68,15 @@ function cellular_remove_css(&$css, $exclude) {
 
 /**
  * Overrides default css values.
+ *
+ * @param array $css
+ *  Associative array of stylesheets to merge with defaults from theme registry.
+ *
+ * @param array $style
+ *  Array of stylesheet data used to override default.
+ *
+ * @param bool $cellular
+ *  Reference cellular library if TRUE.
  */
 function cellular_override_css(&$css, $style, $cellular = FALSE) {
   $ocss =  $style['default'];
@@ -82,6 +106,9 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
 
 /**
  * Remove core stylesheets based on theme settings.
+ *
+ * @param array $css
+ *  Associative array of stylesheets to merge with defaults from theme registry.
  */
 function cellular_remove_default_css(&$css) {
   // Nuke all css not a member of group CSS_THEME:

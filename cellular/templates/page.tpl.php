@@ -126,6 +126,7 @@
     if ($page['header']) :
       print render($page['header']);
     endif;
+
     ?>
 
   </div>
@@ -145,6 +146,7 @@
       print '<h1 id="page-title">' . $title . '</h1>';
     endif;
     print render($title_suffix);
+
     ?>
 
     <?php
@@ -152,6 +154,7 @@
     if ($breadcrumb && !$is_front) :
       print $breadcrumb;
     endif
+
     ?>
 
     <?php if (!empty($tabs)): ?>
@@ -179,11 +182,16 @@
 
           ?>
         </div>
-
       <?php endif; ?>
       <?php if ($page['sidebar_left']) : ?>
-        <div id="sidebar-left" class="<?php print $page['sidebar_class']; ?>">
-          <?php print render($page['sidebar_left']); ?>
+        <div id="sidebar-left" class="<?php
+        // Class of sidebar from theme settings.
+        if ($page['sidebar_class']):
+          print $page['sidebar_class'];
+        endif;
+
+        ?>">
+               <?php print render($page['sidebar_left']); ?>
         </div>
         <!-- /#sidebar-left -->
 
@@ -194,13 +202,19 @@
         </div>
 
       <?php endif; ?>
-      <div id="content" class="<?php print $page['content_class']; ?>">
-        <?php
-        // Main Page Content.
-        print render($page['content']);
+      <div id="content" class="<?php
+      // Class of sidebar from theme settings.
+      if (!empty($page['content_class'])):
+        print $page['content_class'];
+      endif;
 
-        ?>
-        <?php if ($page['content_bottom']) : ?>
+      ?>">
+             <?php
+             // Main Page Content.
+             print render($page['content']);
+
+             ?>
+             <?php if ($page['content_bottom']) : ?>
           <div id="content-bottom" class="cell">
             <?php print render($page['content_bottom']); ?>
           </div>
@@ -210,8 +224,14 @@
       <!-- /#content -->
 
       <?php if ($page['sidebar_right']) : ?>
-        <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
-          <?php print render($page['sidebar_right']); ?>
+        <div id="sidebar-right" class="<?php
+        // Class of sidebar from theme settings.
+        if ($page['sidebar_class']):
+          print $page['sidebar_class'];
+        endif;
+
+        ?>">
+               <?php print render($page['sidebar_right']); ?>
         </div>
         <!-- /#sidebar-right -->
 
@@ -250,7 +270,7 @@
         <?php print render($page['footer_bottom']); ?>
       <?php endif; ?>
 
-      <?php if ($page['copyright']): ?>
+      <?php if (!empty($page['copyright'])): ?>
         <small id="copyright"><?php print $page['copyright']; ?></small>
 
       <?php endif; ?>

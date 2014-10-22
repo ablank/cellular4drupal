@@ -6,6 +6,9 @@
 
 /**
  * Get info from theme settings.
+ *
+ * @return array
+ * Settings for jQuery & jQuery.ui
  */
 function cellular_jquery_info() {
   $jquery = array(
@@ -24,6 +27,9 @@ function cellular_jquery_info() {
 
 /**
  * Generate links to CDN sources.
+ *
+ * @return array
+ * CDN URLs used to update jQuery & jQuery.ui
  */
 function cellular_cdn() {
   /* Available cdns:
@@ -71,6 +77,9 @@ function cellular_cdn() {
 
 /**
  * Update jQuery & essential plugins.
+ *
+ * @param array $javascript
+ *  Associative array of javascripts.
  */
 function cellular_jquery_update(&$javascript) {
   $jq = cellular_jquery_info();
@@ -120,10 +129,10 @@ function cellular_jquery_update(&$javascript) {
 
   cellular_js_override($javascript, $jqueryform, TRUE);
 
-  // Add migrate to prevent deprecated functions from breaking.
+  // Add jQuery.migrate to prevent deprecated functions from breaking.
   $migrate = theme_get_setting('jquery_migrate');
   if (!empty($migrate)) {
-    // Add jQuery.migrate to support older plugins if v >= 1.9
+    // Add jQuery.migrate  if v >= 1.9
     if ($jquery['version'] !== '1.8.24') {
       $js_plugins['migrate'] = array(
         'version' => '1.2.1',
@@ -139,6 +148,9 @@ function cellular_jquery_update(&$javascript) {
 
 /**
  * Override jQueryUI javascript.
+ *
+ * @param array $javascript
+ *  Associative array of javascripts.
  */
 function cellular_jqueryui_update_js(&$javascript) {
   $jq = cellular_jquery_info();
@@ -212,6 +224,9 @@ function cellular_jqueryui_update_js(&$javascript) {
 
 /**
  * Update jQuery.ui stylesheets.
+ *
+ * @param array $css
+ *  Associative array of stylesheets.
  */
 function cellular_jqueryui_update_css(&$css) {
   $ui['path'] = 'jquery-ui/';

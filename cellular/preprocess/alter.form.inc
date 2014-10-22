@@ -6,12 +6,22 @@
 
 /**
  * Cellular hook_form_alter().
+ *
+ * @param array $form
+ *  Form element.
+ *
+ * @param array $form_state
+ *  An array which stores information about the form.
+ *
+ * @param string $form_id
+ *  The unique string identifying the desired form.
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     // Site Search block:
-    case 'search_block_form' || 'search_form':
+    case 'search_block_form':
+    case 'search_form':
 
       $form['#attributes'] = array(
         'class' => array('site-search'),
@@ -58,30 +68,30 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       );
 
       // Remove Request New Password and other links from Block form:
-      $ureg = theme_get_setting('login_block_register');
-      $upass = theme_get_setting('login_block_password');
+      $user_reg = theme_get_setting('login_block_register');
+      $user_pass = theme_get_setting('login_block_password');
 
-      if (isset($ureg) || isset($upass)) {
-        $ulmarkup = '<div id="login-links">';
-        if ($ureg === 1) {
-          $ulmarkup .= l(t('Register'), "user/register", array(
+      if (isset($user_reg) || isset($user_pass)) {
+        $output = '<div id="login-links">';
+        if (!empty($user_reg)) {
+          $output .= l(t('Register'), "user/register", array(
             'attributes' => array(
               'class' => array('register'),
           )));
         }
-        if ($upass === 1) {
-          $ulmarkup .= l(t('Forgotten Password?'), "user/password", array(
+        if (!empty($user_pass)) {
+          $output .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
               'class' => array('password'),
           )));
         }
-        $ulmarkup .= '</div>';
+        $output .= '</div>';
       }
       else {
-        $ulmarkup = NULL;
+        $output = NULL;
       }
 
-      $form['links']['#markup'] = $ulmarkup;
+      $form['links']['#markup'] = $output;
       // Register New User Account:
       /*
         $form['links']['#markup'][] = t('Register')
@@ -111,6 +121,15 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Cellular hook__form_comment_form_alter().
+ *
+ * @param array $form
+ *  Form element.
+ *
+ * @param array $form_state
+ *  An array which stores information about the form.
+ *
+ * @param string $form_id
+ *  The unique string identifying the desired form.
  */
 function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
   // Set field sizes.

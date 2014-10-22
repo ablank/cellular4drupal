@@ -5,7 +5,16 @@
  */
 
 /**
- * Generate links.
+ * Generate links for social media.
+ *
+ * @param array $links
+ * Array of links to add.
+ *
+ * @param array $parent
+ * Media block array used to wrap links.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_build_links(array $links, array $parent) {
   $output = '';
@@ -41,6 +50,12 @@ function cellular_build_links(array $links, array $parent) {
 
 /**
  * Collect Social Media share settings.
+ *
+ * @param string $type
+ *  "follow" || "share" used to select the array to return.
+ *
+ * @return array
+ *  Settings for selected social media group.
  */
 function cellular_sm_settings($type) {
   switch ($type) {
@@ -73,6 +88,12 @@ function cellular_sm_settings($type) {
 
 /**
  * Collect Social Media URLs.
+ *
+ * @param string $type
+ *  "follow" || "share" used to select the array to return.
+ *
+ * @return array
+ *  Settings for selected social media group.
  */
 function cellular_sm_urls($type) {
   switch ($type) {
@@ -102,6 +123,9 @@ function cellular_sm_urls($type) {
 
 /**
  * Generate Social media follow links.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_social_media_follow() {
   if (theme_get_setting('social_media_follow') === 1) {
@@ -156,6 +180,9 @@ function cellular_social_media_follow() {
 
 /**
  * Generate Social media share links.
+ *
+ * @return string
+ * Formatted HTML.
  */
 function cellular_social_media_share() {
   if (theme_get_setting('social_media_share') === 1) {

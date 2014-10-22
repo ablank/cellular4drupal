@@ -7,6 +7,12 @@
 
 /**
  * Cellular theme_pager().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
+ *
+ * @return string
+ *  Formatted HTML.
  */
 function cellular_pager($vars) {
   global $pager_page_array, $pager_total;

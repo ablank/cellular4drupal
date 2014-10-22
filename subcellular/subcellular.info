@@ -15,7 +15,7 @@ screenshot  = screenshot.png
 ; JS is added in /inc/alter.js.inc for more robust control.
 
 ;----------// General Settings
-settings[copyright]         = Adam Blankenship
+settings[copyright]         = 0
 
 ;----------// Regions
 regions[header_top]         = Header Top

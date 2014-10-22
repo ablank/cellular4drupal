@@ -5,7 +5,25 @@
  */
 
 /**
+ * Get media query breakpoints from theme settings.
+ *
+ * @return array
+ * Media queries settings.
+ */
+function cellular_mq() {
+  $mq = array();
+  $mq['mobile'] = theme_get_setting('mq_mobile');
+  $mq['normal'] = theme_get_setting('mq_normal');
+  $mq['large'] = theme_get_setting('mq_large');
+
+  return $mq;
+}
+
+/**
  * Add <link> & <meta> tags from an array.
+ *
+ * @param array $array
+ *  Array of tags to add to document <head>.
  */
 function cellular_build_head_tags($array) {
   foreach ($array as $meta => $val) {
@@ -18,24 +36,24 @@ function cellular_build_head_tags($array) {
         '#weight' => isset($val['weight']) ? $val['weight'] : 0,
       );
       // Misc. attr/val:
-      isset($val['attr']) && isset($val['attr_val']) ?
-      $tag['#attributes'][$val['attr']] = $val['attr_val'] : NULL;
-      isset($val['profile']) ?
-      $tag['#attributes']['profile'] = $val['profile'] : NULL;
+      empty($val['attr']) || empty($val['attr_val']) ? NULL :
+      $tag['#attributes'][$val['attr']] = $val['attr_val'];
+      empty($val['profile']) ? NULL :
+      $tag['#attributes']['profile'] = $val['profile'];
       // General attributes:
-      isset($val['name']) ?
-      $tag['#attributes']['name'] = $val['name'] : NULL;
-      isset($val['rel']) ?
-      $tag['#attributes']['rel'] = $val['rel'] : NULL;
-      isset($val['content']) ?
-      $tag['#attributes']['content'] = $val['content'] : NULL;
-      isset($val['href']) ?
-      $tag['#attributes']['href'] = $val['href'] : NULL;
+      empty($val['name']) ? NULL :
+      $tag['#attributes']['name'] = $val['name'];
+      empty($val['rel']) ? NULL :
+      $tag['#attributes']['rel'] = $val['rel'];
+      empty($val['content']) ? NULL :
+      $tag['#attributes']['content'] = $val['content'];
+      empty($val['href']) ? NULL :
+      $tag['#attributes']['href'] = $val['href'];
       // Attributes for favicons:
-      isset($val['size']) ?
-      $tag['#attributes']['sizes'] = $val['size'] : NULL;
-      isset($val['type']) ?
-      $tag['#attributes']['type'] = $val['type'] : NULL;
+      empty($val['size']) ? NULL :
+      $tag['#attributes']['sizes'] = $val['size'];
+      empty($val['type']) ? NULL :
+      $tag['#attributes']['type'] = $val['type'];
 
       drupal_add_html_head($tag, 'meta_' . $meta);
     }
@@ -44,6 +62,9 @@ function cellular_build_head_tags($array) {
 
 /**
  * Set path to page-error.tpl if http error is returned.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_error_page(&$vars) {
   // Set custom error template:
@@ -65,19 +86,13 @@ function cellular_error_page(&$vars) {
 }
 
 /**
- * Get media query breakpoints from theme settings.
- */
-function cellular_mq() {
-  $mq = array();
-  $mq['mobile'] = theme_get_setting('mq_mobile');
-  $mq['normal'] = theme_get_setting('mq_normal');
-  $mq['large'] = theme_get_setting('mq_large');
-
-  return $mq;
-}
-
-/**
  * Removes text formatting options from user input.
+ *
+ * @param $form
+ * Form element to set.
+ *
+ * @param $form_state
+ * Form element's state.
  */
 function cellular_form_format_opt(&$form, $form_state) {
   // Remove individual text format options:
@@ -93,7 +108,10 @@ function cellular_form_format_opt(&$form, $form_state) {
 }
 
 /**
- * Print variables.
+ * Print variables for development as message, usedful if devel isn't available.
+ *
+ * @param array $element 
+ *  Element to test and return variables of.
  */
 function cellular_dev($element) {
   if (theme_get_setting('dev') === 1) {

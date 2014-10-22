@@ -1577,8 +1577,7 @@ p.center {
   margin: 0;
   padding: 1em 0;
 }
-/* line 15, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs > li,
+/* line 14, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .tab {
   float: left;
   display: block;
@@ -1586,32 +1585,27 @@ p.center {
   margin: 0 0.1em 0 0;
   z-index: 2;
 }
-/* line 22, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs > li .title,
+/* line 21, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .tab .title {
-  float: left;
   padding: .4em .6em;
   border: #bbbab7 1px solid;
 }
-/* line 28, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs > li.active,
+/* line 27, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .tab.active {
   background-c4olor: #fefefe;
   color: #444444;
 }
-/* line 32, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs > li.active .title,
+/* line 31, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .tab.active .title {
   color: #444444;
   background: #fefefe;
   border-bottom-color: #fefefe;
 }
-/* line 37, ../sass/cellular-ui/_jTabs.scss */
-.cellular.jTabs > li.active .title a,
+/* line 36, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .tab.active .title a {
-  color: #bbbab7;
+  color: #444444;
 }
-/* line 44, ../sass/cellular-ui/_jTabs.scss */
+/* line 43, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs .panel {
   float: left;
   clear: both;
@@ -1622,13 +1616,13 @@ p.center {
   margin-bottom: 1.4em;
   border-color: #bbbab7;
 }
-/* line 56, ../sass/cellular-ui/_jTabs.scss */
+/* line 55, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical {
   float: left;
   display: block;
   width: 100%;
 }
-/* line 62, ../sass/cellular-ui/_jTabs.scss */
+/* line 61, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical > li,
 .cellular.jTabs.vertical .tab {
   clear: left;
@@ -1636,28 +1630,28 @@ p.center {
   border: none;
   width: 27%;
 }
-/* line 68, ../sass/cellular-ui/_jTabs.scss */
+/* line 67, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical > li .title,
 .cellular.jTabs.vertical .tab .title {
   padding: .4em 1%;
   border: none;
 }
-/* line 72, ../sass/cellular-ui/_jTabs.scss */
+/* line 71, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical > li .title a,
 .cellular.jTabs.vertical .tab .title a {
   padding: 0 1em;
 }
-/* line 77, ../sass/cellular-ui/_jTabs.scss */
+/* line 76, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical > li.active,
 .cellular.jTabs.vertical .tab.active {
   border: none;
 }
-/* line 80, ../sass/cellular-ui/_jTabs.scss */
+/* line 79, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical > li.active .title,
 .cellular.jTabs.vertical .tab.active .title {
   border: none;
 }
-/* line 86, ../sass/cellular-ui/_jTabs.scss */
+/* line 85, ../sass/cellular-ui/_jTabs.scss */
 .cellular.jTabs.vertical .panel {
   display: inline;
   display: inline-block;

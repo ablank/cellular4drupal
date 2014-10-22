@@ -13,6 +13,9 @@ function cellular_http_headers() {
 
 /**
  * Set html attributes.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_html_attributes(&$vars) {
   global $language;
@@ -33,6 +36,9 @@ function cellular_html_attributes(&$vars) {
 
 /**
  * Convert @xmlns to @profile.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_rdf(&$vars) {
   // Add extra namespaces if needed:
@@ -59,6 +65,9 @@ function cellular_rdf(&$vars) {
 
 /**
  * Add variable classes to <body>.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_body_attributes(&$vars) {
   $body_attributes = array();
@@ -83,6 +92,9 @@ function cellular_body_attributes(&$vars) {
 
 /**
  * Build links to favicons & apple-touch-icons.
+ * 
+ * @return array
+ *  Array of links to pass to cellular_build_head_tags()
  */
 function cellular_favicons() {
   // Get icon file names from theme settings.
@@ -152,6 +164,9 @@ function cellular_favicons() {
 
 /**
  * Add meta tags to <head>.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_metatags(&$vars) {
   // Add default metatags:
@@ -190,44 +205,32 @@ function cellular_metatags(&$vars) {
 
 /**
  * Test if sidebar regions are used and return the appropriate class.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_test_sidebar(&$vars) {
-  !empty($vars['page']['sidebar_left']) ? $sidebar_left = 1 : NULL;
-  !empty($vars['page']['sidebar_right']) ? $sidebar_right = 1 : NULL;
+  empty($vars['page']['sidebar_left']) ? NULL : $sidebar_left = 1;
+  empty($vars['page']['sidebar_right']) ? NULL : $sidebar_right = 1;
 
   if (!isset($sidebar_left) && !isset($sidebar_right)) {
     return;
   }
   elseif (isset($sidebar_left) && isset($sidebar_right)) {
-    return 'dual-sidebars';
-  }
-  elseif (isset($sidebar_left) || isset($sidebar_right)) {
-    return 'single-sidebar';
-  }
-}
-
-/**
- * Add appropriate classes for sidebars.
- */
-function cellular_sidebar_classes(&$vars) {
-  $test = cellular_test_sidebar($vars);
-  if ($test === 'dual-sidebars') {
     $vars['page']['content_class'] = theme_get_setting('content_class_dual_sidebars');
     $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_dual_sidebars');
   }
-  elseif ($test === 'single-sidebar') {
+  elseif (isset($sidebar_left) || isset($sidebar_right)) {
     $vars['page']['content_class'] = theme_get_setting('content_class_single_sidebar');
     $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_single_sidebar');
   }
-  else {
-    $vars['page']['content_class'] = theme_get_setting('content_class_no_sidebars');
-  }
-
-  return $vars;
 }
 
 /**
  * Set content author attributes.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_set_author(&$vars) {
   $node = $vars['elements']['#node'];

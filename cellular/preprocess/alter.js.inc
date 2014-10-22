@@ -6,6 +6,9 @@
 
 /**
  * Cellular hook_js_alter().
+ *
+ * @param array $javascript
+ *  Array of javascripts added to each page.
  */
 function cellular_js_alter(&$javascript) {
   // Pass variables from drupal to js.
@@ -15,7 +18,7 @@ function cellular_js_alter(&$javascript) {
   $js_plugins = cellular_plugins_js();
 
   // Add Modernizr & query based on theme settings.
-  theme_get_setting('modernizr') === 1 ? cellular_modernizr() : NULL;
+  theme_get_setting('modernizr') !== 1 ? NULL : cellular_modernizr();
 
   // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') === 1) {

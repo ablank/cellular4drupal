@@ -6,6 +6,9 @@
 
 /**
  * Cellular template_process_html().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_process_html(&$vars) {
   // Push modified styles to page.
@@ -14,6 +17,9 @@ function cellular_process_html(&$vars) {
 
 /**
  * Cellular template_process_page().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_process_page(&$vars) {
   // Dev.

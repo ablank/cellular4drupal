@@ -74,12 +74,6 @@ $form['c']['js'] = array(
   '#collapsed' => TRUE,
 );
 
-$form['c']['js']['javascript'] = array(
-  '#type' => 'checkbox',
-  '#title' => t('Use javascript.'),
-  '#description' => t("Use plugin.js (if necessary) & script.js"),
-  '#default_value' => theme_get_setting('javascript'),
-);
 $form['c']['js']['min_script'] = array(
   '#type' => 'checkbox',
   '#title' => t('Use minified javascript source.'),

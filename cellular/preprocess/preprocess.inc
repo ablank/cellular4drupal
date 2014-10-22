@@ -6,6 +6,9 @@
 
 /**
  * Cellular template_preprocess_html().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_html(&$vars) {
   cellular_http_headers();
@@ -18,6 +21,9 @@ function cellular_preprocess_html(&$vars) {
 
 /**
  * Cellular template_preprocess_node().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
@@ -34,6 +40,9 @@ function cellular_preprocess_node(&$vars) {
 
 /**
  * Cellular template_preprocess_page().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_page(&$vars) {
   // Add template suggestions for custom Content types(page--content-type.tpl.php)
@@ -42,7 +51,7 @@ function cellular_preprocess_page(&$vars) {
   // Set main_menu as full-tree or top-level as defined in settings:
   cellular_main_menu($vars);
   // Set classes for content & sidebars.
-  cellular_sidebar_classes($vars);
+  cellular_test_sidebar($vars);
   // Use page--error.tpl if http error status is returned.
   cellular_error_page($vars);
 
@@ -60,25 +69,32 @@ function cellular_preprocess_page(&$vars) {
 
 /**
  * Cellular template_preprocess_block().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_block(&$vars) {
   $block = $vars['elements']['#block'];
   // Hide block titles in the headers region:
-  if ($block->region === 'header' ||
-  $block->region === 'header-top' ||
-  $block->region === 'header-bottom'
-  ) {
-    $vars['title_attributes']['class'][] = $title_attributes;
+  switch ($block->region) {
+    case 'header':
+    case 'header-top':
+    case 'header-bottom':
+
+      $vars['title_attributes']['class'][] = 'element-invisible';
+
+      break;
   }
 }
 
 /**
  * Cellular template_preprocess_comment().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_comment(&$vars) {
-  $comment = $vars['elements']['#comment'];
-
-  $vars['comment_wrapper'] = NULL;
+  // $vars['comment_wrapper'] = NULL;
   $vars['theme_hook_suggestions'][] = 'comment';
   $vars['title_attributes_array']['class'][] = 'comment-title';
   $vars['content_attributes_array']['class'][] = 'comment-content';
@@ -87,10 +103,16 @@ function cellular_preprocess_comment(&$vars) {
     '!username' => $vars['author'],
     '!datetime' => $vars['created'],
   ));
-}
 
+
+/* */
+ }
+ 
 /**
  * Cellular template_preprocess_comment_wrapper.
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['classes_array'][] = 'clearfix';
@@ -98,6 +120,9 @@ function cellular_preprocess_comment_wrapper(&$vars) {
 
 /**
  * Cellular template_ preprocess_username().
+ *
+ * @param array $vars
+ * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_username(&$vars) {
   if (isset($vars['link_path'])) {

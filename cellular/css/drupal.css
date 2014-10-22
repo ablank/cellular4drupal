@@ -349,7 +349,7 @@ div.ctools-ajaxing {
   display: block;
   cursor: pointer;
   padding: 1em;
-  color: #bbbab7;
+  color: #444444;
   background: #f1f1f1;
   border: #f1f1f1 thin solid;
 }
@@ -371,8 +371,8 @@ div.ctools-ajaxing {
   padding: 1em;
   font-weight: bold;
   outline: 0;
-  background: #fefefe;
   color: #f1f1f1;
+  background: #444444;
   border: thin solid;
 }
 /* line 59, ../sass/drupal/_pager.scss */
