@@ -7,7 +7,7 @@ module.exports = {
   watch: ['watch'],
   prod1: [
     'compass:prod',
-    'imagemin',
+    //'imagemin',
     'svgmin'
     // 'concat',
   ],

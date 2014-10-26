@@ -74,7 +74,6 @@ settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
 ;----------// jQuery Plugins
-settings[javascript]            = 1
 settings[min_script]            = 0
 settings[backstretch]           = 0
 settings[cellularui]            = 0

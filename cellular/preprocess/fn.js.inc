@@ -5,42 +5,6 @@
  */
 
 /**
- * Pass variables to javascript , used to call plugin.js if plugins are selected.
- */
-function cellular_js() {
-  $ext = theme_get_setting('min_script') === 1 ? '.min.js' : '.js';
-
-  // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
-  $js_plugins = array();
-  theme_get_setting('backstretch') !== 1 ? NULL : $js_plugins['backstretch'] = TRUE;
-  theme_get_setting('cellularui') !== 1 ? NULL : $js_plugins['cellularui'] = TRUE;
-  theme_get_setting('flowtype') !== 1 ? NULL : $js_plugins['flowtype'] = TRUE;
-  theme_get_setting('freetile') !== 1 ? NULL : $js_plugins['freetile'] = TRUE;
-  theme_get_setting('jparallax') !== 1 ? NULL : $js_plugins['jparallax'] = TRUE;
-  theme_get_setting('masonry') !== 1 ? NULL : $js_plugins['masonry'] = TRUE;
-  theme_get_setting('smoove') !== 1 ? NULL : $js_plugins['smoove'] = TRUE;
-
-  // Add scripts.
-  $scripts['script'] = array(
-    'file' => 'script' . $ext,
-    'group' => JS_THEME,
-    'weight' => 100,
-  );
-  if ($js_plugins) {
-    // Add to Drupal.settings javascript.
-    drupal_add_js(array('cellular' => $js_plugins), 'setting');
-    // Scripts to add, relative to /yourTheme/js/
-    $scripts['plugins'] = array(
-      'file' => 'plugin' . $ext,
-      'group' => JS_THEME,
-      'weight' => 99,
-    );
-  }
-
-  cellular_add_js($scripts);
-}
-
-/**
  * Add array of javascripts to $javascript, using a CDN if provided.
  *
  * A fallback link will be automatically generated if using CDN and
@@ -55,12 +19,12 @@ function cellular_js() {
 function cellular_add_js($array, $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
-      // Set default attributes.
+// Set default attributes.
       $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
       $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
       $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
       $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-      // Conditional attributes.
+// Conditional attributes.
       empty($script['version']) ? NULL : $script['version'] = $script['version'];
 
       if (!empty($script['cdn'])) {
@@ -87,7 +51,7 @@ function cellular_add_js($array, $cellular = FALSE) {
  *  Reference cellular library if TRUE.
  */
 function cellular_js_fallback($script, $cellular = FALSE) {
-  // Only add the fallback if an object has been provided to test.
+// Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
       'group' => $script['group'],
@@ -118,31 +82,112 @@ function cellular_js_fallback($script, $cellular = FALSE) {
  *  Reference cellular library if TRUE.
  */
 function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
-  // Only override if js is being called.
+// Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
 
     if (!empty($script['cdn'])) {
-      // If cdn is provided, set data to external source & call local fallback.
+// If cdn is provided, set data to external source & call local fallback.
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
     }
     else {
-      // Or set data to local file if no CDN.
+// Or set data to local file if no CDN.
       if (!empty($script['file'])) {
         $data = $cellular ? constant('CELLULAR_LIB') : path_to_theme();
         $data .= '/js/' . $script['file'];
       }
     }
 
-    // Default attributes.
+// Default attributes.
     $javascript[$ojs]['data'] = $data;
     $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : JS_LIBRARY;
     $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
     $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
     $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
     $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
-    // Conditional attributes.
+// Conditional attributes.
     empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
   }
+}
+
+/**
+ * Build modernizr query and add script inline on page.
+ *
+ * @param array $tests
+ *  Array of arrays used to build modernizr tests.
+ *  $tests['testName'] = array(
+ *  'test',
+ *  'yep',
+ *  'nope',
+ *  'both',
+ *  'complete',
+ * )
+ */
+function cellular_modernizr($tests) {
+// $base_url needs to be added to set the correct path.
+  $dir = $GLOBALS['base_url'] . '/' . path_to_theme();
+  $query = '';
+
+  foreach ($tests as $test) {
+    if (empty($test['test'])) {
+      return;
+    }
+    else {
+      $query .= "{\n";
+      $query .= "test : " . $test['test'] . ",\n";
+      empty($test['yep']) ? NULL : $query .= "yep : ['" . $dir . $test['yep'] . "'],\n";
+      empty($test['nope']) ? NULL : $query .= "nope : ['" . $dir . $test['nope'] . "'],\n";
+      empty($test['both']) ? NULL : $query .= "both : ['" . $dir . $test['both'] . "'],\n";
+      empty($test['complete']) ? NULL : $query .= "complete : function(){\n" . $test['complete'] . "},\n";
+
+      // $query .= "nope : ['" . $test['nope'] . "'],\n";
+      $query .= "},\n";
+    }
+  }
+
+  $query = "Modernizr.load([\n$query]);\n";
+
+  drupal_add_js($query, array(
+    'type' => 'inline',
+    'group' => JS_LIBRARY,
+    'every_page' => TRUE,
+    'weight' => -999,
+  ));
+}
+
+/**
+ * Pass variables to javascript , used to call plugin.js if plugins are selected.
+ */
+function cellular_js() {
+  $ext = theme_get_setting('min_script') === 1 ? '.min.js' : '.js';
+
+// Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
+  $js_plugins = array();
+  theme_get_setting('backstretch') !== 1 ? NULL : $js_plugins['backstretch'] = TRUE;
+  theme_get_setting('cellularui') !== 1 ? NULL : $js_plugins['cellularui'] = TRUE;
+  theme_get_setting('flowtype') !== 1 ? NULL : $js_plugins['flowtype'] = TRUE;
+  theme_get_setting('freetile') !== 1 ? NULL : $js_plugins['freetile'] = TRUE;
+  theme_get_setting('jparallax') !== 1 ? NULL : $js_plugins['jparallax'] = TRUE;
+  theme_get_setting('masonry') !== 1 ? NULL : $js_plugins['masonry'] = TRUE;
+  theme_get_setting('smoove') !== 1 ? NULL : $js_plugins['smoove'] = TRUE;
+
+// Add scripts.
+  $scripts['script'] = array(
+    'file' => 'script' . $ext,
+    'group' => JS_THEME,
+    'weight' => 100,
+  );
+  if ($js_plugins) {
+// Add to Drupal.settings javascript.
+    drupal_add_js(array('cellular' => $js_plugins), 'setting');
+// Scripts to add, relative to /yourTheme/js/
+    $scripts['plugins'] = array(
+      'file' => 'plugin' . $ext,
+      'group' => JS_THEME,
+      'weight' => 99,
+    );
+  }
+
+  cellular_add_js($scripts);
 }

@@ -872,7 +872,7 @@ a:focus.colorbox {
   width: 10%;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) and (min-width: 0) {
   /* line 38, ../sass/base/_grid.scss */
   .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
     width: 100%;

@@ -11,7 +11,6 @@
     margin: 0;
     padding: $normal 0;
 
-    > li,
     .tab {
       float: left;
       display: block;
@@ -20,7 +19,7 @@
       z-index: 2;
 
       .title {
-        float: left;
+        //float: left;
         padding: .4em .6em;
         border: $grey 1px solid;
       }
@@ -35,7 +34,7 @@
           border-bottom-color: $white;
 
           a {
-            color: $grey;
+            color: $dark_grey;
           }
         }
       }

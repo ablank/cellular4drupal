@@ -13,7 +13,7 @@ module.exports = {
         expand: true,
         cwd: 'assets/images',
         src: ['gif/**/*.gif',
-          'jpg/**/*.{jpg, jpeg}',
+          'jpg/**/*.[jpg, jpeg]',
           'png/**/*.png'
         ],
         dest: 'assets/images/min/'

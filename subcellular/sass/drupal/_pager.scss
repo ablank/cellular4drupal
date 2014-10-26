@@ -26,7 +26,7 @@
     display: block;
     cursor: pointer;
     padding: $normal;
-    color: $grey;
+    color: $dark_grey;
     background: darken($white, 5%);
     border: $light_grey $border;
   }
@@ -48,8 +48,8 @@
     padding: $normal;
     font-weight: bold;
     outline: 0;
-    background: $white;
     color: $light_grey;
+    background: $dark_grey;
     border: $border;
   }
 

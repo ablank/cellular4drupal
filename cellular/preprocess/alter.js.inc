@@ -18,7 +18,7 @@ function cellular_js_alter(&$javascript) {
   $js_plugins = cellular_plugins_js();
 
   // Add Modernizr & query based on theme settings.
-  theme_get_setting('modernizr') !== 1 ? NULL : cellular_modernizr();
+  theme_get_setting('modernizr') !== 1 ? NULL : cellular_modernizr_default();
 
   // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') === 1) {

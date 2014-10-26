@@ -21,9 +21,9 @@
   height: auto;
 }
 
-// Prevent transitions of jquery-ui elements.
-[class*='ui-'],
-[class^='ui-'] {
+// Prevent transitions of jquery-ui elements- makes for jankiness....
+[class*="ui-"],
+[class^="ui-"] {
   @include transition(none);
 }
 

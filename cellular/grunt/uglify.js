@@ -13,8 +13,8 @@ module.exports = {
       expand: true,
     },
     files: {
-      'js/script.min.js': ['js/script.js'],
-      'js/plugins.min.js': ['js/plugins.js']
+      'js/plugin.min.js': ['js/plugin.js'],
+      'js/script.min.js': ['js/script.js']
     }
   },
   dev: {
@@ -24,8 +24,8 @@ module.exports = {
       preserveComments: 'all'
     },
     files: {
-      'js/script.dev.js': ['js/script.js'],
-      'js/plugins.dev.js': ['js/plugins.js']
+      'js/plugin.dev.js': ['js/plugin.js'],
+      'js/script.dev.js': ['js/script.js']
     }
   }
 };
