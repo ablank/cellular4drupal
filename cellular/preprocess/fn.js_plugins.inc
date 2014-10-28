@@ -8,8 +8,7 @@
  * Build default modernizr queries using theme settings.
  */
 function cellular_modernizr_default() {
-  // $base_url needs to be added to set the correct path.
-  $css_dir = $GLOBALS['base_url'] . '/' . path_to_theme() . '/css/';
+  $css_dir = '/css/';
   // Build yepnope query based on theme settings.
   $mq = cellular_mq();
   $tests = array();

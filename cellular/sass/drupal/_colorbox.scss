@@ -146,10 +146,10 @@ $border: .4em;
 #cboxPrevious {
   bottom: 0;
   left: 0;
-  background-position: -160px -64px;
+  background-position: -32px -64px;
 
   &:hover {
-    background-position: -128px -64px;
+    background-position: 0 -64px;
 
   }
 }
@@ -157,10 +157,10 @@ $border: .4em;
 #cboxNext {
   bottom: 0;
   right: 0;
-  background-position: 0 -64px;
+  background-position: -160px -64px;
 
   &:hover {
-    background-position: -32px -64px;
+    background-position: -128px -64px;
   }
 }
 
@@ -174,19 +174,21 @@ $border: .4em;
   }
 }
 
-.cboxSlideshow_on #cboxSlideshow {
-  bottom: 0px;
-  right: 4em;
-  background-position: -64px -64px;
-
-  &:hover {
-    background-position: -96px -64px;
-  }
-}
-
+// Play.
 .cboxSlideshow_off #cboxSlideshow {
   bottom: 0px;
   right: 3em;
+  background-position: -96px -66px;
+
+  &:hover {
+    background-position: -64px -66px;
+  }
+}
+
+// Pause.
+.cboxSlideshow_on #cboxSlideshow {
+  bottom: 0px;
+  right: 4em;
   background-position: -32px 0;
 
   &:hover {

@@ -952,41 +952,11 @@ p.center {
  * Misc. class styles
  */
 /* line 7, ../sass/style/_classes.scss */
-#page-wrap .icon {
-  display: inline;
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  text-indent: -999em;
-  margin: .4em;
-  padding: 10px;
-  vertical-align: middle;
-  background-color: #fefefe;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  background-color: none;
-  border: 1px solid #f1f1f1;
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  -ms-border-radius: 0.3em;
-  -o-border-radius: 0.3em;
-  border-radius: 0.3em;
-}
-/* line 23, ../sass/style/_classes.scss */
-#page-wrap .icon:hover {
-  border-color: #29b4de;
-}
-/* line 30, ../sass/style/_classes.scss */
-#page-wrap .icon.search {
-  text-indent: 0;
-}
-
-/* line 36, ../sass/style/_classes.scss */
 .gallery {
   text-align: center;
   background: #444444;
 }
-/* line 42, ../sass/style/_classes.scss */
+/* line 13, ../sass/style/_classes.scss */
 .gallery div,
 .gallery a,
 .gallery img {
@@ -994,18 +964,18 @@ p.center {
   margin: 0 auto;
 }
 
-/* line 50, ../sass/style/_classes.scss */
+/* line 21, ../sass/style/_classes.scss */
 .dropCap:first-letter {
   font-size: 1.3em;
   font-weight: bold;
 }
 
-/* line 55, ../sass/style/_classes.scss */
+/* line 26, ../sass/style/_classes.scss */
 .textShadow {
   text-shadow: 1px 1px 3px #444444;
 }
 
-/* line 60, ../sass/style/_classes.scss */
+/* line 31, ../sass/style/_classes.scss */
 .box-shadow {
   margin: 0 auto;
   padding: 3em 1.4em;
@@ -1014,7 +984,7 @@ p.center {
   -moz-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
   box-shadow: inset 0 0 0.3em 0 #f1f1f1;
 }
-/* line 67, ../sass/style/_classes.scss */
+/* line 38, ../sass/style/_classes.scss */
 .box-shadow:before, .box-shadow:after {
   position: absolute;
   width: 40%;
@@ -1033,7 +1003,7 @@ p.center {
   box-shadow: 0 6px 12px rgba(241, 241, 241, 0.3);
   z-index: -1;
 }
-/* line 86, ../sass/style/_classes.scss */
+/* line 57, ../sass/style/_classes.scss */
 .box-shadow:after {
   left: auto;
   right: 12px;
@@ -1044,7 +1014,7 @@ p.center {
   transform: skew(5deg) rotate(5deg);
 }
 
-/* line 99, ../sass/style/_classes.scss */
+/* line 70, ../sass/style/_classes.scss */
 .ribbon {
   position: relative;
   margin: 0 auto 1em;
@@ -1071,7 +1041,7 @@ p.center {
   border-right: 1.2em solid transparent;
 }
 
-/* line 104, ../sass/style/_classes.scss */
+/* line 75, ../sass/style/_classes.scss */
 .popout {
   position: relative;
   margin: 0 0 1em 0;
@@ -1883,40 +1853,37 @@ body {
 }
 
 /**
-  * @file
-  * Provide svg background images for compliant browsers
-*/
-/* line 7, ../sass/style/_svg.scss */
-.svg #logo > a {
-  background-image: url(url("../assets/images/min/svg/logo.svg"));
+ * @file
+ * General styling for icons.
+ */
+/* line 6, ../sass/style/_icons.scss */
+.icon {
+  display: inline;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-indent: -999em;
+  margin: .4em;
+  padding: 10px;
+  vertical-align: middle;
+  background-color: #fefefe;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-color: none;
+  border: 1px solid #f1f1f1;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
 }
-/* line 12, ../sass/style/_svg.scss */
-.svg #nav.jMmenu.mini {
-  background-image: url("../assets/icons/min/svg/menu.svg");
+/* line 22, ../sass/style/_icons.scss */
+.icon:hover {
+  border-color: #29b4de;
 }
-/* line 17, ../sass/style/_svg.scss */
-.svg .ok {
-  list-style-image: url("../assets/icons/min/svg/message-ok.svg");
-}
-/* line 21, ../sass/style/_svg.scss */
-.svg .warning {
-  list-style-image: url("../assets/icons/min/svg/message-warning.svg");
-}
-/* line 25, ../sass/style/_svg.scss */
-.svg .error {
-  list-style-image: url("../assets/icons/min/svg/message-error.svg");
-}
-/* line 29, ../sass/style/_svg.scss */
-.svg #breadcrumb li {
-  background-image: url(../assets/icons/min/png/arrow-right.png);
-}
-/* line 32, ../sass/style/_svg.scss */
-.svg #breadcrumb li.first {
-  background-image: none;
-}
-/* line 35, ../sass/style/_svg.scss */
-.svg #breadcrumb li.first a {
-  background-image: url(../assets/icons/min/svg/home.svg);
+/* line 29, ../sass/style/_icons.scss */
+.icon.search {
+  text-indent: 0;
 }
 
 /* line 2, ../sass/style/_social.scss */
@@ -1952,4 +1919,41 @@ body {
   padding: .4em;
   border-bottom: #444444 0.2em solid;
   background: #fefefe;
+}
+
+/**
+  * @file
+  * Provide svg background images for compliant browsers
+*/
+/* line 7, ../sass/style/_svg.scss */
+.svg #logo > a {
+  background-image: url(url("../assets/images/min/svg/logo.svg"));
+}
+/* line 12, ../sass/style/_svg.scss */
+.svg #nav.jMmenu.mini {
+  background-image: url("../assets/icons/min/svg/menu.svg");
+}
+/* line 17, ../sass/style/_svg.scss */
+.svg .ok {
+  list-style-image: url("../assets/icons/min/svg/message-ok.svg");
+}
+/* line 21, ../sass/style/_svg.scss */
+.svg .warning {
+  list-style-image: url("../assets/icons/min/svg/message-warning.svg");
+}
+/* line 25, ../sass/style/_svg.scss */
+.svg .error {
+  list-style-image: url("../assets/icons/min/svg/message-error.svg");
+}
+/* line 29, ../sass/style/_svg.scss */
+.svg #breadcrumb li {
+  background-image: url(../assets/icons/min/png/arrow-right.png);
+}
+/* line 32, ../sass/style/_svg.scss */
+.svg #breadcrumb li.first {
+  background-image: none;
+}
+/* line 35, ../sass/style/_svg.scss */
+.svg #breadcrumb li.first a {
+  background-image: url(../assets/icons/min/svg/home.svg);
 }

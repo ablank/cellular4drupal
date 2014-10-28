@@ -24,6 +24,7 @@ $include = array(
   'theme.pager.inc',
   'social.inc',
   'process.inc',
+  'views.inc',
 );
 
 foreach ($include as $i) {

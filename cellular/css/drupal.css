@@ -630,22 +630,22 @@ form.site-search input[type="submit"]:hover, form.site-search input[type="submit
 #cboxPrevious {
   bottom: 0;
   left: 0;
-  background-position: -160px -64px;
+  background-position: -32px -64px;
 }
 /* line 151, ../sass/drupal/_colorbox.scss */
 #cboxPrevious:hover {
-  background-position: -128px -64px;
+  background-position: 0 -64px;
 }
 
 /* line 157, ../sass/drupal/_colorbox.scss */
 #cboxNext {
   bottom: 0;
   right: 0;
-  background-position: 0 -64px;
+  background-position: -160px -64px;
 }
 /* line 162, ../sass/drupal/_colorbox.scss */
 #cboxNext:hover {
-  background-position: -32px -64px;
+  background-position: -128px -64px;
 }
 
 /* line 167, ../sass/drupal/_colorbox.scss */
@@ -659,25 +659,25 @@ form.site-search input[type="submit"]:hover, form.site-search input[type="submit
   background-position: -64px -32px;
 }
 
-/* line 177, ../sass/drupal/_colorbox.scss */
-.cboxSlideshow_on #cboxSlideshow {
-  bottom: 0px;
-  right: 4em;
-  background-position: -64px -64px;
-}
-/* line 182, ../sass/drupal/_colorbox.scss */
-.cboxSlideshow_on #cboxSlideshow:hover {
-  background-position: -96px -64px;
-}
-
-/* line 187, ../sass/drupal/_colorbox.scss */
+/* line 178, ../sass/drupal/_colorbox.scss */
 .cboxSlideshow_off #cboxSlideshow {
   bottom: 0px;
   right: 3em;
+  background-position: -96px -66px;
+}
+/* line 183, ../sass/drupal/_colorbox.scss */
+.cboxSlideshow_off #cboxSlideshow:hover {
+  background-position: -64px -66px;
+}
+
+/* line 189, ../sass/drupal/_colorbox.scss */
+.cboxSlideshow_on #cboxSlideshow {
+  bottom: 0px;
+  right: 4em;
   background-position: -32px 0;
 }
-/* line 192, ../sass/drupal/_colorbox.scss */
-.cboxSlideshow_off #cboxSlideshow:hover {
+/* line 194, ../sass/drupal/_colorbox.scss */
+.cboxSlideshow_on #cboxSlideshow:hover {
   background-position: -32px -32px;
 }
 
@@ -685,7 +685,7 @@ form.site-search input[type="submit"]:hover, form.site-search input[type="submit
   * Avoid outlines on :active (mouseclick),
   * but preserve outlines on :focus (tabbed navigating)
 */
-/* line 201, ../sass/drupal/_colorbox.scss */
+/* line 203, ../sass/drupal/_colorbox.scss */
 .cboxPhoto {
   display: block;
   float: left;
@@ -694,7 +694,7 @@ form.site-search input[type="submit"]:hover, form.site-search input[type="submit
   max-width: none;
 }
 
-/* line 209, ../sass/drupal/_colorbox.scss */
+/* line 211, ../sass/drupal/_colorbox.scss */
 .cboxIframe {
   display: block;
   width: 100%;

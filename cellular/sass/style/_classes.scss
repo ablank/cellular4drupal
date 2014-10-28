@@ -3,35 +3,6 @@
  * Misc. class styles
  */
 
-// Icons
-#page-wrap .icon {
-  display: inline;
-  display: inline-block;
-  width: $icon_size;
-  height: $icon_size;
-  text-indent: -999em;
-  margin: .4em;
-  padding: $icon_padding;
-  vertical-align: middle;
-  background-color: $white;
-  background-position: $icon_padding $icon_padding;
-  background-repeat: no-repeat;
-  background-color: none;
-  border: 1px solid $light_grey;
-  @include border-radius();
-
-  &:hover {
-    border-color: $hilight;
-  }
-
-  &.social {
-  }
-
-  &.search {
-    text-indent: 0;
-  }
-}
-
 // Image Gallery
 .gallery {
   text-align: center;
