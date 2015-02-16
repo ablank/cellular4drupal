@@ -313,7 +313,9 @@ function cellular_textfield(&$vars) {
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'text';
 
-  $output .= '<input' . drupal_attributes($attributes) . ' />';
+  $value = empty($element['#value']) ? '' : ' value="'.$element['#value'].'"';
+
+  $output .= '<input' . drupal_attributes($attributes) . $value . ' />';
 
   return $output;
 }

@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Styling for large-screen devices included in style.css
+ */
+
+@media screen and (min-width: $res_large) {
+  body {
+    // background: url(../assets/images/large-background-body.png) no-repeat;
+  }
+
+  // Layout
+
+  #header {
+    // background: url(../assets/images/large-background-header.png) no-repeat;
+  }
+
+  #logo {
+    &:hover {
+    }
+    
+    & > a {
+    }
+  }
+
+  #page-wrap {
+    //@include bg_colorover($white, ../assets/images/bg_photo.jpg);
+  }
+
+  #app {
+  }
+
+  #content-main {
+  }
+
+  #footer {
+    // background: $black url(../assets/images/honeycomb_dark.png) repeat;
+  }
+}

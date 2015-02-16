@@ -5,9 +5,12 @@
  */
 
 /**
- * Add HTTP Headers.
+ * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
+  // Help prevent clickjacking
+  drupal_add_http_header('X-Frame-Options', 'DENY');
+  // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
 }
 
@@ -41,6 +44,7 @@ function cellular_html_attributes(&$vars) {
  * Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_rdf(&$vars) {
+  $vars['rdf_prefixes'] = '';
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
   // Check support for RDF & add DOCTYPE:

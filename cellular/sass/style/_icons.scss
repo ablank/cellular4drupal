@@ -3,7 +3,7 @@
  * General styling for icons.
  */
 
-.icon {
+#page-wrap .icon {
   display: inline;
   display: inline-block;
   width: $icon_size;
@@ -24,6 +24,8 @@
   }
 
   &.social {
+    &:hover {
+  }
   }
 
   &.search {

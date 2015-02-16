@@ -1,0 +1,88 @@
+/**
+ * @file
+ * Styling for printed pages
+ */
+/**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+@media print {
+  /* line 10, ../sass/print.scss */
+  img,
+  p {
+    page-break-inside: avoid;
+  }
+
+  /* line 16, ../sass/print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 22, ../sass/print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* line 27, ../sass/print.scss */
+  a,
+  a:visited {
+    color: #00598e;
+    text-decoration: underline;
+  }
+  /* line 31, ../sass/print.scss */
+  a:after,
+  a:visited:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 35, ../sass/print.scss */
+  code a:after {
+    content: none;
+  }
+
+  /* line 41, ../sass/print.scss */
+  pre,
+  code,
+  blockquote {
+    border: 1px solid #444444;
+    page-break-inside: avoid;
+  }
+
+  /* line 48, ../sass/print.scss */
+  #app,
+  #content-wrap,
+  #content-main {
+    width: 100%;
+  }
+
+  /* line 54, ../sass/print.scss */
+  #header,
+  #footer,
+  .hidden {
+    visibility: hidden;
+    display: none;
+  }
+}

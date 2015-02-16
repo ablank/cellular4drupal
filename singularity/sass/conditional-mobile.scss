@@ -1,0 +1,59 @@
+/**
+ * @file
+ * Dynamically loaded styling for mobile devices
+ */
+@import "variables";
+
+@media screen and (max-width: $res_mobile) {
+  body {
+    // background: url(../assets/images/mobile-background-body.png) no-repeat;
+  }
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+
+  #header-top {
+  }
+
+  #header {
+    height: auto;
+  }
+
+  #header-bottom {
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+    padding: 1em 0;
+  }
+
+  #content-top {
+  }
+
+  #content {
+  }
+
+  #content-bottom {
+  }
+
+  #sidebar-left,
+  #sidebar-right {
+  }
+
+  #footer-top {
+  }
+
+  #footer {
+  }
+
+  #footer-bottom {
+  }
+}

@@ -26,13 +26,13 @@
   /////
 */
 @media print {
-  /* line 10, ../sass/print.scss */
+  /* line 9, ../sass/print.scss */
   img,
   p {
     page-break-inside: avoid;
   }
 
-  /* line 16, ../sass/print.scss */
+  /* line 14, ../sass/print.scss */
   p,
   h2,
   h3 {
@@ -40,16 +40,16 @@
     widows: 3;
   }
 
-  /* line 22, ../sass/print.scss */
+  /* line 21, ../sass/print.scss */
   h2,
   h3 {
     page-break-after: avoid;
   }
 
-  /* line 27, ../sass/print.scss */
+  /* line 26, ../sass/print.scss */
   a,
   a:visited {
-    color: #00598e;
+    color: #00598E;
     text-decoration: underline;
   }
   /* line 31, ../sass/print.scss */
@@ -63,7 +63,7 @@
     content: none;
   }
 
-  /* line 41, ../sass/print.scss */
+  /* line 39, ../sass/print.scss */
   pre,
   code,
   blockquote {
@@ -71,14 +71,14 @@
     page-break-inside: avoid;
   }
 
-  /* line 48, ../sass/print.scss */
+  /* line 46, ../sass/print.scss */
   #app,
   #content-wrap,
   #content-main {
     width: 100%;
   }
 
-  /* line 54, ../sass/print.scss */
+  /* line 52, ../sass/print.scss */
   #header,
   #footer,
   .hidden {

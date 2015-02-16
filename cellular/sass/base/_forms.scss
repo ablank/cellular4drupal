@@ -107,7 +107,7 @@ input {
     background: darken($white, 2%);
       
     &:focus {
-      color: $p_color;
+      color: $dark_grey;
       background: $white;
     }
   }

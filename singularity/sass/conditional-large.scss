@@ -1,0 +1,58 @@
+/*
+ * @file
+ * Conditional stylesheet for large screens.
+*/
+
+@import "variables";
+
+@media screen and (min-width: $res_large) {
+  body {
+    // background: url(../assets/images/large-background-body.png) no-repeat;
+  }
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+
+  #header-top {
+  }
+
+  #header {
+  }
+
+  #header-bottom {
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+  }
+
+  #content-top {
+  }
+
+  #content {
+  }
+
+  #content-bottom {
+  }
+
+  #sidebar-left,
+  #sidebar-right {
+  }
+
+  #footer-top {
+  }
+
+  #footer {
+  }
+
+  #footer-bottom {
+  }
+}

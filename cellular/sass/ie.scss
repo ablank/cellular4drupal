@@ -62,12 +62,3 @@ input {
 .center {
   display: block;
 }
-
-.jBlocklink {
-  margin: 0;
-  border: $light_grey 1px solid;
-
-  &:hover {
-    border-color: $hilight;
-  }
-}

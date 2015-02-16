@@ -1,0 +1,96 @@
+/**
+  * @file
+  * Cellular Grid
+*/
+//////
+// Grid Cells
+/////
+.cell,
+#{$cells} {
+  position: relative;
+  float: left;
+  display: block;
+  margin: $cell_margin;
+  padding: $cell_padding;
+  z-index: 1;
+  @include transition();
+
+  &.center {
+    float: none;
+    margin: $cell_margin auto;
+  }
+}
+
+.cell {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@each $cell in $grid {
+  .cell-#{$cell} {
+    width: unquote('#{$cell}%');
+  }
+}
+
+@media screen and (max-width: $res_mobile)  and (min-width: 0) {
+  // Set all cells to single-column
+  #{$cells} {
+    width: 100%;
+  }
+
+  .responsive {
+    &.cell-33 {
+      width: 33% - $cell_space;
+    }
+
+    &.cell-25 {
+      width: 50% - $cell_space;
+    }
+  }
+}
+
+//Element positioning classes
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+hr.clearfix {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.left,
+.right {
+  display: block;
+}
+
+.left {
+  float: left;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  &.center {
+    text-align: center;
+  }
+}
+.right {
+  float: right;
+}

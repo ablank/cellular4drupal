@@ -1,0 +1,40 @@
+/**
+  * @file
+  * Date related class styling
+*/
+
+// Used for comments & posts
+.post-date {
+  float: left;
+  display: block;
+  margin: 1em 1em 1em 0;
+  text-align: center;
+  border: $dark_grey $border;
+  background: lighten($light_grey, 10%);
+    color: $dark_grey;
+  @include border-radius(.2em);
+
+  .day,
+  .month,
+  .year {
+    display: block;
+  }
+
+  .day {
+    float: left;
+    padding: .2em 0 .2em .6em;
+  }
+
+  .month {
+    float: left;
+    padding: .2em .6em .2em .4em;
+  }
+
+  .year {
+    clear: both;
+    padding: .2em .8em;
+    background-color: $dark_grey;
+    color: $light_grey;
+    border-top: $light_grey $border;
+  }
+}

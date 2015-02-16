@@ -44,7 +44,8 @@
 
 // Loading throbber.
 .ctools-ajaxing {
-  background: $loading center center no-repeat;
+  //background: url('../assets/images/gif/throbber.gif') center center no-repeat;
+  @include loading_circle();
 }
 
 a,

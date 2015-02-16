@@ -1,0 +1,11 @@
+// Set stylesheet breakpoints
+$res_mobile: 650px;
+$res_narrow: 800px;
+$res_normal: 960px;
+$res_large: 2000px;
+
+$mq_mobile: "@media screen and (max-width:"+ $res_mobile+") and (min-width: 0) {";
+$mq_narrow: "screen and (max-width:"+ $res_narrow+") and (min-width: "+$res_mobile+")";
+$mq_normal: "screen and (max-width:" $res_large") and (min-width: "+$res_normal+")";
+$mq_large: "screen and (min-width:"+ $res_large+")";
+

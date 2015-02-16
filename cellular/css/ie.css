@@ -25,7 +25,7 @@
   //
   /////
 */
-/* line 8, ../sass/ie.scss */
+/* line 7, ../sass/ie.scss */
 body,
 * {
   word-wrap: break-word;
@@ -42,14 +42,14 @@ legend {
   color: #f1f1f1;
 }
 
-/* line 24, ../sass/ie.scss */
+/* line 22, ../sass/ie.scss */
 input,
 textarea,
 select {
   *font-size: 100%;
 }
 
-/* line 32, ../sass/ie.scss */
+/* line 31, ../sass/ie.scss */
 input[type=checkbox], input[type=radio] {
   display: inline;
   margin: 0.3em;
@@ -60,7 +60,7 @@ input[type=checkbox]:focus, input[type=radio]:focus {
   border: thin solid;
 }
 
-/* line 57, ../sass/ie.scss */
+/* line 44, ../sass/ie.scss */
 .cell,
 .cell-90,
 .cell-80,
@@ -81,14 +81,4 @@ input[type=checkbox]:focus, input[type=radio]:focus {
 /* line 62, ../sass/ie.scss */
 .center {
   display: block;
-}
-
-/* line 66, ../sass/ie.scss */
-.jBlocklink {
-  margin: 0;
-  border: #f1f1f1 1px solid;
-}
-/* line 70, ../sass/ie.scss */
-.jBlocklink:hover {
-  border-color: #29b4de;
 }
