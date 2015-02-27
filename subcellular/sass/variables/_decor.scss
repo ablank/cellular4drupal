@@ -1,0 +1,8 @@
+$border: thin solid;
+// Shadows: $h-off $v-off $blur $spread
+$shadow_big: 0 0 $normal $normal;
+$shadow_med: 0 0 $small $small;
+$shadow_small: 0 0 $tiny $tiny;
+
+// Images
+$body_img: url('../assets/images/honeycomb_light.png');

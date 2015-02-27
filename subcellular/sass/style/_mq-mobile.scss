@@ -1,0 +1,47 @@
+/**
+  * @file
+  * Styling for mobile devices included in style.css
+*/
+
+@media screen and (max-width: $res_mobile) {
+  //////
+  #page-wrap {
+    
+  }
+
+  #content-wrap {
+
+  }
+
+  #header {
+    //height: auto;
+  }
+
+  #nav {
+    ul.menu {
+      // Remove this if not using the CellularUI jMmenu();
+      // Hides navigation to prevent jankiness caused by js changing the DOM
+      // after html & styles are loaded.
+      visibility: hidden;
+    }
+  }
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+  }
+
+  #content {
+  }
+
+}
