@@ -670,12 +670,12 @@ a:focus.colorbox {
 /* line 9, ../sass/base/_grid.scss */
 .cell,
 .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
+  z-index: 1;
   position: relative;
   float: left;
   display: block;
   margin: 0;
   padding: 0;
-  z-index: 1;
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
@@ -696,115 +696,100 @@ a:focus.colorbox {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  text-align: center;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-100 {
   width: 100%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-90 {
   width: 90%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-80 {
   width: 80%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-75 {
   width: 75%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-70 {
   width: 70%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-66 {
   width: 66%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-60 {
   width: 60%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-50 {
   width: 50%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-40 {
   width: 40%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-33 {
   width: 33%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-30 {
   width: 30%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-25 {
   width: 25%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-20 {
   width: 20%;
-  text-align: left;
 }
 
-/* line 35, ../sass/base/_grid.scss */
+/* line 34, ../sass/base/_grid.scss */
 .cell-10 {
   width: 10%;
-  text-align: left;
 }
 
 @media screen and (max-width: 650px) and (min-width: 0) {
-  /* line 43, ../sass/base/_grid.scss */
+  /* line 41, ../sass/base/_grid.scss */
   .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
     width: 100%;
   }
 
-  /* line 47, ../sass/base/_grid.scss */
+  /* line 45, ../sass/base/_grid.scss */
   .responsive.cell-33 {
     width: 100%;
   }
-  /* line 50, ../sass/base/_grid.scss */
+  /* line 48, ../sass/base/_grid.scss */
   .responsive.cell-25 {
     width: 100%;
   }
 }
-/* line 57, ../sass/base/_grid.scss */
+/* line 55, ../sass/base/_grid.scss */
 .hidden {
   position: absolute;
   left: -9999px;
 }
 
-/* line 62, ../sass/base/_grid.scss */
+/* line 60, ../sass/base/_grid.scss */
 .clearfix {
   zoom: 1;
 }
@@ -818,36 +803,36 @@ a:focus.colorbox {
   clear: both;
 }
 
-/* line 66, ../sass/base/_grid.scss */
+/* line 64, ../sass/base/_grid.scss */
 hr.clearfix {
   visibility: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* line 72, ../sass/base/_grid.scss */
+/* line 70, ../sass/base/_grid.scss */
 .left,
 .right {
   display: block;
 }
 
-/* line 77, ../sass/base/_grid.scss */
+/* line 75, ../sass/base/_grid.scss */
 .left {
   float: left;
 }
 
-/* line 81, ../sass/base/_grid.scss */
+/* line 79, ../sass/base/_grid.scss */
 .right {
   float: right;
 }
 
-/* line 85, ../sass/base/_grid.scss */
+/* line 83, ../sass/base/_grid.scss */
 .center {
   display: block;
   margin: 0 auto;
 }
 
-/* line 97, ../sass/base/_grid.scss */
+/* line 95, ../sass/base/_grid.scss */
 h1.center,
 h2.center,
 h3.center,
@@ -1985,6 +1970,13 @@ body {
   * Content region styles
 */
 /* line 6, ../sass/style/regions/_header.scss */
+#header,
+#header-top,
+#header-bottom {
+  width: 100%;
+}
+
+/* line 12, ../sass/style/regions/_header.scss */
 #header {
   z-index: 2;
   height: 96px;
@@ -1994,7 +1986,7 @@ body {
   box-shadow: 0 0 1em 0.1em #444444;
 }
 
-/* line 13, ../sass/style/regions/_header.scss */
+/* line 19, ../sass/style/regions/_header.scss */
 #header-top {
   z-index: 4;
   background: #111;
@@ -2002,11 +1994,11 @@ body {
   border-bottom: #111 thin solid;
   text-align: right;
 }
-/* line 22, ../sass/style/regions/_header.scss */
+/* line 28, ../sass/style/regions/_header.scss */
 #header-top div {
   display: inline;
 }
-/* line 26, ../sass/style/regions/_header.scss */
+/* line 32, ../sass/style/regions/_header.scss */
 #header-top h2,
 #header-top h3,
 #header-top h4 {
@@ -2015,7 +2007,7 @@ body {
   display: inline;
 }
 
-/* line 35, ../sass/style/regions/_header.scss */
+/* line 41, ../sass/style/regions/_header.scss */
 #header-bottom {
   background-color: #444444;
   color: #FEFEFE;
@@ -2067,129 +2059,31 @@ body {
   * @file
   * Content region styles
 */
-/* line 8, ../sass/style/regions/_footer.scss */
-body {
-  overflow: hidden;
-  background-color: #FEFEFE;
-}
-
-/* line 17, ../sass/style/regions/_footer.scss */
-#page-wrap {
+/* line 7, ../sass/style/regions/_footer.scss */
+#footer,
+#footer-top,
+#footer-bottom {
   width: 100%;
 }
 
-/* line 21, ../sass/style/regions/_footer.scss */
-#app {
-  z-index: 1;
-  overflow: visible;
-}
-
-/* line 32, ../sass/style/regions/_footer.scss */
-#console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-/* line 38, ../sass/style/regions/_footer.scss */
-#header {
-  z-index: 2;
-  height: 96px;
-  background: #FEFEFE;
-  -moz-box-shadow: 0 0 1em 0.1em #444444;
-  -webkit-box-shadow: 0 0 1em 0.1em #444444;
-  box-shadow: 0 0 1em 0.1em #444444;
-}
-
-/* line 45, ../sass/style/regions/_footer.scss */
-#header-top {
-  z-index: 4;
-  background: #111;
-  color: #FEFEFE;
-  border-bottom: #111 thin solid;
-  text-align: right;
-}
-/* line 54, ../sass/style/regions/_footer.scss */
-#header-top div {
-  display: inline;
-}
-/* line 58, ../sass/style/regions/_footer.scss */
-#header-top h2,
-#header-top h3,
-#header-top h4 {
-  color: #FEFEFE;
-  font-size: 1em;
-  display: inline;
-}
-
-/* line 67, ../sass/style/regions/_footer.scss */
-#header-bottom {
-  background-color: #444444;
-  color: #FEFEFE;
-}
-
-/* line 72, ../sass/style/regions/_footer.scss */
-#console {
-  padding: 1em 1.4em;
-}
-
-/* line 76, ../sass/style/regions/_footer.scss */
-#content,
-#sidebar-left,
-#sidebar-right,
-#footer {
-  position: relative;
-  float: left;
-  display: block;
-}
-
-/* line 85, ../sass/style/regions/_footer.scss */
-#content {
-  z-index: 2;
-}
-
-/* line 95, ../sass/style/regions/_footer.scss */
-#comments {
-  text-align: center;
-}
-/* line 98, ../sass/style/regions/_footer.scss */
-#comments form {
-  text-align: left;
-}
-
-/* line 103, ../sass/style/regions/_footer.scss */
-#sidebar-left,
-#sidebar-right {
-  background: #f1f1f1;
-}
-/* line 107, ../sass/style/regions/_footer.scss */
-#sidebar-left h3,
-#sidebar-right h3 {
-  margin: 0;
-  padding: .4em;
-  font-size: 1.2em;
-  color: #444444;
-  background-color: #bbbab7;
-}
-
-/* line 123, ../sass/style/regions/_footer.scss */
+/* line 13, ../sass/style/regions/_footer.scss */
 #footer {
   background: #444444;
   color: #FEFEFE;
 }
-/* line 128, ../sass/style/regions/_footer.scss */
+/* line 18, ../sass/style/regions/_footer.scss */
 #footer p {
   color: #FEFEFE;
 }
 
-/* line 133, ../sass/style/regions/_footer.scss */
+/* line 23, ../sass/style/regions/_footer.scss */
 #footer-top {
   font-size: 0.75em;
   background: #444444;
   color: #f1f1f1;
 }
 
-/* line 140, ../sass/style/regions/_footer.scss */
+/* line 30, ../sass/style/regions/_footer.scss */
 #footer-bottom {
   font-size: 0.75em;
   background: #444444;
@@ -2197,7 +2091,7 @@ body {
   border-top: thin solid;
 }
 
-/* line 147, ../sass/style/regions/_footer.scss */
+/* line 37, ../sass/style/regions/_footer.scss */
 #copyright {
   display: block;
   padding: 0.75em 1.4em 0.75em;

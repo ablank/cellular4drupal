@@ -64,7 +64,7 @@ function cellular_preprocess_page(&$vars) {
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
-  !empty($copyright) ? $vars['page']['copyright'] = "&copy; " . date("Y") . " $copyright" : NULL;
+  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
 }
 
 /**

@@ -197,7 +197,7 @@
 
       <?php endif; ?>
       <?php if ($page['content_top']) : ?>
-        <div id="content-top" class="cell">
+        <div id="content-top">
           <?php print render($page['content_top']); ?>
         </div>
 
@@ -215,7 +215,7 @@
 
              ?>
              <?php if ($page['content_bottom']) : ?>
-          <div id="content-bottom" class="cell">
+          <div id="content-bottom">
             <?php print render($page['content_bottom']); ?>
           </div>
 
@@ -251,10 +251,10 @@
   endif;
 
   ?>
-  <div id="footer" class="cell">
+  <div id="footer">
 
     <?php if ($page['footer_top']) : ?>
-      <div id="footer-top" class="cell">
+      <div id="footer-top">
         <?php print render($page['footer_top']); ?>
       </div>
 
@@ -265,7 +265,7 @@
     endif;
 
     ?>
-    <div id="footer-bottom" class="cell">
+    <div id="footer-bottom">
       <?php if ($page['footer_bottom']) : ?>
         <?php print render($page['footer_bottom']); ?>
       <?php endif; ?>

@@ -8,12 +8,12 @@
 /////
 .cell,
 #{$cells} {
+  z-index: 1;
   position: relative;
   float: left;
   display: block;
   margin: $cell_margin;
   padding: $cell_padding;
-  z-index: 1;
   @include transition();
   &.center {
     float: none;
@@ -28,13 +28,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  text-align: center;
 }
 
 @each $cell in $grid {
   .cell-#{$cell} {
     width: unquote('#{$cell}%');
-    text-align: left;
   }
 }
 
