@@ -859,7 +859,7 @@ p.center {
   font-weight: 700;
   src: local("Quicksand Bold"), local("Quicksand-Bold"), url("//themes.googleusercontent.com/static/fonts/quicksand/v2/32nyIRHyCu6iqEka_hbKsnhCUOGz7vYGh680lGh-uXM.woff") format("woff");
 }
-/* line 20, ../sass/typography/_base.scss */
+/* line 20, ../sass/style/_typography.scss */
 body {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
@@ -871,7 +871,7 @@ body {
   color: #111;
 }
 
-/* line 31, ../sass/typography/_base.scss */
+/* line 31, ../sass/style/_typography.scss */
 p {
   display: block;
   max-width: 32em;
@@ -880,12 +880,12 @@ p {
   color: #111;
 }
 
-/* line 39, ../sass/typography/_base.scss */
+/* line 39, ../sass/style/_typography.scss */
 small {
   font-size: 0.75em;
 }
 
-/* line 43, ../sass/typography/_base.scss */
+/* line 43, ../sass/style/_typography.scss */
 a {
   color: #29B4DE;
   text-decoration: none;
@@ -896,11 +896,11 @@ a {
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 50, ../sass/typography/_base.scss */
+/* line 50, ../sass/style/_typography.scss */
 a:visited {
   color: #16708b;
 }
-/* line 54, ../sass/typography/_base.scss */
+/* line 54, ../sass/style/_typography.scss */
 a:hover, a:active, a:focus {
   outline: thin dotted;
   outline: .4em -webkit-focus-ring-color;
@@ -908,12 +908,12 @@ a:hover, a:active, a:focus {
   text-decoration: underline;
   color: #81d3ec;
 }
-/* line 64, ../sass/typography/_base.scss */
+/* line 64, ../sass/style/_typography.scss */
 a:hover {
   outline: 0;
 }
 
-/* line 69, ../sass/typography/_base.scss */
+/* line 69, ../sass/style/_typography.scss */
 h1,
 h2,
 h3,
@@ -929,7 +929,7 @@ h6 {
   padding: 0 0 0 1em;
 }
 
-/* line 84, ../sass/typography/_base.scss */
+/* line 84, ../sass/style/_typography.scss */
 h1 {
   margin: 0;
   padding: 1.4em 5% 1em;
@@ -940,37 +940,37 @@ h1 {
   border: none;
 }
 
-/* line 94, ../sass/typography/_base.scss */
+/* line 94, ../sass/style/_typography.scss */
 h2 {
   font-size: 1.92em;
   color: #bbbab7;
 }
 
-/* line 99, ../sass/typography/_base.scss */
+/* line 99, ../sass/style/_typography.scss */
 h3 {
   font-size: 1.68em;
   color: #898883;
 }
 
-/* line 104, ../sass/typography/_base.scss */
+/* line 104, ../sass/style/_typography.scss */
 h4 {
   font-size: 1.44em;
   color: #555451;
 }
 
-/* line 109, ../sass/typography/_base.scss */
+/* line 109, ../sass/style/_typography.scss */
 h5 {
   font-size: 1.2em;
   color: #21201f;
 }
 
-/* line 114, ../sass/typography/_base.scss */
+/* line 114, ../sass/style/_typography.scss */
 h6 {
   font-size: 0.96em;
   color: black;
 }
 
-/* line 119, ../sass/typography/_base.scss */
+/* line 119, ../sass/style/_typography.scss */
 sub,
 sup {
   position: relative;
@@ -979,17 +979,17 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 127, ../sass/typography/_base.scss */
+/* line 127, ../sass/style/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 131, ../sass/typography/_base.scss */
+/* line 131, ../sass/style/_typography.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 135, ../sass/typography/_base.scss */
+/* line 135, ../sass/style/_typography.scss */
 q,
 quote {
   font-size: 1.4em;
@@ -997,7 +997,7 @@ quote {
   color: #444444;
 }
 
-/* line 142, ../sass/typography/_base.scss */
+/* line 142, ../sass/style/_typography.scss */
 blockquote {
   display: block;
   font-size: 1.4em;
@@ -1008,21 +1008,21 @@ blockquote {
   color: #444444;
   border-left: 0.3em solid;
 }
-/* line 152, ../sass/typography/_base.scss */
+/* line 152, ../sass/style/_typography.scss */
 blockquote:before {
   content: "\201C";
 }
-/* line 155, ../sass/typography/_base.scss */
+/* line 155, ../sass/style/_typography.scss */
 blockquote:after {
   content: "\201D";
 }
 
-/* line 160, ../sass/typography/_base.scss */
+/* line 160, ../sass/style/_typography.scss */
 caption {
   text-align: left;
 }
 
-/* line 164, ../sass/typography/_base.scss */
+/* line 164, ../sass/style/_typography.scss */
 code,
 pre {
   display: block;
@@ -1036,7 +1036,7 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 177, ../sass/typography/_base.scss */
+/* line 177, ../sass/style/_typography.scss */
 abbr,
 acronym {
   border: 0;
@@ -1044,212 +1044,6 @@ acronym {
   font-weight: bold;
 }
 
-/**
-  * @file
-  * Typography
-*/
-@media screen and (max-width: 650px) {
-  /* line 8, ../sass/typography/_mobile.scss */
-  body {
-    font-size: 100%;
-    line-height: 1.4em;
-    color: #111;
-  }
-
-  /* line 14, ../sass/typography/_mobile.scss */
-  p {
-    max-width: 32em;
-    margin: 0 auto;
-    padding: 0 1em 0.7em;
-  }
-
-  /* line 20, ../sass/typography/_mobile.scss */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.1em;
-    margin: .4em auto;
-    padding: .4em;
-    text-align: center;
-  }
-
-  /* line 32, ../sass/typography/_mobile.scss */
-  h1 {
-    margin: 0;
-    padding: 1.4em 5% 1em;
-    font-size: 2.4em;
-    font-size: 2.4rem;
-    border: none;
-  }
-
-  /* line 40, ../sass/typography/_mobile.scss */
-  h2 {
-    font-size: 1.92em;
-  }
-
-  /* line 44, ../sass/typography/_mobile.scss */
-  h3 {
-    font-size: 1.68em;
-  }
-
-  /* line 48, ../sass/typography/_mobile.scss */
-  h4 {
-    font-size: 1.44em;
-  }
-
-  /* line 52, ../sass/typography/_mobile.scss */
-  h5 {
-    font-size: 1.2em;
-  }
-
-  /* line 56, ../sass/typography/_mobile.scss */
-  h6 {
-    font-size: 0.96em;
-  }
-
-  /* line 60, ../sass/typography/_mobile.scss */
-  sub,
-  sup {
-    font-size: .75em;
-  }
-
-  /* line 65, ../sass/typography/_mobile.scss */
-  sup {
-    top: -0.5em;
-  }
-
-  /* line 69, ../sass/typography/_mobile.scss */
-  sub {
-    bottom: -0.25em;
-  }
-
-  /* line 73, ../sass/typography/_mobile.scss */
-  q,
-  quote {
-    font-size: 1.4em;
-  }
-
-  /* line 78, ../sass/typography/_mobile.scss */
-  blockquote {
-    font-size: 1.4em;
-    margin: 0.3em 1.4em;
-    padding: 1em;
-    border-left: 0.3em solid;
-  }
-
-  /* line 85, ../sass/typography/_mobile.scss */
-  code,
-  pre {
-    margin: 1em auto;
-    padding: 1em;
-  }
-}
-/**
-  * @file
-  * Typography
-*/
-@media screen and (min-width: 2000px) {
-  /* line 8, ../sass/typography/_large.scss */
-  body {
-    font-size: 100%;
-    line-height: 1.4em;
-    color: #111;
-  }
-
-  /* line 14, ../sass/typography/_large.scss */
-  p {
-    max-width: 32em;
-    margin: 0 auto;
-    padding: 0 1em 0.7em;
-  }
-
-  /* line 20, ../sass/typography/_large.scss */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.1em;
-    margin: 1em auto .2em auto;
-    padding: 1em;
-    text-align: center;
-  }
-
-  /* line 32, ../sass/typography/_large.scss */
-  h1 {
-    margin: 0;
-    padding: 1.4em 5% 1em;
-    font-size: 2.4em;
-    font-size: 2.4rem;
-    border: none;
-  }
-
-  /* line 40, ../sass/typography/_large.scss */
-  h2 {
-    font-size: 1.92em;
-  }
-
-  /* line 44, ../sass/typography/_large.scss */
-  h3 {
-    font-size: 1.68em;
-  }
-
-  /* line 48, ../sass/typography/_large.scss */
-  h4 {
-    font-size: 1.44em;
-  }
-
-  /* line 52, ../sass/typography/_large.scss */
-  h5 {
-    font-size: 1.2em;
-  }
-
-  /* line 56, ../sass/typography/_large.scss */
-  h6 {
-    font-size: 0.96em;
-  }
-
-  /* line 60, ../sass/typography/_large.scss */
-  sub,
-  sup {
-    font-size: .75em;
-  }
-
-  /* line 65, ../sass/typography/_large.scss */
-  sup {
-    top: -0.5em;
-  }
-
-  /* line 69, ../sass/typography/_large.scss */
-  sub {
-    bottom: -0.25em;
-  }
-
-  /* line 73, ../sass/typography/_large.scss */
-  q,
-  quote {
-    font-size: 1.4em;
-  }
-
-  /* line 78, ../sass/typography/_large.scss */
-  blockquote {
-    font-size: 1.4em;
-    margin: 0.3em 1.4em;
-    padding: 1em;
-    border-left: 0.3em solid;
-  }
-
-  /* line 85, ../sass/typography/_large.scss */
-  code,
-  pre {
-    margin: 1em auto;
-    padding: 1em;
-  }
-}
 /**
  * @file
  * Misc. class styles
@@ -1931,31 +1725,31 @@ acronym {
   * @file
   * Content region styles
 */
-/* line 7, ../sass/style/regions/_common.scss */
+/* line 7, ../sass/style/regions/_primary.scss */
 #console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-/* line 15, ../sass/style/regions/_common.scss */
+/* line 15, ../sass/style/regions/_primary.scss */
 body {
   overflow: hidden;
   background-color: #FEFEFE;
 }
 
-/* line 24, ../sass/style/regions/_common.scss */
+/* line 24, ../sass/style/regions/_primary.scss */
 #page-wrap {
   width: 100%;
 }
 
-/* line 28, ../sass/style/regions/_common.scss */
+/* line 28, ../sass/style/regions/_primary.scss */
 #app {
   z-index: 1;
   overflow: visible;
 }
 
-/* line 38, ../sass/style/regions/_common.scss */
+/* line 38, ../sass/style/regions/_primary.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -2113,7 +1907,7 @@ body {
   * Styling for mobile devices included in style.css
 */
 @media screen and (max-width: 650px) {
-  /* line 21, ../sass/style/_mq-mobile.scss */
+  /* line 9, ../sass/style/media-query/_mobile.scss */
   #nav ul.menu {
     visibility: hidden;
   }
@@ -2226,50 +2020,4 @@ body {
 /* line 35, ../sass/style/_svg.scss */
 .svg #breadcrumb li.first a {
   background-image: url(../assets/icons/min/svg/home.svg);
-}
-
-/**
-  * @file
-  * Parallax styling.
-*/
-/* line 9, ../sass/style/_parallax.scss */
-.parallax-panels .panel-content {
-  position: relative;
-  z-index: 1;
-}
-/* line 13, ../sass/style/_parallax.scss */
-.parallax-panels .panel-content:last-child {
-  margin-bottom: 0;
-}
-/* line 17, ../sass/style/_parallax.scss */
-.parallax-panels .panel-content.parallax {
-  overflow: hidden;
-  position: relative;
-  height: 600px;
-  height: 100vh;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-/* line 32, ../sass/style/_parallax.scss */
-.parallax.g1 {
-  background-image: url("../assets/images/jpg/1.jpg");
-}
-/* line 36, ../sass/style/_parallax.scss */
-.parallax.g2 {
-  background-image: url("../assets/images/jpg/2.jpg");
-}
-/* line 40, ../sass/style/_parallax.scss */
-.parallax.g3 {
-  background-image: url("../assets/images/jpg/3.jpg");
-}
-/* line 44, ../sass/style/_parallax.scss */
-.parallax.g4 {
-  background-image: url("../assets/images/jpg/4.jpg");
-}
-/* line 48, ../sass/style/_parallax.scss */
-.parallax.g5 {
-  background-image: url("../assets/images/jpg/5.jpg");
 }
