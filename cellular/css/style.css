@@ -1450,17 +1450,6 @@ acronym {
   * CellularUI : jMMenu
 */
 /* line 8, ../sass/cellular-ui/_jMmenu.scss */
-.jMmenu-inactive #page-wrap,
-.jMmenu-active #page-wrap {
-  -moz-transition: all 400ms ease-out;
-  -o-transition: all 400ms ease-out;
-  -webkit-transition: all 400ms ease-out;
-  transition: all 400ms ease-out;
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-/* line 14, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive #nav,
 .jMmenu-active #nav {
   float: right;
@@ -1487,7 +1476,7 @@ acronym {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 34, ../sass/cellular-ui/_jMmenu.scss */
+/* line 28, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu,
 .jMmenu-active .jMmenu.menu {
   position: absolute;
@@ -1505,13 +1494,13 @@ acronym {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-/* line 46, ../sass/cellular-ui/_jMmenu.scss */
+/* line 40, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu ul,
 .jMmenu-active .jMmenu.menu ul {
   margin: 0 0 0 .4em;
   background-color: rgba(17, 17, 17, 0.4);
 }
-/* line 51, ../sass/cellular-ui/_jMmenu.scss */
+/* line 45, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu li,
 .jMmenu-active .jMmenu.menu li {
   display: block;
@@ -1519,7 +1508,7 @@ acronym {
   list-style: none;
   max-width: 100%;
 }
-/* line 58, ../sass/cellular-ui/_jMmenu.scss */
+/* line 52, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu a,
 .jMmenu-inactive .jMmenu.menu a:visited,
 .jMmenu-active .jMmenu.menu a,
@@ -1536,7 +1525,7 @@ acronym {
   border-bottom: 1px solid;
   background-color: rgba(17, 17, 17, 0.2);
 }
-/* line 72, ../sass/cellular-ui/_jMmenu.scss */
+/* line 66, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu a.active, .jMmenu-inactive .jMmenu.menu a:active, .jMmenu-inactive .jMmenu.menu a:focus, .jMmenu-inactive .jMmenu.menu a:hover,
 .jMmenu-inactive .jMmenu.menu a:visited.active,
 .jMmenu-inactive .jMmenu.menu a:visited:active,
@@ -1553,7 +1542,7 @@ acronym {
   color: #29B4DE;
   background-color: #111;
 }
-/* line 87, ../sass/cellular-ui/_jMmenu.scss */
+/* line 81, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-right .menu.jMmenu, .jMmenu-inactive.push-left .menu.jMmenu, .jMmenu-inactive.slide-right .menu.jMmenu, .jMmenu-inactive.slide-left .menu.jMmenu,
 .jMmenu-active.push-right .menu.jMmenu,
 .jMmenu-active.push-left .menu.jMmenu,
@@ -1562,44 +1551,44 @@ acronym {
   top: 0;
   bottom: 0;
 }
-/* line 96, ../sass/cellular-ui/_jMmenu.scss */
+/* line 90, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-left .menu.jMmenu, .jMmenu-inactive.slide-left .menu.jMmenu,
 .jMmenu-active.push-left .menu.jMmenu,
 .jMmenu-active.slide-left .menu.jMmenu {
   left: 0;
 }
-/* line 104, ../sass/cellular-ui/_jMmenu.scss */
+/* line 98, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-right .menu.jMmenu, .jMmenu-inactive.slide-right .menu.jMmenu,
 .jMmenu-active.push-right .menu.jMmenu,
 .jMmenu-active.slide-right .menu.jMmenu {
   right: 0;
 }
 
-/* line 112, ../sass/cellular-ui/_jMmenu.scss */
+/* line 106, ../sass/cellular-ui/_jMmenu.scss */
 .push-left #page-wrap {
   float: right;
 }
 
-/* line 119, ../sass/cellular-ui/_jMmenu.scss */
+/* line 113, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-active #nav {
   background-position: right center;
 }
-/* line 124, ../sass/cellular-ui/_jMmenu.scss */
+/* line 118, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-active .jMmenu.menu {
   width: 100%;
   max-width: 50%;
   opacity: 1;
 }
-/* line 133, ../sass/cellular-ui/_jMmenu.scss */
+/* line 127, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-active.slide-right #nav {
   position: absolute;
   right: 51%;
 }
-/* line 142, ../sass/cellular-ui/_jMmenu.scss */
+/* line 136, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-active.push-right #page-wrap, .jMmenu-active.push-left #page-wrap {
   width: 50%;
 }
-/* line 149, ../sass/cellular-ui/_jMmenu.scss */
+/* line 143, ../sass/cellular-ui/_jMmenu.scss */
 .jMmenu-active.push-left #page-wrap {
   float: right;
 }

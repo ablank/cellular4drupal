@@ -15,22 +15,20 @@
 @import "base/media";
 @import "base/grid";
 
-@import "typography/base";
-@import "typography/mobile";
-@import "typography/large";
+@import "style/typography";
 
 @import "style/classes";
 @import "style/branding";
 @import "style/navigation";
 @import "cellular-ui/cellular-ui";
-@import "style/content-regions";
+@import "style/regions";
 @import "style/pages";
 
-@import "style/mq-mobile";
-@import "style/mq-narrow";
-@import "style/mq-large";
+@import "style/media-query/mobile";
+@import "style/media-query/narrow";
+@import "style/media-query/large";
 
 @import "style/icons";
 @import "style/social";
 @import "style/svg";
-@import "style/parallax";
+// @import "style/parallax";

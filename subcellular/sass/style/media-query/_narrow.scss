@@ -6,14 +6,10 @@
 // Styling
 @media screen and (min-width: $res_mobile) and (max-width: $res_narrow) {
 
-  #page-wrap {
-  }
+   #nav {
+    ul.menu {
 
-  #content-wrap {
-  }
-
-  #header {
-    //height: auto;
+    }
   }
 
   #logo {
@@ -25,6 +21,63 @@
     }
   }
 
+  //////
+
+  body {
+
+  }
+
+  p {
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+  }
+
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+//////
+
+  #page-wrap {
+
+  }
+
+  #content-wrap {
+
+  }
+
+  #header {
+
+  }
+
   #app {
   }
 
@@ -33,4 +86,5 @@
 
   #content {
   }
+
 }

@@ -112,7 +112,7 @@
 
     ?>
     <div id="content-wrap">
-      <div id="content" class="<?php print $page['content_class']; ?>">
+      <div id="content">
 
         <div class="error-message">
           <?php

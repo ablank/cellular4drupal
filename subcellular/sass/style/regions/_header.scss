@@ -3,6 +3,12 @@
   * Content region styles
 */
 
+#header,
+#header-top,
+#header-bottom {
+  width: 100%;
+}
+
 #header {
   z-index: 2;
   height: 96px;

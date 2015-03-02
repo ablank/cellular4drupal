@@ -1,16 +1,13 @@
 /**
-  * @file
-  * Styling for mobile devices included in style.css
-*/
+ * @file
+ * Styling for large-screen devices included in style.css
+ */
 
-@media screen and (max-width: $res_mobile) {
+@media screen and (min-width: $res_large) {
 
    #nav {
     ul.menu {
-      // Remove this if not using the CellularUI jMmenu();
-      // Hides navigation to prevent jankiness caused by js changing the DOM
-      // after html & styles are loaded.
-      visibility: hidden;
+
     }
   }
 
@@ -22,11 +19,11 @@
     & > a {
     }
   }
-  
+
   //////
 
   body {
-
+    // background: url(../assets/images/large-background-body.png) no-repeat;
   }
 
   p {
@@ -65,11 +62,11 @@
   h6 {
 
   }
-  
+
 //////
 
   #page-wrap {
-    
+
   }
 
   #content-wrap {
@@ -77,7 +74,7 @@
   }
 
   #header {
-    
+
   }
 
   #app {

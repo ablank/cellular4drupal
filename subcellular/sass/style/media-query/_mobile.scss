@@ -4,20 +4,8 @@
 */
 
 @media screen and (max-width: $res_mobile) {
-  //////
-  #page-wrap {
-    
-  }
 
-  #content-wrap {
-
-  }
-
-  #header {
-    //height: auto;
-  }
-
-  #nav {
+   #nav {
     ul.menu {
       // Remove this if not using the CellularUI jMmenu();
       // Hides navigation to prevent jankiness caused by js changing the DOM
@@ -33,6 +21,63 @@
 
     & > a {
     }
+  }
+  
+  //////
+
+  body {
+
+  }
+
+  p {
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+  }
+
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+  
+//////
+
+  #page-wrap {
+    
+  }
+
+  #content-wrap {
+
+  }
+
+  #header {
+    
   }
 
   #app {
