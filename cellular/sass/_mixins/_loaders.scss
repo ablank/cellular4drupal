@@ -2,13 +2,15 @@
   * @file
   * CSS loading indicators.
   * http://codepen.io/TaniaLD/pen/oKxep
-* http://projects.lukehaas.me/css-loaders/
+  * http://projects.lukehaas.me/css-loaders/
+  * https://github.com/jh3y/whirl/
 */
 
 $i_color: #FFF;
 $i_size: 1em;
 $i_border: 0.3em;
 $i_speed: 2s;
+$i_ease: linear;
 @mixin loader($name,$size: $i_size, $color: $i_color, $speed: $i_speed) {
   /**/
   position: relative;
@@ -16,7 +18,7 @@ $i_speed: 2s;
   z-index: 10;
   width: $size;
   height: $size;
-  //margin: 0 ($size * .5);	
+  //margin: 0 ($size * .5);
   font-family: sans-serif;
   font-weight: lighter;
   @if $name == 'bar' {
@@ -90,7 +92,7 @@ $i_speed: 2s;
 
 @mixin clock($size, $color, $speed) {
   $border: ($size * 0.1);
-  $ease: linear;
+  $ease: $i_ease;
   /**/
   background-color: rgba($color, 0.2);
   border-radius: 50%;
@@ -155,7 +157,7 @@ $i_speed: 2s;
 @mixin dots($size, $color, $speed) {
   $size: $size / 3;
   $delay: $speed /3;
-  $ease: ease;
+  $ease: $i_ease;
   /**/
   left: $size;
   width: $size;
@@ -185,9 +187,7 @@ $i_speed: 2s;
   }
 }
 
-@mixin hourglass($size,
-$color,
-$speed) {
+@mixin hourglass($size,$color,$speed) {
   $border: ($size * 0.1);
   $ease: ease-in-out;
   /**/
@@ -225,7 +225,7 @@ $speed) {
 @mixin prop($size,$color,$speed) {
   $bsize: $size * 0.1;
   $border: $bsize solid $color;
-  $ease: linear;
+  $ease: $i_ease;
   //$p: ($size / 2) + ($bsize/2);
   $p: ($size / 2) + ($bsize);
   /**/
@@ -258,11 +258,9 @@ $speed) {
   }
 }
 
-@mixin ring($size,
-$color,
-$speed) {
+@mixin ring($size,$color,$speed) {
   $border: ($size * 0.1);
-  $ease: linear;
+  $ease: $i_ease;
   /**/
   height: $size;
   width: $size;
@@ -286,7 +284,8 @@ $speed) {
   $opacity: 0.2;
   $border: $size * .2;
   $c2: rgba($color, $opacity);
-    /**/
+  $ease: $i_ease;
+  /**/
   width: $size;
   height: $size;
   border-radius: 50%;
@@ -294,7 +293,7 @@ $speed) {
   border-right: $border solid $c2;
   border-bottom: $border solid $c2;
   border-left: $border solid $color;
-  animation: spin $speed linear infinite;
+  animation: spin $speed $ease infinite;
   &:after {
     width: $size;
     height: $size;
@@ -303,6 +302,8 @@ $speed) {
 }
 
 @mixin spinna($size, $color, $speed) {
+  $ease: $i_ease;
+  /**/
   box-sizing: border-box;
   width: $size;
   height: $size;
@@ -312,7 +313,7 @@ $speed) {
   border-style: double;
   border-color: transparent $color;
   transform-origin: 50% 50%;
-  animation: spin $speed linear infinite;
+  animation: spin $speed $ease infinite;
   &:before, &:after {}
   &:before {}
   &:after {}
@@ -322,22 +323,23 @@ $speed) {
   $height: $size * 0.66;
   $size: $size * .25;
   $delay : $speed/3;
+  $ease : $i_ease;
   /**/
   left: $size;
   width: $size;
   height: $height;
   background-color: $color;
   transform-origin: 50% 0%;
-  animation: bounce $speed linear infinite;
+  animation: bounce $speed $ease infinite;
   animation-delay: $delay;
   &:before, &:after {
     content: "";
     position: absolute;
     width: $size;
     height: $height;
-    background-color: $color;   
-    transform-origin: 50% 0%; 
-    animation: bounce $speed linear infinite;
+    background-color: $color;
+    transform-origin: 50% 0%;
+    animation: bounce $speed $ease infinite;
   }
   &:before {
     left: -120%;
@@ -365,11 +367,11 @@ $height: 100%;
 }
 
 @keyframes bounce {
-      0%,  100% {
-        transform: translateY(0);
+  0%,  100% {
+    transform: translateY(0);
   }
-      50% {
-        transform: translateY(1em);
+  50% {
+    transform: translateY(1em);
   }
 }
 
@@ -441,17 +443,17 @@ $height: 100%;
     left: 0;
     opacity: $opacity;
   }
-  25%{ 
+  25%{
     left: -150%;
-    opacity: 0.8; 
+    opacity: 0.8;
   }
   50% {
     left: 0;
     opacity: $opacity;
   }
-   75% {
+  75% {
     left: 150%;
-    opacity: 0.8;  
+    opacity: 0.8;
   }
 }
 
@@ -459,10 +461,10 @@ $height: 100%;
 
 
 @keyframes scaled {
-      0%,100% {
-        transform: scale(0.0);
-      } 
-    50% {
-        transform: scale(1.0);
-      }
-    }
+  0%,100% {
+    transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+}

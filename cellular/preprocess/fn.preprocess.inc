@@ -218,7 +218,7 @@ function cellular_test_sidebar(&$vars) {
   empty($vars['page']['sidebar_right']) ? NULL : $sidebar_right = 1;
 
   if (!isset($sidebar_left) && !isset($sidebar_right)) {
-    $vars['page']['content_class'] = '';
+    $vars['page']['content_class'] = theme_get_setting('content_class_no_sidebar');
   }
   elseif (isset($sidebar_left) && isset($sidebar_right)) {
     $vars['page']['content_class'] = theme_get_setting('content_class_dual_sidebars');

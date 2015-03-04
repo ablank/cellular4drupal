@@ -29,7 +29,8 @@
   * @file
   * CSS loading indicators.
   * http://codepen.io/TaniaLD/pen/oKxep
-* http://projects.lukehaas.me/css-loaders/
+  * http://projects.lukehaas.me/css-loaders/
+  * https://github.com/jh3y/whirl/
 */
 /*--------------------------------------------*/
 /*--------------------------------------------*/
@@ -208,7 +209,7 @@ select.ctools-ajaxing {
   border-radius: 50%;
   border: 0.1em solid rgba(41, 180, 222, 0.8);
 }
-/* line 98, ../sass/_mixins/_loaders.scss */
+/* line 100, ../sass/_mixins/_loaders.scss */
 div.ctools-ajaxing:before, div.ctools-ajaxing:after,
 a.ctools-ajaxing:before,
 a.ctools-ajaxing:after,
@@ -226,7 +227,7 @@ select.ctools-ajaxing:after {
   width: 0.05em;
   transform-origin: 0 0 1em;
 }
-/* line 107, ../sass/_mixins/_loaders.scss */
+/* line 109, ../sass/_mixins/_loaders.scss */
 div.ctools-ajaxing:before,
 a.ctools-ajaxing:before,
 input.ctools-ajaxing:before,
@@ -235,7 +236,7 @@ select.ctools-ajaxing:before {
   height: 0.5em;
   animation: spin 2s linear infinite;
 }
-/* line 112, ../sass/_mixins/_loaders.scss */
+/* line 114, ../sass/_mixins/_loaders.scss */
 div.ctools-ajaxing:after,
 a.ctools-ajaxing:after,
 input.ctools-ajaxing:after,

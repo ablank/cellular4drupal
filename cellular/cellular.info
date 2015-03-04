@@ -48,7 +48,7 @@ settings[login_block_orientation]   = vertical
 
 ;----------// Styles
 settings[remove_drupal_css]             = select
-settings[content_class_no_sidebars]     = cell
+settings[content_class_no_sidebar]     = cell-100
 settings[content_class_single_sidebar]  = cell-70
 settings[content_class_dual_sidebars]   = cell-60
 settings[sidebar_class_single_sidebar]  = cell-30

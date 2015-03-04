@@ -21,13 +21,14 @@
     margin: 0;
     max-width: 100%;
     padding: .6em 1em;
-    background: $title_background;
+    background-color: $title_background;
     color: $title_color;
     z-index: 2;
     @include transition();
 
     &:hover {
-      background: $active_color;
+      color: $title_color;
+      background-color: $active_color;
     }
     
     a,
