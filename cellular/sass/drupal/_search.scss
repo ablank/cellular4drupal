@@ -47,7 +47,7 @@ form.site-search {
       background-repeat: no-repeat;
       background-image: url('../assets/icons/min/png/search.png');
       background-image: url('../assets/icons/min/svg/search.svg');
-      background-color: ;
+      background-color: transparent;
       border: $grey 1px solid;
       @include border-radius(50%);
       @include transition();

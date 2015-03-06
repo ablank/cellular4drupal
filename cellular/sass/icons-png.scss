@@ -3,6 +3,7 @@
  * Fallback PNG icons for browsers w/o SVG support
  */
 
+/*
 @import "variables";
 
 @each $icon in $ui_icons {
@@ -22,3 +23,4 @@
     background-image: url('../assets/icons/min/png/#{$icon}.png');
   }
 }
+*/

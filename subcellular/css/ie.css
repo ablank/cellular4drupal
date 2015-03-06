@@ -2,172 +2,46 @@
  * @file
  * Old Internet Explorer is breakin internetz.
  */
-/**
-  * @file
-  // Cellular SASS mixins
-  //    tread with caution
-  //                      ^    ^
-  //                     / \  //\
-  //       |\___/|      /   \//  \
-  //       /O  O  \__  /    //  | \
-  //      /     /  \/_/    //   |  \
-  //      @___@'    \/_   //    |   \
-  //         |       \/_ //     |    \
-  //         |        \///      |     \
-  //        _|_ /   )  //       |      \
-  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
-  //       ,-{        _      `-.|.-~-.           .~         `.
-  //        '/\      /                 ~-. _ .-~      .-~^-.  \
-  //           `.   {            }                   /      \  \
-  //         .----~-.\        \-'                 .~   `      \  `. \^-_
-  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
-  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
-  //
-  /////
-*/
-/**
-  * @file
-  * CSS loading indicators.
-  * http://codepen.io/TaniaLD/pen/oKxep
-* http://projects.lukehaas.me/css-loaders/
-*/
-/*--------------------------------------------*/
-/*--------------------------------------------*/
-@keyframes alpha {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-@keyframes bounce {
-  0%,  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(1em);
-  }
-}
-@keyframes flip {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/*---------------------------------------------------------*/
-@keyframes bar {
-  0% {
-    width: 0px;
-  }
-  70% {
-    width: 100%;
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 0px;
-  }
-}
-/*---------------------------------------------------------*/
-@keyframes convergeA {
-  0%, 100% {
-    left: 0;
-    opacity: 0.3;
-  }
-  50% {
-    left: -150%;
-    opacity: 0.8;
-  }
-}
-@keyframes convergeB {
-  0%, 100% {
-    left: 0;
-    opacity: 0.3;
-  }
-  50% {
-    left: 150%;
-    opacity: 0.8;
-  }
-}
-/*---------------------------------------------------------*/
-@keyframes orbit {
-  0%, 100% {
-    left: 0;
-    opacity: 0.3;
-  }
-  25% {
-    left: -150%;
-    opacity: 0.8;
-  }
-  50% {
-    left: 0;
-    opacity: 0.3;
-  }
-  75% {
-    left: 150%;
-    opacity: 0.8;
-  }
-}
-/*---------------------------------------------------------*/
-@keyframes scaled {
-  0%,100% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
-/* line 7, ../sass/ie.scss */
+/*
+@import "variables";
+
 body,
 * {
   word-wrap: break-word;
   zoom: 1.0;
 }
 
-/* line 13, ../sass/ie.scss */
 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 17, ../sass/ie.scss */
 legend {
-  color: #f1f1f1;
+  // because legend doesn't inherit in IE
+  color: $light_grey;
 }
 
-/* line 22, ../sass/ie.scss */
 input,
 textarea,
 select {
+  // to enable resizing for IE
   *font-size: 100%;
 }
 
-/* line 31, ../sass/ie.scss */
-input[type=checkbox], input[type=radio] {
-  display: inline;
-  margin: 0.3em;
-  vertical-align: middle;
-}
-/* line 37, ../sass/ie.scss */
-input[type=checkbox]:focus, input[type=radio]:focus {
-  border: thin solid;
+input {
+
+  &[type=checkbox],
+  &[type=radio] {
+    display: inline;
+    margin: $tiny;
+    vertical-align: middle;
+
+    &:focus {
+      border: $border;
+    }
+
+  }
 }
 
-/* line 44, ../sass/ie.scss */
 .cell,
 .cell-90,
 .cell-80,
@@ -185,7 +59,8 @@ input[type=checkbox]:focus, input[type=radio]:focus {
   overflow: visible;
 }
 
-/* line 62, ../sass/ie.scss */
+// Custom styles
 .center {
   display: block;
 }
+*/
