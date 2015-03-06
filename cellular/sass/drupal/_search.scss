@@ -32,7 +32,7 @@ form.site-search {
     &[type="text"] {
       font-size: 1em;
       width: 12em;
-      background: transparent;
+      background: rgba($white, 0.4);
       border-bottom: $dark_grey .1em solid;
     }
 
@@ -47,7 +47,7 @@ form.site-search {
       background-repeat: no-repeat;
       background-image: url('../assets/icons/min/png/search.png');
       background-image: url('../assets/icons/min/svg/search.svg');
-      background-color: transparent;
+      background-color: ;
       border: $grey 1px solid;
       @include border-radius(50%);
       @include transition();
