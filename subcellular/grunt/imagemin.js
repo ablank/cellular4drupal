@@ -5,37 +5,34 @@
 
 module.exports = {
   options: {
-    cache: false
+    cache: false,
   },
-  jpg: {
+  images: {
     files: [
       {
         expand: true,
-        cwd: 'src/assets/',
-        src: ['**/*.jpg'],
-        dest: 'buildtest/assets/'
+        cwd: 'assets/images',
+        src: [
+          'gif/**/*.gif',
+          'jpg/**/*.[jpg, jpeg]',
+          'png/**/*.png'
+        ],
+        dest: 'assets/images/min/'
       }
     ]
   },
-  png: {
+  icons: {
     files: [
       {
         expand: true,
-        cwd: 'src/assets/',
-        src: ['**/*.png'],
-        dest: 'buildtest/assets/'
+        cwd: 'assets/icons',
+        src: [
+          'png/**/*.png',
+          'svg/**/*.svg'
+        ]
+        ,
+        dest: 'assets/icons/min/'
       }
     ]
-  },
-  svg: {
-    files: [
-      {
-        expand: true,
-        cwd: 'src/assets/',
-        src: ['**/*.svg'],
-        dest: 'buildtest/assets/'
-      }
-    ]
-  },
-
+  }
 };

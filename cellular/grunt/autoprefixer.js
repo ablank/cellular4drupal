@@ -9,8 +9,8 @@ module.exports = {
   all: {
     expand: true,
     flatten: true,
-    cwd: 'src/css',
-    src: '**/*.css',
-    dest: 'buildtest/css'
+    cwd: 'css',
+    src: '*.css',
+    dest: 'css'
   }
 };

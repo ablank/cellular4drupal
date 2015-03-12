@@ -3,55 +3,40 @@
  * Configure grunt uglify.
  */
 
-  module.exports = {
-
-    build: {
-      options: {
-        compress: true,
-        mangle: true,
-        beautify: false,
-        preserveComments: 'some',
-        wrap: true
-        // screwIE8: true
-      },
-      files: [{
-        'build/js/script.min.js': [ 
-          'buildtest/js/jquery.cellularUI.js',
-          'buildtest/js/plugins.js',
-          'buildtest/js/script.js'
-        ]
-        }]
+module.exports = {
+  prod: {
+    options: {
+      compress: true,
+      mangle: true,
+      beautify: false,
+      preserveComments: 'some',
+      wrap: true,
+      // screwIE8: true
     },
-    buildtest: {
-      options: {
-        compress: true,
-        mangle: true,
-        beautify: false,
-        preserveComments: 'some',
-        wrap: true
-        // screwIE8: true
-      },
-      files: [{
-        'buildtest/js/script.min.js': [ 
-          'buildtest/js/jquery.cellularUI.js',
-          'buildtest/js/plugins.js',
-          'buildtest/js/script.js'
-        ]
-        }]
-    },
-  prettybuildtest: {
+    files: [{
+        expand: true,
+        cwd: 'js',
+        src: ['*.js'],
+        dest: 'js/min'
+      }]
+  },
+  dev: {
     options: {
       compress: false,
       mangle: false,
       beautify: true,
       preserveComments: 'all',
-      wrap: true
+      wrap: true,
       // screwIE8: true
     },
     files: [{
-      'buildtest/js/jquery.cellularUI.js': 'src/js/CellularUI/jquery.cellularUI.js',
-      'buildtest/js/plugins.js': 'src/js/plugins.js',
-      'buildtest/js/script.js': 'src/js/script.js'
+        expand: true,
+        cwd: 'js',
+        src: [
+          '*.js',
+            //'!*.min.js'
+        ],
+        dest: 'js/dev'
       }]
   }
 };

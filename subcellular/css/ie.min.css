@@ -1,0 +1,32 @@
+*,
+body {
+  zoom: 1;
+  word-wrap: break-word;
+}img {
+  -ms-interpolation-mode: bicubic;
+}legend {
+  color: #f1f1f1;
+}input[type=checkbox],
+input[type=radio] {
+  display: inline;
+  margin: 0.3em;
+  vertical-align: middle;
+}input[type=checkbox]:focus,
+input[type=radio]:focus {
+  border: thin solid;
+}.cell-10,
+.cell-100,
+.cell-20,
+.cell-25,
+.cell-30,
+.cell-33,
+.cell-40,
+.cell-50,
+.cell-60,
+.cell-66,
+.cell-70,
+.cell-75,
+.cell-80,
+.cell-90 {
+  overflow: visible;
+}

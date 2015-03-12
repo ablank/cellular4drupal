@@ -1,0 +1,45 @@
+/**
+  * @file
+  * Content region styles
+*/
+
+// Set styles common to all regions from variables/content_regions
+#{$regions} {
+  margin: $region_margin;
+  padding: $region_padding;
+  border: $region_border;
+}
+
+//////
+
+body {
+  overflow: hidden;
+  background-color: $white;
+  //background-image: $body_img;
+  //@include gradient_rad($white, $white, $light_grey);
+  //background-repeat: repeat;
+  //background-attachment: fixed;
+}
+
+#page-wrap {
+  width: 100%;
+}
+
+#app {
+  z-index: 1;
+  overflow: visible;
+}
+
+#content-wrap {
+  // margin: 0 auto;
+  // max-width: 90%;
+}
+
+#content,
+#sidebar-left,
+#sidebar-right,
+#footer {
+  position: relative;
+  float: left;
+  display: block;
+}

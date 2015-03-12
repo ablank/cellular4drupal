@@ -7,10 +7,10 @@ module.exports = {
   options: {
     config: 'config/csscomb.json'
   },
-  css: {
+  all: {
     expand: true,
-    cwd: 'src/css',
-    src: ['**/*.css'],
-    dest: 'src/css'
+    cwd: 'css',
+    src: ['*.css'],
+    dest: 'css'
   }
 };

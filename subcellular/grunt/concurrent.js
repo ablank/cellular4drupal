@@ -5,25 +5,25 @@
 
 module.exports = {
   watch: ['watch'],
-  // Production Build.
-  build: [
-    'compass',
+  // Production
+  dist: [
     'concat',
-    'uglify',
-    'imagemin'
-    // 'svg2png'
-  ],
-  // Test Build.
-  buildtest: [
     'compass',
+    'autoprefixer',
+      // 'uglify:prod'
+      // 'svg2png'
+    'csscomb',
+    'closurecompiler',
+    'cssmin',
+    'jshint:js'
+    //'svgmin',
+  ],
+  dev: [
     'concat',
-    'uglify',
-    'newer:imagemin'
-    // 'svg2png'
-  ],
-  style: [
+    'closurecompiler',
+    // 'imagemin',
     'compass',
-    'newer:imagemin',
+    'uglify:dev',
     'autoprefixer',
     'csscomb'
   ]

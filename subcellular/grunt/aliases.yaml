@@ -1,27 +1,6 @@
 default:
-    - 'clean:build'
-    - 'concat'
-    - 'compass'
-    - 'uglify:build'
-    - 'uglify:build'
-    - 'imagemin:build'
-    - 'autoprefixer'
-    - 'csscomb'
-    - 'cssmin'
-    - 'jshint:build'
-build:
-    - 'clean:build'
-    - 'copy:build'
-
-buildtest:
-    - 'clean:buildtest'
-    - 'concat'
-    - 'compass'
-    - 'uglify:prettybuildtest'
-    - 'uglify:buildtest'
-    - 'imagemin'
-    - 'autoprefixer'
-    - 'csscomb'
-    - 'copy:buildtestcss'
-    - 'cssmin'
-    - 'jshint:buildtest'
+    - 'concurrent:watch'
+dist:
+    - 'concurrent:dist'
+dev:
+    - 'concurrent:dev'

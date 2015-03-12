@@ -1,0 +1,120 @@
+/**
+  * @file
+  * CSS Animations.
+*/
+
+$opacity: 0.3;
+$offset: 30%;
+$height: 100%;
+/*--------------------------------------------*/
+
+@keyframes alpha {
+  0%, 100% {
+    opacity: $opacity;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounce {
+  0%,  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1em);
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*---------------------------------------------------------*/
+
+@keyframes bar {
+  0% {
+    width: 0px;
+  }
+  70% {
+    width: 100%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 0px;
+  }
+}
+/*---------------------------------------------------------*/
+
+@keyframes convergeA {
+  0%, 100% {
+    left: 0;
+    opacity: $opacity;
+  }
+  50% {
+    left: -150%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes convergeB {
+  0%, 100%  {
+    left: 0;
+    opacity: $opacity;
+  }
+  50% {
+    left: 150%;
+    opacity: 0.8;
+  }
+}
+
+/*---------------------------------------------------------*/
+
+@keyframes orbit {
+  0%, 100% {
+    left: 0;
+    opacity: $opacity;
+  }
+  25%{
+    left: -150%;
+    opacity: 0.8;
+  }
+  50% {
+    left: 0;
+    opacity: $opacity;
+  }
+  75% {
+    left: 150%;
+    opacity: 0.8;
+  }
+}
+
+/*---------------------------------------------------------*/
+
+@keyframes scaled {
+  0%,100% {
+    transform: scale(0.0);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+}

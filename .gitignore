@@ -1,7 +1,9 @@
-
+test/
+#preprocess/
 node_modules/
 .sass-cache/
 .gitignore
+.gitattributes
 
 #################
 ## Eclipse

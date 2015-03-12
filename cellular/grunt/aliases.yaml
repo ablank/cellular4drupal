@@ -1,15 +1,6 @@
 default:
-    - 'concat'
-    - 'newer:imagemin'
-build:
-    - 'clean:build'
-    - 'copy:build'
-
-buildtest:
-    - 'clean:buildtest'
-    - 'compass'
-    - 'uglify:buildtest'
-    - 'imagemin:buildtest'
-    - 'autoprefixer'
-    - 'csscomb'
-    - 'cssmin'
+    - 'concurrent:watch'
+dist:
+    - 'concurrent:dist'
+dev:
+    - 'concurrent:dev'

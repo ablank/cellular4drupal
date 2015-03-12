@@ -5,7 +5,6 @@
 
 module.exports = {
   options: {
-    force: true,
     curly: true,
     eqeqeq: true,
     eqnull: true,
@@ -14,13 +13,15 @@ module.exports = {
       jQuery: true
     }
   },
-  build: [
-    'build/js/**/*.js',
-    '!**/*.min.js'
+  js: [
+    'js/*.js',
+    '!js/**/*.min.js',
+    'js/cellularUI/jquery.cellularUI.js'
   ]
   ,
-  buildtest: [
-    'buildtest/js/**/*.js',
-    '!**/*.min.js'
+  cellularUI: [
+    'js/cellularUI/jquery.cellularUI.js',
+    'js/cellularUI/src/*.js'
   ]
+
 };

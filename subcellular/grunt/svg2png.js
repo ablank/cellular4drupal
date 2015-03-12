@@ -8,7 +8,7 @@ module.exports = {
     files: [
       {
         cwd: 'assets/images/svg/',
-        src: ['**/*.svg'],
+        src: ['*.svg'],
         dest: 'assets/images/png/'
       }
     ]
@@ -17,11 +17,11 @@ module.exports = {
     files: [
       {
         cwd: 'assets/icons/svg/',
-        src: ['**/*.svg'],
+        src: ['*.svg'],
         dest: 'assets/icons/png/'
       }
     ]
-  }/*,
+  },
   favicons: {
     files: [
       {
@@ -37,5 +37,4 @@ module.exports = {
       }
     ]
   }
-  */
 };

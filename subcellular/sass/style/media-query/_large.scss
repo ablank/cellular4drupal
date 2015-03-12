@@ -1,0 +1,89 @@
+/**
+ * @file
+ * Styling for large-screen devices included in style.css
+ */
+
+@media screen and (min-width: $res_large) {
+
+   #nav {
+    ul.menu {
+
+    }
+  }
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+
+  //////
+
+  body {
+    // background: url(../assets/images/large-background-body.png) no-repeat;
+  }
+
+  p {
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+  }
+
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+//////
+
+  #page-wrap {
+
+  }
+
+  #content-wrap {
+
+  }
+
+  #header {
+
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+  }
+
+  #content {
+  }
+
+}

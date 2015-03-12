@@ -3,7 +3,7 @@
  * Pull in required grunt modules.
  */
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 // Measure the time each task takes.
   require('time-grunt')(grunt);
 // Load grunt config.

@@ -8,9 +8,9 @@
 module.exports = {
   prod: {
     expand: true,
-    cwd: 'buildtest/css',
+    cwd: 'css',
     src: ['*.css', '!*.min.css'],
-    dest: 'buildtest/css',
+    dest: 'css',
     ext: '.min.css',
     banner: ''
   }
