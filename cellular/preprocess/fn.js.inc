@@ -11,12 +11,11 @@
  * the 'object' value is provided.
  *
  * @param array $array
- *  Assosciative array of javascript data.
- *
- * @param bool $cellular
- *  Reference cellular library if TRUE.
+ *   Assosciative array of javascript data.
+ * @param boolean $cellular
+ *   Reference cellular library if TRUE.
  */
-function cellular_add_js($array, $cellular = FALSE) {
+function cellular_add_js(array $array,  $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
 // Set default attributes.
@@ -45,12 +44,11 @@ function cellular_add_js($array, $cellular = FALSE) {
  * Javascript fallback to local source if CDN fails.
  *
  * @param array $script
- *  Array of script attributes used to generate fallback.
- *
- * @param bool $cellular
- *  Reference cellular library if TRUE.
+ *   Array of script attributes used to generate fallback.
+ * @param  $cellular
+ *   Reference cellular library if TRUE.
  */
-function cellular_js_fallback($script, $cellular = FALSE) {
+function cellular_js_fallback(array $script,  $cellular = FALSE) {
 // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
@@ -73,15 +71,13 @@ function cellular_js_fallback($script, $cellular = FALSE) {
  * Override existing $javascript sources.
  *
  * @param array $javascript
- *  Associative array of javascripts.
- *
+ *   Associative array of javascripts.
  * @param array $script
- *  Array of attributes used to add javascript fallback.
- *
- * @param bool $cellular
- *  Reference cellular library if TRUE.
+ *   Array of attributes used to add javascript fallback.
+ * @param boolean $cellular
+ *   Reference cellular library if TRUE.
  */
-function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
+function cellular_js_override(array &$javascript, array $script,  $cellular = FALSE) {
 // Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
@@ -115,16 +111,16 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
  * Build modernizr query and add script inline on page.
  *
  * @param array $tests
- *  Array of arrays used to build modernizr tests.
- *  $tests['testName'] = array(
- *  'test',
- *  'yep',
- *  'nope',
- *  'both',
- *  'complete',
- * )
+ *   Array of arrays used to build modernizr tests.
+ *   $tests['testName'] = array(
+ *   'test',
+ *   'yep',
+ *   'nope',
+ *   'both',
+ *   'complete',
+ *   );.
  */
-function cellular_modernizr($tests) {
+function cellular_modernizr(array $tests) {
 // $base_url needs to be added to set the correct path.
   $dir = $GLOBALS['base_url'] . '/' . path_to_theme();
   $query = '';
@@ -154,40 +150,4 @@ function cellular_modernizr($tests) {
     'every_page' => TRUE,
     'weight' => -999,
   ));
-}
-
-/**
- * Pass variables to javascript , used to call plugin.js if plugins are selected.
- */
-function cellular_js() {
-  $ext = theme_get_setting('min_script') === 1 ? '.min.js' : '.js';
-
-// Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
-  $js_plugins = array();
-  theme_get_setting('backstretch') !== 1 ? NULL : $js_plugins['backstretch'] = TRUE;
-  theme_get_setting('cellularui') !== 1 ? NULL : $js_plugins['cellularui'] = TRUE;
-  theme_get_setting('flowtype') !== 1 ? NULL : $js_plugins['flowtype'] = TRUE;
-  theme_get_setting('freetile') !== 1 ? NULL : $js_plugins['freetile'] = TRUE;
-  theme_get_setting('jparallax') !== 1 ? NULL : $js_plugins['jparallax'] = TRUE;
-  theme_get_setting('masonry') !== 1 ? NULL : $js_plugins['masonry'] = TRUE;
-  theme_get_setting('smoove') !== 1 ? NULL : $js_plugins['smoove'] = TRUE;
-
-// Add scripts.
-  $scripts['script'] = array(
-    'file' => 'script' . $ext,
-    'group' => JS_THEME,
-    'weight' => 100,
-  );
-  if ($js_plugins) {
-// Add to Drupal.settings javascript.
-    drupal_add_js(array('cellular' => $js_plugins), 'setting');
-// Scripts to add, relative to /yourTheme/js/
-    $scripts['plugins'] = array(
-      'file' => 'plugin' . $ext,
-      'group' => JS_THEME,
-      'weight' => 99,
-    );
-  }
-
-  cellular_add_js($scripts);
 }

@@ -3,6 +3,7 @@
  * @file
  * Block template.
  */
+
 /* Variables:
   - $block->subject: Block title.
   - $content: Block content.

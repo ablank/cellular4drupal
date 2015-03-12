@@ -13,5 +13,15 @@ module.exports = {
       jQuery: true
     }
   },
-  files: ['js/*.js', 'js/**/*.js']
+  js: [
+    'js/*.js',
+    '!js/**/*.min.js',
+    'js/cellularUI/jquery.cellularUI.js'
+  ]
+  ,
+  cellularUI: [
+    'js/cellularUI/jquery.cellularUI.js',
+    'js/cellularUI/src/*.js'
+  ]
+
 };

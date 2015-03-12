@@ -4,8 +4,15 @@
  */
 
 module.exports = {
-  scripts: {
-    files: ['js/*.js', 'js/**/*.js'],
+  php: {
+    files: [
+      'node_modules/grunt-contrib-concat/**/*.js',
+      'preprocess/**/*.inc'
+    ],
+    tasks: ['concat:php']
+  },
+  javascript: {
+    files: ['js/**/*.js'],
     tasks: [
       // 'uglify',
       'jshint'
@@ -14,8 +21,8 @@ module.exports = {
       interrupt: false
     }
   },
-  styles: {
+  stylesheets: {
     files: ['sass/*.scss', 'sass/**/*.scss'],
-    tasks: ['compass:dev']
+    tasks: ['compass']
   }
 };

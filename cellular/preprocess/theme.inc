@@ -8,12 +8,12 @@
  * Cellular theme_field().
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  *
  * @return string
- *  Formatted HTML.
+ *   Formatted HTML.
  */
-function cellular_field(&$vars) {
+function cellular_field(array &$vars) {
   $output = '';
   $wrap = theme_get_setting('field_wrappers');
   // Render the label, if it's not hidden.
@@ -30,7 +30,7 @@ function cellular_field(&$vars) {
     }
   }
   // Wrap field if set.
-  if ($wrap === 1) {
+  if ($wrap == 1) {
     $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
     . "\n $output \n</div>\n";
   }
@@ -42,14 +42,14 @@ function cellular_field(&$vars) {
  * Cellular theme_breadcrumb().
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  *
  * @return string
- *  Formatted HTML || NULL.
+ *   Formatted HTML || NULL.
  */
-function cellular_breadcrumb(&$vars) {
+function cellular_breadcrumb(array &$vars) {
   $output = NULL;
-  if (theme_get_setting('breadcrumb_display') === 1) {
+  if (theme_get_setting('breadcrumb_display') == 1) {
     if (!empty($vars['breadcrumb'])) {
       $vars['breadcrumb'][] = '<span class="active">' . drupal_get_title() . '</span>';
       $breadcrumb = $vars['breadcrumb'];
@@ -72,12 +72,12 @@ function cellular_breadcrumb(&$vars) {
  * Cellular theme_file_icon(). Use css classes to style output instead of <img>.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  *
  * @return string
- *  Formatted HTML.
+ *   Formatted HTML.
  */
-function cellular_file_icon(&$vars) {
+function cellular_file_icon(array &$vars) {
   $file = $vars['file'];
   $mime = check_plain($file->filemime);
   $generic_mime = (string) file_icon_map($file);
@@ -86,7 +86,7 @@ function cellular_file_icon(&$vars) {
   // $icon_path = $icon_directory . '/' . $dashed_mime . '.png';
   // Use generic icons for each category that provides such icons.
   foreach (array('audio', 'image', 'text', 'video') as $category) {
-    if (strpos($file->filemime, $category . '/') === 0) {
+    if (strpos($file->filemime, $category . '/') == 0) {
       $cname = $category;
     }
   }
@@ -103,12 +103,12 @@ function cellular_file_icon(&$vars) {
  * Cellular theme_feed_icon().
  *
  * @param array $vars
- *  Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  *
  * @return string
- *  Formatted HTML.
+ *   Formatted HTML.
  */
-function cellular_feed_icon(&$vars) {
+function cellular_feed_icon(array &$vars) {
   $text = t('Subscribe to !feed-title', array(
     '!feed-title' => $vars['title'],
   ));

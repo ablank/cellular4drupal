@@ -47,8 +47,9 @@ settings[login_block_password]      = 0
 settings[login_block_orientation]   = vertical
 
 ;----------// Styles
+settings[min_style]                     = 0
 settings[remove_drupal_css]             = select
-settings[content_class_no_sidebar]     = cell-100
+settings[content_class_no_sidebar]      = cell-100
 settings[content_class_single_sidebar]  = cell-70
 settings[content_class_dual_sidebars]   = cell-60
 settings[sidebar_class_single_sidebar]  = cell-30
@@ -72,9 +73,9 @@ settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
 ;----------// jQuery Plugins
+settings[cellularui]            = 1
 settings[min_script]            = 0
 settings[backstretch]           = 0
-settings[cellularui]            = 0
 settings[flowtype]              = 0
 settings[freetile]              = 0
 settings[jparallax]             = 0

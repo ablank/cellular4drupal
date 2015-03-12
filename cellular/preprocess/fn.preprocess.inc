@@ -18,9 +18,9 @@ function cellular_http_headers() {
  * Set html attributes.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_html_attributes(&$vars) {
+function cellular_html_attributes(array &$vars) {
   global $language;
   $html_attributes = array(
     'lang' => $language->language,
@@ -41,9 +41,9 @@ function cellular_html_attributes(&$vars) {
  * Convert @xmlns to @profile.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_rdf(&$vars) {
+function cellular_rdf(array &$vars) {
   $vars['rdf_prefixes'] = '';
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
@@ -71,9 +71,9 @@ function cellular_rdf(&$vars) {
  * Add variable classes to <body>.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_body_attributes(&$vars) {
+function cellular_body_attributes(array &$vars) {
   $body_attributes = array();
   $path = drupal_get_path_alias();
   // Page URL is used to set id & classes of body.
@@ -96,9 +96,6 @@ function cellular_body_attributes(&$vars) {
 
 /**
  * Build links to favicons & apple-touch-icons.
- * 
- * @return array
- *  Array of links to pass to cellular_build_head_tags()
  */
 function cellular_favicons() {
   // Get icon file names from theme settings.
@@ -170,9 +167,9 @@ function cellular_favicons() {
  * Add meta tags to <head>.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_metatags(&$vars) {
+function cellular_metatags(array &$vars) {
   // Add default metatags:
   $meta_tags = array(
     'viewport' => array(
@@ -211,9 +208,9 @@ function cellular_metatags(&$vars) {
  * Test if sidebar regions are used and return the appropriate class.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_test_sidebar(&$vars) {
+function cellular_test_sidebar(array &$vars) {
   empty($vars['page']['sidebar_left']) ? NULL : $sidebar_left = 1;
   empty($vars['page']['sidebar_right']) ? NULL : $sidebar_right = 1;
 
@@ -234,9 +231,9 @@ function cellular_test_sidebar(&$vars) {
  * Set content author attributes.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_set_author(&$vars) {
+function cellular_set_author(array &$vars) {
   $node = $vars['elements']['#node'];
   $uid = user_load($node->uid);
   $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";

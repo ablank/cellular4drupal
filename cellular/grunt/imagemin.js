@@ -12,7 +12,8 @@ module.exports = {
       {
         expand: true,
         cwd: 'assets/images',
-        src: ['gif/**/*.gif',
+        src: [
+          'gif/**/*.gif',
           'jpg/**/*.[jpg, jpeg]',
           'png/**/*.png'
         ],
@@ -25,7 +26,11 @@ module.exports = {
       {
         expand: true,
         cwd: 'assets/icons',
-        src: ['png/**/*.png'],
+        src: [
+          'png/**/*.png',
+          'svg/**/*.svg'
+        ]
+        ,
         dest: 'assets/icons/min/'
       }
     ]

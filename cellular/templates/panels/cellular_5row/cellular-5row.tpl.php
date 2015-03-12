@@ -10,7 +10,7 @@
 if (!empty($css_id)):
   print " id=\"$css_id\"";
 endif;
-?> class="panels cell <?php print($classes); ?>">
+?> class="panels cell <?php print ($classes); ?>">
 
   <?php if ($content['row1']) : ?>
     <div class="panel-content cell-100">

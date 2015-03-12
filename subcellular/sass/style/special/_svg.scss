@@ -1,0 +1,44 @@
+/**
+  * @file
+  * Provide svg background images for compliant browsers
+*/
+
+.svg {
+  #logo > a {
+    background-image: $logo_svg;
+  }
+
+  #nav {
+    &.jMmenu.mini {
+      background-image: url('../assets/icons/min/svg/menu.svg');
+    }
+  }
+
+  .ok {
+    list-style-image: url('../assets/icons/min/svg/message-ok.svg');
+  }
+
+  .warning {
+    list-style-image: url('../assets/icons/min/svg/message-warning.svg');
+  }
+
+  .error {
+    list-style-image: url('../assets/icons/min/svg/message-error.svg');
+  }
+
+  #breadcrumb li {
+    background-image: url(../assets/icons/min/png/arrow-right.png);
+
+    &.first{
+      background-image: none;
+
+      a {
+        background-image: url(../assets/icons/min/svg/home.svg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $res_mobile) {
+
+}

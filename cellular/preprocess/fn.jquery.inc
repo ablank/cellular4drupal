@@ -8,7 +8,7 @@
  * Get info from theme settings.
  *
  * @return array
- * Settings for jQuery & jQuery.ui
+ *   Settings for jQuery & jQuery.ui
  */
 function cellular_jquery_info() {
   $jquery = array(
@@ -29,7 +29,7 @@ function cellular_jquery_info() {
  * Generate links to CDN sources.
  *
  * @return array
- * CDN URLs used to update jQuery & jQuery.ui
+ *   CDN URLs used to update jQuery & jQuery.ui
  */
 function cellular_cdn() {
   /* Available cdns:
@@ -79,9 +79,9 @@ function cellular_cdn() {
  * Update jQuery & essential plugins.
  *
  * @param array $javascript
- *  Associative array of javascripts.
+ *   Associative array of javascripts.
  */
-function cellular_jquery_update(&$javascript) {
+function cellular_jquery_update(array &$javascript) {
   $jq = cellular_jquery_info();
   // Override jQuery.
   $jquery = array(
@@ -94,7 +94,7 @@ function cellular_jquery_update(&$javascript) {
     'weight' => -100,
   );
 
-  if ($jq['use_cdn'] === 1) {
+  if ($jq['use_cdn'] == 1) {
     // Select cdn to use:
     $cdn = cellular_cdn();
     $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
@@ -150,9 +150,9 @@ function cellular_jquery_update(&$javascript) {
  * Override jQueryUI javascript.
  *
  * @param array $javascript
- *  Associative array of javascripts.
+ *   Associative array of javascripts.
  */
-function cellular_jqueryui_update_js(&$javascript) {
+function cellular_jqueryui_update_js(array &$javascript) {
   $jq = cellular_jquery_info();
   $ui_widgets = array(
     'ui.core',
@@ -204,7 +204,7 @@ function cellular_jqueryui_update_js(&$javascript) {
         ),
       );
 
-      if (theme_get_setting('jquery_cdn') === 1) {
+      if (theme_get_setting('jquery_cdn') == 1) {
         $cdn = cellular_cdn();
         // If updating from cdn unset each widget so a single call can be made.
         unset($javascript[$default]);
@@ -226,9 +226,9 @@ function cellular_jqueryui_update_js(&$javascript) {
  * Update jQuery.ui stylesheets.
  *
  * @param array $css
- *  Associative array of stylesheets.
+ *   Associative array of stylesheets.
  */
-function cellular_jqueryui_update_css(&$css) {
+function cellular_jqueryui_update_css(array &$css) {
   $ui['path'] = 'jquery-ui/';
   $ui['widgets'] = array(
     'core',
@@ -274,7 +274,7 @@ function cellular_jqueryui_update_css(&$css) {
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
         $style['ui']['file'] = $ui_path . 'jquery-ui.css';
-        if (theme_get_setting('jquery_cdn') === 1) {
+        if (theme_get_setting('jquery_cdn') == 1) {
           $cdn = cellular_cdn();
           // Set cdn source.
           $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];

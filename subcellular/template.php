@@ -1,18 +1,91 @@
 <?php
 /**
  * @file
- * Set global vars, load functions for templates, and hook_function overrides.
+ * hook_function overrides.
  * @author Adam Blankenship
  */
 
-$inc_path = drupal_get_path('theme', 'subcellular') . '/inc';
-$include = array(
-  'alter.css.inc',
-  'alter.js.inc',
-);
+/**
+ * Subcellular hook_css_alter().
+ */
+function subcellular_css_alter(&$css) {
+  // Uncomment this block to add stylesheets to theme.
+/*
+  $add_css = array(
+    'moarStyle' => array(// Minimum params:
+      'file' => 'moar.css',
+    ),
+    'myStyle' => array(// Available params:
+      'file' => 'my.awesome.css',
+      'preprocess' => TRUE,
+      'media' => 'all',
+      'every_page' => TRUE,
+      'group' => CSS_THEME,
+      'weight' => 10
+    ),
+  );
 
-foreach ($include as $i) {
-  require_once ($inc_path . '/' . $i);
+  cellular_add_css($css, $add_css);
+*/
+
+  /* Remove stylesheets set by modules.
+   * $key : Module name.
+   * $value : Path relative to each module's directory.
+   *
+   * // Remove a single stylesheet:
+   * 'stupidModule' => 'path/to/stupid.css'
+
+   * // Remove multiple stylesheets:
+   * 'stupidModule' => array(
+   * 'path/to/stupid.css',
+   * 'path/to/more/stupid.css'
+   * );
+   */
+
+  // Remove module stylesheets.
+/*
+  $exclude = array(
+    'calendar' => 'css/calendar_multiday.css',
+    'ctools' => 'css/ctools.css',
+    'views' => 'css/views.css',
+    'logintoboggan' => 'logintoboggan.css',
+    'panels' => array(
+      'css/panels.css',
+      'plugins/layouts/flexible/flexible.css'
+    ),
+  );
+
+  cellular_remove_css($css, $exclude);
+*/
+}
+
+/**
+ * Subcellular hook_js_alter().
+ */
+function subcellular_js_alter() {
+  // Pass a variable to js as Drupal.settings.myVar:
+/*
+  drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
+*/
+  // Add javascript to theme.
+/*
+  $add_js = array(
+    'myScript' => array(// Local script with minimum setup.
+      'file' => 'myscript.js', // Path to file, relative to /yourTheme/js/
+      'weight' => 10,
+    ),
+    'cdnScript' => array(// CDN script w/ local fallback
+      'object' => 'CDNscript', // javascript object to test for generating fallback from cdn
+      'cdn' => '//ajax.googleapis.com/ajax/libs/cdnScript.js',
+      'file' => 'fallback-script.js', // Path to file from /yourTheme/js/
+    ),
+    'anotherScript' => array(// default params
+      'file' => 'anotherScript.js', // Path to file, from /yourTheme/js/
+    ),
+  );
+
+  cellular_add_js($add_js);
+*/
 }
 
 /**
@@ -39,33 +112,33 @@ function subcellular_preprocess_page(&$vars) {
  * Subcellular template_preprocess_html().
  */
 function subcellular_preprocess_html(&$vars) {
-
+  
 }
 
 /**
  * Subcellular template_preprocess_node().
  */
 function subcellular_preprocess_node(&$vars) {
-
+  
 }
 
 /**
  * Subcellular template_preprocess_region().
  */
 function subcellular_preprocess_region(&$vars) {
-
+  
 }
 
 /**
  * Subcellular template_preprocess_block().
  */
 function subcellular_preprocess_block(&$vars) {
-
+  
 }
 
 /**
  * Subcellular template_preprocess_comment().
  */
 function subcellular_preprocess_comment(&$vars) {
-
+  
 }

@@ -8,7 +8,7 @@
  * Get media query breakpoints from theme settings.
  *
  * @return array
- * Media queries settings.
+ *   Media queries settings.
  */
 function cellular_mq() {
   $mq = array();
@@ -23,9 +23,9 @@ function cellular_mq() {
  * Add <link> & <meta> tags from an array.
  *
  * @param array $array
- *  Array of tags to add to document <head>.
+ *   Array of tags to add to document <head>.
  */
-function cellular_build_head_tags($array) {
+function cellular_build_head_tags(array $array) {
   foreach ($array as $meta => $val) {
     if (isset($val)) {
       // Build tag:
@@ -64,9 +64,9 @@ function cellular_build_head_tags($array) {
  * Set path to page-error.tpl if http error is returned.
  *
  * @param array $vars
- * Associative array of variables to merge with defaults from the theme registry.
+ *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_error_page(&$vars) {
+function cellular_error_page(array &$vars) {
   // Set custom error template:
   $http_status = drupal_get_http_header("status");
 
@@ -88,13 +88,12 @@ function cellular_error_page(&$vars) {
 /**
  * Removes text formatting options from user input.
  *
- * @param $form
- * Form element to set.
- *
- * @param $form_state
- * Form element's state.
+ * @param array $form
+ *   Form element to set.
+ * @param array $form_state
+ *   Form element's state.
  */
-function cellular_form_format_opt(&$form, $form_state) {
+function cellular_form_format_opt(array &$form, array $form_state) {
   // Remove individual text format options:
   // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
   // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
@@ -110,11 +109,11 @@ function cellular_form_format_opt(&$form, $form_state) {
 /**
  * Print variables for development as message, usedful if devel isn't available.
  *
- * @param array $element 
- *  Element to test and return variables of.
+ * @param array $element
+ *   Element to test and return variables of.
  */
-function cellular_dev($element) {
-  if (theme_get_setting('dev') === 1) {
+function cellular_dev(array $element) {
+  if (theme_get_setting('dev') == 1) {
     if (module_exists('devel')) {
       dpm($element);
     }

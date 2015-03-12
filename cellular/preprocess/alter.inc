@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Alter misc. hooks for templates.
@@ -9,9 +8,9 @@
  * Cellular hook_html_head_alter().
  *
  * @param array $head_elements
- * Associative array of variables to merge with defaults from theme registry.
+ *   Associative array of variables to merge with defaults from theme registry.
  */
-function cellular_html_head_alter(&$head_elements) {
+function cellular_html_head_alter(array &$head_elements) {
   // Remove unwanted meta tags.
   $exclude = array('metatag_generator');
 
@@ -27,8 +26,8 @@ function cellular_html_head_alter(&$head_elements) {
  * Cellular hook_page_alter().
  *
  * @param array $page
- * Associative array of variables to merge with defaults from theme registry.
+ *   Associative array of variables to merge with defaults from theme registry.
  */
-function cellular_page_alter(&$page) {
+function cellular_page_alter(array &$page) {
   // cellular_dev($page);
 }

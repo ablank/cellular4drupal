@@ -1,0 +1,20 @@
+/**
+ * @file
+ * Set vars & collect styles for CellularUI
+ */
+
+$title_color: $white;
+$title_background: $dark_grey;
+$panel_color: $dark_grey;
+$panel_background: $white;
+$active_color: darken($hilight, 10%);
+$border_color: $light_grey;
+$border_width: 1px;
+$border_radius: .5em;
+
+@import "jCellular";
+@import "jAccordion";
+@import "jBlocklink";
+@import "jMmenu";
+@import "jScrolli";
+@import "jTabs";

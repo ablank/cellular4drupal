@@ -8,13 +8,12 @@
  * Generate links for social media.
  *
  * @param array $links
- * Array of links to add.
- *
+ *   Array of links to add.
  * @param array $parent
- * Media block array used to wrap links.
+ *   Media block array used to wrap links.
  *
  * @return string
- *  Formatted HTML.
+ *   Formatted HTML.
  */
 function cellular_build_links(array $links, array $parent) {
   $output = '';
@@ -52,10 +51,10 @@ function cellular_build_links(array $links, array $parent) {
  * Collect Social Media share settings.
  *
  * @param string $type
- *  "follow" || "share" used to select the array to return.
+ *   String used to select the array to return ("follow" || "share").
  *
  * @return array
- *  Settings for selected social media group.
+ *   Settings for selected social media group.
  */
 function cellular_sm_settings($type) {
   switch ($type) {
@@ -90,10 +89,10 @@ function cellular_sm_settings($type) {
  * Collect Social Media URLs.
  *
  * @param string $type
- *  "follow" || "share" used to select the array to return.
+ *   String ("follow" || "share") used to select the array to return.
  *
  * @return array
- *  Settings for selected social media group.
+ *   Settings for selected social media group.
  */
 function cellular_sm_urls($type) {
   switch ($type) {
@@ -125,10 +124,10 @@ function cellular_sm_urls($type) {
  * Generate Social media follow links.
  *
  * @return string
- *  Formatted HTML.
+ *   Formatted HTML.
  */
 function cellular_social_media_follow() {
-  if (theme_get_setting('social_media_follow') === 1) {
+  if (theme_get_setting('social_media_follow') == 1) {
     $set = cellular_sm_settings('follow');
     $url = cellular_sm_urls('follow');
 
@@ -142,27 +141,27 @@ function cellular_social_media_follow() {
     );
 
     $links = array();
-    $set['fb'] === 1 ? $links['facebook'] = array(
+    $set['fb'] == 1 ? $links['facebook'] = array(
       'url' => $url['fb'],
       'class' => 'facebook',
       'name' => 'Facebook',
     ) : NULL;
-    $set['google'] === 1 ? $links['google+'] = array(
+    $set['google'] == 1 ? $links['google+'] = array(
       'url' => $url['google'],
       'class' => 'google',
       'name' => 'Google+',
     ) : NULL;
-    $set['twitter'] === 1 ? $links['twitter'] = array(
+    $set['twitter'] == 1 ? $links['twitter'] = array(
       'url' => $url['twitter'],
       'class' => 'twitter-bird',
       'name' => 'Twitter',
     ) : NULL;
-    $set['linkedin'] === 1 ? $links['linkedin'] = array(
+    $set['linkedin'] == 1 ? $links['linkedin'] = array(
       'url' => $url['linkedin'],
       'class' => 'linkedin',
       'name' => 'LinkedIn',
     ) : NULL;
-    $set['github'] === 1 ? $links['github'] = array(
+    $set['github'] == 1 ? $links['github'] = array(
       'url' => $url['github'],
       'class' => 'github-octo',
       'name' => 'Github',
@@ -182,10 +181,10 @@ function cellular_social_media_follow() {
  * Generate Social media share links.
  *
  * @return string
- * Formatted HTML.
+ *   Formatted HTML.
  */
 function cellular_social_media_share() {
-  if (theme_get_setting('social_media_share') === 1) {
+  if (theme_get_setting('social_media_share') == 1) {
     global $base_url;
     $set = cellular_sm_settings('share');
     $output = '';
@@ -202,37 +201,37 @@ function cellular_social_media_share() {
     );
 
     $links = array();
-    $set['google'] === 1 ? $links['google+'] = array(
+    $set['google'] == 1 ? $links['google+'] = array(
       'name' => 'Google+',
       'script' => NULL,
       'url' => 'http://plus.google.com/share?url=' . $page['url'],
       'class' => 'google',
     ) : NULL;
-    $set['twitter'] === 1 ? $links['twitter'] = array(
+    $set['twitter'] == 1 ? $links['twitter'] = array(
       'name' => 'Twitter',
       'script' => NULL,
       'url' => 'https://twitter.com/share',
       'class' => 'twitter-bird',
     ) : NULL;
-    $set['linkedin'] === 1 ? $links['linkedin'] = array(
+    $set['linkedin'] == 1 ? $links['linkedin'] = array(
       'name' => 'LinkedIn',
       'url' => 'http://www.linkedin.com/shareArticle?mini=true&url=' .
       $page['url'] . '&title=' . $page['title'] . '&source=' . $base_url,
       'class' => 'linkedin',
     ) : NULL;
-    $set['pinterest'] === 1 ? $links['pinterest'] = array(
+    $set['pinterest'] == 1 ? $links['pinterest'] = array(
       'name' => 'Pinterest',
       'url' => 'http://pinterest.com/pin/create/bookmarklet/?media=&url=' .
       $page['url'] . '&is_video=false&description=' . $page['title'],
       'class' => 'pinterest',
     ) : NULL;
-    $set['reddit'] === 1 ? $links['reddit'] = array(
+    $set['reddit'] == 1 ? $links['reddit'] = array(
       'name' => 'Reddit',
       'url' => 'http://www.reddit.com/submit?url=' . $page['url'],
       'class' => 'reddit',
     ) : NULL;
 
-    if ($set['fb'] === 1) {
+    if ($set['fb'] == 1) {
       // Set variables to appease PAReview.
       $fbscript = '(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
