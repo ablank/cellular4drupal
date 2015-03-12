@@ -8,8 +8,6 @@
  * @see http://live-cellular.gotpantheon.com
  * @see https://github.com/ablank/cellular
  */
-
-
 /*
  * @see file: preprocess/_init.inc
  * Initialize constants & globals
@@ -142,7 +140,6 @@ function cellular_dev(array $element) {
   }
 }
 
-
 /*
  * @see file: preprocess/fn.css.inc
  * Cellular stylesheet functions.
@@ -158,7 +155,7 @@ function cellular_dev(array $element) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_css(array &$css, array $array,  $cellular = FALSE) {
+function cellular_add_css(array &$css, array $array, $cellular = FALSE) {
   foreach ($array as $style) {
     if (!empty($style)) {
       if (isset($style['cdn'])) {
@@ -217,7 +214,7 @@ function cellular_remove_css(array &$css, array $exclude) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
+function cellular_override_css(array &$css, array $style, $cellular = FALSE) {
   $ocss = $style['default'];
   // Only override if style is being called.
   if (isset($css[$ocss])) {
@@ -298,7 +295,6 @@ function cellular_remove_default_css(array &$css) {
   }
 }
 
-
 /*
  * @see file: preprocess/fn.menu.inc
  * Cellular menu functions.
@@ -322,7 +318,6 @@ function cellular_main_menu(array &$vars) {
   $vars['main_menu'] = $menu_data;
 }
 
-
 /*
  * @see file: preprocess/fn.js.inc
  * Cellular javascript functions.
@@ -339,7 +334,7 @@ function cellular_main_menu(array &$vars) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_js(array $array,  $cellular = FALSE) {
+function cellular_add_js(array $array, $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
 // Set default attributes.
@@ -372,7 +367,7 @@ function cellular_add_js(array $array,  $cellular = FALSE) {
  * @param  $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_fallback(array $script,  $cellular = FALSE) {
+function cellular_js_fallback(array $script, $cellular = FALSE) {
 // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
@@ -401,7 +396,7 @@ function cellular_js_fallback(array $script,  $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_override(array &$javascript, array $script,  $cellular = FALSE) {
+function cellular_js_override(array &$javascript, array $script, $cellular = FALSE) {
 // Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
@@ -475,7 +470,6 @@ function cellular_modernizr(array $tests) {
     'weight' => -999,
   ));
 }
-
 
 /*
  * @see file: preprocess/fn.jquery.inc
@@ -764,7 +758,6 @@ function cellular_jqueryui_update_css(array &$css) {
   }
 }
 
-
 /*
  * @see file: preprocess/fn.preprocess.inc
  * Cellular functions to set content attributes.
@@ -1020,7 +1013,6 @@ function cellular_set_author(array &$vars) {
   $vars['author'] = $author['image'] . $author['name'] . $author['description'];
 }
 
-
 /*
  * @see file: preprocess/alter.inc
  * Alter misc. hooks for templates.
@@ -1053,7 +1045,6 @@ function cellular_html_head_alter(array &$head_elements) {
 function cellular_page_alter(array &$page) {
   // cellular_dev($page);
 }
-
 
 /*
  * @see file: preprocess/css_alter.inc
@@ -1106,7 +1097,6 @@ function cellular_css_alter(array &$css) {
   }
   !empty($plugins) ? cellular_add_css($css, $plugins, TRUE) : NULL;
 }
-
 
 /*
  * @see file: preprocess/form_alter.inc
@@ -1255,7 +1245,6 @@ function cellular_form_comment_form_alter(array &$form, array $form_state, $form
   $form['actions']['submit']['#attributes']['class'][] = 'right';
 }
 
-
 /*
  * @see file: preprocess/js_alter.inc
  * Add/Update/Delete javascript.
@@ -1310,12 +1299,14 @@ function cellular_js() {
   drupal_add_js(array('cellular' => $js_plugins), 'setting');
 
   // Add Cellular UI
-  $js_plugins['cellularui'] === TRUE ? $scripts['cellularui'] = array(
-    'object' => 'cellular',
-    // 'file' => 'cellularUI/jquery.cellular.js', // Source of dev script.
-    'file' => 'cellularUI/jquery.cellularUI' . $ext,
-    'weight' => 98,
-  ) : NULL;
+  if ($js_plugins['cellularui'] === TRUE && $ext === '.js') {
+    $scripts['cellularui'] = array(
+      'object' => 'cellular',
+      // 'file' => 'cellularUI/jquery.cellular.js', // Source of dev script.
+      'file' => 'cellularUI/jquery.cellularUI' . $ext,
+      'weight' => 98,
+    );
+  }
 // Add plugins.js if  relative to /yourTheme/js/
   if (($js_plugins) && ($ext === '.js')) {
     $scripts['plugins'] = array(
@@ -1335,7 +1326,6 @@ function cellular_js() {
 
   cellular_add_js($scripts);
 }
-
 
 /*
  * @see file: preprocess/js_plugins.inc
@@ -1507,7 +1497,6 @@ function cellular_plugin_css() {
   return $plugin_css;
 }
 
-
 /*
  * @see file: preprocess/preprocess.inc
  * Template preprocess variables.
@@ -1668,7 +1657,6 @@ function cellular_preprocess_username(array &$vars) {
   }
 }
 
-
 /*
  * @see file: preprocess/theme.inc
  * Set element markup.
@@ -1796,7 +1784,6 @@ function cellular_feed_icon(array &$vars) {
 
   return $icon;
 }
-
 
 /*
  * @see file: preprocess/theme_form.inc
@@ -2144,7 +2131,6 @@ function cellular_textarea(array &$vars) {
   return $output;
 }
 
-
 /*
  * @see file: preprocess/theme_pager.inc
  * Drupal pager, basically ripped off from Tao :)...
@@ -2280,7 +2266,6 @@ function cellular_pager(array $vars) {
     ));
   }
 }
-
 
 /*
  * @see file: preprocess/social.inc
@@ -2548,7 +2533,6 @@ function cellular_social_media_share() {
   }
 }
 
-
 /*
  * @see file: preprocess/process.inc
  * Cellular process functions.
@@ -2575,7 +2559,6 @@ function cellular_process_page(array &$vars) {
   // Dev.
   cellular_dev($vars);
 }
-
 
 /*
  * @see file: preprocess/views.inc

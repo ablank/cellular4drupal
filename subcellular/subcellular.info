@@ -8,6 +8,7 @@ core        = 7.x
 engine      = phptemplate
 screenshot  = screenshot.png
 
+
 ;----------// Stylesheets
 ; CSS is added in /inc/alter.css.inc for more robust control.
 
@@ -49,8 +50,9 @@ settings[login_block_password]      = 0
 settings[login_block_orientation]   = vertical
 
 ;----------// Styles
+settings[min_style]                     = 0
 settings[remove_drupal_css]             = select
-settings[content_class_no_sidebars]     = cell
+settings[content_class_no_sidebar]      = cell-100
 settings[content_class_single_sidebar]  = cell-70
 settings[content_class_dual_sidebars]   = cell-60
 settings[sidebar_class_single_sidebar]  = cell-30
@@ -74,10 +76,9 @@ settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
 ;----------// jQuery Plugins
-settings[javascript]            = 1
+settings[cellularui]            = 1
 settings[min_script]            = 0
 settings[backstretch]           = 0
-settings[cellularui]            = 0
 settings[flowtype]              = 0
 settings[freetile]              = 0
 settings[jparallax]             = 0
@@ -115,6 +116,14 @@ settings[share_twitter]         = 0
 settings[share_linkedin]        = 0
 settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
+
+;----------// Plugins
+plugins[panels][layouts] = templates/panels
+
+breakpoints[mobile] = (min-width: 0px)and (max-width: 650px)
+breakpoints[narrow] = (min-width: 650px) and (max-width: 800px)
+breakpoints[wide] = (min-width: 800px) and (max-width: 1400px)
+breakpoints[tv] = only screen and (min-width: 1401px)
 
 ;----------// Site Features
 features[] = name
