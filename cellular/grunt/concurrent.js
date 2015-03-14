@@ -6,25 +6,35 @@
 module.exports = {
   watch: ['watch'],
   // Production
-  dist: [
-    'concat',
+  dist1: [
     'compass',
-    'autoprefixer',
-      // 'uglify:prod'
-      // 'svg2png'
-    'csscomb',
-    'closurecompiler',
-    'cssmin',
-    'jshint:js'
-    //'svgmin',
+    'concat',
+    'imagemin'
+    // 'svg2png'
   ],
-  dev: [
-    'concat',
-    'closurecompiler',
-    // 'imagemin',
-    'compass',
-    'uglify:dev',
+  dist2: [
     'autoprefixer',
+    'closurecompiler'
+    // 'svgmin'
+  ],
+  dist3: [
     'csscomb'
-  ]
+  ],
+  dist4: [
+    'jshint:js',
+    'cssmin'
+  ],
+  dev1: [
+    'compass',
+    // 'concat',
+    'imagemin:newer'
+  ],
+  dev2: [
+    'uglify',
+    'autoprefixer'
+  ],
+  dev3: [
+    'csscomb'
+  ],
+  dev4: []
 };

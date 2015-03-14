@@ -5,19 +5,25 @@
 
 module.exports = {
   options: {
-    cache: false,
+    cache: false
   },
   images: {
     files: [
       {
         expand: true,
         cwd: 'assets/images',
-        src: [
-          'gif/**/*.gif',
-          'jpg/**/*.[jpg, jpeg]',
-          'png/**/*.png'
-        ],
-        dest: 'assets/images/min/'
+        src: ['**/*.{gif, jpg, png}', '!**/min/**'],
+        dest: './assets/images/min/'
+      }
+    ]
+  },
+  images_svg: {
+    files: [
+      {
+        expand: true,
+        cwd: 'assets/images',
+        src: ['**/*.svg', '!**/min/**'],
+        dest: './assets/images/min/'
       }
     ]
   },
@@ -26,12 +32,18 @@ module.exports = {
       {
         expand: true,
         cwd: 'assets/icons',
-        src: [
-          'png/**/*.png',
-          'svg/**/*.svg'
-        ]
-        ,
-        dest: 'assets/icons/min/'
+        src: ['**/*.png', '!**/min/**'],
+        dest: './assets/icons/min/'
+      }
+    ]
+  },
+  icons_svg: {
+    files: [
+      {
+        expand: true,
+        cwd: 'assets/icons',
+        src: ['**/*.svg', '!**/min/**'],
+        dest: './assets/icons/min/'
       }
     ]
   }

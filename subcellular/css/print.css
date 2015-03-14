@@ -56,13 +56,13 @@
   /* line 27, ../sass/print.scss */
   a,
   a:visited {
-    text-decoration: underline;
     color: #00598e;
+    text-decoration: underline;
   }
   /* line 32, ../sass/print.scss */
   a:after,
   a:visited:after {
-    content: ' (' attr(href) ')';
+    content: " (" attr(href) ")";
   }
 
   /* line 36, ../sass/print.scss */
@@ -89,7 +89,7 @@
   #header,
   #footer,
   .hidden {
-    display: none;
     visibility: hidden;
+    display: none;
   }
 }

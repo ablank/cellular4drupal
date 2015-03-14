@@ -4,7 +4,8 @@
  */
 
 module.exports = {
-  php: {
+
+   php: {
     files: [
       'node_modules/grunt-contrib-concat/**/*.js',
       'preprocess/**/*.inc'

@@ -4,17 +4,18 @@
  * Cellular Base Theme for Drupal 7.
  *
  * @author Adam Blankenship
- * 
+ *
  * @see http://live-cellular.gotpantheon.com
  * @see https://github.com/ablank/cellular
  */
+
+
 /*
  * @see file: preprocess/_init.inc
  * Initialize constants & globals
  */
 
 define('CELLULAR_LIB', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');
-
 
 /*
  * @see file: preprocess/fn.inc
@@ -152,7 +153,7 @@ function cellular_dev(array $element) {
  *   Associative array of stylesheets to merge with defaults from theme registry.
  * @param array $array
  *   Associative array of stylesheets data.
- * @param boolean $cellular
+ * @param bool $cellularReference cellular library if TRUE.
  *   Reference cellular library if TRUE.
  */
 function cellular_add_css(array &$css, array $array, $cellular = FALSE) {
@@ -211,7 +212,7 @@ function cellular_remove_css(array &$css, array $exclude) {
  *   Associative array of stylesheets to merge with defaults from theme registry.
  * @param array $style
  *   Array of stylesheet data used to override default.
- * @param boolean $cellular
+ * @param bool $cellularReference cellular library if TRUE.
  *   Reference cellular library if TRUE.
  */
 function cellular_override_css(array &$css, array $style, $cellular = FALSE) {
@@ -237,61 +238,6 @@ function cellular_override_css(array &$css, array $style, $cellular = FALSE) {
     $css[$ocss]['type'] = isset($style['cdn']) ? 'external' : 'file';
     $css[$ocss]['media'] = isset($style['media']) ? $style['media'] : 'all';
     $css[$ocss]['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
-  }
-}
-
-/**
- * Remove core stylesheets based on theme settings.
- *
- * @param array $css
- *   Associative array of stylesheets to merge with defaults from theme registry.
- */
-function cellular_remove_default_css(array &$css) {
-  // Nuke all css not a member of group CSS_THEME:
-  $exclude = array();
-  if (theme_get_setting('remove_drupal_css') === 'theme_only') {
-    foreach ($css as $key => $value) {
-      if ($value['group'] !== CSS_THEME
-      // Keep admin stuff.
-      && ($key !== 'admin_menu' || $key !== 'toolbar')
-      ) {
-        unset($css[$key]);
-      }
-    }
-  }
-  // 86 SYSTEM_CSS.
-  if (theme_get_setting('remove_drupal_css') === 'system') {
-    foreach ($css as $key => $value) {
-      if ($value['group'] === CSS_SYSTEM) {
-        unset($css[$key]);
-      }
-    }
-  }
-  // Remove selected system & module css.
-  if (theme_get_setting('remove_drupal_css') === 'select') {
-    // Select module css to exclude.
-    $exclude = array(
-      'system' => array(
-        'system.base.css',
-        'system.menus.css',
-        'system.messages.css',
-        'system.theme.css',
-      ),
-      'block' => 'block.css',
-      'colorbox' => 'styles/default/colorbox_style.css',
-      'comment' => 'comment.css',
-      'field' => 'theme/field.css',
-      'filter' => 'filter.css',
-      'help' => 'help.css',
-      'menu' => 'menu.css',
-      'node' => 'node.css',
-      'panels' => 'css/panels.css',
-      'search' => 'search.css',
-      'shortcut' => 'shorcut.css',
-      'user' => 'user.css',
-    );
-
-    cellular_remove_css($css, $exclude);
   }
 }
 
@@ -331,18 +277,18 @@ function cellular_main_menu(array &$vars) {
  *
  * @param array $array
  *   Assosciative array of javascript data.
- * @param boolean $cellular
+ * @param bool $cellularReference cellular library if TRUE.
  *   Reference cellular library if TRUE.
  */
 function cellular_add_js(array $array, $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
-// Set default attributes.
+      // Set default attributes.
       $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
       $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
       $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
       $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-// Conditional attributes.
+      // Conditional attributes.
       empty($script['version']) ? NULL : $script['version'] = $script['version'];
 
       if (!empty($script['cdn'])) {
@@ -364,11 +310,11 @@ function cellular_add_js(array $array, $cellular = FALSE) {
  *
  * @param array $script
  *   Array of script attributes used to generate fallback.
- * @param  $cellular
+ * @param $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_js_fallback(array $script, $cellular = FALSE) {
-// Only add the fallback if an object has been provided to test.
+  // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
       'group' => $script['group'],
@@ -393,35 +339,35 @@ function cellular_js_fallback(array $script, $cellular = FALSE) {
  *   Associative array of javascripts.
  * @param array $script
  *   Array of attributes used to add javascript fallback.
- * @param boolean $cellular
+ * @param bool $cellularReference cellular library if TRUE.
  *   Reference cellular library if TRUE.
  */
 function cellular_js_override(array &$javascript, array $script, $cellular = FALSE) {
-// Only override if js is being called.
+  // Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
 
     if (!empty($script['cdn'])) {
-// If cdn is provided, set data to external source & call local fallback.
+      // If cdn is provided, set data to external source & call local fallback.
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
     }
     else {
-// Or set data to local file if no CDN.
+      // Or set data to local file if no CDN.
       if (!empty($script['file'])) {
         $data = $cellular ? constant('CELLULAR_LIB') : path_to_theme();
         $data .= '/js/' . $script['file'];
       }
     }
 
-// Default attributes.
+    // Default attributes.
     $javascript[$ojs]['data'] = $data;
     $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : JS_LIBRARY;
     $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
     $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
     $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
     $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
-// Conditional attributes.
+    // Conditional attributes.
     empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
   }
 }
@@ -440,7 +386,7 @@ function cellular_js_override(array &$javascript, array $script, $cellular = FAL
  *   );.
  */
 function cellular_modernizr(array $tests) {
-// $base_url needs to be added to set the correct path.
+  // $base_url needs to be added to set the correct path.
   $dir = $GLOBALS['base_url'] . '/' . path_to_theme();
   $query = '';
 
@@ -767,7 +713,7 @@ function cellular_jqueryui_update_css(array &$css) {
  * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
-  // Help prevent clickjacking
+  // Help prevent clickjacking.
   drupal_add_http_header('X-Frame-Options', 'DENY');
   // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
@@ -1098,6 +1044,61 @@ function cellular_css_alter(array &$css) {
   !empty($plugins) ? cellular_add_css($css, $plugins, TRUE) : NULL;
 }
 
+/**
+ * Remove core stylesheets based on theme settings.
+ *
+ * @param array $css
+ *   Associative array of stylesheets to merge with defaults from theme registry.
+ */
+function cellular_remove_default_css(array &$css) {
+  // Nuke all css not a member of group CSS_THEME:
+  $exclude = array();
+  if (theme_get_setting('remove_drupal_css') === 'theme_only') {
+    foreach ($css as $key => $value) {
+      if ($value['group'] !== CSS_THEME
+      // Keep admin stuff.
+      && ($key !== 'admin_menu' || $key !== 'toolbar')
+      ) {
+        unset($css[$key]);
+      }
+    }
+  }
+  // 86 SYSTEM_CSS.
+  if (theme_get_setting('remove_drupal_css') === 'system') {
+    foreach ($css as $key => $value) {
+      if ($value['group'] === CSS_SYSTEM) {
+        unset($css[$key]);
+      }
+    }
+  }
+  // Remove selected system & module css.
+  if (theme_get_setting('remove_drupal_css') === 'select') {
+    // Select module css to exclude.
+    $exclude = array(
+      'system' => array(
+        'system.base.css',
+        'system.menus.css',
+        'system.messages.css',
+        'system.theme.css',
+      ),
+      'block' => 'block.css',
+      'colorbox' => 'styles/default/colorbox_style.css',
+      'comment' => 'comment.css',
+      'field' => 'theme/field.css',
+      'filter' => 'filter.css',
+      'help' => 'help.css',
+      'menu' => 'menu.css',
+      'node' => 'node.css',
+      'panels' => 'css/panels.css',
+      'search' => 'search.css',
+      'shortcut' => 'shorcut.css',
+      'user' => 'user.css',
+    );
+
+    cellular_remove_css($css, $exclude);
+  }
+}
+
 /*
  * @see file: preprocess/form_alter.inc
  * Alter specific forms.
@@ -1132,7 +1133,6 @@ function cellular_form_alter(array &$form, array &$form_state, $form_id) {
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
       // $form['actions']['submit']['#attributes']['class'] = array('search-submit');
-
       break;
 
     // User Login block:FF
@@ -1174,13 +1174,13 @@ function cellular_form_alter(array &$form, array &$form_state, $form_id) {
           $output .= l(t('Register'), "user/register", array(
             'attributes' => array(
               'class' => array('register'),
-          )));
+            )));
         }
         if (!empty($user_pass)) {
           $output .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
               'class' => array('password'),
-          )));
+            )));
         }
         $output .= '</div>';
       }
@@ -1191,25 +1191,25 @@ function cellular_form_alter(array &$form, array &$form_state, $form_id) {
       $form['links']['#markup'] = $output;
       // Register New User Account:
       /*
-        $form['links']['#markup'][] = t('Register')
-        . ' <a href="/user/register">'
-        . t('Register') . '</a>';
+      $form['links']['#markup'][] = t('Register')
+      . ' <a href="/user/register">'
+      . t('Register') . '</a>';
        */
 
       // Forgot Password:
       /*
-        $form['links']['#markup'][] = t('Forgotten Password?')
-        . ' <a href="/user/password">'
-        . t('Forgotten Password?') . '</a>';
+      $form['links']['#markup'][] = t('Forgotten Password?')
+      . ' <a href="/user/password">'
+      . t('Forgotten Password?') . '</a>';
        */
 
       // Register New User Account &&  Forgot Password:
       /*
-        $form['links']['#markup'] = '<hr/>'
-        . ' <a class="user-register" href="/user/register">'
-        . t('Register') . '</a>' . '<hr/>'
-        . ' <a class="user-password" href="/user/password">'
-        . t('Forgotten Password?') . '</a>';
+      $form['links']['#markup'] = '<hr/>'
+      . ' <a class="user-register" href="/user/register">'
+      . t('Register') . '</a>' . '<hr/>'
+      . ' <a class="user-password" href="/user/password">'
+      . t('Forgotten Password?') . '</a>';
        */
 
       break;
@@ -1285,7 +1285,7 @@ function cellular_js_alter(array &$javascript) {
 function cellular_js() {
   $ext = theme_get_setting('min_script') == 1 ? '.min.js' : '.js';
 
-// Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
+  // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
   theme_get_setting('cellularui') == 1 ? $js_plugins['cellularui'] = TRUE : NULL;
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
@@ -1295,10 +1295,12 @@ function cellular_js() {
   theme_get_setting('masonry') == 1 ? $js_plugins['masonry'] = TRUE : NULL;
   theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = TRUE : NULL;
 
-// Add to Cellular plugin settings to Drupal.settings.
+  // Add to Cellular plugin settings to Drupal.settings.
   drupal_add_js(array('cellular' => $js_plugins), 'setting');
 
-  // Add Cellular UI
+  // Add script by extension. The minified source should compile ALL js in
+  // /yourTheme/js/ into script.min.js.
+  // Add Cellular UI.
   if ($js_plugins['cellularui'] === TRUE && $ext === '.js') {
     $scripts['cellularui'] = array(
       'object' => 'cellular',
@@ -1307,7 +1309,6 @@ function cellular_js() {
       'weight' => 98,
     );
   }
-// Add plugins.js if  relative to /yourTheme/js/
   if (($js_plugins) && ($ext === '.js')) {
     $scripts['plugins'] = array(
       'file' => 'plugins' . $ext,
@@ -1315,9 +1316,6 @@ function cellular_js() {
       'weight' => 99,
     );
   }
-
-// Add script by extension. The minified source should compile ALL js in
-// /yourTheme/js/ into script.min.js.
   $scripts['script'] = array(
     'file' => 'script' . $ext,
     'group' => JS_THEME,
@@ -1342,7 +1340,7 @@ function cellular_modernizr_default() {
   $mq = cellular_mq();
 
   $tests = array();
-  // Test SVG
+  // Test SVG.
   $tests['svg'] = array(
     'test' => 'Modernizr.svg',
     'yep' => $css_dir . "icons-svg" . $ext,
@@ -1543,35 +1541,6 @@ function cellular_preprocess_node(array &$vars) {
  *   Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_page(array &$vars) {
-  // Add template suggestions for custom Content types(page--content-type.tpl.php)
-  isset($vars['node']->type) ? $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type : NULL;
-
-  // Set main_menu as full-tree or top-level as defined in settings:
-  cellular_main_menu($vars);
-  // Set classes for content & sidebars.
-  cellular_test_sidebar($vars);
-  // Use page--error.tpl if http error status is returned.
-  cellular_error_page($vars);
-
-  // Link site name to frontpage:
-  $vars['site_name'] = l($vars['site_name'], '<front>');
-  // Set Social Media links:
-  $vars['page']['social_media_share'] = cellular_social_media_share();
-  $vars['page']['social_media_follow'] = cellular_social_media_follow();
-  // Set search block variable for addition to templates, i.e. error page.
-  $vars['page']['search_box'] = drupal_get_form('search_form');
-  // Set copyright if provided:
-  $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
-}
-
-/**
- * Cellular template_preprocess_maintenance_page().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_preprocess_maintenance_page(array &$vars) {
   // Add template suggestions for custom Content types(page--content-type.tpl.php)
   isset($vars['node']->type) ? $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type : NULL;
 
@@ -1876,13 +1845,13 @@ function cellular_form_element(array &$vars) {
   $element = $vars['element'];
   $output = '';
   /* May decide to include later:
-    // $element['#theme_wrappers'] = NULL;
-    // $attributes['class'] = array();
-    // isset($element['#name']) ?
-    // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
-    // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
-    // : NULL;
-    // $element['#theme_wrappers'] = NULL;
+  // $element['#theme_wrappers'] = NULL;
+  // $attributes['class'] = array();
+  // isset($element['#name']) ?
+  // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
+  // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
+  // : NULL;
+  // $element['#theme_wrappers'] = NULL;
    */
   isset($element['#disabled']) ?
   $element['#attributes']['class'][] = 'disabled' : NULL;
@@ -2299,7 +2268,7 @@ function cellular_build_links(array $links, array $parent) {
             'class' => array(
               $parent['link_class'],
               $link['class'],
-        ))));
+            ))));
       }
     }
 

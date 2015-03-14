@@ -1,6 +1,12 @@
 default:
     - 'concurrent:watch'
 dist:
-    - 'concurrent:dist'
+    - 'concurrent:dist1'
+    - 'concurrent:dist2'
+    - 'concurrent:dist3'
+    - 'concurrent:dist4'
 dev:
-    - 'concurrent:dev'
+    - 'concurrent:dev1'
+    - 'concurrent:dev2'
+    - 'concurrent:dev3'
+    - 'concurrent:dev4'

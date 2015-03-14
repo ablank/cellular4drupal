@@ -19,9 +19,6 @@ module.exports = {
 * @see https://github.com/ablank/cellularUI\n\
 */\n',
       separator: '\n\n // :)\n',
-      language: {
-        rmSpace: true
-      }
     },
     src: [
       'js/cellularUI/src/init/jquery.init.js',
@@ -44,7 +41,7 @@ module.exports = {
       'js/cellularUI/src/init/drupal.end.js',
       'js/cellularUI/src/init/jquery.end.js'
     ],
-    dest: 'test/js/jquery.cellularUI.js'
+    dest: 'js/jquery.cellularUI.js'
   },
   template: {
     options: {

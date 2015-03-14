@@ -68,35 +68,6 @@ function cellular_preprocess_page(array &$vars) {
 }
 
 /**
- * Cellular template_preprocess_maintenance_page().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_preprocess_maintenance_page(array &$vars) {
-  // Add template suggestions for custom Content types(page--content-type.tpl.php)
-  isset($vars['node']->type) ? $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type : NULL;
-
-  // Set main_menu as full-tree or top-level as defined in settings:
-  cellular_main_menu($vars);
-  // Set classes for content & sidebars.
-  cellular_test_sidebar($vars);
-  // Use page--error.tpl if http error status is returned.
-  cellular_error_page($vars);
-
-  // Link site name to frontpage:
-  $vars['site_name'] = l($vars['site_name'], '<front>');
-  // Set Social Media links:
-  $vars['page']['social_media_share'] = cellular_social_media_share();
-  $vars['page']['social_media_follow'] = cellular_social_media_follow();
-  // Set search block variable for addition to templates, i.e. error page.
-  $vars['page']['search_box'] = drupal_get_form('search_form');
-  // Set copyright if provided:
-  $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
-}
-
-/**
  * Cellular template_preprocess_block().
  *
  * @param array $vars

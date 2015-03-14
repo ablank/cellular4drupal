@@ -50,3 +50,58 @@ function cellular_css_alter(array &$css) {
   }
   !empty($plugins) ? cellular_add_css($css, $plugins, TRUE) : NULL;
 }
+
+/**
+ * Remove core stylesheets based on theme settings.
+ *
+ * @param array $css
+ *   Associative array of stylesheets to merge with defaults from theme registry.
+ */
+function cellular_remove_default_css(array &$css) {
+  // Nuke all css not a member of group CSS_THEME:
+  $exclude = array();
+  if (theme_get_setting('remove_drupal_css') === 'theme_only') {
+    foreach ($css as $key => $value) {
+      if ($value['group'] !== CSS_THEME
+      // Keep admin stuff.
+      && ($key !== 'admin_menu' || $key !== 'toolbar')
+      ) {
+        unset($css[$key]);
+      }
+    }
+  }
+  // 86 SYSTEM_CSS.
+  if (theme_get_setting('remove_drupal_css') === 'system') {
+    foreach ($css as $key => $value) {
+      if ($value['group'] === CSS_SYSTEM) {
+        unset($css[$key]);
+      }
+    }
+  }
+  // Remove selected system & module css.
+  if (theme_get_setting('remove_drupal_css') === 'select') {
+    // Select module css to exclude.
+    $exclude = array(
+      'system' => array(
+        'system.base.css',
+        'system.menus.css',
+        'system.messages.css',
+        'system.theme.css',
+      ),
+      'block' => 'block.css',
+      'colorbox' => 'styles/default/colorbox_style.css',
+      'comment' => 'comment.css',
+      'field' => 'theme/field.css',
+      'filter' => 'filter.css',
+      'help' => 'help.css',
+      'menu' => 'menu.css',
+      'node' => 'node.css',
+      'panels' => 'css/panels.css',
+      'search' => 'search.css',
+      'shortcut' => 'shorcut.css',
+      'user' => 'user.css',
+    );
+
+    cellular_remove_css($css, $exclude);
+  }
+}
