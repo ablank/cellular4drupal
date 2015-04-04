@@ -1,0 +1,112 @@
+/////
+// Cellular :: SASS Configuration Variables
+// Variables should be separated from style partials to allow styles to access
+// the same configuration data without including the style rules.
+/////
+
+@import "compass";
+//////
+@import "_variables/compass_defaults";
+@import "_variables/swatches";
+@import "_variables/icons";
+//////
+@import "_mixins/cellularmixins";
+@import "_mixins/loaders";
+
+// Set stylesheet breakpoints
+$res_mobile: 650px;
+$res_narrow: 800px;
+$res_normal: 960px;
+$res_large: 2000px;
+
+// Sizing vars
+$tiny: 0.3em;
+$small: 0.75em;
+$normal: 1em;
+$big: 1.4em;
+$border: thin solid;
+
+// Shadows: $h-off $v-off $blur $spread
+$shadow_big: 0 0 $normal $normal;
+$shadow_med: 0 0 $small $small;
+$shadow_small: 0 0 $tiny $tiny;
+
+// Branding
+$logo_width: 72px;
+$logo_height: 72px;
+$logo_pad: 12px;
+$logo_png: url('../assets/images/min/png/logo.png');
+$logo_svg: url('../assets/images/min/svg/logo.svg');
+
+// Images
+$body_img: url('../assets/images/honeycomb_light.png');
+
+// Typography
+$p_font: 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
+$p_size: $normal;
+$p_line_height: $big;
+$p_max_width: 32em;
+$p_color: $c1;
+
+$h_font: "Quicksand";
+$h_size: 2.4em;
+$h_weight: bold;
+$h_color: $grey;
+
+// Grid size declarations.
+$grid : (
+100
+90
+80
+75
+70
+66
+60
+50
+40
+33
+30
+25
+20
+10
+);
+
+// Cell grid spacing
+$cell_margin: 0;
+$cell_padding: 0;
+$cell_border: 0;
+$cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);
+
+$cells: ();
+@each $cell in $grid {
+  $cells : append($cells, unquote('.cell-#{$cell},'));
+}
+
+// Content Region spacing
+$region_margin: 0;
+$region_padding: 0;
+$region_border: 0;
+$region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 2);
+
+// Content Regions
+$regions_list : (
+console
+header-top
+header
+header-bottom
+content-top
+content
+content-bottom
+sidebar-left
+sidebar-right
+footer
+footer_left
+footer-right
+footer-middle
+);
+
+// Define all regions using list.
+$regions: ();
+@each $region in $regions_list {
+  $regions : append($regions, unquote('##{$region},'));
+}

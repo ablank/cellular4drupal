@@ -6,21 +6,9 @@
  */
 
 module.exports = {
-  dev: {
+  compile: {
     options: {
-      config: 'config/compass.rb',
-      noLineComments: false,
-        trace: true,
-      environment: 'development',
-      outputStyle: 'expanded'
-    }
-  },
-  prod: {
-    options: {
-      config: 'config/compass.rb',
-      noLineComments: true,
-        trace: true,
-      outputStyle: 'expanded'
+      config: 'config/compass.rb'
     }
   }
 };

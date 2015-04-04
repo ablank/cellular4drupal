@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Fallback PNG icons for browsers w/o SVG support
+ */
+
+@import "variables";
+
+@each $icon in $ui_icons {
+  .icon.#{$icon} {
+    background-image: url('../assets/icons/png/#{$icon}.png');
+  }
+}
+
+@each $icon in $tech_icons {
+  .icon.#{$icon} {
+    background-image: url('../assets/icons/png/#{$icon}.png');
+  }
+}
+
+@each $icon in $social_icons {
+  .icon.#{$icon} {
+    background-image: url('../assets/icons/png/#{$icon}.png');
+  }
+}

@@ -1,34 +1,30 @@
 /**
  * @file
- * Define grunt tasks to run concurrently..
+ * Define grunt tasks to run concurrently.
  */
 
 module.exports = {
   watch: ['watch'],
-  prod1: [
-    'compass:prod',
-    'imagemin',
-    'svgmin'
-    // 'concat',
+  // Production Build.
+  build: [
+    'compass',
+    'concat',
+    'uglify',
+    'imagemin'
+    // 'svg2png'
   ],
-  prod2: [
-    'uglify:prod',
-    'svg2png'
+  // Test Build.
+  buildtest: [
+    'compass',
+    'concat',
+    'uglify',
+    'newer:imagemin'
+    // 'svg2png'
   ],
-  prod3: [
-    'jshint'
-  ],
-  // prod4: [],
-  dev1: [
-    // 'concat',
-    'compass:dev'
-  ],
-  dev2: [
-    'uglify:dev'
-  ],
-  dev3: [
-    // 'svg2png',
-    'jshint'
+  style: [
+    'compass',
+    'newer:imagemin',
+    'autoprefixer',
+    'csscomb'
   ]
-  // dev4: []
 };

@@ -17,7 +17,7 @@
 endif; ?> class="panels cell">
 
   <?php if ($content['top']): ?>
-    <div class="panel-top cell">
+    <div class="panel-top cell-100">
       <div class="panel-content">
         <?php print $content['top']; ?>
       </div>
@@ -25,7 +25,7 @@ endif; ?> class="panels cell">
   <?php endif; ?>
 
   <?php if ($content['left']): ?>
-    <div class="panel-left cell-70">
+    <div class="panel-left cell-30">
       <div class="panel-content">
         <?php print $content['left']; ?>
       </div>
@@ -33,7 +33,7 @@ endif; ?> class="panels cell">
   <?php endif; ?>
 
   <?php if ($content['right']): ?>
-    <div class="panel-right cell-30">
+    <div class="panel-right cell-70">
       <div class="panel-content">
         <?php print $content['right']; ?>
       </div>
@@ -41,7 +41,7 @@ endif; ?> class="panels cell">
   <?php endif; ?>
 
   <?php if ($content['bottom']): ?>
-    <div class="panel-bottom cell">
+    <div class="panel-bottom cell-100">
       <div class="panel-content">
         <?php print $content['bottom']; ?>
       </div>

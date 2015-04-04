@@ -1,0 +1,24 @@
+/**
+ * @file
+ * SVG icons
+ */
+
+@import "variables";
+
+@each $icon in $ui_icons {
+  .icon.#{$icon} {
+    background-image: url('../assets/icons/svg/#{$icon}.svg');
+  }
+}
+
+@each $icon in $tech_icons {
+  .icon.#{$icon} {
+    background-image: url('../assets/icons/svg/#{$icon}.svg');
+  }
+}
+
+@each $icon in $social_icons {
+  .icon.#{$icon} {
+    background-image: url('../assets/icons/svg/#{$icon}.svg');
+  }
+}

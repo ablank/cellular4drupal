@@ -4,18 +4,8 @@
  */
 
 module.exports = {
-  scripts: {
-    files: ['js/*.js', 'js/**/*.js'],
-    tasks: [
-      // 'uglify',
-      'jshint'
-    ],
-    options: {
-      interrupt: false
-    }
-  },
-  styles: {
-    files: ['sass/*.scss', 'sass/**/*.scss'],
-    tasks: ['compass:dev']
+  php: {
+    files: ['src/preprocess/**/*.inc'],
+    tasks: ['concat']
   }
 };

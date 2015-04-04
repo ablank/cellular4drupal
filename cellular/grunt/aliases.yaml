@@ -1,10 +1,15 @@
 default:
-    - 'concurrent:watch'
-prod:
-    - 'concurrent:prod1'
-    - 'concurrent:prod2'
-    - 'concurrent:prod3'
-dev:
-    - 'concurrent:dev1'
-    - 'concurrent:dev2'
-    - 'concurrent:dev3'
+    - 'concat'
+    - 'newer:imagemin'
+build:
+    - 'clean:build'
+    - 'copy:build'
+
+buildtest:
+    - 'clean:buildtest'
+    - 'compass'
+    - 'uglify:buildtest'
+    - 'imagemin:buildtest'
+    - 'autoprefixer'
+    - 'csscomb'
+    - 'cssmin'

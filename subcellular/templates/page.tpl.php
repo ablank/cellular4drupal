@@ -3,7 +3,6 @@
  * @file
  * Page Template.
  */
-
 /* VARIABLES
   Regions:
   - $page['console']// Help, warnings, & other system notifications
@@ -94,7 +93,6 @@
  */
 
 ?>
-
 <div id="page-wrap">
 
   <div id="skipLinks" class="hidden">
@@ -106,24 +104,30 @@
     <div id="header-top">
       <?php print render($page['header_top']); ?>
     </div>
-  <?php endif; ?>
 
+  <?php endif; ?>
   <div id="header">
 
     <div id="logo">
       <?php
       if (!empty($site_name)) :
         print $site_name;
-      endif; ?>
+      endif;
+
+      ?>
     </div>
 
-    <?php if (isset($main_menu)) : ?>
+    <?php if (!empty($main_menu)) : ?>
       <div id="nav">
         <?php print render($main_menu); ?>
       </div>
     <?php endif; ?>
+    <?php
+    if ($page['header']) :
+      print render($page['header']);
+    endif;
 
-    <?php print render($page['header']); ?>
+    ?>
 
   </div>
   <!-- /#header -->
@@ -132,8 +136,8 @@
     <div id="header-bottom">
       <?php print render($page['header_bottom']); ?>
     </div>
-  <?php endif; ?>
 
+  <?php endif; ?>
   <div id="app">
 
     <?php
@@ -142,20 +146,23 @@
       print '<h1 id="page-title">' . $title . '</h1>';
     endif;
     print render($title_suffix);
+
     ?>
 
     <?php
     // Breadcrumb Navigation.
     if ($breadcrumb && !$is_front) :
       print $breadcrumb;
-    endif ?>
+    endif
+
+    ?>
 
     <?php if (!empty($tabs)): ?>
       <div id="page-tabs">
         <?php print render($tabs); ?>
       </div>
-    <?php endif; ?>
 
+    <?php endif; ?>
     <div id="content-wrap" class="cell center">
 
       <?php
@@ -163,7 +170,9 @@
         print '<ul class="links">' . render($action_links) . '</ul>';
       endif;
 
-      if ($page['console'] || ($show_messages && $messages)) : ?>
+      if ($page['console'] || ($show_messages && $messages)) :
+
+        ?>
         <div id="console">
           <?php
           print render($page['console']);
@@ -174,46 +183,63 @@
           ?>
         </div>
       <?php endif; ?>
-
       <?php if ($page['sidebar_left']) : ?>
-        <div id="sidebar-left" class="<?php print $page['sidebar_class']; ?>">
-          <?php print render($page['sidebar_left']); ?>
+        <div id="sidebar-left" class="<?php
+        // Class of sidebar from theme settings.
+        if ($page['sidebar_class']):
+          print $page['sidebar_class'];
+        endif;
+
+        ?>">
+               <?php print render($page['sidebar_left']); ?>
         </div>
         <!-- /#sidebar-left -->
-      <?php endif; ?>
 
+      <?php endif; ?>
       <?php if ($page['content_top']) : ?>
-        <div id="content-top" class="cell">
+        <div id="content-top">
           <?php print render($page['content_top']); ?>
         </div>
+
       <?php endif; ?>
+      <div id="content" class="<?php
+      // Class of sidebar from theme settings.
+      if (!empty($page['content_class'])):
+        print $page['content_class'];
+      endif;
 
-      <div id="content" class="<?php print $page['content_class']; ?>">
-        <?php
-        // Main Page Content.
-        print render($page['content']);
-        ?>
+      ?>">
+             <?php
+             // Main Page Content.
+             print render($page['content']);
 
-        <?php if ($page['content_bottom']) : ?>
-          <div id="content-bottom" class="cell">
+             ?>
+             <?php if ($page['content_bottom']) : ?>
+          <div id="content-bottom">
             <?php print render($page['content_bottom']); ?>
           </div>
+
         <?php endif; ?>
       </div>
       <!-- /#content -->
 
       <?php if ($page['sidebar_right']) : ?>
-        <div id="sidebar-right" class="<?php print $page['sidebar_class']; ?>">
-          <?php print render($page['sidebar_right']); ?>
+        <div id="sidebar-right" class="<?php
+        // Class of sidebar from theme settings.
+        if ($page['sidebar_class']):
+          print $page['sidebar_class'];
+        endif;
+
+        ?>">
+               <?php print render($page['sidebar_right']); ?>
         </div>
         <!-- /#sidebar-right -->
-      <?php endif; ?>
 
+      <?php endif; ?>
     </div>
     <!-- /#content-wrap-->
   </div>
   <!-- /#app-->
-
   <?php
 // Social Media share links.
   if ($page['social_media_share']) :
@@ -222,28 +248,31 @@
 // Social Media follow links.
   if ($page['social_media_follow']):
     print $page['social_media_follow'];
-  endif; ?>
+  endif;
 
-  <div id="footer" class="cell">
+  ?>
+  <div id="footer">
 
     <?php if ($page['footer_top']) : ?>
-      <div id="footer-top" class="cell">
+      <div id="footer-top">
         <?php print render($page['footer_top']); ?>
       </div>
-    <?php endif; ?>
 
+    <?php endif; ?>
     <?php
     if ($page['footer']) :
       print render($page['footer']);
-    endif; ?>
+    endif;
 
-    <div id="footer-bottom" class="cell">
+    ?>
+    <div id="footer-bottom">
       <?php if ($page['footer_bottom']) : ?>
         <?php print render($page['footer_bottom']); ?>
       <?php endif; ?>
 
-      <?php if ($page['copyright']): ?>
+      <?php if (!empty($page['copyright'])): ?>
         <small id="copyright"><?php print $page['copyright']; ?></small>
+
       <?php endif; ?>
     </div>
     <!-- /#footer-bottom -->

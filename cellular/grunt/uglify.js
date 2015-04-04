@@ -4,28 +4,36 @@
  */
 
 module.exports = {
-  prod: {
+  buildtest: {
     options: {
+      compress: true,
       mangle: true,
       beautify: false,
       preserveComments: 'some',
-      compress: true,
-      expand: true,
+      wrap: true
+      // screwIE8: true
     },
-    files: {
-      'js/script.min.js': ['js/script.js'],
-      'js/plugins.min.js': ['js/plugins.js']
-    }
+    files: [{
+      'buildtest/js/script.min.js': [ 
+        'buildtest/js/jquery.cellularUI.js',
+        'buildtest/js/plugins.js',
+        'buildtest/js/script.js'
+      ]
+      }]
   },
-  dev: {
+  prettybuildtest: {
     options: {
+      compress: false,
       mangle: false,
       beautify: true,
-      preserveComments: 'all'
+      preserveComments: 'all',
+      wrap: true
+      // screwIE8: true
     },
-    files: {
-      'js/script.dev.js': ['js/script.js'],
-      'js/plugins.dev.js': ['js/plugins.js']
-    }
+    files: [{
+      'buildtest/js/jquery.cellularUI.js': 'src/js/CellularUI/jquery.cellularUI.js',
+      'buildtest/js/plugins.js': 'src/js/plugins.js',
+      'buildtest/js/script.js': 'src/js/script.js'
+      }]
   }
 };

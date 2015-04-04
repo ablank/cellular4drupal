@@ -43,20 +43,22 @@
  */
 
 ?>
-<div<?php print " id=\"$block_html_id\" class=\"$classes\" $attributes" ?>>
+<div<?php print " id=\"$block_html_id\" class=\"$classes\"$attributes" ?>>
   <?php
   if ($block->subject):
     print render($title_prefix);
-    print '<h3' . $title_attributes . '>' . $block->subject . '</h3>';
+    print "<h3$title_attributes>$block->subject</h3>";
     print render($title_suffix);
   endif;
 
   ?>
-  <?php if ($content_attributes) : ?>
-    <div <?php print $content_attributes; ?>>
-    <?php endif; ?>
-      <?php print $content ?>
-    <?php if ($content_attributes) : ?>
-    </div>
-  <?php endif; ?>
+  <?php
+  if ($content_attributes) :
+    print "<div$content_attributes>";
+  endif; ?>
+  <?php print $content ?>
+  <?php
+  if ($content_attributes) :
+    print "</div>";
+  endif; ?>
 </div>

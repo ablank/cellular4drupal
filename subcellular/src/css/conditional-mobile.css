@@ -1,0 +1,44 @@
+/**
+ * @file
+ * Dynamically loaded styling for mobile devices
+ */
+/**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+/**
+  * @file
+  * CSS loading indicators.
+  * http://codepen.io/TaniaLD/pen/oKxep
+  * http://projects.lukehaas.me/css-loaders/
+  * https://github.com/jh3y/whirl/
+*/
+/**
+  * @file
+  * Styling for mobile devices included in style.css
+*/
+@media screen and (max-width: 650px) {
+  /* line 9, ../sass/style/media-query/_mobile.scss */
+  #nav ul.menu {
+    visibility: hidden;
+  }
+}
