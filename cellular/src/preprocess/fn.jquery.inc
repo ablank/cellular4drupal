@@ -273,11 +273,7 @@ function cellular_jqueryui_update_css(array &$css) {
       }
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
-<<<<<<< HEAD:cellular/src/preprocess/fn.jquery.inc
         $style['ui']['file'] = $ui_path . 'jquery-ui';
-=======
-        $style['ui']['file'] = $ui_path . 'jquery-ui.css';
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/preprocess/fn.jquery.inc
         if (theme_get_setting('jquery_cdn') == 1) {
           $cdn = cellular_cdn();
           // Set cdn source.

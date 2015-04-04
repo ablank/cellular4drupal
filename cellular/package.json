@@ -21,7 +21,6 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-<<<<<<< HEAD
     "load-grunt-config": "*",
     "grunt-autoprefixer": "^2.2.0",
     "grunt-csscomb": "^3.0.0",
@@ -34,22 +33,6 @@
     "grunt-contrib-imagemin": "^0.9.3",
     "grunt-contrib-uglify": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1"
-=======
-    "grunt-concurrent": "*",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-newer": "^1.1.0",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-closurecompiler": "^0.9.9",
-    "grunt-contrib-imagemin": "^0.9.3",
-    "grunt-contrib-uglify": "^0.8.0",
-    "grunt-contrib-compass": "^1.0.1",
-    "grunt-csscomb": "^3.0.0",
-    "grunt-autoprefixer": "^2.2.0",
-    "grunt-contrib-cssmin": "^0.12.2",
-    "grunt-svg2png": "^0.2.7",
-    "load-grunt-config": "*"
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893
   },
   "dependencies": {
     "time-grunt": "*"

@@ -166,7 +166,7 @@ tr:nth-child(even) {
 
 /* line 34, ../sass/style/_tables.scss */
 tr:nth-child(odd) {
-  background: #FEFEFE;
+  background: #fefefe;
 }
 
 /* line 38, ../sass/style/_tables.scss */
@@ -264,11 +264,7 @@ textarea {
   font-size: 100%;
   vertical-align: middle;
   color: #111;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background: #fefefe;
-=======
-  background: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -283,16 +279,12 @@ input[type="hidden"] {
   display: none;
 }
 /* line 96, ../sass/style/_forms.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 input[type="text"],
 input[type="number"],
 input[type="tel"],
 input[type="search"],
 input[type="email"],
 input[type="password"] {
-=======
-input[type="text"], input[type="number"], input[type="tel"], input[type="search"], input[type="email"], input[type="password"] {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   display: block;
   margin: 0.3em auto 1em;
   width: 90%;
@@ -301,7 +293,6 @@ input[type="text"], input[type="number"], input[type="tel"], input[type="search"
   background: #f9f9f9;
 }
 /* line 109, ../sass/style/_forms.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="tel"]:focus,
@@ -316,40 +307,24 @@ input[type="checkbox"]:not(:checked),
 input[type="checkbox"]:checked,
 input[type="radio"]:not(:checked),
 input[type="radio"]:checked {
-=======
-input[type="text"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-  color: #444444;
-  background: #FEFEFE;
-}
-/* line 113, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked, input[type="radio"]:not(:checked), input[type="radio"]:checked {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   position: absolute;
   left: -999em;
 }
 /* line 118, ../sass/_mixins/_cellularmixins.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 input[type="checkbox"]:not(:checked) + label,
 input[type="checkbox"]:checked + label,
 input[type="radio"]:not(:checked) + label,
 input[type="radio"]:checked + label {
-=======
-input[type="checkbox"]:not(:checked) + label, input[type="checkbox"]:checked + label, input[type="radio"]:not(:checked) + label, input[type="radio"]:checked + label {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   position: relative;
   cursor: pointer;
   padding: 0 0 0 2em;
   vertical-align: middle;
 }
 /* line 124, ../sass/_mixins/_cellularmixins.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 input[type="checkbox"]:not(:checked) + label:before,
 input[type="checkbox"]:checked + label:before,
 input[type="radio"]:not(:checked) + label:before,
 input[type="radio"]:checked + label:before {
-=======
-input[type="checkbox"]:not(:checked) + label:before, input[type="checkbox"]:checked + label:before, input[type="radio"]:not(:checked) + label:before, input[type="radio"]:checked + label:before {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   content: '';
   position: absolute;
   left: 0;
@@ -364,14 +339,10 @@ input[type="checkbox"]:not(:checked) + label:before, input[type="checkbox"]:chec
   box-shadow: inset 0 0 1px 1px #f1f1f1;
 }
 /* line 137, ../sass/_mixins/_cellularmixins.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 input[type="checkbox"]:not(:checked) + label:after,
 input[type="checkbox"]:checked + label:after,
 input[type="radio"]:not(:checked) + label:after,
 input[type="radio"]:checked + label:after {
-=======
-input[type="checkbox"]:not(:checked) + label:after, input[type="checkbox"]:checked + label:after, input[type="radio"]:not(:checked) + label:after, input[type="radio"]:checked + label:after {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   content: '';
   position: absolute;
   top: 0.25em;
@@ -383,7 +354,6 @@ input[type="checkbox"]:not(:checked) + label:after, input[type="checkbox"]:check
   background-repeat: no-repeat;
 }
 /* line 152, ../sass/_mixins/_cellularmixins.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 input[type="checkbox"]:not(:checked):focus + label:before,
 input[type="checkbox"]:checked:focus + label:before,
 input[type="radio"]:not(:checked):focus + label:before,
@@ -402,17 +372,6 @@ input[type="checkbox"]:not(:checked):disabled + label:before,
 input[type="checkbox"]:checked:disabled + label:before,
 input[type="radio"]:not(:checked):disabled + label:before,
 input[type="radio"]:checked:disabled + label:before {
-=======
-input[type="checkbox"]:not(:checked):focus + label:before, input[type="checkbox"]:checked:focus + label:before, input[type="radio"]:not(:checked):focus + label:before, input[type="radio"]:checked:focus + label:before {
-  border: 1px dotted #29B4DE;
-}
-/* line 159, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked):disabled + label, input[type="checkbox"]:checked:disabled + label, input[type="radio"]:not(:checked):disabled + label, input[type="radio"]:checked:disabled + label {
-  color: #f1f1f1;
-}
-/* line 162, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked):disabled + label:before, input[type="checkbox"]:checked:disabled + label:before, input[type="radio"]:not(:checked):disabled + label:before, input[type="radio"]:checked:disabled + label:before {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   background: #f1f1f1;
   color: #444;
 }
@@ -452,11 +411,7 @@ textarea {
 /* line 162, ../sass/style/_forms.scss */
 textarea:focus {
   color: #111;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background: #fefefe;
-=======
-  background: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 
 /* line 168, ../sass/style/_forms.scss */
@@ -486,11 +441,7 @@ input[type="submit"] {
   line-height: auto;
   border: #bbbab7 1px solid;
   background-color: #fefefe;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   color: #444;
-=======
-  color: #444444;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   background-color: #f1f1f1;
   background-image: linear-gradient(to bottom, #f1f1f1 0%, #bbbab7 100%);
   -moz-border-radius: 0.4em;
@@ -504,27 +455,19 @@ input[type="submit"]:visited {
   color: #444;
 }
 /* line 196, ../sass/_mixins/_cellularmixins.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 button.active,
 button:active,
 button:hover,
-=======
-button.active, button:active, button:hover,
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 input[type="button"].active,
 input[type="button"]:active,
 input[type="button"]:hover,
 input[type="submit"].active,
 input[type="submit"]:active,
 input[type="submit"]:hover {
-  color: #29B4DE;
-  border-color: #29B4DE;
+  color: #29b4de;
+  border-color: #29b4de;
   text-decoration: none;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background-color: #fefefe;
-=======
-  background-color: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   background-image: linear-gradient(to bottom, #fefefe 0%, #f1f1f1 100%);
 }
 
@@ -542,13 +485,8 @@ input[type="submit"]:hover {
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
   font-weight: bold;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   border: 0.2em solid;
   background-color: #fefefe;
-=======
-  border: .2em solid;
-  background-color: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 /* line 205, ../sass/style/_forms.scss */
 .ok li,
@@ -559,23 +497,19 @@ input[type="submit"]:hover {
 
 /* line 210, ../sass/style/_forms.scss */
 .ok {
-  color: #61D43F;
+  color: #61d43f;
   border-color: #398d20;
 }
 
 /* line 215, ../sass/style/_forms.scss */
 .warning {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   color: #ec2;
-=======
-  color: #EC2;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   border-color: #9e860c;
 }
 
 /* line 220, ../sass/style/_forms.scss */
 .error {
-  color: #8C0D00;
+  color: #8c0d00;
   border-color: #260400;
 }
 
@@ -623,7 +557,6 @@ a img {
 */
 /* line 9, ../sass/style/_grid.scss */
 .cell,
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 .cell-100,
 .cell-90,
 .cell-80,
@@ -638,9 +571,6 @@ a img {
 .cell-25,
 .cell-20,
 .cell-10 {
-=======
-.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   z-index: 1;
   position: relative;
   float: left;
@@ -766,7 +696,6 @@ a img {
 
 @media screen and (max-width: 650px) and (min-width: 0) {
   /* line 43, ../sass/style/_grid.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   .cell-100,
   .cell-90,
   .cell-80,
@@ -781,9 +710,6 @@ a img {
   .cell-25,
   .cell-20,
   .cell-10 {
-=======
-  .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
     width: 100%;
     flex-basis: 100%;
   }
@@ -799,12 +725,8 @@ a img {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 .clearfix:before,
 .clearfix:after {
-=======
-.clearfix:before, .clearfix:after {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   content: "";
   display: table;
 }
@@ -893,11 +815,7 @@ small {
 
 /* line 41, ../sass/style/_typography.scss */
 a {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   color: #29b4de;
-=======
-  color: #29B4DE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   text-decoration: none;
   outline: none;
   display: inline-block;
@@ -911,17 +829,11 @@ a:visited {
   color: #16708b;
 }
 /* line 52, ../sass/style/_typography.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 a:hover,
 a:active,
 a:focus {
   outline: thin dotted;
   outline-offset: -0.1em;
-=======
-a:hover, a:active, a:focus {
-  outline: thin dotted;
-  outline-offset: -.1em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   text-decoration: underline;
   color: #81d3ec;
 }
@@ -942,13 +854,8 @@ h6 {
   font-family: "Quicksand";
   font-weight: bold;
   line-height: 1.1em;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   margin: 1em auto 0.2em auto;
   padding: 0.4em 0.4em 0 1em;
-=======
-  margin: 1em auto .2em auto;
-  padding: 0.4em .4em 0 1em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   max-width: 32em;
 }
 
@@ -1016,15 +923,9 @@ blockquote,
 q,
 quote {
   font-style: italic;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   color: #444;
   background-color: #e5e5e5;
   color: #444;
-=======
-  color: #444444;
-  background-color: #e5e5e5;
-  color: #444444;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 /* line 140, ../sass/style/_typography.scss */
 blockquote:before,
@@ -1092,17 +993,10 @@ acronym {
   width: 32px;
   height: 32px;
   text-indent: -999em;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   margin: 0.4em;
   padding: 10px;
   vertical-align: middle;
   background-color: #fefefe;
-=======
-  margin: .4em;
-  padding: 10px;
-  vertical-align: middle;
-  background-color: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   background-position: 10px 10px;
   background-repeat: no-repeat;
   background-color: none;
@@ -1113,11 +1007,7 @@ acronym {
 }
 /* line 22, ../sass/style/_icons.scss */
 #page-wrap .icon:hover {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   border-color: #29b4de;
-=======
-  border-color: #29B4DE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 /* line 31, ../sass/style/_icons.scss */
 #page-wrap .icon.search {
@@ -1129,13 +1019,8 @@ acronym {
 #social-media-share {
   float: left;
   overflow: hidden;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   margin: 1.4em 0.8em 0.8em;
   padding: 0 0.4em;
-=======
-  margin: 1.4em .8em .8em;
-  padding: 0 .4em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   background-color: #f1f1f1;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
@@ -1157,15 +1042,9 @@ acronym {
 #social-media-share h4 {
   font-size: 1em;
   margin: 0;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   padding: 0.4em;
   border-bottom: #444 0.2em solid;
   background: #fefefe;
-=======
-  padding: .4em;
-  border-bottom: #444444 0.2em solid;
-  background: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 
 /**
@@ -1200,21 +1079,17 @@ acronym {
   border-radius: 0;
 }
 /* line 34, ../sass/style/_navigation.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 #nav a:hover,
 #nav a:focus,
 #nav a:active,
 #nav a.active,
-=======
-#nav a:hover, #nav a:focus, #nav a:active, #nav a.active,
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 #nav a:visited:hover,
 #nav a:visited:focus,
 #nav a:visited:active,
 #nav a:visited.active {
   text-decoration: none;
-  background: #29B4DE;
-  color: #FEFEFE;
+  background: #29b4de;
+  color: #fefefe;
 }
 /* line 44, ../sass/style/_navigation.scss */
 #nav ul {
@@ -1254,7 +1129,7 @@ acronym {
   right: 0;
   visibility: hidden;
   opacity: 0;
-  background: #FEFEFE;
+  background: #fefefe;
   background: rgba(254, 254, 254, 0.9);
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
@@ -1674,388 +1549,6 @@ body {
 }
 
 /**
-  * @file
-  * Logo link style
-*/
-/* line 6, ../sass/style/_branding.scss */
-#logo {
-  float: left;
-  left: 5%;
-  z-index: 9;
-}
-/* line 12, ../sass/style/_branding.scss */
-#logo a {
-  display: block;
-  text-indent: -999em;
-  width: 72px;
-  height: 72px;
-  padding: 12px;
-  background-image: url("../assets/images/min/png/logo.png");
-  background-position: 12px 12px;
-  background-repeat: no-repeat;
-  border: none;
-  text-decoration: none;
-  -moz-box-shadow: 0 0 0 0 #FEFEFE;
-  -webkit-box-shadow: 0 0 0 0 #FEFEFE;
-  box-shadow: 0 0 0 0 #FEFEFE;
-}
-/* line 27, ../sass/style/_branding.scss */
-#logo a:hover {
-  -moz-box-shadow: 0 -0.4em 0.8em 0.2em #29B4DE;
-  -webkit-box-shadow: 0 -0.4em 0.8em 0.2em #29B4DE;
-  box-shadow: 0 -0.4em 0.8em 0.2em #29B4DE;
-  -moz-transform: translate3d(0, -0.1em, 1em);
-  -webkit-transform: translate3d(0, -0.1em, 1em);
-  transform: translate3d(0, -0.1em, 1em);
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-/**
-  * @file
-  * Content region styles
-*/
-/* line 7, ../sass/style/regions/_main.scss */
-#console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-/* line 15, ../sass/style/regions/_main.scss */
-body {
-  overflow: hidden;
-  background-color: #FEFEFE;
-}
-
-/* line 24, ../sass/style/regions/_main.scss */
-#page-wrap {
-  width: 100%;
-}
-
-/* line 28, ../sass/style/regions/_main.scss */
-#app {
-  z-index: 1;
-  overflow: visible;
-}
-
-/* line 38, ../sass/style/regions/_main.scss */
-#content,
-#sidebar-left,
-#sidebar-right,
-#footer {
-  position: relative;
-  float: left;
-  display: block;
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-/* line 6, ../sass/style/regions/_header.scss */
-#header,
-#header-top,
-#header-bottom {
-  width: 100%;
-}
-
-/* line 12, ../sass/style/regions/_header.scss */
-#header {
-  z-index: 2;
-  height: 96px;
-  background: #FEFEFE;
-  -moz-box-shadow: 0 0 1em 0.1em #444444;
-  -webkit-box-shadow: 0 0 1em 0.1em #444444;
-  box-shadow: 0 0 1em 0.1em #444444;
-}
-
-/* line 19, ../sass/style/regions/_header.scss */
-#header-top {
-  z-index: 4;
-  background: #111;
-  color: #FEFEFE;
-  border-bottom: #111 thin solid;
-  text-align: right;
-}
-/* line 28, ../sass/style/regions/_header.scss */
-#header-top div {
-  display: inline;
-}
-/* line 32, ../sass/style/regions/_header.scss */
-#header-top h2,
-#header-top h3,
-#header-top h4 {
-  color: #FEFEFE;
-  font-size: 1em;
-  display: inline;
-}
-
-/* line 41, ../sass/style/regions/_header.scss */
-#header-bottom {
-  background-color: #444444;
-  color: #FEFEFE;
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-/* line 6, ../sass/style/regions/_content.scss */
-#content {
-  z-index: 2;
-}
-
-/* line 16, ../sass/style/regions/_content.scss */
-#console {
-  padding: 1em 1.4em;
-}
-
-/* line 20, ../sass/style/regions/_content.scss */
-#comments {
-  text-align: center;
-}
-/* line 23, ../sass/style/regions/_content.scss */
-#comments form {
-  text-align: left;
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-/* line 6, ../sass/style/regions/_sidebars.scss */
-#sidebar-left,
-#sidebar-right {
-  background: #f1f1f1;
-}
-/* line 10, ../sass/style/regions/_sidebars.scss */
-#sidebar-left h3,
-#sidebar-right h3 {
-  margin: 0;
-  padding: .4em;
-  font-size: 1.2em;
-  color: #444444;
-  background-color: #bbbab7;
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-/* line 7, ../sass/style/regions/_footer.scss */
-#footer,
-#footer-top,
-#footer-bottom {
-  width: 100%;
-}
-
-/* line 13, ../sass/style/regions/_footer.scss */
-#footer {
-  background: #444444;
-  color: #FEFEFE;
-}
-/* line 18, ../sass/style/regions/_footer.scss */
-#footer p {
-  color: #FEFEFE;
-}
-
-/* line 23, ../sass/style/regions/_footer.scss */
-#footer-top {
-  font-size: 0.75em;
-  background: #444444;
-  color: #f1f1f1;
-}
-
-/* line 30, ../sass/style/regions/_footer.scss */
-#footer-bottom {
-  font-size: 0.75em;
-  background: #444444;
-  color: #f1f1f1;
-  border-top: thin solid;
-}
-
-/* line 37, ../sass/style/regions/_footer.scss */
-#copyright {
-  display: block;
-  padding: 0.75em 1.4em 0.75em;
-  text-align: right;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-/**
- * @file
- * Page or category specific styling
- * Cellular adds <body> classes based on the content URL,
- * splitting at each '/'
-    * i.e. mysite.com/content/audio/mytrack.html
-    * <body class="content audio">
- */
-/**
- * @file
- * Misc. class styles
- */
-/* line 7, ../sass/style/_classes.scss */
-.gallery {
-  text-align: center;
-  background: #444444;
-}
-/* line 11, ../sass/style/_classes.scss */
-.gallery div,
-.gallery a,
-.gallery img {
-  display: inline;
-  margin: 0 auto;
-}
-
-/* line 21, ../sass/style/_classes.scss */
-.dropCap:first-letter {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-/* line 26, ../sass/style/_classes.scss */
-.textShadow {
-  text-shadow: 1px 1px 3px #444444;
-}
-
-/* line 31, ../sass/style/_classes.scss */
-.box-shadow {
-  margin: 0 auto;
-  padding: 3em 1.4em;
-  background-color: #FEFEFE;
-  -moz-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
-  -webkit-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
-  box-shadow: inset 0 0 0.3em 0 #f1f1f1;
-}
-/* line 38, ../sass/style/_classes.scss */
-.box-shadow:before, .box-shadow:after {
-  position: absolute;
-  width: 40%;
-  height: 1em;
-  content: ' ';
-  left: 1.2em;
-  bottom: .8em;
-  background: transparent;
-  transform: skew(-5deg) rotate(-5deg);
-  box-shadow: 0 6px 12px rgba(241, 241, 241, 0.3);
-  z-index: -1;
-}
-/* line 51, ../sass/style/_classes.scss */
-.box-shadow:after {
-  left: auto;
-  right: 12px;
-  transform: skew(5deg) rotate(5deg);
-}
-
-/* line 60, ../sass/style/_classes.scss */
-.ribbon {
-  position: relative;
-  margin: 0 auto 1em;
-  padding: 0 1.2em;
-  border-bottom: black 1px solid;
-  background-color: #111;
-  color: #FEFEFE;
-}
-/* line 309, ../sass/_mixins/_cellularmixins.scss */
-.ribbon:before, .ribbon:after {
-  content: " ";
-  position: absolute;
-  bottom: -1em;
-  border-top: black 1em solid;
-}
-/* line 317, ../sass/_mixins/_cellularmixins.scss */
-.ribbon:before {
-  left: 0;
-  border-left: 1.2em solid transparent;
-}
-/* line 322, ../sass/_mixins/_cellularmixins.scss */
-.ribbon:after {
-  right: 0;
-  border-right: 1.2em solid transparent;
-}
-
-/* line 65, ../sass/style/_classes.scss */
-.popout {
-  position: relative;
-  margin: 0 0 1em 0;
-  padding: 0 1.2em;
-  background: #111;
-  border-bottom: black 1px solid;
-  color: #FEFEFE;
-}
-/* line 335, ../sass/_mixins/_cellularmixins.scss */
-.popout:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1em;
-  height: 0;
-  border-top: 1em solid black;
-  border-left: 1.2em solid transparent;
-  border-right: 1.2em solid transparent;
-}
-
-/**
-  * @file
-  * Styling for mobile devices included in style.css
-*/
-@media screen and (max-width: 650px) {
-  /* line 9, ../sass/style/media-query/_mobile.scss */
-  #nav ul.menu {
-    visibility: hidden;
-  }
-}
-/**
- * @file
- * Styling for tablets & other narrow devices included in style.css
- */
-/**
- * @file
- * Styling for large-screen devices included in style.css
- */
-/**
-  * @file
-  * Provide svg background images for compliant browsers
-*/
-/* line 7, ../sass/style/special/_svg.scss */
-.svg #logo > a {
-  background-image: url("../assets/images/min/svg/logo.svg");
-}
-/* line 12, ../sass/style/special/_svg.scss */
-.svg #nav.jMmenu.mini {
-  background-image: url("../assets/icons/min/svg/menu.svg");
-}
-/* line 17, ../sass/style/special/_svg.scss */
-.svg .ok {
-  list-style-image: url("../assets/icons/min/svg/message-ok.svg");
-}
-/* line 21, ../sass/style/special/_svg.scss */
-.svg .warning {
-  list-style-image: url("../assets/icons/min/svg/message-warning.svg");
-}
-/* line 25, ../sass/style/special/_svg.scss */
-.svg .error {
-  list-style-image: url("../assets/icons/min/svg/message-error.svg");
-}
-/* line 29, ../sass/style/special/_svg.scss */
-.svg #breadcrumb li {
-  background-image: url(../assets/icons/min/png/arrow-right.png);
-}
-/* line 32, ../sass/style/special/_svg.scss */
-.svg #breadcrumb li.first {
-  background-image: none;
-}
-/* line 35, ../sass/style/special/_svg.scss */
-.svg #breadcrumb li.first a {
-  background-image: url(../assets/icons/min/svg/home.svg);
-}
-
-/**
  * @file
  * Set vars & collect styles for CellularUI
  */
@@ -2082,15 +1575,9 @@ body {
   display: block;
   margin: 0;
   max-width: 100%;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   padding: 0.6em 1em;
   background: #444;
   color: #fefefe;
-=======
-  padding: .6em 1em;
-  background: #444444;
-  color: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   z-index: 2;
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
@@ -2107,17 +1594,13 @@ body {
   font-weight: bold;
   line-height: 1.4em;
   text-decoration: none;
-  color: #FEFEFE;
+  color: #fefefe;
   border: none;
 }
 /* line 41, ../sass/cellularUI/_jCellular.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 .cellular .title a:hover,
 .cellular .title a:active,
 .cellular .title a.active,
-=======
-.cellular .title a:hover, .cellular .title a:active, .cellular .title a.active,
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 .cellular .title a:visited:hover,
 .cellular .title a:visited:active,
 .cellular .title a:visited.active {
@@ -2130,15 +1613,9 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 1em;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background: #fefefe;
   color: #444;
   border: 0.1em solid;
-=======
-  background: #FEFEFE;
-  color: #444444;
-  border: .1em solid;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   z-index: 1;
 }
 /* line 65, ../sass/cellularUI/_jCellular.scss */
@@ -2152,11 +1629,7 @@ body {
  */
 /* line 10, ../sass/cellularUI/_jAccordion.scss */
 .cellular.jAccordion li {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   margin: 0 auto 0.1em;
-=======
-  margin: 0 auto .1em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 /* line 14, ../sass/cellularUI/_jAccordion.scss */
 .cellular.jAccordion .title {
@@ -2164,11 +1637,7 @@ body {
   background-image: url(../assets/icons/svg/plus.svg);
   background-size: 1em;
   background-repeat: no-repeat;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background-position: 0.4em center;
-=======
-  background-position: .4em center;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   -moz-transition: none;
   -o-transition: none;
   -webkit-transition: none;
@@ -2195,11 +1664,7 @@ body {
   vertical-align: top;
   margin: 1em;
   color: #bbbab7;
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background: #fefefe;
-=======
-  background: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
@@ -2215,14 +1680,10 @@ body {
   text-decoration: none;
 }
 /* line 31, ../sass/cellularUI/_jBlocklink.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 .cellular.jBlocklink-link.active,
 .cellular.jBlocklink-link:active,
 .cellular.jBlocklink-link:hover,
 .cellular.jBlocklink-link:focus {
-=======
-.cellular.jBlocklink-link.active, .cellular.jBlocklink-link:active, .cellular.jBlocklink-link:hover, .cellular.jBlocklink-link:focus {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   color: #1c94b8;
   text-decoration: none;
   -moz-box-shadow: 0 0 0.3em 0.3em #f1f1f1;
@@ -2267,7 +1728,7 @@ body {
   width: 3em;
   height: 3em;
   padding: 0;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   background-size: 9em;
   background-repeat: no-repeat;
   background-position: left center;
@@ -2329,20 +1790,16 @@ body {
   font-size: 0.9em;
   font-family: "Quicksand";
   font-weight: bold;
-  color: #FEFEFE;
+  color: #fefefe;
   background-image: none;
   border-bottom: 1px solid;
   background-color: rgba(17, 17, 17, 0.2);
 }
 /* line 72, ../sass/cellularUI/_jMmenu.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 .jMmenu-inactive .jMmenu.menu a.active,
 .jMmenu-inactive .jMmenu.menu a:active,
 .jMmenu-inactive .jMmenu.menu a:focus,
 .jMmenu-inactive .jMmenu.menu a:hover,
-=======
-.jMmenu-inactive .jMmenu.menu a.active, .jMmenu-inactive .jMmenu.menu a:active, .jMmenu-inactive .jMmenu.menu a:focus, .jMmenu-inactive .jMmenu.menu a:hover,
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 .jMmenu-inactive .jMmenu.menu a:visited.active,
 .jMmenu-inactive .jMmenu.menu a:visited:active,
 .jMmenu-inactive .jMmenu.menu a:visited:focus,
@@ -2355,20 +1812,12 @@ body {
 .jMmenu-active .jMmenu.menu a:visited:active,
 .jMmenu-active .jMmenu.menu a:visited:focus,
 .jMmenu-active .jMmenu.menu a:visited:hover {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   color: #29b4de;
   background-color: #111;
 }
 /* line 85, ../sass/cellularUI/_jMmenu.scss */
 .jMmenu-inactive.slide-right .menu.jMmenu,
 .jMmenu-inactive.slide-left .menu.jMmenu,
-=======
-  color: #29B4DE;
-  background-color: #111;
-}
-/* line 85, ../sass/cellularUI/_jMmenu.scss */
-.jMmenu-inactive.slide-right .menu.jMmenu, .jMmenu-inactive.slide-left .menu.jMmenu,
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 .jMmenu-active.slide-right .menu.jMmenu,
 .jMmenu-active.slide-left .menu.jMmenu {
   top: 0;
@@ -2401,12 +1850,8 @@ body {
   opacity: 1;
 }
 /* line 131, ../sass/cellularUI/_jMmenu.scss */
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
 .jMmenu-active.slide-left #page-wrap,
 .jMmenu-active.slide-right #page-wrap {
-=======
-.jMmenu-active.slide-left #page-wrap, .jMmenu-active.slide-right #page-wrap {
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
   width: 50%;
 }
 
@@ -2457,26 +1902,15 @@ body {
 /* line 28, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs > li.active,
 .cellular.jTabs .tab.active {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   background-c4olor: #fefefe;
   color: #444;
-=======
-  background-c4olor: #FEFEFE;
-  color: #444444;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 /* line 32, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs > li.active .title,
 .cellular.jTabs .tab.active .title {
-<<<<<<< HEAD:subcellular/buildtest/css/style.css
   color: #444;
   background: #fefefe;
   border-bottom-color: #fefefe;
-=======
-  color: #444444;
-  background: #FEFEFE;
-  border-bottom-color: #FEFEFE;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/style.css
 }
 /* line 37, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs > li.active .title a,

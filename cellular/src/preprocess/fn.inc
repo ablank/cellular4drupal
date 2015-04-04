@@ -92,12 +92,9 @@ function cellular_error_page(array &$vars) {
  *   Form element to set.
  * @param array $form_state
  *   Form element's state.
-<<<<<<< HEAD:cellular/src/preprocess/fn.inc
  *
  * @return array
  *   Form element.
-=======
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/preprocess/fn.inc
  */
 function cellular_form_format_opt(array &$form, array $form_state) {
   // Remove individual text format options:

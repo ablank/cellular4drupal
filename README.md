@@ -3,9 +3,6 @@
 The Cellular base theme for Drupal 7 simplifies Drupal front-end development
  using the theme layer to add functionality that doesn't require heavy
  database interaction.
- 
- This approach consolidates front-end control and resources from a single
- location and generally makes theming drupal less of a pain in the ass.
 
 ## Features
 
@@ -66,6 +63,22 @@ scripts to the array `$add_js` in `/inc/js_alter.inc`
 
 ### Included/Optional Javascript Libraries
 
+* __jQuery Update__
+Update jQuery to the version of your choice (1.11.1, 1.10.2, 1.9.1, 1.8.3,
+1.7.2, 1.6.4, 1.5.2, 1.4.4) without breaking Views. Loads from the
+Cloudflare, Google, or MS CDNs with a local fallback.
+  * The jquery.migrate module is automatically loaded for versions >= 1.9.x
+  for backward compatibility.
+
+* __jQuery UI Update__
+Update jQueryUI to the version of your choice (1.10.4, 1.9.2, 1.8.24).
+  * Select the UI theme of your choice, or use the CUSTOM flat UI style
+  (`/sass/jquery-ui`) for a lightweight theme that matches your site.
+
+* __Cellular UI__
+UI elements (accordions, tabs, mobile menu, etc.) built for easy integration
+with Views.
+
 * __Modernizr__
 Test browser feature support and load resources based on capabilities.
 
@@ -77,53 +90,18 @@ helps you bring data to life using HTML, SVG and CSS.
 GSAP is a suite of tools for scripted, high-performance HTML5 animations that
  work in all major browsers.
 
-* __Prism Syntax Hilighter__
-Code syntax hilighter.
-
-* __Snap.SVG__
-The Snap.svg JavaScript library makes working with your SVG assets as easy as jQuery makes working with the DOM.
+* __Smoove__
+Smoove makes it easy to implement awesome CSS3 transition effects,
+making your content smoothly glide into the page as your scroll down the page.
 
 * __THREEjs__
 A JavaScript 3D Library which makes WebGL simpler.
 
-####jQuery + Plugins
+* __Masonry__
+Cascading grid layouts
 
-* __jQuery Update__
-Update jQuery to the version of your choice (1.11.1, 1.10.2, 1.9.1, 1.8.3,
-1.7.2, 1.6.4, 1.5.2, 1.4.4) without breaking Views. Loads from the
-Cloudflare, Google, or MS CDNs with a local fallback.
-
-  * The jquery.migrate module is automatically loaded for versions >= 1.9.x
-  for backward compatibility.
-
-* __jQuery UI Update__
-Update jQueryUI to the version of your choice (1.10.4, 1.9.2, 1.8.24).
-
-  * CUSTOM theme implements a lightweight flat style that uses your theme's
-  sass variables to match your site theme, and may be modified by updating 
-  the stylesheets found in `/sass/jquery-ui`
-  
-  * Select a precomposed default UI theme of your choice.
-  
-* __Cellular UI__
-UI elements (accordions, tabs, mobile menu, etc.) built for easy integration
-with Views.
-
-* __Backstretch__
-A simple jQuery plugin that allows you to add a dynamically resized, slideshow-capable background image to any page or element.
-
-* __Flowtype__
-Responsive font-size based on element width.
-
-* __Freetile__
-Freetile is a plugin for jQuery that enables the organization of webpage content in an efficient, dynamic and responsive layout.
-
-* __jParallax__
-jParallax turns nodes into absolutely positioned layers that move in response to the mouse. Depending on their dimensions these layers move at different rates, in a parallaxy kind of way.
-
-* __Smoove__
-Smoove makes it easy to implement awesome CSS3 transition effects,
-making your content smoothly glide into the page as your scroll down the page.
+* __Prism Syntax Hilighter__
+Code syntax hilighter.
 
 ## Known Issues
 
@@ -137,3 +115,12 @@ making your content smoothly glide into the page as your scroll down the page.
 * __(Warning)__ Drupal doesn't like `/node_modules/` used by grunt. 
 
   * __[Solution]__ Don't push `/node_modules/` to production. 
+
+
+## Planned Updates
+
+* Admin theme
+
+* Optimize icon build process- fork grunticon, output DirectoryColorfy to svg
+ files (!base-encoded in stylesheet), compile PNG sprite (svg2png,
+ spritesmith), build stylesheet from handlebar template w/ link to files.

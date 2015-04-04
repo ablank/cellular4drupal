@@ -1108,11 +1108,7 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
   z-index: 9999;
   max-width: 300px;
-<<<<<<< HEAD:subcellular/src/css/jquery-ui/jquery-ui.1.9.css
   box-shadow: 0 0 5px #444;
-=======
-  box-shadow: 0 0 5px $shadow;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/sass/jquery-ui/jquery-ui.1.9.scss
 }
 
 /* Fades and background-images don't work well together in IE6, drop the image */
@@ -2221,11 +2217,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-<<<<<<< HEAD:subcellular/src/css/jquery-ui/jquery-ui.1.9.css
   border-top-left-radius: 0.4em;
-=======
-  border-top-left-radius: .4em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/sass/jquery-ui/jquery-ui.1.9.scss
 }
 
 /* line 1885, ../../sass/jquery-ui/jquery-ui.1.9.scss */
@@ -2233,11 +2225,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-<<<<<<< HEAD:subcellular/src/css/jquery-ui/jquery-ui.1.9.css
   border-top-right-radius: 0.4em;
-=======
-  border-top-right-radius: .4em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/sass/jquery-ui/jquery-ui.1.9.scss
 }
 
 /* line 1892, ../../sass/jquery-ui/jquery-ui.1.9.scss */
@@ -2245,11 +2233,7 @@ body .ui-tooltip {
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-<<<<<<< HEAD:subcellular/src/css/jquery-ui/jquery-ui.1.9.css
   border-bottom-left-radius: 0.4em;
-=======
-  border-bottom-left-radius: .4em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/sass/jquery-ui/jquery-ui.1.9.scss
 }
 
 /* line 1899, ../../sass/jquery-ui/jquery-ui.1.9.scss */
@@ -2257,11 +2241,7 @@ body .ui-tooltip {
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-<<<<<<< HEAD:subcellular/src/css/jquery-ui/jquery-ui.1.9.css
   border-bottom-right-radius: 0.4em;
-=======
-  border-bottom-right-radius: .4em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/sass/jquery-ui/jquery-ui.1.9.scss
 }
 
 /* Overlays */
@@ -2279,9 +2259,5 @@ body .ui-tooltip {
   background: #f1f1f1;
   opacity: 0.3;
   filter: Alpha(Opacity=30);
-<<<<<<< HEAD:subcellular/src/css/jquery-ui/jquery-ui.1.9.css
   border-radius: 0.4em;
-=======
-  border-radius: .4em;
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/sass/jquery-ui/jquery-ui.1.9.scss
 }

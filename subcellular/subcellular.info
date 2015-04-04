@@ -14,7 +14,6 @@ screenshot  = screenshot.png
 ;----------// Javascript
 ; JS is added in /inc/alter.js.inc for more robust control.
 
-<<<<<<< HEAD
 ;----------// Plugins
 plugins[panels][layouts] = templates/panels
 
@@ -22,10 +21,6 @@ breakpoints[mobile] = (min-width: 0px)and (max-width: 650px)
 breakpoints[narrow] = (min-width: 650px) and (max-width: 800px)
 breakpoints[wide] = (min-width: 800px) and (max-width: 1400px)
 breakpoints[tv] = only screen and (min-width: 1401px)
-=======
-;----------// General Settings
-settings[copyright]         = 0
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893
 
 ;----------// Regions
 regions[content]            = Main Content
@@ -139,25 +134,3 @@ settings[share_twitter]         = 0
 settings[share_linkedin]        = 0
 settings[share_pinterest]       = 0
 settings[share_reddit]          = 0
-<<<<<<< HEAD
-=======
-
-;----------// Plugins
-plugins[panels][layouts] = templates/panels
-
-breakpoints[mobile] = (min-width: 0px)and (max-width: 650px)
-breakpoints[narrow] = (min-width: 650px) and (max-width: 800px)
-breakpoints[wide] = (min-width: 800px) and (max-width: 1400px)
-breakpoints[tv] = only screen and (min-width: 1401px)
-
-;----------// Site Features
-features[] = name
-features[] = main_menu
-features[] = slogan
-features[] = node_user_picture
-features[] = comment_user_picture
-features[] = comment_user_verification
-;features[] = logo
-;features[] = favicon
-;features[] = secondary_menu
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893

@@ -12,7 +12,6 @@ screenshot  = screenshot.png
 ;----------// Javascript
 ; JS is added in /inc/alter.js.inc for more robust control.
 
-<<<<<<< HEAD
 ;----------// Plugins
 plugins[panels][layouts] = templates/panels
 
@@ -31,10 +30,6 @@ features[] = comment_user_verification
 ;features[] = logo
 ;features[] = favicon
 ;features[] = secondary_menu
-=======
-;----------// General Settings
-settings[copyright]         = 0
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893
 
 ;----------// Regions
 regions[content]            = Main Content
@@ -97,11 +92,6 @@ settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
 ;----------// jQuery Plugins
-<<<<<<< HEAD
-=======
-settings[cellularui]            = 1
-settings[min_script]            = 0
->>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893
 settings[backstretch]           = 0
 settings[flowtype]              = 0
 settings[freetile]              = 0
