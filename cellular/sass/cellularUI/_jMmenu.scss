@@ -1,0 +1,135 @@
+/**
+  * @file
+  * CellularUI : jMMenu
+*/
+.jMmenu-inactive,
+.jMmenu-active {
+  // Set common styles
+  #page-wrap {
+    overflow: hidden;
+    @include transition();
+    @include translate3d(0,0,0);
+  }
+
+  #nav {
+    // Wrqpper element, used as the menu trigger.
+    float: right;
+    cursor: pointer;
+    z-index: 10;
+    width: 3em;
+    height: 3em;
+    padding: 0;
+    background-color: $white;
+    background-size: 9em;
+    background-repeat: no-repeat;
+    background-position: left center;
+    border: 1px solid $light_grey;
+    background-image: url('../assets/icons/min/png/menu.png');
+    background-image: url('../assets/icons/min/svg/menu.svg');
+    @include border-radius();
+    @include transition();
+    @include translate3d(0,0,0);
+  }
+
+  .jMmenu.menu {
+    //Styling for menu & links.
+    position: absolute;
+    z-index: 99;
+    width: 0;
+    max-width: 0;
+    margin: 0;
+    opacity: 0;
+    background-color: rgba($black, 0.4);
+    @include transition();
+    @include translate3d(0,0,0);
+
+    ul {
+      margin: 0 0 0 .4em;
+      background-color: rgba($black, 0.4);
+    }
+
+    li {
+      display: block;
+      margin: 0.2em auto;
+      list-style: none;
+      max-width: 100%;
+    }
+
+    a,
+    a:visited {
+      display: block;
+      height: 1em;
+      padding: .6em 1em .8em;
+      text-decoration: none;
+      font-size: .9em;
+      font-family: $h_font;
+      font-weight: bold;
+      color: $white;
+      background-image: none;
+      border-bottom: 1px solid;
+      background-color: rgba($black, 0.2);
+
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $hilight;
+        background-color: $black;
+      }
+    }
+  }
+
+  &.slide-right,
+  &.slide-left {
+
+    .menu.jMmenu {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &.slide-left {
+
+    #page-wrap {
+      float: right;
+    }
+
+    .menu.jMmenu {
+      left: 0
+    }
+  }
+
+  &.slide-right {
+    .menu.jMmenu {
+      right: 0
+    }
+  }
+}
+
+// Active menu / page styles.
+.jMmenu-active {  
+
+  #page-wrap {
+  }
+
+  #nav {
+    background-position: right center;
+  }
+
+  .jMmenu.menu {
+    width: 100%;
+    max-width: 50%;
+    opacity: 1;
+
+    li {
+    }
+  }
+
+  &.slide-left,
+  &.slide-right {
+
+    #page-wrap {
+      width: 50%;
+    }
+  }
+}

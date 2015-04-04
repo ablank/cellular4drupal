@@ -1,0 +1,96 @@
+/**
+  * @file
+  * CellularUI : jTabs
+*/
+
+.cellular {
+
+  &.jTabs {
+    display: block;
+    clear: both;
+    margin: 0;
+    padding: $normal 0;
+
+    .tab {
+      float: left;
+      display: block;
+      list-style: none;
+      margin: 0 0.1em 0 0;
+      z-index: 2;
+
+      .title {
+        //float: left;
+        padding: .4em .6em;
+        border: $grey 1px solid;
+      }
+
+      &.active {
+        background-c4olor: $white;
+        color: $dark_grey;
+
+        .title {
+          color: $dark_grey;
+          background: $white;
+          border-bottom-color: $white;
+
+          a {
+            color: $dark_grey;
+          }
+        }
+      }
+    }
+
+    .panel {
+      float: left;
+      clear: both;
+      z-index: 1;
+      width: 95.5%;
+      padding: 2%;
+      bottom: 1px;
+      margin-bottom: 1.4em;
+      border-color: $grey;
+    }
+
+    // Vertical Tab Styling
+    &.vertical {
+      float: left;
+      display: block;
+      width: 100%;
+
+      > li,
+      .tab {
+        clear: left;
+        margin: .1em 0;
+        border: none;
+        width: 27%;
+
+        .title {
+          padding: .4em 1%;
+          border: none;
+
+          a {
+            padding: 0 1em;
+          }
+        }
+
+        &.active {
+          border: none;
+
+          .title {
+            border: none;
+          }
+        }
+      }
+
+      .panel {
+        display: inline;
+        display: inline-block;
+        clear: none;
+        margin: 0;
+        padding: 1%;
+        width: 68%;
+        border: none;
+      }
+    }
+  }
+}

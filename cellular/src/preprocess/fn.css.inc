@@ -14,11 +14,15 @@
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
+<<<<<<< HEAD:cellular/src/preprocess/fn.css.inc
 function cellular_add_css(array &$css, array $array, $cellular = FALSE) {
 
   $path = theme_get_setting('dev') == 0 ? 'build' : 'buildtest';
   $ext = $cellular === TRUE ? 'min.css' : theme_get_setting('dev') == 0 ? 'min.css' : 'css';
 
+=======
+function cellular_add_css(array &$css, array $array,  $cellular = FALSE) {
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/preprocess/fn.css.inc
   foreach ($array as $style) {
     if (!empty($style)) {
       if (isset($style['cdn'])) {
@@ -77,7 +81,11 @@ function cellular_remove_css(array &$css, array $exclude) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
+<<<<<<< HEAD:cellular/src/preprocess/fn.css.inc
 function cellular_override_css(array &$css, array $style, $cellular = FALSE) {
+=======
+function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/preprocess/fn.css.inc
   $ocss = $style['default'];
   // Only override if style is being called.
   if (isset($css[$ocss])) {

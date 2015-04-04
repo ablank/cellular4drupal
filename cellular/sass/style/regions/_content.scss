@@ -1,0 +1,26 @@
+/**
+  * @file
+  * Content region styles
+*/
+
+#content {
+  z-index: 2;
+}
+
+#content-top {
+}
+
+#content-bottom {
+}
+
+#console {
+  padding: 1em 1.4em;
+}
+
+#comments {
+  text-align: center;
+
+  form {
+    text-align: left;
+  }
+}

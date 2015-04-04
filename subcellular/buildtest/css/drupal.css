@@ -76,15 +76,19 @@
 
 /* line 35, ../sass/drupal/_drupal-classes.scss */
 .ctools-locked {
-  color: #8c0d00;
-  border: 1px solid #8c0d00;
+  color: #8C0D00;
+  border: 1px solid #8C0D00;
   padding: 1em;
 }
 
 /* line 41, ../sass/drupal/_drupal-classes.scss */
 .ctools-owns-lock {
   background: white;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   border: 1px solid #ec2;
+=======
+  border: 1px solid #EC2;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   padding: 1em;
 }
 
@@ -128,7 +132,7 @@
 }
 /* line 78, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a.active {
-  background-color: #fefefe;
+  background-color: #FEFEFE;
 }
 /* line 81, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a:hover {
@@ -162,13 +166,21 @@
   line-height: auto;
   border: #bbbab7 1px solid;
   background-color: #fefefe;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   color: #444;
+=======
+  color: #444444;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   background-color: #f1f1f1;
   background-image: linear-gradient(to bottom, #f1f1f1 0%, #bbbab7 100%);
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   padding: 0.4em 0.6em;
+=======
+  padding: .4em .6em;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
 }
 /* line 192, ../sass/_mixins/_cellularmixins.scss */
 .menu a:visited,
@@ -176,16 +188,24 @@
   color: #444;
 }
 /* line 196, ../sass/_mixins/_cellularmixins.scss */
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
 .menu a.active,
 .menu a:active,
 .menu a:hover,
+=======
+.menu a.active, .menu a:active, .menu a:hover,
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
 .inline.links a.active,
 .inline.links a:active,
 .inline.links a:hover {
-  color: #29b4de;
-  border-color: #29b4de;
+  color: #29B4DE;
+  border-color: #29B4DE;
   text-decoration: none;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   background-color: #fefefe;
+=======
+  background-color: #FEFEFE;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   background-image: linear-gradient(to bottom, #fefefe 0%, #f1f1f1 100%);
 }
 
@@ -207,7 +227,7 @@
 #block-system-powered-by {
   float: right;
   margin: 0 1em;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 /* line 11, ../sass/drupal/_powered-by.scss */
 #block-system-powered-by a {
@@ -247,7 +267,7 @@
 }
 /* line 26, ../sass/drupal/_breadcrumb.scss */
 #breadcrumb li a {
-  color: #fefefe;
+  color: #FEFEFE;
 }
 /* line 30, ../sass/drupal/_breadcrumb.scss */
 #breadcrumb li.first {
@@ -274,7 +294,11 @@
   text-align: center;
   border: #444 thin solid;
   background: white;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   color: #444;
+=======
+  color: #444444;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   -moz-border-radius: 0.2em;
   -webkit-border-radius: 0.2em;
   border-radius: 0.2em;
@@ -333,7 +357,11 @@
   display: block;
   cursor: pointer;
   padding: 1em;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   color: #444;
+=======
+  color: #444444;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   background: #f1f1f1;
   border: #f1f1f1 thin solid;
 }
@@ -341,8 +369,8 @@
 .pager a:active,
 .pager a:hover,
 .pager a:focus {
-  background: #fefefe;
-  color: #29b4de;
+  background: #FEFEFE;
+  color: #29B4DE;
   text-decoration: none;
 }
 /* line 42, ../sass/drupal/_pager.scss */
@@ -356,7 +384,11 @@
   font-weight: bold;
   outline: 0;
   color: #f1f1f1;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   background: #444;
+=======
+  background: #444444;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   border: thin solid;
 }
 /* line 56, ../sass/drupal/_pager.scss */
@@ -396,7 +428,11 @@ form.site-search {
   font-size: 0.8em;
   background-color: #f1f1f1;
   background-color: rgba(241, 241, 241, 0.6);
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   border-bottom: #444 0.2em solid;
+=======
+  border-bottom: #444444 0.2em solid;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   -moz-border-radius: 1em / 50%;
   -webkit-border-radius: 1em 50%;
   border-radius: 1em / 50%;
@@ -416,7 +452,11 @@ form.site-search input[type="text"] {
   font-size: 1em;
   width: 12em;
   background: rgba(254, 254, 254, 0.4);
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   border-bottom: #444 0.1em solid;
+=======
+  border-bottom: #444444 0.1em solid;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
 }
 /* line 39, ../sass/drupal/_search.scss */
 form.site-search input[type="submit"] {
@@ -441,12 +481,19 @@ form.site-search input[type="submit"] {
   transition: all 400ms ease-out;
 }
 /* line 55, ../sass/drupal/_search.scss */
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
 form.site-search input[type="submit"]:hover,
 form.site-search input[type="submit"]:active,
 form.site-search input[type="submit"]:focus {
   outline: none;
   color: #111;
   border-color: #29b4de;
+=======
+form.site-search input[type="submit"]:hover, form.site-search input[type="submit"]:active, form.site-search input[type="submit"]:focus {
+  outline: none;
+  color: #111;
+  border-color: #29B4DE;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   background-size: 1.6em;
 }
 
@@ -461,7 +508,11 @@ a.colorbox {
   display: inline;
   display: inline-block;
   margin: 1em;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   background-color: #111;
+=======
+  background-color: #111111;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   background-color: rgba(17, 17, 17, 0.8);
   color: black;
   -moz-box-shadow: 0 0 0.2em 0.2em #f1f1f1;
@@ -489,7 +540,11 @@ a:focus.colorbox {
 
 /* line 26, ../sass/drupal/_colorbox.scss */
 .cboxSlideshow_off #cboxSlideshow {
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   bottom: 0;
+=======
+  bottom: 0px;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   right: 3em;
   background-position: -96px -66px;
 }
@@ -500,7 +555,11 @@ a:focus.colorbox {
 
 /* line 37, ../sass/drupal/_colorbox.scss */
 .cboxSlideshow_on #cboxSlideshow {
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   bottom: 0;
+=======
+  bottom: 0px;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   right: 4em;
   background-position: -32px 0;
 }
@@ -541,7 +600,11 @@ a:focus.colorbox {
 /* line 76, ../sass/drupal/_colorbox.scss */
 #cboxWrapper {
   padding: 0;
+<<<<<<< HEAD:subcellular/buildtest/css/drupal.css
   background: #fefefe;
+=======
+  background: #FEFEFE;
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893:cellular/css/drupal.css
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;

@@ -1,4 +1,5 @@
 default:
+<<<<<<< HEAD
     - 'clean:build'
     - 'concat'
     - 'compass'
@@ -25,3 +26,16 @@ buildtest:
     - 'copy:buildtestcss'
     - 'cssmin'
     - 'jshint:buildtest'
+=======
+    - 'concurrent:watch'
+dist:
+    - 'concurrent:dist1'
+    - 'concurrent:dist2'
+    - 'concurrent:dist3'
+    - 'concurrent:dist4'
+dev:
+    - 'concurrent:dev1'
+    - 'concurrent:dev2'
+    - 'concurrent:dev3'
+    - 'concurrent:dev4'
+>>>>>>> 4c489d9f146a4f8d4141b82e7832038e24d68893
