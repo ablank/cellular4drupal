@@ -1,1 +1,0 @@
-jQuery.fn.extend(cellular);
