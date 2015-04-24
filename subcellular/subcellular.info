@@ -67,8 +67,8 @@ settings[mq_normal]    			= screen and (min-width: 650px) and (max-width: 1024px
 settings[mq_large]    			= screen and (min-width: 1024px)
 
 ;----------// jQuery Update
-settings[jquery_update]         = 0
-settings[jquery_cdn]            = 0
+settings[jquery_update]         = 1
+settings[jquery_cdn]            = 1
 settings[jquery_cdn_source]     = google
 settings[jquery_version]        = 1.11.1
 settings[jquery_migrate]        = 1
@@ -85,7 +85,7 @@ settings[jparallax]             = 0
 settings[smoove]                = 0
 
 ;----------// Javascript Libraries
-settings[modernizr]             = 0
+settings[modernizr]             = 1
 settings[d3js]                  = 0
 settings[gsap]                  = 0
 settings[prism]                 = 0
