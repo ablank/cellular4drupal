@@ -4,27 +4,9 @@
  */
 
 module.exports = {
-  watch: ['watch'],
-  // Production
-  dist: [
+  // Prep files for further processing.
+  prep: [
     'concat',
-    'compass',
-    'autoprefixer',
-      // 'uglify:prod'
-      // 'svg2png'
-    'csscomb',
-    'closurecompiler',
-    'cssmin',
-    'jshint:js'
-    //'svgmin',
-  ],
-  dev: [
-    'concat',
-    'closurecompiler',
-    // 'imagemin',
-    'compass',
-    'uglify:dev',
-    'autoprefixer',
-    'csscomb'
+    'compass'
   ]
 };

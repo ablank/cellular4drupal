@@ -13,7 +13,7 @@ module.exports = {
 * @file\n\
 * CellularUI Javascript Library\n\
 * \n\
-* @author Adam Blankenship\n\\n\
+* @author Adam Blankenship <i.adambear@gmail.com>\n\\n\
 * \n\
 * @see http://live-cellular.gotpantheon.com/cellular-ui\n\
 * @see https://github.com/ablank/cellularUI\n\
@@ -44,7 +44,7 @@ module.exports = {
       'js/cellularUI/src/init/drupal.end.js',
       'js/cellularUI/src/init/jquery.end.js'
     ],
-    dest: 'test/js/jquery.cellularUI.js'
+    dest: 'js/jquery.cellularUI.js'
   },
   template: {
     options: {
@@ -108,39 +108,6 @@ module.exports = {
       'preprocess/theme-settings/social.inc',
       'preprocess/theme-settings/_end_theme-settings.inc'
     ],
-    dest: 'test/theme-settings.php'
-  },
-  html: {
-    options: {
-      language: {
-        type: 'html',
-        rmSpace: true,
-        rmScript: true,
-        //doctype: 'dDoctype',
-        opentag: '<hi />>>',
-        closetag: '<<</, bye>',
-        expand: true
-      }
-    },
-    src: [
-      'test/html/**/*.htm',
-      'test/html/**/*.html'
-    ],
-    dest: 'test/test.html'
-  },
-  xml: {
-    options: {
-      language: {
-        type: 'xml',
-        version: '1.0',
-        docroot: 'document',
-        doctype: '',
-        expand: true
-      }
-    },
-    src: [
-      'test/xml/**/*.xml'
-    ],
-    dest: 'test/test.xml'
+    dest: 'theme-settings.php'
   }
 };

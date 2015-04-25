@@ -1,6 +1,12 @@
 default:
-    - 'concurrent:watch'
-dist:
-    - 'concurrent:dist'
+    - 'concurrent:prep'
+    - 'autoprefixer'
+    - 'csscomb'
+    - 'closurecompiler'
+    - 'cssmin'
+    - 'jshint:js'
+    - 'svgmin'
 dev:
-    - 'concurrent:dev'
+    - 'concurrent:prep'
+    - 'autoprefixer'
+    - 'closurecompiler'

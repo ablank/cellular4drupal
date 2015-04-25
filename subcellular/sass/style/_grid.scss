@@ -34,7 +34,15 @@
 @each $cell in $grid {
   .cell-#{$cell} {
     width: unquote('#{$cell}%');
-    flex-basis: unquote('#{$cell}%');
+  }
+}
+
+.flexbox {
+  @each $cell in $grid {
+    .cell-#{$cell} {
+      width: auto;
+      flex-basis: unquote('#{$cell}%');
+    }
   }
 }
 

@@ -5,6 +5,22 @@
  */
 
 /**
+ * Get path to current theme.
+ *
+ *
+ * @param type $theme_key
+ *   The name of the theme to get path to, defaults to active theme.
+ *
+ * @return string
+ *   Path to active theme.
+ */
+function cellular_theme_path(&$theme_key = NULL) {
+  $theme = isset($theme_key) ? $theme_key : $GLOBALS['theme_key'];
+
+  return drupal_get_path('theme', $theme);
+}
+
+/**
  * Get media query breakpoints from theme settings.
  *
  * @return array

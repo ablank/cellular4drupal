@@ -5,12 +5,12 @@
  */
 
 /**
- * Cellular hook_css_alter().
+ * Implements hook_css_alter().
  *
  * @param array $css
  *   Associative array of stylesheets to merge with defaults from theme registry.
  */
-function cellular_css_alter(array &$css) {
+function cellular_css_alter(&$css) {
   // Remove stylesheets based on theme settings.
   cellular_remove_default_css($css);
 

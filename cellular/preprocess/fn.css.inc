@@ -14,14 +14,13 @@
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_css(array &$css, array $array,  $cellular = FALSE) {
+function cellular_add_css(&$css, $array, $cellular = FALSE) {
   foreach ($array as $style) {
-    if (!empty($style)) {
       if (isset($style['cdn'])) {
         $data = $style['cdn'];
       }
       elseif (isset($style['file'])) {
-        $data = $cellular === TRUE ? constant('CELLULAR_LIB') : path_to_theme();
+        $data = $cellular === TRUE ? constant('CELLULAR_LIB') : cellular_theme_path();
         $data .= '/css/' . $style['file'];
       }
       if (!empty($data)) {
@@ -34,9 +33,9 @@ function cellular_add_css(array &$css, array $array,  $cellular = FALSE) {
         $style['media'] = isset($style['media']) ? $style['media'] : 'all';
         $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
 
-        $css[$data] = $style;
-      }
+      
     }
+        $css[$data] = $style;
   }
 }
 
@@ -84,7 +83,7 @@ function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
       $ocss = $data;
     }
     else {
-      $path = $cellular === TRUE ? constant('CELLULAR_LIB') : path_to_theme();
+      $path = $cellular === TRUE ? constant('CELLULAR_LIB') : cellular_theme_path();
       // Or set data to local file.
       $data = $path . '/css/' . $style['file'];
     }

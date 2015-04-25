@@ -6,10 +6,9 @@
 module.exports = {
   php: {
     files: [
-      'node_modules/grunt-contrib-concat/**/*.js',
       'preprocess/**/*.inc'
     ],
-    tasks: ['concat:php']
+    tasks: ['concat']
   },
   javascript: {
     files: ['js/**/*.js'],
@@ -22,7 +21,7 @@ module.exports = {
     }
   },
   stylesheets: {
-    files: ['sass/*.scss', 'sass/**/*.scss'],
+    files: ['sass/**/*.scss'],
     tasks: ['compass']
   }
 };

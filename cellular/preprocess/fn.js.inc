@@ -31,7 +31,7 @@ function cellular_add_js(array $array,  $cellular = FALSE) {
         cellular_js_fallback($script, $cellular);
       }
       else {
-        $data = $cellular ? constant('CELLULAR_LIB') : path_to_theme();
+        $data = $cellular ? constant('CELLULAR_LIB') : cellular_theme_path();
         $data .= '/js/' . $script['file'];
       }
 
@@ -59,7 +59,7 @@ function cellular_js_fallback(array $script,  $cellular = FALSE) {
     );
 
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? constant('CELLULAR_LIB') : path_to_theme();
+    $fallback .= $cellular ? constant('CELLULAR_LIB') : cellular_theme_path();
     $fallback .= '/js/' . $script['file'];
     $fallback .= '\">\x3C/script>")';
 
@@ -90,7 +90,7 @@ function cellular_js_override(array &$javascript, array $script,  $cellular = FA
     else {
 // Or set data to local file if no CDN.
       if (!empty($script['file'])) {
-        $data = $cellular ? constant('CELLULAR_LIB') : path_to_theme();
+        $data = $cellular ? constant('CELLULAR_LIB') : cellular_theme_path();
         $data .= '/js/' . $script['file'];
       }
     }
@@ -122,7 +122,7 @@ function cellular_js_override(array &$javascript, array $script,  $cellular = FA
  */
 function cellular_modernizr(array $tests) {
 // $base_url needs to be added to set the correct path.
-  $dir = $GLOBALS['base_url'] . '/' . path_to_theme();
+  $dir = $GLOBALS['base_url'] . '/' . cellular_theme_path();
   $query = '';
 
   foreach ($tests as $test) {

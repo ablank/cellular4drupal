@@ -5,7 +5,7 @@
  */
 
 /**
- * Cellular hook_form_alter().
+ * Implements hook_form_alter().
  *
  * @param array $form
  *   Form element.
@@ -118,7 +118,7 @@ function cellular_form_alter(array &$form, array &$form_state, $form_id) {
 }
 
 /**
- * Cellular hook__form_comment_form_alter().
+ * Implements hook__form_comment_form_alter().
  *
  * @param array $form
  *   Form element.

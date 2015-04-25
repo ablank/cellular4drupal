@@ -5,12 +5,9 @@
  */
 
 /**
- * Cellular hook_js_alter().
- *
- * @param array $javascript
- *   Array of javascripts added to each page.
+ * Implements hook_js_alter().
  */
-function cellular_js_alter(array &$javascript) {
+function cellular_js_alter(&$javascript) {
   // Pass variables from drupal to js.
   cellular_js();
 
@@ -56,10 +53,9 @@ function cellular_js() {
 // /yourTheme/js/ into script.min.js.
 
   // Add Cellular UI
-  if ($js_plugins['cellularui'] === TRUE && $ext === '.js') {
+  if ($js_plugins['cellularui'] == TRUE && $ext === '.js') {
     $scripts['cellularui'] = array(
       'object' => 'cellular',
-      // 'file' => 'cellularUI/jquery.cellular.js', // Source of dev script.
       'file' => 'cellularUI/jquery.cellularUI' . $ext,
       'weight' => 98,
     );

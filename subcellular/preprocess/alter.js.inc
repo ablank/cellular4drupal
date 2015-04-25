@@ -7,7 +7,7 @@
 /**
  * Subcellular hook_js_alter().
  */
-function subcellular_js_alter() {
+function subcellular_js_alter(&$javascript) {
   // Pass a variable to js as Drupal.settings.myVar:
   /*
     drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');

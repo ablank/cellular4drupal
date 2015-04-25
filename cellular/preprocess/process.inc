@@ -12,7 +12,7 @@
  */
 function cellular_process_html(array &$vars) {
   // Push modified styles to page.
-  $vars['styles'] = drupal_get_css($vars['css'], FALSE);
+ // $vars['styles'] = drupal_get_css($vars['css'], FALSE);
 }
 
 /**
