@@ -1,0 +1,45 @@
+.cell,
+.cell-25,
+.cell-30,
+.cell-33,
+.cell-50,
+.cell-66,
+.cell-70,
+.cell-75 {
+  float: left;
+  display: block;
+  margin: 1%;
+  padding: .5%;
+}
+
+.cell {
+  width: 97%;
+}
+
+.cell-25 {
+  width: 22%;
+}
+
+.cell-30 {
+  width: 27%;
+}
+
+.cell-33 {
+  width: 30.333333%;
+}
+
+.cell-50 {
+  width: 47%;
+}
+
+.cell-66 {
+  width: 63.666666%;
+}
+
+.cell-70 {
+  width: 67%;
+}
+
+.cell-75 {
+  width: 72%;
+}

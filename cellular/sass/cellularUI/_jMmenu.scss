@@ -6,7 +6,7 @@
 .jMmenu-active {
   // Set common styles
   #page-wrap {
-    overflow: hidden;
+    // overflow: hidden;
     @include transition();
     @include translate3d(0,0,0);
   }

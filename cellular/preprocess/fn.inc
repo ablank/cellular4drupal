@@ -41,7 +41,7 @@ function cellular_mq() {
  * @param array $array
  *   Array of tags to add to document <head>.
  */
-function cellular_build_head_tags(array $array) {
+function cellular_build_head_tags($array) {
   foreach ($array as $meta => $val) {
     if (isset($val)) {
       // Build tag:
@@ -82,7 +82,7 @@ function cellular_build_head_tags(array $array) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_error_page(array &$vars) {
+function cellular_error_page(&$vars) {
   // Set custom error template:
   $http_status = drupal_get_http_header("status");
 
@@ -94,8 +94,8 @@ function cellular_error_page(array &$vars) {
       case "500 Internal Server Error":
         $vars['theme_hook_suggestions'][] = 'page__error';
         $vars['http_status'] = "Error: " . $http_status;
-        $vars['error_message'] = drupal_get_messages();
         $vars['classes_array'][] = 'page-error';
+        $vars['error_message'] = drupal_get_messages();
         break;
     }
   }
@@ -109,7 +109,7 @@ function cellular_error_page(array &$vars) {
  * @param array $form_state
  *   Form element's state.
  */
-function cellular_form_format_opt(array &$form, array $form_state) {
+function cellular_form_format_opt(&$form, $form_state) {
   // Remove individual text format options:
   // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
   // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
@@ -128,7 +128,7 @@ function cellular_form_format_opt(array &$form, array $form_state) {
  * @param array $element
  *   Element to test and return variables of.
  */
-function cellular_dev(array $element) {
+function cellular_dev($element) {
   if (theme_get_setting('dev') == 1) {
     if (module_exists('devel')) {
       dpm($element);

@@ -21,10 +21,7 @@ $form['c']['style_settings']['min_style'] = array(
 $form['c']['style_settings']['r'] = array(
   '#type' => 'fieldset',
   '#title' => t('Remove Drupal CSS'),
-  '#description' => t('Prevent stylesheet groups from loading. Individual
- stylesheets can be removed by adding the module & stylesheet to the array
- $exclude and calling function cellular_remove_css() in /inc/css_alter
- .inc <hr/>'),
+  '#description' => t('Prevent stylesheet groups from loading. Individual stylesheets can be removed by adding the module & stylesheet to the array $exclude and calling function cellular_remove_css() in /inc/css_alter .inc <hr/>'),
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
@@ -37,16 +34,14 @@ $form['c']['style_settings']['r']['remove_drupal_css'] = array(
     0 => t('Leave CSS intact.'),
     'system' => t('Remove all system CSS.'),
     'select' => t('Remove system & module CSS chosen by Cellular.'),
-    'theme_only' => t('Remove all system & module CSS-
-  Only use theme CSS.'),
+    'theme_only' => t('Remove all system & module CSS- Only use theme CSS.'),
   ),
 );
 
 $form['c']['style_settings']['add_classes'] = array(
   '#type' => 'fieldset',
   '#title' => t('Content Class Settings'),
-  '#description' => t("Classes to add to #content and #sidebars for simplified
- layout with a grid."),
+  '#description' => t("Classes to add to #content and #sidebars for simplified layout with a grid."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
@@ -70,8 +65,7 @@ $form['c']['style_settings']['add_classes']['content_class_single_sidebar'] = ar
 $form['c']['style_settings']['add_classes']['sidebar_class_single_sidebar'] = array(
   '#type' => 'textfield',
   '#title' => t('Sidebar Class w/ Single Sidebar'),
-  '#description' => t("Class to add to #sidebar-left || #sidebar-right if a
- single sidebar is displayed."),
+  '#description' => t("Class to add to #sidebar-left || #sidebar-right if a single sidebar is displayed."),
   // '#options' => $grid_values,
   '#default_value' => theme_get_setting('sidebar_class_single_sidebar'),
 );
@@ -87,8 +81,7 @@ $form['c']['style_settings']['add_classes']['content_class_dual_sidebars'] = arr
 $form['c']['style_settings']['add_classes']['sidebar_class_dual_sidebars'] = array(
   '#type' => 'textfield',
   '#title' => t('Sidebar Class w/ Dual Sidebars'),
-  '#description' => t("Class to add to #sidebar-left && #sidebar-right if both
- sidebars are displayed."),
+  '#description' => t("Class to add to #sidebar-left && #sidebar-right if both sidebars are displayed."),
   // '#options' => $grid_values,
   '#default_value' => theme_get_setting('sidebar_class_dual_sidebars'),
 );

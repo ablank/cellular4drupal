@@ -47,7 +47,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
  * @param array $exclude
  *   Array of stylesheets to remove.
  */
-function cellular_remove_css(array &$css, array $exclude) {
+function cellular_remove_css(&$css, $exclude) {
   foreach ($exclude as $module => $stylesheet) {
     // Remove multiple stylesheets attached by module.
     if (is_array($stylesheet)) {
@@ -72,7 +72,7 @@ function cellular_remove_css(array &$css, array $exclude) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
+function cellular_override_css(&$css, $style,  $cellular = FALSE) {
   $ocss = $style['default'];
   // Only override if style is being called.
   if (isset($css[$ocss])) {
@@ -104,15 +104,18 @@ function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
  * @param array $css
  *   Associative array of stylesheets to merge with defaults from theme registry.
  */
-function cellular_remove_default_css(array &$css) {
+function cellular_remove_default_css(&$css) {
   // Nuke all css not a member of group CSS_THEME:
   $exclude = array();
   if (theme_get_setting('remove_drupal_css') === 'theme_only') {
     foreach ($css as $key => $value) {
-      if ($value['group'] !== CSS_THEME
-      // Keep admin stuff.
-      && ($key !== 'admin_menu' || $key !== 'toolbar')
-      ) {
+      $keep = array(
+        'toolbar',
+        'admin_menu',
+        'admin_menu_toolbar'
+      );
+
+      if (!array_key_exists($key, $keep) && $value['group'] !== CSS_THEME) {
         unset($css[$key]);
       }
     }
@@ -131,7 +134,7 @@ function cellular_remove_default_css(array &$css) {
     $exclude = array(
       'system' => array(
         'system.base.css',
-        'system.menus.css',
+        //'system.menus.css',
         'system.messages.css',
         'system.theme.css',
       ),

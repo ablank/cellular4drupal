@@ -8,7 +8,7 @@
  * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
-  // Help prevent clickjacking
+  // Help prevent xss clickjacking.
   drupal_add_http_header('X-Frame-Options', 'DENY');
   // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
@@ -20,7 +20,7 @@ function cellular_http_headers() {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_html_attributes(array &$vars) {
+function cellular_html_attributes(&$vars) {
   global $language;
   $html_attributes = array(
     'lang' => $language->language,
@@ -43,7 +43,7 @@ function cellular_html_attributes(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_rdf(array &$vars) {
+function cellular_rdf(&$vars) {
   $vars['rdf_prefixes'] = '';
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
@@ -73,7 +73,7 @@ function cellular_rdf(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_body_attributes(array &$vars) {
+function cellular_body_attributes(&$vars) {
   $body_attributes = array();
   $path = drupal_get_path_alias();
   // Page URL is used to set id & classes of body.
@@ -169,7 +169,7 @@ function cellular_favicons() {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_metatags(array &$vars) {
+function cellular_metatags(&$vars) {
   // Add default metatags:
   $meta_tags = array(
     'viewport' => array(
@@ -210,7 +210,7 @@ function cellular_metatags(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_test_sidebar(array &$vars) {
+function cellular_test_sidebar(&$vars) {
   empty($vars['page']['sidebar_left']) ? NULL : $sidebar_left = 1;
   empty($vars['page']['sidebar_right']) ? NULL : $sidebar_right = 1;
 
@@ -233,7 +233,7 @@ function cellular_test_sidebar(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_set_author(array &$vars) {
+function cellular_set_author(&$vars) {
   $node = $vars['elements']['#node'];
   $uid = user_load($node->uid);
   $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";
@@ -252,4 +252,21 @@ function cellular_set_author(array &$vars) {
   );
 
   $vars['author'] = $author['image'] . $author['name'] . $author['description'];
+}
+
+/**
+ *
+ * @param type $element
+ * @return type
+ */
+function cellular_markup($element) {
+$output = '';
+  if (theme_get_setting('semanticmarkup') == 1) {
+    $output .= "<$element>";
+  }
+  else {
+    $output .= "<div class=\"$element\">";
+  }
+
+  return $output;
 }

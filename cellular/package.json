@@ -4,20 +4,20 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "load-grunt-config": "*",
-    "grunt-concurrent": "*",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-newer": "^0.7.0",
-    "grunt-concat-language": "*",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-closurecompiler": "^0.9.9",
-    "grunt-contrib-uglify": "^0.5.0",
-    "grunt-contrib-compass": "^0.7.2",
-    "grunt-csscomb": "^3.0.0",
     "grunt-autoprefixer": "^2.2.0",
+    "grunt-closurecompiler": "^0.9.9",
+    "grunt-concat-language": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-compass": "^0.7.2",
     "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-csscomb": "^3.0.0",
+    "grunt-newer": "^0.7.0",
     "grunt-svg2png": "^0.2.1",
-    "grunt-svgmin": "^0.4.0"
+    "load-grunt-config": "*"
   },
   "dependencies": {
     "time-grunt": "*"

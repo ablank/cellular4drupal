@@ -5,15 +5,44 @@
  */
 
 /**
- * Cellular theme_field().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements hook_theme_registry_alter().
  */
-function cellular_field(array &$vars) {
+  /*
+function cellular_registry_alter(&$theme_registry) {
+  // Override the default page.tpl.php.
+  if (theme_get_setting('panelseverywhere') == 1 && isset($theme_registry['page'])) {
+    $path = drupal_get_path('theme', 'cellular');
+    $theme_registry['field_collection_item']['theme path'] = $path;
+    $theme_registry['field_collection_item']['template'] = "$path/templates/page--panels";
+  }
+}
+  */
+
+/**
+ * Implements hook_theme().
+
+function cellular_theme($existing, $type, $theme, $path) {
+  $theme['main_menu'] = array(
+        'arguments' => array(
+            // if NULL, function checks variable 'menu_primary_links_source'
+            'menu_name' => NULL,
+
+        )
+    );
+  $theme['panels_page'] = array(
+    'base hook' => 'page',
+    'render element' => 'page',
+    'template' => 'templates/page--panels',
+  );
+
+  return $theme;
+}
+ */
+
+/**
+ * Implements theme_field().
+ */
+function cellular_field(&$vars) {
   $output = '';
   $wrap = theme_get_setting('field_wrappers');
   // Render the label, if it's not hidden.
@@ -39,15 +68,9 @@ function cellular_field(array &$vars) {
 }
 
 /**
- * Cellular theme_breadcrumb().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML || NULL.
+ * Implements theme_breadcrumb().
  */
-function cellular_breadcrumb(array &$vars) {
+function cellular_breadcrumb(&$vars) {
   $output = NULL;
   if (theme_get_setting('breadcrumb_display') == 1) {
     if (!empty($vars['breadcrumb'])) {
@@ -69,15 +92,10 @@ function cellular_breadcrumb(array &$vars) {
 }
 
 /**
- * Cellular theme_file_icon(). Use css classes to style output instead of <img>.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_file_icon().
  */
-function cellular_file_icon(array &$vars) {
+function cellular_file_icon(&$vars) {
+  //Use css classes to style output instead of <img>.
   $file = $vars['file'];
   $mime = check_plain($file->filemime);
   $generic_mime = (string) file_icon_map($file);
@@ -100,15 +118,9 @@ function cellular_file_icon(array &$vars) {
 }
 
 /**
- * Cellular theme_feed_icon().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_feed_icon().
  */
-function cellular_feed_icon(array &$vars) {
+function cellular_feed_icon(&$vars) {
   $text = t('Subscribe to !feed-title', array(
     '!feed-title' => $vars['title'],
   ));

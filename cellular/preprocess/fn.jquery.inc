@@ -81,7 +81,7 @@ function cellular_cdn() {
  * @param array $javascript
  *   Associative array of javascripts.
  */
-function cellular_jquery_update(array &$javascript) {
+function cellular_jquery_update(&$javascript) {
   $jq = cellular_jquery_info();
   // Override jQuery.
   $jquery = array(
@@ -152,7 +152,7 @@ function cellular_jquery_update(array &$javascript) {
  * @param array $javascript
  *   Associative array of javascripts.
  */
-function cellular_jqueryui_update_js(array &$javascript) {
+function cellular_jqueryui_update_js(&$javascript) {
   $jq = cellular_jquery_info();
   $ui_widgets = array(
     'ui.core',
@@ -228,7 +228,7 @@ function cellular_jqueryui_update_js(array &$javascript) {
  * @param array $css
  *   Associative array of stylesheets.
  */
-function cellular_jqueryui_update_css(array &$css) {
+function cellular_jqueryui_update_css(&$css) {
   $ui['path'] = 'jquery-ui/';
   $ui['widgets'] = array(
     'core',

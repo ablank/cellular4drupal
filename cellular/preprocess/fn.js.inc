@@ -15,7 +15,7 @@
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_js(array $array,  $cellular = FALSE) {
+function cellular_add_js($array,  $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
 // Set default attributes.
@@ -48,7 +48,7 @@ function cellular_add_js(array $array,  $cellular = FALSE) {
  * @param  $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_fallback(array $script,  $cellular = FALSE) {
+function cellular_js_fallback($script,  $cellular = FALSE) {
 // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
@@ -77,7 +77,7 @@ function cellular_js_fallback(array $script,  $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_override(array &$javascript, array $script,  $cellular = FALSE) {
+function cellular_js_override(&$javascript, $script,  $cellular = FALSE) {
 // Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
@@ -120,7 +120,7 @@ function cellular_js_override(array &$javascript, array $script,  $cellular = FA
  *   'complete',
  *   );.
  */
-function cellular_modernizr(array $tests) {
+function cellular_modernizr($tests) {
 // $base_url needs to be added to set the correct path.
   $dir = $GLOBALS['base_url'] . '/' . cellular_theme_path();
   $query = '';

@@ -13,7 +13,7 @@
  * @return array
  *   Attributes to render.
  */
-function cellular_form_element_attributes(array &$element) {
+function cellular_form_element_attributes(&$element) {
   // $element['#theme_wrappers'] = NULL;
   $attributes = array();
   empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
@@ -29,15 +29,9 @@ function cellular_form_element_attributes(array &$element) {
 }
 
 /**
- * Cellular theme_form().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_form().
  */
-function cellular_form(array $vars) {
+function cellular_form($vars) {
   $element = $vars['element'];
   // $element['#attributes']['class'][] = 'cell';
   if (isset($element['#action'])) {
@@ -54,15 +48,9 @@ function cellular_form(array $vars) {
 }
 
 /**
- * Cellular theme_container().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return array
- *   Render array of children.
+ * Implements theme_container().
  */
-function cellular_container(array &$vars) {
+function cellular_container(&$vars) {
   $element = $vars['element'];
   // Special handling for form elements.
   if (isset($element['#array_parents'])) {
@@ -78,15 +66,9 @@ function cellular_container(array &$vars) {
 }
 
 /**
- * Cellular theme_form_element().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_form_element().
  */
-function cellular_form_element(array &$vars) {
+function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $output = '';
   /* May decide to include later:
@@ -133,15 +115,9 @@ function cellular_form_element(array &$vars) {
 }
 
 /**
- * Cellular theme_button().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_button().
  */
-function cellular_button(array &$vars) {
+function cellular_button(&$vars) {
   $element = $vars['element'];
   $output = '';
   $element['#attributes']['type'] = 'submit';
@@ -158,15 +134,9 @@ function cellular_button(array &$vars) {
 }
 
 /**
- * Cellular theme_fieldset().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_fieldset().
  */
-function cellular_fieldset(array &$vars) {
+function cellular_fieldset(&$vars) {
   $element = $vars['element'];
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
 
@@ -188,15 +158,9 @@ function cellular_fieldset(array &$vars) {
 }
 
 /**
- * Cellular theme_select().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_select().
  */
-function cellular_select(array &$vars) {
+function cellular_select(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -210,15 +174,9 @@ function cellular_select(array &$vars) {
 }
 
 /**
- * Cellular theme_checkboxes().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_checkboxes().
  */
-function cellular_checkboxes(array &$vars) {
+function cellular_checkboxes(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -232,15 +190,9 @@ function cellular_checkboxes(array &$vars) {
 }
 
 /**
- * Cellular theme_checkbox().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_checkbox().
  */
-function cellular_checkbox(array &$vars) {
+function cellular_checkbox(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -255,15 +207,9 @@ function cellular_checkbox(array &$vars) {
 }
 
 /**
- * Cellular theme_radios().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_radios().
  */
-function cellular_radios(array &$vars) {
+function cellular_radios(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -276,15 +222,9 @@ function cellular_radios(array &$vars) {
 }
 
 /**
- * Cellular theme_radio().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_radio().
  */
-function cellular_radio(array &$vars) {
+function cellular_radio(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -299,15 +239,9 @@ function cellular_radio(array &$vars) {
 }
 
 /**
- * Cellular theme_textfield().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_textfield().
  */
-function cellular_textfield(array &$vars) {
+function cellular_textfield(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -321,15 +255,9 @@ function cellular_textfield(array &$vars) {
 }
 
 /**
- * Cellular theme_textarea().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_textarea().
  */
-function cellular_textarea(array &$vars) {
+function cellular_textarea(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);

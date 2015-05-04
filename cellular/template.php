@@ -60,7 +60,7 @@ function cellular_mq() {
  * @param array $array
  *   Array of tags to add to document <head>.
  */
-function cellular_build_head_tags(array $array) {
+function cellular_build_head_tags($array) {
   foreach ($array as $meta => $val) {
     if (isset($val)) {
       // Build tag:
@@ -101,7 +101,7 @@ function cellular_build_head_tags(array $array) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_error_page(array &$vars) {
+function cellular_error_page(&$vars) {
   // Set custom error template:
   $http_status = drupal_get_http_header("status");
 
@@ -113,8 +113,8 @@ function cellular_error_page(array &$vars) {
       case "500 Internal Server Error":
         $vars['theme_hook_suggestions'][] = 'page__error';
         $vars['http_status'] = "Error: " . $http_status;
-        $vars['error_message'] = drupal_get_messages();
         $vars['classes_array'][] = 'page-error';
+        $vars['error_message'] = drupal_get_messages();
         break;
     }
   }
@@ -128,7 +128,7 @@ function cellular_error_page(array &$vars) {
  * @param array $form_state
  *   Form element's state.
  */
-function cellular_form_format_opt(array &$form, array $form_state) {
+function cellular_form_format_opt(&$form, $form_state) {
   // Remove individual text format options:
   // $form[LANGUAGE_NONE][0]['format']['guidelines']['#access'] = FALSE;
   // $form[LANGUAGE_NONE][0]['format']['format']['#access'] = FALSE;
@@ -147,7 +147,7 @@ function cellular_form_format_opt(array &$form, array $form_state) {
  * @param array $element
  *   Element to test and return variables of.
  */
-function cellular_dev(array $element) {
+function cellular_dev($element) {
   if (theme_get_setting('dev') == 1) {
     if (module_exists('devel')) {
       dpm($element);
@@ -207,7 +207,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
  * @param array $exclude
  *   Array of stylesheets to remove.
  */
-function cellular_remove_css(array &$css, array $exclude) {
+function cellular_remove_css(&$css, $exclude) {
   foreach ($exclude as $module => $stylesheet) {
     // Remove multiple stylesheets attached by module.
     if (is_array($stylesheet)) {
@@ -232,7 +232,7 @@ function cellular_remove_css(array &$css, array $exclude) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
+function cellular_override_css(&$css, $style,  $cellular = FALSE) {
   $ocss = $style['default'];
   // Only override if style is being called.
   if (isset($css[$ocss])) {
@@ -264,15 +264,18 @@ function cellular_override_css(array &$css, array $style,  $cellular = FALSE) {
  * @param array $css
  *   Associative array of stylesheets to merge with defaults from theme registry.
  */
-function cellular_remove_default_css(array &$css) {
+function cellular_remove_default_css(&$css) {
   // Nuke all css not a member of group CSS_THEME:
   $exclude = array();
   if (theme_get_setting('remove_drupal_css') === 'theme_only') {
     foreach ($css as $key => $value) {
-      if ($value['group'] !== CSS_THEME
-      // Keep admin stuff.
-      && ($key !== 'admin_menu' || $key !== 'toolbar')
-      ) {
+      $keep = array(
+        'toolbar',
+        'admin_menu',
+        'admin_menu_toolbar'
+      );
+
+      if (!array_key_exists($key, $keep) && $value['group'] !== CSS_THEME) {
         unset($css[$key]);
       }
     }
@@ -291,7 +294,7 @@ function cellular_remove_default_css(array &$css) {
     $exclude = array(
       'system' => array(
         'system.base.css',
-        'system.menus.css',
+        //'system.menus.css',
         'system.messages.css',
         'system.theme.css',
       ),
@@ -320,12 +323,25 @@ function cellular_remove_default_css(array &$css) {
  */
 
 /**
+ *
+ */
+function cellular_links__system_main_menu($vars) {
+  $output .= "<ul id=\"nav\">\n";
+  foreach ($vars['links'] as $key => $link) {
+    $output .= "<li>".l($link['title'], $link['path'], $link)."</li>";
+  }
+  $output .= "</ul>\n";
+
+  return $output;
+}
+
+/**
  * Returns full Main Menu instead of top-level links.
  *
  * @param array $vars
  *   Associative array of variables to merge with defaults from theme registry.
  */
-function cellular_main_menu(array &$vars) {
+function cellular_main_menu(&$vars) {
   if (theme_get_setting('full_menu') == 1) {
     // Render the full main menu tree, use css / js to show/hide sub-menus.
     $menu_data = menu_tree_output(menu_tree_all_data('main-menu'));
@@ -334,7 +350,22 @@ function cellular_main_menu(array &$vars) {
     $menu_data = menu_tree('main-menu');
   }
 
-  $vars['main_menu'] = $menu_data;
+   $vars['main_menu'] = $menu_data;
+   //$vars['main_menu']['#theme_wrappers'] = array('cellular_menu_tree__main_menu');
+   /*
+   $vars['main_menu'] = theme('links__system_main_menu', array(
+      'links' => $menu_data,
+      'attributes' => array(
+        'id' => 'nav',
+        'class' => array(
+          'primary'
+          )
+        ),
+      // 'heading' => t('Main menu'),
+    ));
+    */
+  // dpm($menu_data);
+   // dpm($vars);
 }
 
 
@@ -354,7 +385,7 @@ function cellular_main_menu(array &$vars) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_js(array $array,  $cellular = FALSE) {
+function cellular_add_js($array,  $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
 // Set default attributes.
@@ -387,7 +418,7 @@ function cellular_add_js(array $array,  $cellular = FALSE) {
  * @param  $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_fallback(array $script,  $cellular = FALSE) {
+function cellular_js_fallback($script,  $cellular = FALSE) {
 // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
@@ -416,7 +447,7 @@ function cellular_js_fallback(array $script,  $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_override(array &$javascript, array $script,  $cellular = FALSE) {
+function cellular_js_override(&$javascript, $script,  $cellular = FALSE) {
 // Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
@@ -459,7 +490,7 @@ function cellular_js_override(array &$javascript, array $script,  $cellular = FA
  *   'complete',
  *   );.
  */
-function cellular_modernizr(array $tests) {
+function cellular_modernizr($tests) {
 // $base_url needs to be added to set the correct path.
   $dir = $GLOBALS['base_url'] . '/' . cellular_theme_path();
   $query = '';
@@ -574,7 +605,7 @@ function cellular_cdn() {
  * @param array $javascript
  *   Associative array of javascripts.
  */
-function cellular_jquery_update(array &$javascript) {
+function cellular_jquery_update(&$javascript) {
   $jq = cellular_jquery_info();
   // Override jQuery.
   $jquery = array(
@@ -645,7 +676,7 @@ function cellular_jquery_update(array &$javascript) {
  * @param array $javascript
  *   Associative array of javascripts.
  */
-function cellular_jqueryui_update_js(array &$javascript) {
+function cellular_jqueryui_update_js(&$javascript) {
   $jq = cellular_jquery_info();
   $ui_widgets = array(
     'ui.core',
@@ -721,7 +752,7 @@ function cellular_jqueryui_update_js(array &$javascript) {
  * @param array $css
  *   Associative array of stylesheets.
  */
-function cellular_jqueryui_update_css(array &$css) {
+function cellular_jqueryui_update_css(&$css) {
   $ui['path'] = 'jquery-ui/';
   $ui['widgets'] = array(
     'core',
@@ -789,7 +820,7 @@ function cellular_jqueryui_update_css(array &$css) {
  * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
-  // Help prevent clickjacking
+  // Help prevent xss clickjacking.
   drupal_add_http_header('X-Frame-Options', 'DENY');
   // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
@@ -801,7 +832,7 @@ function cellular_http_headers() {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_html_attributes(array &$vars) {
+function cellular_html_attributes(&$vars) {
   global $language;
   $html_attributes = array(
     'lang' => $language->language,
@@ -824,7 +855,7 @@ function cellular_html_attributes(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_rdf(array &$vars) {
+function cellular_rdf(&$vars) {
   $vars['rdf_prefixes'] = '';
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
@@ -854,7 +885,7 @@ function cellular_rdf(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_body_attributes(array &$vars) {
+function cellular_body_attributes(&$vars) {
   $body_attributes = array();
   $path = drupal_get_path_alias();
   // Page URL is used to set id & classes of body.
@@ -950,7 +981,7 @@ function cellular_favicons() {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_metatags(array &$vars) {
+function cellular_metatags(&$vars) {
   // Add default metatags:
   $meta_tags = array(
     'viewport' => array(
@@ -991,7 +1022,7 @@ function cellular_metatags(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_test_sidebar(array &$vars) {
+function cellular_test_sidebar(&$vars) {
   empty($vars['page']['sidebar_left']) ? NULL : $sidebar_left = 1;
   empty($vars['page']['sidebar_right']) ? NULL : $sidebar_right = 1;
 
@@ -1014,7 +1045,7 @@ function cellular_test_sidebar(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_set_author(array &$vars) {
+function cellular_set_author(&$vars) {
   $node = $vars['elements']['#node'];
   $uid = user_load($node->uid);
   $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";
@@ -1043,11 +1074,8 @@ function cellular_set_author(array &$vars) {
 
 /**
  * Implements hook_html_head_alter().
- *
- * @param array $head_elements
- *   Associative array of variables to merge with defaults from theme registry.
  */
-function cellular_html_head_alter(array &$head_elements) {
+function cellular_html_head_alter(&$head_elements) {
   // Remove unwanted meta tags.
   $exclude = array('metatag_generator');
 
@@ -1061,11 +1089,8 @@ function cellular_html_head_alter(array &$head_elements) {
 
 /**
  * Implements hook_page_alter().
- *
- * @param array $page
- *   Associative array of variables to merge with defaults from theme registry.
  */
-function cellular_page_alter(array &$page) {
+function cellular_page_alter(&$page) {
   // cellular_dev($page);
 }
 
@@ -1077,9 +1102,6 @@ function cellular_page_alter(array &$page) {
 
 /**
  * Implements hook_css_alter().
- *
- * @param array $css
- *   Associative array of stylesheets to merge with defaults from theme registry.
  */
 function cellular_css_alter(&$css) {
   // Remove stylesheets based on theme settings.
@@ -1130,15 +1152,8 @@ function cellular_css_alter(&$css) {
 
 /**
  * Implements hook_form_alter().
- *
- * @param array $form
- *   Form element.
- * @param array $form_state
- *   An array which stores information about the form.
- * @param string $form_id
- *   The unique string identifying the desired form.
  */
-function cellular_form_alter(array &$form, array &$form_state, $form_id) {
+function cellular_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     // Site Search block:
@@ -1243,15 +1258,8 @@ function cellular_form_alter(array &$form, array &$form_state, $form_id) {
 
 /**
  * Implements hook__form_comment_form_alter().
- *
- * @param array $form
- *   Form element.
- * @param array $form_state
- *   An array which stores information about the form.
- * @param string $form_id
- *   The unique string identifying the desired form.
  */
-function cellular_form_comment_form_alter(array &$form, array $form_state, $form_id) {
+function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
   // Set field sizes.
   $field_size = 32;
   // Remove text format option.
@@ -1310,7 +1318,7 @@ function cellular_js() {
 
 // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
-  theme_get_setting('cellularui') == 1 ? $js_plugins['cellularui'] = TRUE : NULL;
+  
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
   theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = TRUE : NULL;
   theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = TRUE : NULL;
@@ -1325,7 +1333,7 @@ function cellular_js() {
 // /yourTheme/js/ into script.min.js.
 
   // Add Cellular UI
-  if ($js_plugins['cellularui'] == TRUE && $ext === '.js') {
+  if (theme_get_setting('cellularui') == 1 && $ext === '.js') {
     $scripts['cellularui'] = array(
       'object' => 'cellular',
       'file' => 'cellularUI/jquery.cellularUI' . $ext,
@@ -1526,12 +1534,9 @@ function cellular_plugin_css() {
  */
 
 /**
- * Cellular template_preprocess_html().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_html().
  */
-function cellular_preprocess_html(array &$vars) {
+function cellular_preprocess_html(&$vars) {
   cellular_http_headers();
   cellular_html_attributes($vars);
   cellular_rdf($vars);
@@ -1541,12 +1546,9 @@ function cellular_preprocess_html(array &$vars) {
 }
 
 /**
- * Cellular template_preprocess_node().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_node().
  */
-function cellular_preprocess_node(array &$vars) {
+function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
 
   $vars['title_attributes_array']['class'] = array('node-title');
@@ -1560,12 +1562,9 @@ function cellular_preprocess_node(array &$vars) {
 }
 
 /**
- * Cellular template_preprocess_page().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_page().
  */
-function cellular_preprocess_page(array &$vars) {
+function cellular_preprocess_page(&$vars) {
   // Add template suggestions for custom Content types(page--content-type.tpl.php)
   isset($vars['node']->type) ? $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type : NULL;
 
@@ -1573,28 +1572,38 @@ function cellular_preprocess_page(array &$vars) {
   cellular_main_menu($vars);
   // Set classes for content & sidebars.
   cellular_test_sidebar($vars);
-  // Use page--error.tpl if http error status is returned.
-  cellular_error_page($vars);
+  // Use page-- === .tpl if http  ===  status is returned.
+  // = _page($vars);
 
   // Link site name to frontpage:
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set Social Media links:
   $vars['page']['social_media_share'] = cellular_social_media_share();
   $vars['page']['social_media_follow'] = cellular_social_media_follow();
-  // Set search block variable for addition to templates, i.e. error page.
+  // Set search block variable for addition to templates, i.e.  ===  page.
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
-}
+
+
+  // if this is a panel page, add template suggestions
+  if(theme_get_setting('panelseverywhere') == 1 && $panel_page = page_manager_get_current_page()) {
+      // add a generic suggestion for all panel pages
+      $suggestions[] = 'page__panels';
+      // add the panel page machine name to the template suggestions
+      $suggestions[] = 'page__panels_' . $panel_page['name'];
+      // merge the suggestions in to the existing suggestions (as more specific than the existing suggestions)
+      $vars['theme_hook_suggestions'] = array_merge($vars['theme_hook_suggestions'], $suggestions);
+    }
+  }
+  // http://www.grasmash.com/article/add-drupal-template-suggestion-panels-page-paneltplphp#sthash.kJMOIc86.dpuf
+
 
 /**
- * Cellular template_preprocess_maintenance_page().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_maintenance_page().
  */
-function cellular_preprocess_maintenance_page(array &$vars) {
+function cellular_preprocess_maintenance_page(&$vars) {
   // Add template suggestions for custom Content types(page--content-type.tpl.php)
   isset($vars['node']->type) ? $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type : NULL;
 
@@ -1602,15 +1611,15 @@ function cellular_preprocess_maintenance_page(array &$vars) {
   cellular_main_menu($vars);
   // Set classes for content & sidebars.
   cellular_test_sidebar($vars);
-  // Use page--error.tpl if http error status is returned.
-  cellular_error_page($vars);
+  // Use page-- === .tpl if http  ===  status is returned.
+  cellular_error_page === _page($vars);
 
   // Link site name to frontpage:
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set Social Media links:
   $vars['page']['social_media_share'] = cellular_social_media_share();
   $vars['page']['social_media_follow'] = cellular_social_media_follow();
-  // Set search block variable for addition to templates, i.e. error page.
+  // Set search block variable for addition to templates, i.e.  ===  page.
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright if provided:
   $copyright = theme_get_setting('copyright');
@@ -1618,12 +1627,9 @@ function cellular_preprocess_maintenance_page(array &$vars) {
 }
 
 /**
- * Cellular template_preprocess_block().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_block().
  */
-function cellular_preprocess_block(array &$vars) {
+function cellular_preprocess_block(&$vars) {
   $block = $vars['elements']['#block'];
   // Hide block titles in the headers region:
   switch ($block->region) {
@@ -1638,12 +1644,9 @@ function cellular_preprocess_block(array &$vars) {
 }
 
 /**
- * Cellular template_preprocess_comment().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_comment().
  */
-function cellular_preprocess_comment(array &$vars) {
+function cellular_preprocess_comment(&$vars) {
   // $vars['comment_wrapper'] = NULL;
   $vars['theme_hook_suggestions'][] = 'comment';
   $vars['title_attributes_array']['class'][] = 'comment-title';
@@ -1656,22 +1659,16 @@ function cellular_preprocess_comment(array &$vars) {
 }
 
 /**
- * Cellular template_preprocess_comment_wrapper.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_preprocess_comment_wrapper.
  */
-function cellular_preprocess_comment_wrapper(array &$vars) {
+function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['classes_array'][] = 'clearfix';
 }
 
 /**
- * Cellular template_ preprocess_username().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_ preprocess_username().
  */
-function cellular_preprocess_username(array &$vars) {
+function cellular_preprocess_username(&$vars) {
   if (isset($vars['link_path'])) {
     $vars['link_attributes']['rel'][] = 'author';
   }
@@ -1687,15 +1684,44 @@ function cellular_preprocess_username(array &$vars) {
  */
 
 /**
- * Cellular theme_field().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements hook_theme_registry_alter().
  */
-function cellular_field(array &$vars) {
+  /*
+function cellular_registry_alter(&$theme_registry) {
+  // Override the default page.tpl.php.
+  if (theme_get_setting('panelseverywhere') == 1 && isset($theme_registry['page'])) {
+    $path = drupal_get_path('theme', 'cellular');
+    $theme_registry['field_collection_item']['theme path'] = $path;
+    $theme_registry['field_collection_item']['template'] = "$path/templates/page--panels";
+  }
+}
+  */
+
+/**
+ * Implements hook_theme().
+
+function cellular_theme($existing, $type, $theme, $path) {
+  $theme['main_menu'] = array(
+        'arguments' => array(
+            // if NULL, function checks variable 'menu_primary_links_source'
+            'menu_name' => NULL,
+
+        )
+    );
+  $theme['panels_page'] = array(
+    'base hook' => 'page',
+    'render element' => 'page',
+    'template' => 'templates/page--panels',
+  );
+
+  return $theme;
+}
+ */
+
+/**
+ * Implements theme_field().
+ */
+function cellular_field(&$vars) {
   $output = '';
   $wrap = theme_get_setting('field_wrappers');
   // Render the label, if it's not hidden.
@@ -1721,15 +1747,9 @@ function cellular_field(array &$vars) {
 }
 
 /**
- * Cellular theme_breadcrumb().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML || NULL.
+ * Implements theme_breadcrumb().
  */
-function cellular_breadcrumb(array &$vars) {
+function cellular_breadcrumb(&$vars) {
   $output = NULL;
   if (theme_get_setting('breadcrumb_display') == 1) {
     if (!empty($vars['breadcrumb'])) {
@@ -1751,15 +1771,10 @@ function cellular_breadcrumb(array &$vars) {
 }
 
 /**
- * Cellular theme_file_icon(). Use css classes to style output instead of <img>.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_file_icon().
  */
-function cellular_file_icon(array &$vars) {
+function cellular_file_icon(&$vars) {
+  //Use css classes to style output instead of <img>.
   $file = $vars['file'];
   $mime = check_plain($file->filemime);
   $generic_mime = (string) file_icon_map($file);
@@ -1782,15 +1797,9 @@ function cellular_file_icon(array &$vars) {
 }
 
 /**
- * Cellular theme_feed_icon().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_feed_icon().
  */
-function cellular_feed_icon(array &$vars) {
+function cellular_feed_icon(&$vars) {
   $text = t('Subscribe to !feed-title', array(
     '!feed-title' => $vars['title'],
   ));
@@ -1824,7 +1833,7 @@ function cellular_feed_icon(array &$vars) {
  * @return array
  *   Attributes to render.
  */
-function cellular_form_element_attributes(array &$element) {
+function cellular_form_element_attributes(&$element) {
   // $element['#theme_wrappers'] = NULL;
   $attributes = array();
   empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
@@ -1840,15 +1849,9 @@ function cellular_form_element_attributes(array &$element) {
 }
 
 /**
- * Cellular theme_form().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_form().
  */
-function cellular_form(array $vars) {
+function cellular_form($vars) {
   $element = $vars['element'];
   // $element['#attributes']['class'][] = 'cell';
   if (isset($element['#action'])) {
@@ -1865,15 +1868,9 @@ function cellular_form(array $vars) {
 }
 
 /**
- * Cellular theme_container().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return array
- *   Render array of children.
+ * Implements theme_container().
  */
-function cellular_container(array &$vars) {
+function cellular_container(&$vars) {
   $element = $vars['element'];
   // Special handling for form elements.
   if (isset($element['#array_parents'])) {
@@ -1889,15 +1886,9 @@ function cellular_container(array &$vars) {
 }
 
 /**
- * Cellular theme_form_element().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_form_element().
  */
-function cellular_form_element(array &$vars) {
+function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $output = '';
   /* May decide to include later:
@@ -1944,15 +1935,9 @@ function cellular_form_element(array &$vars) {
 }
 
 /**
- * Cellular theme_button().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_button().
  */
-function cellular_button(array &$vars) {
+function cellular_button(&$vars) {
   $element = $vars['element'];
   $output = '';
   $element['#attributes']['type'] = 'submit';
@@ -1969,15 +1954,9 @@ function cellular_button(array &$vars) {
 }
 
 /**
- * Cellular theme_fieldset().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_fieldset().
  */
-function cellular_fieldset(array &$vars) {
+function cellular_fieldset(&$vars) {
   $element = $vars['element'];
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
 
@@ -1999,15 +1978,9 @@ function cellular_fieldset(array &$vars) {
 }
 
 /**
- * Cellular theme_select().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_select().
  */
-function cellular_select(array &$vars) {
+function cellular_select(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2021,15 +1994,9 @@ function cellular_select(array &$vars) {
 }
 
 /**
- * Cellular theme_checkboxes().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_checkboxes().
  */
-function cellular_checkboxes(array &$vars) {
+function cellular_checkboxes(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2043,15 +2010,9 @@ function cellular_checkboxes(array &$vars) {
 }
 
 /**
- * Cellular theme_checkbox().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_checkbox().
  */
-function cellular_checkbox(array &$vars) {
+function cellular_checkbox(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2066,15 +2027,9 @@ function cellular_checkbox(array &$vars) {
 }
 
 /**
- * Cellular theme_radios().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_radios().
  */
-function cellular_radios(array &$vars) {
+function cellular_radios(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2087,15 +2042,9 @@ function cellular_radios(array &$vars) {
 }
 
 /**
- * Cellular theme_radio().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_radio().
  */
-function cellular_radio(array &$vars) {
+function cellular_radio(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2110,15 +2059,9 @@ function cellular_radio(array &$vars) {
 }
 
 /**
- * Cellular theme_textfield().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_textfield().
  */
-function cellular_textfield(array &$vars) {
+function cellular_textfield(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2132,15 +2075,9 @@ function cellular_textfield(array &$vars) {
 }
 
 /**
- * Cellular theme_textarea().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_textarea().
  */
-function cellular_textarea(array &$vars) {
+function cellular_textarea(&$vars) {
   $element = $vars['element'];
   $output = '';
   $attributes = cellular_form_element_attributes($element);
@@ -2163,15 +2100,9 @@ function cellular_textarea(array &$vars) {
  */
 
 /**
- * Cellular theme_pager().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_pager().
  */
-function cellular_pager(array $vars) {
+function cellular_pager($vars) {
   global $pager_page_array, $pager_total;
   $tags = $vars['tags'];
   $element = $vars['element'];
@@ -2295,6 +2226,38 @@ function cellular_pager(array $vars) {
 
 
 /*
+ * @see file: preprocess/panels.inc
+ * Alter specific forms.
+ */
+
+/**
+ * Alter the default Panels markup.
+ */
+function cellular_panels_default_style_render_region($vars) {
+  // dpm($vars);
+  $output = '';
+  // $output .= implode('<div class="panel-separator"></div>', $vars['panes']);
+  // Remove the panel separator.
+  return implode($output, $vars['panes']);
+}
+
+
+/**
+ * Alter the panelseverywhere header markup.
+ */
+function cellular_preprocess_pane_header(&$vars) {
+  /*
+  //function template_preprocess_pane_header(&$vars) {
+  $vars['site_name'] = (theme_get_setting('toggle_name') ? filter_xss_admin(variable_get('site_name', 'Drupal')) : '');
+
+  $vars['site_slogan'] = (theme_get_setting('toggle_slogan') ? filter_xss_admin(variable_get('site_slogan', '')) : '');
+  $vars['main_menu'] = cellular_main_menu($vars);
+  // dpm($vars);
+   */
+}
+
+
+/*
  * @see file: preprocess/social.inc
  * Generate social media links.
  */
@@ -2310,7 +2273,7 @@ function cellular_pager(array $vars) {
  * @return string
  *   Formatted HTML.
  */
-function cellular_build_links(array $links, array $parent) {
+function cellular_build_links($links, $parent) {
   $output = '';
   foreach ($links as $link) {
     if (!empty($link['tag'])) {
@@ -2567,23 +2530,17 @@ function cellular_social_media_share() {
  */
 
 /**
- * Cellular template_process_html().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_process_html().
  */
-function cellular_process_html(array &$vars) {
+function cellular_process_html(&$vars) {
   // Push modified styles to page.
  // $vars['styles'] = drupal_get_css($vars['css'], FALSE);
 }
 
 /**
- * Cellular template_process_page().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
+ * Implements template_process_page().
  */
-function cellular_process_page(array &$vars) {
+function cellular_process_page(&$vars) {
   // Dev.
   cellular_dev($vars);
 }
@@ -2600,7 +2557,7 @@ function cellular_process_page(array &$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_preprocess_views_view(array &$vars) {
+function cellular_preprocess_views_view(&$vars) {
   if (isset($vars['view']->name)) {
     $function = 'cellular_preprocess_views_view__' . $vars['view']->name;
     if (function_exists($function)) {

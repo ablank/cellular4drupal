@@ -5,15 +5,9 @@
  */
 
 /**
- * Cellular theme_pager().
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- *
- * @return string
- *   Formatted HTML.
+ * Implements theme_pager().
  */
-function cellular_pager(array $vars) {
+function cellular_pager($vars) {
   global $pager_page_array, $pager_total;
   $tags = $vars['tags'];
   $element = $vars['element'];

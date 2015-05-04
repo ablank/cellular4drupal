@@ -6,15 +6,8 @@
 
 /**
  * Implements hook_form_alter().
- *
- * @param array $form
- *   Form element.
- * @param array $form_state
- *   An array which stores information about the form.
- * @param string $form_id
- *   The unique string identifying the desired form.
  */
-function cellular_form_alter(array &$form, array &$form_state, $form_id) {
+function cellular_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     // Site Search block:
@@ -119,15 +112,8 @@ function cellular_form_alter(array &$form, array &$form_state, $form_id) {
 
 /**
  * Implements hook__form_comment_form_alter().
- *
- * @param array $form
- *   Form element.
- * @param array $form_state
- *   An array which stores information about the form.
- * @param string $form_id
- *   The unique string identifying the desired form.
  */
-function cellular_form_comment_form_alter(array &$form, array $form_state, $form_id) {
+function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
   // Set field sizes.
   $field_size = 32;
   // Remove text format option.

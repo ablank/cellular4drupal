@@ -93,7 +93,6 @@ hr {
   margin: 1em 0;
   height: 1px;
   border: none;
-  background-image: -webkit-linear-gradient(left, rgba(187, 186, 183, 0), rgba(187, 186, 183, 0.75), rgba(187, 186, 183, 0));
   background-image: linear-gradient(to right, rgba(187, 186, 183, 0), rgba(187, 186, 183, 0.75), rgba(187, 186, 183, 0));
 }
 
@@ -167,7 +166,7 @@ tr:nth-child(even) {
 
 /* line 34, ../sass/style/_tables.scss */
 tr:nth-child(odd) {
-  background: #fefefe;
+  background: #FEFEFE;
 }
 
 /* line 38, ../sass/style/_tables.scss */
@@ -251,8 +250,8 @@ label {
   display: inline-block;
   font-family: "Quicksand";
   font-weight: bold;
-  margin: 0.4em 0 0;
-  padding: 1em 0.4em 0.4em;
+  margin: .4em 0 0;
+  padding: 1em .4em .4em;
 }
 
 /* line 75, ../sass/style/_forms.scss */
@@ -261,12 +260,16 @@ select,
 textarea {
   font: 1em/1.6em 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
   margin: 0 auto;
-  padding: 0.4em;
+  padding: .4em;
   font-size: 100%;
   vertical-align: middle;
   color: #111;
-  background: #fefefe;
+  background: #FEFEFE;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
@@ -276,52 +279,33 @@ input[type="hidden"] {
   display: none;
 }
 /* line 96, ../sass/style/_forms.scss */
-input[type="text"],
-input[type="number"],
-input[type="tel"],
-input[type="search"],
-input[type="email"],
-input[type="password"] {
+input[type="text"], input[type="number"], input[type="tel"], input[type="search"], input[type="email"], input[type="password"] {
   display: block;
   margin: 0.3em auto 1em;
   width: 90%;
   border: #f1f1f1 thin solid;
-  color: #444;
+  color: #444444;
   background: #f9f9f9;
 }
 /* line 109, ../sass/style/_forms.scss */
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="search"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  color: #444;
-  background: #fefefe;
+input[type="text"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="search"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  color: #444444;
+  background: #FEFEFE;
 }
 /* line 113, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked),
-input[type="checkbox"]:checked,
-input[type="radio"]:not(:checked),
-input[type="radio"]:checked {
+input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked, input[type="radio"]:not(:checked), input[type="radio"]:checked {
   position: absolute;
   left: -999em;
 }
 /* line 118, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked) + label,
-input[type="checkbox"]:checked + label,
-input[type="radio"]:not(:checked) + label,
-input[type="radio"]:checked + label {
+input[type="checkbox"]:not(:checked) + label, input[type="checkbox"]:checked + label, input[type="radio"]:not(:checked) + label, input[type="radio"]:checked + label {
   position: relative;
   cursor: pointer;
   padding: 0 0 0 2em;
   vertical-align: middle;
 }
 /* line 124, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked) + label:before,
-input[type="checkbox"]:checked + label:before,
-input[type="radio"]:not(:checked) + label:before,
-input[type="radio"]:checked + label:before {
+input[type="checkbox"]:not(:checked) + label:before, input[type="checkbox"]:checked + label:before, input[type="radio"]:not(:checked) + label:before, input[type="radio"]:checked + label:before {
   content: '';
   position: absolute;
   left: 0;
@@ -331,17 +315,16 @@ input[type="radio"]:checked + label:before {
   vertical-align: middle;
   background: #f9f9f9;
   border: #f1f1f1 thin solid;
+  -moz-box-shadow: inset 0 0 1px 1px #f1f1f1;
+  -webkit-box-shadow: inset 0 0 1px 1px #f1f1f1;
   box-shadow: inset 0 0 1px 1px #f1f1f1;
 }
 /* line 137, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked) + label:after,
-input[type="checkbox"]:checked + label:after,
-input[type="radio"]:not(:checked) + label:after,
-input[type="radio"]:checked + label:after {
+input[type="checkbox"]:not(:checked) + label:after, input[type="checkbox"]:checked + label:after, input[type="radio"]:not(:checked) + label:after, input[type="radio"]:checked + label:after {
   content: '';
   position: absolute;
-  top: 0.25em;
-  left: 0.25em;
+  top: .25em;
+  left: .25em;
   width: 1em;
   height: 1em;
   background-position: center;
@@ -349,29 +332,22 @@ input[type="radio"]:checked + label:after {
   background-repeat: no-repeat;
 }
 /* line 152, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked):focus + label:before,
-input[type="checkbox"]:checked:focus + label:before,
-input[type="radio"]:not(:checked):focus + label:before,
-input[type="radio"]:checked:focus + label:before {
-  border: 1px dotted #29b4de;
+input[type="checkbox"]:not(:checked):focus + label:before, input[type="checkbox"]:checked:focus + label:before, input[type="radio"]:not(:checked):focus + label:before, input[type="radio"]:checked:focus + label:before {
+  border: 1px dotted #29B4DE;
 }
 /* line 159, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked):disabled + label,
-input[type="checkbox"]:checked:disabled + label,
-input[type="radio"]:not(:checked):disabled + label,
-input[type="radio"]:checked:disabled + label {
+input[type="checkbox"]:not(:checked):disabled + label, input[type="checkbox"]:checked:disabled + label, input[type="radio"]:not(:checked):disabled + label, input[type="radio"]:checked:disabled + label {
   color: #f1f1f1;
 }
 /* line 162, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:not(:checked):disabled + label:before,
-input[type="checkbox"]:checked:disabled + label:before,
-input[type="radio"]:not(:checked):disabled + label:before,
-input[type="radio"]:checked:disabled + label:before {
+input[type="checkbox"]:not(:checked):disabled + label:before, input[type="checkbox"]:checked:disabled + label:before, input[type="radio"]:not(:checked):disabled + label:before, input[type="radio"]:checked:disabled + label:before {
   background: #f1f1f1;
-  color: #444;
+  color: #444444;
 }
 /* line 121, ../sass/style/_forms.scss */
 input[type="checkbox"] + label:before {
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
 /* line 128, ../sass/style/_forms.scss */
@@ -381,6 +357,8 @@ input[type="checkbox"]:checked + label:after {
 }
 /* line 137, ../sass/style/_forms.scss */
 input[type=radio] + label:before {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
 }
 /* line 144, ../sass/style/_forms.scss */
@@ -396,13 +374,13 @@ textarea {
   vertical-align: top;
   width: 90%;
   border: #f1f1f1 thin solid;
-  color: #444;
+  color: #444444;
   background: #f9f9f9;
 }
 /* line 162, ../sass/style/_forms.scss */
 textarea:focus {
   color: #111;
-  background: #fefefe;
+  background: #FEFEFE;
 }
 
 /* line 168, ../sass/style/_forms.scss */
@@ -421,7 +399,7 @@ optgroup {
 button,
 input[type="button"],
 input[type="submit"] {
-  margin: 1.4em 0.4em 0.4em;
+  margin: 1.4em .4em .4em;
   cursor: pointer;
   display: inline;
   display: inline-block;
@@ -432,33 +410,31 @@ input[type="submit"] {
   line-height: auto;
   border: #bbbab7 1px solid;
   background-color: #fefefe;
-  color: #444;
+  color: #444444;
   background-color: #f1f1f1;
-  background-image: -webkit-linear-gradient(top, #f1f1f1 0%, #bbbab7 100%);
   background-image: linear-gradient(to bottom, #f1f1f1 0%, #bbbab7 100%);
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
 /* line 192, ../sass/_mixins/_cellularmixins.scss */
 button:visited,
 input[type="button"]:visited,
 input[type="submit"]:visited {
-  color: #444;
+  color: #444444;
 }
 /* line 196, ../sass/_mixins/_cellularmixins.scss */
-button.active,
-button:active,
-button:hover,
+button.active, button:active, button:hover,
 input[type="button"].active,
 input[type="button"]:active,
 input[type="button"]:hover,
 input[type="submit"].active,
 input[type="submit"]:active,
 input[type="submit"]:hover {
-  color: #29b4de;
-  border-color: #29b4de;
+  color: #29B4DE;
+  border-color: #29B4DE;
   text-decoration: none;
-  background-color: #fefefe;
-  background-image: -webkit-linear-gradient(top, #fefefe 0%, #f1f1f1 100%);
+  background-color: #FEFEFE;
   background-image: linear-gradient(to bottom, #fefefe 0%, #f1f1f1 100%);
 }
 
@@ -472,10 +448,12 @@ input[type="submit"]:hover {
 .ok,
 .warning,
 .error {
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
   font-weight: bold;
-  border: 0.2em solid;
-  background-color: #fefefe;
+  border: .2em solid;
+  background-color: #FEFEFE;
 }
 /* line 205, ../sass/style/_forms.scss */
 .ok li,
@@ -486,19 +464,19 @@ input[type="submit"]:hover {
 
 /* line 210, ../sass/style/_forms.scss */
 .ok {
-  color: #61d43f;
+  color: #61D43F;
   border-color: #398d20;
 }
 
 /* line 215, ../sass/style/_forms.scss */
 .warning {
-  color: #ec2;
+  color: #EC2;
   border-color: #9e860c;
 }
 
 /* line 220, ../sass/style/_forms.scss */
 .error {
-  color: #8c0d00;
+  color: #8C0D00;
   border-color: #260400;
 }
 
@@ -546,211 +524,126 @@ a img {
 */
 /* line 9, ../sass/style/_grid.scss */
 .cell,
-.cell-100,
-.cell-90,
-.cell-80,
-.cell-75,
-.cell-70,
-.cell-66,
-.cell-60,
-.cell-50,
-.cell-40,
-.cell-33,
-.cell-30,
-.cell-25,
-.cell-20,
-.cell-10 {
+.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
   z-index: 1;
   position: relative;
   float: left;
   display: block;
   margin: 0;
   padding: 0;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
 /* line 19, ../sass/style/_grid.scss */
 .cell.center,
-.cell-100.center,
-.cell-90.center,
-.cell-80.center,
-.cell-75.center,
-.cell-70.center,
-.cell-66.center,
-.cell-60.center,
-.cell-50.center,
-.cell-40.center,
-.cell-33.center,
-.cell-30.center,
-.cell-25.center,
-.cell-20.center,
-.cell-10.center {
+.cell-100.center, .cell-90.center, .cell-80.center, .cell-75.center, .cell-70.center, .cell-66.center, .cell-60.center, .cell-50.center, .cell-40.center, .cell-33.center, .cell-30.center, .cell-25.center, .cell-20.center, .cell-10.center {
   float: none;
   margin: 0 auto;
 }
 
 /* line 25, ../sass/style/_grid.scss */
 .cell {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
   width: 100%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-100 {
   width: 100%;
-  -webkit-flex-basis: 100%;
-  -ms-flex-preferred-size: 100%;
-  flex-basis: 100%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-90 {
   width: 90%;
-  -webkit-flex-basis: 90%;
-  -ms-flex-preferred-size: 90%;
-  flex-basis: 90%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-80 {
   width: 80%;
-  -webkit-flex-basis: 80%;
-  -ms-flex-preferred-size: 80%;
-  flex-basis: 80%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-75 {
   width: 75%;
-  -webkit-flex-basis: 75%;
-  -ms-flex-preferred-size: 75%;
-  flex-basis: 75%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-70 {
   width: 70%;
-  -webkit-flex-basis: 70%;
-  -ms-flex-preferred-size: 70%;
-  flex-basis: 70%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-66 {
   width: 66%;
-  -webkit-flex-basis: 66%;
-  -ms-flex-preferred-size: 66%;
-  flex-basis: 66%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-60 {
   width: 60%;
-  -webkit-flex-basis: 60%;
-  -ms-flex-preferred-size: 60%;
-  flex-basis: 60%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-50 {
   width: 50%;
-  -webkit-flex-basis: 50%;
-  -ms-flex-preferred-size: 50%;
-  flex-basis: 50%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-40 {
   width: 40%;
-  -webkit-flex-basis: 40%;
-  -ms-flex-preferred-size: 40%;
-  flex-basis: 40%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-33 {
   width: 33%;
-  -webkit-flex-basis: 33%;
-  -ms-flex-preferred-size: 33%;
-  flex-basis: 33%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-30 {
   width: 30%;
-  -webkit-flex-basis: 30%;
-  -ms-flex-preferred-size: 30%;
-  flex-basis: 30%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-25 {
   width: 25%;
-  -webkit-flex-basis: 25%;
-  -ms-flex-preferred-size: 25%;
-  flex-basis: 25%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-20 {
   width: 20%;
-  -webkit-flex-basis: 20%;
-  -ms-flex-preferred-size: 20%;
-  flex-basis: 20%;
 }
 
-/* line 35, ../sass/style/_grid.scss */
+/* line 32, ../sass/style/_grid.scss */
 .cell-10 {
   width: 10%;
-  -webkit-flex-basis: 10%;
-  -ms-flex-preferred-size: 10%;
-  flex-basis: 10%;
+}
+
+/* line 39, ../sass/style/_grid.scss */
+.flexbox .cell {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 @media screen and (max-width: 650px) and (min-width: 0) {
-  /* line 43, ../sass/style/_grid.scss */
-  .cell-100,
-  .cell-90,
-  .cell-80,
-  .cell-75,
-  .cell-70,
-  .cell-66,
-  .cell-60,
-  .cell-50,
-  .cell-40,
-  .cell-33,
-  .cell-30,
-  .cell-25,
-  .cell-20,
-  .cell-10 {
+  /* line 49, ../sass/style/_grid.scss */
+  .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-66, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {
     width: 100%;
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
   }
 }
-/* line 50, ../sass/style/_grid.scss */
+/* line 56, ../sass/style/_grid.scss */
 .hidden {
   position: absolute;
   left: -9999px;
 }
 
-/* line 55, ../sass/style/_grid.scss */
+/* line 61, ../sass/style/_grid.scss */
 .clearfix {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
@@ -759,34 +652,34 @@ a img {
   clear: both;
 }
 
-/* line 59, ../sass/style/_grid.scss */
+/* line 65, ../sass/style/_grid.scss */
 hr.clearfix {
   visibility: hidden;
 }
 
-/* line 63, ../sass/style/_grid.scss */
+/* line 69, ../sass/style/_grid.scss */
 .left,
 .right,
 .center {
   display: block;
 }
 
-/* line 69, ../sass/style/_grid.scss */
+/* line 75, ../sass/style/_grid.scss */
 .left {
   float: left;
 }
 
-/* line 73, ../sass/style/_grid.scss */
+/* line 79, ../sass/style/_grid.scss */
 .right {
   float: right;
 }
 
-/* line 77, ../sass/style/_grid.scss */
+/* line 83, ../sass/style/_grid.scss */
 .center {
   margin: 0 auto;
 }
 
-/* line 88, ../sass/style/_grid.scss */
+/* line 94, ../sass/style/_grid.scss */
 h1.center,
 h2.center,
 h3.center,
@@ -817,8 +710,6 @@ p.center {
 body {
   text-rendering: optimizeLegibility;
   font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-family: 'SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif';
   line-height: 1.4em;
@@ -841,10 +732,12 @@ small {
 
 /* line 41, ../sass/style/_typography.scss */
 a {
-  color: #29b4de;
+  color: #29B4DE;
   text-decoration: none;
   outline: none;
   display: inline-block;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
@@ -853,11 +746,9 @@ a:visited {
   color: #16708b;
 }
 /* line 52, ../sass/style/_typography.scss */
-a:hover,
-a:active,
-a:focus {
+a:hover, a:active, a:focus {
   outline: thin dotted;
-  outline-offset: -0.1em;
+  outline-offset: -.1em;
   text-decoration: underline;
   color: #81d3ec;
 }
@@ -878,8 +769,8 @@ h6 {
   font-family: "Quicksand";
   font-weight: bold;
   line-height: 1.1em;
-  margin: 1em auto 0.2em auto;
-  padding: 0.4em 0.4em 0 1em;
+  margin: 1em auto .2em auto;
+  padding: 0.4em .4em 0 1em;
   max-width: 32em;
 }
 
@@ -947,9 +838,9 @@ blockquote,
 q,
 quote {
   font-style: italic;
-  color: #444;
+  color: #444444;
   background-color: #e5e5e5;
-  color: #444;
+  color: #444444;
 }
 /* line 140, ../sass/style/_typography.scss */
 blockquote:before,
@@ -1017,19 +908,21 @@ acronym {
   width: 32px;
   height: 32px;
   text-indent: -999em;
-  margin: 0.4em;
+  margin: .4em;
   padding: 10px;
   vertical-align: middle;
-  background-color: #fefefe;
+  background-color: #FEFEFE;
   background-position: 10px 10px;
   background-repeat: no-repeat;
   background-color: none;
   border: 1px solid #f1f1f1;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
 /* line 22, ../sass/style/_icons.scss */
 #page-wrap .icon:hover {
-  border-color: #29b4de;
+  border-color: #29B4DE;
 }
 /* line 31, ../sass/style/_icons.scss */
 #page-wrap .icon.search {
@@ -1041,9 +934,11 @@ acronym {
 #social-media-share {
   float: left;
   overflow: hidden;
-  margin: 1.4em 0.8em 0.8em;
-  padding: 0 0.4em;
+  margin: 1.4em .8em .8em;
+  padding: 0 .4em;
   background: #f1f1f1;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
 /* line 10, ../sass/style/_social.scss */
@@ -1062,9 +957,9 @@ acronym {
 #social-media-share h4 {
   font-size: 1em;
   margin: 0;
-  padding: 0.4em;
-  border-bottom: #444 0.2em solid;
-  background: #fefefe;
+  padding: .4em;
+  border-bottom: #444444 0.2em solid;
+  background: #FEFEFE;
 }
 
 /**
@@ -1076,14 +971,14 @@ acronym {
   position: absolute;
   top: 2em;
   right: 5%;
-  margin-left: 144px;
+  margin: 0 0 0 144px;
   padding: 0;
 }
 /* line 17, ../sass/style/_navigation.scss */
 #nav a,
 #nav a:visited {
   display: block;
-  padding: 0.4em 0.8em;
+  padding: .4em .8em;
   font-family: "Quicksand";
   font-size: 1em;
   text-align: left;
@@ -1094,44 +989,39 @@ acronym {
   background: transparent;
   border: none;
   border-bottom: #bbbab7 1px solid;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
   border-radius: 0;
 }
 /* line 34, ../sass/style/_navigation.scss */
-#nav a:hover,
-#nav a:focus,
-#nav a:active,
-#nav a.active,
+#nav a:hover, #nav a:focus, #nav a:active, #nav a.active,
 #nav a:visited:hover,
 #nav a:visited:focus,
 #nav a:visited:active,
 #nav a:visited.active {
   text-decoration: none;
-  background: #29b4de;
-  color: #fefefe;
+  background: #29B4DE;
+  color: #FEFEFE;
 }
-/* line 44, ../sass/style/_navigation.scss */
-#nav ul {
-  margin: 0;
-}
-/* line 50, ../sass/style/_navigation.scss */
-#nav > ul > li:first-child {
+/* line 46, ../sass/style/_navigation.scss */
+#nav > li:first-child {
   margin-left: 0;
 }
-/* line 54, ../sass/style/_navigation.scss */
-#nav > ul > li:last-child {
+/* line 50, ../sass/style/_navigation.scss */
+#nav > li:last-child {
   margin-right: 0;
 }
-/* line 59, ../sass/style/_navigation.scss */
+/* line 55, ../sass/style/_navigation.scss */
 #nav li {
   float: left;
   display: block;
   width: auto;
   max-width: none;
   list-style: none;
-  margin: 0 0.5em;
+  margin: 0 .5em;
   padding: 0;
   /*
-    // Second nested menu
+    // Tertiary nested menu
     &:hover > ul {
     top: 0;
     right: -100%;
@@ -1141,32 +1031,34 @@ acronym {
     }
   */
 }
-/* line 69, ../sass/style/_navigation.scss */
+/* line 65, ../sass/style/_navigation.scss */
 #nav li ul {
   position: absolute;
   right: 0;
   visibility: hidden;
   opacity: 0;
-  background: #fefefe;
+  background: #FEFEFE;
   background: rgba(254, 254, 254, 0.9);
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 81, ../sass/style/_navigation.scss */
+/* line 77, ../sass/style/_navigation.scss */
 #nav li:hover > ul {
   visibility: visible;
   opacity: 1;
   z-index: 2;
 }
-/* line 87, ../sass/style/_navigation.scss */
+/* line 83, ../sass/style/_navigation.scss */
 #nav li li {
-  padding: 0.1em 0 0 0;
+  padding: .1em 0 0 0;
   z-index: 2;
   width: 100%;
   float: none;
   margin: 0;
 }
-/* line 94, ../sass/style/_navigation.scss */
+/* line 90, ../sass/style/_navigation.scss */
 #nav li li ul {
   visibility: hidden;
   display: none;
@@ -1194,11 +1086,16 @@ acronym {
   background-repeat: no-repeat;
   border: none;
   text-decoration: none;
-  box-shadow: 0 0 0 0 #fefefe;
+  -moz-box-shadow: 0 0 0 0 #FEFEFE;
+  -webkit-box-shadow: 0 0 0 0 #FEFEFE;
+  box-shadow: 0 0 0 0 #FEFEFE;
 }
 /* line 27, ../sass/style/_branding.scss */
 #logo a:hover {
-  box-shadow: 0 -0.4em 0.8em 0.2em #29b4de;
+  -moz-box-shadow: 0 -0.4em 0.8em 0.2em #29B4DE;
+  -webkit-box-shadow: 0 -0.4em 0.8em 0.2em #29B4DE;
+  box-shadow: 0 -0.4em 0.8em 0.2em #29B4DE;
+  -moz-transform: translate3d(0, -0.1em, 1em);
   -webkit-transform: translate3d(0, -0.1em, 1em);
   transform: translate3d(0, -0.1em, 1em);
 }
@@ -1212,19 +1109,7 @@ acronym {
   * Content region styles
 */
 /* line 7, ../sass/style/regions/_main.scss */
-#console,
-#header-top,
-#header,
-#header-bottom,
-#content-top,
-#content,
-#content-bottom,
-#sidebar-left,
-#sidebar-right,
-#footer,
-#footer_left,
-#footer-right,
-#footer-middle {
+#console, #header-top, #header, #header-bottom, #content-top, #content, #content-bottom, #sidebar-left, #sidebar-right, #footer, #footer_left, #footer-right, #footer-middle {
   margin: 0;
   padding: 0;
   border: 0;
@@ -1233,7 +1118,7 @@ acronym {
 /* line 15, ../sass/style/regions/_main.scss */
 body {
   overflow: hidden;
-  background-color: #fefefe;
+  background-color: #FEFEFE;
 }
 
 /* line 24, ../sass/style/regions/_main.scss */
@@ -1247,7 +1132,7 @@ body {
   overflow: visible;
 }
 
-/* line 38, ../sass/style/regions/_main.scss */
+/* line 33, ../sass/style/regions/_main.scss */
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -1255,6 +1140,30 @@ body {
   position: relative;
   float: left;
   display: block;
+  zoom: 1;
+}
+/* line 27, ../sass/_mixins/_cellularmixins.scss */
+#content:before, #content:after,
+#sidebar-left:before,
+#sidebar-left:after,
+#sidebar-right:before,
+#sidebar-right:after,
+#footer:before,
+#footer:after {
+  content: "";
+  display: table;
+}
+/* line 33, ../sass/_mixins/_cellularmixins.scss */
+#content:after,
+#sidebar-left:after,
+#sidebar-right:after,
+#footer:after {
+  clear: both;
+}
+
+/* line 45, ../sass/style/regions/_main.scss */
+.flexbox #content {
+  flex-flow: column;
 }
 
 /**
@@ -1272,15 +1181,17 @@ body {
 #header {
   z-index: 2;
   height: 96px;
-  background: #fefefe;
-  box-shadow: 0 0 1em 0.1em #444;
+  background: #FEFEFE;
+  -moz-box-shadow: 0 0 1em 0.1em #444444;
+  -webkit-box-shadow: 0 0 1em 0.1em #444444;
+  box-shadow: 0 0 1em 0.1em #444444;
 }
 
 /* line 19, ../sass/style/regions/_header.scss */
 #header-top {
   z-index: 4;
   background: #111;
-  color: #fefefe;
+  color: #FEFEFE;
   border-bottom: #111 thin solid;
   text-align: right;
 }
@@ -1292,15 +1203,15 @@ body {
 #header-top h2,
 #header-top h3,
 #header-top h4 {
-  color: #fefefe;
+  color: #FEFEFE;
   font-size: 1em;
   display: inline;
 }
 
 /* line 41, ../sass/style/regions/_header.scss */
 #header-bottom {
-  background-color: #444;
-  color: #fefefe;
+  background-color: #444444;
+  color: #FEFEFE;
 }
 
 /**
@@ -1339,9 +1250,9 @@ body {
 #sidebar-left h3,
 #sidebar-right h3 {
   margin: 0;
-  padding: 0.4em;
+  padding: .4em;
   font-size: 1.2em;
-  color: #444;
+  color: #444444;
   background-color: #bbbab7;
 }
 
@@ -1358,25 +1269,25 @@ body {
 
 /* line 13, ../sass/style/regions/_footer.scss */
 #footer {
-  background: #444;
-  color: #fefefe;
+  background: #444444;
+  color: #FEFEFE;
 }
 /* line 18, ../sass/style/regions/_footer.scss */
 #footer p {
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 23, ../sass/style/regions/_footer.scss */
 #footer-top {
   font-size: 0.75em;
-  background: #444;
+  background: #444444;
   color: #f1f1f1;
 }
 
 /* line 30, ../sass/style/regions/_footer.scss */
 #footer-bottom {
   font-size: 0.75em;
-  background: #444;
+  background: #444444;
   color: #f1f1f1;
   border-top: thin solid;
 }
@@ -1405,7 +1316,7 @@ body {
 /* line 7, ../sass/style/_classes.scss */
 .gallery {
   text-align: center;
-  background: #444;
+  background: #444444;
 }
 /* line 11, ../sass/style/_classes.scss */
 .gallery div,
@@ -1423,28 +1334,27 @@ body {
 
 /* line 26, ../sass/style/_classes.scss */
 .textShadow {
-  text-shadow: 1px 1px 3px #444;
+  text-shadow: 1px 1px 3px #444444;
 }
 
 /* line 31, ../sass/style/_classes.scss */
 .box-shadow {
   margin: 0 auto;
   padding: 3em 1.4em;
-  background-color: #fefefe;
+  background-color: #FEFEFE;
+  -moz-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
+  -webkit-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
   box-shadow: inset 0 0 0.3em 0 #f1f1f1;
 }
 /* line 38, ../sass/style/_classes.scss */
-.box-shadow:before,
-.box-shadow:after {
+.box-shadow:before, .box-shadow:after {
   position: absolute;
   width: 40%;
   height: 1em;
   content: ' ';
   left: 1.2em;
-  bottom: 0.8em;
+  bottom: .8em;
   background: transparent;
-  -webkit-transform: skew(-5deg) rotate(-5deg);
-  -ms-transform: skew(-5deg) rotate(-5deg);
   transform: skew(-5deg) rotate(-5deg);
   box-shadow: 0 6px 12px rgba(241, 241, 241, 0.3);
   z-index: -1;
@@ -1453,8 +1363,6 @@ body {
 .box-shadow:after {
   left: auto;
   right: 12px;
-  -webkit-transform: skew(5deg) rotate(5deg);
-  -ms-transform: skew(5deg) rotate(5deg);
   transform: skew(5deg) rotate(5deg);
 }
 
@@ -1465,11 +1373,10 @@ body {
   padding: 0 1.2em;
   border-bottom: black 1px solid;
   background-color: #111;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 /* line 309, ../sass/_mixins/_cellularmixins.scss */
-.ribbon:before,
-.ribbon:after {
+.ribbon:before, .ribbon:after {
   content: " ";
   position: absolute;
   bottom: -1em;
@@ -1493,7 +1400,7 @@ body {
   padding: 0 1.2em;
   background: #111;
   border-bottom: black 1px solid;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 /* line 335, ../sass/_mixins/_cellularmixins.scss */
 .popout:after {
@@ -1590,10 +1497,12 @@ body {
   display: block;
   margin: 0;
   max-width: 100%;
-  padding: 0.6em 1em;
-  background: #444;
-  color: #fefefe;
+  padding: .6em 1em;
+  background: #444444;
+  color: #FEFEFE;
   z-index: 2;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
@@ -1607,13 +1516,11 @@ body {
   font-weight: bold;
   line-height: 1.4em;
   text-decoration: none;
-  color: #fefefe;
+  color: #FEFEFE;
   border: none;
 }
 /* line 41, ../sass/cellularUI/_jCellular.scss */
-.cellular .title a:hover,
-.cellular .title a:active,
-.cellular .title a.active,
+.cellular .title a:hover, .cellular .title a:active, .cellular .title a.active,
 .cellular .title a:visited:hover,
 .cellular .title a:visited:active,
 .cellular .title a:visited.active {
@@ -1626,9 +1533,9 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 1em;
-  background: #fefefe;
-  color: #444;
-  border: 0.1em solid;
+  background: #FEFEFE;
+  color: #444444;
+  border: .1em solid;
   z-index: 1;
 }
 /* line 65, ../sass/cellularUI/_jCellular.scss */
@@ -1642,7 +1549,7 @@ body {
  */
 /* line 10, ../sass/cellularUI/_jAccordion.scss */
 .cellular.jAccordion li {
-  margin: 0 auto 0.1em;
+  margin: 0 auto .1em;
 }
 /* line 14, ../sass/cellularUI/_jAccordion.scss */
 .cellular.jAccordion .title {
@@ -1650,7 +1557,9 @@ body {
   background-image: url(../assets/icons/svg/plus.svg);
   background-size: 1em;
   background-repeat: no-repeat;
-  background-position: 0.4em center;
+  background-position: .4em center;
+  -moz-transition: none;
+  -o-transition: none;
   -webkit-transition: none;
   transition: none;
 }
@@ -1666,7 +1575,7 @@ body {
 */
 /* line 6, ../sass/cellularUI/_jBlocklink.scss */
 .jBlocklink {
-  padding: 0.8em;
+  padding: .8em;
 }
 
 /* line 12, ../sass/cellularUI/_jBlocklink.scss */
@@ -1675,9 +1584,13 @@ body {
   vertical-align: top;
   margin: 1em;
   color: #bbbab7;
-  background: #fefefe;
+  background: #FEFEFE;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
+  -moz-box-shadow: 0 0 0.1em 0.1em #f1f1f1;
+  -webkit-box-shadow: 0 0 0.1em 0.1em #f1f1f1;
   box-shadow: 0 0 0.1em 0.1em #f1f1f1;
 }
 /* line 21, ../sass/cellularUI/_jBlocklink.scss */
@@ -1687,22 +1600,18 @@ body {
   text-decoration: none;
 }
 /* line 31, ../sass/cellularUI/_jBlocklink.scss */
-.cellular.jBlocklink-link.active,
-.cellular.jBlocklink-link:active,
-.cellular.jBlocklink-link:hover,
-.cellular.jBlocklink-link:focus {
+.cellular.jBlocklink-link.active, .cellular.jBlocklink-link:active, .cellular.jBlocklink-link:hover, .cellular.jBlocklink-link:focus {
   color: #1c94b8;
   text-decoration: none;
+  -moz-box-shadow: 0 0 0.3em 0.3em #f1f1f1;
+  -webkit-box-shadow: 0 0 0.3em 0.3em #f1f1f1;
   box-shadow: 0 0 0.3em 0.3em #f1f1f1;
 }
 /* line 39, ../sass/cellularUI/_jBlocklink.scss */
 .cellular.jBlocklink-link.active p,
-.cellular.jBlocklink-link.active a,
-.cellular.jBlocklink-link:active p,
-.cellular.jBlocklink-link:active a,
-.cellular.jBlocklink-link:hover p,
-.cellular.jBlocklink-link:hover a,
-.cellular.jBlocklink-link:focus p,
+.cellular.jBlocklink-link.active a, .cellular.jBlocklink-link:active p,
+.cellular.jBlocklink-link:active a, .cellular.jBlocklink-link:hover p,
+.cellular.jBlocklink-link:hover a, .cellular.jBlocklink-link:focus p,
 .cellular.jBlocklink-link:focus a {
   color: #1c94b8;
   text-decoration: none;
@@ -1715,9 +1624,11 @@ body {
 /* line 8, ../sass/cellularUI/_jMmenu.scss */
 .jMmenu-inactive #page-wrap,
 .jMmenu-active #page-wrap {
-  overflow: hidden;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
+  -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -1730,16 +1641,21 @@ body {
   width: 3em;
   height: 3em;
   padding: 0;
-  background-color: #fefefe;
+  background-color: #FEFEFE;
   background-size: 9em;
   background-repeat: no-repeat;
   background-position: left center;
   border: 1px solid #f1f1f1;
   background-image: url("../assets/icons/min/png/menu.png");
   background-image: url("../assets/icons/min/svg/menu.svg");
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
+  -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
@@ -1753,15 +1669,18 @@ body {
   margin: 0;
   opacity: 0;
   background-color: rgba(17, 17, 17, 0.4);
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
+  -moz-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 /* line 46, ../sass/cellularUI/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu ul,
 .jMmenu-active .jMmenu.menu ul {
-  margin: 0 0 0 0.4em;
+  margin: 0 0 0 .4em;
   background-color: rgba(17, 17, 17, 0.4);
 }
 /* line 51, ../sass/cellularUI/_jMmenu.scss */
@@ -1779,21 +1698,18 @@ body {
 .jMmenu-active .jMmenu.menu a:visited {
   display: block;
   height: 1em;
-  padding: 0.6em 1em 0.8em;
+  padding: .6em 1em .8em;
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: .9em;
   font-family: "Quicksand";
   font-weight: bold;
-  color: #fefefe;
+  color: #FEFEFE;
   background-image: none;
   border-bottom: 1px solid;
   background-color: rgba(17, 17, 17, 0.2);
 }
 /* line 72, ../sass/cellularUI/_jMmenu.scss */
-.jMmenu-inactive .jMmenu.menu a.active,
-.jMmenu-inactive .jMmenu.menu a:active,
-.jMmenu-inactive .jMmenu.menu a:focus,
-.jMmenu-inactive .jMmenu.menu a:hover,
+.jMmenu-inactive .jMmenu.menu a.active, .jMmenu-inactive .jMmenu.menu a:active, .jMmenu-inactive .jMmenu.menu a:focus, .jMmenu-inactive .jMmenu.menu a:hover,
 .jMmenu-inactive .jMmenu.menu a:visited.active,
 .jMmenu-inactive .jMmenu.menu a:visited:active,
 .jMmenu-inactive .jMmenu.menu a:visited:focus,
@@ -1806,12 +1722,11 @@ body {
 .jMmenu-active .jMmenu.menu a:visited:active,
 .jMmenu-active .jMmenu.menu a:visited:focus,
 .jMmenu-active .jMmenu.menu a:visited:hover {
-  color: #29b4de;
+  color: #29B4DE;
   background-color: #111;
 }
 /* line 85, ../sass/cellularUI/_jMmenu.scss */
-.jMmenu-inactive.slide-right .menu.jMmenu,
-.jMmenu-inactive.slide-left .menu.jMmenu,
+.jMmenu-inactive.slide-right .menu.jMmenu, .jMmenu-inactive.slide-left .menu.jMmenu,
 .jMmenu-active.slide-right .menu.jMmenu,
 .jMmenu-active.slide-left .menu.jMmenu {
   top: 0;
@@ -1844,8 +1759,7 @@ body {
   opacity: 1;
 }
 /* line 131, ../sass/cellularUI/_jMmenu.scss */
-.jMmenu-active.slide-left #page-wrap,
-.jMmenu-active.slide-right #page-wrap {
+.jMmenu-active.slide-left #page-wrap, .jMmenu-active.slide-right #page-wrap {
   width: 50%;
 }
 
@@ -1890,21 +1804,21 @@ body {
 .cellular.jTabs > li .title,
 .cellular.jTabs .tab .title {
   float: left;
-  padding: 0.4em 0.6em;
+  padding: .4em .6em;
   border: #bbbab7 1px solid;
 }
 /* line 28, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs > li.active,
 .cellular.jTabs .tab.active {
-  background-c4olor: #fefefe;
-  color: #444;
+  background-c4olor: #FEFEFE;
+  color: #444444;
 }
 /* line 32, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs > li.active .title,
 .cellular.jTabs .tab.active .title {
-  color: #444;
-  background: #fefefe;
-  border-bottom-color: #fefefe;
+  color: #444444;
+  background: #FEFEFE;
+  border-bottom-color: #FEFEFE;
 }
 /* line 37, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs > li.active .title a,
@@ -1932,14 +1846,14 @@ body {
 .cellular.jTabs.vertical > li,
 .cellular.jTabs.vertical .tab {
   clear: left;
-  margin: 0.1em 0;
+  margin: .1em 0;
   border: none;
   width: 27%;
 }
 /* line 68, ../sass/cellularUI/_jTabs.scss */
 .cellular.jTabs.vertical > li .title,
 .cellular.jTabs.vertical .tab .title {
-  padding: 0.4em 1%;
+  padding: .4em 1%;
   border: none;
 }
 /* line 72, ../sass/cellularUI/_jTabs.scss */

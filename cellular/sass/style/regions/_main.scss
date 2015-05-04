@@ -30,11 +30,6 @@ body {
   overflow: visible;
 }
 
-#content-wrap {
-  // margin: 0 auto;
-  // max-width: 90%;
-}
-
 #content,
 #sidebar-left,
 #sidebar-right,
@@ -42,4 +37,12 @@ body {
   position: relative;
   float: left;
   display: block;
+  @include clearfix();
+}
+
+.flexbox {
+
+  #content {
+    flex-flow: column;
+  }
 }

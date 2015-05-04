@@ -15,7 +15,7 @@
  * @return string
  *   Formatted HTML.
  */
-function cellular_build_links(array $links, array $parent) {
+function cellular_build_links($links, $parent) {
   $output = '';
   foreach ($links as $link) {
     if (!empty($link['tag'])) {

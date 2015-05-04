@@ -38,7 +38,7 @@ function cellular_js() {
 
 // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
-  theme_get_setting('cellularui') == 1 ? $js_plugins['cellularui'] = TRUE : NULL;
+  
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
   theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = TRUE : NULL;
   theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = TRUE : NULL;
@@ -53,7 +53,7 @@ function cellular_js() {
 // /yourTheme/js/ into script.min.js.
 
   // Add Cellular UI
-  if ($js_plugins['cellularui'] == TRUE && $ext === '.js') {
+  if (theme_get_setting('cellularui') == 1 && $ext === '.js') {
     $scripts['cellularui'] = array(
       'object' => 'cellular',
       'file' => 'cellularUI/jquery.cellularUI' . $ext,

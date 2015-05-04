@@ -11,7 +11,7 @@ $showDropdowns: true;
   position: absolute;
   top: 2em;
   right: 5%;
-  margin-left: $logo_width * 2;
+  margin: 0 0 0 $logo_width * 2;
   padding: 0;
 
   a,
@@ -41,11 +41,7 @@ $showDropdowns: true;
     }
   }
 
-  ul {
-    margin: 0;
-  }
-
-  > ul > li {
+  > li {
 
     &:first-child {
       margin-left: 0;
@@ -98,7 +94,7 @@ $showDropdowns: true;
         }
       }
       /*
-        // Second nested menu
+        // Tertiary nested menu
         &:hover > ul {
         top: 0;
         right: -100%;

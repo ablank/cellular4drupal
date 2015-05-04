@@ -80,6 +80,7 @@ module.exports = {
       'preprocess/theme.inc',
       'preprocess/theme_form.inc',
       'preprocess/theme_pager.inc',
+      'preprocess/panels.inc',
       'preprocess/social.inc',
       'preprocess/process.inc',
       'preprocess/views.inc'
