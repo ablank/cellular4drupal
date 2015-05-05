@@ -18,19 +18,21 @@ endif;
 ?> class="panels cell">
 
     <?php if ($content['header']): ?>
-    <div class="panel-header cell-100">
+    <div id="header" class="cell-100">
     <?php print $content['header']; ?>
     </div>
   <?php endif; ?>
 
     <?php if ($content['body']): ?>
-    <div class="panel-body cell-100">
+  <div id="content-wrap">
+    <div id="content" class="cell-100">
     <?php print $content['body']; ?>
     </div>
+  </div>
   <?php endif; ?>
 
     <?php if ($content['footer']): ?>
-    <div class="panel-footer cell-100">
+    <div id="footer" class="cell-100">
     <?php print $content['footer']; ?>
     </div>
 <?php endif; ?>

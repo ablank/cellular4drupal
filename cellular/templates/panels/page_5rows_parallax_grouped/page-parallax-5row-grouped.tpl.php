@@ -28,11 +28,13 @@ endif;
 ?> class="parallax panels cell">
 
   <?php if ($content['header']) : ?>
-    <div class="panel-header cell-100">
+    <div id="header" class="cell-100">
       <?php print $content['header']; ?>
     </div>
   <?php endif; ?>
 
+  <div id="content-wrap">
+    <div id="content" class="cell-100">
   <?php if ($content['g1_top'] || $content['g1_base']): ?>
     <div class="parallax-group cell-100">
       <?php if ($content['g1_top']) : ?>
@@ -107,10 +109,12 @@ endif;
       <?php endif; ?>
     </div>
   <?php endif; ?>
+    </div>
+  </div>
 
 
   <?php if ($content['footer']) : ?>
-    <div class="panel-footer cell-100">
+    <div id="footer" class="cell-100">
       <?php print $content['footer']; ?>
     </div>
   <?php endif; ?>

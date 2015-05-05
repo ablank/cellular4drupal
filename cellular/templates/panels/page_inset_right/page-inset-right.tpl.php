@@ -20,25 +20,28 @@ endif;
 
   <div class="cell-75">
       <?php if ($content['header']): ?>
-      <div class="cell-100">
+      <div id="header" class="cell-100">
       <?php print $content['header']; ?>
       </div>
     <?php endif; ?>
 
       <?php if ($content['body']): ?>
-      <div class="cell-100">
+    <div id="content-wrap">
+      <div id="content" class="cell-100">
       <?php print $content['body']; ?>
       </div>
+    </div>
     <?php endif; ?>
+
       <?php if ($content['footer']): ?>
-      <div class="cell-100">
+    <div id="footer" class="cell-100">
       <?php print $content['footer']; ?>
       </div>
 <?php endif; ?>
   </div>
 
     <?php if ($content['inset']): ?>
-    <div class="cell-25">
+  <div id="inset" class="cell-25">
     <?php print $content['inset']; ?>
     </div>
 <?php endif; ?>
