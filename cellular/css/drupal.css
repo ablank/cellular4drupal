@@ -154,16 +154,15 @@ select.ctools-ajaxing:after {
 /* line 59, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary {
   margin: 2em 0 1em;
-  background-color: white;
   border-bottom: #bbbab7 1px solid;
 }
-/* line 63, ../sass/drupal/_drupal-classes.scss */
+/* line 62, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary li {
   list-style: none;
   display: inline;
   margin: 0 0.1em;
 }
-/* line 68, ../sass/drupal/_drupal-classes.scss */
+/* line 67, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a {
   padding: 0.4em 0.8em 0.2em;
   color: #444;
@@ -173,22 +172,22 @@ select.ctools-ajaxing:after {
   border-top-left-radius: 0.4em;
   border-top-right-radius: 0.4em;
 }
-/* line 75, ../sass/drupal/_drupal-classes.scss */
+/* line 74, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a.active {
   background-color: #fefefe;
 }
-/* line 78, ../sass/drupal/_drupal-classes.scss */
+/* line 77, ../sass/drupal/_drupal-classes.scss */
 .tabs.primary a:hover {
   background-color: white;
 }
 
-/* line 84, ../sass/drupal/_drupal-classes.scss */
+/* line 83, ../sass/drupal/_drupal-classes.scss */
 .menu,
 .inline.links {
   list-style: none;
   margin: 0 0 0.4em 0.4em;
 }
-/* line 88, ../sass/drupal/_drupal-classes.scss */
+/* line 87, ../sass/drupal/_drupal-classes.scss */
 .menu li,
 .inline.links li {
   display: inline;
@@ -196,7 +195,7 @@ select.ctools-ajaxing:after {
   margin: 0.2em;
   padding: 0;
 }
-/* line 94, ../sass/drupal/_drupal-classes.scss */
+/* line 93, ../sass/drupal/_drupal-classes.scss */
 .menu a,
 .inline.links a {
   cursor: pointer;
@@ -236,11 +235,11 @@ select.ctools-ajaxing:after {
   background-image: linear-gradient(to bottom, #fefefe 0%, #f1f1f1 100%);
 }
 
-/* line 101, ../sass/drupal/_drupal-classes.scss */
+/* line 100, ../sass/drupal/_drupal-classes.scss */
 .comment .links {
   text-align: left;
 }
-/* line 104, ../sass/drupal/_drupal-classes.scss */
+/* line 103, ../sass/drupal/_drupal-classes.scss */
 .comment .links.inline li {
   list-style: none;
   display: inline;
@@ -673,7 +672,8 @@ a:focus.colorbox {
 }
 
 /* line 164, ../sass/drupal/_colorbox.scss */
-#cboxTopLeft #cboxTopRight,
+#cboxTopLeft
+#cboxTopRight,
 #cboxBottomLeft,
 #cboxBottomRight {
   z-index: 9;

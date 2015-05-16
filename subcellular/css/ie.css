@@ -35,8 +35,8 @@
 /* line 8, ../sass/ie.scss */
 body,
 * {
-  zoom: 1.0;
   word-wrap: break-word;
+  zoom: 1.0;
 }
 
 /* line 14, ../sass/ie.scss */

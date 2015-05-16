@@ -30,7 +30,6 @@ module.exports = {
       'js/cellularUI/src/cellular.functions.js',
       'js/cellularUI/src/cellular.jAccordion.js',
       'js/cellularUI/src/cellular.jBlocklink.js',
-      //'js/cellularUI/src/cellular.jCarousel.js',
       //'js/cellularUI/src/cellular.jEqualheight.js',
       'js/cellularUI/src/cellular.jFormal.js',
       'js/cellularUI/src/cellular.jMmenu.js',

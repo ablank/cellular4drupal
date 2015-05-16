@@ -71,24 +71,16 @@ function cellular_build_head_tags($array) {
         '#weight' => isset($val['weight']) ? $val['weight'] : 0,
       );
       // Misc. attr/val:
-      empty($val['attr']) || empty($val['attr_val']) ? NULL :
-      $tag['#attributes'][$val['attr']] = $val['attr_val'];
-      empty($val['profile']) ? NULL :
-      $tag['#attributes']['profile'] = $val['profile'];
+      empty($val['attr']) || empty($val['attr_val']) ? NULL : $tag['#attributes'][$val['attr']] = $val['attr_val'];
+      empty($val['profile']) ? NULL : $tag['#attributes']['profile'] = $val['profile'];
       // General attributes:
-      empty($val['name']) ? NULL :
-      $tag['#attributes']['name'] = $val['name'];
-      empty($val['rel']) ? NULL :
-      $tag['#attributes']['rel'] = $val['rel'];
-      empty($val['content']) ? NULL :
-      $tag['#attributes']['content'] = $val['content'];
-      empty($val['href']) ? NULL :
-      $tag['#attributes']['href'] = $val['href'];
+      empty($val['name']) ? NULL : $tag['#attributes']['name'] = $val['name'];
+      empty($val['rel']) ? NULL : $tag['#attributes']['rel'] = $val['rel'];
+      empty($val['content']) ? NULL : $tag['#attributes']['content'] = $val['content'];
+      empty($val['href']) ? NULL : $tag['#attributes']['href'] = $val['href'];
       // Attributes for favicons:
-      empty($val['size']) ? NULL :
-      $tag['#attributes']['sizes'] = $val['size'];
-      empty($val['type']) ? NULL :
-      $tag['#attributes']['type'] = $val['type'];
+      empty($val['size']) ? NULL : $tag['#attributes']['sizes'] = $val['size'];
+      empty($val['type']) ? NULL : $tag['#attributes']['type'] = $val['type'];
 
       drupal_add_html_head($tag, 'meta_' . $meta);
     }
@@ -964,12 +956,10 @@ function cellular_favicons() {
   ) : NULL;
 
   foreach ($favicons as &$favicon) {
-    if (isset($favicon)) {
       // Set tag type to <link>
       $favicon['tag'] = 'link';
       // Set href relative to /assets/favicons/
-      $favicon['href'] = cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
-    }
+      $favicon['href'] = $GLOBALS['base_url'] . '/' . cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
   }
 
   cellular_build_head_tags($favicons);
@@ -1066,6 +1056,22 @@ function cellular_set_author(&$vars) {
   $vars['author'] = $author['image'] . $author['name'] . $author['description'];
 }
 
+/**
+ *
+ * @param type $element
+ * @return type
+ */
+function cellular_markup($element) {
+$output = '';
+  if (theme_get_setting('semanticmarkup') == 1) {
+    $output .= "<$element>";
+  }
+  else {
+    $output .= "<div class=\"$element\">";
+  }
+
+  return $output;
+}
 
 /*
  * @see file: preprocess/alter.inc
@@ -1318,7 +1324,8 @@ function cellular_js() {
 
 // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
-  
+
+  theme_get_setting('cellularui') == 1 ? $js_plugins['cellularui'] = TRUE : NULL;
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
   theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = TRUE : NULL;
   theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = TRUE : NULL;

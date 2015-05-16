@@ -8,7 +8,7 @@
  * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
-  // Help prevent xss clickjacking.
+  // Help prevent clickjacking
   drupal_add_http_header('X-Frame-Options', 'DENY');
   // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
@@ -252,21 +252,4 @@ function cellular_set_author(&$vars) {
   );
 
   $vars['author'] = $author['image'] . $author['name'] . $author['description'];
-}
-
-/**
- *
- * @param type $element
- * @return type
- */
-function cellular_markup($element) {
-$output = '';
-  if (theme_get_setting('semanticmarkup') == 1) {
-    $output .= "<$element>";
-  }
-  else {
-    $output .= "<div class=\"$element\">";
-  }
-
-  return $output;
 }

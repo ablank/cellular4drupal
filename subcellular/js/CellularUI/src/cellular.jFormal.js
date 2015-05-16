@@ -8,22 +8,20 @@ cellular.jFormal = function (opts) {
     ]
   }, opts);
   return this.each(function () {
-    var $obj = jQuery(this);
     var inputs = o.inputs.join(',');
     // get/set value of inputs
-    $(inputs).each(function () {
+    jQuery(inputs).each(function () {
       var $t = jQuery(this);
       var $v = $t.val();
-      $t.on('focus', function () {
-        // Clear the default value of an input on focus.
-        if ($t.val() === $v) {
-          $t.val("");
-        }
+      $t. on('focus', function () {
+            if (this.value === this.defaultValue) {
+              this.value = '';
+            }
       }).on('blur', function () {
         // Reset to default value if no changes were made.
-        if ($t.val() === "") {
-          $t.val($v);
-        }
+            if (this.value === '') {
+              this.value = this.defaultValue;
+            }
       });
     });
   });

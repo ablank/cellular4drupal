@@ -1,11 +1,12 @@
 default:
+    - 'clean'
     - 'concurrent:prep'
     - 'autoprefixer'
     - 'csscomb'
     - 'closurecompiler'
     - 'cssmin'
     - 'jshint:js'
-    - 'svgmin'
+    - 'imagemin'
 dev:
     - 'concurrent:prep'
     - 'autoprefixer'

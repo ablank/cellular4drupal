@@ -7,51 +7,19 @@ module.exports = {
   options: {
     cache: false
   },
-  gif: {
+  images: {
     files: [
       {
         expand: true,
         cwd: 'assets/images',
         src: [
-          'gif/**/*.gif'
-        ],
-        dest: '/assets/images/min/gif'
-      }
-    ]
-  },
-  jpg: {
-    files: [
-      {
-        expand: true,
-        cwd: 'assets/images',
-        src: [
-          'jpg/**/*.[jpg, jpeg]'
-        ],
-        dest: '/assets/images/min/jpg'
-      }
-    ]
-  },
-  png: {
-    files: [
-      {
-        expand: true,
-        cwd: 'assets/images',
-        src: [
-          'png/**/*.png'
-        ],
-        dest: '/assets/images/min/png'
-      }
-    ]
-  },
-  svg: {
-    files: [
-      {
-        expand: true,
-        cwd: 'assets/images',
-        src: [
+          'gif/**/*.gif',
+          'jpg/**/*.jpg',
+          'png/**/*.png',
           'svg/**/*.svg'
-        ],
-        dest: '/assets/images/min/svg'
+        ]
+        ,
+        dest: 'assets/images/min/'
       }
     ]
   },
@@ -65,7 +33,7 @@ module.exports = {
           'svg/**/*.svg'
         ]
         ,
-        dest: '/assets/icons/min/'
+        dest: 'assets/icons/min/'
       }
     ]
   }

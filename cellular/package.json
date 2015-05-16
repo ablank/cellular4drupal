@@ -8,6 +8,7 @@
     "grunt-closurecompiler": "^0.9.9",
     "grunt-concat-language": "*",
     "grunt-concurrent": "*",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compass": "^0.7.2",
     "grunt-contrib-cssmin": "^0.12.2",
     "grunt-contrib-imagemin": "^0.9.4",

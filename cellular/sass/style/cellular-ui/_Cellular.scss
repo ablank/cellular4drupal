@@ -4,6 +4,17 @@
  * Set default UI styles.
  */
 
+/* Variables specific to UI */
+$title_color: $white;
+$title_background: $dark_grey;
+$panel_color: $dark_grey;
+$panel_background: $white;
+$active_color: darken($hilight, 10%);
+$border_color: $grey;
+$border_width: 1px;
+$border_radius: .5em;
+
+/* Styling common to all UI components */
 .cellular {
   position: relative;
   display: block;
@@ -49,9 +60,8 @@
   }
 
   .panel {
-    // Area content is displayed in accordions & tabs
+    // Area content is displayed in accordions & tabs.
     display: block;
-    overflow: hidden;
     margin: 0;
     padding: $normal;
     background: $panel_background;
@@ -68,3 +78,10 @@
     }
   }
 }
+
+/* Import UI components */
+@import "jAccordion";
+@import "jBlocklink";
+@import "jMmenu";
+@import "jScrolli";
+@import "jTabs";

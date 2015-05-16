@@ -37,7 +37,7 @@
   * Styling for mobile devices included in style.css
 */
 @media screen and (max-width: 650px) {
-  /* line 9, ../sass/style/media-query/_mobile.scss */
+  /* line 9, ../sass/style/_mq_mobile.scss */
   #nav ul.menu {
     visibility: hidden;
   }
