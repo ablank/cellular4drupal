@@ -3,7 +3,6 @@
  * @file
  * Theme-settings: Display & styling settings.
  */
-
 $form['c']['markup_settings'] = array(
   '#type' => 'fieldset',
   '#title' => t('Markup'),

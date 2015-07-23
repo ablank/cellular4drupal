@@ -25,7 +25,7 @@
     @include box-shadow(0 0 0 0 $white);
 
     &:hover {
-      @include box-shadow(0 -.4em .8em .2em $hilight);
+      @include box-shadow(0 0 .4em 0 $hilight);
       @include translate3d(0,-.1em,1em);
     }
   }

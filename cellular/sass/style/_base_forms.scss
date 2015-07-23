@@ -109,6 +109,7 @@ input {
     &:focus {
       color: $dark_grey;
       background: $white;
+      box-shadow: 0 0 0.2em 0 $hilight;
     }
   }
   &[type="checkbox"],
@@ -181,7 +182,7 @@ option {
 button,
 input[type="button"],
 input[type="submit"] {
-  margin: 1.4em .4em .4em;
+  margin: 0.4em 0.4em 0;
   @include button();
 }
 

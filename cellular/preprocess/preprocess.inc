@@ -45,7 +45,6 @@ function cellular_preprocess_page(&$vars) {
   cellular_test_sidebar($vars);
   // Use page-- === .tpl if http  ===  status is returned.
   // = _page($vars);
-
   // Link site name to frontpage:
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set Social Media links:
@@ -57,19 +56,15 @@ function cellular_preprocess_page(&$vars) {
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
 
-
-  // if this is a panel page, add template suggestions
-  if(theme_get_setting('panelseverywhere') == 1 && $panel_page = page_manager_get_current_page()) {
-      // add a generic suggestion for all panel pages
-      $suggestions[] = 'page__panels';
-      // add the panel page machine name to the template suggestions
-      $suggestions[] = 'page__panels_' . $panel_page['name'];
-      // merge the suggestions in to the existing suggestions (as more specific than the existing suggestions)
-      $vars['theme_hook_suggestions'] = array_merge($vars['theme_hook_suggestions'], $suggestions);
-    }
+  //drupal_set_message(CURRENT_THEME_PATH);
+  // Panels everywhere page template suggestion.
+  if (!empty(variable_get('panels_everywhere_site_template'))) {
+    // Merge the suggestions.
+    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
   }
-  // http://www.grasmash.com/article/add-drupal-template-suggestion-panels-page-paneltplphp#sthash.kJMOIc86.dpuf
-
+  // dpm($vars);
+  // drupal_set_message('panels_everywhere_site_template: '.variable_get('panels_everywhere_site_template'));
+}
 
 /**
  * Implements template_preprocess_maintenance_page().

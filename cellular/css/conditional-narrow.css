@@ -33,6 +33,12 @@
   * https://github.com/jh3y/whirl/
 */
 /**
- * @file
- * Styling for tablets & other narrow devices included in style.css
- */
+  * @file
+  * Styling for tablets & other narrow devices included in style.css
+*/
+@media screen and (min-width: 650px) and (max-width: 800px) {
+  /* line 11, ../sass/style/_mq_narrow.scss */
+  body:before {
+    content: "narrow-800px";
+  }
+}

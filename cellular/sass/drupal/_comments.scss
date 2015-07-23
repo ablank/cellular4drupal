@@ -1,0 +1,43 @@
+#comments {
+  h2 {
+    background: $hilight;
+    color: $white;
+
+    &:after {
+    content: " ";
+      position: absolute;
+      bottom: -0.4em;
+      left: 0;
+      width:0;
+      height:0;
+      border-top: 0.6em solid $hilight;
+      border-left: 0.6em solid transparent;
+      border-right: 0.6em solid transparent;
+    }
+  }
+}
+
+.comment {
+  text-align: left;
+  margin: .4em;
+  padding: 1em;
+  border: 1px $light_grey solid;
+
+  h3 {
+    margin: 0;
+  }
+
+  .submitted {
+    font-size: 0.8em;
+    margin-left: 1em;
+  }
+
+  .links {
+    &.inline {
+      li {
+        list-style: none;
+        display: inline;
+      }
+    }
+  }
+}

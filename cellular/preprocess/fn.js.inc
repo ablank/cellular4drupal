@@ -15,7 +15,7 @@
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_js($array,  $cellular = FALSE) {
+function cellular_add_js($array, $cellular = FALSE) {
   foreach ($array as $script) {
     if (!empty($script)) {
 // Set default attributes.
@@ -31,7 +31,7 @@ function cellular_add_js($array,  $cellular = FALSE) {
         cellular_js_fallback($script, $cellular);
       }
       else {
-        $data = $cellular ? constant('CELLULAR_LIB') : cellular_theme_path();
+        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
         $data .= '/js/' . $script['file'];
       }
 
@@ -48,7 +48,7 @@ function cellular_add_js($array,  $cellular = FALSE) {
  * @param  $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_fallback($script,  $cellular = FALSE) {
+function cellular_js_fallback($script, $cellular = FALSE) {
 // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
@@ -59,7 +59,7 @@ function cellular_js_fallback($script,  $cellular = FALSE) {
     );
 
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? constant('CELLULAR_LIB') : cellular_theme_path();
+    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
     $fallback .= '/js/' . $script['file'];
     $fallback .= '\">\x3C/script>")';
 
@@ -77,7 +77,7 @@ function cellular_js_fallback($script,  $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_js_override(&$javascript, $script,  $cellular = FALSE) {
+function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
 // Only override if js is being called.
   if (!empty($javascript[$script['default']])) {
     $ojs = $script['default'];
@@ -90,7 +90,7 @@ function cellular_js_override(&$javascript, $script,  $cellular = FALSE) {
     else {
 // Or set data to local file if no CDN.
       if (!empty($script['file'])) {
-        $data = $cellular ? constant('CELLULAR_LIB') : cellular_theme_path();
+        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
         $data .= '/js/' . $script['file'];
       }
     }
@@ -122,7 +122,7 @@ function cellular_js_override(&$javascript, $script,  $cellular = FALSE) {
  */
 function cellular_modernizr($tests) {
 // $base_url needs to be added to set the correct path.
-  $dir = $GLOBALS['base_url'] . '/' . cellular_theme_path();
+  $dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
   $query = '';
 
   foreach ($tests as $test) {

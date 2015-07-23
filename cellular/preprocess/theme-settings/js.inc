@@ -74,8 +74,7 @@ $form['c']['js'] = array(
 
 $form['c']['js']['min_script'] = array(
   '#type' => 'checkbox',
-  '#title' => t('Use minified javascript source.'),
-  '#description' => t("Use script.min.js, a single file that combines & optimizes all needed javascript for theme plugins."),
+  '#title' => t('Use minified javascripts <em>script.min.js</em>.'),
   '#default_value' => theme_get_setting('min_script'),
 );
 
@@ -176,7 +175,7 @@ $form['c']['js']['mdrnzr']['mq_large'] = array(
 $form['c']['js']['jquery_update'] = array(
   '#type' => 'checkbox',
   '#title' => t('Update jQuery & jQuery UI'),
-  '#description' => t("Select the version of jQuery & jQueryUI to use jquery.once and jquery.form will be updated to current version."),
+  '#description' => t("Update jQuery, jQueryUI, and Drupal's default jQuery plugins (minified current versions)."),
   '#default_value' => theme_get_setting('jquery_update'),
 );
 

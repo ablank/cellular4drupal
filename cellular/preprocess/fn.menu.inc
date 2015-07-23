@@ -8,9 +8,9 @@
  *
  */
 function cellular_links__system_main_menu($vars) {
-  $output .= "<ul id=\"nav\">\n";
+  $output = "<ul id=\"nav\">\n";
   foreach ($vars['links'] as $key => $link) {
-    $output .= "<li>".l($link['title'], $link['path'], $link)."</li>";
+    $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
   }
   $output .= "</ul>\n";
 
@@ -32,20 +32,20 @@ function cellular_main_menu(&$vars) {
     $menu_data = menu_tree('main-menu');
   }
 
-   $vars['main_menu'] = $menu_data;
-   //$vars['main_menu']['#theme_wrappers'] = array('cellular_menu_tree__main_menu');
-   /*
-   $vars['main_menu'] = theme('links__system_main_menu', array(
-      'links' => $menu_data,
-      'attributes' => array(
-        'id' => 'nav',
-        'class' => array(
-          'primary'
-          )
-        ),
-      // 'heading' => t('Main menu'),
+  $vars['main_menu'] = $menu_data;
+  //$vars['main_menu']['#theme_wrappers'] = array('cellular_menu_tree__main_menu');
+  /*
+    $vars['main_menu'] = theme('links__system_main_menu', array(
+    'links' => $menu_data,
+    'attributes' => array(
+    'id' => 'nav',
+    'class' => array(
+    'primary'
+    )
+    ),
+    // 'heading' => t('Main menu'),
     ));
-    */
+   */
   // dpm($menu_data);
-   // dpm($vars);
+  // dpm($vars);
 }

@@ -5,7 +5,6 @@
 * @author Adam Blankenship <i.adambear@gmail.com>
 \n* 
 * @see http://live-cellular.gotpantheon.com/cellular-ui
-* @see https://github.com/ablank/cellularUI
 */
 (function ($) {
 
@@ -15,13 +14,22 @@ attach: function (context, settings) {
 
  // :)
 var cellular = {};
+function breakpoint(){
+var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
+mq = {
+size: content.match(/\d/g).join(""),
+type: content.match(/\w*[^\"\'](?=-)/g).join("")
+};
+return mq;
+};
+$(window).on('resize', breakpoint);
 cellular.opts = {
-"cclass": "cellular",
-"tclass": "title",
-"bclass": "body",
-"wrapper": '<div />',
-"speed": 300,
-"breakpoint": 650
+cclass: "cellular",
+tclass: "title",
+bclass: "body",
+wrapper: "<div />",
+speed: 300,
+breakpoint: breakpoint().type
 };
 
  // :)
@@ -63,6 +71,7 @@ $t.addClass(classes);
 };
 cellular.throttle = function (fn, delay) {
 var timer = null;
+delay = delay ? delay : 250;
 return function () {
 var context = this, args = arguments;
 clearTimeout(timer);
@@ -178,15 +187,13 @@ return this.each(function () {
 var inputs = o.inputs.join(',');
 // get/set value of inputs
 jQuery(inputs).each(function () {
-var $t = jQuery(this);
-var $v = $t.val();
-$t. on('focus', function () {
+jQuery(this).on('focus', function () {
 if (this.value === this.defaultValue) {
 this.value = '';
 }
 }).on('blur', function () {
 // Reset to default value if no changes were made.
-if (this.value === '') {
+if (this.value === '' || null) {
 this.value = this.defaultValue;
 }
 });
@@ -197,30 +204,26 @@ this.value = this.defaultValue;
  // :)
 cellular.jMmenu = function (opts) {
 var o = jQuery.extend({
-"breakpoint": cellular.opts.breakpoint, // Window breakpoint trigger
-"parent": jQuery('body'),
-"cclass": "jMmenu",
-"type": "slide",
-"direction": "right"
-}, opts);
-var fn = {};
-fn.classes = [
+breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger
+parent: jQuery('body'),
+cclass: "jMmenu",
+type: "slide",
+direction: "right"
+}, opts),
+fn = {
+classes: [
 o.type + '-' + o.direction,
 o.cclass + '-active',
 o.cclass + '-inactive'
-];
+]
+};
 fn.mediaQuery = function ($obj) {
-//
-var $parent,
-classes,
-$menu = $obj.children([0]);
-// console.log($menu);
-if (window.innerWidth <= o.breakpoint) {
-$parent = o.parent;
-classes = [
+if (o.breakpoint === 'mobile') {
+var classes = [
 fn.classes[0],
 fn.classes[2]
-];
+],
+$menu = $obj.children([0]);
 classes = classes.join(' ');
 if (o.parent.hasClass(fn.classes[0])) {
 // Skip if already set.
@@ -229,15 +232,17 @@ else {
 o.parent.addClass(classes);
 $menu.addClass(o.cclass);
 }
+// console.log($obj);
+// console.log('breakpoint: '+o.breakpoint);
+$menu.prependTo(o.parent);
 }
-$menu.prependTo($parent);
 };
 return this.each(function () {
 var $obj = jQuery(this);
 var $window = jQuery(window);
 fn.mediaQuery($obj);
 $window.resize(function () {
-$window.throttle(fn.mediaQuery($obj), 250);
+$window.throttle(fn.mediaQuery($obj));
 });
 $obj.click(function () {
 if (o.parent.hasClass(fn.classes[0])) {

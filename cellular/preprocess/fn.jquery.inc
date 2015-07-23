@@ -102,48 +102,63 @@ function cellular_jquery_update(&$javascript) {
 
   cellular_js_override($javascript, $jquery, TRUE);
 
-  // Override jQuery.cookie.
-  $jquerycookie = array(
-    'default' => 'misc/jquery.cookie.js',
-    'version' => '1.4.1',
-    'file' => 'plugins/jquery.cookie.min.js',
+  $drupal_plugins = array(
+    'drupal' => array(
+      'default' => 'misc/drupal.js',
+      'file' => 'plugins/drupal.min.js',
+      'version' => '7.38',
+      'weight' => -11,
+    ),
+    'ajax' => array(
+      'default' => 'misc/ajax.js',
+      'version' => '7.38',
+      'file' => 'plugins/drupal.ajax.min.js',
+      'weight' => -10,
+    ),
+    'progress' => array(
+      'default' => 'misc/progress.js',
+      'version' => '7.38',
+      'file' => 'plugins/drupal.progress.min.js',
+      'weight' => -10,
+    ),
+    'bbq' => array(
+      'default' => 'misc/jquery.ba-bbq.js',
+      'version' => '1.3',
+      'file' => 'plugins/jquery.ba-bbq.min.js',
+    ),
+    'cookie' => array(
+      'default' => 'misc/jquery.cookie.js',
+      'version' => '1.4.1',
+      'file' => 'plugins/jquery.cookie.min.js',
+    ),
+    'form' => array(
+      'default' => 'misc/jquery.form.js',
+      'version' => '3.48',
+      'file' => 'plugins/jquery.form.min.js',
+    ),
+    'once' => array(
+      'default' => 'misc/jquery.once.js',
+      'version' => '1.2.6',
+      'file' => 'plugins/jquery.once.min.js',
+    )
   );
 
-  cellular_js_override($javascript, $jquerycookie, TRUE);
-
-  // Override jQuery.once.
-  $jqueryonce = array(
-    'default' => 'misc/jquery.once.js',
-    'version' => '1.2.6',
-    'file' => 'plugins/jquery.once.min.js',
-  );
-
-  cellular_js_override($javascript, $jqueryonce, TRUE);
-
-  // Override jQuery.form.
-  $jqueryform = array(
-    'default' => 'misc/jquery.form.js',
-    'version' => '3.48',
-    'file' => 'plugins/jquery.form.min.js',
-  );
-
-  cellular_js_override($javascript, $jqueryform, TRUE);
-
-  // Add jQuery.migrate to prevent deprecated functions from breaking.
-  $migrate = theme_get_setting('jquery_migrate');
-  if (!empty($migrate)) {
-    // Add jQuery.migrate  if v >= 1.9
-    if ($jquery['version'] !== '1.8.24') {
-      $js_plugins['migrate'] = array(
-        'version' => '1.2.1',
-        'file' => 'plugins/jquery.migrate.min.js',
-        'group' => JS_LIBRARY,
-        'weight' => -96,
-      );
-      // Add js after override.
-      cellular_add_js($js_plugins, TRUE);
-    }
+  foreach ($drupal_plugins as $plugin) {
+    cellular_js_override($javascript, $plugin, TRUE);
   }
+
+  // Add default theme js plugins.
+  $add_plugins = array(
+    'migrate' => (theme_get_setting('jquery_migrate') == 1) && floatval(substr($jquery['version'], 2)) >= 9 ?
+    array(
+      'version' => '1.2.1',
+      'file' => 'plugins/jquery.migrate.min.js',
+      'group' => JS_LIBRARY,
+      'weight' => -96,
+    ) : NULL,
+  );
+
+  cellular_add_js($add_plugins, TRUE);
 }
 
 /**

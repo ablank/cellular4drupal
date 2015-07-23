@@ -12,20 +12,16 @@
 
 //////
 
-body {
-  background-color: $white;
-  //background-image: $body_img;
-  //@include gradient_rad($white, $white, $light_grey);
-  //background-repeat: repeat;
-  //background-attachment: fixed;
-}
-
 #page-wrap {
-  width: 100%;
+  // width: 100%;
+  @include clearfix();
 }
 
 #app {
   z-index: 1;
+  @if (($header_position == absolute) or ($header_position == fixed)) {
+    margin-top: $header_height;
+  }
 }
 
 #content,
@@ -36,11 +32,4 @@ body {
   float: left;
   display: block;
   @include clearfix();
-}
-
-.flexbox {
-
-  #content {
-    flex-flow: column;
-  }
 }

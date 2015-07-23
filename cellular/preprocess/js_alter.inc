@@ -36,9 +36,9 @@ function cellular_js_alter(&$javascript) {
 function cellular_js() {
   $ext = theme_get_setting('min_script') == 1 ? '.min.js' : '.js';
 
-// Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
+  // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
-  
+
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
   theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = TRUE : NULL;
   theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = TRUE : NULL;
@@ -46,27 +46,31 @@ function cellular_js() {
   theme_get_setting('masonry') == 1 ? $js_plugins['masonry'] = TRUE : NULL;
   theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = TRUE : NULL;
 
-// Add to Cellular plugin settings to Drupal.settings.
+  // Add to Cellular plugin settings to Drupal.settings.
   drupal_add_js(array('cellular' => $js_plugins), 'setting');
 
-// Add script by extension. The minified source should compile ALL js in
-// /yourTheme/js/ into script.min.js.
-
+  $scripts = array();
+  // Add script by extension. The minified source should compile ALL js in
+  // /yourTheme/js/ into script.min.js.
   // Add Cellular UI
-  if (theme_get_setting('cellularui') == 1 && $ext === '.js') {
+  if (theme_get_setting('cellularui') == 1) {
     $scripts['cellularui'] = array(
       'object' => 'cellular',
-      'file' => 'cellularUI/jquery.cellularUI' . $ext,
+      'file' => 'cellular-ui/jquery.cellular-ui' . $ext,
       'weight' => 98,
     );
+    // Add to Drupal.settings.
+    drupal_add_js(array('cellular' => array('cellularui' => TRUE)), 'setting');
   }
-  if (($js_plugins) && ($ext === '.js')) {
+  // Add plugins.js if plugins are set.
+  if ($js_plugins || theme_get_setting('cellularui') == 1) {
     $scripts['plugins'] = array(
       'file' => 'plugins' . $ext,
       'group' => JS_DEFAULT,
       'weight' => 99,
     );
   }
+  // Add script.js.
   $scripts['script'] = array(
     'file' => 'script' . $ext,
     'group' => JS_THEME,

@@ -3,40 +3,39 @@
  * @file
  * Set element markup.
  */
-
 /**
  * Implements hook_theme_registry_alter().
  */
-  /*
-function cellular_registry_alter(&$theme_registry) {
+/*
+  function cellular_registry_alter(&$theme_registry) {
   // Override the default page.tpl.php.
   if (theme_get_setting('panelseverywhere') == 1 && isset($theme_registry['page'])) {
-    $path = drupal_get_path('theme', 'cellular');
-    $theme_registry['field_collection_item']['theme path'] = $path;
-    $theme_registry['field_collection_item']['template'] = "$path/templates/page--panels";
+  $path = drupal_get_path('theme', 'cellular');
+  $theme_registry['field_collection_item']['theme path'] = $path;
+  $theme_registry['field_collection_item']['template'] = "$path/templates/page--panels";
   }
-}
-  */
+  }
+ */
 
 /**
  * Implements hook_theme().
 
-function cellular_theme($existing, $type, $theme, $path) {
+  function cellular_theme($existing, $type, $theme, $path) {
   $theme['main_menu'] = array(
-        'arguments' => array(
-            // if NULL, function checks variable 'menu_primary_links_source'
-            'menu_name' => NULL,
+  'arguments' => array(
+  // if NULL, function checks variable 'menu_primary_links_source'
+  'menu_name' => NULL,
 
-        )
-    );
+  )
+  );
   $theme['panels_page'] = array(
-    'base hook' => 'page',
-    'render element' => 'page',
-    'template' => 'templates/page--panels',
+  'base hook' => 'page',
+  'render element' => 'page',
+  'template' => 'templates/page--panels',
   );
 
   return $theme;
-}
+  }
  */
 
 /**

@@ -41,3 +41,38 @@
     flex-basis: 100% - $cell_space;
   }
 }
+
+/////
+//Element positioning classes
+/////
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+hr.clearfix {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.left,
+.right {
+  display: block;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  margin: 0 auto;
+}

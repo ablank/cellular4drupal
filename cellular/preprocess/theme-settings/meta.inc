@@ -3,7 +3,6 @@
  * @file
  * Theme-settings: Set copyright & favicons.
  */
-
 $form['c']['meta'] = array(
   '#type' => 'fieldset',
   '#title' => t('Meta'),
@@ -13,8 +12,8 @@ $form['c']['meta'] = array(
 
 $form['c']['meta']['dev'] = array(
   '#type' => 'checkbox',
-  '#title' => t('Development Mode'),
-  '#description' => t("Return page variables."),
+  '#title' => t('Development'),
+  '#description' => t("Print the page variables array in the messages area."),
   '#default_value' => theme_get_setting('dev'),
 );
 

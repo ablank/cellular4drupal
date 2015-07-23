@@ -33,6 +33,12 @@
   * https://github.com/jh3y/whirl/
 */
 /**
- * @file
- * Styling for large-screen devices included in style.css
- */
+  * @file
+  * Styling for large-screen devices included in style.css
+*/
+@media screen and (min-width: 1280px) {
+  /* line 10, ../sass/style/_mq_large.scss */
+  body:before {
+    content: "large-1280px";
+  }
+}

@@ -10,9 +10,12 @@
 }
 
 #header {
-  z-index: 2;
-  height: 96px;
+  position: $header_position;
+  top: 0;
+  left: 0;
+  height: $header_height;
   background: $white;
+  z-index: 2;
   @include box-shadow(0 0 1em .1em $dark_grey);
 }
 

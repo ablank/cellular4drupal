@@ -3,7 +3,6 @@
  * @file
  * Theme-settings: Social media link settings.
  */
-
 /*
   settings[sm_follow_title]       = Follow Us
   settings[sm_share_title]        = Share this page

@@ -96,6 +96,7 @@ function cellular_error_page(&$vars) {
         $vars['http_status'] = "Error: " . $http_status;
         $vars['classes_array'][] = 'page-error';
         $vars['error_message'] = drupal_get_messages();
+
         break;
     }
   }

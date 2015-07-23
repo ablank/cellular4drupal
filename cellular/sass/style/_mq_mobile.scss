@@ -5,29 +5,16 @@
 
 @media screen and (max-width: $res_mobile) {
 
-   #nav {
-    ul.menu {
-      // Remove this if not using the CellularUI jMmenu();
-      // Hides navigation to prevent jankiness caused by js changing the DOM
-      // after html & styles are loaded.
-      visibility: hidden;
+  body{
+
+    &:before {
+      // Pseudo element to pass the current media size to javascript.
+      // @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
+      content: "mobile-#{$res_mobile}";
     }
   }
 
-  #logo {
-
-    &:hover {
-    }
-
-    & > a {
-    }
-  }
-  
   //////
-
-  body {
-
-  }
 
   p {
 
@@ -65,11 +52,22 @@
   h6 {
 
   }
-  
-//////
 
+  //////
+
+  #nav {}
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+  
   #page-wrap {
-    
+
   }
 
   #content-wrap {
@@ -77,7 +75,7 @@
   }
 
   #header {
-    
+
   }
 
   #app {

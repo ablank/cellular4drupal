@@ -156,7 +156,7 @@ function cellular_favicons() {
       // Set tag type to <link>
       $favicon['tag'] = 'link';
       // Set href relative to /assets/favicons/
-      $favicon['href'] = cellular_theme_path() . '/assets/favicons/' . $favicon['href'];
+      $favicon['href'] = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH . '/assets/favicons/' . $favicon['href'];
     }
   }
 

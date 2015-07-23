@@ -1,6 +1,6 @@
 cellular.jParallax = function (opts) {
   var o = jQuery.extend({
-    "speed": .1
+    speed: 0.1
   }, opts);
   var fn = {};
   fn.update = function ($obj) {
@@ -11,13 +11,13 @@ cellular.jParallax = function (opts) {
 
     var bgPos = xPos + ' ' + yPos + (jQuery(window).scrollTop() * (-o.speed)) + 'px';
 
-    console.log(bgPos);
+    // console.log(bgPos);
 
     $obj.css({'background-position': bgPos});
 
     function parallax() {
       var yPos = $(window).scrollTop();
-      var bgPos = '-120px ' + ((yPos * (-.1)) - 70) + 'px';
+      var bgPos = '-120px ' + ((yPos * (-0.1)) - 70) + 'px';
       $('#app').css('background-position', bgPos);
     }
   };
@@ -27,6 +27,7 @@ cellular.jParallax = function (opts) {
 
     $obj.addClass(cellular.opts.cclass);
 
+    $(window).scroll(jParallax);
+
   });
-  $(window).scroll(jParallax);
 };

@@ -1,4 +1,6 @@
 {
+  "description": "Cellular theme Grunt build."
+  ,
   "engines": {
     "node": ">= 0.10.0"
   },

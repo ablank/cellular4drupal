@@ -13,8 +13,7 @@ $form['c']['style_settings'] = array(
 
 $form['c']['style_settings']['min_style'] = array(
   '#type' => 'checkbox',
-  '#title' => t('Use minified stylesheets.'),
-  '#description' => t("Use the minified source (style.min.css)."),
+  '#title' => t('Use minified stylesheets (<em>.min.css</em>).'),
   '#default_value' => theme_get_setting('min_style'),
 );
 

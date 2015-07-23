@@ -43,6 +43,9 @@ cellular.classify = function ($array) {
 
 cellular.throttle = function (fn, delay) {
   var timer = null;
+
+  delay = delay ? delay : 250;
+
   return function () {
     var context = this, args = arguments;
     clearTimeout(timer);
