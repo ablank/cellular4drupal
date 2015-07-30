@@ -26,19 +26,19 @@ function cellular_jquery_info() {
 }
 
 /**
- * Generate links to CDN sources.
+ * Configure links to CDN sources.
  *
  * @return array
  *   CDN URLs used to update jQuery & jQuery.ui
  */
 function cellular_cdn() {
+  $jq = cellular_jquery_info();
+  $ui = $jq['ui'];
   /* Available cdns:
    * //ajax.googleapis.com/ajax/libs/jquery/1.10.4/jquery.min.js
    * //ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js
    * //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
    */
-  $jq = cellular_jquery_info();
-  $ui = $jq['ui'];
   $networks = array(
     'jquery' => array(
       'base_url' => '//code.jquery.com/',
@@ -69,14 +69,11 @@ function cellular_cdn() {
     ),
   );
 
-  // Select cdn to use.
-  $cdn = $networks[$jq['cdn']];
-
-  return $cdn;
+  return $networks[$jq['cdn']];
 }
 
 /**
- * Update jQuery & essential plugins.
+ * Update jQuery.
  *
  * @param array $javascript
  *   Associative array of javascripts.
@@ -93,16 +90,28 @@ function cellular_jquery_update(&$javascript) {
     'every_page' => TRUE,
     'weight' => -100,
   );
-
+  // Set CDN or local source.
   if ($jq['use_cdn'] == 1) {
-    // Select cdn to use:
     $cdn = cellular_cdn();
     $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
   }
-
+  // Override jQuery.
   cellular_js_override($javascript, $jquery, TRUE);
+  // Update the Drupal jQuery plugins.
+  cellular_update_plugins($javascript, $jquery);
+}
 
-  $drupal_plugins = array(
+/**
+ * Update Drupal's default jQuery plugins.
+ *
+ * @param array $javascript
+ *   Associative array of javascripts.
+ *
+ * @param array $jquery
+ *   jQuery version info.
+ */
+function cellular_update_plugins(&$javascript, $jquery) {
+  $default_plugins = array(
     'drupal' => array(
       'default' => 'misc/drupal.js',
       'file' => 'plugins/drupal.min.js',
@@ -140,15 +149,16 @@ function cellular_jquery_update(&$javascript) {
       'default' => 'misc/jquery.once.js',
       'version' => '1.2.6',
       'file' => 'plugins/jquery.once.min.js',
-    )
+    ),
   );
 
-  foreach ($drupal_plugins as $plugin) {
+  foreach ($default_plugins as $plugin) {
     cellular_js_override($javascript, $plugin, TRUE);
   }
 
-  // Add default theme js plugins.
+  // Add default theme plugins.
   $add_plugins = array(
+    // Add migrate to prevent plugins from breaking with jQuery > v1.9.
     'migrate' => (theme_get_setting('jquery_migrate') == 1) && floatval(substr($jquery['version'], 2)) >= 9 ?
     array(
       'version' => '1.2.1',

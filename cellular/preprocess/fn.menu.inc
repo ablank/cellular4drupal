@@ -5,20 +5,7 @@
  */
 
 /**
- *
- */
-function cellular_links__system_main_menu($vars) {
-  $output = "<ul id=\"nav\">\n";
-  foreach ($vars['links'] as $key => $link) {
-    $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
-  }
-  $output .= "</ul>\n";
-
-  return $output;
-}
-
-/**
- * Returns full Main Menu instead of top-level links.
+ * Returns full Main Menu tree instead of top-level only links.
  *
  * @param array $vars
  *   Associative array of variables to merge with defaults from theme registry.
@@ -33,8 +20,12 @@ function cellular_main_menu(&$vars) {
   }
 
   $vars['main_menu'] = $menu_data;
-  //$vars['main_menu']['#theme_wrappers'] = array('cellular_menu_tree__main_menu');
   /*
+   Work in progress to generate id from template function
+   ... currently wrapping menu in <div id="nav"/> page template.
+
+  //$vars['main_menu']['#theme_wrappers'] = array('cellular_menu_tree__main_menu');
+
     $vars['main_menu'] = theme('links__system_main_menu', array(
     'links' => $menu_data,
     'attributes' => array(
@@ -49,3 +40,16 @@ function cellular_main_menu(&$vars) {
   // dpm($menu_data);
   // dpm($vars);
 }
+
+/**
+ * Implements links__system_main_menu.
+function cellular_links__system_main_menu($vars) {
+  $output = "<ul id=\"nav\">\n";
+  foreach ($vars['links'] as $key => $link) {
+    $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
+  }
+  $output .= "</ul>\n";
+
+  return $output;
+}
+*/

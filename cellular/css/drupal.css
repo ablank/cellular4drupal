@@ -216,18 +216,17 @@ select.ctools-ajaxing:after {
 
 /**
   * @file
-  * Author styling.
+  *
+  * Styling for author and date information.
 */
-/* line 5, ../sass/drupal/_author.scss */
-.author {
-  font-size: 0.8em;
+/* line 6, ../sass/drupal/_postinfo.scss */
+.post-info {
+  float: left;
+  padding: 1em;
+  text-align: center;
 }
 
-/**
-  * @file
-  * Date related class styling
-*/
-/* line 7, ../sass/drupal/_date-classes.scss */
+/* line 13, ../sass/drupal/_postinfo.scss */
 .post-date {
   float: left;
   display: block;
@@ -238,29 +237,38 @@ select.ctools-ajaxing:after {
   color: #444;
   border-radius: 0.2em;
 }
-/* line 17, ../sass/drupal/_date-classes.scss */
+/* line 23, ../sass/drupal/_postinfo.scss */
 .post-date .day,
 .post-date .month,
 .post-date .year {
   display: block;
 }
-/* line 23, ../sass/drupal/_date-classes.scss */
+/* line 29, ../sass/drupal/_postinfo.scss */
 .post-date .day {
   float: left;
   padding: 0.2em 0 0.2em 0.6em;
 }
-/* line 28, ../sass/drupal/_date-classes.scss */
+/* line 34, ../sass/drupal/_postinfo.scss */
 .post-date .month {
   float: left;
   padding: 0.2em 0.6em 0.2em 0.4em;
 }
-/* line 33, ../sass/drupal/_date-classes.scss */
+/* line 39, ../sass/drupal/_postinfo.scss */
 .post-date .year {
   clear: both;
   padding: 0.2em 0.8em;
   background-color: #444;
   color: #f1f1f1;
   border-top: #f1f1f1 thin solid;
+}
+
+/* line 48, ../sass/drupal/_postinfo.scss */
+.post-author {
+  font-size: 0.8em;
+}
+/* line 51, ../sass/drupal/_postinfo.scss */
+.post-author a {
+  display: block;
 }
 
 /**
@@ -427,18 +435,28 @@ form.site-search input[type="submit"]:focus {
   border: 1px #f1f1f1 solid;
 }
 /* line 26, ../sass/drupal/_comments.scss */
+.comment.new {
+  border-color: #8c0d00;
+}
+/* line 30, ../sass/drupal/_comments.scss */
 .comment h3 {
   margin: 0;
 }
-/* line 30, ../sass/drupal/_comments.scss */
+/* line 34, ../sass/drupal/_comments.scss */
 .comment .submitted {
   font-size: 0.8em;
   margin-left: 1em;
 }
-/* line 37, ../sass/drupal/_comments.scss */
+/* line 41, ../sass/drupal/_comments.scss */
 .comment .links.inline li {
   list-style: none;
   display: inline;
+}
+
+/* line 49, ../sass/drupal/_comments.scss */
+.comment-date,
+.comment-author {
+  display: block;
 }
 
 /* line 2, ../sass/drupal/_menus.scss */

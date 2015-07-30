@@ -115,19 +115,15 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
  */
 function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
   // Set field sizes.
-  $field_size = 32;
+  // $field_size = 32;
   // Remove text format option.
   $form['comment_body'][LANGUAGE_NONE][0]['#default_value'] = t('Add your comment');
   $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
-
-  $form['author']['name']['#size'] = $field_size;
-  $form['subject']['#size'] = $field_size;
-  // Customize Submit & Preview buttons.
-  $form['actions']['preview']['#value'] = t('Preview');
-  $form['actions']['preview']['#weight'] = 19;
-  $form['actions']['preview']['#attributes']['class'][] = 'left';
-
-  $form['actions']['submit']['#value'] = t('Save');
-  $form['actions']['submit']['#weight'] = 20;
+  // Hide unwanted form fields.
+  $form['author']['#access'] = FALSE;
+  $form['subject']['#access'] = FALSE;
+  $form['actions']['preview']['#access'] = FALSE;
+  // Customize Submit button.
+  $form['actions']['submit']['#value'] = t('Submit');
   $form['actions']['submit']['#attributes']['class'][] = 'right';
 }

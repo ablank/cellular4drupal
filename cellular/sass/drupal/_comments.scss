@@ -23,6 +23,10 @@
   padding: 1em;
   border: 1px $light_grey solid;
 
+    &.new {
+      border-color: $red;
+    }
+
   h3 {
     margin: 0;
   }
@@ -40,4 +44,10 @@
       }
     }
   }
+}
+
+.comment-date,
+.comment-author {
+  display: block;
+  //text-align: center;
 }

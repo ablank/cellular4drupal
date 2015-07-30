@@ -160,11 +160,12 @@ function cellular_plugins_js() {
 function cellular_plugin_css() {
   // Plugins available through cellular, styles added based on theme settings.
   // $plugin_css paths are relative to /libraries/cellular/css/
-  $plugin_css = array();
-  theme_get_setting('prism') == 1 ? $plugin_css['prism'] = array(
-    'file' => 'prism.css',
-    'weight' => -10,
-  ) : NULL;
+  $plugin_css = array(
+    'prism' => theme_get_setting('prism') == 1 ? array(
+      'file' => 'prism.css',
+      'weight' => -10,
+    ) : NULL,
+  );
 
   return $plugin_css;
 }

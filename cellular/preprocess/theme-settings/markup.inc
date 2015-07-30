@@ -9,13 +9,14 @@ $form['c']['markup_settings'] = array(
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
-
+/*
 $form['c']['markup_settings']['panelseverywhere'] = array(
   '#type' => 'checkbox',
   '#title' => t('Panels Everywhere'),
   '#description' => t("Use the panels page template - Overriding page.tpl with page--panels.tpl removes blocks and \$page variables."),
   '#default_value' => theme_get_setting('panelseverywhere'),
 );
+*/
 
 $form['c']['markup_settings']['copyright'] = array(
   '#type' => 'textfield',

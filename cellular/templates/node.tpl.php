@@ -3,7 +3,6 @@
  * @file
  * Node template.
  */
-
 /* Variables:
  * - $title: the (sanitized) title of the node.
  * - $content: An array of node items. Use render($content) to print them all,
@@ -70,42 +69,25 @@
  * language, e.g. $node->body['en'], thus overriding any language negotiation
  * rule that was previously applied.
  */
-
 ?>
-<div id="node-<?php print $node->nid; ?>"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid . "\""; print $attributes; ?>>
   <?php
   print render($title_prefix);
   if (!$page) :
     if ($title) :
-      print "<h2$title_attributes >\n";
-      print "<a href=\"$node_url\">\n";
-      print $title;
-      print "\n</a></h2>";
+      print "<h2$title_attributes>\n<a href=\"$node_url\">\n$title\n</a></h2>";
     endif;
   endif;
   print render($title_suffix);
   ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="post-date">
-      <span class="day"><?php echo date("j", $node->created); ?></span>
-      <span class="month"><?php echo date("M", $node->created); ?></span>
-      <span class="year"><?php echo date("Y", $node->created); ?></span>
-    </div>
-
-    <div class="author">
-      <?php print $name; ?>
-    </div>
+  <?php if (!empty($display_submitted)):?>
+    <div class="post-info">
+      <div class="post-date"><?php print $post_date; ?></div>
+      <div class="post-author"><?php print $author; ?></div>
+    </div>;
   <?php endif; ?>
 
   <div<?php print $content_attributes; ?>>
-    <?php
-    // Render comments and links after content.
-    hide($content['comments']);
-    hide($content['links']);
-    print render($content);
-    ?>
+  <?php print render($content);?>
   </div>
-  <?php print render($content['links']); ?>
-  <?php print render($content['comments']); ?>
 </div>

@@ -16,6 +16,7 @@
  */
 function cellular_add_css(&$css, $array, $cellular = FALSE) {
   foreach ($array as $style) {
+    // Set data source as CDN or local host.
     if (isset($style['cdn'])) {
       $data = $style['cdn'];
     }
@@ -24,6 +25,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $data .= '/css/' . $style['file'];
     }
     if (!empty($data)) {
+      // Set stylesheet properties.
       $style['data'] = $data;
       $style['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
       $style['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
@@ -32,8 +34,9 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $style['type'] = isset($style['cdn']) ? 'external' : 'file';
       $style['media'] = isset($style['media']) ? $style['media'] : 'all';
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
+      // Add stylesheet to $css.
+      $css[$data] = $style;
     }
-    $css[$data] = $style;
   }
 }
 
@@ -53,7 +56,7 @@ function cellular_remove_css(&$css, $exclude) {
         unset($css[drupal_get_path('module', $module) . '/' . $style]);
       }
     }
-    // Remove individual stylesheet.
+    // Remove individual module stylesheet.
     else {
       unset($css[drupal_get_path('module', $module) . '/' . $stylesheet]);
     }
@@ -85,6 +88,7 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
       // Or set data to local file.
       $data = $path . '/css/' . $style['file'];
     }
+    // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
     $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : FALSE;
     $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
@@ -103,8 +107,8 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
  *   Associative array of stylesheets to merge with defaults from theme registry.
  */
 function cellular_remove_default_css(&$css) {
-  // Nuke all css not a member of group CSS_THEME:
   $exclude = array();
+  // Nuke all css not a member of group CSS_THEME:
   if (theme_get_setting('remove_drupal_css') === 'theme_only') {
     foreach ($css as $key => $value) {
       $keep = array(
@@ -118,7 +122,7 @@ function cellular_remove_default_css(&$css) {
       }
     }
   }
-  // 86 SYSTEM_CSS.
+  // Nuke SYSTEM_CSS.
   if (theme_get_setting('remove_drupal_css') === 'system') {
     foreach ($css as $key => $value) {
       if ($value['group'] === CSS_SYSTEM) {

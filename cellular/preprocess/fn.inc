@@ -5,8 +5,7 @@
  */
 
 /**
- * Get path to current theme.
- *
+ * Get path to the active theme.
  *
  * @param type $theme_key
  *   The name of the theme to get path to, defaults to active theme.
@@ -27,10 +26,11 @@ function cellular_theme_path(&$theme_key = NULL) {
  *   Media queries settings.
  */
 function cellular_mq() {
-  $mq = array();
-  $mq['mobile'] = theme_get_setting('mq_mobile');
-  $mq['normal'] = theme_get_setting('mq_normal');
-  $mq['large'] = theme_get_setting('mq_large');
+  $mq = array(
+    'mobile' => theme_get_setting('mq_mobile'),
+    'normal' => theme_get_setting('mq_normal'),
+    'large' => theme_get_setting('mq_large'),
+  );
 
   return $mq;
 }
@@ -43,62 +43,57 @@ function cellular_mq() {
  */
 function cellular_build_head_tags($array) {
   foreach ($array as $meta => $val) {
-    if (isset($val)) {
-      // Build tag:
-      $tag = array(
-        '#type' => 'html_tag',
-        '#tag' => $val['tag'],
-        '#attributes' => array(),
-        '#weight' => isset($val['weight']) ? $val['weight'] : 0,
-      );
-      // Misc. attr/val:
-      empty($val['attr']) || empty($val['attr_val']) ? NULL :
-      $tag['#attributes'][$val['attr']] = $val['attr_val'];
-      empty($val['profile']) ? NULL :
-      $tag['#attributes']['profile'] = $val['profile'];
-      // General attributes:
-      empty($val['name']) ? NULL :
-      $tag['#attributes']['name'] = $val['name'];
-      empty($val['rel']) ? NULL :
-      $tag['#attributes']['rel'] = $val['rel'];
-      empty($val['content']) ? NULL :
-      $tag['#attributes']['content'] = $val['content'];
-      empty($val['href']) ? NULL :
-      $tag['#attributes']['href'] = $val['href'];
-      // Attributes for favicons:
-      empty($val['size']) ? NULL :
-      $tag['#attributes']['sizes'] = $val['size'];
-      empty($val['type']) ? NULL :
-      $tag['#attributes']['type'] = $val['type'];
+    // Build tag:
+    $tag = array(
+      '#type' => 'html_tag',
+      '#tag' => $val['tag'],
+      '#attributes' => array(),
+      '#weight' => isset($val['weight']) ? $val['weight'] : 0,
+    );
+    // Misc. attr/val:
+    empty($val['attr']) || empty($val['attr_val']) ? NULL :
+    $tag['#attributes'][$val['attr']] = $val['attr_val'];
+    empty($val['profile']) ? NULL :
+    $tag['#attributes']['profile'] = $val['profile'];
+    // General attributes:
+    empty($val['name']) ? NULL :
+    $tag['#attributes']['name'] = $val['name'];
+    empty($val['rel']) ? NULL :
+    $tag['#attributes']['rel'] = $val['rel'];
+    empty($val['content']) ? NULL :
+    $tag['#attributes']['content'] = $val['content'];
+    empty($val['href']) ? NULL :
+    $tag['#attributes']['href'] = $val['href'];
+    // Attributes for favicons:
+    empty($val['size']) ? NULL :
+    $tag['#attributes']['sizes'] = $val['size'];
+    empty($val['type']) ? NULL :
+    $tag['#attributes']['type'] = $val['type'];
 
-      drupal_add_html_head($tag, 'meta_' . $meta);
-    }
+    drupal_add_html_head($tag, 'meta_' . $meta);
   }
 }
 
 /**
- * Set path to page-error.tpl if http error is returned.
+ * Set path to page-error.tpl if header error code is returned.
  *
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_error_page(&$vars) {
-  // Set custom error template:
   $http_status = drupal_get_http_header("status");
 
-  if (isset($http_status)) {
+  // Set error page template if error.
+  switch ($http_status) {
+    case "403 Forbidden":
+    case "404 Not Found":
+    case "500 Internal Server Error":
+      $vars['theme_hook_suggestions'][] = 'page__error';
+      $vars['http_status'] = "Error: " . $http_status;
+      $vars['classes_array'][] = 'page-error';
+      $vars['error_message'] = drupal_get_messages();
 
-    switch ($http_status) {
-      case "403 Forbidden":
-      case "404 Not Found":
-      case "500 Internal Server Error":
-        $vars['theme_hook_suggestions'][] = 'page__error';
-        $vars['http_status'] = "Error: " . $http_status;
-        $vars['classes_array'][] = 'page-error';
-        $vars['error_message'] = drupal_get_messages();
-
-        break;
-    }
+      break;
   }
 }
 
@@ -124,7 +119,7 @@ function cellular_form_format_opt(&$form, $form_state) {
 }
 
 /**
- * Print variables for development as message, usedful if devel isn't available.
+ * Print variables for development as message, useful if devel isn't active.
  *
  * @param array $element
  *   Element to test and return variables of.

@@ -8,7 +8,7 @@
  * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
-  // Help prevent clickjacking
+  // Try to prevent clickjacking.
   drupal_add_http_header('X-Frame-Options', 'DENY');
   // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
@@ -22,34 +22,34 @@ function cellular_http_headers() {
  */
 function cellular_html_attributes(&$vars) {
   global $language;
+
+  $vars['doctype'] = "<!DOCTYPE html>\n";
   $html_attributes = array(
     'lang' => $language->language,
     'xml:lang' => $language->language,
     'dir' => $language->dir,
   );
-  // Check support for RDF & add DOCTYPE:
+  // Check support for RDF, adding namespace if needed.
   if (module_exists('rdf')) {
     // Set namespace.
     $html_attributes['xmlns'] = 'http://www.w3.org/1999/xhtml';
   }
 
-  $vars['doctype'] = "<!DOCTYPE html>\n";
   $vars['html_attributes'] = drupal_attributes($html_attributes);
 }
 
 /**
- * Convert @xmlns to @profile.
+ * Convert xmlns to profile.
  *
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_rdf(&$vars) {
-  $vars['rdf_prefixes'] = '';
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
-  // Check support for RDF & add DOCTYPE:
+  // Check support for RDF & add attributes:
   if (module_exists('rdf')) {
-    // @ http://phase2technology.com/?p=552
+    // @see http://phase2technology.com/?p=552
     $head_attributes = array();
     $prefixes = array();
     $namespaces = explode("\n", trim($vars['rdf_namespaces']));
@@ -124,7 +124,7 @@ function cellular_favicons() {
     'weight' => 96,
   ) : NULL;
   /* Older iOS devices don't understand the sizes attribute and use
-   * whichever value is last, so 'default' is given more weight.
+   * whichever value is last, so 'default' is given highest weight.
    */
   !empty($settings['apple-default']) ? $favicons['apple-default'] = array(
     'rel' => 'apple-touch-icon',
@@ -170,7 +170,6 @@ function cellular_favicons() {
  *   Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_metatags(&$vars) {
-  // Add default metatags:
   $meta_tags = array(
     'viewport' => array(
       'tag' => 'meta',
@@ -228,28 +227,25 @@ function cellular_test_sidebar(&$vars) {
 }
 
 /**
- * Set content author attributes.
  *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_set_author(&$vars) {
-  $node = $vars['elements']['#node'];
-  $uid = user_load($node->uid);
-  $safe_value = "['LANGUAGE_NONE'][0]['safe_value']";
-  $author = array(
-    'name' => l($node->name, 'user/' . $node->uid),
-    'description' => isset($vars['author']->field_description[$safe_value]) ?
-    '<div class="author-description">' . $uid->field_description[$safe_value] . '</div>' : NULL,
-    'image' => !empty($uid->picture->uri) ? theme('image_style', array(
-      'path' => $node->picture->uri,
-      'width' => NULL,
-      'height' => NULL,
-      'alt' => t('User') . ' ' . $node->name,
-      'title' => t('User') . ' ' . $node->name,
-      'attributes' => array('class' => 'author-image'),
-    )) : NULL,
-  );
+function cellular_author_info(&$vars) {
+  // Author info
+  $aid = user_load($vars['uid']);
+  if (!empty($aid)) {
+    $author = theme('user_picture', array('account' => $aid));
+    $author .= $aid->name;
+  }
 
-  $vars['author'] = $author['image'] . $author['name'] . $author['description'];
+  // Push formatted author block to $vars array.
+  return $author;
+}
+
+function cellular_post_date($node){
+  // Date node was created.
+  $date = "\n<span class=\"day\">" . date("j", $node->created) . "</span>\n";
+  $date .= "<span class=\"month\">" . date("M", $node->created) . "</span>\n";
+  $date .= "<span class=\"year\">" . date("Y", $node->created) . "</span>\n";
+
+  return $date;
 }

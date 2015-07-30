@@ -9,14 +9,13 @@
 @import "drupal/drupal-classes";
 @import "drupal/powered-by";
 @import "drupal/breadcrumb";
-@import "drupal/author";
-@import "drupal/date-classes";
+@import "drupal/postinfo";
 @import "drupal/pager";
 @import "drupal/search";
 @import "drupal/comments";
 @import "drupal/menus";
 @import "drupal/tabs";
-// Module styles.
+// Replaces default module styles.
 @import "drupal/views";
 @import "drupal/colorbox";
 @import "drupal/calendar";

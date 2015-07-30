@@ -11,9 +11,18 @@ function cellular_css_alter(&$css) {
   // Remove stylesheets based on theme settings.
   cellular_remove_default_css($css);
 
+  // Add js plugin styles.
+  $plugins = cellular_plugin_css();
+  if (!empty($plugins)) {
+    cellular_add_css($css, $plugins, TRUE);
+  }
+  // Update jqueryui styles if needed.
+  if (theme_get_setting('jquery_update') == 1) {
+    cellular_jqueryui_update_css($css);
+  }
+  // Check for minified or standard style extension.
   $ext = theme_get_setting('min_style') == 1 ? '.min.css' : '.css';
-  // Add stylesheets to theme.
-  // Paths are relative to /yourTheme/css/
+  // Add default stylesheets to theme, paths are relative to /YourTheme/css/
   $add_css = array(
     'drupal' => array(
       'file' => 'drupal' . $ext,
@@ -38,12 +47,4 @@ function cellular_css_alter(&$css) {
     ),
   );
   cellular_add_css($css, $add_css);
-
-  // Add js plugin styles.
-  $plugins = cellular_plugin_css();
-  // Update jqueryui styles if needed.
-  if (theme_get_setting('jquery_update') == 1) {
-    cellular_jqueryui_update_css($css);
-  }
-  !empty($plugins) ? cellular_add_css($css, $plugins, TRUE) : NULL;
 }
