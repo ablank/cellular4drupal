@@ -52,7 +52,6 @@
   social media outlets.
 
   Page Layout
- * Set in theme settings
   - $content_width : Grid class to set width of main content.
   - $content_class_single_sidebar : Grid class to set width of main content with
   one sidebar displayed.
@@ -85,7 +84,7 @@
   Custom page templates can be created for content types by adding the template:
  * /templates/page--content-type.tpl.php
  *
- * Render cck fields:
+ * Render fields:
   $field = field_view_field('node', $node, 'field_name', array(
   'label' => 'hidden'));
   print render($field);

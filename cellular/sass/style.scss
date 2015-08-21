@@ -18,14 +18,14 @@
 @import "style/base_grid";
 
 @import "style/region_wrappers";
-@import "style/region_content";
 @import "style/region_header";
+@import "style/region_navigation";
+@import "style/region_content";
 @import "style/region_footer";
 @import "style/region_sidebars";
-@import "style/region_navigation";
 
-@import "style/style_icons";
-@import "style/style_social";
+//@import "style/style_icons";
+//@import "style/style_social";
 
 @import "style/cellular-ui/Cellular";
 
@@ -37,10 +37,10 @@
 // @import "style/special/parallax";
 // @import "style/special/parallax_grouped";
 
-@import "style/mq_default";
-@import "style/mq_mobile";
-@import "style/mq_narrow";
-@import "style/mq_large";
+@import "style/query_default";
+@import "style/query_mobile";
+@import "style/query_narrow";
+@import "style/query_large";
 
-// Page/content type specific stylesheets.
+// Page/content specific stylesheets.
 @import "style/pages/frontpage";

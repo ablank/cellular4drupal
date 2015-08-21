@@ -8,122 +8,95 @@
  * Implements hook_form_alter().
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
+  $size = CELLULAR_INPUT_SIZE;
 
-  switch ($form_id) {
-    // Site Search block:
-    case 'search_block_form':
-    case 'search_form':
+  //drupal_set_message('<code><pre>' . print_r($form) . '</pre></code>');
+  switch ($form['#id']) {
+    /* Search page. */
+    case 'search-form':
+      $form['#attributes']['class'][] = 'site-search';
+      break;
 
-      $form['#attributes'] = array(
-        'class' => array('site-search'),
-      );
-
+    /* Search block. */
+    case 'search-block-form':
+      $form['#attributes']['class'][] = 'site-search';
       $form[$form_id]['#title'] = t('Search this site');
+      $form[$form_id]['#default_value'] = t('Keywords');
       $form[$form_id]['#type'] = 'textfield';
-      $form[$form_id]['#size'] = 25;
-      $form[$form_id]['#default_value'] = t('Search keywords');
+      $form[$form_id]['#size'] = $size;
       // Submit button.
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
-      // $form['actions']['submit']['#attributes']['class'] = array('search-submit');
-
       break;
 
-    // User Login block:FF
-    case 'user_login_block':
-      $field_size = 20;
+    /* User Login block. */
+    case 'user-login-form':
       $orient = theme_get_setting('login_block_orientation');
-
       $form['#attributes']['class'][] = $orient;
 
+      switch ($orient) {
+        case 'horizontal':
+          break;
+
+        case 'vertical':
+        default:
+          $form['actions']['submit']['#attributes']['class'][] = 'clearfix';
+          break;
+      }
+      
+      // Username
       $form['name'] = array(
         '#type' => 'textfield',
         '#title' => t('Name'),
         '#default_value' => t('Username'),
-        '#size' => $field_size,
+        '#size' => $size,
       );
+      // Password
       $form['pass'] = array(
         '#type' => 'password',
         '#title' => t('Password'),
         '#default_value' => t('Password'),
-        '#size' => $field_size,
+        '#size' => $size,
       );
-      $form['actions']['submit'][] = array(
-        // Change the text on the submit button:
-        '#value' => t('Log in'),
-        '#attributes' => array(
-          'class' => array(
-            $orient === 'vertical' ? 'clearfix' : NULL,
-          ),
-        ),
-      );
+      // Submit button
+      $form['actions']['submit']['#attributes']['#value'] = t('Log in');
 
-      // Remove Request New Password and other links from Block form:
+      /* Request New Password & Register New Account Links. */
+      $login_links = NULL;
       $user_reg = theme_get_setting('login_block_register');
       $user_pass = theme_get_setting('login_block_password');
 
       if (isset($user_reg) || isset($user_pass)) {
-        $output = '<div id="login-links">';
+        $login_links = '<div class="login-links">';
         if (!empty($user_reg)) {
-          $output .= l(t('Register'), "user/register", array(
+          $login_links .= l(t('Register'), "user/register", array(
             'attributes' => array(
               'class' => array('register'),
           )));
         }
         if (!empty($user_pass)) {
-          $output .= l(t('Forgotten Password?'), "user/password", array(
+          $login_links .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
               'class' => array('password'),
           )));
         }
-        $output .= '</div>';
+        $login_links .= '</div>';
       }
-      else {
-        $output = NULL;
-      }
+      $form['links']['#markup'] = $login_links;
+      break;
 
-      $form['links']['#markup'] = $output;
-      // Register New User Account:
-      /*
-        $form['links']['#markup'][] = t('Register')
-        . ' <a href="/user/register">'
-        . t('Register') . '</a>';
-       */
-
-      // Forgot Password:
-      /*
-        $form['links']['#markup'][] = t('Forgotten Password?')
-        . ' <a href="/user/password">'
-        . t('Forgotten Password?') . '</a>';
-       */
-
-      // Register New User Account &&  Forgot Password:
-      /*
-        $form['links']['#markup'] = '<hr/>'
-        . ' <a class="user-register" href="/user/register">'
-        . t('Register') . '</a>' . '<hr/>'
-        . ' <a class="user-password" href="/user/password">'
-        . t('Forgotten Password?') . '</a>';
-       */
-
+    /* Comment Form. */
+    case 'comment-form':
+      $form['comment_body']['und'][0]['#default_value'] = t('I think...');
+      // Hide unwanted form fields.
+      $form['author']['#access'] = FALSE;
+      $form['subject']['#access'] = FALSE;
+      $form['actions']['preview']['#access'] = FALSE;
+      // Customize Submit button.
+      $form['actions']['submit']['#value'] = t('Submit');
+      $form['actions']['submit']['#attributes']['class'][] = 'right';
+      // Remove text format option descriptions.
+      $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
       break;
   }
-}
-
-/**
- * Implements hook__form_comment_form_alter().
- */
-function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
-  // Set field sizes.
-  // $field_size = 32;
-  // Remove text format option.
-  $form['comment_body'][LANGUAGE_NONE][0]['#default_value'] = t('Add your comment');
-  $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
-  // Hide unwanted form fields.
-  $form['author']['#access'] = FALSE;
-  $form['subject']['#access'] = FALSE;
-  $form['actions']['preview']['#access'] = FALSE;
-  // Customize Submit button.
-  $form['actions']['submit']['#value'] = t('Submit');
-  $form['actions']['submit']['#attributes']['class'][] = 'right';
 }

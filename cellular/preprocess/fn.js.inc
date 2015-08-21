@@ -17,14 +17,7 @@
  */
 function cellular_add_js($array, $cellular = FALSE) {
   foreach ($array as $script) {
-    // Set default attributes.
-    $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
-    $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
-    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-    $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-    // Conditional attributes.
-    empty($script['version']) ? NULL : $script['version'] = $script['version'];
-    //
+    // Test if local or external source is provided.
     if (!empty($script['cdn'])) {
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
@@ -33,6 +26,17 @@ function cellular_add_js($array, $cellular = FALSE) {
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
       $data .= '/js/' . $script['file'];
     }
+    // Set script attributes.
+    $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
+    $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
+    $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
+    $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
+    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+    $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
+    $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
+    empty($script['version']) ? NULL : $script['version'] = $script['version'];
+    
 
     drupal_add_js($data, $script);
   }
@@ -50,10 +54,10 @@ function cellular_js_fallback($script, $cellular = FALSE) {
   // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
-      'group' => $script['group'],
-      'weight' => $script['weight'] + 0.1,
+      'group' => !empty($script['group']) ? $script['group'] : JS_DEFAULT,
+      'weight' => !empty($script['weight']) ? $script['weight'] + 0.1 : 0,
       'type' => 'inline',
-      'every_page' => !empty($script['every_page']) ? $script['every_page'] : TRUE,
+      'every_page' => !empty($script['every_page']) ? $script['every_page'] : FALSE,
     );
     // Construct the fallback script.
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
@@ -93,14 +97,16 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
       }
     }
 
-    // Set the default attributes.
+    // Set the script attributes.
     $javascript[$ojs]['data'] = $data;
-    $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : JS_LIBRARY;
-    $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-    $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
     $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
-    $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
-    // Set conditional attributes.
+    $javascript[$ojs]['scope'] = !empty($script['scope']) ? $script['scope'] : $javascript[$ojs]['scope'];
+    $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : $javascript[$ojs]['group'];
+    $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : $javascript[$ojs]['every_page'];
+    $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : $javascript[$ojs]['weight'];
+    $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : $javascript[$ojs]['preprocess'];
+    $javascript[$ojs]['cache'] = !empty($script['cache']) ? $script['cache'] : $javascript[$ojs]['cache'];
+    $javascript[$ojs]['defer'] = !empty($script['defer']) ? $script['defer'] : $javascript[$ojs]['defer'];
     empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
   }
 }
@@ -130,7 +136,6 @@ function cellular_modernizr($tests) {
     empty($test['nope']) ? NULL : $query .= "nope : ['" . $dir . $test['nope'] . "'],\n";
     empty($test['both']) ? NULL : $query .= "both : ['" . $dir . $test['both'] . "'],\n";
     empty($test['complete']) ? NULL : $query .= "complete : function(){\n" . $test['complete'] . "},\n";
-
     $query .= "},\n";
   }
 

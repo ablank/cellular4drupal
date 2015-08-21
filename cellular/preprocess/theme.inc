@@ -8,10 +8,10 @@
  * Implements theme_links().
  */
 function cellular_links($vars) {
+  global $language_url;
   $links = $vars ['links'];
   $attributes = $vars ['attributes'];
   $heading = $vars ['heading'];
-  global $language_url;
   $output = '';
 
   if (count($links) > 0) {

@@ -21,7 +21,7 @@ function cellular_css_alter(&$css) {
     cellular_jqueryui_update_css($css);
   }
   // Check for minified or standard style extension.
-  $ext = theme_get_setting('min_style') == 1 ? '.min.css' : '.css';
+  $ext = CELLULAR_CSS_EXT;
   // Add default stylesheets to theme, paths are relative to /YourTheme/css/
   $add_css = array(
     'drupal' => array(

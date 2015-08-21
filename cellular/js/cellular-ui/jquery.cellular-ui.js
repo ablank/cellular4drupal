@@ -103,10 +103,10 @@ return next;
  // :)
 cellular.jAccordion = function (opts) {
 var o = jQuery.extend({
-"active": 0, // Index value of initial content to display.
-"duration": 500, // Duration of transition.
-"easing": "swing", // Type of easing.
-"single": false // Allow multiple panels to be opened or only 1?
+active: 0, // Index value of initial content to display.
+duration: 500, // Duration of transition.
+easing: "swing", // Type of easing.
+single: false // Allow multiple panels to be opened or only 1?
 }, opts);
 var fn = {};
 fn.showContent = function ($li) {
@@ -174,29 +174,24 @@ jQuery(this).deactivate();
 };
 
  // :)
-cellular.jFormal = function (opts) {
+cellular.jEqualheight = function (opts) {
+/*
+var array = [267, 306, 108];
+var largest = Math.max.apply(Math, array); // 306
+*/
 var o = jQuery.extend({
-"inputs": [
-'input[type="text"]',
-'input[type="email"]',
-'input[type="password"]',
-'textarea'
-]
+//"opt": val
 }, opts);
 return this.each(function () {
-var inputs = o.inputs.join(',');
-// get/set value of inputs
-jQuery(inputs).each(function () {
-jQuery(this).on('focus', function () {
-if (this.value === this.defaultValue) {
-this.value = '';
+var $obj = jQuery(this);
+var kids = $obj.find('>*');
+var maxHeight = 0;
+kids.each(function () {
+$t = jQuery(this);
+if ($t.height() > maxHeight) {
+maxHeight = $t.height();
 }
-}).on('blur', function () {
-// Reset to default value if no changes were made.
-if (this.value === '' || null) {
-this.value = this.defaultValue;
-}
-});
+$t.height(maxHeight);
 });
 });
 };

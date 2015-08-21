@@ -1,7 +1,7 @@
 /**
- * @file
- * Typography
- */
+  * @file
+  * Typography
+*/
 
 @font-face {
   font-family: 'Quicksand';
@@ -50,8 +50,8 @@ a {
   }
 
   &:hover,
-    &:active,
-    &:focus {
+  &:active,
+  &:focus {
     outline: thin dotted;
     outline-offset: -.1em;
     text-decoration: underline;
@@ -76,12 +76,11 @@ h6 {
   line-height: 1.1em;
   margin: 1em auto .2em auto;
   padding: 0.4em .4em 0 1em;
-  max-width: $p_max_width;
 }
 
 h1 {
   margin: 0;
-  padding: 1.4em 5% 1em;
+  padding: 0.4em 5%;
   font-size: $h_size;
   text-align: left;
   color: $black;

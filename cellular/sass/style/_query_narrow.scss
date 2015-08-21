@@ -1,16 +1,17 @@
 /**
   * @file
-  * Styling for mobile devices included in style.css
+  * Styling for tablets & other narrow devices included in style.css
 */
 
-@media screen and (max-width: $res_mobile) {
+// Styling
+@media screen and (min-width: $res_mobile) and (max-width: $res_narrow) {
 
   body{
 
     &:before {
       // Pseudo element to pass the current media size to javascript.
       // @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
-      content: "mobile-#{$res_mobile}";
+      content: "narrow-#{$res_narrow}";
     }
   }
 
@@ -55,7 +56,11 @@
 
   //////
 
-  #nav {}
+  #nav {
+    ul.menu {
+
+    }
+  }
 
   #logo {
 
@@ -65,7 +70,7 @@
     & > a {
     }
   }
-  
+
   #page-wrap {
 
   }

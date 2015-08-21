@@ -144,9 +144,11 @@ function cellular_remove_default_css(&$css) {
       'colorbox' => 'styles/default/colorbox_style.css',
       'comment' => 'comment.css',
       'field' => 'theme/field.css',
+      'file' => 'file.css',
+      'image' => 'image.css',
       'filter' => 'filter.css',
       'help' => 'help.css',
-      'menu' => 'menu.css',
+      'media' => 'css/media.css',
       'node' => 'node.css',
       'panels' => 'css/panels.css',
       'search' => 'search.css',
@@ -155,5 +157,32 @@ function cellular_remove_default_css(&$css) {
     );
 
     cellular_remove_css($css, $exclude);
+  }
+}
+
+/**
+ * Add critical styles (above the fold) inline.
+ * @see http://fourword.fourkitchens.com/article/use-grunt-and-advagg-inline-critical-css-drupal-7-theme
+ */
+function cellular_critical_css($vars) {
+  if (theme_get_setting('inline_critical_css') == 1) {
+    $ext = CELLULAR_CSS_EXT;
+    $critical_opts = array(
+      'type' => 'inline',
+      'scope' => 'header',
+      'group' => CSS_SYSTEM,
+      'weight' => -1000,
+      'preprocess' => FALSE,
+    );
+
+    if ($vars['is_front'] == 1) {
+      $critical_file = 'critical-front' . $ext;
+    }
+    else {
+      $critical_file = 'critical' . $ext;
+    }
+
+    // Add the stylesheet inline.
+    drupal_add_css(file_get_contents(CURRENT_THEME_PATH . '/css/' . $critical_file), $critical_opts);
   }
 }

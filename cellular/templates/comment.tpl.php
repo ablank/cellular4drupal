@@ -23,7 +23,7 @@
  * - $signature: Authors signature.
  * - $status: Comment status. Possible values are:
  *            comment-unpublished, comment-published or comment-preview.
- * - $title: Linked title.
+ * - $title: Comment title.
  * - $classes: String of classes that can be used to style contextually through
  *             CSS. It can be manipulated through the variable $classes_array
  *             from preprocess functions. Default values can be one or more of:
@@ -68,7 +68,7 @@
       <?php print $submitted; ?>
   </div>
 
-  <div class="comment"<?php print $content_attributes; ?>>
+  <div<?php print $content_attributes; ?>>
     <?php print render($content); ?>
 
     <?php if ($signature): ?>

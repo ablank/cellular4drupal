@@ -8,17 +8,9 @@
 
 <div id="page-wrap">
   <div id="app" class="cell">
-<?php if ($page['content']): ?>
-      <div id="content-wrap" class="cell">
-        <div id="content" class="cell">
-
-          <?php
-          // Main Page Content.
-          print render($page['content']);
-          ?>
-
-        </div>
-<?php endif; // #content     ?>
-    </div>
+    <?php
+    if ($page['content']):
+      print render($page['content']);
+    endif; ?>
   </div>
 </div>

@@ -1,15 +1,15 @@
 cellular.jAccordion = function (opts) {
   var o = jQuery.extend({
-    "active": 0, // Index value of initial content to display.
-    "duration": 500, // Duration of transition.
-    "easing": "swing", // Type of easing.
-    "single": false // Allow multiple panels to be opened or only 1?
+    active: 0, // Index value of initial content to display.
+    duration: 500, // Duration of transition.
+    easing: "swing", // Type of easing.
+    single: false // Allow multiple panels to be opened or only 1?
   }, opts);
 
   var fn = {};
 
   fn.showContent = function ($li) {
-
+    
     if (o.single === true) {
       $li.siblings('.active').deactivate()
         .find('.panel').slideUp(o.duration, o.easing);

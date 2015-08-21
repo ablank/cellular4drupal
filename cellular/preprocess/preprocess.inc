@@ -20,11 +20,13 @@ function cellular_preprocess_html(&$vars) {
  * Implements template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
-// Set main_menu as full-tree or top-level as defined in settings.
+  // Add critical css inline if set.
+  cellular_critical_css($vars);
+  // Set main_menu as full-tree or top-level as defined in settings.
   cellular_main_menu($vars);
-// Set classes for content & sidebar regions.
+  // Set classes for content & sidebar regions.
   cellular_test_sidebar($vars);
-// Link site name to frontpage.
+  // Link site name to frontpage.
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set Social Media links.
   $vars['page']['social_media_share'] = cellular_social_media_share();
@@ -35,6 +37,8 @@ function cellular_preprocess_page(&$vars) {
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ?
   "&copy; " . date("Y") . " $copyright" : '';
+  // Automate error pages.
+  cellular_error_page($vars);
 
   /* Work in progress... */
   // Add template suggestion for custom content types(page--content-type.tpl.php)
@@ -90,10 +94,13 @@ function cellular_preprocess_block(&$vars) {
  * Implements template_preprocess_comment().
  */
 function cellular_preprocess_comment(&$vars) {
+  $comment = $vars ['elements']['#comment'];
+  //dpm($comment);
   // Set the template used by comments.
   $vars['theme_hook_suggestions'][] = 'comment';
   $vars['title_attributes_array']['class'][] = 'comment-title';
   $vars['content_attributes_array']['class'][] = 'comment-content';
+  $vars['content_attributes_array']['class'][] = 'clearfix';
 
   if (!empty($vars['new'])) {
     $vars['classes_array'][] = 'new';
@@ -110,6 +117,8 @@ function cellular_preprocess_comment(&$vars) {
 
   $submitted .= '<span class="comment-date">' . $vars['created'] . '</span>';
 
+  // No need to link comments...
+  $vars['title'] = $comment->subject;
 
   $vars['submitted'] = $submitted;
 }

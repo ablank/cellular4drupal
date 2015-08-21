@@ -40,24 +40,24 @@ function cellular_pager($vars) {
   }
   // End of generation loop preparation.
   $li_first = theme('pager_first', array(
-    'text' => (isset($tags[0]) ? $tags[0] : t('« first')),
+    'text' => isset($tags[0]) ? $tags[0] : t('First'),
     'element' => $element,
     'parameters' => $parameters,
   ));
   $li_previous = theme('pager_previous', array(
-    'text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')),
+    'text' => isset($tags[1]) ? $tags[1] : t('Previous'),
     'element' => $element,
     'interval' => 1,
     'parameters' => $parameters,
   ));
   $li_next = theme('pager_next', array(
-    'text' => (isset($tags[3]) ? $tags[3] : t('next ›')),
+    'text' => isset($tags[3]) ? $tags[3] : t('Next'),
     'element' => $element,
     'interval' => 1,
     'parameters' => $parameters,
   ));
   $li_last = theme('pager_last', array(
-    'text' => (isset($tags[4]) ? $tags[4] : t('last »')),
+    'text' => isset($tags[4]) ? $tags[4] : t('Last'),
     'element' => $element,
     'parameters' => $parameters,
   ));
@@ -67,10 +67,7 @@ function cellular_pager($vars) {
       $items[] = array('class' => array('pager-first'), 'data' => $li_first);
     }
     if ($li_previous) {
-      $items[] = array(
-        'class' => array('pager-previous'),
-        'data' => $li_previous,
-      );
+      $items[] = array('class' => array('pager-previous'),'data' => $li_previous);
     }
 
     // When there is more than one page, create the pager list.
@@ -79,7 +76,7 @@ function cellular_pager($vars) {
         $items[] = array('class' => array('pager-ellipsis'), 'data' => '…');
       }
       // Now generate the actual pager piece.
-      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+      for (;$i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),

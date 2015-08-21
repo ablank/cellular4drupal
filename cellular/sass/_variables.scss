@@ -6,12 +6,13 @@
 
 @import "compass";
 //////
-@import "variables/compass_defaults";
 @import "variables/grid";
 @import "variables/swatches";
 @import "variables/icons";
+@import "variables/compass_defaults";
 //////
 @import "_mixins/cellularmixins";
+@import "_mixins/animations";
 @import "_mixins/loaders";
 
 // Set stylesheet breakpoints
@@ -55,7 +56,7 @@ $p_color: $c1;
 
 $h_font: "Quicksand";
 $h_size: 2.4em;
-$h_weight: bold;
+$h_weight: normal;
 $h_color: $grey;
 
 // Content Region spacing

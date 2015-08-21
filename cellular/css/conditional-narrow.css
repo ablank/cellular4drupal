@@ -27,6 +27,15 @@
 */
 /**
   * @file
+  * CSS Animations.
+*/
+/*--------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/**
+  * @file
   * CSS loading indicators.
   * http://codepen.io/TaniaLD/pen/oKxep
   * http://projects.lukehaas.me/css-loaders/
@@ -37,7 +46,7 @@
   * Styling for tablets & other narrow devices included in style.css
 */
 @media screen and (min-width: 650px) and (max-width: 800px) {
-  /* line 11, ../sass/style/_mq_narrow.scss */
+  /* line 11, ../sass/style/_query_narrow.scss */
   body:before {
     content: "narrow-800px";
   }

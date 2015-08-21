@@ -1,8 +1,8 @@
 /**
- * @file
- * CellularUI : Cellular
- * Set default UI styles.
- */
+  * @file
+  * CellularUI : Cellular
+  * Set default UI styles.
+*/
 
 /* Variables specific to UI */
 $title_color: $white;
@@ -41,7 +41,7 @@ $border_radius: .5em;
       color: $title_color;
       background-color: $active_color;
     }
-    
+
     a,
     a:visited {
       font-weight: bold;

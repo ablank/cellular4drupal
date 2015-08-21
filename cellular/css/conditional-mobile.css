@@ -27,6 +27,15 @@
 */
 /**
   * @file
+  * CSS Animations.
+*/
+/*--------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/**
+  * @file
   * CSS loading indicators.
   * http://codepen.io/TaniaLD/pen/oKxep
   * http://projects.lukehaas.me/css-loaders/
@@ -37,7 +46,7 @@
   * Styling for mobile devices included in style.css
 */
 @media screen and (max-width: 650px) {
-  /* line 10, ../sass/style/_mq_mobile.scss */
+  /* line 10, ../sass/style/_query_mobile.scss */
   body:before {
     content: "mobile-650px";
   }

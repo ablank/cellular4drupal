@@ -5,30 +5,6 @@
  */
 
 /**
- * Return array of attributes.
- *
- * @param array $element
- *   Variable on which to set attributes.
- *
- * @return array
- *   Attributes to render.
- */
-function cellular_form_element_attributes(&$element) {
-  // $element['#theme_wrappers'] = NULL;
-  $attributes = array();
-  empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
-  empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
-  empty($element['#attributes']['class']) ? NULL : $attributes['class'] = implode(' ', $element['#attributes']['class']);
-  empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
-  empty($element['#required']) ? NULL : $attributes['required'] = $element['#required'];
-  empty($element['#checked']) ? NULL : $attributes['checked'] = 'checked';
-  empty($element['#size']) ? NULL : $attributes['size'] = $element['#size'];
-  empty($element['#maxlength']) ? NULL : $attributes['maxlength'] = $element['#maxlength'];
-
-  return $attributes;
-}
-
-/**
  * Implements theme_form().
  */
 function cellular_form($vars) {
@@ -41,8 +17,9 @@ function cellular_form($vars) {
   if (empty($element['#attributes']['accept-charset'])) {
     $element['#attributes']['accept-charset'] = "UTF-8";
   }
-  $output = '<form' . drupal_attributes($element['#attributes']) . '>';
-  $output .= $element['#children'] . '</form>';
+  // Generate markup.
+  $output = "\n<form" . drupal_attributes($element['#attributes']) . ">\n";
+  $output .= $element['#children'] . "\n</form>\n";
 
   return $output;
 }
@@ -71,17 +48,10 @@ function cellular_container(&$vars) {
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $output = '';
-  /* May decide to include later:
-    // $element['#theme_wrappers'] = NULL;
-    // $attributes['class'] = array();
-    // isset($element['#name']) ?
-    // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
-    // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
-    // : NULL;
-    // $element['#theme_wrappers'] = NULL;
-   */
-  isset($element['#disabled']) ?
-  $element['#attributes']['class'][] = 'disabled' : NULL;
+
+  if (isset($element['#disabled'])) {
+    $element['#attributes']['class'][] = 'disabled';
+  }
 
   $prefix = isset($element['#field_prefix']) ?
   '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
@@ -101,15 +71,15 @@ function cellular_form_element(&$vars) {
         $output .= ' ' . theme('form_element_label', $vars) . "\n";
         break;
 
-      case 'none':
       case 'attribute':
+      case 'none':
         $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
         break;
     }
   }
-
-  isset($element['#description']) ?
-  $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
+  if (!empty($element['#description'])) {
+    $output .= "\n<div class=\"description\">\n" . $element['#description'] . "\n</div>\n";
+  }
 
   return $output;
 }
@@ -119,18 +89,30 @@ function cellular_form_element(&$vars) {
  */
 function cellular_button(&$vars) {
   $element = $vars['element'];
-  $output = '';
   $element['#attributes']['type'] = 'submit';
   $element['#attributes']['class'][] = 'button';
+  $element['#attributes']['class'][] = $element['#parents'][0];
 
   element_set_attributes($element, array('id', 'name', 'value'));
 
   if (!empty($element['#attributes']['disabled'])) {
-    $element['#attributes']['class'][] = 'form-button-disabled';
+    $element['#attributes']['class'][] = 'disabled';
   }
-  $output .= '<input' . drupal_attributes($element['#attributes']) . ' />';
+  /* // May add this back if I can get css styling dialed in...
+    switch ($element['#parents'][0]) {
+    case 'preview':
+    case 'submit':
+    $element['#attributes']['class'][] = 'right';
+    break;
 
-  return $output;
+    case 'delete':
+    default:
+    $element['#attributes']['class'][] = 'left';
+    break;
+    }
+   */
+
+  return "\n<input" . drupal_attributes($element['#attributes']) . " />\n";
 }
 
 /**
@@ -139,36 +121,14 @@ function cellular_button(&$vars) {
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
-
   !empty($element['#title']) ?
   $output .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
   !empty($element['#description']) ?
-  $output .= '<div class="description">' . $element['#description']
-  . "</div>\n" : NULL;
-
+  $output .= '<div class="description">' . t($element['#description']) . "</div>\n" : NULL;
   // Add form elements.
   $output .= $element['#children'];
-
-  !empty($element['#value']) ?
-  $element['#value'] . "\n" : NULL;
-
+  $output .=!empty($element['#value']) ? $element['#value'] . "\n" : NULL;
   $output .= "</fieldset>\n";
-
-  return $output;
-}
-
-/**
- * Implements theme_select().
- */
-function cellular_select(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'select';
-
-  $output .= '<select' . drupal_attributes($attributes) . ">\n";
-  $output .= form_select_options($element) . "\n";
-  $output .= "</select>\n";
 
   return $output;
 }
@@ -177,63 +137,45 @@ function cellular_select(&$vars) {
  * Implements theme_checkboxes().
  */
 function cellular_checkboxes(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
 
-  $output .= "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ?
-  $element['#children'] : NULL;
-  $output .= "\n</div>\n";
-
-  return $output;
-}
-
-/**
- * Implements theme_checkbox().
- */
-function cellular_checkbox(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'checkbox';
-
-  element_set_attributes($element, array(
-    '#return_value' => 'value',
-  ));
-  $output .= "<input" . drupal_attributes($attributes) . " />";
-
-  return $output;
+  return cellular_xinputs($vars['element']);
 }
 
 /**
  * Implements theme_radios().
  */
 function cellular_radios(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
 
-  $output .= "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ? $element['#children'] : NULL;
-  $output .= "\n</div>\n";
+  return cellular_xinputs($vars['element']);
+}
 
-  return $output;
+/**
+ * Implements theme_checkbox().
+ */
+function cellular_checkbox(&$vars) {
+
+  return cellular_xinput($vars['element'], 'checkbox');
 }
 
 /**
  * Implements theme_radio().
  */
 function cellular_radio(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'radio';
 
-  element_set_attributes($element, array(
-    '#return_value' => 'value',
-  ));
-  $output .= "<input" . drupal_attributes($attributes) . " />";
+  return cellular_xinput($vars['element'], 'radio');
+}
+
+/**
+ * Implements theme_select().
+ */
+function cellular_select(&$vars) {
+  $element = $vars['element'];
+  $attributes = cellular_form_element_attributes($element);
+  $attributes['type'] = 'select';
+
+  $output = '<select' . drupal_attributes($attributes) . ">\n";
+  $output .= form_select_options($element) . "\n";
+  $output .= "</select>\n";
 
   return $output;
 }
@@ -243,15 +185,13 @@ function cellular_radio(&$vars) {
  */
 function cellular_textfield(&$vars) {
   $element = $vars['element'];
-  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'text';
+  if (!empty($element['#default_value'])) {
+    $attributes['placeholder'] = $element['#default_value'];
+  }
 
-  $value = empty($element['#value']) ? '' : ' value="' . $element['#value'] . '"';
-
-  $output .= '<input' . drupal_attributes($attributes) . $value . ' />';
-
-  return $output;
+  return '<input' . drupal_attributes($attributes) . '/>';
 }
 
 /**
@@ -259,16 +199,11 @@ function cellular_textfield(&$vars) {
  */
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
-  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'textarea';
-
+  $attributes['placeholder'] = t($element['#default_value']);
   $attributes['cols'] = isset($element['#cols']) ? $element['#cols'] : 60;
   $attributes['rows'] = isset($element['#rows']) ? $element['#rows'] : 5;
 
-  $output .= '<textarea' . drupal_attributes($attributes) . '>';
-  $output .= check_plain($element['#value']);
-  $output .= '</textarea>';
-
-  return $output;
+  return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }

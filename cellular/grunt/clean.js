@@ -6,6 +6,7 @@
 module.exports = {
   assets: [
     "assets/images/min",
-    "assets/icons/min"
+    "assets/icons/min",
+    "css/**/*.css"
   ]
 };

@@ -11,22 +11,21 @@ screenshot  = screenshot.png
 ;----------// Site Features
 features[] = name
 features[] = main_menu
-features[] = slogan
 features[] = node_user_picture
 features[] = comment_user_picture
 features[] = comment_user_verification
-;features[] = logo
 ;features[] = favicon
+;features[] = logo
+;features[] = slogan
 ;features[] = secondary_menu
 
 ;----------// Plugins
-breakpoints[mobile] = (min-width: 0px)and (max-width: 650px)
-breakpoints[narrow] = (min-width: 650px) and (max-width: 800px)
-breakpoints[wide] = (min-width: 800px) and (max-width: 1400px)
-breakpoints[tv] = only screen and (min-width: 1401px)
+breakpoints[default] = (min-width: 800px) and (max-width: 1280px)
+breakpoints[mobile] = screen and (min-width: 0px) and (max-width: 650px)
+breakpoints[narrow] = screen and (min-width: 650px) and (max-width: 800px)
+breakpoints[large] = screen and (min-width: 1280px)
 
 plugins[panels][layouts] = templates/panels
-settings[panelseverywhere] = 0
 
 ;----------// Stylesheets
 ; CSS is added in /inc/alter.css.inc for more robust control.
@@ -48,11 +47,9 @@ regions[footer_top]         = Footer Top
 regions[footer]             = Footer
 regions[footer_bottom]      = Footer Bottom
 
-;----------// General Settings
-settings[copyright]         = 0
+;----------// Theme Settings
 
 ;----------// Meta Settings
-settings[dev]                   = 0
 settings[favicon]               = favicon.ico
 settings[favicon_32]            = favicon-32.png
 settings[apple_icon_57]         = apple-touch-icon-57.png
@@ -61,6 +58,7 @@ settings[apple_icon_114]        = apple-touch-icon-114.png
 settings[apple_icon_144]        = apple-touch-icon-144.png
 
 ;----------// Markup Settings
+settings[copyright]                 =
 settings[full_menu]                 = 1
 settings[breadcrumb_display]        = 0
 settings[field_wrappers]            = 0
@@ -70,6 +68,7 @@ settings[login_block_orientation]   = vertical
 
 ;----------// Styles
 settings[min_style]                     = 0
+settings[inline_critical_css]           = 0
 settings[remove_drupal_css]             = select
 settings[content_class_no_sidebar]      = cell-100
 settings[content_class_single_sidebar]  = cell-70
@@ -81,12 +80,13 @@ settings[sidebar_class_dual_sidebars]   = cell-20
 settings[mq_mobile_enable]      = 0
 settings[mq_normal_enable]      = 0
 settings[mq_large_enable]       = 0
-settings[mq_mobile]    			= screen and (max-width: 650px)
-settings[mq_normal]    			= screen and (min-width: 650px) and (max-width: 1024px)
-settings[mq_large]    			= screen and (min-width: 1024px)
+settings[mq_mobile]             = screen and (max-width: 650px)
+settings[mq_normal]             = screen and (min-width: 650px) and (max-width: 1024px)
+settings[mq_large]              = screen and (min-width: 1024px)
 
 ;----------// jQuery Update
 settings[jquery_update]         = 1
+settings[jquery_plugins_update] = 1
 settings[jquery_cdn]            = 1
 settings[jquery_cdn_source]     = google
 settings[jquery_version]        = 1.11.1
@@ -95,8 +95,8 @@ settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
 ;----------// jQuery Plugins
-settings[cellularui]            = 1
 settings[min_script]            = 0
+settings[cellularui]            = 1
 settings[backstretch]           = 0
 settings[flowtype]              = 0
 settings[freetile]              = 0

@@ -1,7 +1,7 @@
 cellular.jSticky = function (opts) {
   o = jQuery.extend({
-    "sspeed": 500,
-    "delay": 200
+    sspeed: 500,
+    delay: 200
   }, opts);
 
   var fn = {};

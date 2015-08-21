@@ -9,7 +9,7 @@
  */
 function cellular_modernizr_default() {
   $css_dir = '/css/';
-  $ext = theme_get_setting('min_style') == 1 ? '.min.css' : '.css';
+  $ext = CELLULAR_CSS_EXT;
   // Build yepnope query based on theme settings.
   $mq = cellular_mq();
 
@@ -44,12 +44,71 @@ function cellular_modernizr_default() {
 }
 
 /**
+ * Update Drupal's default jQuery plugins.
+ *
+ * @param array $javascript
+ *   Associative array of javascripts.
+ *
+ * @param array $jquery
+ *   jQuery version info.
+ */
+function cellular_update_plugins(&$javascript, $jquery) {
+  $dir = 'drupal/';
+  $plugins = array(
+    'drupal' => array(
+      'default' => 'misc/drupal.js',
+      'version' => '7.38',
+      'file' => 'drupal',
+      'weight' => 10,
+    ),
+    'ajax' => array(
+      'default' => 'misc/ajax.js',
+      'version' => '7.38',
+      'file' => 'drupal.ajax',
+    ),
+    'progress' => array(
+      'default' => 'misc/progress.js',
+      'version' => '7.38',
+      'file' => 'drupal.progress',
+    ),
+    'bbq' => array(
+      'default' => 'misc/jquery.ba-bbq.js',
+      'version' => '1.3',
+      'file' => 'jquery.ba-bbq',
+    ),
+    'cookie' => array(
+      'default' => 'misc/jquery.cookie.js',
+      'version' => '1.4.1',
+      'file' => 'jquery.cookie',
+    ),
+    'form' => array(
+      'default' => 'misc/jquery.form.js',
+      'version' => '3.48',
+      'file' => 'jquery.form',
+    ),
+    'once' => array(
+      'default' => 'misc/jquery.once.js',
+      'version' => '1.2.6',
+      'file' => 'jquery.once',
+    ),
+  );
+
+  foreach ($plugins as $plugin) {
+    $plugin['file'] = $dir . $plugin['file'] . CELLULAR_JS_EXT;
+    cellular_js_override($javascript, $plugin, TRUE);
+  }
+}
+
+/**
  * Add javascript plugins using the cellular libraary.
  *
  * @return array
  *   Associative array of plugin data.
  */
 function cellular_plugins_js() {
+  $jquery = cellular_jquery_info();
+  $dir = 'plugins/';
+  $ext = CELLULAR_JS_EXT;
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
   theme_get_setting('modernizr') == 1 ? $js_plugins['modernizr'] = array(
@@ -59,6 +118,15 @@ function cellular_plugins_js() {
     'version' => '2.8.3',
     'weight' => -1000,
   ) : NULL;
+
+    // Add migrate to prevent plugins from breaking with jQuery > v1.9.
+  theme_get_setting('jquery_migrate') == 1 && floatval(substr($jquery['version'], 2)) >= 9 ?
+  $js_plugins['migrate'] = array(
+      'version' => '1.2.1',
+      'file' => 'plugins/jquery.migrate.min.js',
+      'group' => JS_LIBRARY,
+      'weight' => -96,
+    ) : NULL;
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = array(
     'object' => 'backstretch',
     'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js',

@@ -32,8 +32,10 @@ function cellular_jquery_info() {
  *   CDN URLs used to update jQuery & jQuery.ui
  */
 function cellular_cdn() {
+
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
+  $ext = CELLULAR_JS_EXT;
   /* Available cdns:
    * //ajax.googleapis.com/ajax/libs/jquery/1.10.4/jquery.min.js
    * //ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js
@@ -42,30 +44,28 @@ function cellular_cdn() {
   $networks = array(
     'jquery' => array(
       'base_url' => '//code.jquery.com/',
-      'jquery' => 'jquery-' . $jq['version'] . '.min.js',
-      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'ui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] . '/jquery-ui.css',
+      'jquery' => 'jquery-' . $jq['version'] . $ext,
+      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'theme' => 'ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'google' => array(
       'base_url' => '//ajax.googleapis.com/ajax/libs/',
-      'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
-      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] . '/jquery-ui.css',
+      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . $ext,
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'theme' => 'jqueryui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'microsoft' => array(
       'base_url' => '//ajax.aspnetcdn.com/ajax/',
-      'jquery' => 'jquery/jquery-' . $jq['version'] . '.min.js',
-      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] . '/jquery-ui.css',
+      'jquery' => 'jquery/jquery-' . $jq['version'] . $ext,
+      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'cloudflare' => array(
       'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
-      'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
-      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui.min.css',
+      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . $ext,
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . $ext,
+      // Themes aren't provided by cdnjs.
+      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui' . CELLULAR_CSS_EXT,
     ),
   );
 
@@ -83,92 +83,24 @@ function cellular_jquery_update(&$javascript) {
   // Override jQuery.
   $jquery = array(
     'default' => 'misc/jquery.js',
-    'object' => 'jQuery',
-    'version' => $jq['version'],
     'file' => 'jquery-' . $jq['version'] . '.min.js',
-    'group' => JS_LIBRARY,
+    'version' => $jq['version'],
     'every_page' => TRUE,
+    'group' => JS_LIBRARY,
     'weight' => -100,
   );
   // Set CDN or local source.
   if ($jq['use_cdn'] == 1) {
     $cdn = cellular_cdn();
+    $jquery['object'] = 'jQuery';
     $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
   }
   // Override jQuery.
   cellular_js_override($javascript, $jquery, TRUE);
-  // Update the Drupal jQuery plugins.
-  cellular_update_plugins($javascript, $jquery);
-}
-
-/**
- * Update Drupal's default jQuery plugins.
- *
- * @param array $javascript
- *   Associative array of javascripts.
- *
- * @param array $jquery
- *   jQuery version info.
- */
-function cellular_update_plugins(&$javascript, $jquery) {
-  $default_plugins = array(
-    'drupal' => array(
-      'default' => 'misc/drupal.js',
-      'file' => 'plugins/drupal.min.js',
-      'version' => '7.38',
-      'weight' => -11,
-    ),
-    'ajax' => array(
-      'default' => 'misc/ajax.js',
-      'version' => '7.38',
-      'file' => 'plugins/drupal.ajax.min.js',
-      'weight' => -10,
-    ),
-    'progress' => array(
-      'default' => 'misc/progress.js',
-      'version' => '7.38',
-      'file' => 'plugins/drupal.progress.min.js',
-      'weight' => -10,
-    ),
-    'bbq' => array(
-      'default' => 'misc/jquery.ba-bbq.js',
-      'version' => '1.3',
-      'file' => 'plugins/jquery.ba-bbq.min.js',
-    ),
-    'cookie' => array(
-      'default' => 'misc/jquery.cookie.js',
-      'version' => '1.4.1',
-      'file' => 'plugins/jquery.cookie.min.js',
-    ),
-    'form' => array(
-      'default' => 'misc/jquery.form.js',
-      'version' => '3.48',
-      'file' => 'plugins/jquery.form.min.js',
-    ),
-    'once' => array(
-      'default' => 'misc/jquery.once.js',
-      'version' => '1.2.6',
-      'file' => 'plugins/jquery.once.min.js',
-    ),
-  );
-
-  foreach ($default_plugins as $plugin) {
-    cellular_js_override($javascript, $plugin, TRUE);
+  // Update the Drupal's default jQuery plugins.
+  if (theme_get_setting('jquery_plugins_update') == 1) {
+    cellular_update_plugins($javascript, $jquery);
   }
-
-  // Add default theme plugins.
-  $add_plugins = array(
-    // Add migrate to prevent plugins from breaking with jQuery > v1.9.
-    'migrate' => (theme_get_setting('jquery_migrate') == 1) && floatval(substr($jquery['version'], 2)) >= 9 ?
-    array(
-      'version' => '1.2.1',
-      'file' => 'plugins/jquery.migrate.min.js',
-      'group' => JS_LIBRARY,
-      'weight' => -96,
-    ) : NULL,
-  );
-
-  cellular_add_js($add_plugins, TRUE);
 }
 
 /**
@@ -218,11 +150,11 @@ function cellular_jqueryui_update_js(&$javascript) {
       $script = array(
         'jqueryui' => array(
           'default' => $default,
-          'object' => 'jQuery.ui',
+          'object' => "jQuery.ui",
           'version' => $jq['ui']['version'],
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
-          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -9,
+          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -99,
           'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
           'browsers' => array('IE' => TRUE, '!IE' => TRUE),
@@ -231,7 +163,7 @@ function cellular_jqueryui_update_js(&$javascript) {
 
       if (theme_get_setting('jquery_cdn') == 1) {
         $cdn = cellular_cdn();
-        // If updating from cdn unset each widget so a single call can be made.
+        // If updating from cdn unset each widget so a single call is made for all widgets.
         unset($javascript[$default]);
         // Set cdn source.
         $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
@@ -241,6 +173,8 @@ function cellular_jqueryui_update_js(&$javascript) {
         cellular_add_js($script, TRUE);
       }
       else {
+        // Use local source, only include only scripts that are needed.
+        // Recommend AdvAgg, or use core aggregation in
         cellular_js_override($javascript, $script['jqueryui'], TRUE);
       }
     }
@@ -254,6 +188,7 @@ function cellular_jqueryui_update_js(&$javascript) {
  *   Associative array of stylesheets.
  */
 function cellular_jqueryui_update_css(&$css) {
+  $ext = CELLULAR_CSS_EXT;
   $ui['path'] = 'jquery-ui/';
   $ui['widgets'] = array(
     'core',
@@ -273,17 +208,16 @@ function cellular_jqueryui_update_css(&$css) {
   foreach ($ui['widgets'] as $widget) {
     $default = "misc/ui/jquery.ui.$widget.css";
     if (isset($css[$default])) {
-      $jq = cellular_jquery_info();
-      $jq = $jq['ui'];
+      $jq = cellular_jquery_info()['ui'];
       $style = array(
         'ui' => array(
           'default' => $default,
           'version' => $jq['version'],
           'group' => CSS_SYSTEM,
           'every_page' => FALSE,
-          'weight' => isset($css[$default]['weight']) ?
-          $css[$default]['weight'] : -9,
+          'weight' => isset($css[$default]['weight']) ? $css[$default]['weight'] : -9,
           'file' => NULL,
+          'preprocess' => TRUE,
         ),
       );
       // Remove default after updating styles.
@@ -292,13 +226,13 @@ function cellular_jqueryui_update_css(&$css) {
       if ($jq['theme'] === 'custom') {
         // Set path to local custom file if selected.
         $v = $jq['version'] === '1.10.4' ? '1.10' : '1.9';
-        $style['ui']['file'] = "/jquery-ui/jquery-ui.$v.css";
+        $style['ui']['file'] = "/jquery-ui/jquery-ui.$v.$ext";
 
         cellular_add_css($css, $style);
       }
       else {
         $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
-        $style['ui']['file'] = $ui_path . 'jquery-ui.css';
+        $style['ui']['file'] = $ui_path . 'jquery-ui' . $ext;
         if (theme_get_setting('jquery_cdn') == 1) {
           $cdn = cellular_cdn();
           // Set cdn source.

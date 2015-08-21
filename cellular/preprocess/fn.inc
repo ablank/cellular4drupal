@@ -36,6 +36,24 @@ function cellular_mq() {
 }
 
 /**
+ * Get file extensions as .min based on theme settings.
+ *
+ * @param $type string
+ *  Type of file to test settings for, either css or js.
+ *
+ * @return array
+ *  Extension string for each file type.
+ */
+function cellular_ext($type){
+  $settings = array(
+    'css' => theme_get_setting('min_style') == 1 ? '.min.css' : '.css',
+    'js' => theme_get_setting('min_script') == 1 ? '.min.js' : '.js',
+  );
+
+  return $settings[$type];
+}
+
+/**
  * Add <link> & <meta> tags from an array.
  *
  * @param array $array
@@ -75,29 +93,6 @@ function cellular_build_head_tags($array) {
 }
 
 /**
- * Set path to page-error.tpl if header error code is returned.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_error_page(&$vars) {
-  $http_status = drupal_get_http_header("status");
-
-  // Set error page template if error.
-  switch ($http_status) {
-    case "403 Forbidden":
-    case "404 Not Found":
-    case "500 Internal Server Error":
-      $vars['theme_hook_suggestions'][] = 'page__error';
-      $vars['http_status'] = "Error: " . $http_status;
-      $vars['classes_array'][] = 'page-error';
-      $vars['error_message'] = drupal_get_messages();
-
-      break;
-  }
-}
-
-/**
  * Removes text formatting options from user input.
  *
  * @param array $form
@@ -123,7 +118,6 @@ function cellular_form_format_opt(&$form, $form_state) {
  *
  * @param array $element
  *   Element to test and return variables of.
- */
 function cellular_dev($element) {
   if (theme_get_setting('dev') == 1) {
     if (module_exists('devel')) {
@@ -134,3 +128,4 @@ function cellular_dev($element) {
     }
   }
 }
+ */

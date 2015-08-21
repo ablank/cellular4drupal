@@ -1,10 +1,13 @@
 #comments {
+  // Wraps entire Comments area.
   h2 {
     background: $hilight;
     color: $white;
+    margin: .4em 0;
+    padding: 1em;
 
     &:after {
-    content: " ";
+      content: " ";
       position: absolute;
       bottom: -0.4em;
       left: 0;
@@ -17,37 +20,68 @@
   }
 }
 
+  // Page anchors.
+a[id^=comment-] {
+  position: absolute;
+  left: -999em;
+  visibility: hidden;
+}
+
+  // Comment reply threads.
+.indented {
+    margin-bottom: 0.1em;
+    padding: 0 0 0 1em;
+    border-left: $light_grey 1px solid;
+    border-bottom: $light_grey 1px solid;
+
+  .comment {
+    background-color: darken($white, 10%);
+  }
+}
+
+// Wraps individual comments.
 .comment {
   text-align: left;
-  margin: .4em;
-  padding: 1em;
-  border: 1px $light_grey solid;
+  width: 90%;
+  margin: 0.1em auto 0.4em;
+  border: 1px $grey solid;
+  background-color: darken($white, 3%);
+  @include box-shadow();
 
-    &.new {
-      border-color: $red;
-    }
-
-  h3 {
-    margin: 0;
+  &.new {
+    border-color: $red;
   }
 
-  .submitted {
-    font-size: 0.8em;
-    margin-left: 1em;
+  .post-info {
+    background-color: darken($light_grey, 10%);
   }
-
-  .links {
-    &.inline {
-      li {
-        list-style: none;
-        display: inline;
-      }
-    }
+  .links.inline {
+    margin: .4em -1em -1em;
+    background-color: darken($light_grey, 20%);
+    display: block;
+    font-size: .8em;
   }
 }
 
 .comment-date,
 .comment-author {
   display: block;
+  font-size: $small;
   //text-align: center;
 }
+
+.comment-title {
+  margin: 0;
+  font-size: $big;
+  color: $light_grey;
+  background-color: $dark_grey;
+
+  &:after {
+    content: '... ';
+  }
+}
+
+.comment-content {
+  padding: 1em;
+}
+

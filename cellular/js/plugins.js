@@ -16,14 +16,6 @@
         $('.jBlocklink').jBlocklink({
           cclass: "jBlocklink-link" // Class to add to wrapper link.
         });
-        $('form').jFormal({
-          inputs: [// Array of elements to format:
-            'input[type="text"]',
-            'input[type="email"]',
-            'input[type="password"]',
-            'textarea'
-          ]
-        });
         $('#nav').jMmenu({
           // Window breakpoint trigger:
           // "breakpoint": cellular.opts.breakpoint, // 650px

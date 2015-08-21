@@ -1,6 +1,5 @@
 {
-  "description": "Cellular theme Grunt build."
-  ,
+  "description": "Cellular theme Grunt build.",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -17,9 +16,11 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-criticalcss": "^0.5.0",
     "grunt-csscomb": "^3.0.0",
     "grunt-newer": "^0.7.0",
     "grunt-svg2png": "^0.2.1",
+    "grunt-uncss": "^0.4.3",
     "load-grunt-config": "*"
   },
   "dependencies": {

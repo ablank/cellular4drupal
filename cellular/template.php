@@ -12,12 +12,15 @@
 
 /*
  * @see file: preprocess/_init.inc
- * Initialize constants & globals
+ * Initialize constants & global variables.
  */
 
-define('CELLULAR_LIB', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');
 define('CURRENT_THEME_PATH', cellular_theme_path());
-
+define('CELLULAR_CSS_EXT', cellular_ext('css'));
+define('CELLULAR_JS_EXT', cellular_ext('js'));
+define('CELLULAR_INPUT_SIZE', 20);
+// May convert to use Libraries module at some point...
+define('CELLULAR_LIB', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');
 
 
 /*
@@ -54,6 +57,24 @@ function cellular_mq() {
   );
 
   return $mq;
+}
+
+/**
+ * Get file extensions as .min based on theme settings.
+ *
+ * @param $type string
+ *  Type of file to test settings for, either css or js.
+ *
+ * @return array
+ *  Extension string for each file type.
+ */
+function cellular_ext($type){
+  $settings = array(
+    'css' => theme_get_setting('min_style') == 1 ? '.min.css' : '.css',
+    'js' => theme_get_setting('min_script') == 1 ? '.min.js' : '.js',
+  );
+
+  return $settings[$type];
 }
 
 /**
@@ -96,29 +117,6 @@ function cellular_build_head_tags($array) {
 }
 
 /**
- * Set path to page-error.tpl if header error code is returned.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_error_page(&$vars) {
-  $http_status = drupal_get_http_header("status");
-
-  // Set error page template if error.
-  switch ($http_status) {
-    case "403 Forbidden":
-    case "404 Not Found":
-    case "500 Internal Server Error":
-      $vars['theme_hook_suggestions'][] = 'page__error';
-      $vars['http_status'] = "Error: " . $http_status;
-      $vars['classes_array'][] = 'page-error';
-      $vars['error_message'] = drupal_get_messages();
-
-      break;
-  }
-}
-
-/**
  * Removes text formatting options from user input.
  *
  * @param array $form
@@ -144,7 +142,6 @@ function cellular_form_format_opt(&$form, $form_state) {
  *
  * @param array $element
  *   Element to test and return variables of.
- */
 function cellular_dev($element) {
   if (theme_get_setting('dev') == 1) {
     if (module_exists('devel')) {
@@ -155,6 +152,7 @@ function cellular_dev($element) {
     }
   }
 }
+ */
 
 
 /*
@@ -302,9 +300,11 @@ function cellular_remove_default_css(&$css) {
       'colorbox' => 'styles/default/colorbox_style.css',
       'comment' => 'comment.css',
       'field' => 'theme/field.css',
+      'file' => 'file.css',
+      'image' => 'image.css',
       'filter' => 'filter.css',
       'help' => 'help.css',
-      'menu' => 'menu.css',
+      'media' => 'css/media.css',
       'node' => 'node.css',
       'panels' => 'css/panels.css',
       'search' => 'search.css',
@@ -314,6 +314,498 @@ function cellular_remove_default_css(&$css) {
 
     cellular_remove_css($css, $exclude);
   }
+}
+
+/**
+ * Add critical styles (above the fold) inline.
+ * @see http://fourword.fourkitchens.com/article/use-grunt-and-advagg-inline-critical-css-drupal-7-theme
+ */
+function cellular_critical_css($vars) {
+  if (theme_get_setting('inline_critical_css') == 1) {
+    $ext = CELLULAR_CSS_EXT;
+    $critical_opts = array(
+      'type' => 'inline',
+      'scope' => 'header',
+      'group' => CSS_SYSTEM,
+      'weight' => -1000,
+      'preprocess' => FALSE,
+    );
+
+    if ($vars['is_front'] == 1) {
+      $critical_file = 'critical-front' . $ext;
+    }
+    else {
+      $critical_file = 'critical' . $ext;
+    }
+
+    // Add the stylesheet inline.
+    drupal_add_css(file_get_contents(CURRENT_THEME_PATH . '/css/' . $critical_file), $critical_opts);
+  }
+}
+
+
+/*
+ * @see file: preprocess/fn.form.inc
+ * Cellular form utility functions.
+ */
+
+/**
+ * Array of attributes to be rendered.
+ *
+ * @param array $element
+ *   Variable on which to set attributes.
+ *
+ * @return array
+ *   Attributes to render.
+ */
+function cellular_form_element_attributes($element) {
+  // $element['#theme_wrappers'] = NULL;
+  $attributes = array();
+  //empty($element['#value']) ? NULL : $attributes['value'] = $element['#value'];
+  empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
+  empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
+  empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
+  empty($element['#required']) ? NULL : $attributes['required'] = $element['#required'];
+  empty($element['#size']) ? NULL : $attributes['size'] = $element['#size'];
+  empty($element['#maxlength']) ? NULL : $attributes['maxlength'] = $element['#maxlength'];
+  empty($element['#checked']) ? NULL : $attributes['checked'] = TRUE;
+  empty($element['#attributes']['class']) ? NULL : $attributes['class'] = implode(' ', $element['#attributes']['class']);
+
+  return $attributes;
+}
+
+/**
+ * Generate markup for theme_radios() & theme_checkboxes().
+ *
+ * @param array $element
+ *   Element being styled.
+ *
+ * @return string
+ *   Formatted markup.
+ */
+function cellular_xinputs(&$element) {
+  $attributes = cellular_form_element_attributes($element);
+
+  $output = "<div" . drupal_attributes($attributes) . ">\n";
+  $output .= isset($element['#children']) ? $element['#children'] : NULL;
+  $output .= "\n</div>\n";
+
+  return $output;
+}
+
+/**
+ * Generate markup for theme_radio() & theme_checkbox().
+ *
+ * @param array $element
+ *   Element being styled.
+ *
+ * @return string
+ *   Formatted markup.
+ */
+function cellular_xinput($element, $type) {
+  $attributes = cellular_form_element_attributes($element);
+  $attributes['type'] = $type;
+  $attributes['value'] = $element['#return_value'];
+
+  return "<input" . drupal_attributes($attributes) . " />";
+}
+
+
+/*
+ * @see file: preprocess/fn.jquery.inc
+ * Functions for updating jQuery & jQuery.ui.
+ */
+
+/**
+ * Get info from theme settings.
+ *
+ * @return array
+ *   Settings for jQuery & jQuery.ui
+ */
+function cellular_jquery_info() {
+  $jquery = array(
+    'update' => theme_get_setting('jquery_update'),
+    'version' => theme_get_setting('jquery_version'),
+    'use_cdn' => theme_get_setting('jquery_cdn'),
+    'cdn' => theme_get_setting('jquery_cdn_source'),
+    'ui' => array(
+      'version' => theme_get_setting('jqueryui_version'),
+      'theme' => theme_get_setting('jqueryui_theme'),
+    ),
+  );
+
+  return $jquery;
+}
+
+/**
+ * Configure links to CDN sources.
+ *
+ * @return array
+ *   CDN URLs used to update jQuery & jQuery.ui
+ */
+function cellular_cdn() {
+
+  $jq = cellular_jquery_info();
+  $ui = $jq['ui'];
+  $ext = CELLULAR_JS_EXT;
+  /* Available cdns:
+   * //ajax.googleapis.com/ajax/libs/jquery/1.10.4/jquery.min.js
+   * //ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js
+   * //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
+   */
+  $networks = array(
+    'jquery' => array(
+      'base_url' => '//code.jquery.com/',
+      'jquery' => 'jquery-' . $jq['version'] . $ext,
+      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'theme' => 'ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
+    ),
+    'google' => array(
+      'base_url' => '//ajax.googleapis.com/ajax/libs/',
+      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . $ext,
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'theme' => 'jqueryui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
+    ),
+    'microsoft' => array(
+      'base_url' => '//ajax.aspnetcdn.com/ajax/',
+      'jquery' => 'jquery/jquery-' . $jq['version'] . $ext,
+      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
+    ),
+    'cloudflare' => array(
+      'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
+      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . $ext,
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . $ext,
+      // Themes aren't provided by cdnjs.
+      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui' . CELLULAR_CSS_EXT,
+    ),
+  );
+
+  return $networks[$jq['cdn']];
+}
+
+/**
+ * Update jQuery.
+ *
+ * @param array $javascript
+ *   Associative array of javascripts.
+ */
+function cellular_jquery_update(&$javascript) {
+  $jq = cellular_jquery_info();
+  // Override jQuery.
+  $jquery = array(
+    'default' => 'misc/jquery.js',
+    'file' => 'jquery-' . $jq['version'] . '.min.js',
+    'version' => $jq['version'],
+    'every_page' => TRUE,
+    'group' => JS_LIBRARY,
+    'weight' => -100,
+  );
+  // Set CDN or local source.
+  if ($jq['use_cdn'] == 1) {
+    $cdn = cellular_cdn();
+    $jquery['object'] = 'jQuery';
+    $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
+  }
+  // Override jQuery.
+  cellular_js_override($javascript, $jquery, TRUE);
+  // Update the Drupal's default jQuery plugins.
+  if (theme_get_setting('jquery_plugins_update') == 1) {
+    cellular_update_plugins($javascript, $jquery);
+  }
+}
+
+/**
+ * Override jQueryUI javascript.
+ *
+ * @param array $javascript
+ *   Associative array of javascripts.
+ */
+function cellular_jqueryui_update_js(&$javascript) {
+  $jq = cellular_jquery_info();
+  $ui_widgets = array(
+    'ui.core',
+    'ui.accordion',
+    'ui.autocomplete',
+    'ui.button',
+    'ui.datepicker',
+    'ui.dialog',
+    'ui.draggable',
+    'ui.droppable',
+    'ui.mouse',
+    'ui.position',
+    'ui.progressbar',
+    'ui.resizable',
+    'ui.selectable',
+    'ui.slider',
+    'ui.sortable',
+    'ui.tabs',
+    'ui.widget',
+    'effects.blind',
+    'effects.bounce',
+    'effects.clip',
+    'effects.drop',
+    'effects.explode',
+    'effects.fade',
+    'effects.fold',
+    'effects.highlight',
+    'effects.pulsate',
+    'effects.scale',
+    'effects.shake',
+    'effects.slide',
+    'effects.transfer',
+  );
+
+  foreach ($ui_widgets as $widget) {
+    $default = 'misc/ui/jquery.' . $widget . '.min.js';
+    if (isset($javascript[$default])) {
+      $script = array(
+        'jqueryui' => array(
+          'default' => $default,
+          'object' => "jQuery.ui",
+          'version' => $jq['ui']['version'],
+          'group' => JS_LIBRARY,
+          'every_page' => FALSE,
+          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -99,
+          'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
+          'preprocess' => TRUE,
+          'browsers' => array('IE' => TRUE, '!IE' => TRUE),
+        ),
+      );
+
+      if (theme_get_setting('jquery_cdn') == 1) {
+        $cdn = cellular_cdn();
+        // If updating from cdn unset each widget so a single call is made for all widgets.
+        unset($javascript[$default]);
+        // Set cdn source.
+        $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
+        // Set lower weight so cdn is delivered before fallbacks.
+        $script['jqueryui']['weight'] = -10;
+        // Add single link to cdn, with local fallback to each file.
+        cellular_add_js($script, TRUE);
+      }
+      else {
+        // Use local source, only include only scripts that are needed.
+        // Recommend AdvAgg, or use core aggregation in
+        cellular_js_override($javascript, $script['jqueryui'], TRUE);
+      }
+    }
+  }
+}
+
+/**
+ * Update jQuery.ui stylesheets.
+ *
+ * @param array $css
+ *   Associative array of stylesheets.
+ */
+function cellular_jqueryui_update_css(&$css) {
+  $ext = CELLULAR_CSS_EXT;
+  $ui['path'] = 'jquery-ui/';
+  $ui['widgets'] = array(
+    'core',
+    'theme',
+    'accordion',
+    'autocomplete',
+    'button',
+    'datepicker',
+    'dialog',
+    'progressbar',
+    'resizable',
+    'selectable',
+    'slider',
+    'tabs',
+  );
+
+  foreach ($ui['widgets'] as $widget) {
+    $default = "misc/ui/jquery.ui.$widget.css";
+    if (isset($css[$default])) {
+      $jq = cellular_jquery_info()['ui'];
+      $style = array(
+        'ui' => array(
+          'default' => $default,
+          'version' => $jq['version'],
+          'group' => CSS_SYSTEM,
+          'every_page' => FALSE,
+          'weight' => isset($css[$default]['weight']) ? $css[$default]['weight'] : -9,
+          'file' => NULL,
+          'preprocess' => TRUE,
+        ),
+      );
+      // Remove default after updating styles.
+      unset($css[$default]);
+
+      if ($jq['theme'] === 'custom') {
+        // Set path to local custom file if selected.
+        $v = $jq['version'] === '1.10.4' ? '1.10' : '1.9';
+        $style['ui']['file'] = "/jquery-ui/jquery-ui.$v.$ext";
+
+        cellular_add_css($css, $style);
+      }
+      else {
+        $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
+        $style['ui']['file'] = $ui_path . 'jquery-ui' . $ext;
+        if (theme_get_setting('jquery_cdn') == 1) {
+          $cdn = cellular_cdn();
+          // Set cdn source.
+          $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];
+        }
+
+        cellular_add_css($css, $style, TRUE);
+      }
+    }
+  }
+}
+
+
+/*
+ * @see file: preprocess/fn.js.inc
+ * Cellular javascript functions.
+ */
+
+/**
+ * Add scripts from an array, using a CDN if provided.
+ *
+ * A fallback link will be automatically generated if using CDN and
+ * an 'object' value is provided.
+ *
+ * @param array $array
+ *   Assosciative array of javascript data.
+ * @param boolean $cellular
+ *   Reference cellular library if TRUE.
+ */
+function cellular_add_js($array, $cellular = FALSE) {
+  foreach ($array as $script) {
+    // Test if local or external source is provided.
+    if (!empty($script['cdn'])) {
+      $data = $script['cdn'];
+      cellular_js_fallback($script, $cellular);
+    }
+    else {
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      $data .= '/js/' . $script['file'];
+    }
+    // Set script attributes.
+    $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
+    $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
+    $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
+    $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
+    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+    $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
+    $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
+    empty($script['version']) ? NULL : $script['version'] = $script['version'];
+    
+
+    drupal_add_js($data, $script);
+  }
+}
+
+/**
+ * Javascript fallback to local source if CDN fails.
+ *
+ * @param array $script
+ *   Array of script attributes used to generate fallback.
+ * @param  $cellular
+ *   Reference cellular library if TRUE.
+ */
+function cellular_js_fallback($script, $cellular = FALSE) {
+  // Only add the fallback if an object has been provided to test.
+  if (!empty($script['object'])) {
+    $attributes = array(
+      'group' => !empty($script['group']) ? $script['group'] : JS_DEFAULT,
+      'weight' => !empty($script['weight']) ? $script['weight'] + 0.1 : 0,
+      'type' => 'inline',
+      'every_page' => !empty($script['every_page']) ? $script['every_page'] : FALSE,
+    );
+    // Construct the fallback script.
+    $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
+    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
+    $fallback .= '/js/' . $script['file'];
+    $fallback .= '\">\x3C/script>")';
+
+    drupal_add_js($fallback, $attributes);
+  }
+}
+
+/**
+ * Override existing $javascript sources.
+ *
+ * @param array $javascript
+ *   Associative array of javascripts.
+ * @param array $script
+ *   Array of attributes used to add javascript fallback.
+ * @param boolean $cellular
+ *   Reference cellular library if TRUE.
+ */
+function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
+  // Only override if js is being called.
+  if (!empty($javascript[$script['default']])) {
+    $ojs = $script['default'];
+
+    if (!empty($script['cdn'])) {
+      // If cdn is provided, set data to external source & call local fallback.
+      $data = $script['cdn'];
+      cellular_js_fallback($script, $cellular);
+    }
+    else {
+      // Use local source if no CDN is used.
+      if (!empty($script['file'])) {
+        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
+        $data .= '/js/' . $script['file'];
+      }
+    }
+
+    // Set the script attributes.
+    $javascript[$ojs]['data'] = $data;
+    $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
+    $javascript[$ojs]['scope'] = !empty($script['scope']) ? $script['scope'] : $javascript[$ojs]['scope'];
+    $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : $javascript[$ojs]['group'];
+    $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : $javascript[$ojs]['every_page'];
+    $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : $javascript[$ojs]['weight'];
+    $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : $javascript[$ojs]['preprocess'];
+    $javascript[$ojs]['cache'] = !empty($script['cache']) ? $script['cache'] : $javascript[$ojs]['cache'];
+    $javascript[$ojs]['defer'] = !empty($script['defer']) ? $script['defer'] : $javascript[$ojs]['defer'];
+    empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
+  }
+}
+
+/**
+ * Build modernizr query and add script inline on page.
+ *
+ * @param array $tests
+ *   Array of arrays used to build modernizr tests.
+ *   $tests['testName'] = array(
+ *   'test',
+ *   'yep',
+ *   'nope',
+ *   'both',
+ *   'complete',
+ *   );.
+ */
+function cellular_modernizr($tests) {
+  // $base_url needs to be added to set the correct path.
+  $dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
+  $query = '';
+
+  foreach ($tests as $test) {
+    $query .= "{\n";
+    $query .= "test : " . $test['test'] . ",\n";
+    empty($test['yep']) ? NULL : $query .= "yep : ['" . $dir . $test['yep'] . "'],\n";
+    empty($test['nope']) ? NULL : $query .= "nope : ['" . $dir . $test['nope'] . "'],\n";
+    empty($test['both']) ? NULL : $query .= "both : ['" . $dir . $test['both'] . "'],\n";
+    empty($test['complete']) ? NULL : $query .= "complete : function(){\n" . $test['complete'] . "},\n";
+    $query .= "},\n";
+  }
+
+  $modernizr = "Modernizr.load([\n$query]);\n";
+
+  drupal_add_js($modernizr, array(
+    'type' => 'inline',
+    'group' => JS_LIBRARY,
+    'every_page' => TRUE,
+    'weight' => -999,
+  ));
 }
 
 
@@ -371,465 +863,6 @@ function cellular_links__system_main_menu($vars) {
   return $output;
 }
 */
-
-/*
- * @see file: preprocess/fn.js.inc
- * Cellular javascript functions.
- */
-
-/**
- * Add scripts from an array, using a CDN if provided.
- *
- * A fallback link will be automatically generated if using CDN and
- * an 'object' value is provided.
- *
- * @param array $array
- *   Assosciative array of javascript data.
- * @param boolean $cellular
- *   Reference cellular library if TRUE.
- */
-function cellular_add_js($array, $cellular = FALSE) {
-  foreach ($array as $script) {
-    // Set default attributes.
-    $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
-    $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
-    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-    $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-    // Conditional attributes.
-    empty($script['version']) ? NULL : $script['version'] = $script['version'];
-    //
-    if (!empty($script['cdn'])) {
-      $data = $script['cdn'];
-      cellular_js_fallback($script, $cellular);
-    }
-    else {
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/js/' . $script['file'];
-    }
-
-    drupal_add_js($data, $script);
-  }
-}
-
-/**
- * Javascript fallback to local source if CDN fails.
- *
- * @param array $script
- *   Array of script attributes used to generate fallback.
- * @param  $cellular
- *   Reference cellular library if TRUE.
- */
-function cellular_js_fallback($script, $cellular = FALSE) {
-  // Only add the fallback if an object has been provided to test.
-  if (!empty($script['object'])) {
-    $attributes = array(
-      'group' => $script['group'],
-      'weight' => $script['weight'] + 0.1,
-      'type' => 'inline',
-      'every_page' => !empty($script['every_page']) ? $script['every_page'] : TRUE,
-    );
-    // Construct the fallback script.
-    $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-    $fallback .= '/js/' . $script['file'];
-    $fallback .= '\">\x3C/script>")';
-
-    drupal_add_js($fallback, $attributes);
-  }
-}
-
-/**
- * Override existing $javascript sources.
- *
- * @param array $javascript
- *   Associative array of javascripts.
- * @param array $script
- *   Array of attributes used to add javascript fallback.
- * @param boolean $cellular
- *   Reference cellular library if TRUE.
- */
-function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
-  // Only override if js is being called.
-  if (!empty($javascript[$script['default']])) {
-    $ojs = $script['default'];
-
-    if (!empty($script['cdn'])) {
-      // If cdn is provided, set data to external source & call local fallback.
-      $data = $script['cdn'];
-      cellular_js_fallback($script, $cellular);
-    }
-    else {
-      // Use local source if no CDN is used.
-      if (!empty($script['file'])) {
-        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-        $data .= '/js/' . $script['file'];
-      }
-    }
-
-    // Set the default attributes.
-    $javascript[$ojs]['data'] = $data;
-    $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : JS_LIBRARY;
-    $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-    $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-    $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
-    $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
-    // Set conditional attributes.
-    empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
-  }
-}
-
-/**
- * Build modernizr query and add script inline on page.
- *
- * @param array $tests
- *   Array of arrays used to build modernizr tests.
- *   $tests['testName'] = array(
- *   'test',
- *   'yep',
- *   'nope',
- *   'both',
- *   'complete',
- *   );.
- */
-function cellular_modernizr($tests) {
-  // $base_url needs to be added to set the correct path.
-  $dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
-  $query = '';
-
-  foreach ($tests as $test) {
-    $query .= "{\n";
-    $query .= "test : " . $test['test'] . ",\n";
-    empty($test['yep']) ? NULL : $query .= "yep : ['" . $dir . $test['yep'] . "'],\n";
-    empty($test['nope']) ? NULL : $query .= "nope : ['" . $dir . $test['nope'] . "'],\n";
-    empty($test['both']) ? NULL : $query .= "both : ['" . $dir . $test['both'] . "'],\n";
-    empty($test['complete']) ? NULL : $query .= "complete : function(){\n" . $test['complete'] . "},\n";
-
-    $query .= "},\n";
-  }
-
-  $modernizr = "Modernizr.load([\n$query]);\n";
-
-  drupal_add_js($modernizr, array(
-    'type' => 'inline',
-    'group' => JS_LIBRARY,
-    'every_page' => TRUE,
-    'weight' => -999,
-  ));
-}
-
-
-/*
- * @see file: preprocess/fn.jquery.inc
- * Functions for updating jQuery & jQuery.ui.
- */
-
-/**
- * Get info from theme settings.
- *
- * @return array
- *   Settings for jQuery & jQuery.ui
- */
-function cellular_jquery_info() {
-  $jquery = array(
-    'update' => theme_get_setting('jquery_update'),
-    'version' => theme_get_setting('jquery_version'),
-    'use_cdn' => theme_get_setting('jquery_cdn'),
-    'cdn' => theme_get_setting('jquery_cdn_source'),
-    'ui' => array(
-      'version' => theme_get_setting('jqueryui_version'),
-      'theme' => theme_get_setting('jqueryui_theme'),
-    ),
-  );
-
-  return $jquery;
-}
-
-/**
- * Configure links to CDN sources.
- *
- * @return array
- *   CDN URLs used to update jQuery & jQuery.ui
- */
-function cellular_cdn() {
-  $jq = cellular_jquery_info();
-  $ui = $jq['ui'];
-  /* Available cdns:
-   * //ajax.googleapis.com/ajax/libs/jquery/1.10.4/jquery.min.js
-   * //ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js
-   * //cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js
-   */
-  $networks = array(
-    'jquery' => array(
-      'base_url' => '//code.jquery.com/',
-      'jquery' => 'jquery-' . $jq['version'] . '.min.js',
-      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'ui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] . '/jquery-ui.css',
-    ),
-    'google' => array(
-      'base_url' => '//ajax.googleapis.com/ajax/libs/',
-      'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
-      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] . '/jquery-ui.css',
-    ),
-    'microsoft' => array(
-      'base_url' => '//ajax.aspnetcdn.com/ajax/',
-      'jquery' => 'jquery/jquery-' . $jq['version'] . '.min.js',
-      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/'
-      . $ui['theme'] . '/jquery-ui.css',
-    ),
-    'cloudflare' => array(
-      'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
-      'jquery' => 'jquery/' . $jq['version'] . '/jquery.min.js',
-      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui.min.js',
-      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui.min.css',
-    ),
-  );
-
-  return $networks[$jq['cdn']];
-}
-
-/**
- * Update jQuery.
- *
- * @param array $javascript
- *   Associative array of javascripts.
- */
-function cellular_jquery_update(&$javascript) {
-  $jq = cellular_jquery_info();
-  // Override jQuery.
-  $jquery = array(
-    'default' => 'misc/jquery.js',
-    'object' => 'jQuery',
-    'version' => $jq['version'],
-    'file' => 'jquery-' . $jq['version'] . '.min.js',
-    'group' => JS_LIBRARY,
-    'every_page' => TRUE,
-    'weight' => -100,
-  );
-  // Set CDN or local source.
-  if ($jq['use_cdn'] == 1) {
-    $cdn = cellular_cdn();
-    $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
-  }
-  // Override jQuery.
-  cellular_js_override($javascript, $jquery, TRUE);
-  // Update the Drupal jQuery plugins.
-  cellular_update_plugins($javascript, $jquery);
-}
-
-/**
- * Update Drupal's default jQuery plugins.
- *
- * @param array $javascript
- *   Associative array of javascripts.
- *
- * @param array $jquery
- *   jQuery version info.
- */
-function cellular_update_plugins(&$javascript, $jquery) {
-  $default_plugins = array(
-    'drupal' => array(
-      'default' => 'misc/drupal.js',
-      'file' => 'plugins/drupal.min.js',
-      'version' => '7.38',
-      'weight' => -11,
-    ),
-    'ajax' => array(
-      'default' => 'misc/ajax.js',
-      'version' => '7.38',
-      'file' => 'plugins/drupal.ajax.min.js',
-      'weight' => -10,
-    ),
-    'progress' => array(
-      'default' => 'misc/progress.js',
-      'version' => '7.38',
-      'file' => 'plugins/drupal.progress.min.js',
-      'weight' => -10,
-    ),
-    'bbq' => array(
-      'default' => 'misc/jquery.ba-bbq.js',
-      'version' => '1.3',
-      'file' => 'plugins/jquery.ba-bbq.min.js',
-    ),
-    'cookie' => array(
-      'default' => 'misc/jquery.cookie.js',
-      'version' => '1.4.1',
-      'file' => 'plugins/jquery.cookie.min.js',
-    ),
-    'form' => array(
-      'default' => 'misc/jquery.form.js',
-      'version' => '3.48',
-      'file' => 'plugins/jquery.form.min.js',
-    ),
-    'once' => array(
-      'default' => 'misc/jquery.once.js',
-      'version' => '1.2.6',
-      'file' => 'plugins/jquery.once.min.js',
-    ),
-  );
-
-  foreach ($default_plugins as $plugin) {
-    cellular_js_override($javascript, $plugin, TRUE);
-  }
-
-  // Add default theme plugins.
-  $add_plugins = array(
-    // Add migrate to prevent plugins from breaking with jQuery > v1.9.
-    'migrate' => (theme_get_setting('jquery_migrate') == 1) && floatval(substr($jquery['version'], 2)) >= 9 ?
-    array(
-      'version' => '1.2.1',
-      'file' => 'plugins/jquery.migrate.min.js',
-      'group' => JS_LIBRARY,
-      'weight' => -96,
-    ) : NULL,
-  );
-
-  cellular_add_js($add_plugins, TRUE);
-}
-
-/**
- * Override jQueryUI javascript.
- *
- * @param array $javascript
- *   Associative array of javascripts.
- */
-function cellular_jqueryui_update_js(&$javascript) {
-  $jq = cellular_jquery_info();
-  $ui_widgets = array(
-    'ui.core',
-    'ui.accordion',
-    'ui.autocomplete',
-    'ui.button',
-    'ui.datepicker',
-    'ui.dialog',
-    'ui.draggable',
-    'ui.droppable',
-    'ui.mouse',
-    'ui.position',
-    'ui.progressbar',
-    'ui.resizable',
-    'ui.selectable',
-    'ui.slider',
-    'ui.sortable',
-    'ui.tabs',
-    'ui.widget',
-    'effects.blind',
-    'effects.bounce',
-    'effects.clip',
-    'effects.drop',
-    'effects.explode',
-    'effects.fade',
-    'effects.fold',
-    'effects.highlight',
-    'effects.pulsate',
-    'effects.scale',
-    'effects.shake',
-    'effects.slide',
-    'effects.transfer',
-  );
-
-  foreach ($ui_widgets as $widget) {
-    $default = 'misc/ui/jquery.' . $widget . '.min.js';
-    if (isset($javascript[$default])) {
-      $script = array(
-        'jqueryui' => array(
-          'default' => $default,
-          'object' => 'jQuery.ui',
-          'version' => $jq['ui']['version'],
-          'group' => JS_LIBRARY,
-          'every_page' => FALSE,
-          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -9,
-          'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
-          'preprocess' => TRUE,
-          'browsers' => array('IE' => TRUE, '!IE' => TRUE),
-        ),
-      );
-
-      if (theme_get_setting('jquery_cdn') == 1) {
-        $cdn = cellular_cdn();
-        // If updating from cdn unset each widget so a single call can be made.
-        unset($javascript[$default]);
-        // Set cdn source.
-        $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
-        // Set lower weight so cdn is delivered before fallbacks.
-        $script['jqueryui']['weight'] = -10;
-        // Add single link to cdn, with local fallback to each file.
-        cellular_add_js($script, TRUE);
-      }
-      else {
-        cellular_js_override($javascript, $script['jqueryui'], TRUE);
-      }
-    }
-  }
-}
-
-/**
- * Update jQuery.ui stylesheets.
- *
- * @param array $css
- *   Associative array of stylesheets.
- */
-function cellular_jqueryui_update_css(&$css) {
-  $ui['path'] = 'jquery-ui/';
-  $ui['widgets'] = array(
-    'core',
-    'theme',
-    'accordion',
-    'autocomplete',
-    'button',
-    'datepicker',
-    'dialog',
-    'progressbar',
-    'resizable',
-    'selectable',
-    'slider',
-    'tabs',
-  );
-
-  foreach ($ui['widgets'] as $widget) {
-    $default = "misc/ui/jquery.ui.$widget.css";
-    if (isset($css[$default])) {
-      $jq = cellular_jquery_info();
-      $jq = $jq['ui'];
-      $style = array(
-        'ui' => array(
-          'default' => $default,
-          'version' => $jq['version'],
-          'group' => CSS_SYSTEM,
-          'every_page' => FALSE,
-          'weight' => isset($css[$default]['weight']) ?
-          $css[$default]['weight'] : -9,
-          'file' => NULL,
-        ),
-      );
-      // Remove default after updating styles.
-      unset($css[$default]);
-
-      if ($jq['theme'] === 'custom') {
-        // Set path to local custom file if selected.
-        $v = $jq['version'] === '1.10.4' ? '1.10' : '1.9';
-        $style['ui']['file'] = "/jquery-ui/jquery-ui.$v.css";
-
-        cellular_add_css($css, $style);
-      }
-      else {
-        $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
-        $style['ui']['file'] = $ui_path . 'jquery-ui.css';
-        if (theme_get_setting('jquery_cdn') == 1) {
-          $cdn = cellular_cdn();
-          // Set cdn source.
-          $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];
-        }
-
-        cellular_add_css($css, $style, TRUE);
-      }
-    }
-  }
-}
-
 
 /*
  * @see file: preprocess/fn.preprocess.inc
@@ -1058,6 +1091,8 @@ function cellular_test_sidebar(&$vars) {
   }
 }
 
+/* Under development, process vars for comment & node */
+
 /**
  *
  */
@@ -1073,7 +1108,7 @@ function cellular_author_info(&$vars) {
   return $author;
 }
 
-function cellular_post_date($node){
+function cellular_post_date($node) {
   // Date node was created.
   $date = "\n<span class=\"day\">" . date("j", $node->created) . "</span>\n";
   $date .= "<span class=\"month\">" . date("M", $node->created) . "</span>\n";
@@ -1081,6 +1116,28 @@ function cellular_post_date($node){
 
   return $date;
 }
+
+/**
+ * Set path to page-error.tpl if header error code is returned.
+ *
+ * @param array $vars
+ *   Associative array of variables to merge with defaults from the theme registry.
+ */
+function cellular_error_page(&$vars) {
+  $http_status = drupal_get_http_header("status");
+  // Set error page template if error.
+  switch ($http_status) {
+    case "403 Forbidden":
+    case "404 Not Found":
+    case "500 Internal Server Error":
+      $vars['theme_hook_suggestions'][] = 'page__error';
+      $vars['http_status'] = "Error: " . $http_status;
+      $vars['classes_array'][] = 'page-error';
+      $vars['error_message'] = drupal_get_messages();
+      break;
+  }
+}
+
 
 /*
  * @see file: preprocess/alter.inc
@@ -1132,7 +1189,7 @@ function cellular_css_alter(&$css) {
     cellular_jqueryui_update_css($css);
   }
   // Check for minified or standard style extension.
-  $ext = theme_get_setting('min_style') == 1 ? '.min.css' : '.css';
+  $ext = CELLULAR_CSS_EXT;
   // Add default stylesheets to theme, paths are relative to /YourTheme/css/
   $add_css = array(
     'drupal' => array(
@@ -1170,124 +1227,97 @@ function cellular_css_alter(&$css) {
  * Implements hook_form_alter().
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
+  $size = CELLULAR_INPUT_SIZE;
 
-  switch ($form_id) {
-    // Site Search block:
-    case 'search_block_form':
-    case 'search_form':
+  //drupal_set_message('<code><pre>' . print_r($form) . '</pre></code>');
+  switch ($form['#id']) {
+    /* Search page. */
+    case 'search-form':
+      $form['#attributes']['class'][] = 'site-search';
+      break;
 
-      $form['#attributes'] = array(
-        'class' => array('site-search'),
-      );
-
+    /* Search block. */
+    case 'search-block-form':
+      $form['#attributes']['class'][] = 'site-search';
       $form[$form_id]['#title'] = t('Search this site');
+      $form[$form_id]['#default_value'] = t('Keywords');
       $form[$form_id]['#type'] = 'textfield';
-      $form[$form_id]['#size'] = 25;
-      $form[$form_id]['#default_value'] = t('Search keywords');
+      $form[$form_id]['#size'] = $size;
       // Submit button.
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
-      // $form['actions']['submit']['#attributes']['class'] = array('search-submit');
-
       break;
 
-    // User Login block:FF
-    case 'user_login_block':
-      $field_size = 20;
+    /* User Login block. */
+    case 'user-login-form':
       $orient = theme_get_setting('login_block_orientation');
-
       $form['#attributes']['class'][] = $orient;
 
+      switch ($orient) {
+        case 'horizontal':
+          break;
+
+        case 'vertical':
+        default:
+          $form['actions']['submit']['#attributes']['class'][] = 'clearfix';
+          break;
+      }
+      
+      // Username
       $form['name'] = array(
         '#type' => 'textfield',
         '#title' => t('Name'),
         '#default_value' => t('Username'),
-        '#size' => $field_size,
+        '#size' => $size,
       );
+      // Password
       $form['pass'] = array(
         '#type' => 'password',
         '#title' => t('Password'),
         '#default_value' => t('Password'),
-        '#size' => $field_size,
+        '#size' => $size,
       );
-      $form['actions']['submit'][] = array(
-        // Change the text on the submit button:
-        '#value' => t('Log in'),
-        '#attributes' => array(
-          'class' => array(
-            $orient === 'vertical' ? 'clearfix' : NULL,
-          ),
-        ),
-      );
+      // Submit button
+      $form['actions']['submit']['#attributes']['#value'] = t('Log in');
 
-      // Remove Request New Password and other links from Block form:
+      /* Request New Password & Register New Account Links. */
+      $login_links = NULL;
       $user_reg = theme_get_setting('login_block_register');
       $user_pass = theme_get_setting('login_block_password');
 
       if (isset($user_reg) || isset($user_pass)) {
-        $output = '<div id="login-links">';
+        $login_links = '<div class="login-links">';
         if (!empty($user_reg)) {
-          $output .= l(t('Register'), "user/register", array(
+          $login_links .= l(t('Register'), "user/register", array(
             'attributes' => array(
               'class' => array('register'),
           )));
         }
         if (!empty($user_pass)) {
-          $output .= l(t('Forgotten Password?'), "user/password", array(
+          $login_links .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
               'class' => array('password'),
           )));
         }
-        $output .= '</div>';
+        $login_links .= '</div>';
       }
-      else {
-        $output = NULL;
-      }
+      $form['links']['#markup'] = $login_links;
+      break;
 
-      $form['links']['#markup'] = $output;
-      // Register New User Account:
-      /*
-        $form['links']['#markup'][] = t('Register')
-        . ' <a href="/user/register">'
-        . t('Register') . '</a>';
-       */
-
-      // Forgot Password:
-      /*
-        $form['links']['#markup'][] = t('Forgotten Password?')
-        . ' <a href="/user/password">'
-        . t('Forgotten Password?') . '</a>';
-       */
-
-      // Register New User Account &&  Forgot Password:
-      /*
-        $form['links']['#markup'] = '<hr/>'
-        . ' <a class="user-register" href="/user/register">'
-        . t('Register') . '</a>' . '<hr/>'
-        . ' <a class="user-password" href="/user/password">'
-        . t('Forgotten Password?') . '</a>';
-       */
-
+    /* Comment Form. */
+    case 'comment-form':
+      $form['comment_body']['und'][0]['#default_value'] = t('I think...');
+      // Hide unwanted form fields.
+      $form['author']['#access'] = FALSE;
+      $form['subject']['#access'] = FALSE;
+      $form['actions']['preview']['#access'] = FALSE;
+      // Customize Submit button.
+      $form['actions']['submit']['#value'] = t('Submit');
+      $form['actions']['submit']['#attributes']['class'][] = 'right';
+      // Remove text format option descriptions.
+      $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
       break;
   }
-}
-
-/**
- * Implements hook__form_comment_form_alter().
- */
-function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
-  // Set field sizes.
-  // $field_size = 32;
-  // Remove text format option.
-  $form['comment_body'][LANGUAGE_NONE][0]['#default_value'] = t('Add your comment');
-  $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
-  // Hide unwanted form fields.
-  $form['author']['#access'] = FALSE;
-  $form['subject']['#access'] = FALSE;
-  $form['actions']['preview']['#access'] = FALSE;
-  // Customize Submit button.
-  $form['actions']['submit']['#value'] = t('Submit');
-  $form['actions']['submit']['#attributes']['class'][] = 'right';
 }
 
 
@@ -1300,33 +1330,26 @@ function cellular_form_comment_form_alter(&$form, $form_state, $form_id) {
  * Implements hook_js_alter().
  */
 function cellular_js_alter(&$javascript) {
-  // Pass variables from drupal to js.
-  cellular_js();
-
-  // Get array of js plugins to add.
-  $js_plugins = cellular_plugins_js();
-
+  // Pass variables to client as drupal.settings.
+  cellular_js_settings();
   // Add Modernizr & query based on theme settings.
   theme_get_setting('modernizr') == 1 ? cellular_modernizr_default() : NULL;
-
   // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     cellular_jquery_update($javascript);
     cellular_jqueryui_update_js($javascript);
   }
+  // Add js for plugins after overriding default js.
+  cellular_add_js(cellular_plugins_js(), TRUE);
 
-  // Add js after override.
-  cellular_add_js($js_plugins, TRUE);
-
-  // Dev.
-  // cellular_dev($javascript);
+  // dpm($javascript);
 }
 
 /**
  * Pass variables to javascript , used to call plugin.js if plugins are selected.
  */
-function cellular_js() {
-  $ext = theme_get_setting('min_script') == 1 ? '.min.js' : '.js';
+function cellular_js_settings() {
+  $ext = CELLULAR_JS_EXT;
 
   // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
@@ -1383,7 +1406,7 @@ function cellular_js() {
  */
 function cellular_modernizr_default() {
   $css_dir = '/css/';
-  $ext = theme_get_setting('min_style') == 1 ? '.min.css' : '.css';
+  $ext = CELLULAR_CSS_EXT;
   // Build yepnope query based on theme settings.
   $mq = cellular_mq();
 
@@ -1418,12 +1441,71 @@ function cellular_modernizr_default() {
 }
 
 /**
+ * Update Drupal's default jQuery plugins.
+ *
+ * @param array $javascript
+ *   Associative array of javascripts.
+ *
+ * @param array $jquery
+ *   jQuery version info.
+ */
+function cellular_update_plugins(&$javascript, $jquery) {
+  $dir = 'drupal/';
+  $plugins = array(
+    'drupal' => array(
+      'default' => 'misc/drupal.js',
+      'version' => '7.38',
+      'file' => 'drupal',
+      'weight' => 10,
+    ),
+    'ajax' => array(
+      'default' => 'misc/ajax.js',
+      'version' => '7.38',
+      'file' => 'drupal.ajax',
+    ),
+    'progress' => array(
+      'default' => 'misc/progress.js',
+      'version' => '7.38',
+      'file' => 'drupal.progress',
+    ),
+    'bbq' => array(
+      'default' => 'misc/jquery.ba-bbq.js',
+      'version' => '1.3',
+      'file' => 'jquery.ba-bbq',
+    ),
+    'cookie' => array(
+      'default' => 'misc/jquery.cookie.js',
+      'version' => '1.4.1',
+      'file' => 'jquery.cookie',
+    ),
+    'form' => array(
+      'default' => 'misc/jquery.form.js',
+      'version' => '3.48',
+      'file' => 'jquery.form',
+    ),
+    'once' => array(
+      'default' => 'misc/jquery.once.js',
+      'version' => '1.2.6',
+      'file' => 'jquery.once',
+    ),
+  );
+
+  foreach ($plugins as $plugin) {
+    $plugin['file'] = $dir . $plugin['file'] . CELLULAR_JS_EXT;
+    cellular_js_override($javascript, $plugin, TRUE);
+  }
+}
+
+/**
  * Add javascript plugins using the cellular libraary.
  *
  * @return array
  *   Associative array of plugin data.
  */
 function cellular_plugins_js() {
+  $jquery = cellular_jquery_info();
+  $dir = 'plugins/';
+  $ext = CELLULAR_JS_EXT;
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
   theme_get_setting('modernizr') == 1 ? $js_plugins['modernizr'] = array(
@@ -1433,6 +1515,15 @@ function cellular_plugins_js() {
     'version' => '2.8.3',
     'weight' => -1000,
   ) : NULL;
+
+    // Add migrate to prevent plugins from breaking with jQuery > v1.9.
+  theme_get_setting('jquery_migrate') == 1 && floatval(substr($jquery['version'], 2)) >= 9 ?
+  $js_plugins['migrate'] = array(
+      'version' => '1.2.1',
+      'file' => 'plugins/jquery.migrate.min.js',
+      'group' => JS_LIBRARY,
+      'weight' => -96,
+    ) : NULL;
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = array(
     'object' => 'backstretch',
     'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js',
@@ -1566,11 +1657,13 @@ function cellular_preprocess_html(&$vars) {
  * Implements template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
-// Set main_menu as full-tree or top-level as defined in settings.
+  // Add critical css inline if set.
+  cellular_critical_css($vars);
+  // Set main_menu as full-tree or top-level as defined in settings.
   cellular_main_menu($vars);
-// Set classes for content & sidebar regions.
+  // Set classes for content & sidebar regions.
   cellular_test_sidebar($vars);
-// Link site name to frontpage.
+  // Link site name to frontpage.
   $vars['site_name'] = l($vars['site_name'], '<front>');
   // Set Social Media links.
   $vars['page']['social_media_share'] = cellular_social_media_share();
@@ -1581,6 +1674,8 @@ function cellular_preprocess_page(&$vars) {
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ?
   "&copy; " . date("Y") . " $copyright" : '';
+  // Automate error pages.
+  cellular_error_page($vars);
 
   /* Work in progress... */
   // Add template suggestion for custom content types(page--content-type.tpl.php)
@@ -1636,10 +1731,13 @@ function cellular_preprocess_block(&$vars) {
  * Implements template_preprocess_comment().
  */
 function cellular_preprocess_comment(&$vars) {
+  $comment = $vars ['elements']['#comment'];
+  //dpm($comment);
   // Set the template used by comments.
   $vars['theme_hook_suggestions'][] = 'comment';
   $vars['title_attributes_array']['class'][] = 'comment-title';
   $vars['content_attributes_array']['class'][] = 'comment-content';
+  $vars['content_attributes_array']['class'][] = 'clearfix';
 
   if (!empty($vars['new'])) {
     $vars['classes_array'][] = 'new';
@@ -1656,6 +1754,8 @@ function cellular_preprocess_comment(&$vars) {
 
   $submitted .= '<span class="comment-date">' . $vars['created'] . '</span>';
 
+  // No need to link comments...
+  $vars['title'] = $comment->subject;
 
   $vars['submitted'] = $submitted;
 }
@@ -1699,10 +1799,10 @@ function cellular_preprocess_maintenance_page(&$vars) {
  * Implements theme_links().
  */
 function cellular_links($vars) {
+  global $language_url;
   $links = $vars ['links'];
   $attributes = $vars ['attributes'];
   $heading = $vars ['heading'];
-  global $language_url;
   $output = '';
 
   if (count($links) > 0) {
@@ -1877,30 +1977,6 @@ function cellular_feed_icon(&$vars) {
  */
 
 /**
- * Return array of attributes.
- *
- * @param array $element
- *   Variable on which to set attributes.
- *
- * @return array
- *   Attributes to render.
- */
-function cellular_form_element_attributes(&$element) {
-  // $element['#theme_wrappers'] = NULL;
-  $attributes = array();
-  empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
-  empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
-  empty($element['#attributes']['class']) ? NULL : $attributes['class'] = implode(' ', $element['#attributes']['class']);
-  empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
-  empty($element['#required']) ? NULL : $attributes['required'] = $element['#required'];
-  empty($element['#checked']) ? NULL : $attributes['checked'] = 'checked';
-  empty($element['#size']) ? NULL : $attributes['size'] = $element['#size'];
-  empty($element['#maxlength']) ? NULL : $attributes['maxlength'] = $element['#maxlength'];
-
-  return $attributes;
-}
-
-/**
  * Implements theme_form().
  */
 function cellular_form($vars) {
@@ -1913,8 +1989,9 @@ function cellular_form($vars) {
   if (empty($element['#attributes']['accept-charset'])) {
     $element['#attributes']['accept-charset'] = "UTF-8";
   }
-  $output = '<form' . drupal_attributes($element['#attributes']) . '>';
-  $output .= $element['#children'] . '</form>';
+  // Generate markup.
+  $output = "\n<form" . drupal_attributes($element['#attributes']) . ">\n";
+  $output .= $element['#children'] . "\n</form>\n";
 
   return $output;
 }
@@ -1943,17 +2020,10 @@ function cellular_container(&$vars) {
 function cellular_form_element(&$vars) {
   $element = $vars['element'];
   $output = '';
-  /* May decide to include later:
-    // $element['#theme_wrappers'] = NULL;
-    // $attributes['class'] = array();
-    // isset($element['#name']) ?
-    // $attributes['class'][] = 'form-' . strtr($element['#name'], array(
-    // ' ' => '-', '_' => '-', '[' => '-', ']' => ''))
-    // : NULL;
-    // $element['#theme_wrappers'] = NULL;
-   */
-  isset($element['#disabled']) ?
-  $element['#attributes']['class'][] = 'disabled' : NULL;
+
+  if (isset($element['#disabled'])) {
+    $element['#attributes']['class'][] = 'disabled';
+  }
 
   $prefix = isset($element['#field_prefix']) ?
   '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
@@ -1973,15 +2043,15 @@ function cellular_form_element(&$vars) {
         $output .= ' ' . theme('form_element_label', $vars) . "\n";
         break;
 
-      case 'none':
       case 'attribute':
+      case 'none':
         $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
         break;
     }
   }
-
-  isset($element['#description']) ?
-  $output .= '<div class="description">' . $element['#description'] . "</div>\n" : NULL;
+  if (!empty($element['#description'])) {
+    $output .= "\n<div class=\"description\">\n" . $element['#description'] . "\n</div>\n";
+  }
 
   return $output;
 }
@@ -1991,18 +2061,30 @@ function cellular_form_element(&$vars) {
  */
 function cellular_button(&$vars) {
   $element = $vars['element'];
-  $output = '';
   $element['#attributes']['type'] = 'submit';
   $element['#attributes']['class'][] = 'button';
+  $element['#attributes']['class'][] = $element['#parents'][0];
 
   element_set_attributes($element, array('id', 'name', 'value'));
 
   if (!empty($element['#attributes']['disabled'])) {
-    $element['#attributes']['class'][] = 'form-button-disabled';
+    $element['#attributes']['class'][] = 'disabled';
   }
-  $output .= '<input' . drupal_attributes($element['#attributes']) . ' />';
+  /* // May add this back if I can get css styling dialed in...
+    switch ($element['#parents'][0]) {
+    case 'preview':
+    case 'submit':
+    $element['#attributes']['class'][] = 'right';
+    break;
 
-  return $output;
+    case 'delete':
+    default:
+    $element['#attributes']['class'][] = 'left';
+    break;
+    }
+   */
+
+  return "\n<input" . drupal_attributes($element['#attributes']) . " />\n";
 }
 
 /**
@@ -2011,36 +2093,14 @@ function cellular_button(&$vars) {
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
-
   !empty($element['#title']) ?
   $output .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
   !empty($element['#description']) ?
-  $output .= '<div class="description">' . $element['#description']
-  . "</div>\n" : NULL;
-
+  $output .= '<div class="description">' . t($element['#description']) . "</div>\n" : NULL;
   // Add form elements.
   $output .= $element['#children'];
-
-  !empty($element['#value']) ?
-  $element['#value'] . "\n" : NULL;
-
+  $output .=!empty($element['#value']) ? $element['#value'] . "\n" : NULL;
   $output .= "</fieldset>\n";
-
-  return $output;
-}
-
-/**
- * Implements theme_select().
- */
-function cellular_select(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'select';
-
-  $output .= '<select' . drupal_attributes($attributes) . ">\n";
-  $output .= form_select_options($element) . "\n";
-  $output .= "</select>\n";
 
   return $output;
 }
@@ -2049,63 +2109,45 @@ function cellular_select(&$vars) {
  * Implements theme_checkboxes().
  */
 function cellular_checkboxes(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
 
-  $output .= "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ?
-  $element['#children'] : NULL;
-  $output .= "\n</div>\n";
-
-  return $output;
-}
-
-/**
- * Implements theme_checkbox().
- */
-function cellular_checkbox(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'checkbox';
-
-  element_set_attributes($element, array(
-    '#return_value' => 'value',
-  ));
-  $output .= "<input" . drupal_attributes($attributes) . " />";
-
-  return $output;
+  return cellular_xinputs($vars['element']);
 }
 
 /**
  * Implements theme_radios().
  */
 function cellular_radios(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
 
-  $output .= "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ? $element['#children'] : NULL;
-  $output .= "\n</div>\n";
+  return cellular_xinputs($vars['element']);
+}
 
-  return $output;
+/**
+ * Implements theme_checkbox().
+ */
+function cellular_checkbox(&$vars) {
+
+  return cellular_xinput($vars['element'], 'checkbox');
 }
 
 /**
  * Implements theme_radio().
  */
 function cellular_radio(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-  $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'radio';
 
-  element_set_attributes($element, array(
-    '#return_value' => 'value',
-  ));
-  $output .= "<input" . drupal_attributes($attributes) . " />";
+  return cellular_xinput($vars['element'], 'radio');
+}
+
+/**
+ * Implements theme_select().
+ */
+function cellular_select(&$vars) {
+  $element = $vars['element'];
+  $attributes = cellular_form_element_attributes($element);
+  $attributes['type'] = 'select';
+
+  $output = '<select' . drupal_attributes($attributes) . ">\n";
+  $output .= form_select_options($element) . "\n";
+  $output .= "</select>\n";
 
   return $output;
 }
@@ -2115,15 +2157,13 @@ function cellular_radio(&$vars) {
  */
 function cellular_textfield(&$vars) {
   $element = $vars['element'];
-  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'text';
+  if (!empty($element['#default_value'])) {
+    $attributes['placeholder'] = $element['#default_value'];
+  }
 
-  $value = empty($element['#value']) ? '' : ' value="' . $element['#value'] . '"';
-
-  $output .= '<input' . drupal_attributes($attributes) . $value . ' />';
-
-  return $output;
+  return '<input' . drupal_attributes($attributes) . '/>';
 }
 
 /**
@@ -2131,18 +2171,13 @@ function cellular_textfield(&$vars) {
  */
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
-  $output = '';
   $attributes = cellular_form_element_attributes($element);
   $attributes['type'] = 'textarea';
-
+  $attributes['placeholder'] = t($element['#default_value']);
   $attributes['cols'] = isset($element['#cols']) ? $element['#cols'] : 60;
   $attributes['rows'] = isset($element['#rows']) ? $element['#rows'] : 5;
 
-  $output .= '<textarea' . drupal_attributes($attributes) . '>';
-  $output .= check_plain($element['#value']);
-  $output .= '</textarea>';
-
-  return $output;
+  return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
 
 
@@ -2187,24 +2222,24 @@ function cellular_pager($vars) {
   }
   // End of generation loop preparation.
   $li_first = theme('pager_first', array(
-    'text' => (isset($tags[0]) ? $tags[0] : t('« first')),
+    'text' => isset($tags[0]) ? $tags[0] : t('First'),
     'element' => $element,
     'parameters' => $parameters,
   ));
   $li_previous = theme('pager_previous', array(
-    'text' => (isset($tags[1]) ? $tags[1] : t('‹ previous')),
+    'text' => isset($tags[1]) ? $tags[1] : t('Previous'),
     'element' => $element,
     'interval' => 1,
     'parameters' => $parameters,
   ));
   $li_next = theme('pager_next', array(
-    'text' => (isset($tags[3]) ? $tags[3] : t('next ›')),
+    'text' => isset($tags[3]) ? $tags[3] : t('Next'),
     'element' => $element,
     'interval' => 1,
     'parameters' => $parameters,
   ));
   $li_last = theme('pager_last', array(
-    'text' => (isset($tags[4]) ? $tags[4] : t('last »')),
+    'text' => isset($tags[4]) ? $tags[4] : t('Last'),
     'element' => $element,
     'parameters' => $parameters,
   ));
@@ -2214,10 +2249,7 @@ function cellular_pager($vars) {
       $items[] = array('class' => array('pager-first'), 'data' => $li_first);
     }
     if ($li_previous) {
-      $items[] = array(
-        'class' => array('pager-previous'),
-        'data' => $li_previous,
-      );
+      $items[] = array('class' => array('pager-previous'),'data' => $li_previous);
     }
 
     // When there is more than one page, create the pager list.
@@ -2226,7 +2258,7 @@ function cellular_pager($vars) {
         $items[] = array('class' => array('pager-ellipsis'), 'data' => '…');
       }
       // Now generate the actual pager piece.
-      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+      for (;$i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
@@ -2565,19 +2597,19 @@ function cellular_social_media_share() {
 
 /**
  * Implements template_process_html().
- */
 function cellular_process_html(&$vars) {
+  // dpm($vars);
   // Push modified styles to page.
   // $vars['styles'] = drupal_get_css($vars['css'], FALSE);
 }
+ */
 
 /**
  * Implements template_process_page().
- */
 function cellular_process_page(&$vars) {
-  // Dev.
-  cellular_dev($vars);
+  // dpm($vars);
 }
+ */
 
 
 /*

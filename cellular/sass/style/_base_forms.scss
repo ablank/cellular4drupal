@@ -3,11 +3,11 @@
   * Form styling
 */
 
-$input_size: 2em;
+$i_width: 90%;
 
 form {
   display: block;
-  max-width: $p_max_width;
+  //max-width: $p_max_width;
   margin: 0 auto;
 
   // Form Alignment Classes
@@ -33,6 +33,7 @@ form {
       float: none;
     }
   }
+
   &.vertical {
     label,
     input[type="text"],
@@ -61,7 +62,7 @@ legend {
   font-weight: $h_weight;
   font-size: $big;
   padding: 0 $small;
-  color: $light_grey;
+  color: $grey;
 }
 
 label {
@@ -88,6 +89,9 @@ textarea {
 }
 
 input {
+  &:focus {
+    outline: none;
+  }
 
   &[type="hidden"] {
     display: none;
@@ -101,13 +105,12 @@ input {
   &[type="password"] {
     display: block;
     margin: $tiny auto $normal;
-    width: 90%;
-    border: $light_grey $border;
+    border: $grey $border;
     color: $dark_grey;
     background: darken($white, 2%);
-      
+
     &:focus {
-      color: $dark_grey;
+      color: $p_color;
       background: $white;
       box-shadow: 0 0 0.2em 0 $hilight;
     }
@@ -155,21 +158,21 @@ textarea {
   display: block;
   overflow: auto;
   vertical-align: top;
-  width: 90%;
-  border: $light_grey $border;
+  border: $grey $border;
   color: $dark_grey;
   background: darken($white, 2%);
 
   &:focus {
     color: $p_color;
     background: $white;
+    box-shadow: 0 0 0.2em 0 $hilight;
   }
 }
 
 select {
   cursor: pointer;
   padding: $tiny;
-  border: $light_grey $border;
+  border: $grey $border;
 }
 
 optgroup {
@@ -182,43 +185,43 @@ option {
 button,
 input[type="button"],
 input[type="submit"] {
-  margin: 0.4em 0.4em 0;
+  margin: 0.4em 0 1.4em;
   @include button();
 }
 
 //Form Alert Classes
 
 .required {
+  font-weight: bold;
+  box-shadow: 0 0 0.1em 0 $hilight;
+
   &:after {
-    content: ' *';
-    font-weight: bold;
+    //content: ' *';
   }
 }
 
 .ok,
 .warning,
 .error {
-  @include border-radius();
   font-weight: bold;
   border: .2em solid;
-  background-color: $white;
-
-  li {
-    list-style: none;
-  }
+  @include border-radius();
 }
 
 .ok {
   color: $ok_color;
-  border-color: darken($ok_color, $adjust);
+  background-color: lighten($ok_color, 65%);
+  border-color: $ok_color;
 }
 
 .warning {
   color: $warning_color;
-  border-color: darken($warning_color, $adjust);
+  background-color: lighten($warning_color, 65%);
+  border-color: $warning_color;
 }
 
 .error {
   color: $error_color;
-  border-color: darken($error_color, $adjust);
+  background-color: lighten($error_color, 65%);
+  border-color: $error_color;
 }

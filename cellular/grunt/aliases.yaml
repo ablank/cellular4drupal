@@ -10,7 +10,7 @@ default:
 dev:
     - 'concurrent:prep'
     - 'closurecompiler'
-    - 'cssmin'
+    - 'jshint:js'
 style:
     - 'compass'
     - 'autoprefixer'
