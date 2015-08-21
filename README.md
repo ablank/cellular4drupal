@@ -35,7 +35,7 @@ git clone --branch master https://github.com/ablank/cellular.library.git cellula
   * __Javascript__ : Select the javascript libraries to include.
   * __Social Media__ : Select and configure the social media links to you
   would like to include.
-  
+
 Cellular uses theme functions rather than theme settings (.INFO files) to
 add/update/delete stylesheets and javascript, providing a simple code-based
 solution to add multiple elements to your theme with a high degree of control
@@ -67,8 +67,15 @@ scripts to the array `$add_js` in `/inc/js_alter.inc`
 Update jQuery to the version of your choice (1.11.1, 1.10.2, 1.9.1, 1.8.3,
 1.7.2, 1.6.4, 1.5.2, 1.4.4) without breaking Views. Loads from the
 Cloudflare, Google, or MS CDNs with a local fallback.
-  * The jquery.migrate module is automatically loaded for versions >= 1.9.x
+  * The jquery.migrate module is optionally loaded for versions >= 1.9.x
   for backward compatibility.
+
+* __jQuery Core Plugins Update__
+Update Drupal's core jQuery plugins to the latest stable version.
+  * BBQ v1.3
+  * Cookie v1.4.1
+  * Form v3.48
+  * Once v1.2.6
 
 * __jQuery UI Update__
 Update jQueryUI to the version of your choice (1.10.4, 1.9.2, 1.8.24).
@@ -90,37 +97,27 @@ helps you bring data to life using HTML, SVG and CSS.
 GSAP is a suite of tools for scripted, high-performance HTML5 animations that
  work in all major browsers.
 
-* __Smoove__
-Smoove makes it easy to implement awesome CSS3 transition effects,
-making your content smoothly glide into the page as your scroll down the page.
-
 * __THREEjs__
 A JavaScript 3D Library which makes WebGL simpler.
-
-* __Masonry__
-Cascading grid layouts
 
 * __Prism Syntax Hilighter__
 Code syntax hilighter.
 
-## Known Issues
+* __Backstretch__
+Add a dynamically-resized, slideshow-capable background image to any page or element.
 
-* __Notice:__ Undefined index: logo_path__
-* __Notice:__ Undefined index: favicon_path...
- 
-  * __[Solution]__ tbd... Drupal doesn't like it when you take control of the
-   logo & favicon. Providing the option to upload files that are never used
-   just to get rid of this seems like a bad idea and confusing for themers.
+* __Flowtype__
+Dynamically resize text: font-size based on element width.
 
-* __(Warning)__ Drupal doesn't like `/node_modules/` used by grunt. 
+* __Freetile__
+Enables the organization of webpage content in an efficient, dynamic and responsive layout, similar to Masonry.
 
-  * __[Solution]__ Don't push `/node_modules/` to production. 
+* __Parallax__
+A dirt simple parallax scrolling effect.
 
+* __Smoove__
+Smoove makes it easy to implement awesome CSS3 transition effects,
+making your content smoothly glide into the page as your scroll down the page.
 
-## Planned Updates
-
-* Admin theme
-
-* Optimize icon build process- fork grunticon, output DirectoryColorfy to svg
- files (!base-encoded in stylesheet), compile PNG sprite (svg2png,
- spritesmith), build stylesheet from handlebar template w/ link to files.
+* __SnapSVG__
+The Snap.svg JavaScript library makes working with your SVG assets as easy as jQuery makes working with the DOM.
