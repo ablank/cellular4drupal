@@ -34,7 +34,8 @@ function cellular_preprocess_page(&$vars) {
 
   /* Work in progress... */
   // Panels everywhere page template suggestion.
-  if (!empty(variable_get('panels_everywhere_site_template'))) {
+  $panels_everywhere = variable_get('panels_everywhere_site_template', 0);
+  if (!empty($panels_everywhere)) {
     $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
   }
 }
@@ -68,11 +69,4 @@ function cellular_preprocess_maintenance_page(&$vars) {
   }
   // Automate error pages.
   cellular_error_page($vars);
-
-  /* Work in progress... */
-  // Panels everywhere page template suggestion.
-  if (!empty(variable_get('panels_everywhere_site_template'))) {
-    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
-  }
 }
-

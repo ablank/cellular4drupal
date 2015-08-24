@@ -621,11 +621,12 @@ function cellular_jqueryui_update_css(&$css) {
   foreach ($ui['widgets'] as $widget) {
     $default = "misc/ui/jquery.ui.$widget.css";
     if (isset($css[$default])) {
-      $jq = cellular_jquery_info()['ui'];
+      $jq = cellular_jquery_info();
+      $ui = $jq['ui'];
       $style = array(
         'ui' => array(
           'default' => $default,
-          'version' => $jq['version'],
+          'version' => $ui['version'],
           'group' => CSS_SYSTEM,
           'every_page' => FALSE,
           'weight' => isset($css[$default]['weight']) ? $css[$default]['weight'] : -9,
@@ -636,15 +637,15 @@ function cellular_jqueryui_update_css(&$css) {
       // Remove default after updating styles.
       unset($css[$default]);
 
-      if ($jq['theme'] === 'custom') {
+      if ($ui['theme'] === 'custom') {
         // Set path to local custom file if selected.
-        $v = $jq['version'] === '1.10.4' ? '1.10' : '1.9';
+        $v = $ui['version'] === '1.10.4' ? '1.10' : '1.9';
         $style['ui']['file'] = "/jquery-ui/jquery-ui.$v.$ext";
 
         cellular_add_css($css, $style);
       }
       else {
-        $ui_path = $ui['path'] . $jq['version'] . '/' . $jq['theme'] . '/';
+        $ui_path = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
         $style['ui']['file'] = $ui_path . 'jquery-ui' . $ext;
         if (theme_get_setting('jquery_cdn') == 1) {
           $cdn = cellular_cdn();
@@ -1776,7 +1777,8 @@ function cellular_preprocess_page(&$vars) {
 
   /* Work in progress... */
   // Panels everywhere page template suggestion.
-  if (!empty(variable_get('panels_everywhere_site_template'))) {
+  $panels_everywhere = variable_get('panels_everywhere_site_template', 0);
+  if (!empty($panels_everywhere)) {
     $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
   }
 }
@@ -1810,14 +1812,7 @@ function cellular_preprocess_maintenance_page(&$vars) {
   }
   // Automate error pages.
   cellular_error_page($vars);
-
-  /* Work in progress... */
-  // Panels everywhere page template suggestion.
-  if (!empty(variable_get('panels_everywhere_site_template'))) {
-    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
-  }
 }
-
 
 
 /*
