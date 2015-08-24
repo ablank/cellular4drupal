@@ -15,10 +15,11 @@
 ?>
 
 <div<?php
-if (!empty($css_id)): print " id=\"$css_id\"";
+if (!empty($css_id)):
+  print " id=\"$css_id\"";
 endif;
 
-?> class="panels cell">
+?> class="panels cell <?php print ($classes); ?>">
 
     <?php if ($content['left']): ?>
     <div class="panel-left cell-25">

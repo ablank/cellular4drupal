@@ -4,12 +4,20 @@
  */
 
 module.exports = {
-  all: {
+  script: {
     options: {
       compilation_level: 'SIMPLE_OPTIMIZATIONS' // 'WHITESPACE_ONLY'
     },
     files: {
-      'js/script.min.js': ['js/*.js', '!js/*min.js', 'js/cellularUI/jquery.cellularUI.js'] // ['js/plugin.js','js/script.js']
+      'js/script.min.js': ['js/script.js']
+    }
+  },
+  plugins: {
+    options: {
+      compilation_level: 'SIMPLE_OPTIMIZATIONS' // 'WHITESPACE_ONLY'
+    },
+    files: {
+      'js/plugins.min.js': ['js/plugins.js']
     }
   },
   cellularUI: {
@@ -17,7 +25,7 @@ module.exports = {
       compilation_level: 'SIMPLE_OPTIMIZATIONS' // 'WHITESPACE_ONLY'
     },
     files: {
-      'js/cellularUI/jquery.cellularUI.min.js': ['js/cellularUI/jquery.cellularUI.js']
+      'js/cellular-ui/jquery.cellular-ui.min.js': ['js/cellular-ui/jquery.cellular-ui.js']
     }
   }
 };

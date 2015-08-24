@@ -27,12 +27,27 @@
 */
 /**
   * @file
+  * CSS Animations.
+*/
+/*--------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/**
+  * @file
   * CSS loading indicators.
   * http://codepen.io/TaniaLD/pen/oKxep
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
 */
 /**
- * @file
- * Styling for large-screen devices included in style.css
- */
+  * @file
+  * Styling for large-screen devices included in style.css
+*/
+@media screen and (min-width: 1280px) {
+  /* line 10, ../sass/style/_query_large.scss */
+  body:before {
+    content: "large-1280px";
+  }
+}

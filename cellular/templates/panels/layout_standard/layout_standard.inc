@@ -6,7 +6,7 @@
 
 $plugin = array(
   'category' => t('Cellular | Layouts'),
-  'title' => t('Basic'),
+  'title' => t('Standard'),
   'icon' => 'standard.png',
   'theme' => 'layout_standard',
   'theme arguments' => array('id', 'content'),

@@ -21,7 +21,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
       $data .= '/css/' . $style['file'];
     }
     if (!empty($data)) {
@@ -136,9 +136,10 @@ function cellular_remove_default_css(&$css) {
     $exclude = array(
       'system' => array(
         'system.base.css',
-        //'system.menus.css',
         'system.messages.css',
         'system.theme.css',
+        // Remove menu.css for anonymous users.
+        user_is_logged_in() ? NULL : 'system.menus.css',
       ),
       'block' => 'block.css',
       'colorbox' => 'styles/default/colorbox_style.css',

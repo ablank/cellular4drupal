@@ -13,26 +13,27 @@
 ?>
 
 <div<?php
-if (!empty($css_id)): print " id=\"$css_id\"";
+if (!empty($css_id)):
+  print " id=\"$css_id\"";
 endif;
 
-?> class="panels cell">
+?> class="panels cell <?php print ($classes); ?>">
 
-      <?php if ($content['header']): ?>
-    <div id="panel-header" class="cell-100">
+  <?php if ($content['header']): ?>
+    <div class="header cell">
       <?php print $content['header']; ?>
-      </div>
-    <?php endif; ?>
+    </div>
+  <?php endif; ?>
 
-      <?php if ($content['body']): ?>
-    <div id="panel-content" class="cell-100">
+  <?php if ($content['body']): ?>
+    <div class="content cell">
       <?php print $content['body']; ?>
-      </div>
-    <?php endif; ?>
+    </div>
+  <?php endif; ?>
 
-      <?php if ($content['footer']): ?>
-      <div id="panel-footer" class="cell-100">
+  <?php if ($content['footer']): ?>
+    <div class="footer cell">
       <?php print $content['footer']; ?>
-      </div>
-<?php endif; ?>
+    </div>
+  <?php endif; ?>
 </div>

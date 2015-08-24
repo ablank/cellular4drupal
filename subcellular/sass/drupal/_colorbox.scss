@@ -104,7 +104,7 @@ a:focus.colorbox {
   cursor: pointer;
   z-index: 10;
   background-color: transparent;
-  background-image: url(../assets/icons/png/controls.png);
+  background-image: url(../assets/icons/png/colorboxcontrols.png);
   background-repeat: no-repeat;
 
   &:active {
@@ -127,7 +127,7 @@ a:focus.colorbox {
 }
 
 #cboxLoadingGraphic {
-  background-image: url(../assets/images/gif/loading.gif);
+  background-image: url(../assets/images/gif/spinner_24.gif);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -205,17 +205,6 @@ a:focus.colorbox {
 #cboxPrevious {
   bottom: 0;
   left: 0;
-  background-position: -32px -64px;
-
-  &:hover {
-    background-position: 0 -64px;
-
-  }
-}
-
-#cboxNext {
-  bottom: 0;
-  right: 0;
   background-position: -160px -64px;
 
   &:hover {
@@ -223,12 +212,23 @@ a:focus.colorbox {
   }
 }
 
+#cboxNext {
+  bottom: 0;
+  right: 0;
+  background-position: -32px -64px;
+
+  &:hover {
+    background-position: 0 -64px;
+  }
+}
+
 #cboxClose {
   top: -2.2em;
   right: -2.2em;
-  background-position: -64px 0;
+  background-position: -66px -2px;
+  border: 2px solid $white;
 
   &:hover {
-    background-position: -64px -32px;
+    background-position: -66px -34px;
   }
 }

@@ -5,43 +5,43 @@
 
 // Declared here in case the core css is disabled.
 .element-invisible {
-	position: absolute !important;
-	left: -999em;
-	clip: rect(1px 1px 1px 1px);
-	/* IE6, IE7 */
-	
-	clip: rect(1px, 1px, 1px, 1px);
-	overflow: hidden;
-	height: 1px;
+  position: absolute !important;
+  left: -999em;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
 }
 
 .element-invisible.element-focusable:active,
 .element-invisible.element-focusable:focus {
-	position: static !important;
-	clip: auto;
-	overflow: visible;
-	height: auto;
+  position: static !important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
 }
 
 // Prevent transitions of jquery-ui elements- makes for jankiness....
 [class*="ui-"],
 [class^="ui-"] {
-	@include transition(none);
+  @include transition(none);
 }
 
 //////
 // cTools
 //////
 .ctools-locked {
-	color: $red;
-	border: 1px solid $red;
-	padding: 1em;
+  color: $red;
+  border: 1px solid $red;
+  padding: 1em;
 }
 
 .ctools-owns-lock {
-	background: lighten($yellow, 50%);
-	border: 1px solid $yellow;
-	padding: 1em;
+  background: lighten($yellow, 50%);
+  border: 1px solid $yellow;
+  padding: 1em;
 }
 
 div,
@@ -49,61 +49,16 @@ a,
 input,
 button,
 select {
-	// Loading throbber.
-	&.ctools-ajaxing {
-		background-image: none;
-  @include loader('clock', 1em, $hilight);
-	}
-}
+  // Loading throbber.
+  &.progress-disabled {
+    outline: none;
+    @include transition();
+    @include loader('spinna', null, 1em, $hilight, 2s);
+    //@include loader('img', '../assets/images/gif/spinner_36.gif', 36px, $hilight, 2s);
+    padding-right: 1.4em;
 
-.tabs.primary {
-	margin: 2em 0 1em;
-	border-bottom: $grey 1px solid;
-	li {
-		list-style: none;
-		display: inline;
-		margin: 0 .1em;
-	}
-	a {
-		padding: .4em .8em 0.2em;
-		color: $dark_grey;
-		border: $grey 1px solid;
-		border-bottom: none;
-		background-color: $light_grey;
-		@include round_top();
-		&.active {
-			background-color: $white;
-		}
-		&:hover {
-			background-color: lighten($light_grey, 20%);
-		}
-	}
-}
-
-.menu,
-.inline.links {
-	list-style: none;
-	margin: 0 0 .4em .4em;
-	li {
-		display: inline;
-		display: inline-block;
-		margin: .2em;
-		padding: 0;
-	}
-	a {
-		@include button();
-		padding: .4em .6em;
-	}
-}
-
-.comment {
-	.links {
-		text-align: left;
-		&.inline {
-			li {
-				list-style: none;
-				display: inline;
-			}
-		}
-	}
+    & + .ajax-progress {
+      display: none;
+    }
+  }
 }

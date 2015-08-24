@@ -84,7 +84,6 @@
 <div id="page-wrap">
   <div id="header">
     <div id="logo">
-
       <?php
       if ($site_name) :
         print $site_name;
@@ -109,7 +108,6 @@
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
-
     ?>
     <div id="content-wrap">
       <div id="content">
@@ -122,10 +120,7 @@
           ?>
         </div>
         <div class="search">
-          <?php
-          print render($page['search_box']);
-
-          ?>
+          <?php print render($page['search_box']); ?>
         </div>
 
       </div>

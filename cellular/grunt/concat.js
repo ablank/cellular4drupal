@@ -75,6 +75,7 @@ module.exports = {
       'preprocess/js_alter.inc',
       'preprocess/js_plugins.inc',
       'preprocess/preprocess.inc',
+      'preprocess/preprocess.page.inc',
       'preprocess/theme.inc',
       'preprocess/theme_form.inc',
       'preprocess/theme_pager.inc',

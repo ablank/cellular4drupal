@@ -177,7 +177,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
       $data .= '/css/' . $style['file'];
     }
     if (!empty($data)) {
@@ -292,9 +292,10 @@ function cellular_remove_default_css(&$css) {
     $exclude = array(
       'system' => array(
         'system.base.css',
-        //'system.menus.css',
         'system.messages.css',
         'system.theme.css',
+        // Remove menu.css for anonymous users.
+        user_is_logged_in() ? NULL : 'system.menus.css',
       ),
       'block' => 'block.css',
       'colorbox' => 'styles/default/colorbox_style.css',
@@ -667,7 +668,7 @@ function cellular_jqueryui_update_css(&$css) {
  * Add scripts from an array, using a CDN if provided.
  *
  * A fallback link will be automatically generated if using CDN and
- * an 'object' value is provided.
+ * an 'object' key value is provided.
  *
  * @param array $array
  *   Assosciative array of javascript data.
@@ -1638,53 +1639,26 @@ function cellular_plugin_css() {
 
 /*
  * @see file: preprocess/preprocess.inc
- * Template preprocess variables.
+ * Template preprocess functions.
  */
 
 /**
  * Implements template_preprocess_html().
  */
 function cellular_preprocess_html(&$vars) {
+
   cellular_http_headers();
   cellular_html_attributes($vars);
   cellular_rdf($vars);
   cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
-}
-
-/**
- * Implements template_preprocess_page().
- */
-function cellular_preprocess_page(&$vars) {
-  // Add critical css inline if set.
-  cellular_critical_css($vars);
-  // Set main_menu as full-tree or top-level as defined in settings.
-  cellular_main_menu($vars);
-  // Set classes for content & sidebar regions.
-  cellular_test_sidebar($vars);
-  // Link site name to frontpage.
-  $vars['site_name'] = l($vars['site_name'], '<front>');
-  // Set Social Media links.
-  $vars['page']['social_media_share'] = cellular_social_media_share();
-  $vars['page']['social_media_follow'] = cellular_social_media_follow();
-  // Set search block variable for addition to page templates.
-  $vars['page']['search_box'] = drupal_get_form('search_form');
-  // Set copyright info if provided.
-  $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ?
-  "&copy; " . date("Y") . " $copyright" : '';
-  // Automate error pages.
-  cellular_error_page($vars);
-
-  /* Work in progress... */
-  // Add template suggestion for custom content types(page--content-type.tpl.php)
-  if (isset($vars['node']->type)) {
-    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
-  }
-  // Panels everywhere page template suggestion.
-  if (!empty(variable_get('panels_everywhere_site_template'))) {
-    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
+  
+    $site_name = variable_get('site_name', "Just another Drupal Site");  
+    setcookie($site_name . 'visited', 'TRUE', time() + (86400 * 30), '/');
+  
+  if (isset($_COOKIE['visited'])) {
+    drupal_set_message("OK, Cookie: ' " . $_COOKIE['visited'] . " ' set!");
   }
 }
 
@@ -1693,7 +1667,7 @@ function cellular_preprocess_page(&$vars) {
  */
 function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
-  // Set attributes
+  // Set attributes.
   $vars['title_attributes_array']['class'][] = 'node-title';
   $vars['content_attributes_array']['class'][] = 'node-content';
   /* Set additional template variables. */
@@ -1746,9 +1720,9 @@ function cellular_preprocess_comment(&$vars) {
   if (!empty($vars['author'])) {
     $submitted .= '<span class="comment-author">';
     $submitted .= $vars['picture'];
-    $submitted .= '<div>'.t('Posted by !username', array(
+    $submitted .= '<div>' . t('Posted by !username', array(
       '!username' => $vars['author'],
-    )).'</div>';
+    )) . '</div>';
     $submitted .= '</span>';
   }
 
@@ -1767,27 +1741,83 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['classes_array'][] = 'clearfix';
 }
 
+/*
+ * @see file: preprocess/preprocess.page.inc
+ * Template page preprocess functions.
+ */
+
+/**
+ * Implements template_preprocess_page().
+ */
+function cellular_preprocess_page(&$vars) {
+  // Add critical css inline if set.
+  cellular_critical_css($vars);
+  // Set main_menu as full-tree or top-level as defined in settings.
+  cellular_main_menu($vars);
+  // Set classes for content & sidebar regions.
+  cellular_test_sidebar($vars);
+  // Link site name to frontpage.
+  $vars['site_name'] = l($vars['site_name'], '<front>');
+  // Set Social Media links.
+  $vars['page']['social_media_share'] = cellular_social_media_share();
+  $vars['page']['social_media_follow'] = cellular_social_media_follow();
+  // Set search block variable for addition to page templates.
+  $vars['page']['search_box'] = drupal_get_form('search_form');
+  // Set copyright info if provided.
+  $copyright = theme_get_setting('copyright');
+  $vars['page']['copyright'] = !empty($copyright) ?
+  "&copy; " . date("Y") . " $copyright" : '';
+  // Add template suggestion for custom content types(page--content-type.tpl.php)
+  if (isset($vars['node']->type)) {
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
+  // Automate error pages.
+  cellular_error_page($vars);
+
+  /* Work in progress... */
+  // Panels everywhere page template suggestion.
+  if (!empty(variable_get('panels_everywhere_site_template'))) {
+    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
+  }
+}
+
 /**
  * Implements template_preprocess_maintenance_page().
  *
  * Duplicate page variables for the maintenance page.
  */
 function cellular_preprocess_maintenance_page(&$vars) {
-  // Set main_menu as full-tree or top-level as defined in settings:
+  // Add critical css inline if set.
+  cellular_critical_css($vars);
+  // Set main_menu as full-tree or top-level as defined in settings.
   cellular_main_menu($vars);
-  // Set classes for content & sidebars.
+  // Set classes for content & sidebar regions.
   cellular_test_sidebar($vars);
-  // Use page--error.tpl if http error status is returned.
+  // Link site name to frontpage.
+  $vars['site_name'] = l($vars['site_name'], '<front>');
+  // Set Social Media links.
+  $vars['page']['social_media_share'] = cellular_social_media_share();
+  $vars['page']['social_media_follow'] = cellular_social_media_follow();
+  // Set search block variable for addition to page templates.
+  $vars['page']['search_box'] = drupal_get_form('search_form');
+  // Set copyright info if provided.
+  $copyright = theme_get_setting('copyright');
+  $vars['page']['copyright'] = !empty($copyright) ?
+  "&copy; " . date("Y") . " $copyright" : '';
+  // Add template suggestion for custom content types(page--content-type.tpl.php)
+  if (isset($vars['node']->type)) {
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
+  // Automate error pages.
   cellular_error_page($vars);
 
-  // Link site name to frontpage:
-  $vars['site_name'] = l($vars['site_name'], '<front>');
-  // Set search block variable for addition to template.
-  $vars['page']['search_box'] = drupal_get_form('search_form');
-  // Set copyright if provided:
-  $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
+  /* Work in progress... */
+  // Panels everywhere page template suggestion.
+  if (!empty(variable_get('panels_everywhere_site_template'))) {
+    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
+  }
 }
+
 
 
 /*
@@ -2297,7 +2327,8 @@ function cellular_pager($vars) {
       $items[] = array('class' => array('pager-last'), 'data' => $li_last);
     }
 
-    return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
+    $output = '<h2 class="element-invisible">' . t('Pages') . '</h2>';
+    $output .= theme('item_list', array(
       'items' => $items,
       'attributes' => array(
         'class' => array(
@@ -2305,6 +2336,8 @@ function cellular_pager($vars) {
         ),
       ),
     ));
+
+    return $output;
   }
 }
 

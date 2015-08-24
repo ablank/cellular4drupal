@@ -2,7 +2,6 @@
  * @file
  * Cellular Responsive sCSS framework
  *
- *
  * @author
  * Adam Blankenship
  */
@@ -10,6 +9,7 @@
 @import "variables";
 
 @import "style/base_cssreset";
+@import "style/base_body";
 @import "style/base_typography";
 @import "style/base_lists";
 @import "style/base_tables";
@@ -17,27 +17,30 @@
 @import "style/base_media";
 @import "style/base_grid";
 
-@import "style/cellular-ui/Cellular";
-
-@import "style/region_content_wrappers";
-@import "style/region_content";
+@import "style/region_wrappers";
 @import "style/region_header";
+@import "style/region_navigation";
+@import "style/region_content";
 @import "style/region_footer";
 @import "style/region_sidebars";
-@import "style/region_navigation";
 
-@import "style/mq_mobile";
-@import "style/mq_narrow";
-@import "style/mq_large";
+//@import "style/style_icons";
+//@import "style/style_social";
 
-@import "style/style_icons";
-@import "style/style_social";
+@import "style/cellular-ui/Cellular";
 
 @import "style/style_classes";
 @import "style/style_branding";
 @import "style/style_svg";
 
-@import "style/pages/frontpage";
-
+// @import "style/style_decor";
 // @import "style/special/parallax";
 // @import "style/special/parallax_grouped";
+
+@import "style/query_default";
+@import "style/query_mobile";
+@import "style/query_narrow";
+@import "style/query_large";
+
+// Page/content specific stylesheets.
+@import "style/pages/frontpage";

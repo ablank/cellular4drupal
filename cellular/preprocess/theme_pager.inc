@@ -115,7 +115,8 @@ function cellular_pager($vars) {
       $items[] = array('class' => array('pager-last'), 'data' => $li_last);
     }
 
-    return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
+    $output = '<h2 class="element-invisible">' . t('Pages') . '</h2>';
+    $output .= theme('item_list', array(
       'items' => $items,
       'attributes' => array(
         'class' => array(
@@ -123,5 +124,7 @@ function cellular_pager($vars) {
         ),
       ),
     ));
+
+    return $output;
   }
 }

@@ -9,5 +9,10 @@ default:
     - 'imagemin'
 dev:
     - 'concurrent:prep'
-    - 'autoprefixer'
     - 'closurecompiler'
+    - 'jshint:js'
+style:
+    - 'compass'
+    - 'autoprefixer'
+    - 'csscomb'
+    - 'cssmin'

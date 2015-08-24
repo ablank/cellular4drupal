@@ -13,37 +13,38 @@
 ?>
 
 <div<?php
-if (!empty($css_id)): print " id=\"$css_id\"";
+if (!empty($css_id)):
+  print " id=\"$css_id\"";
 endif;
-
-?> class="panels cell">
+?> class="panels cell <?php print ($classes); ?>">
 
   <div class="cell-75">
-      <?php if ($content['header']): ?>
-      <div id="header" class="cell-100">
-      <?php print $content['header']; ?>
+    <?php if (!empty($content['header'])): ?>
+      <div id="header">
+        <?php print $content['header']; ?>
       </div>
     <?php endif; ?>
 
-      <?php if ($content['body']): ?>
-    <div id="content-wrap">
-      <div id="content" class="cell-100">
-      <?php print $content['body']; ?>
-      </div>
+    <div id="app" class="cell">
+      <?php if (!empty($content['body'])): ?>
+        <div id="content-wrap" class="cell-100">
+          <div id="content">
+            <?php print $content['body']; ?>
+          </div>
+        </div>
+      <?php endif; ?>
     </div>
-    <?php endif; ?>
 
-      <?php if ($content['footer']): ?>
-    <div id="footer" class="cell-100">
-      <?php print $content['footer']; ?>
+    <?php if (!empty($content['footer'])): ?>
+      <div id="footer">
+        <?php print $content['footer']; ?>
       </div>
-<?php endif; ?>
+    <?php endif; ?>
   </div>
-
-    <?php if ($content['inset']): ?>
-  <div id="inset" class="cell-25">
-    <?php print $content['inset']; ?>
+  
+  <?php if (!empty($content['inset'])): ?>
+    <div id="inset" class="cell-25">
+      <?php print $content['inset']; ?>
     </div>
-<?php endif; ?>
-
+  <?php endif; ?>
 </div>

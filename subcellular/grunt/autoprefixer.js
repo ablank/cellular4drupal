@@ -10,7 +10,7 @@ module.exports = {
     expand: true,
     flatten: true,
     cwd: 'css',
-    src: '*.css',
+    src: '**/*.css',
     dest: 'css'
   }
 };

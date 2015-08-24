@@ -56,7 +56,7 @@ settings[apple_icon_114]        = apple-touch-icon-114.png
 settings[apple_icon_144]        = apple-touch-icon-144.png
 
 ;----------// Markup Settings
-settings[copyright]                 =
+settings[copyright]                 = 0
 settings[full_menu]                 = 1
 settings[breadcrumb_display]        = 0
 settings[field_wrappers]            = 0

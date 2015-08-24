@@ -6,18 +6,20 @@
 
 @import "compass";
 //////
-@import "variables/compass_defaults";
+@import "variables/grid";
 @import "variables/swatches";
 @import "variables/icons";
+@import "variables/compass_defaults";
 //////
 @import "_mixins/cellularmixins";
+@import "_mixins/animations";
 @import "_mixins/loaders";
 
 // Set stylesheet breakpoints
 $res_mobile: 650px;
 $res_narrow: 800px;
 $res_normal: 960px;
-$res_large: 2000px;
+$res_large: 1280px;
 
 // Sizing vars
 $tiny: 0.3em;
@@ -38,6 +40,10 @@ $logo_pad: 12px;
 $logo_png: url('../assets/images/min/png/logo.png');
 $logo_svg: url('../assets/images/min/svg/logo.svg');
 
+// Header region
+$header_position: fixed;
+$header_height: $logo_height + ($logo_pad * 2);
+
 // Images
 $body_img: url('../assets/images/honeycomb_light.png');
 
@@ -50,37 +56,8 @@ $p_color: $c1;
 
 $h_font: "Quicksand";
 $h_size: 2.4em;
-$h_weight: bold;
+$h_weight: normal;
 $h_color: $grey;
-
-// Grid size declarations.
-$grid : (
-100
-90
-80
-75
-70
-66
-60
-50
-40
-33
-30
-25
-20
-10
-);
-
-// Cell grid spacing
-$cell_margin: 0;
-$cell_padding: 0;
-$cell_border: 0;
-$cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);
-
-$cells: ();
-@each $cell in $grid {
-  $cells : append($cells, unquote('.cell-#{$cell},'));
-}
 
 // Content Region spacing
 $region_margin: 0;

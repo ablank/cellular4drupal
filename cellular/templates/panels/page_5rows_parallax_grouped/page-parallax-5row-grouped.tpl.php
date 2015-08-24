@@ -22,27 +22,27 @@
 ?>
 
 <div<?php
-if (!empty($css_id)): print " id=\"$css_id\"";
+if (!empty($css_id)):
+  print " id=\"$css_id\"";
 endif;
-
-?> class="parallax panels cell">
+?> class="parallax panels cell <?php print ($classes); ?>">
 
   <?php if ($content['header']) : ?>
-    <div id="header" class="cell-100">
+    <div id="header">
       <?php print $content['header']; ?>
     </div>
   <?php endif; ?>
 
-  <div id="content-wrap">
-    <div id="content" class="cell-100">
-  <?php if ($content['g1_top'] || $content['g1_base']): ?>
+  <div id="content-wrap" class="cell-100">
+    <div id="content">
+  <?php if (!empty($content['g1_top']) || !empty($content['g1_base'])): ?>
     <div class="parallax-group cell-100">
-      <?php if ($content['g1_top']) : ?>
+      <?php if (!empty($content['g1_top'])) : ?>
         <div class="parallax-layer parallax--top panel-content cell-100">
           <?php print $content['g1_top']; ?>
         </div>
       <?php endif; ?>
-      <?php if ($content['g1_base']) : ?>
+      <?php if (!empty($content['g1_base'])) : ?>
         <div class="parallax-layer parallax--base panel-content cell-100">
           <?php print $content['g1_base']; ?>
         </div>
@@ -50,14 +50,14 @@ endif;
     </div>
   <?php endif; ?>
 
-  <?php if ($content['g2_top'] || $content['g2_base']): ?>
+  <?php if (!empty($content['g2_top']) || !empty($content['g2_base'])): ?>
     <div class="parallax-group cell-100">
-      <?php if ($content['g2_top']) : ?>
+      <?php if (!empty($content['g2_top'])) : ?>
         <div class="parallax-layer parallax--top panel-content cell-100">
           <?php print $content['g2_top']; ?>
         </div>
       <?php endif; ?>
-      <?php if ($content['g2_base']) : ?>
+      <?php if (!empty($content['g2_base'])) : ?>
         <div class="parallax-layer parallax--base panel-content cell-100">
           <?php print $content['g2_base']; ?>
         </div>
@@ -65,14 +65,14 @@ endif;
     </div>
   <?php endif; ?>
 
-  <?php if ($content['g3_top'] || $content['g3_base']): ?>
+  <?php if (!empty($content['g3_top']) || !empty($content['g3_base'])): ?>
     <div class="parallax-group cell-100">
-      <?php if ($content['g3_top']) : ?>
+      <?php if (!empty($content['g3_top'])) : ?>
         <div class="parallax-layer parallax--top panel-content cell-100">
           <?php print $content['g3_top']; ?>
         </div>
       <?php endif; ?>
-      <?php if ($content['g3_base']) : ?>
+      <?php if (!empty($content['g3_base'])) : ?>
         <div class="parallax-layer parallax--base panel-content cell-100">
           <?php print $content['g3_base']; ?>
         </div>
@@ -80,14 +80,14 @@ endif;
     </div>
   <?php endif; ?>
 
-  <?php if ($content['g4_top'] || $content['g4_base']): ?>
+  <?php if (!empty($content['g4_top']) || !empty($content['g4_base'])): ?>
     <div class="parallax-group  cell-100">
-      <?php if ($content['g4_top']) : ?>
+      <?php if (!empty($content['g4_top'])) : ?>
         <div class="parallax-layer parallax--top panel-content cell-100">
           <?php print $content['g4_top']; ?>
         </div>
       <?php endif; ?>
-      <?php if ($content['g4_base']) : ?>
+      <?php if (!empty($content['g4_base'])) : ?>
         <div class="parallax-layer parallax--base panel-content cell-100">
           <?php print $content['g4_base']; ?>
         </div>
@@ -95,14 +95,14 @@ endif;
     </div>
   <?php endif; ?>
 
-  <?php if ($content['g5_top'] || $content['g5_base']): ?>
+  <?php if (!empty($content['g5_top']) || !empty($content['g5_base'])): ?>
     <div class="parallax-group cell-100">
-      <?php if ($content['g5_top']) : ?>
+      <?php if (!empty($content['g5_top'])) : ?>
         <div class="parallax-layer parallax--top panel-content cell-100">
           <?php print $content['g5_top']; ?>
         </div>
       <?php endif; ?>
-      <?php if ($content['g5_base']) : ?>
+      <?php if (!empty($content['g5_base'])) : ?>
         <div class="parallax-layer parallax--base panel-content cell-100">
           <?php print $content['g5_base']; ?>
         </div>
@@ -112,9 +112,8 @@ endif;
     </div>
   </div>
 
-
-  <?php if ($content['footer']) : ?>
-    <div id="footer" class="cell-100">
+  <?php if (!empty($content['footer'])) : ?>
+    <div id="footer">
       <?php print $content['footer']; ?>
     </div>
   <?php endif; ?>

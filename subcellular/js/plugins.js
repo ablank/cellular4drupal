@@ -9,38 +9,30 @@
       // CellularUI functions.
       if (Drupal.settings.cellular.cellularui === true) {
         $('.jAccordion').jAccordion({
-          "duration": 500, // Duration of transition.
-          "easing": "swing", // Type of easing.
-          "single": false // Allow multiple panels to be opened or only 1?
+          duration: 500, // Duration of transition.
+          easing: "swing", // Type of easing.
+          single: false // Allow multiple panels to be opened or only 1?
         });
         $('.jBlocklink').jBlocklink({
-          "cclass": "jBlocklink-link" // Class to add to wrapper link.
-        });
-        $('form').jFormal({
-          "inputs": [// Array of elements to format:
-            'input[type="text"]',
-            'input[type="email"]',
-            'input[type="password"]',
-            'textarea'
-          ]
+          cclass: "jBlocklink-link" // Class to add to wrapper link.
         });
         $('#nav').jMmenu({
           // Window breakpoint trigger:
           // "breakpoint": cellular.opts.breakpoint, // 650px
-           "cclass": "jMmenu", // default
+           cclass: "jMmenu", // default
           // Classes added for styling- CSS classes control position & animation.
           // Vars concat to class="type-direction".
-          "type": "slide",
-          "direction": "right"
+          type: "push",
+          direction: "down"
         });
         $('.jScrolli').jScrolli({
-          "active": 0, // Array index of initially active content.
-          "speed": 500, // Duration of cycle.
-          "pause": 3000 // Time to pause between cycles.
+          active: 0, // Array index of initially active content.
+          speed: 500, // Duration of cycle.
+          pause: 3000 // Time to pause between cycles.
         });
         $('.jTabs').jTabs({
-          "active": 0, // Array index of initially active content.
-          "orient": "horizontal" // || 'vertical'
+          active: 0, // Array index of initially active content.
+          orient: "horizontal" // || 'vertical'
         });
       }
 
@@ -71,11 +63,11 @@
       // Freetile functions.
       if (Drupal.settings.cellular.freetile === true) {
         // Smoove functions.
-        $('.panels').freetile({
-          selector: '.panel-content',
-          // containerAnimate: true,
+        $('.view-content').freetile({
+          selector: '.views-row',
           animate: true,
-          elementDelay: 30
+          // containerAnimate: true,
+          elementDelay: 0
         });
       }
 
@@ -99,7 +91,7 @@
         });
       }
 
-      /* End Drupal.behaviors.theme */
+      /* End Drupal.behaviors.plugins */
     }
   };
 })(jQuery);

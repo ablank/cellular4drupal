@@ -99,24 +99,24 @@
     <a href="#nav"><?php print t('Skip to navigation'); ?></a>
   </div>
 
-    <div id="header">
+  <div id="header">
 
-      <div id="logo">
-        <?php
-        if (!empty($site_name)) :
-          print $site_name;
-        endif;
+    <div id="logo">
+      <?php
+      if (!empty($site_name)) :
+        print $site_name;
+      endif;
 
-        ?>
-      </div>
-
-      <?php if (!empty($main_menu)) : ?>
-        <div id="nav">
-          <?php print render($main_menu); ?>
-        </div>
-      <?php endif; ?>
-
+      ?>
     </div>
+
+    <?php if (!empty($main_menu)) : ?>
+      <div id="nav">
+        <?php print render($main_menu); ?>
+      </div>
+    <?php endif; ?>
+
+  </div>
 
   <div id="app" class="cell">
 
@@ -173,7 +173,7 @@
           endif;
 
           ?>">
-                 <?php print render($page['sidebar_left']); ?>
+            <?php print render($page['sidebar_left']); ?>
           </div>
         <?php endif; //#sidebar-left  ?>
 
@@ -235,18 +235,15 @@
 
   <?php if ($page['footer_top'] || $page['footer'] || $page['footer_bottom']) : ?>
     <div id="footer">
-
       <?php if ($page['footer_top']) : ?>
         <div id="footer-top">
           <?php print render($page['footer_top']); ?>
         </div>
       <?php endif; ?>
-
       <?php
       if ($page['footer']) :
         print render($page['footer']);
       endif;
-
       ?>
       <div id="footer-bottom">
         <?php if ($page['footer_bottom']) : ?>
@@ -258,7 +255,6 @@
         <small id="copyright"><?php print $page['copyright']; ?></small>
       <?php endif; //#copyright  ?>
     </div>
-
   <?php endif; //#footer  ?>
+
 </div>
-<?php //#page-wrap 

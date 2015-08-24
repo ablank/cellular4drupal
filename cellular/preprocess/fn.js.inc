@@ -8,7 +8,7 @@
  * Add scripts from an array, using a CDN if provided.
  *
  * A fallback link will be automatically generated if using CDN and
- * an 'object' value is provided.
+ * an 'object' key value is provided.
  *
  * @param array $array
  *   Assosciative array of javascript data.

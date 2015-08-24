@@ -52,7 +52,6 @@
   social media outlets.
 
   Page Layout
- * Set in theme settings
   - $content_width : Grid class to set width of main content.
   - $content_class_single_sidebar : Grid class to set width of main content with
   one sidebar displayed.
@@ -85,7 +84,7 @@
   Custom page templates can be created for content types by adding the template:
  * /templates/page--content-type.tpl.php
  *
- * Render cck fields:
+ * Render fields:
   $field = field_view_field('node', $node, 'field_name', array(
   'label' => 'hidden'));
   print render($field);
@@ -100,12 +99,6 @@
     <a href="#nav"><?php print t('Skip to navigation'); ?></a>
   </div>
 
-  <?php if ($page['header_top']) : ?>
-    <div id="header-top">
-      <?php print render($page['header_top']); ?>
-    </div>
-
-  <?php endif; ?>
   <div id="header">
 
     <div id="logo">
@@ -122,30 +115,17 @@
         <?php print render($main_menu); ?>
       </div>
     <?php endif; ?>
-    <?php
-    if ($page['header']) :
-      print render($page['header']);
-    endif;
-
-    ?>
 
   </div>
-  <!-- /#header -->
 
-  <?php if ($page['header_bottom']) : ?>
-    <div id="header-bottom">
-      <?php print render($page['header_bottom']); ?>
-    </div>
-
-  <?php endif; ?>
-  <div id="app">
+  <div id="app" class="cell">
 
     <?php
-    print render($title_prefix);
     if ($title) :
+      print render($title_prefix);
       print '<h1 id="page-title">' . $title . '</h1>';
+      print render($title_suffix);
     endif;
-    print render($title_suffix);
 
     ?>
 
@@ -153,7 +133,7 @@
     // Breadcrumb Navigation.
     if ($breadcrumb && !$is_front) :
       print $breadcrumb;
-    endif
+    endif;
 
     ?>
 
@@ -161,85 +141,86 @@
       <div id="page-tabs">
         <?php print render($tabs); ?>
       </div>
-
     <?php endif; ?>
-    <div id="content-wrap" class="cell center">
 
-      <?php
-      if ($action_links) :
-        print '<ul class="links">' . render($action_links) . '</ul>';
-      endif;
+    <?php if (!empty($page['content'])): ?>
+      <div id="content-wrap" class="cell">
+        <?php
+        if ($action_links) :
+          print '<ul class="links">' . render($action_links) . '</ul>';
+        endif;
 
-      if ($page['console'] || ($show_messages && $messages)) :
-
-        ?>
-        <div id="console">
-          <?php
-          print render($page['console']);
-          if ($show_messages && $messages) :
-            print $messages;
-          endif;
+        if ($page['console'] || ($show_messages && $messages)) :
 
           ?>
-        </div>
-      <?php endif; ?>
-      <?php if ($page['sidebar_left']) : ?>
-        <div id="sidebar-left" class="<?php
-        // Class of sidebar from theme settings.
-        if ($page['sidebar_class']):
-          print $page['sidebar_class'];
-        endif;
 
-        ?>">
-               <?php print render($page['sidebar_left']); ?>
-        </div>
-        <!-- /#sidebar-left -->
+          <div id="console">
+            <?php
+            print render($page['console']);
+            if ($show_messages && $messages) :
+              print $messages;
+            endif;
 
-      <?php endif; ?>
-      <?php if ($page['content_top']) : ?>
-        <div id="content-top">
-          <?php print render($page['content_top']); ?>
-        </div>
-
-      <?php endif; ?>
-      <div id="content" class="<?php
-      // Class of sidebar from theme settings.
-      if (!empty($page['content_class'])):
-        print $page['content_class'];
-      endif;
-
-      ?>">
-             <?php
-             // Main Page Content.
-             print render($page['content']);
-
-             ?>
-             <?php if ($page['content_bottom']) : ?>
-          <div id="content-bottom">
-            <?php print render($page['content_bottom']); ?>
+            ?>
           </div>
-
         <?php endif; ?>
+
+        <?php if ($page['sidebar_left']) : ?>
+          <div id="sidebar-left" class="<?php
+          // Class of sidebar from theme settings.
+          if ($page['sidebar_class']):
+            print $page['sidebar_class'];
+          endif;
+
+          ?>">
+            <?php print render($page['sidebar_left']); ?>
+          </div>
+        <?php endif; //#sidebar-left  ?>
+
+        <?php if ($page['content_top']) : ?>
+          <div id="content-top">
+            <?php print render($page['content_top']); ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($page['content']) : ?>
+          <div id="content" class="<?php
+          // Class of sidebar from theme settings.
+          if (!empty($page['content_class'])):
+            print $page['content_class'];
+          endif;
+
+          ?>">
+
+            <?php
+            // Main Page Content.
+            print render($page['content']);
+
+            ?>
+            <?php if ($page['content_bottom']) : ?>
+              <div id="content-bottom">
+                <?php print render($page['content_bottom']); ?>
+              </div>
+            <?php endif; //#content-bottom ?>
+
+          </div>
+        <?php endif; // #content    ?>
+
+        <?php if ($page['sidebar_right']) : ?>
+          <div id="sidebar-right" class="<?php
+          // Class of sidebar from theme settings.
+          if ($page['sidebar_class']):
+            print $page['sidebar_class'];
+          endif;
+
+          ?>">
+                 <?php print render($page['sidebar_right']); ?>
+          </div>
+        <?php endif; // #sidebar-right   ?>
       </div>
-      <!-- /#content -->
-
-      <?php if ($page['sidebar_right']) : ?>
-        <div id="sidebar-right" class="<?php
-        // Class of sidebar from theme settings.
-        if ($page['sidebar_class']):
-          print $page['sidebar_class'];
-        endif;
-
-        ?>">
-               <?php print render($page['sidebar_right']); ?>
-        </div>
-        <!-- /#sidebar-right -->
-
-      <?php endif; ?>
-    </div>
-    <!-- /#content-wrap-->
+    <?php endif; // #content-wrap   ?>
   </div>
-  <!-- /#app-->
+
   <?php
 // Social Media share links.
   if ($page['social_media_share']) :
@@ -251,33 +232,29 @@
   endif;
 
   ?>
-  <div id="footer">
 
-    <?php if ($page['footer_top']) : ?>
-      <div id="footer-top">
-        <?php print render($page['footer_top']); ?>
-      </div>
-
-    <?php endif; ?>
-    <?php
-    if ($page['footer']) :
-      print render($page['footer']);
-    endif;
-
-    ?>
-    <div id="footer-bottom">
-      <?php if ($page['footer_bottom']) : ?>
-        <?php print render($page['footer_bottom']); ?>
+  <?php if ($page['footer_top'] || $page['footer'] || $page['footer_bottom']) : ?>
+    <div id="footer">
+      <?php if ($page['footer_top']) : ?>
+        <div id="footer-top">
+          <?php print render($page['footer_top']); ?>
+        </div>
       <?php endif; ?>
+      <?php
+      if ($page['footer']) :
+        print render($page['footer']);
+      endif;
+      ?>
+      <div id="footer-bottom">
+        <?php if ($page['footer_bottom']) : ?>
+          <?php print render($page['footer_bottom']); ?>
+        <?php endif; //#footer-bottom  ?>
+      </div>
 
       <?php if (!empty($page['copyright'])): ?>
         <small id="copyright"><?php print $page['copyright']; ?></small>
-
-      <?php endif; ?>
+      <?php endif; //#copyright  ?>
     </div>
-    <!-- /#footer-bottom -->
-  </div>
-  <!-- /#footer -->
+  <?php endif; //#footer  ?>
 
 </div>
-<!-- /#page-wrap-->

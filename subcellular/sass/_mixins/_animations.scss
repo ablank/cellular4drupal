@@ -8,113 +8,128 @@ $offset: 30%;
 $height: 100%;
 /*--------------------------------------------*/
 
-@keyframes alpha {
-  0%, 100% {
-    opacity: $opacity;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes bounce {
-  0%,  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(1em);
+@mixin ani_alpha ($opacity1: 0, $opacity2: 0.8){
+  @keyframes alpha {
+    0%, 100% {
+      opacity: $opacity;
+    }
+    50% {
+      opacity: $opacity2;
+    }
   }
 }
 
-@keyframes flip {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
+@mixin ani_bounce ($distance: 1em){
+  @keyframes bounce {
+    0%,  100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY($distance);
+    }
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+@mixin ani_flip($distance: 1em){
+  @keyframes flip {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
   }
-  100% {
-    transform: rotate(360deg);
+}
+
+@mixin ani_spin(){
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+/*---------------------------------------------------------*/
+
+@mixin ani_bar (){
+  @keyframes bar {
+    0% {
+      width: 0px;
+    }
+    70% {
+      width: 100%;
+      opacity: 1;
+    }
+    90% {
+      opacity: 0;
+      width: 100%;
+    }
+    100% {
+      opacity: 0;
+      width: 0px;
+    }
+  }
+}
+/*---------------------------------------------------------*/
+
+@mixin ani_converge ($opacity: 0){
+  @keyframes convergeA {
+    0%, 100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    50% {
+      left: -150%;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes convergeB {
+    0%, 100%  {
+      left: 0;
+      opacity: $opacity;
+    }
+    50% {
+      left: 150%;
+      opacity: 0.8;
+    }
   }
 }
 
 /*---------------------------------------------------------*/
 
-@keyframes bar {
-  0% {
-    width: 0px;
-  }
-  70% {
-    width: 100%;
-    opacity: 1;
-  }
-  90% {
-    opacity: 0;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 0px;
-  }
-}
-/*---------------------------------------------------------*/
-
-@keyframes convergeA {
-  0%, 100% {
-    left: 0;
-    opacity: $opacity;
-  }
-  50% {
-    left: -150%;
-    opacity: 0.8;
-  }
-}
-
-@keyframes convergeB {
-  0%, 100%  {
-    left: 0;
-    opacity: $opacity;
-  }
-  50% {
-    left: 150%;
-    opacity: 0.8;
+@mixin ani_orbit ($opacity: 0){
+  @keyframes orbit {
+    0%, 100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    25%{
+      left: -150%;
+      opacity: 0.8;
+    }
+    50% {
+      left: 0;
+      opacity: $opacity;
+    }
+    75% {
+      left: 150%;
+      opacity: 0.8;
+    }
   }
 }
 
 /*---------------------------------------------------------*/
 
-@keyframes orbit {
-  0%, 100% {
-    left: 0;
-    opacity: $opacity;
-  }
-  25%{
-    left: -150%;
-    opacity: 0.8;
-  }
-  50% {
-    left: 0;
-    opacity: $opacity;
-  }
-  75% {
-    left: 150%;
-    opacity: 0.8;
-  }
-}
-
-/*---------------------------------------------------------*/
-
-@keyframes scaled {
-  0%,100% {
-    transform: scale(0.0);
-  }
-  50% {
-    transform: scale(1.0);
+@mixin ani_scale ($scale1: 0, $scale2: 1.0){
+  @keyframes scaled {
+    0%,100% {
+      transform: scale($scale1);
+    }
+    50% {
+      transform: scale($scale2);
+    }
   }
 }

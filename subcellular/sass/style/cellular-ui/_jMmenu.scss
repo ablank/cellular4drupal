@@ -2,6 +2,22 @@
   * @file
   * CellularUI : jMMenu
 */
+
+
+@media screen and (max-width: $res_mobile) {
+  #nav {
+    ul.menu {
+      // Hides navigation prior to js loading & acting on DOM to prevent
+      // jankiness caused by js acting on the DOM.
+      visibility: hidden;
+    }
+  }
+}
+
+// Styles applied after js loads
+// Outside of media query since the size may change (i.e. reorient tablet) but
+// the interface should be consistent- cellularui.js doesn't listen for resize
+// events, and the menu needs to be available at all screen sizes.
 .jMmenu-inactive,
 .jMmenu-active {
 
@@ -13,11 +29,10 @@
     width: 3em;
     height: 3em;
     padding: 0;
-    background-color: $white;
     background-size: 9em;
     background-repeat: no-repeat;
     background-position: left center;
-    border: 1px solid $light_grey;
+    border: 2px solid $light_grey;
     background-image: url('../assets/icons/min/png/menu.png');
     background-image: url('../assets/icons/min/svg/menu.svg');
     @include border-radius();
@@ -27,13 +42,13 @@
 
   .jMmenu.menu {
     //Styling for menu & links.
-    position: absolute;
-    z-index: 99;
-    width: 0;
-    max-width: 0;
+    position: $header_position;
+    top: $logo_height + ($logo_pad * 2);
+    z-index: 999;
     margin: 0;
     opacity: 0;
-    background-color: rgba($black, 0.4);
+    overflow: hidden;
+    background-color: rgba($black, 0.6);
     @include transition();
     @include translate3d(0,0,0);
 
@@ -46,7 +61,7 @@
       display: block;
       margin: 0.2em auto;
       list-style: none;
-      max-width: 100%;
+      max-width: none;
     }
 
     a,
@@ -61,7 +76,7 @@
       color: $white;
       background-image: none;
       border-bottom: 1px solid;
-      background-color: rgba($black, 0.2);
+      background-color: $dark_grey;
 
       &.active,
       &:active,
@@ -73,14 +88,26 @@
     }
   }
 
-  // Styling common to side navigation.
-  &.push-right,
-  &.push-left,
-  &.slide-right,
-  &.slide-left {
+  // Styling common to top navigation.
+  &.push-down,
+  &.slide-down {
     .menu.jMmenu {
-      top: 0;
+      width: 100%;
+      height: 0;
+      top: $header_height;
+      bottom: $header_height;
+    }
+  }
+
+  // Styling common to side navigation.
+  &.push-left,
+  &.push-right,
+  &.slide-left,
+  &.slide-right {
+    .menu.jMmenu {
       bottom: 0;
+      width: 0;
+      max-width: 0;
     }
   }
 
@@ -101,10 +128,12 @@
   }
 }
 
-// Style specific to menu positioning.
-.push-left {
-  #page-wrap {
-    float: right;
+// Inactive menu styles.
+.jMmenu-inactive {
+  #nav {
+    &:hover {
+      box-shadow: 0 0 0.2em 0.1em $hilight;
+    }
   }
 }
 
@@ -113,20 +142,30 @@
   #nav {
     // Shift background to indicate state.
     background-position: right center;
+    box-shadow: 0 0 0.2em 0.1em $red;
   }
   // Show the menu.
   .jMmenu.menu {
-    width: 100%;
-    max-width: 50%;
     opacity: 1;
   }
 
-  // Styles specific to positioning.
+  // Styling common to top navigation.
+  &.push-down,
+  &.slide-down {
+    .menu.jMmenu {
+      bottom: 0;
+      height: 100%;
+    }
+  }
+
+  // Styling common to side navigation.
+  &.push-left,
+  &.push-right,
+  &.slide-left,
   &.slide-right {
-    // Move #nav to .menu from obscuring trigger.
-    #nav {
-      position: absolute;
-      right: 51%;
+    .menu.jMmenu {
+      width: 100%;
+      max-width: 50%;
     }
   }
 
@@ -138,10 +177,15 @@
     }
   }
 
-  &.push-left {
-    // Push #page-wrap over to keep content visible when .jMmenu is active.
-    #page-wrap {
-      float: right;
+  /* // Work in progress...
+    &.push-down {
+    .menu.jMmenu {
+    bottom: 200px;
     }
-  }
+    #app {
+    margin-top: 80%;
+    @include transition();
+    }
+    }
+  */
 }

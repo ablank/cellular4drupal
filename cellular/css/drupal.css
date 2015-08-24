@@ -77,23 +77,21 @@
 /* line 27, ../sass/drupal/_drupal-classes.scss */
 [class*="ui-"],
 [class^="ui-"] {
-  -moz-transition: none;
-  -o-transition: none;
   -webkit-transition: none;
   transition: none;
 }
 
 /* line 35, ../sass/drupal/_drupal-classes.scss */
 .ctools-locked {
-  color: #8C0D00;
-  border: 1px solid #8C0D00;
+  color: #8c0d00;
+  border: 1px solid #8c0d00;
   padding: 1em;
 }
 
 /* line 41, ../sass/drupal/_drupal-classes.scss */
 .ctools-owns-lock {
   background: white;
-  border: 1px solid #EC2;
+  border: 1px solid #ec2;
   padding: 1em;
 }
 
@@ -104,8 +102,6 @@ input.progress-disabled,
 button.progress-disabled,
 select.progress-disabled {
   outline: none;
-  -moz-transition: all 400ms ease-out;
-  -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
   /**/
@@ -129,11 +125,23 @@ select.progress-disabled:after {
   z-index: 10;
   /**/
 }
-@keyframes spin {
+@-webkit-keyframes spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -150,8 +158,11 @@ select.progress-disabled:after {
   border-radius: 50%;
   border-width: 1em;
   border-style: double;
-  border-color: transparent #29B4DE;
+  border-color: transparent #29b4de;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
+  -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
 /* line 60, ../sass/drupal/_drupal-classes.scss */
@@ -171,7 +182,7 @@ select.progress-disabled + .ajax-progress {
 #block-system-powered-by {
   float: right;
   margin: 0 1em;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 11, ../sass/drupal/_powered-by.scss */
 #block-system-powered-by a {
@@ -192,8 +203,8 @@ select.progress-disabled + .ajax-progress {
   width: 90%;
   height: 2em;
   margin: 0 0 2em 0;
-  padding: .1em 5%;
-  background: #444444;
+  padding: 0.1em 5%;
+  background: #444;
 }
 /* line 13, ../sass/drupal/_breadcrumb.scss */
 #breadcrumb li {
@@ -201,7 +212,7 @@ select.progress-disabled + .ajax-progress {
   display: inline-block;
   list-style: none;
   line-height: 2em;
-  margin: 0 0 0 .4em;
+  margin: 0 0 0 0.4em;
   padding: 0 0 0 1.4em;
   color: #edeceb;
   background-repeat: no-repeat;
@@ -211,7 +222,7 @@ select.progress-disabled + .ajax-progress {
 }
 /* line 26, ../sass/drupal/_breadcrumb.scss */
 #breadcrumb li a {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 30, ../sass/drupal/_breadcrumb.scss */
 #breadcrumb li.first {
@@ -245,11 +256,9 @@ select.progress-disabled + .ajax-progress {
   display: block;
   margin: 1em 1em 1em 0;
   text-align: center;
-  border: #444444 thin solid;
+  border: #444 thin solid;
   background: white;
-  color: #444444;
-  -moz-border-radius: 0.2em;
-  -webkit-border-radius: 0.2em;
+  color: #444;
   border-radius: 0.2em;
 }
 /* line 24, ../sass/drupal/_postinfo.scss */
@@ -261,18 +270,18 @@ select.progress-disabled + .ajax-progress {
 /* line 30, ../sass/drupal/_postinfo.scss */
 .post-date .day {
   float: left;
-  padding: .2em 0 .2em .6em;
+  padding: 0.2em 0 0.2em 0.6em;
 }
 /* line 35, ../sass/drupal/_postinfo.scss */
 .post-date .month {
   float: left;
-  padding: .2em .6em .2em .4em;
+  padding: 0.2em 0.6em 0.2em 0.4em;
 }
 /* line 40, ../sass/drupal/_postinfo.scss */
 .post-date .year {
   clear: both;
-  padding: .2em .8em;
-  background-color: #444444;
+  padding: 0.2em 0.8em;
+  background-color: #444;
   color: #f1f1f1;
   border-top: #f1f1f1 thin solid;
 }
@@ -294,9 +303,9 @@ select.progress-disabled + .ajax-progress {
 .pager {
   clear: both;
   display: table;
-  margin: .4em auto;
+  margin: 0.4em auto;
   padding: 0;
-  font: bold .8em/1em;
+  font: bold 0.8em/1em;
   text-align: center;
 }
 /* line 16, ../sass/drupal/_pager.scss */
@@ -317,52 +326,50 @@ select.progress-disabled + .ajax-progress {
   font-family: "Quicksand";
   font-weight: bold;
   line-height: normal;
-  border: #FEFEFE 2px solid;
-  color: #FEFEFE;
-  background-color: #444444;
-  -moz-border-radius: 0.1em;
-  -webkit-border-radius: 0.1em;
+  border: #fefefe 2px solid;
+  color: #fefefe;
+  background-color: #444;
   border-radius: 0.1em;
-  -moz-box-shadow: #777777 0 0.1em 0.75em;
-  -webkit-box-shadow: #777777 0 0.1em 0.75em;
-  box-shadow: #777777 0 0.1em 0.75em;
+  box-shadow: #777 0 0.1em 0.75em;
 }
 /* line 217, ../sass/_mixins/_cellularmixins.scss */
 .pager a:visited {
-  color: #FEFEFE;
-  background-color: #444444;
+  color: #fefefe;
+  background-color: #444;
 }
 /* line 222, ../sass/_mixins/_cellularmixins.scss */
-.pager a.active, .pager a:active {
+.pager a.active,
+.pager a:active {
   cursor: default;
 }
 /* line 227, ../sass/_mixins/_cellularmixins.scss */
-.pager a.active, .pager a:active, .pager a:hover {
+.pager a.active,
+.pager a:active,
+.pager a:hover {
   outline: none;
   text-decoration: none;
   border-color: #e5e5e5;
-  border-color: #29B4DE;
-  -moz-box-shadow: #777777 0 0.1em 0.4em;
-  -webkit-box-shadow: #777777 0 0.1em 0.4em;
-  box-shadow: #777777 0 0.1em 0.4em;
+  border-color: #29b4de;
+  box-shadow: #777 0 0.1em 0.4em;
 }
 /* line 27, ../sass/drupal/_pager.scss */
-.pager a:hover, .pager a:focus {
-  color: #FEFEFE;
+.pager a:hover,
+.pager a:focus {
+  color: #fefefe;
 }
 /* line 33, ../sass/drupal/_pager.scss */
 .pager .pager-item {
-  margin: .2em;
+  margin: 0.2em;
 }
 /* line 37, ../sass/drupal/_pager.scss */
 .pager .pager-current {
   cursor: default;
-  margin: .2em;
+  margin: 0.2em;
   padding: 1em;
   font-weight: bold;
   outline: 0;
-  color: #444444;
-  background: #FEFEFE;
+  color: #444;
+  background: #fefefe;
   border: thin solid;
 }
 
@@ -371,7 +378,7 @@ select.progress-disabled + .ajax-progress {
 .pager-previous,
 .pager-next,
 .pager-last {
-  margin: .2em;
+  margin: 0.2em;
   border: none;
 }
 /* line 57, ../sass/drupal/_pager.scss */
@@ -382,7 +389,8 @@ select.progress-disabled + .ajax-progress {
   width: 4em;
 }
 /* line 61, ../sass/drupal/_pager.scss */
-.pager-first:before, .pager-first:after,
+.pager-first:before,
+.pager-first:after,
 .pager-previous:before,
 .pager-previous:after,
 .pager-next:before,
@@ -392,7 +400,7 @@ select.progress-disabled + .ajax-progress {
   cursor: pointer;
   position: absolute;
   top: 20%;
-  color: #FEFEFE;
+  color: #fefefe;
   font-size: 3em;
   z-index: 10;
 }
@@ -400,13 +408,13 @@ select.progress-disabled + .ajax-progress {
 /* line 74, ../sass/drupal/_pager.scss */
 .pager-first:before,
 .pager-previous:before {
-  left: .1em;
+  left: 0.1em;
 }
 
 /* line 81, ../sass/drupal/_pager.scss */
 .pager-next:after,
 .pager-last:after {
-  right: .1em;
+  right: 0.1em;
 }
 
 /* line 87, ../sass/drupal/_pager.scss */
@@ -439,7 +447,7 @@ form.site-search {
   display: inline-block;
   padding: 0.2em;
   text-align: right;
-  font-size: .8em;
+  font-size: 0.8em;
   background-color: #f1f1f1;
   background-color: rgba(241, 241, 241, 0.6);
   border: #bbbab7 1px solid;
@@ -465,10 +473,12 @@ form.site-search input[type="text"] {
   color: #bbbab7;
 }
 /* line 36, ../sass/drupal/_search.scss */
-form.site-search input[type="text"]:hover, form.site-search input[type="text"]:active, form.site-search input[type="text"]:focus {
+form.site-search input[type="text"]:hover,
+form.site-search input[type="text"]:active,
+form.site-search input[type="text"]:focus {
   outline: none;
   color: #111;
-  border-color: #29B4DE;
+  border-color: #29b4de;
 }
 /* line 45, ../sass/drupal/_search.scss */
 form.site-search input[type="submit"] {
@@ -483,9 +493,11 @@ form.site-search input[type="submit"] {
   background-repeat: no-repeat;
 }
 /* line 56, ../sass/drupal/_search.scss */
-form.site-search input[type="submit"]:hover, form.site-search input[type="submit"]:active, form.site-search input[type="submit"]:focus {
+form.site-search input[type="submit"]:hover,
+form.site-search input[type="submit"]:active,
+form.site-search input[type="submit"]:focus {
   outline: none;
-  border-color: #29B4DE;
+  border-color: #29b4de;
 }
 
 /* line 66, ../sass/drupal/_search.scss */
@@ -514,9 +526,9 @@ form.search-form label {
 
 /* line 3, ../sass/drupal/_comments.scss */
 #comments h2 {
-  background: #29B4DE;
-  color: #FEFEFE;
-  margin: .4em 0;
+  background: #29b4de;
+  color: #fefefe;
+  margin: 0.4em 0;
   padding: 1em;
 }
 /* line 9, ../sass/drupal/_comments.scss */
@@ -527,7 +539,7 @@ form.search-form label {
   left: 0;
   width: 0;
   height: 0;
-  border-top: 0.6em solid #29B4DE;
+  border-top: 0.6em solid #29b4de;
   border-left: 0.6em solid transparent;
   border-right: 0.6em solid transparent;
 }
@@ -558,13 +570,11 @@ a[id^=comment-] {
   margin: 0.1em auto 0.4em;
   border: 1px #bbbab7 solid;
   background-color: #f6f6f6;
-  -moz-box-shadow: 0 0 0.3em #bbbab7;
-  -webkit-box-shadow: 0 0 0.3em #bbbab7;
   box-shadow: 0 0 0.3em #bbbab7;
 }
 /* line 51, ../sass/drupal/_comments.scss */
 .comment.new {
-  border-color: #8C0D00;
+  border-color: #8c0d00;
 }
 /* line 55, ../sass/drupal/_comments.scss */
 .comment .post-info {
@@ -572,10 +582,10 @@ a[id^=comment-] {
 }
 /* line 58, ../sass/drupal/_comments.scss */
 .comment .links.inline {
-  margin: .4em -1em -1em;
+  margin: 0.4em -1em -1em;
   background-color: #bebebe;
   display: block;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 /* line 66, ../sass/drupal/_comments.scss */
@@ -590,7 +600,7 @@ a[id^=comment-] {
   margin: 0;
   font-size: 1.4em;
   color: #f1f1f1;
-  background-color: #444444;
+  background-color: #444;
 }
 /* line 79, ../sass/drupal/_comments.scss */
 .comment-title:after {
@@ -614,13 +624,13 @@ a[id^=comment-] {
 .inline.links li {
   display: inline;
   display: inline-block;
-  margin: .2em;
+  margin: 0.2em;
   padding: 0;
 }
 /* line 14, ../sass/drupal/_menus.scss */
 #app .menu a,
 .inline.links a {
-  padding: .4em .6em;
+  padding: 0.4em 0.6em;
 }
 /* line 195, ../sass/_mixins/_cellularmixins.scss */
 #app .menu a,
@@ -633,40 +643,37 @@ a[id^=comment-] {
   font-family: "Quicksand";
   font-weight: bold;
   line-height: normal;
-  border: #FEFEFE 2px solid;
-  color: #FEFEFE;
-  background-color: #444444;
-  -moz-border-radius: 0.1em;
-  -webkit-border-radius: 0.1em;
+  border: #fefefe 2px solid;
+  color: #fefefe;
+  background-color: #444;
   border-radius: 0.1em;
-  -moz-box-shadow: #777777 0 0.1em 0.75em;
-  -webkit-box-shadow: #777777 0 0.1em 0.75em;
-  box-shadow: #777777 0 0.1em 0.75em;
+  box-shadow: #777 0 0.1em 0.75em;
 }
 /* line 217, ../sass/_mixins/_cellularmixins.scss */
 #app .menu a:visited,
 .inline.links a:visited {
-  color: #FEFEFE;
-  background-color: #444444;
+  color: #fefefe;
+  background-color: #444;
 }
 /* line 222, ../sass/_mixins/_cellularmixins.scss */
-#app .menu a.active, #app .menu a:active,
+#app .menu a.active,
+#app .menu a:active,
 .inline.links a.active,
 .inline.links a:active {
   cursor: default;
 }
 /* line 227, ../sass/_mixins/_cellularmixins.scss */
-#app .menu a.active, #app .menu a:active, #app .menu a:hover,
+#app .menu a.active,
+#app .menu a:active,
+#app .menu a:hover,
 .inline.links a.active,
 .inline.links a:active,
 .inline.links a:hover {
   outline: none;
   text-decoration: none;
   border-color: #e5e5e5;
-  border-color: #29B4DE;
-  -moz-box-shadow: #777777 0 0.1em 0.4em;
-  -webkit-box-shadow: #777777 0 0.1em 0.4em;
-  box-shadow: #777777 0 0.1em 0.4em;
+  border-color: #29b4de;
+  box-shadow: #777 0 0.1em 0.4em;
 }
 
 /* line 2, ../sass/drupal/_tabs.scss */
@@ -678,12 +685,12 @@ a[id^=comment-] {
 .tabs.primary li {
   list-style: none;
   display: inline;
-  margin: 0 .1em;
+  margin: 0 0.1em;
 }
 /* line 10, ../sass/drupal/_tabs.scss */
 .tabs.primary a {
-  padding: .4em .8em 0.2em;
-  color: #444444;
+  padding: 0.4em 0.8em 0.2em;
+  color: #444;
   border: #bbbab7 1px solid;
   border-bottom: none;
   background-color: #f1f1f1;
@@ -692,7 +699,7 @@ a[id^=comment-] {
 }
 /* line 17, ../sass/drupal/_tabs.scss */
 .tabs.primary a.active {
-  background-color: #FEFEFE;
+  background-color: #fefefe;
 }
 /* line 20, ../sass/drupal/_tabs.scss */
 .tabs.primary a:hover {
@@ -714,11 +721,9 @@ a.colorbox {
   display: inline;
   display: inline-block;
   margin: 1em;
-  background-color: #111111;
+  background-color: #111;
   background-color: rgba(17, 17, 17, 0.8);
   color: black;
-  -moz-box-shadow: 0 0 0.2em 0.2em #f1f1f1;
-  -webkit-box-shadow: 0 0 0.2em 0.2em #f1f1f1;
   box-shadow: 0 0 0.2em 0.2em #f1f1f1;
 }
 /* line 46, ../sass/_mixins/_cellularmixins.scss */
@@ -735,14 +740,12 @@ a.colorbox p {
 /* line 20, ../sass/drupal/_colorbox.scss */
 a:hover.colorbox,
 a:focus.colorbox {
-  -moz-box-shadow: 0 0 0.3em 0.3em #f1f1f1;
-  -webkit-box-shadow: 0 0 0.3em 0.3em #f1f1f1;
   box-shadow: 0 0 0.3em 0.3em #f1f1f1;
 }
 
 /* line 26, ../sass/drupal/_colorbox.scss */
 .cboxSlideshow_off #cboxSlideshow {
-  bottom: 0px;
+  bottom: 0;
   right: 3em;
   background-position: -96px -66px;
 }
@@ -753,7 +756,7 @@ a:focus.colorbox {
 
 /* line 37, ../sass/drupal/_colorbox.scss */
 .cboxSlideshow_on #cboxSlideshow {
-  bottom: 0px;
+  bottom: 0;
   right: 4em;
   background-position: -32px 0;
 }
@@ -794,9 +797,7 @@ a:focus.colorbox {
 /* line 76, ../sass/drupal/_colorbox.scss */
 #cboxWrapper {
   padding: 0;
-  background: #FEFEFE;
-  -moz-border-radius: 0.4em;
-  -webkit-border-radius: 0.4em;
+  background: #fefefe;
   border-radius: 0.4em;
 }
 
@@ -807,7 +808,7 @@ a:focus.colorbox {
   left: 0;
   right: 0;
   margin: 0;
-  padding: .4em .8em;
+  padding: 0.4em 0.8em;
   color: #f1f1f1;
   background: rgba(17, 17, 17, 0.8);
 }
@@ -960,7 +961,7 @@ a:focus.colorbox {
   top: -2.2em;
   right: -2.2em;
   background-position: -66px -2px;
-  border: 2px solid #FEFEFE;
+  border: 2px solid #fefefe;
 }
 /* line 231, ../sass/drupal/_colorbox.scss */
 #cboxClose:hover {
@@ -970,16 +971,16 @@ a:focus.colorbox {
 /* line 1, ../sass/drupal/_calendar.scss */
 .date-nav-wrapper {
   background: #f1f1f1;
-  padding: .6em 0;
+  padding: 0.6em 0;
 }
 /* line 5, ../sass/drupal/_calendar.scss */
 .date-nav-wrapper .date-nav {
-  padding: .4em 0;
+  padding: 0.4em 0;
 }
 /* line 9, ../sass/drupal/_calendar.scss */
 .date-nav-wrapper .pager {
-  margin: .1em auto 0;
-  padding: .4em .4em 0;
+  margin: 0.1em auto 0;
+  padding: 0.4em 0.4em 0;
 }
 /* line 14, ../sass/drupal/_calendar.scss */
 .date-nav-wrapper .date-prev,
@@ -997,46 +998,43 @@ a:focus.colorbox {
   font-family: "Quicksand";
   font-weight: bold;
   line-height: normal;
-  border: #444444 2px solid;
-  color: #444444;
-  background-color: #FEFEFE;
-  -moz-border-radius: 0.1em;
-  -webkit-border-radius: 0.1em;
+  border: #444 2px solid;
+  color: #444;
+  background-color: #fefefe;
   border-radius: 0.1em;
-  -moz-box-shadow: #cbcbcb 0 0.1em 0.75em;
-  -webkit-box-shadow: #cbcbcb 0 0.1em 0.75em;
   box-shadow: #cbcbcb 0 0.1em 0.75em;
 }
 /* line 217, ../sass/_mixins/_cellularmixins.scss */
 .date-nav-wrapper .date-prev a:visited,
 .date-nav-wrapper .date-next a:visited {
-  color: #444444;
-  background-color: #FEFEFE;
+  color: #444;
+  background-color: #fefefe;
 }
 /* line 222, ../sass/_mixins/_cellularmixins.scss */
-.date-nav-wrapper .date-prev a.active, .date-nav-wrapper .date-prev a:active,
+.date-nav-wrapper .date-prev a.active,
+.date-nav-wrapper .date-prev a:active,
 .date-nav-wrapper .date-next a.active,
 .date-nav-wrapper .date-next a:active {
   cursor: default;
 }
 /* line 227, ../sass/_mixins/_cellularmixins.scss */
-.date-nav-wrapper .date-prev a.active, .date-nav-wrapper .date-prev a:active, .date-nav-wrapper .date-prev a:hover,
+.date-nav-wrapper .date-prev a.active,
+.date-nav-wrapper .date-prev a:active,
+.date-nav-wrapper .date-prev a:hover,
 .date-nav-wrapper .date-next a.active,
 .date-nav-wrapper .date-next a:active,
 .date-nav-wrapper .date-next a:hover {
   outline: none;
   text-decoration: none;
   border-color: #5e5e5e;
-  border-color: #29B4DE;
-  -moz-box-shadow: #cbcbcb 0 0.1em 0.4em;
-  -webkit-box-shadow: #cbcbcb 0 0.1em 0.4em;
+  border-color: #29b4de;
   box-shadow: #cbcbcb 0 0.1em 0.4em;
 }
 
 /* line 25, ../sass/drupal/_calendar.scss */
 .month-view td.single-day {
   min-width: 12.85714%;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   border: #f1f1f1 1px solid;
 }
 /* line 31, ../sass/drupal/_calendar.scss */
@@ -1049,7 +1047,7 @@ a:focus.colorbox {
 }
 /* line 37, ../sass/drupal/_calendar.scss */
 .month-view .today {
-  border-color: #29B4DE;
+  border-color: #29b4de;
 }
 
 /**
