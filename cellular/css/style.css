@@ -1285,6 +1285,67 @@ hr.clearfix {
 
 /**
   * @file
+  * General styling for icons.
+*/
+/* line 6, ../sass/style/_style_icons.scss */
+#page-wrap .icon {
+  display: inline;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-indent: -999em;
+  margin: 0.4em;
+  padding: 10px;
+  vertical-align: middle;
+  background-color: #fefefe;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-color: none;
+  border: 1px solid #f1f1f1;
+  border-radius: 0.4em;
+}
+/* line 22, ../sass/style/_style_icons.scss */
+#page-wrap .icon:hover {
+  border-color: #29b4de;
+}
+/* line 31, ../sass/style/_style_icons.scss */
+#page-wrap .icon.search {
+  text-indent: 0;
+}
+
+/* line 1, ../sass/style/_style_social.scss */
+#social-media-follow,
+#social-media-share {
+  float: left;
+  overflow: hidden;
+  margin: 1.4em 0.8em 0.8em;
+  padding: 0 0.4em;
+  background: #f1f1f1;
+  border-radius: 0.4em;
+}
+/* line 10, ../sass/style/_style_social.scss */
+#social-media-follow form,
+#social-media-share form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+/* line 16, ../sass/style/_style_social.scss */
+#social-media-follow h2,
+#social-media-follow h3,
+#social-media-follow h4,
+#social-media-share h2,
+#social-media-share h3,
+#social-media-share h4 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0.4em;
+  border-bottom: #444 0.2em solid;
+  background: #fefefe;
+}
+
+/**
+  * @file
   * CellularUI : Cellular
   * Set default UI styles.
 */
