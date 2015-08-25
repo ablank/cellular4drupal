@@ -1654,15 +1654,16 @@ function cellular_preprocess_html(&$vars) {
   cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
+/*
+    $cookie = variable_get('site_name', "Just another Drupal Site");
+    $cookie .='-visited';
+    $cookie = trim($cookie, '=,; \t\r\n\013\014');
+    setcookie($cookie, 'TRUE', time() + (86400 * 30), '/');
 
-  /*
-    $site_name = variable_get('site_name', "Just another Drupal Site");
-    setcookie($site_name . 'visited', 'TRUE', time() + (86400 * 30), '/');
-
-    if (isset($_COOKIE['visited'])) {
-    drupal_set_message("OK, Cookie: ' " . $_COOKIE['visited'] . " ' set!");
+    if (isset($_COOKIE[$cookie])) {
+    drupal_set_message("OK, Cookie: ' " . $_COOKIE[$cookie] . " ' set!");
     }
-   */
+ */
 }
 
 /**
