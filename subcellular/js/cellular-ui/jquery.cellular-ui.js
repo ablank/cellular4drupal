@@ -14,7 +14,17 @@ attach: function (context, settings) {
 
  // :)
 var cellular = {};
-function breakpoint(){
+cellular.opts = {
+cclass: "cellular",
+tclass: "title",
+bclass: "body",
+wrapper: "<div />",
+speed: 300,
+breakpoint: 'mobile'
+};
+
+ // :)
+cellular.breakpoint = function () {
 var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
 mq = {
 size: content.match(/\d/g).join(""),
@@ -22,17 +32,6 @@ type: content.match(/\w*[^\"\'](?=-)/g).join("")
 };
 return mq;
 };
-$(window).on('resize', breakpoint);
-cellular.opts = {
-cclass: "cellular",
-tclass: "title",
-bclass: "body",
-wrapper: "<div />",
-speed: 300,
-breakpoint: breakpoint().type
-};
-
- // :)
 cellular.activate = function () {
 return this.each(function () {
 var $t = jQuery(this);
@@ -200,10 +199,10 @@ $t.height(maxHeight);
 cellular.jMmenu = function (opts) {
 var o = jQuery.extend({
 breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger
-parent: jQuery('body'),
-cclass: "jMmenu",
-type: "slide",
-direction: "right"
+parent: jQuery('body'), // Parent element used to attach menu
+cclass: "jMmenu", // Menu class to test
+type: "slide", // Type of animation
+direction: "right" // Direction of animation
 }, opts),
 fn = {
 classes: [
@@ -213,22 +212,17 @@ o.cclass + '-inactive'
 ]
 };
 fn.mediaQuery = function ($obj) {
-if (o.breakpoint === 'mobile') {
-var classes = [
+//console.log('break: ' + cellular.breakpoint());
+if (o.breakpoint === cellular.breakpoint().type) {
+var $menu = $obj.children([0]),
+classes = [
 fn.classes[0],
 fn.classes[2]
-],
-$menu = $obj.children([0]);
-classes = classes.join(' ');
-if (o.parent.hasClass(fn.classes[0])) {
-// Skip if already set.
-}
-else {
-o.parent.addClass(classes);
+];
+if (!o.parent.hasClass(fn.classes[0])) {
+o.parent.addClass(classes.join(' '));
 $menu.addClass(o.cclass);
 }
-// console.log($obj);
-// console.log('breakpoint: '+o.breakpoint);
 $menu.prependTo(o.parent);
 }
 };
@@ -236,10 +230,10 @@ return this.each(function () {
 var $obj = jQuery(this);
 var $window = jQuery(window);
 fn.mediaQuery($obj);
-$window.resize(function () {
-$window.throttle(fn.mediaQuery($obj));
+$window.on('resize', function () {
+fn.mediaQuery($obj);
 });
-$obj.click(function () {
+$obj.on('click', function () {
 if (o.parent.hasClass(fn.classes[0])) {
 o.parent.toggleClass(fn.classes[1])
 .toggleClass(fn.classes[2]);

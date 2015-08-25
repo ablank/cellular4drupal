@@ -1,3 +1,14 @@
+
+cellular.breakpoint = function () {
+  var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
+    mq = {
+      size: content.match(/\d/g).join(""),
+      type: content.match(/\w*[^\"\'](?=-)/g).join("")
+    };
+
+  return mq;
+};
+
 cellular.activate = function () {
   return this.each(function () {
     var $t = jQuery(this);

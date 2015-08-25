@@ -66,7 +66,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $user_reg = theme_get_setting('login_block_register');
       $user_pass = theme_get_setting('login_block_password');
 
-      if (isset($user_reg) || isset($user_pass)) {
+      if (!empty($user_reg) || !empty($user_pass)) {
         $login_links = '<div class="login-links">';
         if (!empty($user_reg)) {
           $login_links .= l(t('Register'), "user/register", array(

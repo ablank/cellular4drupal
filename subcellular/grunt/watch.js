@@ -8,11 +8,15 @@ module.exports = {
     files: [
       'preprocess/**/*.inc'
     ],
-    tasks: ['concat']
+    tasks: [
+      'concat:template',
+      'concat:theme_settings'
+    ]
   },
   javascript: {
     files: ['js/**/*.js'],
     tasks: [
+      'concat:cellularUI',
       // 'uglify',
       'jshint'
     ],

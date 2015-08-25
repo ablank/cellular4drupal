@@ -1287,7 +1287,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $user_reg = theme_get_setting('login_block_register');
       $user_pass = theme_get_setting('login_block_password');
 
-      if (isset($user_reg) || isset($user_pass)) {
+      if (!empty($user_reg) || !empty($user_pass)) {
         $login_links = '<div class="login-links">';
         if (!empty($user_reg)) {
           $login_links .= l(t('Register'), "user/register", array(
@@ -2556,6 +2556,13 @@ function cellular_social_media_share() {
     );
 
     $links = array();
+
+    $set['fb'] == 1 ? $links['facebook'] = array(
+      'name' => 'Facebook',
+      'script' => NULL,
+      'url' => '//www.facebook.com/sharer/sharer.php?u=' . $page['url'],
+      'class' => 'facebook',
+    ) : NULL;
     $set['google'] == 1 ? $links['google+'] = array(
       'name' => 'Google+',
       'script' => NULL,
@@ -2585,29 +2592,6 @@ function cellular_social_media_share() {
       'url' => 'http://www.reddit.com/submit?url=' . $page['url'],
       'class' => 'reddit',
     ) : NULL;
-
-    if ($set['fb'] == 1) {
-      // Set variables to appease PAReview.
-      $fbscript = '(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-          fjs.parentNode.insertBefore(js, fjs);
-          }(document, \'script\', \'facebook-jssdk\'));';
-      $fbtag = '<div class="fb-like" data-href="' . $page['url'] . '"
-          data-layout="button" data-action="like" data-show-faces="false"
-          data-share="true"></div><div id="fb-root"></div>';
-
-      $links['facebook'] = array(
-        // Facebook javascript.
-        'script' => $fbscript,
-        // Set fb markup.
-        'tag' => $fbtag,
-        // Push script to end of body.
-        'weight' => 1000,
-      );
-    }
 
     $content = cellular_build_links($links, $media_block);
 

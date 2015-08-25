@@ -146,33 +146,6 @@ small {
 }
 
 /* line 41, ../sass/style/_base_typography.scss */
-a {
-  color: #29b4de;
-  text-decoration: none;
-  outline: none;
-  display: inline-block;
-  -webkit-transition: all 400ms ease-out;
-  transition: all 400ms ease-out;
-}
-/* line 48, ../sass/style/_base_typography.scss */
-a:visited {
-  color: #16708b;
-}
-/* line 52, ../sass/style/_base_typography.scss */
-a:hover,
-a:active,
-a:focus {
-  outline: thin dotted;
-  outline-offset: -0.1em;
-  text-decoration: underline;
-  color: #81d3ec;
-}
-/* line 61, ../sass/style/_base_typography.scss */
-a:hover {
-  outline: 0;
-}
-
-/* line 66, ../sass/style/_base_typography.scss */
 h1,
 h2,
 h3,
@@ -188,7 +161,7 @@ h6 {
   padding: 0.4em 0.4em 0 1em;
 }
 
-/* line 81, ../sass/style/_base_typography.scss */
+/* line 56, ../sass/style/_base_typography.scss */
 h1 {
   margin: 0;
   padding: 0.4em 5%;
@@ -198,37 +171,37 @@ h1 {
   border: none;
 }
 
-/* line 90, ../sass/style/_base_typography.scss */
+/* line 65, ../sass/style/_base_typography.scss */
 h2 {
   font-size: 1.92em;
   color: #bbbab7;
 }
 
-/* line 95, ../sass/style/_base_typography.scss */
+/* line 70, ../sass/style/_base_typography.scss */
 h3 {
   font-size: 1.68em;
   color: #898883;
 }
 
-/* line 100, ../sass/style/_base_typography.scss */
+/* line 75, ../sass/style/_base_typography.scss */
 h4 {
   font-size: 1.44em;
   color: #555451;
 }
 
-/* line 105, ../sass/style/_base_typography.scss */
+/* line 80, ../sass/style/_base_typography.scss */
 h5 {
   font-size: 1.2em;
   color: #21201f;
 }
 
-/* line 110, ../sass/style/_base_typography.scss */
+/* line 85, ../sass/style/_base_typography.scss */
 h6 {
   font-size: 0.96em;
   color: black;
 }
 
-/* line 115, ../sass/style/_base_typography.scss */
+/* line 90, ../sass/style/_base_typography.scss */
 sub,
 sup {
   position: relative;
@@ -237,17 +210,17 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 123, ../sass/style/_base_typography.scss */
+/* line 98, ../sass/style/_base_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 127, ../sass/style/_base_typography.scss */
+/* line 102, ../sass/style/_base_typography.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 131, ../sass/style/_base_typography.scss */
+/* line 106, ../sass/style/_base_typography.scss */
 blockquote,
 q,
 quote {
@@ -256,26 +229,26 @@ quote {
   background-color: #e5e5e5;
   color: #444;
 }
-/* line 139, ../sass/style/_base_typography.scss */
+/* line 114, ../sass/style/_base_typography.scss */
 blockquote:before,
 q:before,
 quote:before {
   content: "\201C";
 }
-/* line 142, ../sass/style/_base_typography.scss */
+/* line 117, ../sass/style/_base_typography.scss */
 blockquote:after,
 q:after,
 quote:after {
   content: "\201D";
 }
 
-/* line 147, ../sass/style/_base_typography.scss */
+/* line 122, ../sass/style/_base_typography.scss */
 q,
 quote {
   font-size: 1.4em;
 }
 
-/* line 152, ../sass/style/_base_typography.scss */
+/* line 127, ../sass/style/_base_typography.scss */
 blockquote {
   display: block;
   font-size: 1.8em;
@@ -284,12 +257,12 @@ blockquote {
   border-left: 0.3em solid;
 }
 
-/* line 160, ../sass/style/_base_typography.scss */
+/* line 135, ../sass/style/_base_typography.scss */
 caption {
   text-align: left;
 }
 
-/* line 164, ../sass/style/_base_typography.scss */
+/* line 139, ../sass/style/_base_typography.scss */
 code,
 pre {
   display: block;
@@ -303,12 +276,37 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 177, ../sass/style/_base_typography.scss */
+/* line 152, ../sass/style/_base_typography.scss */
 abbr,
 acronym {
   border: 0;
   font-variant: small-caps;
   font-weight: bold;
+}
+
+/**
+  * @file
+  * Anchors / Links
+*/
+/* line 15, ../sass/style/_base_links.scss */
+a {
+  color: #29b4de;
+  text-decoration: none;
+  outline: none;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 22, ../sass/style/_base_links.scss */
+a:visited {
+  color: #20a5ce;
+}
+/* line 26, ../sass/style/_base_links.scss */
+a:hover,
+a:active,
+a:focus {
+  outline: none;
+  text-decoration: underline;
+  color: #1982a2;
 }
 
 /**
@@ -1285,6 +1283,67 @@ hr.clearfix {
 
 /**
   * @file
+  * General styling for icons.
+*/
+/* line 6, ../sass/style/_style_icons.scss */
+#page-wrap .icon {
+  display: inline;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-indent: -999em;
+  margin: 0.4em;
+  padding: 10px;
+  vertical-align: middle;
+  background-color: #fefefe;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-color: none;
+  border: 1px solid #f1f1f1;
+  border-radius: 0.4em;
+}
+/* line 22, ../sass/style/_style_icons.scss */
+#page-wrap .icon:hover {
+  border-color: #29b4de;
+}
+/* line 31, ../sass/style/_style_icons.scss */
+#page-wrap .icon.search {
+  text-indent: 0;
+}
+
+/* line 1, ../sass/style/_style_social.scss */
+#social-media-follow,
+#social-media-share {
+  float: left;
+  overflow: hidden;
+  margin: 1.4em 0.8em 0.8em;
+  padding: 0 0.4em;
+  background: #f1f1f1;
+  border-radius: 0.4em;
+}
+/* line 10, ../sass/style/_style_social.scss */
+#social-media-follow form,
+#social-media-share form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+/* line 16, ../sass/style/_style_social.scss */
+#social-media-follow h2,
+#social-media-follow h3,
+#social-media-follow h4,
+#social-media-share h2,
+#social-media-share h3,
+#social-media-share h4 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0.4em;
+  border-bottom: #444 0.2em solid;
+  background: #fefefe;
+}
+
+/**
+  * @file
   * CellularUI : Cellular
   * Set default UI styles.
 */
@@ -1717,6 +1776,25 @@ hr.clearfix {
   padding: 1%;
   width: 68%;
   border: none;
+}
+
+/**
+  * @file
+  * Typographic style classes
+*/
+/* line 6, ../sass/style/_style_typography.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 9, ../sass/style/_style_typography.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 12, ../sass/style/_style_typography.scss */
+.text-center {
+  text-align: center;
 }
 
 /**

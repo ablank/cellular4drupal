@@ -38,31 +38,6 @@ small {
   font-size: $small;
 }
 
-a {
-  color: $hilight;
-  text-decoration: none;
-  outline: none;
-  display: inline-block;
-  @include transition();
-
-  &:visited {
-    color: darken($hilight, $adjust);
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    outline: thin dotted;
-    outline-offset: -.1em;
-    text-decoration: underline;
-    color: lighten($hilight, $adjust);
-  }
-
-  &:hover {
-    outline: 0;
-  }
-}
-
 h1,
 h2,
 h3,
