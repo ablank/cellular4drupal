@@ -263,12 +263,15 @@ caption {
 }
 
 /* line 139, ../sass/style/_base_typography.scss */
-code,
+code {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* line 143, ../sass/style/_base_typography.scss */
 pre {
   display: block;
   margin: 1em auto;
   padding: 1em;
-  font-family: "Courier New", Courier, monospace;
   overflow: scroll;
   white-space: pre;
   white-space: pre-wrap;
@@ -276,7 +279,7 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 152, ../sass/style/_base_typography.scss */
+/* line 154, ../sass/style/_base_typography.scss */
 abbr,
 acronym {
   border: 0;
@@ -1011,6 +1014,7 @@ hr.clearfix {
 
 /* line 19, ../sass/style/_region_wrappers.scss */
 #app {
+  z-index: 1;
   margin-top: 96px;
 }
 
@@ -1258,8 +1262,6 @@ hr.clearfix {
   display: block;
   padding: 0.75em 1.4em 0.75em;
   text-align: right;
-  font-size: 1em;
-  font-weight: bold;
 }
 
 /**
@@ -1295,18 +1297,25 @@ hr.clearfix {
   margin: 0.4em;
   padding: 10px;
   vertical-align: middle;
-  background-color: #fefefe;
   background-position: 10px 10px;
   background-repeat: no-repeat;
   background-color: none;
-  border: 1px solid #f1f1f1;
-  border-radius: 0.4em;
+  border: 1px solid #bbbab7;
+  border-radius: 50%;
 }
-/* line 22, ../sass/style/_style_icons.scss */
+/* line 21, ../sass/style/_style_icons.scss */
 #page-wrap .icon:hover {
   border-color: #29b4de;
 }
-/* line 31, ../sass/style/_style_icons.scss */
+/* line 25, ../sass/style/_style_icons.scss */
+#page-wrap .icon.social {
+  background-color: #f1f1f1;
+}
+/* line 27, ../sass/style/_style_icons.scss */
+#page-wrap .icon.social:hover {
+  background-color: #fefefe;
+}
+/* line 32, ../sass/style/_style_icons.scss */
 #page-wrap .icon.search {
   text-indent: 0;
 }
@@ -1318,17 +1327,15 @@ hr.clearfix {
   overflow: hidden;
   margin: 1.4em 0.8em 0.8em;
   padding: 0 0.4em;
-  background: #f1f1f1;
-  border-radius: 0.4em;
 }
-/* line 10, ../sass/style/_style_social.scss */
+/* line 8, ../sass/style/_style_social.scss */
 #social-media-follow form,
 #social-media-share form {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 16, ../sass/style/_style_social.scss */
+/* line 14, ../sass/style/_style_social.scss */
 #social-media-follow h2,
 #social-media-follow h3,
 #social-media-follow h4,
@@ -1340,6 +1347,15 @@ hr.clearfix {
   padding: 0.4em;
   border-bottom: #444 0.2em solid;
   background: #fefefe;
+}
+
+/* line 25, ../sass/style/_style_social.scss */
+#page-wrap .social.icon {
+  background-color: #f1f1f1;
+}
+/* line 28, ../sass/style/_style_social.scss */
+#page-wrap .social.icon:hover {
+  background-color: #fefefe;
 }
 
 /**

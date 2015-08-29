@@ -69,25 +69,43 @@
  * language, e.g. $node->body['en'], thus overriding any language negotiation
  * rule that was previously applied.
  */
-?>
-<div id="node-<?php print $node->nid . "\""; print $attributes; ?>>
-  <?php
-  print render($title_prefix);
-  if (!$page) :
-    if ($title) :
-      print "<h2$title_attributes>\n<a href=\"$node_url\">\n$title\n</a></h2>";
-    endif;
-  endif;
-  print render($title_suffix);
-  ?>
-  <?php if (!empty($display_submitted)):?>
-    <div class="post-info">
-      <div class="post-date"><?php print $post_date; ?></div>
-      <div class="post-author"><?php print $author; ?></div>
-    </div>;
-  <?php endif; ?>
 
-  <div<?php print $content_attributes; ?>>
-  <?php print render($content);?>
+// Render comments & links after content.
+hide($content['comments']);
+hide($content['links']);
+
+?>
+<div id="node-<?php
+print $node->nid . "\"";
+print $attributes;
+
+?>>
+     <?php
+     print render($title_prefix);
+     if (!$page) :
+       if ($title) :
+         print "<h2$title_attributes>\n<a href=\"$node_url\">\n$title\n</a></h2>";
+       endif;
+     endif;
+     print render($title_suffix);
+
+     ?>
+     <?php if (!empty($display_submitted)): ?>
+       <div class="post-info">
+       <div class="post-date"><?php print $post_date; ?></div>
+    <div class="post-author"><?php print $author; ?></div>
+  </div>;
+<?php endif; ?>
+
+<div<?php print $content_attributes; ?>>
+  <?php print render($content); ?>
+</div>
+<?php $links = render($content['links']);
+if ($links): ?>
+  <div class="link-wrapper">
+    <?php print $links; ?>
   </div>
+<?php endif; ?>
+
+<?php print render($content['comments']); ?>
 </div>

@@ -14,8 +14,7 @@ function subcellular_js_alter(&$javascript) {
     drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
    */
   /*
-   * Add javascript to theme.
-   */
+   // Add javascript to theme.
   $add_js = array(
     // Local script with minimum setup.
     'localScript' => array(
@@ -42,12 +41,12 @@ function subcellular_js_alter(&$javascript) {
   );
 
   cellular_add_js($add_js);
+   */
 
   /* Add a new yepnope query with modernizr.
    * @see http://modernizr.com/docs/#load
    */
   /*
-   */
   // File paths are relative to the active theme's root directory.
   $css_dir = '/css/';
   $js_dir = '/js/';
@@ -66,5 +65,5 @@ function subcellular_js_alter(&$javascript) {
   );
 
   cellular_modernizr($tests);
-  /////
+   */
 }

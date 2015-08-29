@@ -8,9 +8,7 @@
  * Implements template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
-  // Add critical css inline if set.
-  cellular_critical_css($vars);
-  // Set main_menu as full-tree or top-level as defined in settings.
+  // Set main menu.
   cellular_main_menu($vars);
   // Set classes for content & sidebar regions.
   cellular_test_sidebar($vars);
@@ -29,8 +27,6 @@ function cellular_preprocess_page(&$vars) {
   if (isset($vars['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
-  // Automate error pages.
-  cellular_error_page($vars);
 
   /* Work in progress... */
   // Panels everywhere page template suggestion.
@@ -38,6 +34,7 @@ function cellular_preprocess_page(&$vars) {
   if (!empty($panels_everywhere)) {
     $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
   }
+  //dpm($vars);
 }
 
 /**

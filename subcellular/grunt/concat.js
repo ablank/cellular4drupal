@@ -62,9 +62,10 @@ module.exports = {
     src: [
       // 'preprocess/*.inc',
       'preprocess/_init.inc',
-      'preprocess/css_alter.inc',
-      'preprocess/js_alter.inc',
-      'preprocess/preprocess.inc',
+      'preprocess/alter.inc',
+      'preprocess/alter_css.inc',
+      'preprocess/alter_js.inc',
+      'preprocess/preprocess.inc'
     ],
     dest: 'template.php'
   }

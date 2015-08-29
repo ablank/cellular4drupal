@@ -169,7 +169,7 @@ $form[0]['style_settings']['min_style'] = array(
 $form[0]['style_settings']['inline_critical_css'] = array(
 '#type' => 'checkbox',
 '#title' => t('Inline critical CSS.'),
-'#description' => t('Include styles for elements \'above the fold\' inline in the document head. Edit the grunt/criticalcss configuration and run the <code>grunt</code> or <code>grunt criticalcss</code> task in your theme\'s base directory to compile, auto-prefix and sort style rules, and minify stylesheets from sass (<em>will overwrite existing .css & .min.css</em>).'),
+'#description' => t('Include styles for elements \'above the fold\' inline in the document head. Edit the grunt/criticalcss configuration and run the <code>grunt criticalcss</code> task from your theme\'s base directory to generate critical css (<em>overwrites existing .css</em>).'),
 '#default_value' => theme_get_setting('inline_critical_css'),
 );
 $form[0]['style_settings']['remove_drupal_css'] = array(
@@ -179,9 +179,10 @@ $form[0]['style_settings']['remove_drupal_css'] = array(
 '#default_value' => theme_get_setting('remove_drupal_css'),
 '#options' => array(
 0 => t('Leave CSS intact.'),
-'system' => t('Remove all system CSS.'),
-'select' => t('Remove system & module CSS chosen by Cellular.'),
-'theme_only' => t('Remove all system & module CSS- Only use theme CSS.'),
+'select' => t('Remove selected system & module CSS chosen by Cellular.'),
+'system' => t('Remove all system CSS (group => <code>CSS_SYSTEM</code>).'),
+'module' => t('Remove all module CSS. (group => <code>CSS_DEFAULT</code>).'),
+'theme_only' => t('Remove all system & module CSS. Only include theme CSS (group => <code>CSS_THEME</code>).'),
 ),
 );
 $form[0]['style_settings']['add_classes'] = array(
@@ -241,12 +242,11 @@ $form[0]['style_settings']['add_classes'][1]['sidebar_class_dual_sidebars'] = ar
 '#default_value' => theme_get_setting('sidebar_class_dual_sidebars'),
 );
 /*
-* @see file: preprocess/theme-settings/js.inc
-* Theme-settings: Javascript options.
+* @see file: preprocess/theme-settings/jquery_settings.inc
+* jQuery CDN & version settings
 */
 /*
 * jQuery CDN options.
-* jQuery & jQuery.ui version options are from this array.
 */
 $cdn = array(
 'provider' => array(
@@ -256,13 +256,14 @@ $cdn = array(
 'cloudflare' => t('Cloudflare'),
 ),
 'jquery' => array(
-'1.11.1' => t('1.11.1'),
-'1.10.2' => t('1.10.2'),
-'1.9.1' => t('1.9.1'),
-'1.8.3' => t('1.8.3'),
-'1.7.2' => t('1.7.2'),
-'1.6.4' => t('1.6.4'),
-'1.5.2' => t('1.5.2'),
+'2.1.4' => '2.1.4',
+'1.11.1' => '1.11.1',
+'1.10.2' => '1.10.2',
+'1.9.1' => '1.9.1',
+'1.8.3' => '1.8.3',
+'1.7.2' => '1.7.2',
+'1.6.4' => '1.6.4',
+'1.5.2' => '1.5.2',
 '1.4.4' => t('1.4.4 : default'),
 ),
 'jqueryui' => array(
@@ -275,32 +276,36 @@ $cdn = array(
 // Available jQuery.ui themes:
 $ui_themes = array(
 'custom' => t('CUSTOM'),
-'base' => t('base'),
-'black-tie' => t('black-tie'),
-'blitzer' => t('blitzer'),
-'cupertino' => t('cupertino'),
-'dark-hive' => t('dark-hive'),
-'dot-luv' => t('dot-luv'),
-'eggplant' => t('eggplant'),
-'excite-bike' => t('excite-bike'),
-'flick' => t('flick'),
-'hot-sneaks' => t('hot-sneaks'),
-'humanity' => t('humanity'),
-'le-frog' => t('le-frog'),
-'mint-choc' => t('mint-choc'),
-'overcast' => t('overcast'),
-'pepper-grinder' => t('pepper-grinder'),
-'redmond' => t('redmond'),
-'smoothness' => t('smoothness'),
-'south-street' => t('south-street'),
-'start' => t('start'),
-'sunny' => t('sunny'),
-'swanky-purse' => t('swanky-purse'),
-'trontastic' => t('trontastic'),
-'ui-darkness' => t('ui-darkness'),
-'ui-lightness' => t('ui-lightness'),
-'vader' => t('vader'),
+'base' => t('Base'),
+'black-tie' => t('Black-Tie'),
+'blitzer' => t('Blitzer'),
+'cupertino' => t('Cupertino'),
+'dark-hive' => t('Dark-Hive'),
+'dot-luv' => t('Dot-Luv'),
+'eggplant' => t('Eggplant'),
+'excite-bike' => t('Excite-Bike'),
+'flick' => t('Flick'),
+'hot-sneaks' => t('Hot-Sneaks'),
+'humanity' => t('Humanity'),
+'le-frog' => t('Le-Frog'),
+'mint-choc' => t('Mint-Choc'),
+'overcast' => t('Overcast'),
+'pepper-grinder' => t('Pepper-Grinder'),
+'redmond' => t('Redmond'),
+'smoothness' => t('Smoothness'),
+'south-street' => t('South-Street'),
+'start' => t('Start'),
+'sunny' => t('Sunny'),
+'swanky-purse' => t('Swanky-Purse'),
+'trontastic' => t('Trontastic'),
+'ui-darkness' => t('UI-Darkness'),
+'ui-lightness' => t('UI-Lightness'),
+'vader' => t('Vader'),
 );
+/*
+* @see file: preprocess/theme-settings/js.inc
+* Theme-settings: Javascript options.
+*/
 // Start js opts.
 $form[0]['js'] = array(
 '#type' => 'fieldset',

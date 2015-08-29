@@ -212,7 +212,6 @@ o.cclass + '-inactive'
 ]
 };
 fn.mediaQuery = function ($obj) {
-//console.log('break: ' + cellular.breakpoint());
 if (o.breakpoint === cellular.breakpoint().type) {
 var $menu = $obj.children([0]),
 classes = [

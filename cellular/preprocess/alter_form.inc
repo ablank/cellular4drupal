@@ -8,9 +8,7 @@
  * Implements hook_form_alter().
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
-  $size = CELLULAR_INPUT_SIZE;
 
-  //drupal_set_message('<code><pre>' . print_r($form) . '</pre></code>');
   switch ($form['#id']) {
     /* Search page. */
     case 'search-form':
@@ -23,7 +21,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $form[$form_id]['#title'] = t('Search this site');
       $form[$form_id]['#default_value'] = t('Keywords');
       $form[$form_id]['#type'] = 'textfield';
-      $form[$form_id]['#size'] = $size;
+      $form[$form_id]['#size'] = CELLULAR_INPUT_SIZE;
       // Submit button.
       $form['actions']['submit']['#type'] = 'submit';
       $form['actions']['submit']['#value'] = t('Search');
@@ -49,14 +47,14 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
         '#type' => 'textfield',
         '#title' => t('Name'),
         '#default_value' => t('Username'),
-        '#size' => $size,
+        '#size' => CELLULAR_INPUT_SIZE,
       );
       // Password
       $form['pass'] = array(
         '#type' => 'password',
         '#title' => t('Password'),
         '#default_value' => t('Password'),
-        '#size' => $size,
+        '#size' => CELLULAR_INPUT_SIZE,
       );
       // Submit button
       $form['actions']['submit']['#attributes']['#value'] = t('Log in');
@@ -87,7 +85,9 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
     /* Comment Form. */
     case 'comment-form':
-      $form['comment_body']['und'][0]['#default_value'] = t('I think...');
+      
+      $form['comment_body']['und'][0]['#title_display'] = 'invisible';
+      $form['comment_body']['und'][0]['#default_value'] = t('What do you think?');
       // Hide unwanted form fields.
       $form['author']['#access'] = FALSE;
       $form['subject']['#access'] = FALSE;
@@ -95,6 +95,8 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       // Customize Submit button.
       $form['actions']['submit']['#value'] = t('Submit');
       $form['actions']['submit']['#attributes']['class'][] = 'right';
+
+      
       // Remove text format option descriptions.
       $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
       break;

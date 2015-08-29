@@ -8,13 +8,14 @@
  * Implements template_preprocess_html().
  */
 function cellular_preprocess_html(&$vars) {
-
+  
   cellular_http_headers();
   cellular_html_attributes($vars);
   cellular_rdf($vars);
   cellular_metatags($vars);
   cellular_favicons();
   cellular_body_attributes($vars);
+
 /*
     $cookie = variable_get('site_name', "Just another Drupal Site");
     $cookie .='-visited';
@@ -25,6 +26,7 @@ function cellular_preprocess_html(&$vars) {
     drupal_set_message("OK, Cookie: ' " . $_COOKIE[$cookie] . " ' set!");
     }
  */
+   //dpm($vars);
 }
 
 /**

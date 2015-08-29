@@ -3,64 +3,6 @@
  * @file
  * Theme-settings: Javascript options.
  */
-/*
- * jQuery CDN options.
- * jQuery & jQuery.ui version options are from this array.
- */
-$cdn = array(
-  'provider' => array(
-    'jquery' => t('jQuery.com'),
-    'google' => t('Google'),
-    'microsoft' => t('Microsoft'),
-    'cloudflare' => t('Cloudflare'),
-  ),
-  'jquery' => array(
-    '1.11.1' => t('1.11.1'),
-    '1.10.2' => t('1.10.2'),
-    '1.9.1' => t('1.9.1'),
-    '1.8.3' => t('1.8.3'),
-    '1.7.2' => t('1.7.2'),
-    '1.6.4' => t('1.6.4'),
-    '1.5.2' => t('1.5.2'),
-    '1.4.4' => t('1.4.4 : default'),
-  ),
-  'jqueryui' => array(
-    // @ v.1.11 individual widget js isn't availanle :(
-    '1.10.4' => t('1.10.4'),
-    '1.9.2' => t('1.9.2'),
-    '1.8.24' => t('1.8.24'),
-  ),
-);
-
-// Available jQuery.ui themes:
-$ui_themes = array(
-  'custom' => t('CUSTOM'),
-  'base' => t('base'),
-  'black-tie' => t('black-tie'),
-  'blitzer' => t('blitzer'),
-  'cupertino' => t('cupertino'),
-  'dark-hive' => t('dark-hive'),
-  'dot-luv' => t('dot-luv'),
-  'eggplant' => t('eggplant'),
-  'excite-bike' => t('excite-bike'),
-  'flick' => t('flick'),
-  'hot-sneaks' => t('hot-sneaks'),
-  'humanity' => t('humanity'),
-  'le-frog' => t('le-frog'),
-  'mint-choc' => t('mint-choc'),
-  'overcast' => t('overcast'),
-  'pepper-grinder' => t('pepper-grinder'),
-  'redmond' => t('redmond'),
-  'smoothness' => t('smoothness'),
-  'south-street' => t('south-street'),
-  'start' => t('start'),
-  'sunny' => t('sunny'),
-  'swanky-purse' => t('swanky-purse'),
-  'trontastic' => t('trontastic'),
-  'ui-darkness' => t('ui-darkness'),
-  'ui-lightness' => t('ui-lightness'),
-  'vader' => t('vader'),
-);
 
 // Start js opts.
 $form[0]['js'] = array(

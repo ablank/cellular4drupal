@@ -12,19 +12,20 @@
   margin: .4em;
   padding: $icon_padding;
   vertical-align: middle;
-  background-color: $white;
   background-position: $icon_padding $icon_padding;
   background-repeat: no-repeat;
   background-color: none;
-  border: 1px solid $light_grey;
-  @include border-radius();
+  border: 1px solid $grey;
+  border-radius: 50%;
 
   &:hover {
     border-color: $hilight;
   }
 
   &.social {
+  background-color: $light_grey;// $white;
     &:hover {
+  background-color: $white;// $white;
     }
   }
 

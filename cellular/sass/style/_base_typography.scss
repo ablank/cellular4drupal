@@ -136,12 +136,14 @@ caption {
   text-align: left;
 }
 
-code,
+code {
+  font-family: "Courier New", Courier, monospace;
+}
+
 pre {
   display: block;
   margin: 1em auto;
   padding: 1em;
-  font-family: "Courier New", Courier, monospace;
   overflow: scroll;
   white-space: pre;
   white-space: pre-wrap;

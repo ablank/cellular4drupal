@@ -205,36 +205,36 @@ function cellular_social_media_share() {
     $set['fb'] == 1 ? $links['facebook'] = array(
       'name' => 'Facebook',
       'script' => NULL,
-      'url' => '//www.facebook.com/sharer/sharer.php?u=' . $page['url'],
+      'url' => '//facebook.com/sharer/sharer.php?u=' . $page['url'],
       'class' => 'facebook',
     ) : NULL;
     $set['google'] == 1 ? $links['google+'] = array(
       'name' => 'Google+',
       'script' => NULL,
-      'url' => 'http://plus.google.com/share?url=' . $page['url'],
+      'url' => '//plus.google.com/share?url=' . $page['url'],
       'class' => 'google',
     ) : NULL;
     $set['twitter'] == 1 ? $links['twitter'] = array(
       'name' => 'Twitter',
       'script' => NULL,
-      'url' => 'https://twitter.com/share',
+      'url' => '//twitter.com/share',
       'class' => 'twitter-bird',
     ) : NULL;
     $set['linkedin'] == 1 ? $links['linkedin'] = array(
       'name' => 'LinkedIn',
-      'url' => 'http://www.linkedin.com/shareArticle?mini=true&url=' .
+      'url' => '//linkedin.com/shareArticle?mini=true&url=' .
       $page['url'] . '&title=' . $page['title'] . '&source=' . $base_url,
       'class' => 'linkedin',
     ) : NULL;
     $set['pinterest'] == 1 ? $links['pinterest'] = array(
       'name' => 'Pinterest',
-      'url' => 'http://pinterest.com/pin/create/bookmarklet/?media=&url=' .
+      'url' => '//pinterest.com/pin/create/bookmarklet/?media=&url=' .
       $page['url'] . '&is_video=false&description=' . $page['title'],
       'class' => 'pinterest',
     ) : NULL;
     $set['reddit'] == 1 ? $links['reddit'] = array(
       'name' => 'Reddit',
-      'url' => 'http://www.reddit.com/submit?url=' . $page['url'],
+      'url' => '//reddit.com/submit?url=' . $page['url'],
       'class' => 'reddit',
     ) : NULL;
 

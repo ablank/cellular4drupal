@@ -5,6 +5,53 @@
  */
 
 /**
+ * Attach scripts to a render array, using a CDN if provided.
+ *
+ * A fallback link will be automatically generated if using CDN and
+ * an 'object' key value is provided.
+ *
+ * @param array $array
+ *   Assosciative array of javascript data.
+ * @param boolean $cellular
+ *   Reference cellular library if TRUE.
+ */
+function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
+  $type = 'file';
+  foreach ($array as $script) {
+    // Test if local or external source is provided.
+    if (!empty($script['cdn'])) {
+      $type = 'external';
+      $data = $script['cdn'];
+      cellular_js_fallback($script, $cellular);
+    }
+    elseif (!empty($script['file'])) {
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      $data .= '/js/' . $script['file'];
+    }
+    else {
+      $data = $script['data'];
+    }
+    // Set script attributes.
+    if (!empty($script['type'])) {
+      $type = $script['type'];
+    }
+
+      $script['data'] = $data;
+      $script['type'] = $type;
+      $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
+      $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
+      $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
+      $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+      $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
+      $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
+      $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
+      empty($script['version']) ? NULL : $script['version'] = $script['version'];
+
+      $vars['#attached']['js'][$data] = $script;
+  }
+}
+
+/**
  * Add scripts from an array, using a CDN if provided.
  *
  * A fallback link will be automatically generated if using CDN and
@@ -17,26 +64,36 @@
  */
 function cellular_add_js($array, $cellular = FALSE) {
   foreach ($array as $script) {
+    $type = 'file';
     // Test if local or external source is provided.
     if (!empty($script['cdn'])) {
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
     }
-    else {
+    elseif (!empty($script['file'])) {
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
       $data .= '/js/' . $script['file'];
     }
+    else {
+      $data = $script['data'];
+    }
     // Set script attributes.
-    $script['type'] = !empty($script['cdn']) ? 'external' : 'file';
+    if(!empty($script['type'])){
+      $type = $script['type'];
+    }
+    elseif(!empty($script['cdn'])){
+      $type = 'external';
+    }
+
+    $script['type'] = $type;
     $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
     $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
-    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
     $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
     $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
     $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
     $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
     empty($script['version']) ? NULL : $script['version'] = $script['version'];
-    
 
     drupal_add_js($data, $script);
   }
@@ -54,10 +111,10 @@ function cellular_js_fallback($script, $cellular = FALSE) {
   // Only add the fallback if an object has been provided to test.
   if (!empty($script['object'])) {
     $attributes = array(
-      'group' => !empty($script['group']) ? $script['group'] : JS_DEFAULT,
-      'weight' => !empty($script['weight']) ? $script['weight'] + 0.1 : 0,
       'type' => 'inline',
-      'every_page' => !empty($script['every_page']) ? $script['every_page'] : FALSE,
+      'group' => !empty($script['group']) ? $script['group'] : JS_THEME,
+      'weight' => !empty($script['weight']) ? $script['weight'] + 0.1 : 1,
+      'every_page' => !empty($script['every_page']) ? $script['every_page'] : TRUE,
     );
     // Construct the fallback script.
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
@@ -81,9 +138,8 @@ function cellular_js_fallback($script, $cellular = FALSE) {
  */
 function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
   // Only override if js is being called.
-  if (!empty($javascript[$script['default']])) {
+  if (isset($javascript[$script['default']])) {
     $ojs = $script['default'];
-
     if (!empty($script['cdn'])) {
       // If cdn is provided, set data to external source & call local fallback.
       $data = $script['cdn'];
@@ -96,7 +152,6 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
         $data .= '/js/' . $script['file'];
       }
     }
-
     // Set the script attributes.
     $javascript[$ojs]['data'] = $data;
     $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
@@ -147,4 +202,20 @@ function cellular_modernizr($tests) {
     'every_page' => TRUE,
     'weight' => -999,
   ));
+}
+
+/**
+ * Pass variables to javascript , used to call plugin.js if plugins are selected.
+ */
+function cellular_js_settings() {
+  // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
+  $js_plugins = array();
+  theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
+  theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = TRUE : NULL;
+  theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = TRUE : NULL;
+  theme_get_setting('jparallax') == 1 ? $js_plugins['jparallax'] = TRUE : NULL;
+  theme_get_setting('masonry') == 1 ? $js_plugins['masonry'] = TRUE : NULL;
+  theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = TRUE : NULL;
+
+  return $js_plugins;
 }

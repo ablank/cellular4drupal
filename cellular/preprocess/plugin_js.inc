@@ -53,13 +53,12 @@ function cellular_modernizr_default() {
  *   jQuery version info.
  */
 function cellular_update_plugins(&$javascript, $jquery) {
-  $dir = 'drupal/';
+  $plugin_path = 'drupal/'; // Relative to Cellular Lib
   $plugins = array(
     'drupal' => array(
       'default' => 'misc/drupal.js',
       'version' => '7.38',
       'file' => 'drupal',
-      'weight' => 10,
     ),
     'ajax' => array(
       'default' => 'misc/ajax.js',
@@ -93,8 +92,9 @@ function cellular_update_plugins(&$javascript, $jquery) {
     ),
   );
 
-  foreach ($plugins as $plugin) {
-    $plugin['file'] = $dir . $plugin['file'] . CELLULAR_JS_EXT;
+  foreach ($plugins as &$plugin) {
+    $plugin['file'] = $plugin_path . $plugin['file'] . CELLULAR_JS_EXT;
+    $plugin['group'] = JS_LIBRARY;
     cellular_js_override($javascript, $plugin, TRUE);
   }
 }
@@ -107,133 +107,111 @@ function cellular_update_plugins(&$javascript, $jquery) {
  */
 function cellular_plugins_js() {
   $jquery = cellular_jquery_info();
-  $dir = 'plugins/';
-  $ext = CELLULAR_JS_EXT;
+  $plugin_path = 'plugins/';
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
   theme_get_setting('modernizr') == 1 ? $js_plugins['modernizr'] = array(
     'group' => JS_LIBRARY,
     'object' => 'Modernizr',
-    'file' => 'modernizr.js',
+    'file' => 'modernizr',
     'version' => '2.8.3',
     'weight' => -1000,
   ) : NULL;
 
-    // Add migrate to prevent plugins from breaking with jQuery > v1.9.
+  // Add migrate to prevent plugins from breaking with jQuery > v1.9.
   theme_get_setting('jquery_migrate') == 1 && floatval(substr($jquery['version'], 2)) >= 9 ?
   $js_plugins['migrate'] = array(
-      'version' => '1.2.1',
-      'file' => 'plugins/jquery.migrate.min.js',
-      'group' => JS_LIBRARY,
-      'weight' => -96,
-    ) : NULL;
+    'group' => JS_LIBRARY,
+    'file' => 'jquery.migrate',
+    'version' => '1.2.1',
+    'weight' => -96,
+  ) : NULL;
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = array(
     'object' => 'backstretch',
     'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js',
-    'file' => 'plugins/jquery.backstretch.min.js',
+    'file' => 'jquery.backstretch',
     'version' => '2.0.4',
-    'weight' => -20,
   ) : NULL;
   theme_get_setting('d3js') == 1 ? $js_plugins['d3'] = array(
     'object' => 'd3',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js',
-    'file' => 'plugins/d3.min.js',
+    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3',
+    'file' => 'd3',
     'version' => '3.4.11',
-    'weight' => -18,
   ) : NULL;
   theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = array(
-    'file' => 'plugins/jquery.freetile.min.js',
+    'file' => 'jquery.freetile',
     'version' => '0.3.1',
-    'weight' => -17,
   ) : NULL;
   theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = array(
-    'file' => 'plugins/jquery.flowtype.js',
+    'file' => 'jquery.flowtype',
     'version' => '',
-    'weight' => -16,
   ) : NULL;
   theme_get_setting('jparallax') == 1 ? $js_plugins['jparallax'] = array(
-    'file' => 'plugins/jquery.parallax.min.js',
+    'file' => 'jquery.parallax',
     'version' => '2.0',
-    'weight' => -15,
   ) : NULL;
   theme_get_setting('prism') == 1 ? $js_plugins['prism'] = array(
+    'group' => JS_DEFAULT,
     'object' => 'Prism',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js',
-    'file' => 'plugins/prism.min.js',
+    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js',
+    'file' => 'prism',
     'version' => '0.0.1',
-    'weight' => -14,
   ) : NULL;
   theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = array(
     'object' => 'smoove',
     'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
-    'file' => 'plugins/jquery.smoove.min.js',
+    'file' => 'jquery.smoove',
     'version' => '0.2.6',
-    'weight' => -12,
   ) : NULL;
   theme_get_setting('snap-svg') == 1 ? $js_plugins['snap-svg'] = array(
-    'file' => 'plugins/snap.svg.min.js',
+    'file' => 'snap.svg',
     'version' => '0.3.0',
-    'weight' => -11,
   ) : NULL;
   theme_get_setting('threejs') == 1 ? $js_plugins['threejs'] = array(
     'object' => 'THREE',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js',
-    'file' => 'plugins/three.min.js',
+    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three',
+    'file' => 'three',
     'version' => 'r68',
-    'weight' => -10,
   ) : NULL;
 
   if (theme_get_setting('gsap') == 1) {
+    $gsappath = theme_get_setting('min_script') == 1 ? 'gsap/minified/' : 'gsap/uncompressed/';
     $gsap['cssplugin'] = array(
       'object' => 'CSSPlugin',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/plugins/CSSPlugin.min.js',
-      'file' => 'plugins/gsap/minified/plugins/CSSPlugin.min.js',
+      'file' => $gsappath . 'plugins/CSSPlugin',
       'version' => '1.13.1',
-      'weight' => -9,
+      'weight' => 1,
     );
     $gsap['easepack'] = array(
       'object' => 'EasePack',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/easing/EasePack.min.js',
-      'file' => 'plugins/gsap/minified/easing/EasePack.min.js',
+      'file' => $gsappath . 'easing/EasePack',
       'version' => '1.13.1',
-      'weight' => -8,
+      'weight' => 2,
     );
     $gsap['tweenlite'] = array(
       'object' => 'TweenLite',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenLite.min.js',
-      'file' => 'plugins/gsap/minified/TweenLite.min.js',
+      'file' => $gsappath . 'TweenLite',
       'version' => '1.13.1',
-      'weight' => -7,
+      'weight' => 3,
     );
     $gsap['jquerygsap'] = array(
       'object' => 'gsap',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/jquery.gsap.min.js',
-      'file' => 'plugins/gsap/minified/jquery.gsap.min.js',
+      'file' => $gsappath . 'jquery.gsap',
       'version' => '1.13.1',
-      'weight' => -6,
+      'weight' => 4,
     );
 
     $js_plugins = array_merge($js_plugins, $gsap);
   }
 
+  foreach ($js_plugins as &$plugin) {
+    $plugin['group'] = !empty($plugin['group']) ? $plugin['group'] : JS_DEFAULT;
+    $plugin['file'] = $plugin_path . $plugin['file'] . CELLULAR_JS_EXT;
+  }
+
   return $js_plugins;
-}
-
-/**
- * Stylesheets used by javascript plugins.
- *
- * @return array
- *   Array of stylesheets used by javascript plugins.
- */
-function cellular_plugin_css() {
-  // Plugins available through cellular, styles added based on theme settings.
-  // $plugin_css paths are relative to /libraries/cellular/css/
-  $plugin_css = array(
-    'prism' => theme_get_setting('prism') == 1 ? array(
-      'file' => 'prism.css',
-      'weight' => -10,
-    ) : NULL,
-  );
-
-  return $plugin_css;
 }

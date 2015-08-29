@@ -20,12 +20,12 @@ features[] = comment_user_verification
 ;features[] = secondary_menu
 
 ;----------// Plugins
+plugins[panels][layouts] = templates/panels
+
 breakpoints[default] = (min-width: 800px) and (max-width: 1280px)
 breakpoints[mobile] = screen and (min-width: 0px) and (max-width: 650px)
 breakpoints[narrow] = screen and (min-width: 650px) and (max-width: 800px)
 breakpoints[large] = screen and (min-width: 1280px)
-
-plugins[panels][layouts] = templates/panels
 
 ;----------// Stylesheets
 ; CSS is added in /inc/alter.css.inc for more robust control.

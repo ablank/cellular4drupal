@@ -1,7 +1,7 @@
 ;----------// Theme Information
 
 name        = Cellular
-description = Base theme that tames the Drupal for better performance and front end development :)
+description = Tame the Drupal for easier front end development.
 core        = 7.x
 engine      = phptemplate
 screenshot  = screenshot.png
@@ -18,18 +18,18 @@ features[] = comment_user_verification
 ;features[] = secondary_menu
 
 ;----------// Plugins
+plugins[panels][layouts] = templates/panels
+
 breakpoints[default] = (min-width: 800px) and (max-width: 1280px)
 breakpoints[mobile] = screen and (min-width: 0px) and (max-width: 650px)
 breakpoints[narrow] = screen and (min-width: 650px) and (max-width: 800px)
 breakpoints[large] = screen and (min-width: 1280px)
 
-plugins[panels][layouts] = templates/panels
-
 ;----------// Stylesheets
-; CSS is added in /inc/alter.css.inc for more robust control.
+; CSS is added in hook_page_alter() for more robust control.
 
 ;----------// Javascript
-; JS is added in /inc/alter.js.inc for more robust control.
+; JS is added in hook_page_alter() for more robust control.
 
 ;----------// Regions
 regions[content]            = Content Main

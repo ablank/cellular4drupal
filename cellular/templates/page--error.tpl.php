@@ -116,13 +116,14 @@
           <?php
           // Error message.
           print $messages;
-
           ?>
         </div>
+
         <div class="search">
           <?php print render($page['search_box']); ?>
         </div>
 
+          <?php print render($page['content']); ?>
       </div>
     </div>
     <!-- /content-wrap-->

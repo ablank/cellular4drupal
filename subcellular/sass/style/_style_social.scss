@@ -4,8 +4,6 @@
   overflow: hidden;
   margin: 1.4em .8em .8em;
   padding: 0 .4em;
-  background: $light_grey;
-  @include border-radius();
 
   form {
     margin: 0;
@@ -21,5 +19,13 @@
     padding: .4em;
     border-bottom: $dark_grey .2em solid;
     background: $white;
+  }
+}
+
+#page-wrap .social.icon {
+  background-color: $light_grey;// $white;
+
+  &:hover {
+    background-color: $white;// $white;
   }
 }

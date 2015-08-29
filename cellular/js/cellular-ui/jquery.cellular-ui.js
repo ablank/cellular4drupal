@@ -212,7 +212,6 @@ o.cclass + '-inactive'
 ]
 };
 fn.mediaQuery = function ($obj) {
-//console.log('break: ' + cellular.breakpoint());
 if (o.breakpoint === cellular.breakpoint().type) {
 var $menu = $obj.children([0]),
 classes = [
@@ -233,7 +232,7 @@ fn.mediaQuery($obj);
 $window.on('resize', function () {
 fn.mediaQuery($obj);
 });
-$obj.click(function () {
+$obj.on('click', function () {
 if (o.parent.hasClass(fn.classes[0])) {
 o.parent.toggleClass(fn.classes[1])
 .toggleClass(fn.classes[2]);
