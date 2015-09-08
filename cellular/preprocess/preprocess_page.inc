@@ -8,6 +8,8 @@
  * Implements template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
+  // Automate error pages.
+  cellular_error_page($vars);
   // Set main menu.
   cellular_main_menu($vars);
   // Set classes for content & sidebar regions.
@@ -21,19 +23,17 @@ function cellular_preprocess_page(&$vars) {
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ?
-  "&copy; " . date("Y") . " $copyright" : '';
+  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
   // Add template suggestion for custom content types(page--content-type.tpl.php)
   if (isset($vars['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
 
-  /* Work in progress... */
-  // Panels everywhere page template suggestion.
-  $panels_everywhere = variable_get('panels_everywhere_site_template', 0);
-  if (!empty($panels_everywhere)) {
-    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
+  /* Work in progress... 
+  if (!empty($vars['panels_everywhere_site_template'])) {
+    $vars['template_file'] = 'page--panels-everywhere';
   }
+   */
   //dpm($vars);
 }
 

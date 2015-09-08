@@ -19,6 +19,11 @@ features[] = comment_user_verification
 
 ;----------// Plugins
 plugins[panels][layouts] = templates/panels
+;plugins[panels][styles] = plugins/styles
+
+;api[panels][styles][version] = 2
+;api[page_manager][pages_default][version] = 1
+;api[page_manager][pages_default][path] = templates/panels
 
 breakpoints[default] = (min-width: 800px) and (max-width: 1280px)
 breakpoints[mobile] = screen and (min-width: 0px) and (max-width: 650px)
@@ -103,6 +108,7 @@ settings[smoove]                = 0
 
 ;----------// Javascript Libraries
 settings[modernizr]             = 1
+settings[requirejs]             = 0
 settings[d3js]                  = 0
 settings[gsap]                  = 0
 settings[prism]                 = 0

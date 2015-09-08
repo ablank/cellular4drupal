@@ -3,20 +3,220 @@
   * CellularUI : jScrolli
 */
 
-.cellular {
+$controlsize: 2em;
+$setwidth: false;
+$width: 800px;
 
-  &.jScrolli {
+.jScrolli-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: $light_grey;
 
-    ul {
-      margin: 0;
-      padding: 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  li {
+    display: inline;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .slide,
+  .wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .slide {
+    display: none;
+    opacity: 0;
+    @include transition();
+
+    &.active {
+      display: block;
+      opacity: 1;
     }
 
-    li {
+    &.previous,
+    &.next {
       display: block;
-      list-style: none;
-      margin: 0;
-      padding: 1em;
+      opacity: 0;
+    }
+
+    &.previous {
+      right: 100%;
+    }
+
+    &.next {
+      left: 100%;
     }
   }
+
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: $white;
+    max-width: none;
+    margin: 0;
+    padding: 0.8em;
+    background-color: $black;
+    background-color: rgba($black, 0.8);
+    //max-height: 0;
+    opacity: 0;
+    @include transition();
+
+    p, h2, h3, h4 {
+      color: $white;
+    }
+  }
+
+  .controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+
+  .control {
+    position: absolute;
+    text-indent: -999em;
+    width: $controlsize;
+    height: $controlsize;
+    color: $white;
+    //background-size: $controlsize;
+    background-repeat: no-repeat;
+    background-image: url(../assets/icons/png/controls.png);
+    @include transition();
+
+    &.pause {
+      top: 0;
+      left: 0;
+      background-position: -54px 8px;
+      //background-color: transparent;
+      border: $white 2px solid;
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    &.prev,
+    &.next {
+      cursor: pointer;
+      top: 50%;
+      opacity: 0.2;
+      background-color: $dark_grey;
+
+      &:hover,
+      &:focus {
+        background-color: $hilight;
+      }
+    }
+
+    &.prev {
+      left: 0;
+      background-position: -24px 8px;
+    }
+
+    &.next {
+      right: 0;
+      background-position: -88px 8px;
+    }
+  }
+
+  .markers {
+    float: left;
+    position: relative;
+    left: 50%;
+
+    ul {
+      float: left;
+      position: relative;
+      left: -50%;
+    }
+  }
+
+  .marker {
+    cursor: pointer;
+    display: block;
+    float: left;
+    text-indent: -999em;
+    //float: left;
+    width: 0.5em;
+    height: 0.5em;
+    margin: .5em;
+    border: $dark_grey 1px solid;
+    border-radius: 50%;
+    background-color: $grey;
+    @include transition();
+
+    &.active {
+      border-color: darken($hilight, 20%);
+      background-color: $hilight;
+      box-shadow: 0 0 0.5em 0 $hilight;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $hilight;
+    }
+
+    a {
+      //display: block;
+      text-indent: -999em;
+    }
+  }
+
+
+  &.active {
+
+    .control {
+      opacity: 1;
+    }
+
+    .caption {
+      //max-height: none;
+      opacity: 1;
+    }
+  }
+  /*
+    #buttons{
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+    }
+    #buttons ul{
+    list-style:none;
+    position:relative;
+    left:50%;
+    }
+
+    #buttons li{float:left;position:relative;} // ie needs position:relative here
+
+    #buttons a{
+    text-decoration:none;
+    margin:10px;
+    background:red;
+    float:left;
+    border:2px outset blue;
+    color:#fff;
+    padding:2px 5px;
+    text-align:center;
+    white-space:nowrap;
+
+    }
+    #buttons a:hover{ border:2px inset blue;color:red;background:#f2f2f2;}
+  */
 }

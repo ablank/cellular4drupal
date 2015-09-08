@@ -180,7 +180,7 @@ select.progress-disabled + .ajax-progress {
 */
 /* line 6, ../sass/drupal/_powered-by.scss */
 #block-system-powered-by {
-  float: right;
+  float: left;
   margin: 0 1em;
   color: #fefefe;
 }

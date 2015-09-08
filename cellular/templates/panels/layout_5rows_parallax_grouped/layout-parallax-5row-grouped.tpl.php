@@ -34,14 +34,14 @@ endif;
 
   <div class="content cell">
     <?php if (!empty($content['g1_top']) || !empty($content['g1_base'])): ?>
-      <div class="parallax-group cell-100">
+      <div class="parallax-group cell">
         <?php if (!empty($content['g1_top'])) : ?>
-          <div class="parallax-layer parallax--top panel-content cell-100">
+          <div class="parallax-layer parallax--top panel-content cell">
             <?php print $content['g1_top']; ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($content['g1_base'])) : ?>
-          <div class="parallax-layer parallax--base panel-content cell-100">
+          <div class="parallax-layer parallax--base panel-content cell">
             <?php print $content['g1_base']; ?>
           </div>
         <?php endif; ?>
@@ -49,14 +49,14 @@ endif;
     <?php endif; ?>
 
     <?php if (!empty($content['g2_top']) || !empty($content['g2_base'])): ?>
-      <div class="parallax-group cell-100">
+      <div class="parallax-group cell">
         <?php if (!empty($content['g2_top'])) : ?>
-          <div class="parallax-layer parallax--top panel-content cell-100">
+          <div class="parallax-layer parallax--top panel-content cell">
             <?php print $content['g2_top']; ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($content['g2_base'])) : ?>
-          <div class="parallax-layer parallax--base panel-content cell-100">
+          <div class="parallax-layer parallax--base panel-content cell">
             <?php print $content['g2_base']; ?>
           </div>
         <?php endif; ?>
@@ -64,14 +64,14 @@ endif;
     <?php endif; ?>
 
     <?php if (!empty($content['g3_top']) || !empty($content['g3_base'])): ?>
-      <div class="parallax-group cell-100">
+      <div class="parallax-group cell">
         <?php if (!empty($content['g3_top'])) : ?>
-          <div class="parallax-layer parallax--top panel-content cell-100">
+          <div class="parallax-layer parallax--top panel-content cell">
             <?php print $content['g3_top']; ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($content['g3_base'])) : ?>
-          <div class="parallax-layer parallax--base panel-content cell-100">
+          <div class="parallax-layer parallax--base panel-content cell">
             <?php print $content['g3_base']; ?>
           </div>
         <?php endif; ?>
@@ -79,14 +79,14 @@ endif;
     <?php endif; ?>
 
     <?php if (!empty($content['g4_top']) || !empty($content['g4_base'])): ?>
-      <div class="parallax-group  cell-100">
+      <div class="parallax-group  cell">
         <?php if (!empty($content['g4_top'])) : ?>
-          <div class="parallax-layer parallax--top panel-content cell-100">
+          <div class="parallax-layer parallax--top panel-content cell">
             <?php print $content['g4_top']; ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($content['g4_base'])) : ?>
-          <div class="parallax-layer parallax--base panel-content cell-100">
+          <div class="parallax-layer parallax--base panel-content cell">
             <?php print $content['g4_base']; ?>
           </div>
         <?php endif; ?>
@@ -94,14 +94,14 @@ endif;
     <?php endif; ?>
 
     <?php if (!empty($content['g5_top']) || !empty($content['g5_base'])): ?>
-      <div class="parallax-group cell-100">
+      <div class="parallax-group cell">
         <?php if (!empty($content['g5_top'])) : ?>
-          <div class="parallax-layer parallax--top panel-content cell-100">
+          <div class="parallax-layer parallax--top panel-content cell">
             <?php print $content['g5_top']; ?>
           </div>
         <?php endif; ?>
         <?php if (!empty($content['g5_base'])) : ?>
-          <div class="parallax-layer parallax--base panel-content cell-100">
+          <div class="parallax-layer parallax--base panel-content cell">
             <?php print $content['g5_base']; ?>
           </div>
         <?php endif; ?>

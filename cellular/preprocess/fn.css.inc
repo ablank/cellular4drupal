@@ -50,9 +50,12 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_css(&$css, $array, $cellular = FALSE) {
+function cellular_add_css($array, $cellular = FALSE) {
   foreach ($array as $style) {
     // Set data source as CDN or local host.
+    if (isset($style['data'])) {
+      $data = $style['data'];
+    }
     if (isset($style['cdn'])) {
       $data = $style['cdn'];
     }
@@ -71,7 +74,8 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $style['media'] = isset($style['media']) ? $style['media'] : 'all';
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
       // Add stylesheet to $css.
-      $css[$data] = $style;
+      //$css[$data] = $style;
+      drupal_add_css($data, $style);
     }
   }
 }
@@ -103,7 +107,7 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
     }
     // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
-    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : FALSE;
+    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
     $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
     $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
     $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;

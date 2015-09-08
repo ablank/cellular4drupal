@@ -7,38 +7,87 @@
 // Grid Cells
 /////
 .cell,
-#{$cells} {
+#{$cells},
+.cell-33,
+.cell-66 {
   z-index: 1;
   position: relative;
   float: left;
   display: block;
-  margin: $cell_margin;
-  padding: $cell_padding;
+  @if($flexbox) {
+    margin: auto;
+  }
+  @else {
+    @if($cell_margin) {margin: $cell_margin + unquote('%');}
+    @if($cell_padding) {padding: $cell_padding + unquote('%');}
+  }
   @include transition();
 
   &.center {
-    float: none;
-    margin: $cell_margin auto;
+    @if($flexbox){
+      //align-items: center;
+      justify-content: center;
+    }
+    @else {
+      float: none;
+      margin: $cell_margin auto;
+    }
   }
 }
 
 .cell {
   width: 100%;
-  @if($cell_margin > 0) {margin: 0;}
-  @if($cell_padding > 0) {padding: 0;}
+  @if($cell_margin) {margin: 0;}
+  @if($cell_padding) {padding: 0;}
+  @if($flexbox) {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: flex-start;
+  }
 }
 
 @each $cell in $grid {
+  // $cell_width: #{$cell} - $cell_space;
   .cell-#{$cell} {
-    width: unquote('#{$cell}%');
+    @if($flexbox){
+      flex-basis: $cell + unquote('%');
+    }
+    @else {
+      width: $cell - $cell_space + unquote('%');
+    }
+  }
+}
+.cell-33 {
+  @if($flexbox){
+    flex-basis: 33.33333%;
+  }
+  @else {
+    width: 33.333333 - $cell_space + unquote('%');
+  }
+}
+.cell-66 {
+  @if($flexbox){
+    flex-basis: 66.666666%;
+  }
+  @else {
+    width: 66.666666 - $cell_space + unquote('%');
   }
 }
 
 @media screen and (max-width: $res_mobile) and (min-width: 0) {
   // Set all cells to single-column
-  #{$cells} {
-    width: 100% - $cell_space;
-    flex-basis: 100% - $cell_space;
+  #{$cells},
+  .cell-33,
+  .cell-66 {
+    @if($flexbox) {
+      flex-basis: 100% - $cell_space;
+    }
+    @else {
+      width: 100% - $cell_space;
+    }
   }
 }
 

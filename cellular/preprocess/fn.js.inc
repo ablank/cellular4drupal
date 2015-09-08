@@ -16,38 +16,34 @@
  *   Reference cellular library if TRUE.
  */
 function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
-  $type = 'file';
   foreach ($array as $script) {
     // Test if local or external source is provided.
     if (!empty($script['cdn'])) {
-      $type = 'external';
       $data = $script['cdn'];
+      $script['type'] = 'external';
       cellular_js_fallback($script, $cellular);
     }
     elseif (!empty($script['file'])) {
+      $script['type'] = 'file';
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
       $data .= '/js/' . $script['file'];
     }
     else {
       $data = $script['data'];
+      $script['type'] = $script['type'];
     }
     // Set script attributes.
-    if (!empty($script['type'])) {
-      $type = $script['type'];
-    }
+    $script['data'] = $data;
+    $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
+    $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
+    $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
+    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+    $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
+    $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
+    empty($script['version']) ? NULL : $script['version'] = $script['version'];
 
-      $script['data'] = $data;
-      $script['type'] = $type;
-      $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
-      $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
-      $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-      $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
-      $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
-      $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
-      $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-      empty($script['version']) ? NULL : $script['version'] = $script['version'];
-
-      $vars['#attached']['js'][$data] = $script;
+    $vars['#attached']['js'][$data] = $script;
   }
 }
 
@@ -78,11 +74,16 @@ function cellular_add_js($array, $cellular = FALSE) {
       $data = $script['data'];
     }
     // Set script attributes.
-    if(!empty($script['type'])){
+    if (!empty($script['type'])) {
       $type = $script['type'];
     }
-    elseif(!empty($script['cdn'])){
-      $type = 'external';
+    else {
+      if (!empty($script['cdn'])) {
+        $type = 'external';
+      }
+      elseif (!empty($script['file'])) {
+        $type = 'file';
+      }
     }
 
     $script['type'] = $type;
@@ -200,7 +201,7 @@ function cellular_modernizr($tests) {
     'type' => 'inline',
     'group' => JS_LIBRARY,
     'every_page' => TRUE,
-    'weight' => -999,
+    'scope' => 'critical',
   ));
 }
 
@@ -218,4 +219,48 @@ function cellular_js_settings() {
   theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = TRUE : NULL;
 
   return $js_plugins;
+}
+
+/**
+ * 
+ * @param type $scripts
+ */
+function cellular_requirejs(&$javascript) {
+  // $base_url needs to be added to set the correct path.
+  //$dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
+  $jq = cellular_jquery_info();
+  $require = array(
+    'shim' => '',
+    'require' => '',
+  );
+  $jq['correctpath'] = str_replace(array(
+    $GLOBALS['base_url'] . '/',
+    '.js',
+  )
+  , '', $javascript['misc/jquery.js']['data']);
+
+  foreach ($javascript as &$script) {
+    if ($script['type'] === 'file' && $script['scope'] !== 'critical') {
+      $data = str_replace(array(
+        $GLOBALS['base_url'] . '/',
+        '.js',
+      ), '', $script['data']);
+
+      $require['shim'] .= "\n    '$data': { deps: ['jquery'], exports: '$data'},";
+      $require['require'] .= "\n  '$data',";
+
+      $script = NULL;
+      unset($javascript[$script]);
+    }
+  }
+
+  // Build the script loader.
+  $js = "requirejs.config({\n  paths: {\n    ";
+  $js .= "baseUrl: '/',\n    ";
+  $js .= "jquery: '" . $jq['correctpath'] . "'\n  }\n});\n";
+  //$js .= "shim: {" . $require['shim'] . "\n  }\n});\n";
+  $js .= "require([" . $require['require'] . "\n]);\n";
+  //$js .= "]);";
+
+  return $js;
 }

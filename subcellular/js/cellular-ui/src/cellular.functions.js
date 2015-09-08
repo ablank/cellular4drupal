@@ -13,21 +13,16 @@ cellular.activate = function () {
   return this.each(function () {
     var $t = jQuery(this);
 
-    if ($t.hasClass('active')) {
-      return;
-    } else {
-      $t.addClass('active')
-        .siblings().removeClass('active');
+    if (!$t.hasClass(cellular.opts.activeclass)) {
+      $t.addClass(cellular.opts.activeclass)
+        .siblings().removeClass(cellular.opts.activeclass);
     }
   });
 };
 
 cellular.deactivate = function () {
   return this.each(function () {
-    var $t = jQuery(this);
-    if ($t.hasClass('active')) {
-      $t.removeClass('active');
-    }
+    jQuery(this).removeClass(cellular.opts.activeclass);
   });
 };
 
@@ -45,46 +40,38 @@ cellular.kidWrap = function () {
 cellular.classify = function ($array) {
   // Add array of classes to element
   return this.each(function () {
-    var $t = jQuery(this);
-    var classes = $array.join(' ');
+    jQuery(this).addClass($array.join(' '));
+  });
+};
 
-    $t.addClass(classes);
+/*
+cellular.autodimension = function ($obj, dimension) {
+  return this.each(function () {
+    var $t = jQuery(this),
+    max = 0;
+
+
+    if ($obj === 'auto') {
+      $t.height(state.maxheight);
+    } else {
+      $t.height(o.size.height);
+    }
   });
 };
 
 cellular.throttle = function (fn, delay) {
-  var timer = null;
+  return this.each(function () {
+    var timer = null,
+      context = this,
+      args = arguments;
+    ;
 
-  delay = delay ? delay : 250;
+    delay = delay ? delay : 250;
 
-  return function () {
-    var context = this, args = arguments;
     clearTimeout(timer);
     timer = setTimeout(function () {
       fn.apply(context, args);
     }, delay);
-  };
+  });
 };
-
-cellular.cycle = function (dir) {
-  var $obj = jQuery(this),
-    kids = $obj.children(),
-    count = -1,
-    next;
-
-  if (dir === "next") {
-    next = kids.next();
-    if (next.length < 1) {
-      next = kids[count += 1 % kids.length];
-    }
-  }
-
-  if (dir === "prev") {
-    next = kids.prev();
-    if (next.length < 1) {
-      next = kids[kids.length];
-    }
-  }
-
-  return next;
-};
+*/

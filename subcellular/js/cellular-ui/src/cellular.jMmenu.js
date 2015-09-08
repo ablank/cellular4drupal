@@ -1,18 +1,18 @@
 cellular.jMmenu = function (opts) {
   var o = jQuery.extend({
-    breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger
+    breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
     parent: jQuery('body'), // Parent element used to attach menu
     cclass: "jMmenu", // Menu class to test
     type: "slide", // Type of animation
     direction: "right" // Direction of animation
   }, opts),
-    fn = {
-      classes: [
-        o.type + '-' + o.direction,
-        o.cclass + '-active',
-        o.cclass + '-inactive'
-      ]
-    };
+    fn = {};
+
+  fn.classes = [
+    o.type + '-' + o.direction,
+    o.cclass + '-active',
+    o.cclass + '-inactive'
+  ];
 
   fn.mediaQuery = function ($obj) {
     if (o.breakpoint === cellular.breakpoint().type) {
@@ -30,21 +30,24 @@ cellular.jMmenu = function (opts) {
     }
   };
 
-  return this.each(function () {
-    var $obj = jQuery(this);
-    var $window = jQuery(window);
+  fn.init = function () {
+    var $obj = jQuery(this),
+      $window = jQuery(window);
 
     fn.mediaQuery($obj);
     $window.on('resize', function () {
       fn.mediaQuery($obj);
+      // console.log(cellular.breakpoint());
     });
 
     $obj.on('click', function () {
       if (o.parent.hasClass(fn.classes[0])) {
         o.parent.toggleClass(fn.classes[1])
           .toggleClass(fn.classes[2]);
-        $obj.toggleClass('active');
+        $obj.toggleClass(cellular.opts.activeclass);
       }
     });
-  });
+  };
+
+  return this.each(fn.init);
 };

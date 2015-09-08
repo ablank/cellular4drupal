@@ -102,7 +102,7 @@ print $attributes;
 </div>
 <?php $links = render($content['links']);
 if ($links): ?>
-  <div class="link-wrapper">
+  <div class="links">
     <?php print $links; ?>
   </div>
 <?php endif; ?>

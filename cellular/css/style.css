@@ -417,6 +417,7 @@ tfoot {
 /* line 8, ../sass/style/_base_forms.scss */
 form {
   display: block;
+  max-width: 32em;
   margin: 0 auto;
 }
 /* line 14, ../sass/style/_base_forms.scss */
@@ -790,148 +791,147 @@ a img {
 .cell-80,
 .cell-75,
 .cell-70,
-.cell-66,
 .cell-60,
 .cell-50,
 .cell-40,
-.cell-33,
 .cell-30,
 .cell-25,
 .cell-20,
-.cell-10 {
+.cell-10,
+.cell-33,
+.cell-66 {
   z-index: 1;
   position: relative;
   float: left;
   display: block;
-  margin: 0;
-  padding: 0;
+  margin: 1%;
+  padding: 1%;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 19, ../sass/style/_base_grid.scss */
+/* line 26, ../sass/style/_base_grid.scss */
 .cell.center,
 .cell-100.center,
 .cell-90.center,
 .cell-80.center,
 .cell-75.center,
 .cell-70.center,
-.cell-66.center,
 .cell-60.center,
 .cell-50.center,
 .cell-40.center,
-.cell-33.center,
 .cell-30.center,
 .cell-25.center,
 .cell-20.center,
-.cell-10.center {
+.cell-10.center,
+.cell-33.center,
+.cell-66.center {
   float: none;
-  margin: 0 auto;
+  margin: 1 auto;
 }
 
-/* line 25, ../sass/style/_base_grid.scss */
+/* line 38, ../sass/style/_base_grid.scss */
 .cell {
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-100 {
-  width: 100%;
+  width: 96%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-90 {
-  width: 90%;
+  width: 86%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-80 {
-  width: 80%;
+  width: 76%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-75 {
-  width: 75%;
+  width: 71%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-70 {
-  width: 70%;
-}
-
-/* line 32, ../sass/style/_base_grid.scss */
-.cell-66 {
   width: 66%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-60 {
-  width: 60%;
+  width: 56%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-50 {
-  width: 50%;
+  width: 46%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-40 {
-  width: 40%;
+  width: 36%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
-.cell-33 {
-  width: 33%;
-}
-
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-30 {
-  width: 30%;
+  width: 26%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-25 {
-  width: 25%;
+  width: 21%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-20 {
-  width: 20%;
+  width: 16%;
 }
 
-/* line 32, ../sass/style/_base_grid.scss */
+/* line 54, ../sass/style/_base_grid.scss */
 .cell-10 {
-  width: 10%;
+  width: 6%;
+}
+
+/* line 63, ../sass/style/_base_grid.scss */
+.cell-33 {
+  width: 29.33333%;
+}
+
+/* line 71, ../sass/style/_base_grid.scss */
+.cell-66 {
+  width: 62.66667%;
 }
 
 @media screen and (max-width: 650px) and (min-width: 0) {
-  /* line 39, ../sass/style/_base_grid.scss */
+  /* line 82, ../sass/style/_base_grid.scss */
   .cell-100,
   .cell-90,
   .cell-80,
   .cell-75,
   .cell-70,
-  .cell-66,
   .cell-60,
   .cell-50,
   .cell-40,
-  .cell-33,
   .cell-30,
   .cell-25,
   .cell-20,
-  .cell-10 {
-    width: 100%;
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
+  .cell-10,
+  .cell-33,
+  .cell-66 {
+    width: 96%;
   }
 }
-/* line 48, ../sass/style/_base_grid.scss */
+/* line 97, ../sass/style/_base_grid.scss */
 .hidden {
   position: absolute;
   left: -9999px;
 }
 
-/* line 53, ../sass/style/_base_grid.scss */
+/* line 102, ../sass/style/_base_grid.scss */
 .clearfix {
   zoom: 1;
 }
@@ -946,30 +946,30 @@ a img {
   clear: both;
 }
 
-/* line 57, ../sass/style/_base_grid.scss */
+/* line 106, ../sass/style/_base_grid.scss */
 hr.clearfix {
   visibility: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* line 63, ../sass/style/_base_grid.scss */
+/* line 112, ../sass/style/_base_grid.scss */
 .left,
 .right {
   display: block;
 }
 
-/* line 68, ../sass/style/_base_grid.scss */
+/* line 117, ../sass/style/_base_grid.scss */
 .left {
   float: left;
 }
 
-/* line 72, ../sass/style/_base_grid.scss */
+/* line 121, ../sass/style/_base_grid.scss */
 .right {
   float: right;
 }
 
-/* line 76, ../sass/style/_base_grid.scss */
+/* line 125, ../sass/style/_base_grid.scss */
 .center {
   margin: 0 auto;
 }
@@ -1686,16 +1686,217 @@ hr.clearfix {
   * CellularUI : jScrolli
 */
 /* line 10, ../sass/style/cellular-ui/_jScrolli.scss */
-.cellular.jScrolli ul {
+.jScrolli-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  /*
+    #buttons{
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+    }
+    #buttons ul{
+    list-style:none;
+    position:relative;
+    left:50%;
+    }
+
+    #buttons li{float:left;position:relative;} // ie needs position:relative here
+
+    #buttons a{
+    text-decoration:none;
+    margin:10px;
+    background:red;
+    float:left;
+    border:2px outset blue;
+    color:#fff;
+    padding:2px 5px;
+    text-align:center;
+    white-space:nowrap;
+
+    }
+    #buttons a:hover{ border:2px inset blue;color:red;background:#f2f2f2;}
+  */
+}
+/* line 16, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+/* line 23, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap li {
+  display: inline;
+  max-width: none;
   margin: 0;
   padding: 0;
 }
-/* line 15, ../sass/style/cellular-ui/_jScrolli.scss */
-.cellular.jScrolli li {
+/* line 30, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide,
+.jScrolli-wrap .wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 39, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide {
+  display: none;
+  opacity: 0;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 44, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.active {
   display: block;
-  list-style: none;
+  opacity: 1;
+}
+/* line 49, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.previous,
+.jScrolli-wrap .slide.next {
+  display: block;
+  opacity: 0;
+}
+/* line 55, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.previous {
+  right: 100%;
+}
+/* line 59, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.next {
+  left: 100%;
+}
+/* line 64, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fefefe;
+  max-width: none;
   margin: 0;
-  padding: 1em;
+  padding: 0.8em;
+  background-color: #111;
+  background-color: rgba(17, 17, 17, 0.8);
+  opacity: 0;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 79, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .caption p,
+.jScrolli-wrap .caption h2,
+.jScrolli-wrap .caption h3,
+.jScrolli-wrap .caption h4 {
+  color: #fefefe;
+}
+/* line 84, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+}
+/* line 93, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control {
+  position: absolute;
+  text-indent: -999em;
+  width: 2em;
+  height: 2em;
+  color: #fefefe;
+  background-repeat: no-repeat;
+  background-image: url(../assets/icons/png/controls.png);
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 104, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.pause {
+  top: 0;
+  left: 0;
+  background-position: -54px 8px;
+  border: #fefefe 2px solid;
+  border-radius: 50%;
+  opacity: 0;
+}
+/* line 114, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.prev,
+.jScrolli-wrap .control.next {
+  cursor: pointer;
+  top: 50%;
+  opacity: 0.2;
+  background-color: #444;
+}
+/* line 121, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.prev:hover,
+.jScrolli-wrap .control.prev:focus,
+.jScrolli-wrap .control.next:hover,
+.jScrolli-wrap .control.next:focus {
+  background-color: #29b4de;
+}
+/* line 127, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.prev {
+  left: 0;
+  background-position: -24px 8px;
+}
+/* line 132, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.next {
+  right: 0;
+  background-position: -88px 8px;
+}
+/* line 138, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .markers {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+/* line 143, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .markers ul {
+  float: left;
+  position: relative;
+  left: -50%;
+}
+/* line 150, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .marker {
+  cursor: pointer;
+  display: block;
+  float: left;
+  text-indent: -999em;
+  width: 0.5em;
+  height: 0.5em;
+  margin: 0.5em;
+  border: #444 1px solid;
+  border-radius: 50%;
+  background-color: #bbbab7;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+/* line 164, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .marker.active {
+  border-color: #16708b;
+  background-color: #29b4de;
+  box-shadow: 0 0 0.5em 0 #29b4de;
+}
+/* line 170, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .marker:hover,
+.jScrolli-wrap .marker:focus {
+  border-color: #29b4de;
+}
+/* line 175, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .marker a {
+  text-indent: -999em;
+}
+/* line 184, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap.active .control {
+  opacity: 1;
+}
+/* line 188, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap.active .caption {
+  opacity: 1;
 }
 
 /**
@@ -1822,13 +2023,13 @@ hr.clearfix {
   * Logo link style
 */
 /* line 6, ../sass/style/_style_branding.scss */
-#logo {
+.logo {
   float: left;
   left: 5%;
   z-index: 9;
 }
 /* line 12, ../sass/style/_style_branding.scss */
-#logo a {
+.logo a {
   display: block;
   text-indent: -999em;
   width: 72px;
@@ -1842,7 +2043,7 @@ hr.clearfix {
   box-shadow: 0 0 0 0 #fefefe;
 }
 /* line 27, ../sass/style/_style_branding.scss */
-#logo a:hover {
+.logo a:hover {
   box-shadow: 0 0 0.4em 0 #29b4de;
   -webkit-transform: translate3d(0, -0.1em, 1em);
   transform: translate3d(0, -0.1em, 1em);

@@ -4,12 +4,13 @@
 // the same configuration data without including the style rules.
 /////
 
-@import "compass";
+@import "variables/_vars_swatches";
 //////
-@import "variables/grid";
-@import "variables/swatches";
-@import "variables/icons";
-@import "variables/compass_defaults";
+@import "compass";
+@import "variables/_vars_compass_defaults";
+//////
+@import "variables/_vars_grid";
+@import "variables/_vars_icons";
 //////
 @import "_mixins/cellularmixins";
 @import "_mixins/animations";

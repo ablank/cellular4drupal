@@ -31,7 +31,7 @@ function cellular_build_links($links, $parent) {
             'class' => array(
               $parent['link_class'],
               $link['class'],
-        ))));
+        )))) . "\n";
       }
     }
 
@@ -44,6 +44,7 @@ function cellular_build_links($links, $parent) {
       ));
     }
   }
+
   return $output;
 }
 
@@ -170,7 +171,7 @@ function cellular_social_media_follow() {
     $content = cellular_build_links($links, $media_block);
     if (!empty($content)) {
       $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-      $output .= $media_block['title'] . $content . "\n</div>\n";
+      $output .= $media_block['title'] . $content . "</div>\n";
     }
 
     return $output;
@@ -242,7 +243,7 @@ function cellular_social_media_share() {
 
     if (!empty($content)) {
       $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-      $output .= $media_block['title'] . $content . "\n</div>\n";
+      $output .= $media_block['title'] . $content . "</div>";
     }
 
     return $output;

@@ -1,16 +1,13 @@
 cellular.jTabs = function (opts) {
   var o = jQuery.extend({
-    "active": 0, // Array index of initially active tab
-    "orient": "horizontal" // || 'vertical'
-  }, opts);
-
-  var fn = {};
+    active: 0, // Array index of initially active tab
+    orient: "horizontal" // || 'vertical'
+  }, opts),
+    fn = {};
 
   fn.showContent = function (li) {
-    //Content
-    var c = li.find('.content');
-    //Display
-    var pan = li.parent().find('.panel-content');
+    var c = li.find('.content'),
+      pan = li.parent().find('.panel-content');
 
     li.activate();
     pan.fadeOut('normal', function () {
@@ -19,14 +16,13 @@ cellular.jTabs = function (opts) {
     });
   };
 
-  return this.each(function () {
-
-    var $obj = jQuery(this);
-    var tab = $obj.find('> li');
-    var maxHeight = 0;
+  fn.init = function () {
+    var $obj = jQuery(this),
+      tab = $obj.find('> li'),
+      maxheight = 0;
 
     $obj.addClass(cellular.opts.cclass)
-      .height(maxHeight);
+      .height(maxheight);
     $obj.once('jTabs', function () {
 
       $obj.addClass(cellular.opts.cclass + ' ' + o.orient)
@@ -58,5 +54,7 @@ cellular.jTabs = function (opts) {
 
     //Set default content
     fn.showContent(tab.eq([o.active]));
-  });
+  };
+
+  return this.each(fn.init);
 };

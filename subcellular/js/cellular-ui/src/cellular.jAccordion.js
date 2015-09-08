@@ -9,7 +9,7 @@ cellular.jAccordion = function (opts) {
   var fn = {};
 
   fn.showContent = function ($li) {
-    
+
     if (o.single === true) {
       $li.siblings('.active').deactivate()
         .find('.panel').slideUp(o.duration, o.easing);
@@ -20,17 +20,11 @@ cellular.jAccordion = function (opts) {
     }
   };
 
-  return this.each(function () {
-    var $obj = jQuery(this);
-    var li = $obj.find('li');
-    //fn.style($obj);
-    //Add classes/functions to each pane    
-
+  fn.style = function ($obj) {
     $obj.once('jAccordion', function () {
 
-      $obj.addClass(cellular.opts.cclass);
-
-      li.each(function () {
+      $obj.addClass(cellular.opts.cclass)
+        .find('> li').each(function () {
         var $t = jQuery(this);
 
         $t.kidWrap();
@@ -43,8 +37,15 @@ cellular.jAccordion = function (opts) {
         });
       });
     });
+  };
 
+  fn.init = function () {
+    var $obj = jQuery(this);
+    // Generate markup for accordion
+    fn.style($obj);
     //Set default content
     fn.showContent($obj.children().eq(o.active));
-  });
+  };
+
+  return this.each(fn.init);
 };

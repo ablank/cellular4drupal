@@ -3,7 +3,6 @@
  * @file
  * Theme-settings: Javascript options.
  */
-
 // Start js opts.
 $form[0]['js'] = array(
   '#type' => 'fieldset',
@@ -24,14 +23,21 @@ $form[0]['js']['min_script'] = array(
 // Modernizr stuff.
 $form[0]['js']['modernizr'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('Modernizr'), 'http://modernizr.com/'),
+  '#title' => l('Modernizr', 'http://modernizr.com/'),
   '#description' => t("Include Modernizr.js to test browser capabilities and load additional resources as needed."),
   '#default_value' => theme_get_setting('modernizr'),
 );
 
+$form[0]['js']['requirejs'] = array(
+  '#type' => 'checkbox',
+  '#title' => 'Require.js',
+  '#description' => t("Load local assets asynchronously with Require.js."),
+  '#default_value' => theme_get_setting('requirejs'),
+);
+
 $form[0]['js']['mdrnzr'] = array(
   '#type' => 'fieldset',
-  '#title' => t('Modernizr'),
+  '#title' => 'Modernizr',
   '#description' => t("Browser testing & conditional resource loading."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
@@ -166,7 +172,7 @@ $form[0]['js']['update']['jquery'] = array(
 $form[0]['js']['update']['jquery']['jquery_version'] = array(
   '#type' => 'select',
   '#title' => t('jQuery Version'),
-  '#description' => t("Select the version of jQuery your site will use. The jQuery.migrate module will be loaded automatically for versions > 1.9"),
+  '#description' => t("Select the version of jQuery your site will use."),
   '#options' => $cdn['jquery'],
   '#default_value' => theme_get_setting('jquery_version'),
 );
@@ -176,12 +182,19 @@ $form[0]['js']['update']['jquery']['jquery_migrate'] = array(
   '#title' => t('jQuery Migrate'),
   '#description' => t("Include jQuery.migrate for versions > 1.9 to prevent deprecated functions from breaking."),
   '#default_value' => theme_get_setting('jquery_migrate'),
+ /*
+  '#states' => array(
+  'visible' => array(
+  ':input[name="jquery_version"]' => array('selected' => floatval(substr( $somevarforjquery['version'], 2)) >= 9 ),
+  ),
+  ),
+ */
 );
 
 // jQuery.ui stuff.
 $form[0]['js']['update']['jqueryui'] = array(
   '#type' => 'fieldset',
-  '#title' => t('jQuery UI'),
+  '#title' => 'jQuery UI',
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
@@ -212,42 +225,42 @@ $form[0]['js']['plugins'] = array(
 
 $form[0]['js']['plugins']['backstretch'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('Backstretch'), 'http://srobbin.com/jquery-plugins/backstretch/'),
+  '#title' => l('Backstretch', 'http://srobbin.com/jquery-plugins/backstretch/'),
   '#description' => t("A simple jQuery plugin that allows you to add a dynamically resized, slideshow-capable background image to any page or element."),
   '#default_value' => theme_get_setting('backstretch'),
 );
 
 $form[0]['js']['plugins']['cellularui'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('Cellular UI'), 'http://live-cellular.gotpantheon.com/cellular-ui'),
+  '#title' => l('Cellular UI', 'http://live-cellular.gotpantheon.com/cellular-ui'),
   '#description' => t("The Cellular UI library provides common UI elements that work well with Views."),
   '#default_value' => theme_get_setting('cellularui'),
 );
 
 $form[0]['js']['plugins']['flowtype'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("Flowtype"), 'http://simplefocus.com/flowtype/'),
+  '#title' => l('Flowtype', 'http://simplefocus.com/flowtype/'),
   '#description' => t('Responsive font-size based on element width.'),
   '#default_value' => theme_get_setting('flowtype'),
 );
 
 $form[0]['js']['plugins']['freetile'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("Freetile"), 'http://yconst.com/web/freetile/'),
+  '#title' => l('Freetile', 'http://yconst.com/web/freetile/'),
   '#description' => t('Freetile is a plugin for jQuery that enables the organization of webpage content in an efficient, dynamic and responsive layout.'),
   '#default_value' => theme_get_setting('freetile'),
 );
 
 $form[0]['js']['plugins']['jparallax'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("jParallax"), 'http://stephband.info/jparallax/'),
+  '#title' => l("jParallax", 'http://stephband.info/jparallax/'),
   '#description' => t('jParallax turns nodes into absolutely positioned layers that move in response to the mouse. Depending on their dimensions these layers move at different rates, in a parallaxy kind of way.'),
   '#default_value' => theme_get_setting('jparallax'),
 );
 
 $form[0]['js']['plugins']['smoove'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("Smoove"), 'http://smoove.donlabs.com/'),
+  '#title' => l('Smoove', 'http://smoove.donlabs.com/'),
   '#description' => t('Smoove makes it easy to implement awesome CSS3 transition effects, making your content smoothly glide into the page as your scroll down the page.'),
   '#default_value' => theme_get_setting('smoove'),
 );
@@ -263,7 +276,7 @@ $form[0]['js']['lib'] = array(
 
 $form[0]['js']['lib']['d3js'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("D3JS"), 'http://d3js.org/'),
+  '#title' => l('D3JS', 'http://d3js.org/'),
   '#description' => t('D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG and CSS.'),
   '#default_value' => theme_get_setting('d3js'),
 );
@@ -283,14 +296,14 @@ $form[0]['js']['lib']['prism'] = array(
 
 $form[0]['js']['lib']['snap-svg'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t("Snap.SVG"), 'http://snapsvg.io/'),
+  '#title' => l('Snap.SVG', 'http://snapsvg.io/'),
   '#description' => t('The Snap.svg JavaScript library makes working with your SVG assets as easy as jQuery makes working with the DOM.'),
   '#default_value' => theme_get_setting('snap-svg'),
 );
 
 $form[0]['js']['lib']['threejs'] = array(
   '#type' => 'checkbox',
-  '#title' => l(t('THREE.js'), 'http://threejs.org/'),
+  '#title' => l('THREE.js', 'http://threejs.org/'),
   '#description' => t("A JavaScript 3D Library which makes WebGL simpler."),
   '#default_value' => theme_get_setting('threejs'),
 );

@@ -45,6 +45,7 @@
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>
   <?php print $styles; ?>
+  <?php print $critical_js; ?>
 </head>
 
 <body<?php print $body_attributes; ?>>

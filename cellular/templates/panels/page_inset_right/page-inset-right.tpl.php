@@ -27,7 +27,7 @@ endif;
 
     <div id="app" class="cell">
       <?php if (!empty($content['body'])): ?>
-        <div id="content-wrap" class="cell-100">
+        <div id="content-wrap" class="cell">
           <div id="content">
             <?php print $content['body']; ?>
           </div>

@@ -154,7 +154,27 @@ function cellular_dev($element) {
   }
 }
  */
-
+function cellular_proccess_asset(&$asset, $cellular = NULL){
+      // Set data source as CDN or local host.
+    if (isset($asset['data'])) {
+      $data = $asset['data'];
+    }
+    elseif (isset($asset['cdn'])) {
+      $data = $asset['cdn'];
+    }
+    elseif (isset($asset['file'])) {
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      //$data .= '/css/' . $asset['file'];
+    }
+    if (!empty($data)) {
+      // Set stylesheet properties.
+      $asset['data'] = $data;
+      $asset['preprocess'] = isset($asset['preprocess']) ? $asset['preprocess'] : TRUE;
+      $asset['every_page'] = isset($asset['every_page']) ? $asset['every_page'] : TRUE;
+      $asset['weight'] = isset($asset['weight']) ? $asset['weight'] : 1;
+      $asset['type'] = isset($asset['cdn']) ? 'external' : 'file';
+    }
+}
 
 /*
  * @see file: preprocess/fn.css.inc
@@ -207,9 +227,12 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_css(&$css, $array, $cellular = FALSE) {
+function cellular_add_css($array, $cellular = FALSE) {
   foreach ($array as $style) {
     // Set data source as CDN or local host.
+    if (isset($style['data'])) {
+      $data = $style['data'];
+    }
     if (isset($style['cdn'])) {
       $data = $style['cdn'];
     }
@@ -228,7 +251,8 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $style['media'] = isset($style['media']) ? $style['media'] : 'all';
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
       // Add stylesheet to $css.
-      $css[$data] = $style;
+      //$css[$data] = $style;
+      drupal_add_css($data, $style);
     }
   }
 }
@@ -260,7 +284,7 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
     }
     // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
-    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : FALSE;
+    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
     $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
     $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
     $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;
@@ -513,38 +537,34 @@ function cellular_xinput($element, $type) {
  *   Reference cellular library if TRUE.
  */
 function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
-  $type = 'file';
   foreach ($array as $script) {
     // Test if local or external source is provided.
     if (!empty($script['cdn'])) {
-      $type = 'external';
       $data = $script['cdn'];
+      $script['type'] = 'external';
       cellular_js_fallback($script, $cellular);
     }
     elseif (!empty($script['file'])) {
+      $script['type'] = 'file';
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
       $data .= '/js/' . $script['file'];
     }
     else {
       $data = $script['data'];
+      $script['type'] = $script['type'];
     }
     // Set script attributes.
-    if (!empty($script['type'])) {
-      $type = $script['type'];
-    }
+    $script['data'] = $data;
+    $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
+    $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
+    $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
+    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+    $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
+    $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
+    empty($script['version']) ? NULL : $script['version'] = $script['version'];
 
-      $script['data'] = $data;
-      $script['type'] = $type;
-      $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
-      $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
-      $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-      $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
-      $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
-      $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
-      $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-      empty($script['version']) ? NULL : $script['version'] = $script['version'];
-
-      $vars['#attached']['js'][$data] = $script;
+    $vars['#attached']['js'][$data] = $script;
   }
 }
 
@@ -575,11 +595,16 @@ function cellular_add_js($array, $cellular = FALSE) {
       $data = $script['data'];
     }
     // Set script attributes.
-    if(!empty($script['type'])){
+    if (!empty($script['type'])) {
       $type = $script['type'];
     }
-    elseif(!empty($script['cdn'])){
-      $type = 'external';
+    else {
+      if (!empty($script['cdn'])) {
+        $type = 'external';
+      }
+      elseif (!empty($script['file'])) {
+        $type = 'file';
+      }
     }
 
     $script['type'] = $type;
@@ -697,7 +722,7 @@ function cellular_modernizr($tests) {
     'type' => 'inline',
     'group' => JS_LIBRARY,
     'every_page' => TRUE,
-    'weight' => -999,
+    'scope' => 'critical',
   ));
 }
 
@@ -715,6 +740,50 @@ function cellular_js_settings() {
   theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = TRUE : NULL;
 
   return $js_plugins;
+}
+
+/**
+ * 
+ * @param type $scripts
+ */
+function cellular_requirejs(&$javascript) {
+  // $base_url needs to be added to set the correct path.
+  //$dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
+  $jq = cellular_jquery_info();
+  $require = array(
+    'shim' => '',
+    'require' => '',
+  );
+  $jq['correctpath'] = str_replace(array(
+    $GLOBALS['base_url'] . '/',
+    '.js',
+  )
+  , '', $javascript['misc/jquery.js']['data']);
+
+  foreach ($javascript as &$script) {
+    if ($script['type'] === 'file' && $script['scope'] !== 'critical') {
+      $data = str_replace(array(
+        $GLOBALS['base_url'] . '/',
+        '.js',
+      ), '', $script['data']);
+
+      $require['shim'] .= "\n    '$data': { deps: ['jquery'], exports: '$data'},";
+      $require['require'] .= "\n  '$data',";
+
+      $script = NULL;
+      unset($javascript[$script]);
+    }
+  }
+
+  // Build the script loader.
+  $js = "requirejs.config({\n  paths: {\n    ";
+  $js .= "baseUrl: '/',\n    ";
+  $js .= "jquery: '" . $jq['correctpath'] . "'\n  }\n});\n";
+  //$js .= "shim: {" . $require['shim'] . "\n  }\n});\n";
+  $js .= "require([" . $require['require'] . "\n]);\n";
+  //$js .= "]);";
+
+  return $js;
 }
 
 
@@ -1061,6 +1130,7 @@ function cellular_error_page(&$vars) {
  */
 function cellular_jquery_info() {
   $jquery = array(
+    'default' => 'misc/jquery.js',
     'update' => theme_get_setting('jquery_update'),
     'version' => theme_get_setting('jquery_version'),
     'use_cdn' => theme_get_setting('jquery_cdn'),
@@ -1070,6 +1140,7 @@ function cellular_jquery_info() {
       'theme' => theme_get_setting('jqueryui_theme'),
     ),
   );
+  $jquery['file'] = 'jquery-' . $jquery['version'] . CELLULAR_JS_EXT;
 
   return $jquery;
 }
@@ -1131,8 +1202,9 @@ function cellular_jquery_update(&$javascript) {
   $jq = cellular_jquery_info();
   // Override jQuery.
   $jquery = array(
-    'default' => 'misc/jquery.js',
-    'file' => 'jquery-' . $jq['version'] . '.min.js',
+    'default' => $jq['default'],
+    'file' => $jq['file'],
+    //'file' => 'jquery-' . $jq['version'] . '.min.js',
     'version' => $jq['version'],
     'every_page' => TRUE,
     'group' => JS_LIBRARY,
@@ -1278,7 +1350,7 @@ function cellular_jqueryui_update_css(&$css) {
         $v = $ui['version'] === '1.10.4' ? '1.10' : '1.9';
         $style['ui']['file'] = "jquery-ui/jquery-ui-" . $v . CELLULAR_CSS_EXT;
 
-        cellular_add_css($css, $style);
+        cellular_add_css($style);
       }
       else {
         $ui_path = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
@@ -1289,7 +1361,7 @@ function cellular_jqueryui_update_css(&$css) {
           $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];
         }
 
-        cellular_add_css($css, $style, TRUE);
+        cellular_add_css($style, TRUE);
       }
     }
   }
@@ -1407,12 +1479,22 @@ function cellular_plugins_js() {
   $plugin_path = 'plugins/';
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
+
   theme_get_setting('modernizr') == 1 ? $js_plugins['modernizr'] = array(
     'group' => JS_LIBRARY,
     'object' => 'Modernizr',
     'file' => 'modernizr',
     'version' => '2.8.3',
     'weight' => -1000,
+    'scope' => 'critical',
+  ) : NULL;
+
+  theme_get_setting('requirejs') == 1 ? $js_plugins['require'] = array(
+    'group' => JS_LIBRARY,
+    'file' => 'require',
+    'version' => '2.1.20',
+    'weight' => 0,
+    'scope' => 'critical',
   ) : NULL;
 
   // Add migrate to prevent plugins from breaking with jQuery > v1.9.
@@ -1565,11 +1647,6 @@ function cellular_html_head_alter(&$head_elements) {
 function cellular_page_alter(&$vars) {
   $element = $vars['content'];
 
-  // Automate error pages.
-  cellular_error_page($vars);
-  // Add modernizr queries.
-  cellular_modernizr_default();
-
   $styles = array(
     'style' => array(
       'file' => 'style' . CELLULAR_CSS_EXT,
@@ -1630,7 +1707,8 @@ function cellular_page_alter(&$vars) {
   cellular_critical_css($vars);
   // Add to Cellular plugin settings to Drupal.settings.
   drupal_add_js(array('cellular' => cellular_js_settings()), 'setting');
-
+  // Add modernizr queries.
+  cellular_modernizr_default();
   //dpm($vars);
 }
 
@@ -1669,7 +1747,20 @@ function cellular_js_alter(&$javascript) {
     cellular_jquery_update($javascript);
     cellular_jqueryui_update_js($javascript);
   }
-  // dpm($javascript);
+
+  if (theme_get_setting('requirejs') == 1) {
+    $javascript['requirejs'] = array(
+      'data' => cellular_requirejs($javascript),
+      'type' => 'inline',
+      'scope' => 'critical',
+      'group' => JS_LIBRARY,
+      'defer' => FALSE,
+      'every_page' => TRUE,
+      'weight' => 100,
+    );
+  }
+
+   // dpm($javascript);
 }
 
 
@@ -1805,7 +1896,7 @@ function cellular_preprocess_html(&$vars) {
     drupal_set_message("OK, Cookie: ' " . $_COOKIE[$cookie] . " ' set!");
     }
  */
-   //dpm($vars);
+  //dpm($vars);
 }
 
 /**
@@ -1829,6 +1920,8 @@ function cellular_preprocess_node(&$vars) {
   // Push variables to the node array.
   $vars['post_date'] = $date;
   $vars['author'] = $author;
+
+  // dpm($node);
 }
 
 /**
@@ -1888,7 +1981,7 @@ function cellular_preprocess_comment_wrapper(&$vars) {
 }
 
 /*
- * @see file: preprocess/preprocess.page.inc
+ * @see file: preprocess/preprocess_page.inc
  * Template page preprocess functions.
  */
 
@@ -1896,6 +1989,8 @@ function cellular_preprocess_comment_wrapper(&$vars) {
  * Implements template_preprocess_page().
  */
 function cellular_preprocess_page(&$vars) {
+  // Automate error pages.
+  cellular_error_page($vars);
   // Set main menu.
   cellular_main_menu($vars);
   // Set classes for content & sidebar regions.
@@ -1909,19 +2004,17 @@ function cellular_preprocess_page(&$vars) {
   $vars['page']['search_box'] = drupal_get_form('search_form');
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
-  $vars['page']['copyright'] = !empty($copyright) ?
-  "&copy; " . date("Y") . " $copyright" : '';
+  $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
   // Add template suggestion for custom content types(page--content-type.tpl.php)
   if (isset($vars['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
 
-  /* Work in progress... */
-  // Panels everywhere page template suggestion.
-  $panels_everywhere = variable_get('panels_everywhere_site_template', 0);
-  if (!empty($panels_everywhere)) {
-    $vars['theme_hook_suggestions'][] = 'page__panels_everywhere';
+  /* Work in progress... 
+  if (!empty($vars['panels_everywhere_site_template'])) {
+    $vars['template_file'] = 'page--panels-everywhere';
   }
+   */
   //dpm($vars);
 }
 
@@ -2350,82 +2443,92 @@ function cellular_textarea(&$vars) {
 
 /*
  * @see file: preprocess/theme_pager.inc
- * Drupal pager, basically ripped off from Tao :)...
+ * Generate & theme drupal pager.
  */
 
 /**
  * Implements theme_pager().
  */
 function cellular_pager($vars) {
-  global $pager_page_array, $pager_total;
   $tags = $vars['tags'];
   $element = $vars['element'];
   $parameters = $vars['parameters'];
   $quantity = $vars['quantity'];
+  $output = '';
+  global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
   // Middle is used to "center" pages around the current page.
   $pager_middle = ceil($quantity / 2);
-  // Current is the page we are currently paged to:
+  // current is the page we are currently paged to
   $pager_current = $pager_page_array[$element] + 1;
-  // First is the first page listed by this pager piece (re quantity):
+  // first is the first page listed by this pager piece (re quantity)
   $pager_first = $pager_current - $pager_middle + 1;
-  // Last is the last page listed by this pager piece (re quantity):
+  // last is the last page listed by this pager piece (re quantity)
   $pager_last = $pager_current + $quantity - $pager_middle;
-  // Max is the maximum page number:
+  // max is the maximum page number
   $pager_max = $pager_total[$element];
   // End of marker calculations.
-  // Prepare for generation loop.
-  $i = $pager_first;
-  if ($pager_last > $pager_max) {
-    // Adjust "center" if at end of query.
-    $i = $i + ($pager_max - $pager_last);
-    $pager_last = $pager_max;
-  }
-  if ($i <= 0) {
-    // Adjust "center" if at start of query.
-    $pager_last = $pager_last + (1 - $i);
-    $i = 1;
-  }
-  // End of generation loop preparation.
-  $li_first = theme('pager_first', array(
-    'text' => isset($tags[0]) ? $tags[0] : t('First'),
-    'element' => $element,
-    'parameters' => $parameters,
-  ));
-  $li_previous = theme('pager_previous', array(
-    'text' => isset($tags[1]) ? $tags[1] : t('Previous'),
-    'element' => $element,
-    'interval' => 1,
-    'parameters' => $parameters,
-  ));
-  $li_next = theme('pager_next', array(
-    'text' => isset($tags[3]) ? $tags[3] : t('Next'),
-    'element' => $element,
-    'interval' => 1,
-    'parameters' => $parameters,
-  ));
-  $li_last = theme('pager_last', array(
-    'text' => isset($tags[4]) ? $tags[4] : t('Last'),
-    'element' => $element,
-    'parameters' => $parameters,
-  ));
+    // Prepare for generation loop.
+  if ($pager_max > 1) {
+    $i = $pager_first;
+    if ($pager_last > $pager_max) {
+      // Adjust "center" if at end of query.
+      $i = $i + ($pager_max - $pager_last);
+      $pager_last = $pager_max;
+    }
+    if ($i <= 0) {
+      // Adjust "center" if at start of query.
+      $pager_last = $pager_last + (1 - $i);
+      $i = 1;
+    }
+    // End of generation loop preparation.
+    $li_first = theme('pager_first', array(
+      'text' => (isset($tags[0]) ? $tags[0] : t('First')),
+      'element' => $element,
+      'parameters' => $parameters
+    ));
+    $li_previous = theme('pager_previous', array(
+      'text' => (isset($tags[1]) ? $tags[1] : t('Previous')),
+      'element' => $element,
+      'interval' => 1,
+      'parameters' => $parameters
+    ));
+    $li_next = theme('pager_next', array(
+      'text' => (isset($tags[3]) ? $tags[3] : t('Next')),
+      'element' => $element,
+      'interval' => 1,
+      'parameters' => $parameters
+    ));
+    $li_last = theme('pager_last', array(
+      'text' => (isset($tags[4]) ? $tags[4] : t('Last')),
+      'element' => $element,
+      'parameters' => $parameters
+    ));
 
-  if ($pager_total[$element] > 1) {
     if ($li_first) {
-      $items[] = array('class' => array('pager-first'), 'data' => $li_first);
+      $items[] = array(
+        'class' => array('pager-first'),
+        'data' => $li_first,
+      );
     }
     if ($li_previous) {
-      $items[] = array('class' => array('pager-previous'),'data' => $li_previous);
+      $items[] = array(
+        'class' => array('pager-previous'),
+        'data' => $li_previous,
+      );
     }
 
     // When there is more than one page, create the pager list.
-    if ($i !== $pager_max) {
+    if ($i != $pager_max) {
       if ($i > 1) {
-        $items[] = array('class' => array('pager-ellipsis'), 'data' => '…');
+        $items[] = array(
+          'class' => array('pager-ellipsis'),
+          'data' => '…',
+        );
       }
       // Now generate the actual pager piece.
-      for (;$i <= $pager_last && $i <= $pager_max; $i++) {
+      for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
@@ -2433,12 +2536,15 @@ function cellular_pager($vars) {
               'text' => $i,
               'element' => $element,
               'interval' => ($pager_current - $i),
-              'parameters' => $parameters,
+              'parameters' => $parameters
             )),
           );
         }
-        if ($i === $pager_current) {
-          $items[] = array('class' => array('pager-current'), 'data' => $i);
+        if ($i == $pager_current) {
+          $items[] = array(
+            'class' => array('pager-current'),
+            'data' => $i,
+          );
         }
         if ($i > $pager_current) {
           $items[] = array(
@@ -2447,31 +2553,39 @@ function cellular_pager($vars) {
               'text' => $i,
               'element' => $element,
               'interval' => ($i - $pager_current),
-              'parameters' => $parameters,
+              'parameters' => $parameters
             )),
           );
         }
       }
       if ($i < $pager_max) {
-        $items[] = array('class' => array('pager-ellipsis'), 'data' => '…');
+        $items[] = array(
+          'class' => array('pager-ellipsis'),
+          'data' => '…',
+        );
       }
     }
     // End generation.
     if ($li_next) {
-      $items[] = array('class' => array('pager-next'), 'data' => $li_next);
+      $items[] = array(
+        'class' => array('pager-next'),
+        'data' => $li_next,
+      );
     }
     if ($li_last) {
-      $items[] = array('class' => array('pager-last'), 'data' => $li_last);
+      $items[] = array(
+        'class' => array('pager-last'),
+        'data' => $li_last,
+      );
     }
 
-    $output = '<h2 class="element-invisible">' . t('Pages') . '</h2>';
+    $output .= '<h2 class="element-invisible">' . t('Pages') . '</h2>';
     $output .= theme('item_list', array(
       'items' => $items,
       'attributes' => array(
         'class' => array(
           'pager',
-        ),
-      ),
+        )),
     ));
 
     return $output;
@@ -2485,13 +2599,121 @@ function cellular_pager($vars) {
  */
 
 /**
- * Alter the default Panels markup to remove the panel separator.
+ * Implements theme_panels_default_style_render_region().
  */
 function cellular_panels_default_style_render_region($vars) {
-  
+  // Remove the panel separator.
   return implode('', $vars['panes']);
 }
 
+/**
+ * Implements template_preprocess_panels_pane().
+ *
+ * @param array $vars
+function cellular_preprocess_panels_pane(&$vars) {
+  $content = &$vars['content'];
+
+  $vars['contextual_links'] = array();
+  $vars['classes_array'] = array();
+  $vars['admin_links'] = '';
+
+  if (module_exists('contextual') && user_access('access contextual links')) {
+    $links = array();
+    // These are specified by the content.
+    if (!empty($content->admin_links)) {
+      $links += $content->admin_links;
+    }
+
+    // Take any that may have been in the render array we were given and
+    // move them up so they appear outside the pane properly.
+    if (is_array($content->content) && isset($content->content['#contextual_links'])) {
+      $element = array(
+        '#type' => 'contextual_links',
+        '#contextual_links' => $content->content['#contextual_links'],
+      );
+      unset($content->content['#contextual_links']);
+
+      // Add content to $element array
+      if (is_array($content->content)) {
+        $element['#element'] = $content->content;
+      }
+
+      $element = contextual_pre_render_links($element);
+      if(!empty($element['#links'])) {
+        $links += $element['#links'];
+      }
+    }
+
+    if ($links) {
+      $build = array(
+        '#prefix' => '<div class="contextual-links-wrapper">',
+        '#suffix' => '</div>',
+        '#theme' => 'links__contextual',
+        '#links' => $links,
+        '#attributes' => array('class' => array('contextual-links')),
+        '#attached' => array(
+          'library' => array(array('contextual', 'contextual-links')),
+        ),
+      );
+      $vars['classes_array'][] = 'contextual-links-region';
+      $vars['admin_links'] = drupal_render($build);
+    }
+  }
+
+  // basic classes
+  $vars['classes_array'][] = 'panel-pane';
+  $vars['id'] = '';
+
+  // Add some usable classes based on type/subtype
+  ctools_include('cleanstring');
+  $type_class = $content->type ? 'pane-'. ctools_cleanstring($content->type, array('lower case' => TRUE)) : '';
+  $subtype_class = $content->subtype ? 'pane-'. ctools_cleanstring($content->subtype, array('lower case' => TRUE)) : '';
+
+  // Sometimes type and subtype are the same. Avoid redundant classes.
+  $vars['classes_array'][] = $type_class;
+  if ($type_class != $subtype_class) {
+    $vars['classes_array'][] = $subtype_class;
+  }
+
+  // Add id and custom class if sent in.
+  if (!empty($content->content)) {
+    if (!empty($content->css_id)) {
+      $vars['id'] = ' id="' . $content->css_id . '"';
+    }
+    if (!empty($content->css_class)) {
+      $vars['classes_array'][] = $content->css_class;
+    }
+  }
+
+  // Set up some placeholders for constructing template file names.
+  $base = 'panels_pane';
+  $delimiter = '__';
+
+  // Add template file suggestion for content type and sub-type.
+  $vars['theme_hook_suggestions'][] = $base . $delimiter . $content->type;
+  $vars['theme_hook_suggestions'][] = $base . $delimiter . strtr(ctools_cleanstring($content->type, array('lower case' => TRUE)), '-', '_') . $delimiter . strtr(ctools_cleanstring($content->subtype, array('lower case' => TRUE)), '-', '_');
+
+  $vars['pane_prefix'] = !empty($content->pane_prefix) ? $content->pane_prefix : '';
+  $vars['pane_suffix'] = !empty($content->pane_suffix) ? $content->pane_suffix : '';
+
+  $vars['title'] = !empty($content->title) ? $content->title : '';
+  $vars['title_heading'] = !empty($content->title_heading) ? $content->title_heading : 'h2';
+  $vars['title_attributes_array']['class'][] = 'pane-title';
+
+  $vars['feeds'] = !empty($content->feeds) ? implode(' ', $content->feeds) : '';
+
+  $vars['links'] = !empty($content->links) ? theme('links', array('links' => $content->links)) : '';
+  $vars['more'] = '';
+  if (!empty($content->more)) {
+    if (empty($content->more['title'])) {
+      $content->more['title'] = t('More');
+    }
+    $vars['more'] = l($content->more['title'], $content->more['href'], $content->more);
+  }
+
+  $vars['content'] = !empty($content->content) ? $content->content : '';
+}
+ */
 
 /*
  * @see file: preprocess/social.inc
@@ -2525,7 +2747,7 @@ function cellular_build_links($links, $parent) {
             'class' => array(
               $parent['link_class'],
               $link['class'],
-        ))));
+        )))) . "\n";
       }
     }
 
@@ -2538,6 +2760,7 @@ function cellular_build_links($links, $parent) {
       ));
     }
   }
+
   return $output;
 }
 
@@ -2664,7 +2887,7 @@ function cellular_social_media_follow() {
     $content = cellular_build_links($links, $media_block);
     if (!empty($content)) {
       $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-      $output .= $media_block['title'] . $content . "\n</div>\n";
+      $output .= $media_block['title'] . $content . "</div>\n";
     }
 
     return $output;
@@ -2736,7 +2959,7 @@ function cellular_social_media_share() {
 
     if (!empty($content)) {
       $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-      $output .= $media_block['title'] . $content . "\n</div>\n";
+      $output .= $media_block['title'] . $content . "</div>";
     }
 
     return $output;
@@ -2750,12 +2973,13 @@ function cellular_social_media_share() {
  */
 
 /**
- * Set hooks for view preprocess functions.
+ * Implements template_preprocess_views_view().
  *
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
 function cellular_preprocess_views_view(&$vars) {
+  // Set hooks for view preprocess functions.
   if (isset($vars['view']->name)) {
     $function = 'cellular_preprocess_views_view__' . $vars['view']->name;
     if (function_exists($function)) {
@@ -2776,7 +3000,7 @@ function cellular_preprocess_views_view(&$vars) {
 function cellular_process_html(&$vars) {
   // Push modified styles to page.
   //$vars['styles'] = drupal_get_css();
-  //$vars['scripts'] = drupal_get_js();
+  $vars['critical_js'] = drupal_get_js('critical');
    //dpm($vars);
 }
 

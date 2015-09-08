@@ -129,3 +129,24 @@ function cellular_dev($element) {
   }
 }
  */
+function cellular_proccess_asset(&$asset, $cellular = NULL){
+      // Set data source as CDN or local host.
+    if (isset($asset['data'])) {
+      $data = $asset['data'];
+    }
+    elseif (isset($asset['cdn'])) {
+      $data = $asset['cdn'];
+    }
+    elseif (isset($asset['file'])) {
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      //$data .= '/css/' . $asset['file'];
+    }
+    if (!empty($data)) {
+      // Set stylesheet properties.
+      $asset['data'] = $data;
+      $asset['preprocess'] = isset($asset['preprocess']) ? $asset['preprocess'] : TRUE;
+      $asset['every_page'] = isset($asset['every_page']) ? $asset['every_page'] : TRUE;
+      $asset['weight'] = isset($asset['weight']) ? $asset['weight'] : 1;
+      $asset['type'] = isset($asset['cdn']) ? 'external' : 'file';
+    }
+}

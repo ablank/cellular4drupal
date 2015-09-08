@@ -6,7 +6,7 @@ cellular.jScrolltrigger = function (opts) {
 
   var fn = {};
   fn.trigger = function () {
-    jQuery(this).toggleClass('active');
+    jQuery(this).toggleClass(cellular.opts.activeclass);
   };
   return this.each(function () {
     var $w = jQuery(window);

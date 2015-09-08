@@ -13,5 +13,18 @@ function cellular_js_alter(&$javascript) {
     cellular_jquery_update($javascript);
     cellular_jqueryui_update_js($javascript);
   }
-  // dpm($javascript);
+
+  if (theme_get_setting('requirejs') == 1) {
+    $javascript['requirejs'] = array(
+      'data' => cellular_requirejs($javascript),
+      'type' => 'inline',
+      'scope' => 'critical',
+      'group' => JS_LIBRARY,
+      'defer' => FALSE,
+      'every_page' => TRUE,
+      'weight' => 100,
+    );
+  }
+
+   // dpm($javascript);
 }

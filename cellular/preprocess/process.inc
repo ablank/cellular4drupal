@@ -10,7 +10,7 @@
 function cellular_process_html(&$vars) {
   // Push modified styles to page.
   //$vars['styles'] = drupal_get_css();
-  //$vars['scripts'] = drupal_get_js();
+  $vars['critical_js'] = drupal_get_js('critical');
    //dpm($vars);
 }
 

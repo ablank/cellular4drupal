@@ -33,62 +33,62 @@ endif;
   <?php endif; ?>
   <div id="app" class="cell">
     <?php if (!empty($content)) : ?>
-      <div id="content-wrap" class="cell-100">
+      <div id="content-wrap" class="cell">
         <div id="content">
 
           <?php if (!empty($content['g1_top']) || !empty($content['g1_base'])): ?>
-            <div class="parallax panel-content g1 cell-100">
+            <div class="parallax panel-content g1 cell">
               <?php print $content['g1_top']; ?>
             </div>
 
             <?php if ($content['g1_base']) : ?>
-              <div class="panel-content g1 cell-100">
+              <div class="panel-content g1 cell">
                 <?php print $content['g1_base']; ?>
               </div>
             <?php endif; ?>
           <?php endif; ?>
 
           <?php if (!empty($content['g2_top']) || !empty($content['g2_base'])): ?>
-            <div class="parallax panel-content g2 cell-100">
+            <div class="parallax panel-content g2 cell">
               <?php print $content['g2_top']; ?>
             </div>
 
             <?php if ($content['g2_base']) : ?>
-              <div class="panel-content g2 cell-100">
+              <div class="panel-content g2 cell">
                 <?php print $content['g2_base']; ?>
               </div>
             <?php endif; ?>
           <?php endif; ?>
 
           <?php if (!empty($content['g3_top']) || !empty($content['g3_base'])): ?>
-            <div class="parallax panel-content g3 cell-100">
+            <div class="parallax panel-content g3 cell">
               <?php print $content['g3_top']; ?>
             </div>
             <?php if ($content['g3_base']) : ?>
-              <div class="panel-content g3 cell-100">
+              <div class="panel-content g3 cell">
                 <?php print $content['g3_base']; ?>
               </div>
             <?php endif; ?>
           <?php endif; ?>
 
           <?php if (!empty($content['g4_top']) || !empty($content['g4_base'])): ?>
-            <div class="parallax panel-content g4 cell-100">
+            <div class="parallax panel-content g4 cell">
               <?php print $content['g4_top']; ?>
             </div>
 
             <?php if ($content['g4_base']) : ?>
-              <div class="panel-content g4 cell-100">
+              <div class="panel-content g4 cell">
                 <?php print $content['g4_base']; ?>
               </div>
             <?php endif; ?>
           <?php endif; ?>
 
           <?php if (!empty($content['g5_top']) || !empty($content['g5_base'])): ?>
-            <div class="parallax panel-content g5 cell-100">
+            <div class="parallax panel-content g5 cell">
               <?php print $content['g5_top']; ?>
             </div>
             <?php if ($content['g5_base']) : ?>
-              <div class="panel-content g5 cell-100">
+              <div class="panel-content g5 cell">
                 <?php print $content['g5_base']; ?>
               </div>
             <?php endif; ?>

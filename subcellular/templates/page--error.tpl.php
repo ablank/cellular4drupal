@@ -83,11 +83,13 @@
 
 <div id="page-wrap">
   <div id="header">
-    <div id="logo">
+    <div class="logo">
       <?php
       if ($site_name) :
         print $site_name;
-      endif; ?>
+      endif;
+
+      ?>
     </div>
     <?php if (isset($main_menu)) : ?>
       <div id="nav">
@@ -108,6 +110,7 @@
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
+
     ?>
     <div id="content-wrap">
       <div id="content">
@@ -116,14 +119,13 @@
           <?php
           // Error message.
           print $messages;
+
           ?>
         </div>
-
+        <?php print render($page['content']); ?>
         <div class="search">
           <?php print render($page['search_box']); ?>
         </div>
-
-          <?php print render($page['content']); ?>
       </div>
     </div>
     <!-- /content-wrap-->
@@ -133,13 +135,17 @@
   <?php
   if ($page['footer_top']) :
     print render($page['footer_top']);
-  endif; ?>
+  endif;
+
+  ?>
   <div id="footer" class="cell">
 
     <?php
     if ($page['footer']) :
       print render($page['footer']);
-    endif; ?>
+    endif;
+
+    ?>
   </div>
   <!-- /#footer -->
 
@@ -148,7 +154,9 @@
       <?php
       if ($page['footer_bottom']) :
         print render($page['footer_bottom']);
-      endif; ?>
+      endif;
+
+      ?>
 
       <?php if ($page['copyright']): ?>
         <div id="copyright"><?php print $page['copyright']; ?></div>

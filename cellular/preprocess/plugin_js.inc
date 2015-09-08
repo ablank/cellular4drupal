@@ -110,12 +110,22 @@ function cellular_plugins_js() {
   $plugin_path = 'plugins/';
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
+
   theme_get_setting('modernizr') == 1 ? $js_plugins['modernizr'] = array(
     'group' => JS_LIBRARY,
     'object' => 'Modernizr',
     'file' => 'modernizr',
     'version' => '2.8.3',
     'weight' => -1000,
+    'scope' => 'critical',
+  ) : NULL;
+
+  theme_get_setting('requirejs') == 1 ? $js_plugins['require'] = array(
+    'group' => JS_LIBRARY,
+    'file' => 'require',
+    'version' => '2.1.20',
+    'weight' => 0,
+    'scope' => 'critical',
   ) : NULL;
 
   // Add migrate to prevent plugins from breaking with jQuery > v1.9.

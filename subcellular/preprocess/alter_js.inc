@@ -66,4 +66,14 @@ function subcellular_js_alter(&$javascript) {
 
   cellular_modernizr($tests);
    */
+/*
+  // Move scripts to the document <head>
+  $critical_js = array(
+    'misc/ajax.js',
+    'sites/all/themes/Cellular/Cellular/js/script.js',
+  );
+  foreach($critical_js as &$script){
+    $javascript[$script]['scope'] = 'critical';
+  }
+*/
 }

@@ -18,7 +18,7 @@
 
     <div id="header">
 
-      <div id="logo">
+      <div class="logo">
         <?php
         if (!empty($site_name)) :
           print $site_name;
@@ -36,10 +36,10 @@
 
 <div id="header">
   <div class="section clearfix">
-    <div id="logo-title">
+    <div class="logo-title">
 
       <?php if (!empty($logo)): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
       <?php endif; ?>
 
       <div id="name-and-slogan">

@@ -19,11 +19,6 @@ function cellular_html_head_alter(&$head_elements) {
 function cellular_page_alter(&$vars) {
   $element = $vars['content'];
 
-  // Automate error pages.
-  cellular_error_page($vars);
-  // Add modernizr queries.
-  cellular_modernizr_default();
-
   $styles = array(
     'style' => array(
       'file' => 'style' . CELLULAR_CSS_EXT,
@@ -84,6 +79,7 @@ function cellular_page_alter(&$vars) {
   cellular_critical_css($vars);
   // Add to Cellular plugin settings to Drupal.settings.
   drupal_add_js(array('cellular' => cellular_js_settings()), 'setting');
-
+  // Add modernizr queries.
+  cellular_modernizr_default();
   //dpm($vars);
 }

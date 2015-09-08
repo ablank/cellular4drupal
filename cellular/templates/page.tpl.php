@@ -101,7 +101,7 @@
 
   <div id="header">
 
-    <div id="logo">
+    <div class="logo">
       <?php
       if (!empty($site_name)) :
         print $site_name;

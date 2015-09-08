@@ -5,12 +5,13 @@ cellular.jEqualheight = function (opts) {
    */
   var o = jQuery.extend({
     //"opt": val
-  }, opts);
-  return this.each(function () {
+  }, opts),
+    fn = {};
 
-    var $obj = jQuery(this);
-    var kids = $obj.find('>*');
-    var maxHeight = 0;
+  fn.init = function () {
+    var $obj = jQuery(this),
+    kids = $obj.find('>*'),
+    maxHeight = 0;
 
     kids.each(function () {
       $t = jQuery(this);
@@ -20,5 +21,7 @@ cellular.jEqualheight = function (opts) {
       }
       $t.height(maxHeight);
     });
-  });
+  };
+
+  return this.each(fn.init);
 };

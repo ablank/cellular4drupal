@@ -26,7 +26,7 @@ function cellular_preprocess_html(&$vars) {
     drupal_set_message("OK, Cookie: ' " . $_COOKIE[$cookie] . " ' set!");
     }
  */
-   //dpm($vars);
+  //dpm($vars);
 }
 
 /**
@@ -50,6 +50,8 @@ function cellular_preprocess_node(&$vars) {
   // Push variables to the node array.
   $vars['post_date'] = $date;
   $vars['author'] = $author;
+
+  // dpm($node);
 }
 
 /**
