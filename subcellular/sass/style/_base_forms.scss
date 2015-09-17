@@ -3,12 +3,16 @@
   * Form styling
 */
 
+$i_pad: 0.4em;
 $i_width: 90%;
 
 form {
   display: block;
-  max-width: $p_max_width;
   margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: $p_max_width;
+  text-align: center;
 
   // Form Alignment Classes
   &.horizontal {
@@ -17,19 +21,13 @@ form {
     padding: 0;
 
     label,
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="submit"] {
-      position: relative;
+    input {
       display: inline;
       clear: none;
-      padding: $tiny;
     }
 
     input[type="submit"] {
-      width: 5em;
-      margin: 0 $tiny 0 $tiny;
+      margin: 0 $tiny;
       float: none;
     }
   }
@@ -55,6 +53,7 @@ fieldset {
   padding: $normal;
   margin: $tiny;
   border: $light_grey $border;
+  //@include clearfix();
 }
 
 legend {
@@ -66,35 +65,84 @@ legend {
 }
 
 label {
-  display: inline-block;
+  display: block;
   font-family: $h_font;
   font-weight: $h_weight;
-  margin: .4em 0 0;
-  padding: 1em .4em .4em;
+  text-align: left;
+  margin: $i_pad 0 0;
+  padding: 1em $i_pad 0;
 }
 
 input,
 select,
 textarea {
-  //display: block;
+  display: block;
+  text-align: left;
+  text-indent: $i_pad;
   font: 1em/1.6em $p_font;
-  margin: 0 auto;
-  padding:.4em;
   font-size: 100%;
   vertical-align: middle;
+  padding: $i_pad 0;
   color: $p_color;
-  background: $white;
+  background: darken($white, 1%);
+  border: $grey thin solid;
+  width: 98%; // account for border to prevent horizontal scroll
   @include border-radius();
   @include transition();
+
+  &:focus {
+    outline: none;
+    color: $p_color;
+    background: $white;
+    box-shadow: 0 0 0.2em 0 $hilight;
+  }
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  //width: $i_width;
+}
+
+select {
+  width: auto;
+  display: inline;
+  cursor: pointer;
+  margin: $i_pad auto;
+  padding: $i_pad;
+  text-indent: unset;
+}
+
+optgroup {
+  background: darken($white, 5%);
+}
+
+option {
+  border-bottom: $grey thin dotted;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 input {
-  &:focus {
-    outline: none;
+
+  &.required,
+  &[required]{
+    box-shadow: 0 0 0.1em 0 $hilight;
+
+    &:after {
+      //content: ' *';
+    }
   }
 
   &[type="hidden"] {
     display: none;
+  }
+
+  &[type="image"] {
+    width: auto;
+    border: none;
   }
 
   &[type="text"],
@@ -103,18 +151,9 @@ input {
   &[type="search"],
   &[type="email"],
   &[type="password"] {
-    display: block;
-    margin: $tiny auto $normal;
-    border: $grey $border;
-    color: $dark_grey;
-    background: darken($white, 2%);
 
-    &:focus {
-      color: $p_color;
-      background: $white;
-      box-shadow: 0 0 0.2em 0 $hilight;
-    }
   }
+
   &[type="checkbox"],
   &[type="radio"] {
     @include checkbox();
@@ -154,52 +193,14 @@ input {
   }
 }
 
-textarea {
-  display: block;
-  overflow: auto;
-  vertical-align: top;
-  border: $grey $border;
-  color: $dark_grey;
-  background: darken($white, 2%);
-
-  &:focus {
-    color: $p_color;
-    background: $white;
-    box-shadow: 0 0 0.2em 0 $hilight;
-  }
-}
-
-select {
-  cursor: pointer;
-  padding: $tiny;
-  border: $grey $border;
-}
-
-optgroup {
-  background: darken($white, 5%);
-}
-
-option {
-}
-
 button,
 input[type="button"],
 input[type="submit"] {
-  margin: 0.4em 0 1.4em;
   @include button();
+  margin: $i_pad 0;
 }
 
 //Form Alert Classes
-
-.required {
-  font-weight: bold;
-  box-shadow: 0 0 0.1em 0 $hilight;
-
-  &:after {
-    //content: ' *';
-  }
-}
-
 .ok,
 .warning,
 .error {

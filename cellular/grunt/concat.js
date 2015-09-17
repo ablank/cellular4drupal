@@ -26,7 +26,8 @@ module.exports = {
       'js/cellular-ui/src/init/jquery.init.js',
       'js/cellular-ui/src/init/drupal.init.js',
       'js/cellular-ui/src/init/cellular.init.js',
-      'js/cellular-ui/src/cellular.functions.js',
+      'js/cellular-ui/src/functions.js',
+      'js/cellular-ui/src/state.js',
       'js/cellular-ui/src/cellular.jAccordion.js',
       'js/cellular-ui/src/cellular.jBlocklink.js',
       'js/cellular-ui/src/cellular.jEqualheight.js',
@@ -37,7 +38,6 @@ module.exports = {
       //'js/cellular-ui/src/dev/cellular.jParallax.js',
       //'js/cellular-ui/src/dev/cellular.jScrolltrigger.js',
       //'js/cellular-ui/src/dev/cellular.jSticky.js',
-      //'js/cellular-ui/src/dev/cellular.jStickyheader.js',
       'js/cellular-ui/src/init/cellular.end.js',
       'js/cellular-ui/src/init/drupal.end.js',
       'js/cellular-ui/src/init/jquery.end.js'

@@ -1,13 +1,17 @@
+/**
+ * jTabs : Tabify a list of content
+ */
+
 cellular.jTabs = function (opts) {
   var o = jQuery.extend({
     active: 0, // Array index of initially active tab
-    orient: "horizontal" // || 'vertical'
+    orient: "horizontal" // || "vertical"
   }, opts),
     fn = {};
 
-  fn.showContent = function (li) {
+  fn.showContent = function ($obj, li) {
     var c = li.find('.content'),
-      pan = li.parent().find('.panel-content');
+      pan = $obj.parent().find('.panel-content');
 
     li.activate();
     pan.fadeOut('normal', function () {
@@ -19,15 +23,14 @@ cellular.jTabs = function (opts) {
   fn.init = function () {
     var $obj = jQuery(this),
       tab = $obj.find('> li'),
-      maxheight = 0;
+      wrap = jQuery('<div class="' + cellular.opts.cclass + ' ' + o.orient + ' jTabs-wrap"></div>');
 
-    $obj.addClass(cellular.opts.cclass)
-      .height(maxheight);
     $obj.once('jTabs', function () {
 
-      $obj.addClass(cellular.opts.cclass + ' ' + o.orient)
-        .append('<div class="' + cellular.opts.cclass + ' panel" />');
-      $obj.find('.panel').append('<div class="panel-content" />');
+      $obj.wrap(wrap)
+        .after('<div class="panel"><div class="panel-content" /></div>');
+
+      //wrap.find('.panel').append('');
 
       tab.each(function () {
         var li = jQuery(this);
@@ -36,7 +39,7 @@ cellular.jTabs = function (opts) {
           .kidWrap();
         //Set 1st child as title
         li.children().eq(0).addClass('title');
-        //Set 2nd child as content
+        //Set wrapper as content
         li.children().eq(1).addClass('content')
           .hide();
       });
@@ -48,12 +51,12 @@ cellular.jTabs = function (opts) {
 
       li.click(function (e) {
         e.preventDefault();
-        fn.showContent(li);
+        fn.showContent($obj, li);
       });
     });
 
     //Set default content
-    fn.showContent(tab.eq([o.active]));
+    fn.showContent($obj, tab.eq([o.active]));
   };
 
   return this.each(fn.init);

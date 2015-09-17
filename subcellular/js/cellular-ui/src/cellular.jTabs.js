@@ -1,3 +1,7 @@
+/**
+ * jTabs : Tabify a list of content
+ */
+
 cellular.jTabs = function (opts) {
   var o = jQuery.extend({
     active: 0, // Array index of initially active tab

@@ -16,37 +16,44 @@
         });
 
         $('.jBlocklink').jBlocklink({
-          cclass: "jBlocklink-link" // Class to add to wrapper link.
+          cclass: "jBlocklink-link" // Class to add to wrapper link for styling.
         });
 
         $('#nav').jMmenu({
           // Window breakpoint trigger:
-          // "breakpoint": cellular.opts.breakpoint, // 650px
+          // "breakpoint": cellular.opts.breakpoint, // "mobile"
           cclass: "jMmenu", // default
           // Classes added for styling- CSS classes control position & animation.
-          // Vars concat to class="type-direction".
+          // <element class="$type-$direction">
           type: "push",
           direction: "down"
         });
 
         $('.jTabs').jTabs({
           active: 0, // Array index of initially active content.
-          orient: "horizontal" // || 'vertical'
+          orient: "horizontal" // || "vertical"
+        });
+        $('.jTabs-vertical').jTabs({
+          active: 0, // Array index of initially active content.
+          orient: "vertical" //
         });
 
         $('.jScrolli').jScrolli({
           cclass: 'jScrolli', // Object class selector
           active: 0, // Index of initially selected slide
+          activeSlides: 1,
           size: {
             //width: 700,
             height: 'auto' // 'auto' or '[value]', i.e. '300px'
           },
           controls: {
-            events: 'click touchend MSPointerUp',
             showcontrols: true,
+            keyboard: true,
+            swipe: true,
             showmarkers: true,
             autoplay: true,
             pauseonhover: true,
+            events: 'click mouseup MSPointerUp touchend',
             text: {
               next: 'Next',
               prev: 'Prev',
@@ -54,10 +61,8 @@
             }
           },
           transition: {
-            function: 'fn.slide', //
-            pause: 5, // Time (seconds) to pause between slides.
-            speed: 500 // Animation speed (milliseconds).
-
+            pause: 5 // Time (seconds) to pause between slides.
+              //speed: 500 // Animation speed (milliseconds).
           },
           caption: {
             enable: true,

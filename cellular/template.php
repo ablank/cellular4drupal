@@ -227,7 +227,7 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_css($array, $cellular = FALSE) {
+function cellular_add_css(&$css, $array, $cellular = FALSE) {
   foreach ($array as $style) {
     // Set data source as CDN or local host.
     if (isset($style['data'])) {
@@ -250,9 +250,9 @@ function cellular_add_css($array, $cellular = FALSE) {
       $style['type'] = isset($style['cdn']) ? 'external' : 'file';
       $style['media'] = isset($style['media']) ? $style['media'] : 'all';
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
-      // Add stylesheet to $css.
-      //$css[$data] = $style;
-      drupal_add_css($data, $style);
+      // Push stylesheet onto $css.
+      $css[$data] = $style;
+     // drupal_add_css($data, $style);
     }
   }
 }
@@ -373,7 +373,6 @@ function cellular_remove_default_css(&$css) {
         'system.menus.css',
       ),
       'block' => 'block.css',
-      'colorbox' => 'styles/default/colorbox_style.css',
       'comment' => 'comment.css',
       'field' => 'theme/field.css',
       'file' => 'file.css',
@@ -382,11 +381,18 @@ function cellular_remove_default_css(&$css) {
       'help' => 'help.css',
       'media' => 'css/media.css',
       'node' => 'node.css',
-      'panels' => 'css/panels.css',
       'search' => 'search.css',
       'shortcut' => 'shorcut.css',
       'user' => 'user.css',
-      'views' => 'css/views.css'
+      // Contrib
+      'calendar' => array(
+        'css/calendar.css',
+        'css/calendar_multiday.css',
+      ),
+      'colorbox' => 'styles/default/colorbox_style.css',
+      'panels' => 'css/panels.css',
+      'views' => 'css/views.css',
+      'webform' => 'css/webform.css',
     );
     cellular_remove_css($css, $exclude);
   }
@@ -1164,28 +1170,28 @@ function cellular_cdn() {
   $networks = array(
     'jquery' => array(
       'base_url' => '//code.jquery.com/',
-      'jquery' => 'jquery-' . $jq['version'] . $ext,
-      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui' . $ext,
-      'theme' => 'ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . $ext,
+      'jquery' => 'jquery-' . $jq['version'] . CELLULAR_JS_EXT,
+      'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
+      'theme' => 'ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'google' => array(
       'base_url' => '//ajax.googleapis.com/ajax/libs/',
-      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . $ext,
-      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . $ext,
-      'theme' => 'jqueryui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . $ext,
+      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . CELLULAR_JS_EXT,
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
+      'theme' => 'jqueryui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'microsoft' => array(
       'base_url' => '//ajax.aspnetcdn.com/ajax/',
-      'jquery' => 'jquery/jquery-' . $jq['version'] . $ext,
-      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui' . $ext,
-      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . $ext,
+      'jquery' => 'jquery/jquery-' . $jq['version'] . CELLULAR_JS_EXT,
+      'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
+      'theme' => 'jquery.ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'cloudflare' => array(
       'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
-      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . $ext,
-      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . $ext,
+      'jquery' => 'jquery/' . $jq['version'] . '/jquery' . CELLULAR_JS_EXT,
+      'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
       // Themes aren't provided by cdnjs.
-      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui' . $ext,
+      'theme' => 'jqueryui/' . $ui['version'] . '/css/jquery-ui' . CELLULAR_CSS_EXT,
     ),
   );
 
@@ -1348,20 +1354,20 @@ function cellular_jqueryui_update_css(&$css) {
       if ($ui['theme'] === 'custom') {
         // Set path to local custom file if selected.
         $v = $ui['version'] === '1.10.4' ? '1.10' : '1.9';
-        $style['ui']['file'] = "jquery-ui/jquery-ui-" . $v . CELLULAR_CSS_EXT;
+        $style['ui']['file'] = 'jquery-ui/jquery-ui-' . $v . CELLULAR_CSS_EXT;
 
-        cellular_add_css($style);
+        cellular_add_css($css, $style);
       }
       else {
-        $ui_path = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
-        $style['ui']['file'] = $ui_path . 'jquery-ui' . CELLULAR_CSS_EXT;
         if (theme_get_setting('jquery_cdn') == 1) {
           $cdn = cellular_cdn();
           // Set cdn source.
           $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];
         }
+        $ui_path = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
+        $style['ui']['file'] = $ui_path . 'jquery-ui' . CELLULAR_CSS_EXT;
 
-        cellular_add_css($style, TRUE);
+        cellular_add_css($css, $style, TRUE);
       }
     }
   }
@@ -2998,15 +3004,16 @@ function cellular_preprocess_views_view(&$vars) {
  * Implements template_process_html().
  */
 function cellular_process_html(&$vars) {
-  // Push modified styles to page.
-  //$vars['styles'] = drupal_get_css();
+  // Add vars for critical scoped js
   $vars['critical_js'] = drupal_get_js('critical');
+  // Get updated styles.
+  $vars['styles'] = drupal_get_css();
    //dpm($vars);
 }
 
 /**
  * Implements template_process_page().
- */
 function cellular_process_page(&$vars) {
    //dpm($vars);
 }
+ */

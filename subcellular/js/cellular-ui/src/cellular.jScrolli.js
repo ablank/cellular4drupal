@@ -1,3 +1,7 @@
+/**
+ * jScrolli : Content carousel/slider
+ */
+
 cellular.jScrolli = function (opts) {
   var o = $.extend({
     cclass: 'jScrolli', // Object class selector
@@ -7,11 +11,15 @@ cellular.jScrolli = function (opts) {
       height: 'auto' // 'auto' or '[value]', i.e. '300px'
     },
     controls: {
-      events: 'click touchend MSPointerUp',
+      thingy: false,
+      whatever: null,
       showcontrols: true,
+      keyboard: true,
+      swipe: true,
       showmarkers: true,
       autoplay: true,
       pauseonhover: true,
+      events: 'click mouseup MSPointerUp touchend',
       text: {
         next: 'Next',
         prev: 'Prev',
@@ -19,10 +27,8 @@ cellular.jScrolli = function (opts) {
       }
     },
     transition: {
-      function: 'fn.slide', // 
-      pause: 5, // Time (seconds) to pause between slides.
-      speed: 500 // Animation speed (milliseconds).
-
+      pause: 5 // Time (seconds) to pause between slides.
+        //speed: 500 // Animation speed (milliseconds).
     },
     caption: {
       enable: true,
@@ -33,6 +39,8 @@ cellular.jScrolli = function (opts) {
     delay: 1.4 // Time (seconds) to wait before dimming.
   }, opts);
 
+
+  //console.log(o);
   var fn = {};
 
   fn.button = function ($text) {
@@ -87,16 +95,26 @@ cellular.jScrolli = function (opts) {
 
   // Update slide caption
   fn.caption = function ($obj, state) {
-    state.caption = $obj.parent().find(o.caption.selector).eq(state.current).html();
-    $obj.parent().parent().find('> .caption').html(state.caption);
+    var cap = $obj.parent();
+    // Get current slide's caption
+    state.caption = cap.find(o.caption.selector).eq(state.current).html();
+    // Update the active caption
+    cap.find('> .caption').html(state.caption);
   };
 
+  // Calculate largest dimension to prevent 'jumping' content
   fn.autoheight = function ($obj, state) {
     if (o.size.height === 'auto') {
-      $obj.height(state.maxheight);
+      var thing = $obj.find(':first-child');
+      thing.each(function () {
+        if (jQuery(this).height() > state.maxheight) {
+          state.maxheight = $(this).height();
+        }
+      });
     } else {
-      $obj.height(o.size.height);
+      state.maxheight = o.size.height;
     }
+    $obj.height(state.maxheight);
   };
 
   // Generate markup
@@ -108,22 +126,22 @@ cellular.jScrolli = function (opts) {
 
     if (o.caption.enable) {
       if (o.caption.selector === 'auto') {
-        // o.caption.selector =
+        // o.caption.selector = what?
       }
       else {
         $obj.find(o.caption.selector).hide();
       }
 
-      $obj.before('<div class="caption" />');
+      $obj.append('<div class="caption" />');
     }
-    
+
     slides.each(function () {
       var $t = jQuery(this);
 
       $t.addClass('slide')
         .children().wrapAll('<div class="wrap" />');
 
-      fn.autoheight($t, state);
+      //fn.autoheight($t, state);
     });
 
     fn.autoheight($obj, state);
@@ -146,28 +164,17 @@ cellular.jScrolli = function (opts) {
         fn.button(o.controls.text.next)
       ];
 
-      $obj.after('<div class="controls">' + controls[0] + controls[1] + controls[2] + '</div>');
+      $obj.parent().prepend(controls[0] + controls[1] + controls[2]);
     }
   };
 
   fn.updateinterval = function ($obj, state) {
-    clearInterval(state.interval);
-    state.interval = setInterval(function () {
-      state.current = state.next;
-      fn.go(state.current, $obj, state);
-    }, o.transition.pause * 1000);
-  };
-
-  // Auto-increment to next slide
-  fn.autoplay = function ($obj, state) {
     if (!state.paused) {
-      fn.updateinterval($obj, state);
-      /*
-       state.interval = setInterval(function () {
-       state.current = state.next;
-       fn.go(state.current, $obj, state);
-       }, o.transition.pause * 1000);
-       */
+      clearInterval(state.interval);
+      state.interval = setInterval(function () {
+        state.current = state.next;
+        fn.go(state.current, $obj, state);
+      }, o.transition.pause * 1000);
     }
   };
 
@@ -180,13 +187,14 @@ cellular.jScrolli = function (opts) {
       eY = null;
 
     // Previous
-    controls.find('.prev').on(o.controls.events, function (e) {
+    wrap.find('.prev').on(o.controls.events, function (e) {
       state.current = state.prev;
       state.paused = false;
       fn.go(state.current, $i, state);
     });
+
     // Next
-    controls.find('.next').on(o.controls.events, function (e) {
+    wrap.find('.next').on(o.controls.events, function (e) {
       state.current = state.next;
       state.paused = false;
       fn.go(state.current, $i, state);
@@ -199,6 +207,17 @@ cellular.jScrolli = function (opts) {
      console.log(state.paused);
      });
      */
+
+    // Link markers to respective slides
+    if (o.controls.showmarkers) {
+      $obj.siblings().find('.marker').on('click', function () {
+        state.current = jQuery(this).attr('data-href');
+        state.paused = false;
+        fn.go(state.current, $i, state);
+      });
+    }
+
+    // Pause/showcontrols
     wrap.on({
       'mouseover': function () {
         state.active = true;
@@ -213,58 +232,21 @@ cellular.jScrolli = function (opts) {
         o.autodim ? wrap.timeout = window.setTimeout(function () {
           wrap.deactivate();
         }, o.delay * 1000) : null;
-      },
-      'touchstart': function (e) {
-        eX = e.touches[0].clientX;
-        eY = e.touches[0].clientY;
-        state.active = true;
-      },
-      'touchmove': function (e) {
-        if (!eX || !eY) {
-          return;
-        }
-        var margin = 20,
-          Xdiff = eX - (e.touches[0].clientX),
-          Ydiff = eY - (e.touches[0].clientY);
-
-        // Detect horizontal or vertical swipe
-        if (Math.abs(Xdiff) > Math.abs(Ydiff)) {
-          // Horizontal (left : right)
-          state.current = Xdiff > margin ? state.prev : state.next;
-        } else {
-          // Vertical (up : down)
-          state.current = Ydiff > margin ? state.prev : state.next;
-        }
-        // Reset vars for next swipe
-        eX = null;
-        eY = null;
-        state.active = false;
-        // Move to next slide
-        fn.go(state.current, $i, state);
       }
     });
 
-    // Link markers to respective slides
-    if (o.controls.showmarkers) {
-      $obj.siblings().find('.marker').on('click', function () {
-        state.current = jQuery(this).attr('data-href');
-        state.paused = false;
-        fn.go(state.current, $i, state);
-      });
-    }
-
-    if (state.active) {
+    // Keyboard
+    if (o.controls.keyboard) {
       jQuery(document).on('keyup', function (e) {
-        console.log(e.which);
+        // console.log(e.which);
         var keys = [
           37, // left
-          38, // up
-          39, // right
-          40 // down
+          39 // right
+            //38, // up
+            //40 // down
         ];
 
         if (keys.indexOf(e.which) !== -1) {
-          console.log(e.which);
           e.preventDefault();
           state.paused = false;
           switch (e.which) {
@@ -282,6 +264,69 @@ cellular.jScrolli = function (opts) {
         }
       });
     }
+
+    // Swipe
+    if (o.controls.swipe) {
+      $obj.on({
+        'mousedown touchstart': function (e) {
+          state.paused = true;
+          if (e.touches) {
+            eX = e.touches[0].clientX;
+            eY = e.touches[0].clientY;
+          }
+          else {
+            eX = e.pageX;
+            eY = e.pageY;
+          }
+        },
+        'mouseup touchmove': function (e) {
+          if (!eX || !eY) {
+            return;
+          }
+
+          var margin = 20,
+            Xdiff,
+            Ydiff;
+
+          if (e.touches) {
+            Xdiff = eX - e.touches[0].clientX;
+            Ydiff = eY - e.touches[0].clientY;
+          }
+          else {
+            Xdiff = eX - e.pageX;
+            Ydiff = eY - e.pageY;
+          }
+          // Detect horizontal or vertical
+          if (Math.abs(Xdiff) > Math.abs(Ydiff)) {
+            // Horizontal (left : right)
+            if (Xdiff < margin) {
+              // right
+              state.current = state.next;
+            }
+            else if (Xdiff > margin) {
+              // left
+              state.current = state.prev;
+            }
+          } else {
+            if (Ydiff < margin) {
+              // down
+              state.current = state.next;
+            }
+            else if (Ydiff > margin) {
+              // up
+              state.current = state.prev;
+            }
+          }
+          // Reset vars for next swipe
+          eX = null;
+          eY = null;
+          // Move to next slide
+          state.paused = false;
+          fn.go(state.current, $i, state);
+        }
+      });
+    }
+
   };
 
   fn.init = function () {
@@ -322,7 +367,7 @@ cellular.jScrolli = function (opts) {
     fn.go(state.current, $i, state);
     // Start autoplay
     if (o.controls.autoplay) {
-      fn.autoplay($i, state);
+      fn.updateinterval($i, state);
     }
   };
 

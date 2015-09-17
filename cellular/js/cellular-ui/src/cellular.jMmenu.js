@@ -1,3 +1,7 @@
+/**
+ * jMmenu: Hamburger menu for mobile devices
+ */
+
 cellular.jMmenu = function (opts) {
   var o = jQuery.extend({
     breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
@@ -5,46 +9,40 @@ cellular.jMmenu = function (opts) {
     cclass: "jMmenu", // Menu class to test
     type: "slide", // Type of animation
     direction: "right" // Direction of animation
-  }, opts),
-    fn = {};
+  }, opts);
 
-  fn.classes = [
+  o.classes = [
     o.type + '-' + o.direction,
     o.cclass + '-active',
     o.cclass + '-inactive'
   ];
 
-  fn.mediaQuery = function ($obj) {
-    if (o.breakpoint === cellular.breakpoint().type) {
-      var $menu = $obj.children([0]),
-        classes = [
-          fn.classes[0],
-          fn.classes[2]
-        ];
+  fn = {};
 
-      if (!o.parent.hasClass(fn.classes[0])) {
-        o.parent.addClass(classes.join(' '));
+  fn.mediaQuery = cellular.debounce(function ($obj) {
+    if (o.breakpoint === cellular.state.breakpoint) {
+      var $menu = $obj.children([0]);
+
+      if (!o.parent.hasClass(o.classes[0])) {
+        o.parent.classify([o.classes[0], o.classes[2]]);
         $menu.addClass(o.cclass);
       }
       $menu.prependTo(o.parent);
     }
-  };
+  }, 500);
 
   fn.init = function () {
-    var $obj = jQuery(this),
-      $window = jQuery(window);
+    var $obj = jQuery(this);
 
     fn.mediaQuery($obj);
-    $window.on('resize', function () {
+    jQuery(window).on('resize', function () {
       fn.mediaQuery($obj);
-      // console.log(cellular.breakpoint());
     });
 
     $obj.on('click', function () {
-      if (o.parent.hasClass(fn.classes[0])) {
-        o.parent.toggleClass(fn.classes[1])
-          .toggleClass(fn.classes[2]);
+      if (o.parent.hasClass(o.classes[0])) {
         $obj.toggleClass(cellular.opts.activeclass);
+        o.parent.toggleClass(o.classes[1] + ' ' + o.classes[2]);
       }
     });
   };

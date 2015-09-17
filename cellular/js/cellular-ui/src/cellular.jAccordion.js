@@ -8,14 +8,14 @@ cellular.jAccordion = function (opts) {
 
   var fn = {};
 
-  fn.showContent = function ($li) {
+  fn.showContent = function (li) {
 
     if (o.single === true) {
-      $li.siblings('.active').deactivate()
+      li.siblings(cellular.opts.activeclass).deactivate()
         .find('.panel').slideUp(o.duration, o.easing);
     }
     else {
-      $li.activate()
+      li.activate()
         .find('.panel').slideToggle(o.duration, o.easing);
     }
   };

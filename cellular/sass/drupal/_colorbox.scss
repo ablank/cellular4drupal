@@ -5,44 +5,116 @@
   * The default colorbox stylesheet will be unset in drupal preprocess.
 */
 
-$isize :32px;
+$isize: 32px;
+$ioffset: 6px;
 $border: .4em;
 
 // Links to colorbox.
-a.colorbox {
-  display: inline;
-  display: inline-block;
-  margin: 1em;
-  @include overlay($black);
-  @include box-shadow(0 0 .2em .2em $light_grey);
+a{
+  &.colorbox {
+    display: inline-block;
+    margin: auto;
+    box-shadow: 0 0 .2em 0.1em $light_grey;
+  }
+  &:hover.colorbox,
+  &:focus.colorbox {
+    box-shadow: 0 0 .3em 0.1em $hilight;
+  }
 }
 
-a:hover.colorbox,
-a:focus.colorbox {
-  @include box-shadow(0 0 .3em .3em $light_grey);
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $black;
 }
 
+#cboxCurrent {
+  position: absolute;
+  bottom: 0;
+  left: 3em;
+  color: $grey;
+}
+
+#cboxSlideshow,
+#cboxPrevious, 
+#cboxNext, 
+#cboxClose {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  width: $isize;
+  height: $isize;
+  margin: 0;
+  padding: 0;
+  border: thin solid $white;
+  text-indent: -9999px;
+  box-shadow: unset;
+  background-image: url(../assets/icons/png/controls.png);
+  background-repeat: no-repeat;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
+}
+
+#cboxSlideshow,
+#cboxPrevious,
+#cboxNext {
+  bottom: 0;
+  background-color: $grey;
+  @include transition();
+
+  &:hover,
+  &:focus {
+    background-color: $hilight;
+    box-shadow: inset 0 0 0.3em 0.1em $dark_grey;
+  }
+}
+
+#cboxSlideshow {
+  right: 3em;
+
+  &:hover,
+  &:focus {
+    background-color: $hilight;
+  }
+}
 // Play.
 .cboxSlideshow_off #cboxSlideshow {
-  bottom: 0px;
-  right: 3em;
-  background-position: -96px -66px;
-
-  &:hover {
-    background-position: -64px -66px;
-  }
+  background-position: -8px $ioffset;
 }
 
 // Pause.
 .cboxSlideshow_on #cboxSlideshow {
-  bottom: 0px;
-  right: 4em;
-  background-position: -32px 0;
+  background-position: -54px $ioffset;
+}
 
-  &:hover {
-    background-position: -32px -32px;
+#cboxPrevious {
+  left: 0;
+  background-position: -26px $ioffset;
+}
+
+#cboxNext {
+  right: 0;
+  background-position: -90px $ioffset;
+}
+
+#cboxClose {
+  top: -2.2em;
+  right: -2.2em;
+  background-color: $red;
+  background-position: -121px $ioffset;
+  @include transition();
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 0.3em 0.1em lighten(adjust-saturation($red, 10%), 10%);
+    background-color: lighten(adjust-saturation($red, 10%), 10%);
   }
 }
+
 
 /**
   * Avoid outlines on :active (mouseclick),
@@ -66,13 +138,6 @@ a:focus.colorbox {
 //////
 // Colorbox frame
 //////
-#cboxOverlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: $black;
-}
-
 #cboxWrapper {
   padding: 0;
   background: $white;
@@ -90,28 +155,6 @@ a:focus.colorbox {
   background: rgba($black, 0.8);
 }
 
-#cboxPrevious, 
-#cboxNext, 
-#cboxClose, 
-#cboxSlideshow {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  text-indent: -9999px;
-  width: $isize;
-  height: $isize;
-  cursor: pointer;
-  z-index: 10;
-  background-color: transparent;
-  background-image: url(../assets/icons/png/colorboxcontrols.png);
-  background-repeat: no-repeat;
-
-  &:active {
-    outline: 0;
-  }
-}
-
 #cboxLoadingOverlay,
 #cboxLoadingGraphic {
   position: absolute;
@@ -123,7 +166,7 @@ a:focus.colorbox {
 
 #cboxLoadingOverlay {
   background-color: rgba($white, 0.7);
-  
+
 }
 
 #cboxLoadingGraphic {
@@ -193,42 +236,4 @@ a:focus.colorbox {
 
 #cboxLoadedContent {
   // margin-bottom: 2em;
-}
-
-#cboxCurrent {
-  position: absolute;
-  bottom: 0;
-  left: 3em;
-  color: $grey;
-}
-
-#cboxPrevious {
-  bottom: 0;
-  left: 0;
-  background-position: -160px -64px;
-
-  &:hover {
-    background-position: -128px -64px;
-  }
-}
-
-#cboxNext {
-  bottom: 0;
-  right: 0;
-  background-position: -32px -64px;
-
-  &:hover {
-    background-position: 0 -64px;
-  }
-}
-
-#cboxClose {
-  top: -2.2em;
-  right: -2.2em;
-  background-position: -66px -2px;
-  border: 2px solid $white;
-
-  &:hover {
-    background-position: -66px -34px;
-  }
 }

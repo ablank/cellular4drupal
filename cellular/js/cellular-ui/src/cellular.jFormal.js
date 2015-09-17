@@ -1,3 +1,7 @@
+/**
+ * jFormal: Improve form interaction
+ */
+
 cellular.jFormal = function (opts) {
   var o = jQuery.extend({
     inputs: [

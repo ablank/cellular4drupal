@@ -1,3 +1,7 @@
+/**
+ * jMmenu: Hamburger menu for mobile devices
+ */
+
 cellular.jMmenu = function (opts) {
   var o = jQuery.extend({
     breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
@@ -14,8 +18,8 @@ cellular.jMmenu = function (opts) {
     o.cclass + '-inactive'
   ];
 
-  fn.mediaQuery = function ($obj) {
-    if (o.breakpoint === cellular.breakpoint().type) {
+  fn.mediaQuery = cellular.debounce(function ($obj) {
+    if (o.breakpoint === cellular.state.breakpoint) {
       var $menu = $obj.children([0]),
         classes = [
           fn.classes[0],
@@ -28,14 +32,13 @@ cellular.jMmenu = function (opts) {
       }
       $menu.prependTo(o.parent);
     }
-  };
+  }, 500);
 
   fn.init = function () {
-    var $obj = jQuery(this),
-      $window = jQuery(window);
+    var $obj = jQuery(this);
 
     fn.mediaQuery($obj);
-    $window.on('resize', function () {
+    jQuery(window).on('resize', function () {
       fn.mediaQuery($obj);
       // console.log(cellular.breakpoint());
     });

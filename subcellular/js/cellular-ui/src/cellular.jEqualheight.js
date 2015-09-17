@@ -1,3 +1,7 @@
+/**
+ * jEqualheight: Set children to equal height
+ */
+
 cellular.jEqualheight = function (opts) {
   /*
    var array = [267, 306, 108];

@@ -11,7 +11,9 @@ $width: 800px;
   position: relative;
   display: block;
   overflow: hidden;
-  background-color: $light_grey;
+  padding: 0 0 1em 0;
+  background-color: $panel_background;
+  border: $border_color 1px solid;
 
   ul {
     margin: 0;
@@ -63,35 +65,30 @@ $width: 800px;
 
   .caption {
     position: absolute;
-    bottom: 0;
+    bottom: 1em;
     left: 0;
     right: 0;
-    color: $white;
-    max-width: none;
-    margin: 0;
-    padding: 0.8em;
     background-color: $black;
     background-color: rgba($black, 0.8);
     //max-height: 0;
-    opacity: 0;
+    //opacity: 0;
     @include transition();
 
-    p, h2, h3, h4 {
+    p {
+      max-width: none;
+      margin: 0;
+      padding: 0.8em;
       color: $white;
+      opacity: 1;
+      //max-height: 0;
+      //opacity: 0;
+      @include transition();
     }
-  }
-
-  .controls {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
   }
 
   .control {
     position: absolute;
+    z-index: 1;
     text-indent: -999em;
     width: $controlsize;
     height: $controlsize;
@@ -105,7 +102,6 @@ $width: 800px;
       top: 0;
       left: 0;
       background-position: -54px 8px;
-      //background-color: transparent;
       border: $white 2px solid;
       border-radius: 50%;
       opacity: 0;
@@ -116,7 +112,7 @@ $width: 800px;
       cursor: pointer;
       top: 50%;
       opacity: 0.2;
-      background-color: $dark_grey;
+      background-color: $panel_color;
 
       &:hover,
       &:focus {
@@ -136,26 +132,37 @@ $width: 800px;
   }
 
   .markers {
-    float: left;
-    position: relative;
-    left: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     ul {
+      line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
+    }
+    /*
+      float: left;
+      position: relative;
+      left: 50%;
+
+      ul {
       float: left;
       position: relative;
       left: -50%;
-    }
+      }
+    */
   }
 
   .marker {
-    cursor: pointer;
-    display: block;
-    float: left;
-    text-indent: -999em;
+    //display: block;
     //float: left;
+    cursor: pointer;
+    display: inline;
+    display: inline-block;
+    text-indent: -999em;
     width: 0.5em;
     height: 0.5em;
-    margin: .5em;
+    margin: 0.25em 0.5em;
     border: $dark_grey 1px solid;
     border-radius: 50%;
     background-color: $grey;
@@ -173,7 +180,6 @@ $width: 800px;
     }
 
     a {
-      //display: block;
       text-indent: -999em;
     }
   }
@@ -187,36 +193,17 @@ $width: 800px;
 
     .caption {
       //max-height: none;
-      opacity: 1;
+      //opacity: 1;
     }
   }
-  /*
-    #buttons{
-    float:right;
-    position:relative;
-    left:-50%;
-    text-align:left;
-    }
-    #buttons ul{
-    list-style:none;
-    position:relative;
-    left:50%;
-    }
 
-    #buttons li{float:left;position:relative;} // ie needs position:relative here
+  &.transition {
 
-    #buttons a{
-    text-decoration:none;
-    margin:10px;
-    background:red;
-    float:left;
-    border:2px outset blue;
-    color:#fff;
-    padding:2px 5px;
-    text-align:center;
-    white-space:nowrap;
+    .caption {
 
+      p{
+        opacity: 0;
+      }
     }
-    #buttons a:hover{ border:2px inset blue;color:red;background:#f2f2f2;}
-  */
+  }
 }

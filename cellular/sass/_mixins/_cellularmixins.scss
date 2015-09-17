@@ -23,7 +23,9 @@
 */
 
 @mixin clearfix() {
+  clear: both;
   zoom: 1;
+  
   &:before,
   &:after {
     content: "";

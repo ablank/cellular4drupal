@@ -3,6 +3,13 @@
  * Dynamically loaded styling for narrow screens
  */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -46,8 +53,8 @@
   * Styling for tablets & other narrow devices included in style.css
 */
 @media screen and (min-width: 650px) and (max-width: 800px) {
-  /* line 11, ../sass/style/_query_narrow.scss */
+  /* line 9, ../sass/style/_query_narrow.scss */
   body:before {
-    content: "narrow-800px";
+    content: "window_narrow-800px";
   }
 }

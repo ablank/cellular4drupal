@@ -3,6 +3,13 @@
  * Conditional stylesheet for large screens.
 */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -46,8 +53,8 @@
   * Styling for large-screen devices included in style.css
 */
 @media screen and (min-width: 1280px) {
-  /* line 10, ../sass/style/_query_large.scss */
+  /* line 8, ../sass/style/_query_large.scss */
   body:before {
-    content: "large-1280px";
+    content: "window_large-1280px";
   }
 }

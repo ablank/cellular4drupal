@@ -1,11 +1,11 @@
 // Standard box-model or flex-box model
-$flexbox: false;
+$flexbox: true;
 
-// Cell grid spacing - all units 
-$cell_margin: 1;
-$cell_padding: 1;
-$cell_border: 0;
-$cell_space: ($cell_margin * 2) + ($cell_padding * 2) + ($cell_border * 2);
+$container_width: 90%;
+// Cell grid spacing- % will be appended
+$cell_margin: 0;
+$cell_padding: 0;
+$cell_space: ($cell_margin + $cell_padding) * 2;
 // Grid size declarations, as percentage of window width.
 $grid: (
 100
@@ -23,6 +23,8 @@ $grid: (
 );
 
 $cells: ();
+$offsets: ();
 @each $cell in $grid {
   $cells : append($cells, unquote('.cell-#{$cell},'));
+  $offsets : append($offsets, unquote('.offset-#{$cell},'));
 }

@@ -9,7 +9,7 @@
     display: block;
     clear: both;
     margin: 0;
-    padding: $normal 0;
+    padding: 0;
 
     .tab {
       float: left;
@@ -44,9 +44,9 @@
       float: left;
       clear: both;
       z-index: 1;
-      width: 95.5%;
-      padding: 2%;
       bottom: 1px;
+      width: 96%;
+      padding: 0 1em 1em;
       margin-bottom: 1.4em;
       border-color: $grey;
     }
@@ -62,7 +62,6 @@
         clear: left;
         margin: .1em 0;
         border: none;
-        width: 27%;
 
         .title {
           padding: .4em 1%;

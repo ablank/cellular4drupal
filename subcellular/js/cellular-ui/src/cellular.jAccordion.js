@@ -11,7 +11,7 @@ cellular.jAccordion = function (opts) {
   fn.showContent = function ($li) {
 
     if (o.single === true) {
-      $li.siblings('.active').deactivate()
+      $li.siblings(cellular.opts.activeclass).deactivate()
         .find('.panel').slideUp(o.duration, o.easing);
     }
     else {

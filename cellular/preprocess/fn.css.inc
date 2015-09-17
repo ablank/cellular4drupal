@@ -50,7 +50,7 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
  */
-function cellular_add_css($array, $cellular = FALSE) {
+function cellular_add_css(&$css, $array, $cellular = FALSE) {
   foreach ($array as $style) {
     // Set data source as CDN or local host.
     if (isset($style['data'])) {
@@ -73,9 +73,9 @@ function cellular_add_css($array, $cellular = FALSE) {
       $style['type'] = isset($style['cdn']) ? 'external' : 'file';
       $style['media'] = isset($style['media']) ? $style['media'] : 'all';
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
-      // Add stylesheet to $css.
-      //$css[$data] = $style;
-      drupal_add_css($data, $style);
+      // Push stylesheet onto $css.
+      $css[$data] = $style;
+     // drupal_add_css($data, $style);
     }
   }
 }
@@ -196,7 +196,6 @@ function cellular_remove_default_css(&$css) {
         'system.menus.css',
       ),
       'block' => 'block.css',
-      'colorbox' => 'styles/default/colorbox_style.css',
       'comment' => 'comment.css',
       'field' => 'theme/field.css',
       'file' => 'file.css',
@@ -205,11 +204,18 @@ function cellular_remove_default_css(&$css) {
       'help' => 'help.css',
       'media' => 'css/media.css',
       'node' => 'node.css',
-      'panels' => 'css/panels.css',
       'search' => 'search.css',
       'shortcut' => 'shorcut.css',
       'user' => 'user.css',
-      'views' => 'css/views.css'
+      // Contrib
+      'calendar' => array(
+        'css/calendar.css',
+        'css/calendar_multiday.css',
+      ),
+      'colorbox' => 'styles/default/colorbox_style.css',
+      'panels' => 'css/panels.css',
+      'views' => 'css/views.css',
+      'webform' => 'css/webform.css',
     );
     cellular_remove_css($css, $exclude);
   }

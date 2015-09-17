@@ -79,6 +79,15 @@ $border_radius: .5em;
   }
 }
 
+.jAccordion,
+.jBlocklink,
+.jMmenu,
+.jScrolli,
+.jTabs {
+  list-style: none;
+  animation: fadein 3s;
+}
+
 /* Import UI components */
 @import "jAccordion";
 @import "jBlocklink";

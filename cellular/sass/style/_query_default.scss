@@ -4,10 +4,9 @@
   * @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
 */
 
-body {
-
-  &:before {
-    content: "default-#{$res_normal}";
-    display: none;
-  }
+body:before {
+  content: "window_default-#{$res_default}";
+  display: none;
 }
+
+.window_default {}

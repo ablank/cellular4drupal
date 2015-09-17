@@ -32,7 +32,7 @@
     background-size: 9em;
     background-repeat: no-repeat;
     background-position: left center;
-    border: 2px solid $light_grey;
+    border: 2px solid $border_color;
     background-image: url('../assets/icons/min/png/menu.png');
     background-image: url('../assets/icons/min/svg/menu.svg');
     @include border-radius();

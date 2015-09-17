@@ -5,15 +5,14 @@
 
 // Set styles common to all regions from variables/content_regions
 #{$regions} {
-  margin: $region_margin;
-  padding: $region_padding;
-  border: $region_border;
+  @if($region_margin > 0){margin: $region_margin;}
+  @if($region_padding > 0){padding: $region_padding;}
+  @if($region_border > 0){border: $region_border;}
 }
-
 //////
 
 #page-wrap {
-  @include clearfix();
+
 }
 
 #app {
@@ -21,14 +20,4 @@
   @if (($header_position == absolute) or ($header_position == fixed)) {
     margin-top: $header_height;
   }
-}
-
-#content,
-#sidebar-left,
-#sidebar-right,
-#footer {
-  position: relative;
-  float: left;
-  display: block;
-  @include clearfix();
 }

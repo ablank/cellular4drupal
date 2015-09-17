@@ -2,12 +2,14 @@
   * @file
   * Tables
 */
+$table_border: $grey 1px solid;
+$cell_border: $light_grey 1px solid;
 
 table {
   margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
-  border: $grey $border;
+  border: $table_border;
 
   img {
     display: inline;
@@ -23,8 +25,9 @@ thead {
   font-size: $normal;
   text-align: center;
   background: lighten($light_grey, 15%);
-  color: darken($light_grey, 20%);
-  border: lighten($light_grey, 15%) $border;
+  color: $grey;
+  border: $cell_border;
+  border-bottom-color: $grey;
 }
 
 tr:nth-child(even) {
@@ -37,7 +40,7 @@ tr:nth-child(odd) {
 
 td {
   padding: $tiny;
-  border: $light_grey $border;
+  border: $cell_border;
 }
 
 tfoot {
