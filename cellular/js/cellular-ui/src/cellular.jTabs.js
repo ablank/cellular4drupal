@@ -5,10 +5,17 @@
 cellular.jTabs = function (opts) {
   var o = jQuery.extend({
     active: 0, // Array index of initially active tab
-    orient: "horizontal" // || "vertical"
+    orient: "horizontal", // || "vertical"
+    cclass: "jTabs"
   }, opts),
     fn = {};
 
+  /**
+   *
+   *
+   * @param object $obj
+   * @param object li
+   */
   fn.showContent = function ($obj, li) {
     var c = li.find('.content'),
       pan = $obj.parent().find('.panel-content');
@@ -20,17 +27,23 @@ cellular.jTabs = function (opts) {
     });
   };
 
+  /**
+   * Init jTabs
+   */
   fn.init = function () {
     var $obj = jQuery(this),
       tab = $obj.find('> li'),
-      wrap = jQuery('<div class="' + cellular.opts.cclass + ' ' + o.orient + ' jTabs-wrap"></div>');
+      wrap = jQuery('<div/>').classify([
+      cellular.opts.cclass,
+      o.orient,
+      o.cclass + '-wrap'
+    ]),
+      panel = '<div class="panel"><div class="panel-content" /></div>';
 
-    $obj.once('jTabs', function () {
+    $obj.once(o.cclass, function () {
 
       $obj.wrap(wrap)
-        .after('<div class="panel"><div class="panel-content" /></div>');
-
-      //wrap.find('.panel').append('');
+        .after(panel);
 
       tab.each(function () {
         var li = jQuery(this);

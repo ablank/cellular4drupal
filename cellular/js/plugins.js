@@ -37,23 +37,19 @@
           active: 0, // Array index of initially active content.
           orient: "vertical" //
         });
-
+$('.jScrolli').jScrolli();
+/*
         $('.jScrolli').jScrolli({
           cclass: 'jScrolli', // Object class selector
           active: 0, // Index of initially selected slide
-          activeSlides: 1,
-          size: {
-            //width: 700,
-            height: 'auto' // 'auto' or '[value]', i.e. '300px'
-          },
+          height: 'auto', // 'auto' or '[value]', i.e. '300px'
           controls: {
             showcontrols: true,
             keyboard: true,
             swipe: true,
             showmarkers: true,
-            autoplay: true,
+            autoplay: false,
             pauseonhover: true,
-            events: 'click mouseup MSPointerUp touchend',
             text: {
               next: 'Next',
               prev: 'Prev',
@@ -71,7 +67,7 @@
           },
           autodim: true,
           delay: 1.4 // Time (seconds) to wait before dimming.
-        });
+        });*/
       }
 
       // Backstretch functions.

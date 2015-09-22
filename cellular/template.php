@@ -198,8 +198,8 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/css/' . $style['file'];
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data .= $style['file'];
     }
     if (!empty($data)) {
       // Set stylesheet properties.
@@ -237,8 +237,8 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/css/' . $style['file'];
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data .= $style['file'];
     }
     if (!empty($data)) {
       // Set stylesheet properties.
@@ -252,7 +252,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
       // Push stylesheet onto $css.
       $css[$data] = $style;
-     // drupal_add_css($data, $style);
+      // drupal_add_css($data, $style);
     }
   }
 }
@@ -278,9 +278,9 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
       $ocss = $data;
     }
     else {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
       // Or set data to local file.
-      $data .= '/css/' . $style['file'];
+      $data .= $style['file'];
     }
     // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
@@ -552,8 +552,8 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
     }
     elseif (!empty($script['file'])) {
       $script['type'] = 'file';
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/js/' . $script['file'];
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+      $data .= $script['file'];
     }
     else {
       $data = $script['data'];
@@ -594,8 +594,8 @@ function cellular_add_js($array, $cellular = FALSE) {
       cellular_js_fallback($script, $cellular);
     }
     elseif (!empty($script['file'])) {
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/js/' . $script['file'];
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+      $data .= $script['file'];
     }
     else {
       $data = $script['data'];
@@ -646,8 +646,8 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     );
     // Construct the fallback script.
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-    $fallback .= '/js/' . $script['file'];
+    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+    $fallback .= $script['file'];
     $fallback .= '\">\x3C/script>")';
 
     drupal_add_js($fallback, $attributes);
@@ -676,8 +676,8 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     else {
       // Use local source if no CDN is used.
       if (!empty($script['file'])) {
-        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-        $data .= '/js/' . $script['file'];
+        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+        $data .= $script['file'];
       }
     }
     // Set the script attributes.
@@ -1209,7 +1209,7 @@ function cellular_jquery_update(&$javascript) {
   // Override jQuery.
   $jquery = array(
     'default' => $jq['default'],
-    'file' => $jq['file'],
+    'file' => '/jquery/' . $jq['file'],
     //'file' => 'jquery-' . $jq['version'] . '.min.js',
     'version' => $jq['version'],
     'every_page' => TRUE,
@@ -1282,7 +1282,7 @@ function cellular_jqueryui_update_js(&$javascript) {
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
           'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -99,
-          'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
+          'file' => "/jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
           'browsers' => array('IE' => TRUE, '!IE' => TRUE),
         ),
@@ -1318,7 +1318,7 @@ function cellular_jqueryui_update_css(&$css) {
 
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
-  $ui['path'] = 'jquery-ui/';
+  $ui['path'] = '/jquery-ui/css/';
   $ui['widgets'] = array(
     'core',
     'theme',
@@ -1428,7 +1428,7 @@ function cellular_modernizr_default() {
  *   jQuery version info.
  */
 function cellular_update_plugins(&$javascript, $jquery) {
-  $plugin_path = 'drupal/'; // Relative to Cellular Lib
+  $plugin_path = '/drupal/'; // Relative to Cellular Lib
   $plugins = array(
     'drupal' => array(
       'default' => 'misc/drupal.js',
@@ -1482,7 +1482,7 @@ function cellular_update_plugins(&$javascript, $jquery) {
  */
 function cellular_plugins_js() {
   $jquery = cellular_jquery_info();
-  $plugin_path = 'plugins/';
+  $plugin_path = '/lib/';
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
 
@@ -1614,7 +1614,7 @@ function cellular_plugins_js() {
  *   Array of stylesheets used by javascript plugins.
  */
 function cellular_plugins_css() {
-  $plugin_path = '';
+  $plugin_path = '/lib/css/';
   // Plugins available through cellular, styles added based on theme settings.
   // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array();

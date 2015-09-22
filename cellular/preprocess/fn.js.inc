@@ -25,8 +25,8 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
     }
     elseif (!empty($script['file'])) {
       $script['type'] = 'file';
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/js/' . $script['file'];
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+      $data .= $script['file'];
     }
     else {
       $data = $script['data'];
@@ -67,8 +67,8 @@ function cellular_add_js($array, $cellular = FALSE) {
       cellular_js_fallback($script, $cellular);
     }
     elseif (!empty($script['file'])) {
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/js/' . $script['file'];
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+      $data .= $script['file'];
     }
     else {
       $data = $script['data'];
@@ -119,8 +119,8 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     );
     // Construct the fallback script.
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-    $fallback .= '/js/' . $script['file'];
+    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+    $fallback .= $script['file'];
     $fallback .= '\">\x3C/script>")';
 
     drupal_add_js($fallback, $attributes);
@@ -149,8 +149,8 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     else {
       // Use local source if no CDN is used.
       if (!empty($script['file'])) {
-        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH;
-        $data .= '/js/' . $script['file'];
+        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+        $data .= $script['file'];
       }
     }
     // Set the script attributes.

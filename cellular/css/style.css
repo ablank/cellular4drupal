@@ -1652,9 +1652,9 @@ hr.clearfix {
   background-size: 9em;
   background-repeat: no-repeat;
   background-position: left center;
-  border: 2px solid #bbbab7;
   background-image: url("../assets/icons/min/png/menu.png");
   background-image: url("../assets/icons/min/svg/menu.svg");
+  border: 2px solid #bbbab7;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -1662,11 +1662,8 @@ hr.clearfix {
   -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
-/* line 43, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 42, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu,
 .jMmenu-active .jMmenu.menu {
   position: fixed;
@@ -1676,21 +1673,19 @@ hr.clearfix {
   opacity: 0;
   overflow: hidden;
   background-color: rgba(17, 17, 17, 0.6);
+  transform: translate3d(0, 0, 0);
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
-/* line 55, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 54, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu ul,
 .jMmenu-active .jMmenu.menu ul {
   margin: 0 0 0 .4em;
   background-color: rgba(17, 17, 17, 0.4);
 }
-/* line 60, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 59, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu li,
 .jMmenu-active .jMmenu.menu li {
   display: block;
@@ -1698,7 +1693,7 @@ hr.clearfix {
   list-style: none;
   max-width: none;
 }
-/* line 67, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 66, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu a,
 .jMmenu-inactive .jMmenu.menu a:visited,
 .jMmenu-active .jMmenu.menu a,
@@ -1715,7 +1710,7 @@ hr.clearfix {
   border-bottom: 1px solid;
   background-color: #444444;
 }
-/* line 81, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 80, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive .jMmenu.menu a.active, .jMmenu-inactive .jMmenu.menu a:active, .jMmenu-inactive .jMmenu.menu a:focus, .jMmenu-inactive .jMmenu.menu a:hover,
 .jMmenu-inactive .jMmenu.menu a:visited.active,
 .jMmenu-inactive .jMmenu.menu a:visited:active,
@@ -1732,7 +1727,7 @@ hr.clearfix {
   color: #29B4DE;
   background-color: #111;
 }
-/* line 94, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 93, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-down .menu.jMmenu, .jMmenu-inactive.slide-down .menu.jMmenu,
 .jMmenu-active.push-down .menu.jMmenu,
 .jMmenu-active.slide-down .menu.jMmenu {
@@ -1741,7 +1736,7 @@ hr.clearfix {
   top: 96px;
   bottom: 96px;
 }
-/* line 107, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 106, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-left .menu.jMmenu, .jMmenu-inactive.push-right .menu.jMmenu, .jMmenu-inactive.slide-left .menu.jMmenu, .jMmenu-inactive.slide-right .menu.jMmenu,
 .jMmenu-active.push-left .menu.jMmenu,
 .jMmenu-active.push-right .menu.jMmenu,
@@ -1751,25 +1746,25 @@ hr.clearfix {
   width: 0;
   max-width: 0;
 }
-/* line 117, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 116, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-left .menu.jMmenu, .jMmenu-inactive.slide-left .menu.jMmenu,
 .jMmenu-active.push-left .menu.jMmenu,
 .jMmenu-active.slide-left .menu.jMmenu {
   left: 0;
 }
-/* line 125, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 124, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive.push-right .menu.jMmenu, .jMmenu-inactive.slide-right .menu.jMmenu,
 .jMmenu-active.push-right .menu.jMmenu,
 .jMmenu-active.slide-right .menu.jMmenu {
   right: 0;
 }
 
-/* line 134, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 133, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-inactive #nav:hover {
   box-shadow: 0 0 0.2em 0.1em #29B4DE;
 }
 
-/* line 141, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 140, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-active {
   /* // Work in progress...
     &.push-down {
@@ -1783,26 +1778,26 @@ hr.clearfix {
     }
   */
 }
-/* line 142, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 141, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-active #nav {
   background-position: right center;
   box-shadow: 0 0 0.2em 0.1em #8C0D00;
 }
-/* line 148, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 147, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-active .jMmenu.menu {
   opacity: 1;
 }
-/* line 155, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 154, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-active.push-down .menu.jMmenu, .jMmenu-active.slide-down .menu.jMmenu {
   bottom: 0;
   height: 100%;
 }
-/* line 166, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 165, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-active.push-left .menu.jMmenu, .jMmenu-active.push-right .menu.jMmenu, .jMmenu-active.slide-left .menu.jMmenu, .jMmenu-active.slide-right .menu.jMmenu {
   width: 100%;
   max-width: 50%;
 }
-/* line 175, ../sass/style/cellular-ui/_jMmenu.scss */
+/* line 174, ../sass/style/cellular-ui/_jMmenu.scss */
 .jMmenu-active.push-right #page-wrap, .jMmenu-active.push-left #page-wrap {
   width: 50%;
 }
@@ -1812,6 +1807,21 @@ hr.clearfix {
   * CellularUI : jScrolli
 */
 /* line 10, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli {
+  height: 240px;
+  opacity: 0;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+
+/* line 15, ../sass/style/cellular-ui/_jScrolli.scss */
+.cellular.jScrolli {
+  opacity: 1;
+}
+
+/* line 19, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap {
   position: relative;
   display: block;
@@ -1820,59 +1830,70 @@ hr.clearfix {
   background-color: #FEFEFE;
   border: #bbbab7 1px solid;
 }
-/* line 18, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 27, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap ul {
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: center;
 }
-/* line 25, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 34, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap li {
   display: inline;
   max-width: none;
   margin: 0;
   padding: 0;
 }
-/* line 32, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .slide,
-.jScrolli-wrap .wrap {
+/* line 41, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 100%;
+  right: 0;
+  -moz-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  -webkit-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  /*
+    img {
+    width: 100%;
+    height: auto;
+    }
+  */
+}
+/* line 49, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.active {
   left: 0;
+}
+/* line 52, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.active .panel {
+  opacity: 1;
+}
+/* line 57, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.previous {
+  left: 0;
+  right: 100%;
+}
+/* line 62, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide.next {
+  left: 100%;
   right: 0;
 }
-/* line 41, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .slide {
-  display: none;
+/* line 72, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .slide .panel {
+  border: none;
+  padding: 0;
   opacity: 0;
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 46, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .slide.active {
-  display: block;
-  opacity: 1;
-}
-/* line 51, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .slide.previous, .jScrolli-wrap .slide.next {
-  display: block;
-  opacity: 0;
-}
-/* line 57, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .slide.previous {
-  right: 100%;
-}
-/* line 61, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .slide.next {
-  left: 100%;
-}
-/* line 66, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 80, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .caption {
   position: absolute;
+  z-index: 10;
   bottom: 1em;
   left: 0;
   right: 0;
@@ -1883,7 +1904,7 @@ hr.clearfix {
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 77, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 92, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .caption p {
   max-width: none;
   margin: 0;
@@ -1895,57 +1916,68 @@ hr.clearfix {
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 89, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 104, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .control {
+  cursor: pointer;
   position: absolute;
-  z-index: 1;
+  z-index: 11;
   text-indent: -999em;
   width: 2em;
   height: 2em;
   color: #FEFEFE;
   background-repeat: no-repeat;
   background-image: url(../assets/icons/png/controls.png);
+  background-image: url(../assets/icons/svg/controls.svg);
   -moz-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 101, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .control.pause {
-  top: 0;
-  left: 0;
-  background-position: -54px 8px;
-  border: #FEFEFE 2px solid;
-  border-radius: 50%;
-  opacity: 0;
-}
-/* line 110, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 118, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .control.prev, .jScrolli-wrap .control.next {
-  cursor: pointer;
   top: 50%;
   opacity: 0.2;
   background-color: #444444;
 }
-/* line 117, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 124, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .control.prev:hover, .jScrolli-wrap .control.prev:focus, .jScrolli-wrap .control.next:hover, .jScrolli-wrap .control.next:focus {
   background-color: #29B4DE;
 }
-/* line 123, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 130, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .control.prev {
   left: 0;
   background-position: -24px 8px;
 }
-/* line 128, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 135, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .control.next {
   right: 0;
   background-position: -88px 8px;
 }
-/* line 134, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 140, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.play, .jScrolli-wrap .control.pause {
+  top: 0;
+  left: 0;
+  background-color: #111;
+  border: #FEFEFE 2px solid;
+  border-radius: 50%;
+  opacity: 0;
+  transition: none;
+}
+/* line 151, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.play {
+  background-position: 8px 8px;
+}
+/* line 154, ../sass/style/cellular-ui/_jScrolli.scss */
+.jScrolli-wrap .control.pause {
+  background-position: -54px 8px;
+}
+/* line 159, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .markers {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  line-height: 0.75em;
     /*
       float: left;
       position: relative;
@@ -1958,11 +1990,7 @@ hr.clearfix {
       }
     */
 }
-/* line 140, ../sass/style/cellular-ui/_jScrolli.scss */
-.jScrolli-wrap .markers ul {
-  line-height: 0.75em;
-}
-/* line 156, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 178, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .marker {
   cursor: pointer;
   display: inline;
@@ -1979,25 +2007,25 @@ hr.clearfix {
   -webkit-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
 }
-/* line 171, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 193, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .marker.active {
   border-color: #16708b;
   background-color: #29B4DE;
   box-shadow: 0 0 0.5em 0 #29B4DE;
 }
-/* line 177, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 199, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .marker:hover, .jScrolli-wrap .marker:focus {
   border-color: #29B4DE;
 }
-/* line 182, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 204, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap .marker a {
   text-indent: -999em;
 }
-/* line 190, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 212, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap.active .control {
   opacity: 1;
 }
-/* line 204, ../sass/style/cellular-ui/_jScrolli.scss */
+/* line 226, ../sass/style/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap.transition .caption p {
   opacity: 0;
 }

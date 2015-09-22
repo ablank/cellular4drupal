@@ -17,13 +17,15 @@ cellular.breakpoint = function () {
 /**
  * Add active class to element, remove active class from element siblings
  */
-cellular.activate = function () {
+cellular.activate = function (theclass) {
+  theclass = theclass ? theclass : cellular.opts.activeclass;
+
   return this.each(function () {
     var $t = jQuery(this);
 
-    if (!$t.hasClass(cellular.opts.activeclass)) {
-      $t.addClass(cellular.opts.activeclass)
-        .siblings().removeClass(cellular.opts.activeclass);
+    if (!$t.hasClass(theclass)) {
+      $t.addClass(theclass)
+        .siblings().removeClass(theclass);
     }
   });
 };
@@ -31,9 +33,11 @@ cellular.activate = function () {
 /**
  * Remove 'active' class
  */
-cellular.deactivate = function () {
+cellular.deactivate = function (theclass) {
+  theclass = theclass ? theclass : cellular.opts.activeclass;
+
   return this.each(function () {
-    jQuery(this).removeClass(cellular.opts.activeclass);
+    jQuery(this).removeClass(theclass);
   });
 };
 
@@ -41,6 +45,7 @@ cellular.deactivate = function () {
  * Wrap element's children after 1st child
  */
 cellular.kidWrap = function () {
+
   return this.each(function () {
     var $t = jQuery(this);
 
@@ -54,6 +59,7 @@ cellular.kidWrap = function () {
  * Add array of classes to element
  */
 cellular.classify = function ($array) {
+
   return this.each(function () {
     jQuery(this).addClass($array.join(' '));
   });
@@ -64,6 +70,7 @@ cellular.classify = function ($array) {
  */
 cellular.debounce = function (func, wait, immediate) {
   var timeout;
+  
   return function () {
     var context = this,
       args = arguments,
@@ -97,6 +104,7 @@ cellular.transitionend = function () {
 
   for (t in transitions) {
     if (el.style[t] !== undefined) {
+
       return transitions[t];
     }
   }
@@ -111,7 +119,6 @@ cellular.windowstate = cellular.debounce(function () {
   cellular.state.breakpoint = cellular.breakpoint().type;
   jQuery('body').removeClass(ob)
     .addClass(cellular.state.breakpoint);
-// console.log(cellular.state);
 }, 500);
 
 /**
@@ -126,7 +133,7 @@ cellular.scrollstate = cellular.debounce(function (e, y) {
     scrolltimeout = null;
 
   cellular.state.scrolltop = $(document).scrollTop();
- cellular.scrolltimer(el, uc, dc);
+  cellular.scrolltimer(el, uc, dc);
   // Detect if page is scrolled
   if (cellular.state.scrolltop > 0) {
     el.addClass(cclass);
@@ -147,7 +154,6 @@ cellular.scrollstate = cellular.debounce(function (e, y) {
         .addClass(uc);
     }
   }
-
 }, 0, true);
 
 /**
@@ -156,7 +162,7 @@ cellular.scrollstate = cellular.debounce(function (e, y) {
 cellular.scrolltimer = function (el, uc, dc) {
   window.clearTimeout(cellular.state.scrolltimer);
   cellular.state.scrolltimer = window.setTimeout(function () {
-      el.removeClass(uc + ' ' + dc);
+    el.removeClass(uc + ' ' + dc);
   }, 2000);
 };
 

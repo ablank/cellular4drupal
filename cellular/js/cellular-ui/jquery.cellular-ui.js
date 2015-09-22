@@ -42,21 +42,23 @@ type: content.match(/\w*[^\"\'](?=-)/g).join("")
 /**
 * Add active class to element, remove active class from element siblings
 */
-cellular.activate = function () {
+cellular.activate = function (theclass) {
+theclass = theclass ? theclass : cellular.opts.activeclass;
 return this.each(function () {
 var $t = jQuery(this);
-if (!$t.hasClass(cellular.opts.activeclass)) {
-$t.addClass(cellular.opts.activeclass)
-.siblings().removeClass(cellular.opts.activeclass);
+if (!$t.hasClass(theclass)) {
+$t.addClass(theclass)
+.siblings().removeClass(theclass);
 }
 });
 };
 /**
 * Remove 'active' class
 */
-cellular.deactivate = function () {
+cellular.deactivate = function (theclass) {
+theclass = theclass ? theclass : cellular.opts.activeclass;
 return this.each(function () {
-jQuery(this).removeClass(cellular.opts.activeclass);
+jQuery(this).removeClass(theclass);
 });
 };
 /**
@@ -125,7 +127,6 @@ var ob = cellular.state.breakpoint;
 cellular.state.breakpoint = cellular.breakpoint().type;
 jQuery('body').removeClass(ob)
 .addClass(cellular.state.breakpoint);
-// console.log(cellular.state);
 }, 500);
 /**
 * Set state on document scroll
@@ -199,35 +200,52 @@ var o = jQuery.extend({
 active: 0, // Index value of initial content to display.
 duration: 500, // Duration of transition.
 easing: "swing", // Type of easing.
-single: false // Allow multiple panels to be opened or only 1?
-}, opts);
-var fn = {};
+single: false, // Allow multiple panels to be opened or only 1?
+pclass: "panel"
+}, opts),
+fn = {};
+o.pselect = '.'+o.pclass;
+/**
+* The <li> object to show.
+*
+* @param object li
+*  $('<li>')
+*/
 fn.showContent = function (li) {
-if (o.single === true) {
-li.siblings(cellular.opts.activeclass).deactivate()
-.find('.panel').slideUp(o.duration, o.easing);
+if (o.single) {
+li.siblings().find(o.pselect).slideUp(o.duration, o.easing);
+li.activate()
+.find(o.pselect).slideDown(o.duration, o.easing);
 }
 else {
-li.activate()
-.find('.panel').slideToggle(o.duration, o.easing);
+li.toggleClass(cellular.opts.activeclass)
+.find(o.pselect).slideToggle(o.duration, o.easing);
 }
 };
+/**
+* Generate markup for controls & other elements.
+*
+* @param object $obj
+*/
 fn.style = function ($obj) {
 $obj.once('jAccordion', function () {
 $obj.addClass(cellular.opts.cclass)
 .find('> li').each(function () {
-var $t = jQuery(this);
-$t.kidWrap();
-$t.children().eq(0).addClass('title');
-$t.children().eq(1).classify([cellular.opts.cclass, 'panel']);
-$t.find('.panel').hide();
-$t.find('.title').click(function (e) {
+var li = jQuery(this);
+li.kidWrap();
+li.children().eq(0).addClass('title');
+li.children().eq(1).classify([cellular.opts.cclass, 'panel']);
+li.find(o.pselect).hide();
+li.find('.title').click(function (e) {
 e.preventDefault();
-fn.showContent($t);
+fn.showContent(li);
 });
 });
 });
 };
+/**
+* Init jAccordion
+*/
 fn.init = function () {
 var $obj = jQuery(this);
 // Generate markup for accordion
@@ -309,34 +327,45 @@ parent: jQuery('body'), // Parent element used to attach menu
 cclass: "jMmenu", // Menu class to test
 type: "slide", // Type of animation
 direction: "right" // Direction of animation
-}, opts);
-o.classes = [
-o.type + '-' + o.direction,
+}, opts),
+fn = {};
+fn.mediaQuery = cellular.debounce(function ($obj, state) {
+if (o.breakpoint === cellular.state.breakpoint) {
+var $menu = $obj.children([0]);
+o.parent.addClass(o.type + '-' + o.direction);
+$menu.addClass(o.cclass)
+.prependTo(o.parent);
+fn.trigger($obj, state);
+}
+}, 500);
+fn.trigger = function ($obj, state) {
+var classes = [
 o.cclass + '-active',
 o.cclass + '-inactive'
 ];
-fn = {};
-fn.mediaQuery = cellular.debounce(function ($obj) {
-if (o.breakpoint === cellular.state.breakpoint) {
-var $menu = $obj.children([0]);
-if (!o.parent.hasClass(o.classes[0])) {
-o.parent.classify([o.classes[0], o.classes[2]]);
-$menu.addClass(o.cclass);
+if (state.active) {
+$obj.activate();
+o.parent.addClass(classes[0])
+.removeClass(classes[1]);
 }
-$menu.prependTo(o.parent);
+else {
+$obj.deactivate();
+o.parent.addClass(classes[1])
+.removeClass(classes[0]);
 }
-}, 500);
+};
 fn.init = function () {
-var $obj = jQuery(this);
-fn.mediaQuery($obj);
+var $obj = jQuery(this),
+state = {
+active: false
+};
+fn.mediaQuery($obj, state);
 jQuery(window).on('resize', function () {
-fn.mediaQuery($obj);
+fn.mediaQuery($obj, state);
 });
 $obj.on('click', function () {
-if (o.parent.hasClass(o.classes[0])) {
-$obj.toggleClass(cellular.opts.activeclass);
-o.parent.toggleClass(o.classes[1] + ' ' + o.classes[2]);
-}
+state.active = state.active ? false : true;
+fn.trigger($obj, state);
 });
 };
 return this.each(fn.init);
@@ -348,25 +377,22 @@ return this.each(fn.init);
 */
 cellular.jScrolli = function (opts) {
 var o = $.extend({
-cclass: 'jScrolli', // Object class selector
+cclass: "jScrolli", // Object class selector
 active: 0, // Index of initially selected slide
-//activeSlides: 1,
-size: {
-//width: 700,
-height: 'auto' // 'auto' or '[value]', i.e. '300px'
-},
+//width: 0,
+height: "auto", // 'auto' or '[value]', i.e. '300px'
 controls: {
+showmarkers: true,
 showcontrols: true,
 keyboard: true,
 swipe: true,
-showmarkers: true,
 autoplay: true,
 pauseonhover: true,
-events: 'click mouseup MSPointerUp touchend',
 text: {
-next: 'Next',
-prev: 'Prev',
-pause: 'Pause'
+next: "Next",
+prev: "Prev",
+pause: "Pause",
+play: "Play"
 }
 },
 transition: {
@@ -376,21 +402,27 @@ pause: 5 // Time (seconds) to pause between slides.
 caption: {
 enable: true,
 autohide: false,
-selector: '.caption' // 'auto' or '.selector' used to generate caption
+selector: ".caption" // 'auto' or '.selector' used to generate caption
 },
 autodim: true,
 delay: 1.4 // Time (seconds) to wait before dimming.
-}, opts);
-var fn = {};
+}, opts),
+fn = {};
+/**
+* Format html buttons for controls.
+*
+* @param string $text
+* @returns string
+*/
 fn.button = function ($text) {
 return '<a class="control ' + $text.toLowerCase() + '">' + $text + '</a>';
 };
-// Update next/prev slides.
-fn.normalize = function ($obj, state) {
-/*
-state.prev = state.current - o.activeSlides;
-state.next = state.current + o.activeSlides;
+/**
+* Update next/prev slides.
+*
+* @param object state
 */
+fn.normalize = function (state) {
 state.prev = state.current - 1;
 state.next = state.current + 1;
 if (state.prev < 0) {
@@ -399,46 +431,54 @@ state.prev = state.count;
 if (state.next > state.count) {
 state.next = 0;
 }
-// state.interval = 0;
 };
-// Activate selected slide & corresponding marker
+/**
+* Activate selected slide & corresponding marker.
+*
+* @param int index
+* @param object $obj
+* @param object state
+*/
 fn.go = function (index, $obj, state) {
 if (!state.paused) {
-var tclass = 'transition';
-console.log(state.current);
-$obj.parent().parent().addClass(tclass)
+var tclass = 'transition',
+li = $obj.find('.slide');
+state.current = parseInt(index);
+// Normalize state
+fn.normalize(state);
+// Update classes on slides for css transition
+jQuery(li[state.prev]).activate('previous');
+jQuery(li[state.next]).activate('next');
+jQuery(li[index]).activate();
+// Listen for transition to complete & update classes
+$obj.parent().addClass(tclass)
 .one(cellular.transitionend(), function () {
 jQuery(this).removeClass(tclass);
 });
-// Normalize state
-fn.normalize($obj, state);
 // Update the marker
 if (o.controls.showmarkers) {
 fn.mark($obj, state);
 }
 // Update the caption
 if (o.caption.enable) {
-fn.caption($obj, state);
+fn.caption(li, state);
 }
+// Reset the autoplay timer
 if (o.controls.autoplay) {
-// Reset the transition timer for autoplay
 fn.updateinterval($obj, state);
 }
-// Update classes on slides for css transition
-jQuery($obj[state.prev]).addClass('previous')
-.siblings().removeClass('previous');
-jQuery($obj[state.next]).addClass('next')
-.siblings().removeClass('next');
-jQuery($obj[index]).activate()
-.removeClass('previous next');
 }
 };
-// Activate the slide marker
+/**
+* Update the current marker.
+*/
 fn.mark = function ($obj, state) {
-$obj.parent().parent().find('.marker')
+$obj.siblings().find('.marker')
 .eq(state.current).activate();
 };
-// Update slide caption
+/**
+* Update slide caption
+*/
 fn.caption = function ($obj, state) {
 var wrap = $obj.parent().parent(),
 cap = wrap.find('> .caption p');
@@ -447,64 +487,8 @@ state.caption = wrap.find(o.caption.selector).eq(state.current).text();
 // Update the active caption
 cap.text(state.caption);
 };
-// Calculate largest dimension to prevent 'jumping' content
-fn.setheight = function ($obj, state) {
-if (o.size.height === 'auto') {
-jQuery(window).on('load', function () {
-$obj.find('.slide').each(function () {
-var height = jQuery(this).height();
-//console.log(h);
-if (height > state.maxheight) {
-state.maxheight = height;
-}
-});
-});
-}
-else {
-state.maxheight = o.size.height;
-}
-//console.log(state.maxheight);
-$obj.parent().height(state.maxheight);
-};
-// Generate markup
-fn.style = function ($obj, state) {
-var slides = $obj.find('> li');
-$obj.addClass(cellular.opts.cclass)
-.wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />');
-if (o.controls.showmarkers) {
-var markers = jQuery('<div class="markers"><ul></ul></div>');
-for (var i = 0; i < slides.length; i += 1) {
-markers.find('ul')
-.append('<li class="marker" data-href="' + i + '">' + (i + 1) + '</li>');
-}
-$obj.after(markers);
-fn.mark($obj, state);
-}
-if (o.caption.enable) {
-if (o.caption.selector === 'auto') {
-// o.caption.selector = what?
-}
-else {
-$obj.find(o.caption.selector).hide();
-}
-$obj.after('<div class="caption"><p/></div>');
-}
-if (o.controls.showcontrols) {
-var controls = [
-fn.button(o.controls.text.pause),
-fn.button(o.controls.text.prev),
-fn.button(o.controls.text.next)
-];
-$obj.parent().prepend(controls[0] + controls[1] + controls[2]);
-}
-slides.each(function () {
-jQuery(this).addClass('slide');
-// .children().wrapAll('<div class="wrap" />');
-});
-fn.setheight($obj, state);
-};
 fn.updateinterval = function ($obj, state) {
-if (!state.paused) {
+if (o.controls.autoplay && !state.paused) {
 clearInterval(state.interval);
 state.interval = setInterval(function () {
 state.current = state.next;
@@ -512,46 +496,56 @@ fn.go(state.current, $obj, state);
 }, o.transition.pause * 1000);
 }
 };
-// Add Event Listeners
+/**
+* Add event listeners
+*
+* @param {type} $obj
+* @param {type} state
+*/
 fn.events = function ($obj, state) {
 var controls = $obj.siblings('.controls'),
-li = $obj.find('> li'),
 wrap = $obj.parent(),
 eX = null,
 eY = null;
-// Previous
-wrap.find('.prev').on(o.controls.events, function (e) {
-state.current = state.prev;
-state.paused = false;
-fn.go(state.current, li, state);
-});
-// Next
-wrap.find('.next').on(o.controls.events, function (e) {
-state.current = state.next;
-state.paused = false;
-fn.go(state.current, li, state);
-});
-// Pause
-wrap.find('.pause').on(o.controls.events, function (e) {
-if (state.paused) {
-state.paused = false;
-fn.updateinterval($obj, state);
-}
-else {
-state.paused = true;
-clearInterval(state.interval);
-}
-$(this).toggleClass('play');
-//console.log(state.paused);
-});
 // Link markers to respective slides
 if (o.controls.showmarkers) {
 $obj.siblings().find('.marker').on('click', function () {
 state.current = jQuery(this).attr('data-href');
 state.paused = false;
-fn.go(state.current, li, state);
+fn.go(state.current, $obj, state);
 });
 }
+// Previous
+wrap.find('.prev').on('click', function (e) {
+state.current = state.prev;
+state.paused = false;
+fn.go(state.current, $obj, state);
+});
+// Next
+wrap.find('.next').on('click', function (e) {
+state.current = state.next;
+state.paused = false;
+fn.go(state.current, $obj, state);
+});
+/*
+// Play/Pause
+wrap.find('.pause').on('click', function (e) {
+jQuery(this).activate('play')
+.deactivate('pause')
+.text('Play');
+state.paused = true;
+clearInterval(state.interval);
+console.log(state.paused);
+});
+wrap.find('.play').on('click', function (e) {
+jQuery(this).activate('pause')
+.deactivate('play')
+.text('Pause');
+state.paused = false;
+fn.updateinterval($obj, state);
+console.log(state.paused);
+});
+*/
 // Pause/showcontrols
 wrap.on({
 'mouseover': function () {
@@ -590,10 +584,11 @@ case 39:
 state.current = state.next;
 break;
 }
-fn.go(state.current, li, state);
+fn.go(state.current, $obj, state);
 }
 });
 }
+/*
 // Swipe
 if (o.controls.swipe) {
 $obj.on({
@@ -649,35 +644,98 @@ eX = null;
 eY = null;
 // Move to next slide
 state.paused = false;
-fn.go(state.current, li, state);
+fn.go(state.current, $obj, state);
 }
 });
 }
+*/
 };
+/**
+* Set height explicitly to prevent 'jumping' content.
+*
+* @param object $obj
+* @param object state
+*/
+fn.setheight = function ($obj, state) {
+jQuery(window).on('load', function () {
+if (o.height === 'auto') {
+$obj.find('.panel').each(function () {
+var tHeight = jQuery(this).height();
+if (tHeight > state.maxheight) {
+state.maxheight = tHeight;
+}
+});
+}
+else {
+state.maxheight = o.height;
+}
+$obj.height(state.maxheight);
+});
+};
+/**
+* Generate markup for controls & other elements.
+*
+* @param object $obj
+* @param object state
+*/
+fn.style = function ($obj, state) {
+var li = $obj.find('> li');
+$obj.addClass(cellular.opts.cclass)
+.wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />');
+li.addClass('slide')
+.each(function () {
+jQuery(this).children().wrapAll('<div class="panel" />');
+});
+fn.setheight($obj, state);
+if (o.controls.showmarkers) {
+var markers = jQuery('<ul class="markers"/>');
+for (var i = 0; i < li.length; i += 1) {
+markers.append('<li class="marker" data-href="' + i + '">' + (i + 1) + '</li>');
+}
+$obj.after(markers);
+fn.mark($obj, state);
+}
+if (o.caption.enable) {
+/*
+if (o.caption.selector === 'auto') {
+// o.caption.selector = what?
+}
+else {
+$obj.find(o.caption.selector).hide();
+}
+*/
+$obj.find(o.caption.selector).hide();
+$obj.after('<div class="caption"><p/></div>');
+}
+if (o.controls.showcontrols) {
+var controls = [
+fn.button(o.controls.text.prev),
+fn.button(o.controls.text.next),
+//o.autoplay ? fn.button(o.controls.text.pause) : null
+], i = 0;
+for (i; i < controls.length; i += 1) {
+$obj.parent().prepend(controls[i]);
+}
+}
+};
+/**
+* Init jScrolli
+*/
 fn.init = function () {
 var $obj = jQuery(this),
-li = $obj.find('> li'),
 state = {
 active: true,
 paused: false,
-count: li.length - 1,
-width: $obj.width(),
+count: $obj.find('> li').length - 1,
+//height: o.height ? o.height : fn.setheight($obj, state),
+width: o.width ? o.width : $obj.width(),
 maxheight: 0,
 interval: 0,
 controls: 0,
 caption: jQuery(o.caption.selector).html(),
 current: o.active ? o.active : 0
 };
-state.prev = state.current - 1;
-state.next = state.current + 1;
-o.caption.selector = o.caption.selector === 'auto' ? '[title]' : o.caption.selector;
-li.each(function () {
-var $t = jQuery(this);
-// Set maxheight equal to greatest element.
-if ($t.height() > state.maxheight) {
-state.maxheight = $t.height();
-}
-});
+// o.caption.selector = o.caption.selector === 'auto' ? '[title]' : o.caption.selector;
 // Add markup
 $obj.once(o.cclass, function () {
 fn.style($obj, state);
@@ -685,11 +743,9 @@ fn.style($obj, state);
 // Add Event Listeners
 fn.events($obj, state);
 // Activate 1st slide
-fn.go(state.current, li, state);
+fn.go(state.current, $obj, state);
 // Start autoplay
-if (o.controls.autoplay) {
-fn.updateinterval(li, state);
-}
+fn.updateinterval($obj, state);
 };
 return this.each(fn.init);
 };
@@ -701,9 +757,16 @@ return this.each(fn.init);
 cellular.jTabs = function (opts) {
 var o = jQuery.extend({
 active: 0, // Array index of initially active tab
-orient: "horizontal" // || "vertical"
+orient: "horizontal", // || "vertical"
+cclass: "jTabs"
 }, opts),
 fn = {};
+/**
+*
+*
+* @param object $obj
+* @param object li
+*/
 fn.showContent = function ($obj, li) {
 var c = li.find('.content'),
 pan = $obj.parent().find('.panel-content');
@@ -713,14 +776,21 @@ jQuery(this).html(c.html())
 .fadeIn('normal');
 });
 };
+/**
+* Init jTabs
+*/
 fn.init = function () {
 var $obj = jQuery(this),
 tab = $obj.find('> li'),
-wrap = jQuery('<div class="' + cellular.opts.cclass + ' ' + o.orient + ' jTabs-wrap"></div>');
-$obj.once('jTabs', function () {
+wrap = jQuery('<div/>').classify([
+cellular.opts.cclass,
+o.orient,
+o.cclass + '-wrap'
+]),
+panel = '<div class="panel"><div class="panel-content" /></div>';
+$obj.once(o.cclass, function () {
 $obj.wrap(wrap)
-.after('<div class="panel"><div class="panel-content" /></div>');
-//wrap.find('.panel').append('');
+.after(panel);
 tab.each(function () {
 var li = jQuery(this);
 li.addClass('tab')

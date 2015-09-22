@@ -85,7 +85,7 @@ function cellular_jquery_update(&$javascript) {
   // Override jQuery.
   $jquery = array(
     'default' => $jq['default'],
-    'file' => $jq['file'],
+    'file' => '/jquery/' . $jq['file'],
     //'file' => 'jquery-' . $jq['version'] . '.min.js',
     'version' => $jq['version'],
     'every_page' => TRUE,
@@ -158,7 +158,7 @@ function cellular_jqueryui_update_js(&$javascript) {
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
           'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -99,
-          'file' => "jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
+          'file' => "/jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
           'browsers' => array('IE' => TRUE, '!IE' => TRUE),
         ),
@@ -194,7 +194,7 @@ function cellular_jqueryui_update_css(&$css) {
 
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
-  $ui['path'] = 'jquery-ui/';
+  $ui['path'] = '/jquery-ui/css/';
   $ui['widgets'] = array(
     'core',
     'theme',

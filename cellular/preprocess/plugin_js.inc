@@ -53,7 +53,7 @@ function cellular_modernizr_default() {
  *   jQuery version info.
  */
 function cellular_update_plugins(&$javascript, $jquery) {
-  $plugin_path = 'drupal/'; // Relative to Cellular Lib
+  $plugin_path = '/drupal/'; // Relative to Cellular Lib
   $plugins = array(
     'drupal' => array(
       'default' => 'misc/drupal.js',
@@ -107,7 +107,7 @@ function cellular_update_plugins(&$javascript, $jquery) {
  */
 function cellular_plugins_js() {
   $jquery = cellular_jquery_info();
-  $plugin_path = 'plugins/';
+  $plugin_path = '/lib/';
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
 

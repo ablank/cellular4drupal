@@ -11,7 +11,7 @@
  *   Array of stylesheets used by javascript plugins.
  */
 function cellular_plugins_css() {
-  $plugin_path = '';
+  $plugin_path = '/lib/css/';
   // Plugins available through cellular, styles added based on theme settings.
   // $plugin_css paths are relative to /libraries/cellular/css/
   $plugin_css = array();

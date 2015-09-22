@@ -21,8 +21,8 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/css/' . $style['file'];
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data .= $style['file'];
     }
     if (!empty($data)) {
       // Set stylesheet properties.
@@ -60,8 +60,8 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      $data .= '/css/' . $style['file'];
+      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data .= $style['file'];
     }
     if (!empty($data)) {
       // Set stylesheet properties.
@@ -75,7 +75,7 @@ function cellular_add_css(&$css, $array, $cellular = FALSE) {
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
       // Push stylesheet onto $css.
       $css[$data] = $style;
-     // drupal_add_css($data, $style);
+      // drupal_add_css($data, $style);
     }
   }
 }
@@ -101,9 +101,9 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
       $ocss = $data;
     }
     else {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
       // Or set data to local file.
-      $data .= '/css/' . $style['file'];
+      $data .= $style['file'];
     }
     // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
