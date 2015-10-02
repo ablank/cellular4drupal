@@ -32,12 +32,11 @@
     background-size: 9em;
     background-repeat: no-repeat;
     background-position: left center;
-    border: 2px solid $light_grey;
     background-image: url('../assets/icons/min/png/menu.png');
     background-image: url('../assets/icons/min/svg/menu.svg');
+    border: 2px solid $border_color;
     @include border-radius();
     @include transition();
-    @include translate3d(0,0,0);
   }
 
   .jMmenu.menu {
@@ -49,8 +48,8 @@
     opacity: 0;
     overflow: hidden;
     background-color: rgba($black, 0.6);
+    transform: translate3d(0,0,0);
     @include transition();
-    @include translate3d(0,0,0);
 
     ul {
       margin: 0 0 0 .4em;

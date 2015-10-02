@@ -100,7 +100,7 @@
   </div>
   <!-- /#header -->
 
-  <div id="app">
+  <div id="app" class="cell center">
     <?php
     print render($title_prefix);
     // Error Details.

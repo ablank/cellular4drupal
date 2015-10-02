@@ -3,6 +3,21 @@
  * Critical styles to be added inline.
  */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -43,5 +58,5 @@
 */
 /* line 8, ../sass/critical.scss */
 body {
-  background: #8C0D00;
+  background: #8c0d00;
 }

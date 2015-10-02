@@ -8,7 +8,7 @@
     attach: function (context, settings) {
       // CellularUI functions.
       if (Drupal.settings.cellular.cellularui === true) {
-        
+
         $('.jAccordion').jAccordion({
           duration: 500, // Duration of transition.
           easing: "swing", // Type of easing.
@@ -31,21 +31,24 @@
 
         $('.jTabs').jTabs({
           active: 0, // Array index of initially active content.
-          orient: "horizontal" // || 'vertical'
+          orient: "horizontal" // || "vertical"
         });
-
+        $('.jTabs-vertical').jTabs({
+          active: 0, // Array index of initially active content.
+          orient: "vertical" //
+        });
+$('.jScrolli').jScrolli();
+/*
         $('.jScrolli').jScrolli({
           cclass: 'jScrolli', // Object class selector
           active: 0, // Index of initially selected slide
-          size: {
-            //width: 700,
-            height: 'auto' // 'auto' or '[value]', i.e. '300px'
-          },
+          height: 'auto', // 'auto' or '[value]', i.e. '300px'
           controls: {
-            events: 'click touchend MSPointerUp',
             showcontrols: true,
+            keyboard: true,
+            swipe: true,
             showmarkers: true,
-            autoplay: true,
+            autoplay: false,
             pauseonhover: true,
             text: {
               next: 'Next',
@@ -54,10 +57,8 @@
             }
           },
           transition: {
-            function: 'fn.slide', //
-            pause: 5, // Time (seconds) to pause between slides.
-            speed: 500 // Animation speed (milliseconds).
-
+            pause: 5 // Time (seconds) to pause between slides.
+              //speed: 500 // Animation speed (milliseconds).
           },
           caption: {
             enable: true,
@@ -66,7 +67,7 @@
           },
           autodim: true,
           delay: 1.4 // Time (seconds) to wait before dimming.
-        });
+        });*/
       }
 
       // Backstretch functions.

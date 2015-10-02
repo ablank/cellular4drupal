@@ -3,93 +3,96 @@
   * CellularUI : jTabs
 */
 
-.cellular {
+.jTabs-wrap {
+  display: block;
+  clear: both;
+  margin: 0;
+  padding: 0;
 
-  &.jTabs {
-    display: block;
+  .panel {
     clear: both;
+    z-index: 1;
+    bottom: 1px;
+  }
+
+  & > ul {
     margin: 0;
     padding: 0;
+  }
 
-    .tab {
-      float: left;
-      display: block;
-      list-style: none;
-      margin: 0 0.1em 0 0;
-      z-index: 2;
+  .tab {
+    float: left;
+    margin: 0 0 0 0.1em;
+    z-index: 2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .title {
+      padding: .4em .6em;
+      border: $border_color 1px solid;
+    }
+
+    &.active {
+      background-color: $panel_background;
+      color: $panel_color;
 
       .title {
-        //float: left;
-        padding: .4em .6em;
-        border: $grey 1px solid;
-      }
+        color: $panel_color;
+        background: $panel_background;
+        border-bottom-color: $panel_background;
 
-      &.active {
-        background-color: $white;
-        color: $dark_grey;
-
-        .title {
-          color: $dark_grey;
-          background: $white;
-          border-bottom-color: $white;
-
-          a {
-            color: $dark_grey;
-          }
+        a {
+          color: $panel_color;
         }
       }
+    }
+  }
+
+  // Vertical Tab Styling
+  &.vertical {
+
+    & > ul {
+      float: left;
+      width: 25%;
+      //margin: 0;
     }
 
     .panel {
-      float: left;
-      clear: both;
-      z-index: 1;
-      bottom: 1px;
-      width: 96%;
-      padding: 0 1em 1em;
-      margin-bottom: 1.4em;
-      border-color: $grey;
+      display: inline;
+      display: inline-block;
+      clear: none;
+      bottom: 0;
+      right: 1px;
     }
 
-    // Vertical Tab Styling
-    &.vertical {
-      float: left;
+    .tab {
       display: block;
-      width: 100%;
+      float: none;
+      margin: .1em 0;
 
-      > li,
-      .tab {
-        clear: left;
-        margin: .1em 0;
-        border: none;
+      &:first-child {
+        margin-top: 0;
+      }
 
-        .title {
-          padding: .4em 1%;
-          border: none;
+      .title {
+        padding: .4em 1%;
 
-          a {
-            padding: 0 1em;
-          }
-        }
-
-        &.active {
-          border: none;
-
-          .title {
-            border: none;
-          }
+        a {
+          padding: 0 1em;
         }
       }
 
-      .panel {
-        display: inline;
-        display: inline-block;
-        clear: none;
-        margin: 0;
-        padding: 1%;
-        width: 68%;
-        border: none;
+      &.active {
+        // border-color: $panel_background;
+
+        .title {
+          border-right-color: $panel_background;
+          border-bottom-color: $panel_color;
+        }
       }
     }
   }
 }
+

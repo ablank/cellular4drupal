@@ -3,6 +3,21 @@
  * Old Internet Explorer is breakin internetz.
  */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -42,41 +57,56 @@
   * https://github.com/jh3y/whirl/
 */
 /* line 8, ../sass/ie.scss */
-body,
-* {
+body {
   word-wrap: break-word;
-  zoom: 1.0;
 }
 
-/* line 14, ../sass/ie.scss */
+/* line 12, ../sass/ie.scss */
 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 18, ../sass/ie.scss */
+/* line 16, ../sass/ie.scss */
 legend {
   color: #f1f1f1;
 }
 
-/* line 23, ../sass/ie.scss */
+/* line 21, ../sass/ie.scss */
 input,
 textarea,
 select {
   *font-size: 100%;
 }
 
-/* line 32, ../sass/ie.scss */
-input[type=checkbox], input[type=radio] {
+/* line 30, ../sass/ie.scss */
+input[type=checkbox],
+input[type=radio] {
   display: inline;
   margin: 0.3em;
   vertical-align: middle;
 }
-/* line 38, ../sass/ie.scss */
-input[type=checkbox]:focus, input[type=radio]:focus {
+/* line 36, ../sass/ie.scss */
+input[type=checkbox]:focus,
+input[type=radio]:focus {
   border: thin solid;
 }
 
-/* line 45, ../sass/ie.scss */
-.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10 {
+/* line 43, ../sass/ie.scss */
+.cell,
+.cell-100,
+.cell-90,
+.cell-80,
+.cell-75,
+.cell-70,
+.cell-60,
+.cell-50,
+.cell-40,
+.cell-30,
+.cell-25,
+.cell-20,
+.cell-10,
+.cell-33,
+.cell-66 {
   overflow: visible;
+  zoom: 1;
 }

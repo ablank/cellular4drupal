@@ -11,12 +11,12 @@
 }
 //////
 
-#page-wrap {
-
-}
+#page-wrap {}
 
 #app {
   z-index: 1;
+  max-width: $container_width;
+  margin: 0 auto;
   @if (($header_position == absolute) or ($header_position == fixed)) {
     margin-top: $header_height;
   }

@@ -4,14 +4,16 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 <g>
-	<path fill="#FFFFFF" d="M22,28H10V18h12V28z"/>
-	<path fill="#777777" d="M8,2h16v4H8V2z M30,8H2c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h6v8h16v-8h6c1.1,0,2-0.9,2-2V10
-		C32,8.9,31.1,8,30,8 M22,28H10V18h12V28z"/>
-	<path fill="none" d="M11.488,25.897h9.028"/>
-	<path fill="#808080" d="M20.516,26.514h-9.028v-1.231h9.028V26.514z"/>
-	<path fill="none" d="M11.488,23.437h9.028"/>
-	<path fill="#808080" d="M20.516,24.052h-9.028v-1.229h9.028V24.052z"/>
-	<path fill="none" d="M11.488,20.975h9.028"/>
-	<path fill="#808080" d="M20.516,21.59h-9.028V20.36h9.028V21.59z"/>
+	<g>
+		<path fill="#C8C8C8" d="M28.156,7.946H3.844c-0.955,0-1.736,0.781-1.736,1.736v8.681c0,0.955,0.782,1.736,1.736,1.736h5.21v6.947
+			h13.892V20.1h5.209c0.955,0,1.736-0.781,1.736-1.736V9.683C29.891,8.727,29.11,7.946,28.156,7.946"/>
+	</g>
+	<rect x="10.751" y="16.629" fill="#FFFFFF" width="10.418" height="8.682"/>
+	<path fill="#B4B4B4" d="M19.881,24.02h-7.837v-1.068h7.837V24.02z"/>
+	<path fill="#B4B4B4" d="M19.881,21.883h-7.837v-1.066h7.837V21.883z"/>
+	<path fill="#B4B4B4" d="M19.881,19.744h-7.837v-1.068h7.837V19.744z"/>
+	<g>
+		<rect x="9.271" y="4.953" fill="#B4B4B4" width="13.457" height="3.039"/>
+	</g>
 </g>
 </svg>

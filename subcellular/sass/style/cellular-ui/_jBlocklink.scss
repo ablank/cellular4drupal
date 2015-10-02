@@ -13,10 +13,10 @@
     display: inline-block;
     vertical-align: top;
     margin: 1em;
-    color: $dark_grey;
+    color: $panel_color;
     background: $panel_background;
+    box-shadow: 0 0 .1em .1em $light_grey;
     @include transition();
-    @include box-shadow(0 0 .1em .1em $light_grey);
 
     p,
     a {
@@ -34,7 +34,7 @@
     &:focus {
       color: $active_color;
       text-decoration: none;
-      @include box-shadow(0 0 .3em .3em $light_grey);
+      box-shadow: 0 0 .3em .3em $light_grey;
 
       p,
       a {

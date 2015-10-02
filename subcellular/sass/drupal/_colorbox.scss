@@ -12,9 +12,8 @@ $border: .4em;
 // Links to colorbox.
 a{
   &.colorbox {
-    display: inline;
     display: inline-block;
-    margin: 1em;
+    margin: auto;
     box-shadow: 0 0 .2em 0.1em $light_grey;
   }
   &:hover.colorbox,
@@ -70,7 +69,7 @@ a{
   &:hover,
   &:focus {
     background-color: $hilight;
-    box-shadow: 0 0 0.3em 0.1em $hilight;
+    box-shadow: inset 0 0 0.3em 0.1em $dark_grey;
   }
 }
 
@@ -111,7 +110,7 @@ a{
 
   &:hover,
   &:focus {
-    box-shadow: 0 0 0.3em 0.1em lighten(adjust-saturation($red, 10%), 10%);
+    box-shadow: inset 0 0 0.3em 0.1em lighten(adjust-saturation($red, 10%), 10%);
     background-color: lighten(adjust-saturation($red, 10%), 10%);
   }
 }

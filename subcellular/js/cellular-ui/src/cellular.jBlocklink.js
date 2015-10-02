@@ -8,19 +8,19 @@ cellular.jBlocklink = function (opts) {
       var $obj = jQuery(this);
 
       $obj.once(o.cclass, function () {
-        var a = $obj.find('a').eq(0);
-        var ahref = a.attr('href');
+        var a1 = $obj.find('a').eq(0);
+        var href = a1.attr('href');
 
-        if (ahref !== undefined) {
-          var bl = jQuery('<a href="' + ahref + '" />');
+        if (href !== undefined) {
+          var blink = jQuery('<a href="' + href + '" />');
 
-          bl.classify([
+          blink.classify([
             cellular.opts.cclass,
             o.cclass,
-            a.attr('class') ? a.attr('class') : null
+            a1.attr('class') ? a1.attr('class') : null
           ]);
           // .data(a.data());
-          $obj.wrap(bl)
+          $obj.wrap(blink)
             .find('h2, h3').addClass('title');
         }
       });

@@ -2,7 +2,9 @@
  * Cellular utility functions
  */
 
-// Get the breakpoints specified in CSS
+/**
+ * Get the breakpoints specified in CSS
+ */
 cellular.breakpoint = function () {
   var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content');
 
@@ -12,27 +14,38 @@ cellular.breakpoint = function () {
   };
 };
 
-// Add active class to element, remove active class from element siblings
-cellular.activate = function () {
+/**
+ * Add active class to element, remove active class from element siblings
+ */
+cellular.activate = function (theclass) {
+  theclass = theclass ? theclass : cellular.opts.activeclass;
+
   return this.each(function () {
     var $t = jQuery(this);
 
-    if (!$t.hasClass(cellular.opts.activeclass)) {
-      $t.addClass(cellular.opts.activeclass)
-        .siblings().removeClass(cellular.opts.activeclass);
+    if (!$t.hasClass(theclass)) {
+      $t.addClass(theclass)
+        .siblings().removeClass(theclass);
     }
   });
 };
 
-// Remove 'active' class
-cellular.deactivate = function () {
+/**
+ * Remove 'active' class
+ */
+cellular.deactivate = function (theclass) {
+  theclass = theclass ? theclass : cellular.opts.activeclass;
+
   return this.each(function () {
-    jQuery(this).removeClass(cellular.opts.activeclass);
+    jQuery(this).removeClass(theclass);
   });
 };
 
-// Wrap element's children after 1st child
+/**
+ * Wrap element's children after 1st child
+ */
 cellular.kidWrap = function () {
+
   return this.each(function () {
     var $t = jQuery(this);
 
@@ -42,16 +55,22 @@ cellular.kidWrap = function () {
   });
 };
 
-// Add array of classes to element
+/**
+ * Add array of classes to element
+ */
 cellular.classify = function ($array) {
+
   return this.each(function () {
     jQuery(this).addClass($array.join(' '));
   });
 };
 
-// Underscore's debounce fn
+/**
+ * Debounce fn borrowed from Underscore.js
+ */
 cellular.debounce = function (func, wait, immediate) {
   var timeout;
+  
   return function () {
     var context = this,
       args = arguments,
@@ -69,55 +88,83 @@ cellular.debounce = function (func, wait, immediate) {
   };
 };
 
-// Set state on window resize
+/**
+ * Detect css transition end event.
+ * @see Function from David Walsh: http://davidwalsh.name/css-animation-callback
+ */
+cellular.transitionend = function () {
+  var t,
+    el = document.createElement("test"),
+    transitions = {
+      transition: "transitionend",
+      OTransition: "oTransitionEnd",
+      MozTransition: "transitionend",
+      WebkitTransition: "webkitTransitionEnd"
+    };
+
+  for (t in transitions) {
+    if (el.style[t] !== undefined) {
+
+      return transitions[t];
+    }
+  }
+};
+
+/**
+ * Set state on window resize
+ */
 cellular.windowstate = cellular.debounce(function () {
+  var ob = cellular.state.breakpoint;
+
   cellular.state.breakpoint = cellular.breakpoint().type;
-// console.log(cellular.state);
+  jQuery('body').removeClass(ob)
+    .addClass(cellular.state.breakpoint);
 }, 500);
 
-// Set state on document scroll
-cellular.docstate = cellular.debounce(function () {
+/**
+ * Set state on document scroll
+ */
+cellular.scrollstate = cellular.debounce(function (e, y) {
   var el = jQuery('body'),
-    cclass = 'scrolled';
-  cellular.state.scrolltop = $(document).scrollTop();
+    cclass = 'scrolled',
+    uc = cclass + '-up',
+    dc = cclass + '-down',
+    y = cellular.state.scrolltop,
+    scrolltimeout = null;
 
-  if(cellular.state.scrolltop > 0){
+  cellular.state.scrolltop = $(document).scrollTop();
+  cellular.scrolltimer(el, uc, dc);
+  // Detect if page is scrolled
+  if (cellular.state.scrolltop > 0) {
     el.addClass(cclass);
   }
   else {
     el.removeClass(cclass);
   }
-// console.log(cellular.state);
-}, 20);
-/*
- cellular.whichTransitionEvent = function () {
- // Thanks Modernizr :)
- var t,
- el = document.createElement('fakeelement'),
- transitions = {
- transition: 'transitionend',
- OTransition: 'oTransitionEnd',
- MozTransition: 'transitionend',
- WebkitTransition: 'webkitTransitionEnd'
- };
+  // Detect scroll direction
+  if (cellular.state.scrolltop > y) {
+    if (!el.hasClass(dc)) {
+      el.removeClass(uc)
+        .addClass(dc);
+    }
+  }
+  else {
+    if (!el.hasClass(uc)) {
+      el.removeClass(dc)
+        .addClass(uc);
+    }
+  }
+}, 0, true);
 
- for (t in transitions) {
- if (el.style[t] !== undefined) {
- return transitions[t];
- }
- }
- };
-
- // Listen for a transition!
- var transitionEvent = whichTransitionEvent();
- transitionEvent && e.addEventListener(transitionEvent, function () {
- console.log('Transition complete!  This is the callback, no library needed!');
- });
+/**
+ * Reset scroll timer
  */
-
-/*
- The "whichTransitionEvent" can be swapped for "animation" instead of "transition" texts, as can the usage :)
- */
+cellular.scrolltimer = function (el, uc, dc) {
+  window.clearTimeout(cellular.state.scrolltimer);
+  cellular.state.scrolltimer = window.setTimeout(function () {
+    el.removeClass(uc + ' ' + dc);
+  }, 2000);
+};
 
 /*
  cellular.autodimension = function ($obj, dimension) {

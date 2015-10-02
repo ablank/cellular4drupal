@@ -3,42 +3,58 @@ cellular.jAccordion = function (opts) {
     active: 0, // Index value of initial content to display.
     duration: 500, // Duration of transition.
     easing: "swing", // Type of easing.
-    single: false // Allow multiple panels to be opened or only 1?
-  }, opts);
+    single: false, // Allow multiple panels to be opened or only 1?
+    pclass: "panel"
+  }, opts),
+    fn = {};
 
-  var fn = {};
+  o.pselect = '.' + o.pclass;
+  /**
+   * The <li> object to show.
+   *
+   * @param object li
+   *  $('<li>')
+   */
+  fn.showContent = function (li) {
 
-  fn.showContent = function ($li) {
-
-    if (o.single === true) {
-      $li.siblings(cellular.opts.activeclass).deactivate()
-        .find('.panel').slideUp(o.duration, o.easing);
+    if (o.single) {
+      li.siblings().find(o.pselect).slideUp(o.duration, o.easing);
+      li.activate()
+        .find(o.pselect).slideDown(o.duration, o.easing);
     }
     else {
-      $li.activate()
-        .find('.panel').slideToggle(o.duration, o.easing);
+      li.toggleClass(cellular.opts.activeclass)
+        .find(o.pselect).slideToggle(o.duration, o.easing);
     }
   };
 
+  /**
+   * Generate markup for controls & other elements.
+   *
+   * @param object $obj
+   */
   fn.style = function ($obj) {
     $obj.once('jAccordion', function () {
 
       $obj.addClass(cellular.opts.cclass)
         .find('> li').each(function () {
-        var $t = jQuery(this);
+        var li = jQuery(this);
 
-        $t.kidWrap();
-        $t.children().eq(0).addClass('title');
-        $t.children().eq(1).classify([cellular.opts.cclass, 'panel']);
-        $t.find('.panel').hide();
-        $t.find('.title').click(function (e) {
+        li.kidWrap();
+        li.children().eq(0).addClass('title');
+        li.children().eq(1).classify([cellular.opts.cclass, 'panel']);
+        li.find(o.pselect).hide();
+        li.find('.title').click(function (e) {
           e.preventDefault();
-          fn.showContent($t);
+          fn.showContent(li);
         });
       });
     });
   };
 
+  /**
+   * Init jAccordion
+   */
   fn.init = function () {
     var $obj = jQuery(this);
     // Generate markup for accordion

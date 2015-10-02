@@ -270,7 +270,7 @@ http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRa
   cursor: pointer;
   position: relative;
   margin-top: 2px;
-  padding: .5em .5em .5em .7em;
+  padding: 0.5em 0.5em 0.5em 0.7em;
   /* support: IE7 */
   min-height: 0;
 }
@@ -282,7 +282,7 @@ http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRa
 
 /* line 205, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-accordion .ui-accordion-noicons {
-  padding-left: .7em;
+  padding-left: 0.7em;
 }
 
 /* line 209, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -293,7 +293,7 @@ http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRa
 /* line 213, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
   position: absolute;
-  left: .5em;
+  left: 0.5em;
   top: 50%;
   margin-top: -8px;
 }
@@ -319,7 +319,7 @@ http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRa
   position: relative;
   padding: 0;
   line-height: normal;
-  margin-right: .1em;
+  margin-right: 0.1em;
   cursor: pointer;
   vertical-align: middle;
   text-align: center;
@@ -367,26 +367,26 @@ button.ui-button-icons-only {
 
 /* line 278, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-button-text-only .ui-button-text {
-  padding: .4em 1em;
+  padding: 0.4em 1em;
 }
 
 /* line 282, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-button-icon-only .ui-button-text,
 .ui-button-icons-only .ui-button-text {
-  padding: .4em;
+  padding: 0.4em;
   text-indent: -9999999px;
 }
 
 /* line 288, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-button-text-icon-primary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
-  padding: .4em 1em .4em 2.1em;
+  padding: 0.4em 1em 0.4em 2.1em;
 }
 
 /* line 293, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-button-text-icon-secondary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
-  padding: .4em 2.1em .4em 1em;
+  padding: 0.4em 2.1em 0.4em 1em;
 }
 
 /* line 298, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -398,7 +398,7 @@ button.ui-button-icons-only {
 /* no icon support for input elements, provide padding by default */
 /* line 304, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 input.ui-button {
-  padding: .4em 1em;
+  padding: 0.4em 1em;
 }
 
 /* button icon element(s) */
@@ -423,14 +423,14 @@ input.ui-button {
 .ui-button-text-icon-primary .ui-button-icon-primary,
 .ui-button-text-icons .ui-button-icon-primary,
 .ui-button-icons-only .ui-button-icon-primary {
-  left: .5em;
+  left: 0.5em;
 }
 
 /* line 330, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-button-text-icon-secondary .ui-button-icon-secondary,
 .ui-button-text-icons .ui-button-icon-secondary,
 .ui-button-icons-only .ui-button-icon-secondary {
-  right: .5em;
+  right: 0.5em;
 }
 
 /* button sets */
@@ -442,7 +442,7 @@ input.ui-button {
 /* line 341, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-buttonset .ui-button {
   margin-left: 0;
-  margin-right: -.3em;
+  margin-right: -0.3em;
 }
 
 /* workarounds */
@@ -457,14 +457,14 @@ button.ui-button::-moz-focus-inner {
 /* line 354, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker {
   width: 17em;
-  padding: .2em .2em 0;
+  padding: 0.2em 0.2em 0;
   display: none;
 }
 
 /* line 360, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker .ui-datepicker-header {
   position: relative;
-  padding: .2em 0;
+  padding: 0.2em 0;
 }
 
 /* line 365, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -535,14 +535,14 @@ button.ui-button::-moz-focus-inner {
 /* line 420, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker table {
   width: 100%;
-  font-size: .9em;
+  font-size: 0.9em;
   border-collapse: collapse;
-  margin: 0 0 .4em;
+  margin: 0 0 0.4em;
 }
 
 /* line 427, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker th {
-  padding: .7em .3em;
+  padding: 0.7em 0.3em;
   text-align: center;
   font-weight: bold;
   border: 0;
@@ -558,7 +558,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker td span,
 .ui-datepicker td a {
   display: block;
-  padding: .2em;
+  padding: 0.2em;
   text-align: right;
   text-decoration: none;
 }
@@ -566,8 +566,8 @@ button.ui-button::-moz-focus-inner {
 /* line 447, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker .ui-datepicker-buttonpane {
   background-image: none;
-  margin: .7em 0 0 0;
-  padding: 0 .2em;
+  margin: 0.7em 0 0 0;
+  padding: 0 0.2em;
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
@@ -576,9 +576,9 @@ button.ui-button::-moz-focus-inner {
 /* line 456, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker .ui-datepicker-buttonpane button {
   float: right;
-  margin: .5em .2em .4em;
+  margin: 0.5em 0.2em 0.4em;
   cursor: pointer;
-  padding: .2em .6em .3em .6em;
+  padding: 0.2em 0.6em 0.3em 0.6em;
   width: auto;
   overflow: visible;
 }
@@ -602,7 +602,7 @@ button.ui-button::-moz-focus-inner {
 /* line 478, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-datepicker-multi .ui-datepicker-group table {
   width: 95%;
-  margin: 0 auto .4em;
+  margin: 0 auto 0.4em;
 }
 
 /* line 483, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -697,20 +697,20 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
   top: 0;
   left: 0;
-  padding: .2em;
+  padding: 0.2em;
   outline: 0;
 }
 
 /* line 563, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-dialog .ui-dialog-titlebar {
-  padding: .4em 1em;
+  padding: 0.4em 1em;
   position: relative;
 }
 
 /* line 568, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-dialog .ui-dialog-title {
   float: left;
-  margin: .1em 0;
+  margin: 0.1em 0;
   white-space: nowrap;
   width: 90%;
   overflow: hidden;
@@ -720,7 +720,7 @@ button.ui-button::-moz-focus-inner {
 /* line 577, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
-  right: .3em;
+  right: 0.3em;
   top: 50%;
   width: 20px;
   margin: -10px 0 0 0;
@@ -732,7 +732,7 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-content {
   position: relative;
   border: 0;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background: none;
   overflow: auto;
 }
@@ -742,8 +742,8 @@ button.ui-button::-moz-focus-inner {
   text-align: left;
   border-width: 1px 0 0 0;
   background-image: none;
-  margin-top: .5em;
-  padding: .3em 1em .5em .4em;
+  margin-top: 0.5em;
+  padding: 0.3em 1em 0.5em 0.4em;
 }
 
 /* line 603, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -753,7 +753,7 @@ button.ui-button::-moz-focus-inner {
 
 /* line 607, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-dialog .ui-dialog-buttonpane button {
-  margin: .5em .4em .5em 0;
+  margin: 0.5em 0.4em 0.5em 0;
   cursor: pointer;
 }
 
@@ -808,7 +808,7 @@ button.ui-button::-moz-focus-inner {
 .ui-menu .ui-menu-item a {
   text-decoration: none;
   display: block;
-  padding: 2px .4em;
+  padding: 2px 0.4em;
   line-height: 1.5;
   min-height: 0;
   /* support: IE7 */
@@ -825,7 +825,7 @@ button.ui-button::-moz-focus-inner {
 /* line 668, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-menu .ui-state-disabled {
   font-weight: normal;
-  margin: .4em 0 .2em;
+  margin: 0.4em 0 0.2em;
   line-height: 1.5;
 }
 
@@ -850,8 +850,8 @@ button.ui-button::-moz-focus-inner {
 /* line 689, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-menu .ui-icon {
   position: absolute;
-  top: .2em;
-  left: .2em;
+  top: 0.2em;
+  left: 0.2em;
 }
 
 /* right-aligned */
@@ -906,7 +906,7 @@ button.ui-button::-moz-focus-inner {
 .ui-slider .ui-slider-range {
   position: absolute;
   z-index: 1;
-  font-size: .7em;
+  font-size: 0.7em;
   display: block;
   border: 0;
   background-position: 0 0;
@@ -921,13 +921,13 @@ button.ui-button::-moz-focus-inner {
 
 /* line 751, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-slider-horizontal {
-  height: .8em;
+  height: 0.8em;
 }
 
 /* line 755, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-slider-horizontal .ui-slider-handle {
-  top: -.3em;
-  margin-left: -.6em;
+  top: -0.3em;
+  margin-left: -0.6em;
 }
 
 /* line 760, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -948,15 +948,15 @@ button.ui-button::-moz-focus-inner {
 
 /* line 773, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-slider-vertical {
-  width: .8em;
+  width: 0.8em;
   height: 100px;
 }
 
 /* line 778, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-slider-vertical .ui-slider-handle {
-  left: -.3em;
+  left: -0.3em;
   margin-left: 0;
-  margin-bottom: -.6em;
+  margin-bottom: -0.6em;
 }
 
 /* line 784, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -990,9 +990,9 @@ button.ui-button::-moz-focus-inner {
   background: none;
   color: inherit;
   padding: 0;
-  margin: .2em 0;
+  margin: 0.2em 0;
   vertical-align: middle;
-  margin-left: .4em;
+  margin-left: 0.4em;
   margin-right: 22px;
 }
 
@@ -1000,7 +1000,7 @@ button.ui-button::-moz-focus-inner {
 .ui-spinner-button {
   width: 16px;
   height: 50%;
-  font-size: .5em;
+  font-size: 0.5em;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -1049,13 +1049,13 @@ button.ui-button::-moz-focus-inner {
 .ui-tabs {
   position: relative;
   /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
-  padding: .2em;
+  padding: 0.2em;
 }
 
 /* line 864, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-tabs .ui-tabs-nav {
   margin: 0;
-  padding: .2em .2em 0;
+  padding: 0.2em 0.2em 0;
 }
 
 /* line 869, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -1064,7 +1064,7 @@ button.ui-button::-moz-focus-inner {
   float: left;
   position: relative;
   top: 0;
-  margin: 1px .2em 0 0;
+  margin: 1px 0.2em 0 0;
   border-bottom-width: 0;
   padding: 0;
   white-space: nowrap;
@@ -1073,7 +1073,7 @@ button.ui-button::-moz-focus-inner {
 /* line 880, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
   float: left;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   text-decoration: none;
 }
 
@@ -1122,26 +1122,26 @@ body .ui-tooltip {
 /* line 939, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-content {
   border: 1px solid #aaa;
-  background: #FEFEFE;
-  color: #444444;
+  background: #fefefe;
+  color: #444;
 }
 
 /* line 945, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-content a {
-  color: #444444;
+  color: #444;
 }
 
 /* line 949, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-header {
-  background: #FEFEFE;
-  color: #444444;
+  background: #fefefe;
+  color: #444;
   font-weight: bold;
   border: 1px solid;
 }
 
 /* line 956, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-header a {
-  color: #444444;
+  color: #444;
 }
 
 /* Interaction states
@@ -1150,17 +1150,17 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  border: 1px solid #FEFEFE;
-  background: #29B4DE;
+  border: 1px solid #fefefe;
+  background: #29b4de;
   font-weight: normal;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /* line 971, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-  color: #FEFEFE;
+  color: #fefefe;
   text-decoration: none;
 }
 
@@ -1171,10 +1171,10 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #FEFEFE;
+  border: 1px solid #fefefe;
   background: #1982a2;
   font-weight: normal;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /* line 990, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -1186,7 +1186,7 @@ body .ui-tooltip {
 .ui-state-focus a:hover,
 .ui-state-focus a:link,
 .ui-state-focus a:visited {
-  color: #FEFEFE;
+  color: #fefefe;
   text-decoration: none;
 }
 
@@ -1194,9 +1194,9 @@ body .ui-tooltip {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-  background: #FEFEFE;
+  background: #fefefe;
   font-weight: normal;
-  color: #29B4DE;
+  color: #29b4de;
   border: 1px solid;
 }
 
@@ -1204,7 +1204,7 @@ body .ui-tooltip {
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-  color: #29B4DE;
+  color: #29b4de;
   text-decoration: none;
 }
 
@@ -1216,37 +1216,37 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-highlight {
   border: 1px solid #fd1;
   background: #ffd;
-  color: #444444;
+  color: #444;
 }
 
 /* line 1028, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-  color: #444444;
+  color: #444;
 }
 
 /* line 1034, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  border: 1px solid #8C0D00;
+  border: 1px solid #8c0d00;
   background: white;
-  color: #8C0D00;
+  color: #8c0d00;
 }
 
 /* line 1042, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
-  color: #8C0D00;
+  color: #8c0d00;
 }
 
 /* line 1048, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
-  color: #8C0D00;
+  color: #8c0d00;
 }
 
 /* line 1054, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -1260,7 +1260,7 @@ body .ui-tooltip {
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
-  opacity: .7;
+  opacity: 0.7;
   filter: Alpha(Opacity=70);
   font-weight: normal;
 }
@@ -1269,7 +1269,7 @@ body .ui-tooltip {
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
-  opacity: .35;
+  opacity: 0.35;
   filter: Alpha(Opacity=35);
   background-image: none;
 }
@@ -2212,7 +2212,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-  border-top-left-radius: .4em;
+  border-top-left-radius: 0.4em;
 }
 
 /* line 1834, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -2220,7 +2220,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-  border-top-right-radius: .4em;
+  border-top-right-radius: 0.4em;
 }
 
 /* line 1841, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -2228,7 +2228,7 @@ body .ui-tooltip {
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-  border-bottom-left-radius: .4em;
+  border-bottom-left-radius: 0.4em;
 }
 
 /* line 1848, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -2236,23 +2236,23 @@ body .ui-tooltip {
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-  border-bottom-right-radius: .4em;
+  border-bottom-right-radius: 0.4em;
 }
 
 /* Overlays */
 /* line 1856, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-overlay {
   background: #f1f1f1;
-  opacity: .3;
+  opacity: 0.3;
   filter: Alpha(Opacity=30);
 }
 
 /* line 1862, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-shadow {
-  margin: -.8em 0 0 -.8em;
-  padding: .8em;
-  background: #444444;
-  opacity: .3;
+  margin: -0.8em 0 0 -0.8em;
+  padding: 0.8em;
+  background: #444;
+  opacity: 0.3;
   filter: Alpha(Opacity=30);
-  border-radius: .4em;
+  border-radius: 0.4em;
 }

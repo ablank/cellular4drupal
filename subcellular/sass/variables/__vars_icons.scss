@@ -1,9 +1,24 @@
-// Icon Configuration.
+// Icon Source directory.
+$icon_source_png: '../assets/icons/min/png/';
+$icon_source_svg: '../assets/icons/min/svg/';
+// Size of icon wrapper
 $icon_size: 32px;
-$icon_padding: 10px; // Set icons to include
+// Set padding to offset image from border.
+$icon_padding: 10px; 
 
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+$use_ui_icons: true;
+$use_tech_icons: true;
+$use_social_icons: true;
+
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
 $ui_icons: (
-search
 arrow-up
 arrow-right
 arrow-down

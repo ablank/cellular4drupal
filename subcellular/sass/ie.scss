@@ -5,10 +5,8 @@
 
 @import "variables";
 
-body,
-* {
+body {
   word-wrap: break-word;
-  zoom: 1.0;
 }
 
 img {
@@ -42,6 +40,10 @@ input {
   }
 }
 
-#{$cells}{
+.cell,
+#{$cells},
+.cell-33,
+.cell-66 {
   overflow: visible;
+  zoom: 1;
 }

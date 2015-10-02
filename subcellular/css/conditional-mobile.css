@@ -3,6 +3,21 @@
  * Dynamically loaded styling for mobile devices
  */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -46,8 +61,8 @@
   * Styling for mobile devices included in style.css
 */
 @media screen and (max-width: 650px) {
-  /* line 10, ../sass/style/_query_mobile.scss */
+  /* line 8, ../sass/style/_query_mobile.scss */
   body:before {
-    content: "mobile-650px";
+    content: "window_mobile-650px";
   }
 }

@@ -3,6 +3,21 @@
  * Dynamically loaded styling for narrow screens
  */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -46,8 +61,8 @@
   * Styling for tablets & other narrow devices included in style.css
 */
 @media screen and (min-width: 650px) and (max-width: 800px) {
-  /* line 11, ../sass/style/_query_narrow.scss */
+  /* line 9, ../sass/style/_query_narrow.scss */
   body:before {
-    content: "narrow-800px";
+    content: "window_narrow-800px";
   }
 }

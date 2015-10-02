@@ -14,6 +14,21 @@
 http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRadius=.4em&bgColorHeader=%23fff&bgTextureHeader=flat&bgImgOpacityHeader=0&borderColorHeader=%23222&fcHeader=%23222&iconColorHeader=%23222&bgColorContent=%23fff&bgTextureContent=flat&bgImgOpacityContent=0&borderColorContent=%23aaa&fcContent=%23222&iconColorContent=%23222&bgColorDefault=%23f50&bgTextureDefault=flat&bgImgOpacityDefault=0&borderColorDefault=%23fff&fcDefault=%23fff&iconColorDefault=%23fff&bgColorHover=%23d50&bgTextureHover=flat&bgImgOpacityHover=0&borderColorHover=%23fff&fcHover=%23fff&iconColorHover=%23fff&bgColorActive=%23fff&bgTextureActive=flat&bgImgOpacityActive=0&borderColorActive=%23f50&fcActive=%23f50&iconColorActive=%23f50&bgColorHighlight=%23ffd&bgTextureHighlight=flat&bgImgOpacityHighlight=0&borderColorHighlight=%23fd1&fcHighlight=%23222&iconColorHighlight=%2315f&bgColorError=%23fee&bgTextureError=flat&bgImgOpacityError=0&borderColorError=%23c00&fcError=%23c00&iconColorError=%23c00&bgColorOverlay=%23aaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23aaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=.8em&offsetTopShadow=-.8em&offsetLeftShadow=-.8em&cornerRadiusShadow=.4em
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 /**
+ * Stylesheet breakpoints
+ */
+/**
+ * Variables : General variables available to Cellular
+ *
+ */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
+/**
   * @file
   // Cellular SASS mixins
   //    tread with caution

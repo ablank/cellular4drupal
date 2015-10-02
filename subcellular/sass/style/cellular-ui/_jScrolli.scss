@@ -7,11 +7,21 @@ $controlsize: 2em;
 $setwidth: false;
 $width: 800px;
 
+// Initial style, before DOM changes
+.jScrolli {
+  height: 240px;
+  opacity: 0;
+  @include transition();
+}
+// Style after js applies structure
+.cellular.jScrolli {
+  opacity: 1;
+}
+
 .jScrolli-wrap {
-  position: relative;
-  display: block;
   overflow: hidden;
-  background-color: $light_grey;
+  background-color: $panel_background;
+  border: $border_color 1px solid;
 
   ul {
     margin: 0;
@@ -21,69 +31,74 @@ $width: 800px;
   }
 
   li {
-    display: inline;
+    //display: inline;
     max-width: none;
     margin: 0;
     padding: 0;
   }
 
-  .slide,
-  .wrap {
+  .slide {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 100%;
     right: 0;
-  }
-
-  .slide {
-    display: none;
-    opacity: 0;
     @include transition();
 
     &.active {
-      display: block;
-      opacity: 1;
-    }
+      left: 0;
 
-    &.previous,
-    &.next {
-      display: block;
-      opacity: 0;
+      .content {
+        opacity: 1;
+      }
     }
 
     &.previous {
+      left: 0;
       right: 100%;
     }
 
     &.next {
       left: 100%;
+      right: 0;
+    }
+
+    /* Slide content */
+    .content {
+      z-index: 1;
+      text-align: center;
+      opacity: 0;
+      background: $panel_background;
+      @include transition();
     }
   }
 
   .caption {
     position: absolute;
-    bottom: 0;
+    bottom: 1em;
     left: 0;
     right: 0;
-    color: $white;
-    max-width: none;
-    margin: 0;
-    padding: 0.8em;
+    z-index: 10;
+    padding: 0 2em;
     background-color: $black;
     background-color: rgba($black, 0.8);
     //max-height: 0;
-    //opacity: 0;
     @include transition();
 
-    p, h2, h3, h4 {
+    p {
+      max-width: none;
+      margin: 0;
+      padding: 0.8em;
       color: $white;
+      opacity: 1;
+      @include transition();
     }
   }
 
   .control {
+    cursor: pointer;
     position: absolute;
-    z-index: 1;
+    z-index: 11;
     text-indent: -999em;
     width: $controlsize;
     height: $controlsize;
@@ -91,23 +106,14 @@ $width: 800px;
     //background-size: $controlsize;
     background-repeat: no-repeat;
     background-image: url(../assets/icons/png/controls.png);
+    background-image: url(../assets/icons/svg/controls.svg);
     @include transition();
-
-    &.pause {
-      top: 0;
-      left: 0;
-      background-position: -54px 8px;
-      border: $white 2px solid;
-      border-radius: 50%;
-      opacity: 0;
-    }
 
     &.prev,
     &.next {
-      cursor: pointer;
       top: 50%;
       opacity: 0.2;
-      background-color: $dark_grey;
+      background-color: $panel_color;
 
       &:hover,
       &:focus {
@@ -124,28 +130,54 @@ $width: 800px;
       right: 0;
       background-position: -88px 8px;
     }
-  }
 
-  .markers {
-    float: left;
-    position: relative;
-    left: 50%;
+    &.play,
+    &.pause {
+      top: 0;
+      left: 0;
+      background-color: $black;
+      border: $white 2px solid;
+      border-radius: 50%;
+      opacity: 0;
+      transition: none;
+    }
 
-    ul {
-      float: left;
-      position: relative;
-      left: -50%;
+    &.play {
+      background-position: 8px 8px;
+    }
+    &.pause {
+      background-position: -54px 8px;
     }
   }
 
+  .markers {/*
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
+    */
+      float: left;
+      position: relative;
+      left: 50%;
+
+      li {
+      float: left;
+      position: relative;
+      left: -50%;
+      }
+  }
+
   .marker {
+    //display: block;
+    //float: left;
     cursor: pointer;
-    display: block;
-    float: left;
+    display: inline;
+    display: inline-block;
     text-indent: -999em;
     width: 0.5em;
     height: 0.5em;
-    margin: .5em;
+    margin: 0.25em 0.5em;
     border: $dark_grey 1px solid;
     border-radius: 50%;
     background-color: $grey;
@@ -177,6 +209,17 @@ $width: 800px;
     .caption {
       //max-height: none;
       //opacity: 1;
+    }
+  }
+
+  /* Styles applied while .slide is transitioning */
+  &.transition {
+
+    .caption {
+
+      p{
+        opacity: 0;
+      }
     }
   }
 }

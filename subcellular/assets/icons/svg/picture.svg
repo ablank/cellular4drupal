@@ -3,8 +3,9 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
-<path fill="#FFFFFF" d="M0,29h32V3H0V29z"/>
-<path fill="#555555" d="M0,29h32V3H0V29z M30,27H2V5h28V27z"/>
-<path fill="#777777" d="M22,10c0,1.656,1.344,3,3,3c1.657,0,3-1.344,3-3c0-1.657-1.343-3-3-3C23.344,7,22,8.343,22,10"/>
-<path fill="#777777" d="M28,25H4l6-16l8,10l4-3L28,25z"/>
+<path fill="#FFFFFF" d="M2,27.375h28V4.625H2V27.375z"/>
+<path fill="#C8C8C8" d="M2,27.375h28V4.625H2V27.375z M28.25,25.625H3.75V6.375h24.5V25.625z"/>
+<path fill="#B4B4B4" d="M21.25,10.75c0,1.449,1.177,2.625,2.625,2.625c1.45,0,2.625-1.176,2.625-2.625
+	c0-1.45-1.175-2.625-2.625-2.625C22.427,8.125,21.25,9.3,21.25,10.75"/>
+<path fill="#B4B4B4" d="M26.5,23.875h-21l5.25-14l7,8.75L21.25,16L26.5,23.875z"/>
 </svg>
