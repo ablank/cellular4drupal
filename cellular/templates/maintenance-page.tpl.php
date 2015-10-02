@@ -70,7 +70,7 @@
         </div>
 
       <?php endif; ?>
-      <div id="app">
+      <div id="app" class="cell center">
 
         <?php
         print render($title_prefix);

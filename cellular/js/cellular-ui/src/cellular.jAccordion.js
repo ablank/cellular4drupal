@@ -8,7 +8,7 @@ cellular.jAccordion = function (opts) {
   }, opts),
     fn = {};
 
-o.pselect = '.'+o.pclass;
+  o.pselect = '.' + o.pclass;
   /**
    * The <li> object to show.
    *

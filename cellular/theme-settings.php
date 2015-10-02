@@ -20,6 +20,67 @@ $form[0] = array(
 '#attached' => array(),
 );
 /*
+* @see file: preprocess/theme-settings/_config.inc
+* jQuery CDN & version settings
+*/
+/*
+* jQuery CDN options.
+*/
+$cdn = array(
+'provider' => array(
+'jquery' => t('jQuery.com'),
+'google' => t('Google'),
+'microsoft' => t('Microsoft'),
+'cloudflare' => t('Cloudflare'),
+),
+'jquery' => array(
+'2.1.4' => '2.1.4',
+'1.11.1' => '1.11.1',
+'1.10.2' => '1.10.2',
+'1.9.1' => '1.9.1',
+'1.8.3' => '1.8.3',
+'1.7.2' => '1.7.2',
+'1.6.4' => '1.6.4',
+'1.5.2' => '1.5.2',
+'1.4.4' => t('1.4.4 : default'),
+),
+'jqueryui' => array(
+// @ v.1.11 individual widget js isn't availanle :(
+'1.10.4' => t('1.10.4'),
+'1.9.2' => t('1.9.2'),
+'1.8.24' => t('1.8.24'),
+),
+);
+// Available jQuery.ui themes:
+$ui_themes = array(
+'custom' => t('CUSTOM'),
+'base' => t('Base'),
+'black-tie' => t('Black-Tie'),
+'blitzer' => t('Blitzer'),
+'cupertino' => t('Cupertino'),
+'dark-hive' => t('Dark-Hive'),
+'dot-luv' => t('Dot-Luv'),
+'eggplant' => t('Eggplant'),
+'excite-bike' => t('Excite-Bike'),
+'flick' => t('Flick'),
+'hot-sneaks' => t('Hot-Sneaks'),
+'humanity' => t('Humanity'),
+'le-frog' => t('Le-Frog'),
+'mint-choc' => t('Mint-Choc'),
+'overcast' => t('Overcast'),
+'pepper-grinder' => t('Pepper-Grinder'),
+'redmond' => t('Redmond'),
+'smoothness' => t('Smoothness'),
+'south-street' => t('South-Street'),
+'start' => t('Start'),
+'sunny' => t('Sunny'),
+'swanky-purse' => t('Swanky-Purse'),
+'trontastic' => t('Trontastic'),
+'ui-darkness' => t('UI-Darkness'),
+'ui-lightness' => t('UI-Lightness'),
+'vader' => t('Vader'),
+);
+/*
 * @see file: preprocess/theme-settings/meta.inc
 * Theme-settings: Set copyright & favicons.
 */
@@ -242,67 +303,6 @@ $form[0]['style_settings']['add_classes'][1]['sidebar_class_dual_sidebars'] = ar
 '#default_value' => theme_get_setting('sidebar_class_dual_sidebars'),
 );
 /*
-* @see file: preprocess/theme-settings/jquery_settings.inc
-* jQuery CDN & version settings
-*/
-/*
-* jQuery CDN options.
-*/
-$cdn = array(
-'provider' => array(
-'jquery' => t('jQuery.com'),
-'google' => t('Google'),
-'microsoft' => t('Microsoft'),
-'cloudflare' => t('Cloudflare'),
-),
-'jquery' => array(
-'2.1.4' => '2.1.4',
-'1.11.1' => '1.11.1',
-'1.10.2' => '1.10.2',
-'1.9.1' => '1.9.1',
-'1.8.3' => '1.8.3',
-'1.7.2' => '1.7.2',
-'1.6.4' => '1.6.4',
-'1.5.2' => '1.5.2',
-'1.4.4' => t('1.4.4 : default'),
-),
-'jqueryui' => array(
-// @ v.1.11 individual widget js isn't availanle :(
-'1.10.4' => t('1.10.4'),
-'1.9.2' => t('1.9.2'),
-'1.8.24' => t('1.8.24'),
-),
-);
-// Available jQuery.ui themes:
-$ui_themes = array(
-'custom' => t('CUSTOM'),
-'base' => t('Base'),
-'black-tie' => t('Black-Tie'),
-'blitzer' => t('Blitzer'),
-'cupertino' => t('Cupertino'),
-'dark-hive' => t('Dark-Hive'),
-'dot-luv' => t('Dot-Luv'),
-'eggplant' => t('Eggplant'),
-'excite-bike' => t('Excite-Bike'),
-'flick' => t('Flick'),
-'hot-sneaks' => t('Hot-Sneaks'),
-'humanity' => t('Humanity'),
-'le-frog' => t('Le-Frog'),
-'mint-choc' => t('Mint-Choc'),
-'overcast' => t('Overcast'),
-'pepper-grinder' => t('Pepper-Grinder'),
-'redmond' => t('Redmond'),
-'smoothness' => t('Smoothness'),
-'south-street' => t('South-Street'),
-'start' => t('Start'),
-'sunny' => t('Sunny'),
-'swanky-purse' => t('Swanky-Purse'),
-'trontastic' => t('Trontastic'),
-'ui-darkness' => t('UI-Darkness'),
-'ui-lightness' => t('UI-Lightness'),
-'vader' => t('Vader'),
-);
-/*
 * @see file: preprocess/theme-settings/js.inc
 * Theme-settings: Javascript options.
 */
@@ -321,18 +321,20 @@ $form[0]['js']['min_script'] = array(
 '#description' => t('Run the <code>grunt</code> or <code>grunt dev</code> task from your theme\'s base directory to compile, minify, and hint javascript. Edit the grunt tasks <code>concat.js</code> or <code>closurecompiler.js</code> to add other scripts to the build.'),
 '#default_value' => theme_get_setting('min_script'),
 );
+/*
+$form[0]['js']['requirejs'] = array(
+'#type' => 'checkbox',
+'#title' => 'Require.js',
+'#description' => t("Load local assets asynchronously with Require.js."),
+'#default_value' => theme_get_setting('requirejs'),
+);
+*/
 // Modernizr stuff.
 $form[0]['js']['modernizr'] = array(
 '#type' => 'checkbox',
 '#title' => l('Modernizr', 'http://modernizr.com/'),
 '#description' => t("Include Modernizr.js to test browser capabilities and load additional resources as needed."),
 '#default_value' => theme_get_setting('modernizr'),
-);
-$form[0]['js']['requirejs'] = array(
-'#type' => 'checkbox',
-'#title' => 'Require.js',
-'#description' => t("Load local assets asynchronously with Require.js."),
-'#default_value' => theme_get_setting('requirejs'),
 );
 $form[0]['js']['mdrnzr'] = array(
 '#type' => 'fieldset',

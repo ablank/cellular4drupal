@@ -4,9 +4,10 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
 <g>
-	<path fill="#3274D1" d="M32,16V3c0-1.657-1.343-3-3-3H16v16H32z"/>
-	<path fill="#FFFFFF" d="M0,16V3c0-1.657,1.343-3,3-3h13v16H0z"/>
-	<path fill="#DDDDDD" d="M32,16v13c0,1.657-1.343,3-3,3H16V16H32z"/>
-	<path fill="#020202" d="M0,16v13c0,1.657,1.343,3,3,3h13V16H0z"/>
+	<path fill="#3274D1" d="M30,16V4.625C30,3.175,28.825,2,27.375,2H16v14H30z"/>
+	<path fill="#DDDDDD" d="M30,16v11.375C30,28.825,28.825,30,27.375,30H16V16H30z"/>
+	<path fill="#020202" d="M2,16v11.375C2,28.825,3.175,30,4.625,30H16V16H2z"/>
+	<path fill="#FFFFFF" d="M2.5,15.5V4.625C2.5,3.453,3.453,2.5,4.625,2.5H15.5v13H2.5z"/>
+	<path fill="#DDDDDD" d="M3,15V4.625C3,3.729,3.729,3,4.625,3H15 M15,3 M16,2L16,2H4.625C3.175,2,2,3.175,2,4.625V16"/>
 </g>
 </svg>

@@ -9,6 +9,14 @@
  * Variables : General variables available to Cellular
  *
  */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
 /**
   * @file
   // Cellular SASS mixins
@@ -72,7 +80,7 @@
   /* line 27, ../sass/print.scss */
   a,
   a:visited {
-    color: #00598e;
+    color: #00598E;
     text-decoration: underline;
   }
   /* line 32, ../sass/print.scss */
@@ -90,7 +98,7 @@
   pre,
   code,
   blockquote {
-    border: 1px solid #444;
+    border: 1px solid #444444;
     page-break-inside: avoid;
   }
 

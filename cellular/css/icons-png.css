@@ -1,7 +1,7 @@
 /**
- * @file
- * Fallback PNG icons for browsers w/o SVG support
- */
+  * @file
+  * Fallback PNG icons for browsers w/o SVG support
+*/
 /**
  * Stylesheet breakpoints
  */
@@ -9,6 +9,14 @@
  * Variables : General variables available to Cellular
  *
  */
+/* Select the icon groups to include:
+  - Set to 'true' or 'false' to include or exclude entire icon group.
+*/
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
 /**
   * @file
   // Cellular SASS mixins
@@ -48,442 +56,437 @@
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
 */
-/* line 9, ../sass/icons-png.scss */
-.icon.search {
-  background-image: url("../assets/icons/min/png/search.png");
-}
-
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.arrow-up {
   background-image: url("../assets/icons/min/png/arrow-up.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.arrow-right {
   background-image: url("../assets/icons/min/png/arrow-right.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.arrow-down {
   background-image: url("../assets/icons/min/png/arrow-down.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.arrow-left {
   background-image: url("../assets/icons/min/png/arrow-left.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.mail {
   background-image: url("../assets/icons/min/png/mail.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.mail2 {
   background-image: url("../assets/icons/min/png/mail2.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.menu {
   background-image: url("../assets/icons/min/png/menu.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.message-error {
   background-image: url("../assets/icons/min/png/message-error.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.message-ok {
   background-image: url("../assets/icons/min/png/message-ok.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.message-warning {
   background-image: url("../assets/icons/min/png/message-warning.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.audio {
   background-image: url("../assets/icons/min/png/audio.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.camera {
   background-image: url("../assets/icons/min/png/camera.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.cart {
   background-image: url("../assets/icons/min/png/cart.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.chat {
   background-image: url("../assets/icons/min/png/chat.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.cloud {
   background-image: url("../assets/icons/min/png/cloud.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.doc {
   background-image: url("../assets/icons/min/png/doc.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.email {
   background-image: url("../assets/icons/min/png/email.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.eye {
   background-image: url("../assets/icons/min/png/eye.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.film {
   background-image: url("../assets/icons/min/png/film.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.folder {
   background-image: url("../assets/icons/min/png/folder.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.gear {
   background-image: url("../assets/icons/min/png/gear.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.home {
   background-image: url("../assets/icons/min/png/home.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.key {
   background-image: url("../assets/icons/min/png/key.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.lock {
   background-image: url("../assets/icons/min/png/lock.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.minus {
   background-image: url("../assets/icons/min/png/minus.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.pdf {
   background-image: url("../assets/icons/min/png/pdf.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.phone {
   background-image: url("../assets/icons/min/png/phone.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.phone2 {
   background-image: url("../assets/icons/min/png/phone2.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.picture {
   background-image: url("../assets/icons/min/png/picture.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.plus {
   background-image: url("../assets/icons/min/png/plus.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.print {
   background-image: url("../assets/icons/min/png/print.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.search {
   background-image: url("../assets/icons/min/png/search.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.spreadsheet {
   background-image: url("../assets/icons/min/png/spreadsheet.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.user {
   background-image: url("../assets/icons/min/png/user.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.user-social {
   background-image: url("../assets/icons/min/png/user-social.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.video {
   background-image: url("../assets/icons/min/png/video.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.wrench {
   background-image: url("../assets/icons/min/png/wrench.png");
 }
 
-/* line 9, ../sass/icons-png.scss */
+/* line 10, ../sass/icons-png.scss */
 .icon.zip {
   background-image: url("../assets/icons/min/png/zip.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.android {
   background-image: url("../assets/icons/min/png/android.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.angular {
   background-image: url("../assets/icons/min/png/angular.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.apple {
   background-image: url("../assets/icons/min/png/apple.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.creativecommons {
   background-image: url("../assets/icons/min/png/creativecommons.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.chrome {
   background-image: url("../assets/icons/min/png/chrome.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.css3 {
   background-image: url("../assets/icons/min/png/css3.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.desktop {
   background-image: url("../assets/icons/min/png/desktop.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.drupal {
   background-image: url("../assets/icons/min/png/drupal.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.firefox {
   background-image: url("../assets/icons/min/png/firefox.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.globe {
   background-image: url("../assets/icons/min/png/globe.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.html5 {
   background-image: url("../assets/icons/min/png/html5.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.internetexplorer {
   background-image: url("../assets/icons/min/png/internetexplorer.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.jquery {
   background-image: url("../assets/icons/min/png/jquery.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.js {
   background-image: url("../assets/icons/min/png/js.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.laptop {
   background-image: url("../assets/icons/min/png/laptop.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.linux {
   background-image: url("../assets/icons/min/png/linux.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.mac {
   background-image: url("../assets/icons/min/png/mac.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.mobile {
   background-image: url("../assets/icons/min/png/mobile.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.opera {
   background-image: url("../assets/icons/min/png/opera.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.safari {
   background-image: url("../assets/icons/min/png/safari.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.w3 {
   background-image: url("../assets/icons/min/png/w3.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.windows {
   background-image: url("../assets/icons/min/png/windows.png");
 }
 
-/* line 15, ../sass/icons-png.scss */
+/* line 18, ../sass/icons-png.scss */
 .icon.wordpress {
   background-image: url("../assets/icons/min/png/wordpress.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.behance {
   background-image: url("../assets/icons/min/png/behance.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.blogger {
   background-image: url("../assets/icons/min/png/blogger.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.delicious {
   background-image: url("../assets/icons/min/png/delicious.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.deviantart {
   background-image: url("../assets/icons/min/png/deviantart.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.digg {
   background-image: url("../assets/icons/min/png/digg.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.facebook {
   background-image: url("../assets/icons/min/png/facebook.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.flickr {
   background-image: url("../assets/icons/min/png/flickr.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.github-octo {
   background-image: url("../assets/icons/min/png/github-octo.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.google {
   background-image: url("../assets/icons/min/png/google.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.grooveshark {
   background-image: url("../assets/icons/min/png/grooveshark.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.hi5 {
   background-image: url("../assets/icons/min/png/hi5.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.linkedin {
   background-image: url("../assets/icons/min/png/linkedin.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.myspace {
   background-image: url("../assets/icons/min/png/myspace.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.pinterest {
   background-image: url("../assets/icons/min/png/pinterest.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.reddit {
   background-image: url("../assets/icons/min/png/reddit.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.rss {
   background-image: url("../assets/icons/min/png/rss.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.skype {
   background-image: url("../assets/icons/min/png/skype.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.slashdot {
   background-image: url("../assets/icons/min/png/slashdot.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.soundcloud {
   background-image: url("../assets/icons/min/png/soundcloud.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.stackoverflow {
   background-image: url("../assets/icons/min/png/stackoverflow.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.stumbleupon {
   background-image: url("../assets/icons/min/png/stumbleupon.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.technorati {
   background-image: url("../assets/icons/min/png/technorati.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.tumblr {
   background-image: url("../assets/icons/min/png/tumblr.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.twitter-bird {
   background-image: url("../assets/icons/min/png/twitter-bird.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.twitter-t {
   background-image: url("../assets/icons/min/png/twitter-t.png");
 }
 
-/* line 21, ../sass/icons-png.scss */
+/* line 26, ../sass/icons-png.scss */
 .icon.youtube {
   background-image: url("../assets/icons/min/png/youtube.png");
 }

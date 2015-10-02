@@ -124,7 +124,8 @@
       </div>
     <?php endif; ?>
   </div>
-  <div id="app" class="cell">
+
+  <div id="app" class="cell center">
     <?php
     if ($title) :
       print render($title_prefix);

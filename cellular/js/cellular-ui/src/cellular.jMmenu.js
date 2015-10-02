@@ -16,6 +16,7 @@ cellular.jMmenu = function (opts) {
     if (o.breakpoint === cellular.state.breakpoint) {
       var $menu = $obj.children([0]);
 
+      state.mmenu = true;
       o.parent.addClass(o.type + '-' + o.direction);
       $menu.addClass(o.cclass)
         .prependTo(o.parent);
@@ -29,7 +30,7 @@ cellular.jMmenu = function (opts) {
       o.cclass + '-active',
       o.cclass + '-inactive'
     ];
-    
+
     if (state.active) {
       $obj.activate();
       o.parent.addClass(classes[0])
@@ -45,7 +46,8 @@ cellular.jMmenu = function (opts) {
   fn.init = function () {
     var $obj = jQuery(this),
       state = {
-        active: false
+        active: false,
+        mmenu: false
       };
 
     fn.mediaQuery($obj, state);
@@ -55,8 +57,10 @@ cellular.jMmenu = function (opts) {
     });
 
     $obj.on('click', function () {
-      state.active = state.active ? false : true;
-      fn.trigger($obj, state);
+      if (state.mmenu) {
+        state.active = state.active ? false : true;
+        fn.trigger($obj, state);
+      }
     });
   };
 

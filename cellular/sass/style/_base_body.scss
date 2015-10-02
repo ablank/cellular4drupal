@@ -3,6 +3,13 @@
   * Base body style.
 */
 
+html {
+  background: transparent;
+  overflow: auto;
+  // Force scrollbar display to prevent flicker
+  overflow-y: scroll;
+}
+
 body {
   background-color: $white;
   float: left;

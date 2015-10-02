@@ -20,19 +20,21 @@ $form[0]['js']['min_script'] = array(
   '#default_value' => theme_get_setting('min_script'),
 );
 
+/*
+$form[0]['js']['requirejs'] = array(
+  '#type' => 'checkbox',
+  '#title' => 'Require.js',
+  '#description' => t("Load local assets asynchronously with Require.js."),
+  '#default_value' => theme_get_setting('requirejs'),
+);
+ */
+
 // Modernizr stuff.
 $form[0]['js']['modernizr'] = array(
   '#type' => 'checkbox',
   '#title' => l('Modernizr', 'http://modernizr.com/'),
   '#description' => t("Include Modernizr.js to test browser capabilities and load additional resources as needed."),
   '#default_value' => theme_get_setting('modernizr'),
-);
-
-$form[0]['js']['requirejs'] = array(
-  '#type' => 'checkbox',
-  '#title' => 'Require.js',
-  '#description' => t("Load local assets asynchronously with Require.js."),
-  '#default_value' => theme_get_setting('requirejs'),
 );
 
 $form[0]['js']['mdrnzr'] = array(

@@ -1,24 +1,29 @@
 /**
- * @file
- * SVG icons
- */
+  * @file
+  * SVG icons
+*/
 
 @import "variables";
 
-@each $icon in $ui_icons {
-  .icon.#{$icon} {
-    background-image: url('../assets/icons/min/svg/#{$icon}.svg');
+@if($use_ui_icons){
+  @each $icon in $ui_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}
+@if($use_tech_icons){
+  @each $icon in $tech_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
   }
 }
 
-@each $icon in $tech_icons {
-  .icon.#{$icon} {
-    background-image: url('../assets/icons/min/svg/#{$icon}.svg');
-  }
-}
-
-@each $icon in $social_icons {
-  .icon.#{$icon} {
-    background-image: url('../assets/icons/min/svg/#{$icon}.svg');
+@if($use_social_icons){
+  @each $icon in $social_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
   }
 }

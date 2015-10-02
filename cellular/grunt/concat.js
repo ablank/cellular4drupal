@@ -102,13 +102,12 @@ module.exports = {
     },
     src: [
       'preprocess/theme-settings/_init_theme-settings.inc',
+      'preprocess/theme-settings/_config.inc',
       'preprocess/theme-settings/meta.inc',
       'preprocess/theme-settings/markup.inc',
       'preprocess/theme-settings/style.inc',
-      'preprocess/theme-settings/jquery_settings.inc',
       'preprocess/theme-settings/js.inc',
       'preprocess/theme-settings/social.inc',
-      'preprocess/theme-settings/views_default.inc',
       'preprocess/theme-settings/_end_theme-settings.inc'
     ],
     dest: 'theme-settings.php'

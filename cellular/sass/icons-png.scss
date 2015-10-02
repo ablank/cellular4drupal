@@ -1,24 +1,30 @@
 /**
- * @file
- * Fallback PNG icons for browsers w/o SVG support
- */
+  * @file
+  * Fallback PNG icons for browsers w/o SVG support
+*/
 
 @import "variables";
 
-@each $icon in $ui_icons {
-  .icon.#{$icon} {
-    background-image: url('../assets/icons/min/png/#{$icon}.png');
+@if($use_ui_icons){
+  @each $icon in $ui_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+    }
   }
 }
 
-@each $icon in $tech_icons {
-  .icon.#{$icon} {
-    background-image: url('../assets/icons/min/png/#{$icon}.png');
+@if($use_tech_icons){
+  @each $icon in $tech_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+    }
   }
 }
 
-@each $icon in $social_icons {
-  .icon.#{$icon} {
-    background-image: url('../assets/icons/min/png/#{$icon}.png');
+@if($use_social_icons){
+  @each $icon in $social_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+    }
   }
 }

@@ -204,7 +204,7 @@ single: false, // Allow multiple panels to be opened or only 1?
 pclass: "panel"
 }, opts),
 fn = {};
-o.pselect = '.'+o.pclass;
+o.pselect = '.' + o.pclass;
 /**
 * The <li> object to show.
 *
@@ -332,6 +332,7 @@ fn = {};
 fn.mediaQuery = cellular.debounce(function ($obj, state) {
 if (o.breakpoint === cellular.state.breakpoint) {
 var $menu = $obj.children([0]);
+state.mmenu = true;
 o.parent.addClass(o.type + '-' + o.direction);
 $menu.addClass(o.cclass)
 .prependTo(o.parent);
@@ -357,15 +358,18 @@ o.parent.addClass(classes[1])
 fn.init = function () {
 var $obj = jQuery(this),
 state = {
-active: false
+active: false,
+mmenu: false
 };
 fn.mediaQuery($obj, state);
 jQuery(window).on('resize', function () {
 fn.mediaQuery($obj, state);
 });
 $obj.on('click', function () {
+if (state.mmenu) {
 state.active = state.active ? false : true;
 fn.trigger($obj, state);
+}
 });
 };
 return this.each(fn.init);
@@ -379,7 +383,7 @@ cellular.jScrolli = function (opts) {
 var o = $.extend({
 cclass: "jScrolli", // Object class selector
 active: 0, // Index of initially selected slide
-//width: 0,
+//width: "100%", // 'auto' or '[value]', i.e. '300px'
 height: "auto", // 'auto' or '[value]', i.e. '300px'
 controls: {
 showmarkers: true,
@@ -388,6 +392,8 @@ keyboard: true,
 swipe: true,
 autoplay: true,
 pauseonhover: true,
+autodim: true,
+delay: 1.4, // Time (seconds) to wait before dimming.
 text: {
 next: "Next",
 prev: "Prev",
@@ -403,9 +409,7 @@ caption: {
 enable: true,
 autohide: false,
 selector: ".caption" // 'auto' or '.selector' used to generate caption
-},
-autodim: true,
-delay: 1.4 // Time (seconds) to wait before dimming.
+}
 }, opts),
 fn = {};
 /**
@@ -550,17 +554,23 @@ console.log(state.paused);
 wrap.on({
 'mouseover': function () {
 state.active = true;
-o.controls.pauseonhover ? state.paused = true : null;
-if (o.autodim)
+if (o.controls.pauseonhover) {
+state.paused = true;
+}
+if (o.controls.autodim)
 wrap.activate();
 window.clearTimeout(wrap.timeout);
 },
 'mouseout': function () {
 state.active = false;
-o.controls.pauseonhover ? state.paused = false : null;
-o.autodim ? wrap.timeout = window.setTimeout(function () {
+if (o.controls.pauseonhover) {
+state.paused = false;
+}
+if (o.controls.autodim) {
+wrap.timeout = window.setTimeout(function () {
 wrap.deactivate();
-}, o.delay * 1000) : null;
+}, o.controls.delay * 1000);
+}
 }
 });
 // Keyboard
@@ -659,7 +669,7 @@ fn.go(state.current, $obj, state);
 fn.setheight = function ($obj, state) {
 jQuery(window).on('load', function () {
 if (o.height === 'auto') {
-$obj.find('.panel').each(function () {
+$obj.find('.content').each(function () {
 var tHeight = jQuery(this).height();
 if (tHeight > state.maxheight) {
 state.maxheight = tHeight;
@@ -684,7 +694,7 @@ $obj.addClass(cellular.opts.cclass)
 .wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />');
 li.addClass('slide')
 .each(function () {
-jQuery(this).children().wrapAll('<div class="panel" />');
+jQuery(this).children().wrapAll('<div class="content cell" />');
 });
 fn.setheight($obj, state);
 if (o.controls.showmarkers) {
@@ -710,10 +720,11 @@ $obj.after('<div class="caption"><p/></div>');
 if (o.controls.showcontrols) {
 var controls = [
 fn.button(o.controls.text.prev),
-fn.button(o.controls.text.next),
+fn.button(o.controls.text.next)
 //o.autoplay ? fn.button(o.controls.text.pause) : null
-], i = 0;
-for (i; i < controls.length; i += 1) {
+],
+i;
+for (i = 0; i < controls.length; i += 1) {
 $obj.parent().prepend(controls[i]);
 }
 }

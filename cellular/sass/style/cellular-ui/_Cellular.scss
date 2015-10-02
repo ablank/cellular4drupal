@@ -23,7 +23,11 @@ $border_radius: .5em;
   list-style: none;
 
   li {
-   // max-width: 90%;
+    // max-width: 90%;
+  }
+
+  &.panel-content {
+    animation: fadein 400ms;
   }
 
   .title {
@@ -85,14 +89,13 @@ $border_radius: .5em;
 }
 
 
-.cellular .panel-content,
 .jAccordion,
 .jBlocklink,
 .jMmenu,
 .jScrolli,
 .jTabs {
   list-style: none;
-  animation: fadein 2s;
+  animation: fadein 1200ms;
 }
 
 /* Import UI components */
