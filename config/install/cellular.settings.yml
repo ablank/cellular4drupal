@@ -1,0 +1,51 @@
+# Theme features
+features:
+  favicon: true
+  logo: true
+  name: true
+  slogan: true
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+#
+cellular_javascript_cdn_use: true
+cellular_javascript_cdn_source: 'google'
+# Default jQuery
+cellular_javascript_jquery_version: '2.14'
+cellular_javascript_jquery_ui_version: '1.10.4'
+cellular_javascript_jqueryui_theme: 'custom'
+# Default javascript
+cellular_javascript_modernizr: true
+cellular_javascript_cellularui: true
+# Optional jQuery plugins
+cellular_javascript_backstretch: false
+cellular_javascript_flowtype: false
+cellular_javascript_freetile: false
+cellular_javascript_parallax: false
+cellular_javascript_smoove: false
+# Optional javascript libraries
+cellular_javascript_d3: false
+cellular_javascript_gsap: false
+cellular_javascript_prism: false
+cellular_javascript_snapsvg: false
+cellular_javascript_three: false
+#
+cellular_style_remove: 1
+cellular_style_: ''
+#
+cellular_social_follow_enable: false
+#
+cellular_social_share_enable: false
+# Theme layouts
+cellular_layout: 'cellular_default'
+layouts:
+  cellular_default:
+    regions:
+      main_content: true
+      header: true
+      menus: true
+      console: true
+      featured: true
+      sidebar_left: true
+      sidebar_right: true
+      footer: true

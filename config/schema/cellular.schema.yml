@@ -1,0 +1,5 @@
+# Cellular theme schema configuration.
+
+cellular.settings:
+  type: theme_settings
+  label: 'Cellular Settings'
