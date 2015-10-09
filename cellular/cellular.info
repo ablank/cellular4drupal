@@ -18,12 +18,11 @@ features[] = comment_user_verification
 ;features[] = secondary_menu
 
 ;----------// Plugins
-plugins[panels][layouts] = templates/panels
-;plugins[panels][styles] = plugins/styles
-
 ;api[panels][styles][version] = 2
 ;api[page_manager][pages_default][version] = 1
 ;api[page_manager][pages_default][path] = templates/panels
+;plugins[panels][styles] = plugins/styles
+plugins[panels][layouts] = templates/panels
 
 breakpoints[default] = (min-width: 800px) and (max-width: 1280px)
 breakpoints[mobile] = screen and (min-width: 0px) and (max-width: 650px)
