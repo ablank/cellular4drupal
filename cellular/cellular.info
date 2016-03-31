@@ -69,7 +69,6 @@ settings[login_block_password]      = 0
 settings[login_block_orientation]   = vertical
 
 ;----------// Styles
-settings[min_style]                     = 0
 settings[inline_critical_css]           = 0
 settings[remove_drupal_css]             = select
 settings[content_class_no_sidebar]      = cell-100
@@ -97,7 +96,6 @@ settings[jqueryui_version]      = 1.10.4
 settings[jqueryui_theme]        = custom
 
 ;----------// jQuery Plugins
-settings[min_script]            = 0
 settings[cellularui]            = 1
 settings[backstretch]           = 0
 settings[flowtype]              = 0
@@ -106,7 +104,6 @@ settings[jparallax]             = 0
 settings[smoove]                = 0
 
 ;----------// Javascript Libraries
-settings[modernizr]             = 1
 settings[requirejs]             = 0
 settings[d3js]                  = 0
 settings[gsap]                  = 0
@@ -116,10 +113,19 @@ settings[snap-svg]              = 0
 settings[threejs]               = 0
 
 ;----------// Social Media
-settings[social_media_follow]   = 0
-settings[sm_follow_title]       = Follow Us
 settings[social_media_share]    = 0
-settings[sm_share_title]        = Share this page
+
+settings[share_facebook]        = 0
+settings[share_google_plus]     = 0
+settings[share_twitter]         = 0
+settings[share_linkedin]        = 0
+settings[share_pinterest]       = 0
+settings[share_reddit]          = 0
+settings[share_digg]            = 0
+settings[share_stumbleupon]     = 0
+settings[share_tumblr]          = 0
+
+settings[social_media_follow]   = 0
 
 settings[follow_facebook]       = 0
 settings[follow_facebook_url]   = http://facebook.com/
@@ -131,10 +137,5 @@ settings[follow_linkedin]       = 0
 settings[follow_linkedin_url]   = http://linkedin.com/
 settings[follow_github]			    = 0
 settings[follow_github_url]   	= http://github.com/
-
-settings[share_facebook]        = 0
-settings[share_google_plus]     = 0
-settings[share_twitter]         = 0
-settings[share_linkedin]        = 0
-settings[share_pinterest]       = 0
-settings[share_reddit]          = 0
+settings[follow_yelp]			    = 0
+settings[follow_yelp_url]   	= http://github.com/

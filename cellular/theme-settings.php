@@ -5,7 +5,7 @@
  * Cellular Theme Settings
  */
 /*
-* @see file: preprocess/theme-settings/_init_theme-settings.inc
+* @see file: src/preprocess/theme-settings/_init_theme-settings.inc
 * Cellular theme-settings.
 */
 /**
@@ -20,7 +20,7 @@ $form[0] = array(
 '#attached' => array(),
 );
 /*
-* @see file: preprocess/theme-settings/_config.inc
+* @see file: src/preprocess/theme-settings/_config.inc
 * jQuery CDN & version settings
 */
 /*
@@ -81,7 +81,7 @@ $ui_themes = array(
 'vader' => t('Vader'),
 );
 /*
-* @see file: preprocess/theme-settings/meta.inc
+* @see file: src/preprocess/theme-settings/meta.inc
 * Theme-settings: Set copyright & favicons.
 */
 $form[0]['meta'] = array(
@@ -149,7 +149,7 @@ $form[0]['meta']['favicons']['apple_icons']['apple_icon_144'] = array(
 '#default_value' => theme_get_setting('apple_icon_144'),
 );
 /*
-* @see file: preprocess/theme-settings/markup.inc
+* @see file: src/preprocess/theme-settings/markup.inc
 * Theme-settings: Display & styling settings.
 */
 $form[0]['markup_settings'] = array(
@@ -211,7 +211,7 @@ $form[0]['markup_settings']['login']['login_block_password'] = array(
 '#default_value' => theme_get_setting('login_block_password'),
 );
 /*
-* @see file: preprocess/theme-settings/style.inc
+* @see file: src/preprocess/theme-settings/style.inc
 * Theme-settings: Display & styling settings.
 */
 //
@@ -220,12 +220,6 @@ $form[0]['style_settings'] = array(
 '#title' => t('Style'),
 '#collapsible' => TRUE,
 '#collapsed' => FALSE,
-);
-$form[0]['style_settings']['min_style'] = array(
-'#type' => 'checkbox',
-'#title' => t('Use minified stylesheets (<em>.min.css</em>).'),
-'#description' => t('Run the <code>grunt</code> or <code>grunt style</code> task in your theme\'s base directory to compile, auto-prefix and sort style rules, and minify stylesheets from sass (<em>will overwrite existing .css & .min.css</em>).'),
-'#default_value' => theme_get_setting('min_style'),
 );
 $form[0]['style_settings']['inline_critical_css'] = array(
 '#type' => 'checkbox',
@@ -303,7 +297,7 @@ $form[0]['style_settings']['add_classes'][1]['sidebar_class_dual_sidebars'] = ar
 '#default_value' => theme_get_setting('sidebar_class_dual_sidebars'),
 );
 /*
-* @see file: preprocess/theme-settings/js.inc
+* @see file: src/preprocess/theme-settings/js.inc
 * Theme-settings: Javascript options.
 */
 // Start js opts.
@@ -314,105 +308,6 @@ $form[0]['js'] = array(
 t('<div class="messages error"> <h2>These features require the <a href="@url">Cellular Library</a>.</h2> </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
 '#collapsible' => TRUE,
 '#collapsed' => TRUE,
-);
-$form[0]['js']['min_script'] = array(
-'#type' => 'checkbox',
-'#title' => t('Use minified javascripts <em>script.min.js</em>.'),
-'#description' => t('Run the <code>grunt</code> or <code>grunt dev</code> task from your theme\'s base directory to compile, minify, and hint javascript. Edit the grunt tasks <code>concat.js</code> or <code>closurecompiler.js</code> to add other scripts to the build.'),
-'#default_value' => theme_get_setting('min_script'),
-);
-/*
-$form[0]['js']['requirejs'] = array(
-'#type' => 'checkbox',
-'#title' => 'Require.js',
-'#description' => t("Load local assets asynchronously with Require.js."),
-'#default_value' => theme_get_setting('requirejs'),
-);
-*/
-// Modernizr stuff.
-$form[0]['js']['modernizr'] = array(
-'#type' => 'checkbox',
-'#title' => l('Modernizr', 'http://modernizr.com/'),
-'#description' => t("Include Modernizr.js to test browser capabilities and load additional resources as needed."),
-'#default_value' => theme_get_setting('modernizr'),
-);
-$form[0]['js']['mdrnzr'] = array(
-'#type' => 'fieldset',
-'#title' => 'Modernizr',
-'#description' => t("Browser testing & conditional resource loading."),
-'#collapsible' => TRUE,
-'#collapsed' => TRUE,
-'#states' => array(
-'visible' => array(
-':input[name="modernizr"]' => array('checked' => TRUE),
-),
-),
-);
-$form[0]['js']['mdrnzr']['mq_mobile_enable'] = array(
-'#type' => 'checkbox',
-'#title' => t('Enable Mobile Media Query'),
-'#description' => t("Enable media query to load extra CSS (conditional-mobile.css) for mobile devices."),
-'#default_value' => theme_get_setting('mq_mobile_enable'),
-'#states' => array(
-'visible' => array(
-':input[name="modernizr"]' => array('checked' => TRUE),
-),
-),
-);
-$form[0]['js']['mdrnzr']['mq_mobile'] = array(
-'#type' => 'textfield',
-'#title' => t('Mobile Media Query'),
-'#description' => t("The media query tested by Modernizr load extra CSS for mobile devices. This should match the @media setting in conditional-mobile.css."),
-'#default_value' => theme_get_setting('mq_mobile'),
-'#states' => array(
-'visible' => array(
-':input[name="mq_mobile_enable"]' => array('checked' => TRUE),
-),
-),
-);
-$form[0]['js']['mdrnzr']['mq_normal_enable'] = array(
-'#type' => 'checkbox',
-'#title' => t('Enable Desktop Media Query'),
-'#description' => t("Enable media query to test before loading conditional-style.css."),
-'#default_value' => theme_get_setting('mq_normale_enable'),
-'#states' => array(
-'visible' => array(
-':input[name="modernizr"]' => array('checked' => TRUE),
-),
-),
-);
-$form[0]['js']['mdrnzr']['mq_normal'] = array(
-'#type' => 'textfield',
-'#title' => t('Normal Media Query'),
-'#description' => t("The media query tested by Modernizr load style.css."),
-'#default_value' => theme_get_setting('mq_normal'),
-'#states' => array(
-'visible' => array(
-':input[name="mq_normal_enable"]' => array('checked' => TRUE),
-),
-),
-);
-$form[0]['js']['mdrnzr']['mq_large_enable'] = array(
-'#type' => 'checkbox',
-'#title' => t('Enable Conditional Large Media Query'),
-'#description' => t("Enable media query to load extra CSS (conditional-large.css) for large screen devices."),
-'#default_value' => theme_get_setting('mq_large_enable'),
-'#states' => array(
-'visible' => array(
-':input[name="modernizr"]' => array('checked' => TRUE),
-),
-),
-);
-$form[0]['js']['mdrnzr']['mq_large'] = array(
-'#type' => 'textfield',
-'#title' => t('Large Screen Media Query'),
-'#description' => t("The media query tested by Modernizr load extra CSS for large devices. This should match the @media setting in conditional-large.css."),
-'#default_value' => theme_get_setting('mq_large'),
-'#states' => array(
-'visible' => array(
-':input[name="mq_large_enable"]' => array('checked' => TRUE),
-),
-),
 );
 // Update jQuery?
 $form[0]['js']['jquery_update'] = array(
@@ -582,7 +477,7 @@ $form[0]['js']['lib']['threejs'] = array(
 '#default_value' => theme_get_setting('threejs'),
 );
 /*
-* @see file: preprocess/theme-settings/social.inc
+* @see file: src/preprocess/theme-settings/social.inc
 * Theme-settings: Social media link settings.
 */
 /*
@@ -603,16 +498,6 @@ $form[0]['social_media']['social_media_share'] = array(
 '#title' => t('Share this site'),
 '#description' => t("Enable the 'Share this site' bar."),
 '#default_value' => theme_get_setting('social_media_share'),
-);
-$form[0]['social_media']['sm_share_title'] = array(
-'#type' => 'textfield',
-'#title' => t('Share on Social Media Title'),
-'#default_value' => theme_get_setting('sm_share_title'),
-'#states' => array(
-'visible' => array(
-':input[name="social_media_share"]' => array('checked' => TRUE),
-),
-),
 );
 $form[0]['social_media']['share'] = array(
 '#type' => 'fieldset',
@@ -655,6 +540,21 @@ $form[0]['social_media']['share']['share_reddit'] = array(
 '#type' => 'checkbox',
 '#title' => t('Reddit'),
 '#default_value' => theme_get_setting('share_reddit'),
+);
+$form[0]['social_media']['share']['share_digg'] = array(
+'#type' => 'checkbox',
+'#title' => t('Digg'),
+'#default_value' => theme_get_setting('share_digg'),
+);
+$form[0]['social_media']['share']['share_stumbleupon'] = array(
+'#type' => 'checkbox',
+'#title' => t('StumbleUpon'),
+'#default_value' => theme_get_setting('share_rstumbleupon'),
+);
+$form[0]['social_media']['share']['share_tumblr'] = array(
+'#type' => 'checkbox',
+'#title' => t('Tumblr'),
+'#default_value' => theme_get_setting('share_tumblr'),
 );
 $form[0]['social_media']['social_media_follow'] = array(
 '#type' => 'checkbox',
@@ -767,6 +667,23 @@ $form[0]['social_media']['follow']['follow_github_url'] = array(
 '#states' => array(
 'visible' => array(
 ':input[name="follow_github"]' => array('checked' => TRUE),
+),
+),
+);
+$form[0]['social_media']['follow']['follow_yelp'] = array(
+'#type' => 'checkbox',
+'#title' => t('Follow on Yelp'),
+'#description' => t("Provide a link to follow on Yelp."),
+'#default_value' => theme_get_setting('follow_yelp'),
+);
+$form[0]['social_media']['follow']['follow_yelp_url'] = array(
+'#type' => 'textfield',
+'#title' => t('Yelp'),
+'#description' => t("URL of the Yelp page."),
+'#default_value' => theme_get_setting('follow_yelp_url'),
+'#states' => array(
+'visible' => array(
+':input[name="follow_yelp"]' => array('checked' => TRUE),
 ),
 ),
 );

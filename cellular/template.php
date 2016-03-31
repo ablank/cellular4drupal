@@ -1,17 +1,16 @@
 <?php
 /**
- * @file
- * Cellular Base Theme for Drupal 7.
- *
- * @author Adam Blankenship
- * 
- * @see http://live-cellular.gotpantheon.com
- * @see https://github.com/ablank/cellular
- */
-
+    * @file
+    * Cellular Base Theme for Drupal 7.
+    *
+    * @author Adam Blankenship
+    * 
+    * @see http://live-cellular.gotpantheon.com
+    * @see https://github.com/ablank/cellular
+    */
 
 /*
- * @see file: preprocess/_init.inc
+ * @see file: src/preprocess/_init.inc
  * Initialize constants & global variables.
  */
 
@@ -23,9 +22,8 @@ define('CELLULAR_INPUT_SIZE', 20);
 // May convert to use Libraries module at some point...
 define('CELLULAR_LIB', $GLOBALS['base_url'] . '/sites/all/libraries/cellular');
 
-
 /*
- * @see file: preprocess/fn.inc
+ * @see file: src/preprocess/fn.inc
  * Cellular utility functions.
  */
 
@@ -71,8 +69,8 @@ function cellular_mq() {
  */
 function cellular_ext($type){
   $settings = array(
-    'css' => theme_get_setting('min_style') == 1 ? '.min.css' : '.css',
-    'js' => theme_get_setting('min_script') == 1 ? '.min.js' : '.js',
+    'css' => '.css',
+    'js' => '.js',
   );
 
   return $settings[$type];
@@ -177,7 +175,7 @@ function cellular_proccess_asset(&$asset, $cellular = NULL){
 }
 
 /*
- * @see file: preprocess/fn.css.inc
+ * @see file: src/preprocess/fn.css.inc
  * Cellular stylesheet functions.
  */
 
@@ -458,9 +456,8 @@ function cellular_critical_css($vars) {
   }
 }
 
-
 /*
- * @see file: preprocess/fn.form.inc
+ * @see file: src/preprocess/fn.form.inc
  * Cellular form utility functions.
  */
 
@@ -527,7 +524,7 @@ function cellular_xinput($element, $type) {
 
 
 /*
- * @see file: preprocess/fn.js.inc
+ * @see file: src/preprocess/fn.js.inc
  * Cellular javascript functions.
  */
 
@@ -549,13 +546,11 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
       $data = $script['cdn'];
       $script['type'] = 'external';
       cellular_js_fallback($script, $cellular);
-    }
-    elseif (!empty($script['file'])) {
+    } elseif (!empty($script['file'])) {
       $script['type'] = 'file';
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
       $data .= $script['file'];
-    }
-    else {
+    } else {
       $data = $script['data'];
       $script['type'] = $script['type'];
     }
@@ -592,23 +587,19 @@ function cellular_add_js($array, $cellular = FALSE) {
     if (!empty($script['cdn'])) {
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
-    }
-    elseif (!empty($script['file'])) {
+    } elseif (!empty($script['file'])) {
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
       $data .= $script['file'];
-    }
-    else {
+    } else {
       $data = $script['data'];
     }
     // Set script attributes.
     if (!empty($script['type'])) {
       $type = $script['type'];
-    }
-    else {
+    } else {
       if (!empty($script['cdn'])) {
         $type = 'external';
-      }
-      elseif (!empty($script['file'])) {
+      } elseif (!empty($script['file'])) {
         $type = 'file';
       }
     }
@@ -672,8 +663,7 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
       // If cdn is provided, set data to external source & call local fallback.
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
-    }
-    else {
+    } else {
       // Use local source if no CDN is used.
       if (!empty($script['file'])) {
         $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
@@ -695,47 +685,9 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
 }
 
 /**
- * Build modernizr query and add script inline on page.
- *
- * @param array $tests
- *   Array of arrays used to build modernizr tests.
- *   $tests['testName'] = array(
- *   'test',
- *   'yep',
- *   'nope',
- *   'both',
- *   'complete',
- *   );.
- */
-function cellular_modernizr($tests) {
-  // $base_url needs to be added to set the correct path.
-  $dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
-  $query = '';
-
-  foreach ($tests as $test) {
-    $query .= "{\n";
-    $query .= "test : " . $test['test'] . ",\n";
-    empty($test['yep']) ? NULL : $query .= "yep : ['" . $dir . $test['yep'] . "'],\n";
-    empty($test['nope']) ? NULL : $query .= "nope : ['" . $dir . $test['nope'] . "'],\n";
-    empty($test['both']) ? NULL : $query .= "both : ['" . $dir . $test['both'] . "'],\n";
-    empty($test['complete']) ? NULL : $query .= "complete : function(){\n" . $test['complete'] . "},\n";
-    $query .= "},\n";
-  }
-
-  $modernizr = "Modernizr.load([\n$query]);\n";
-
-  drupal_add_js($modernizr, array(
-    'type' => 'inline',
-    'group' => JS_LIBRARY,
-    'every_page' => TRUE,
-    'scope' => 'critical',
-  ));
-}
-
-/**
  * Pass variables to javascript , used to call plugin.js if plugins are selected.
  */
-function cellular_js_settings() {
+function cellular_js_plugin_settings() {
   // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
   $js_plugins = array();
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
@@ -748,53 +700,8 @@ function cellular_js_settings() {
   return $js_plugins;
 }
 
-/**
- * 
- * @param type $scripts
- */
-function cellular_requirejs(&$javascript) {
-  // $base_url needs to be added to set the correct path.
-  //$dir = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH;
-  $jq = cellular_jquery_info();
-  $require = array(
-    'shim' => '',
-    'require' => '',
-  );
-  $jq['correctpath'] = str_replace(array(
-    $GLOBALS['base_url'] . '/',
-    '.js',
-  )
-  , '', $javascript['misc/jquery.js']['data']);
-
-  foreach ($javascript as &$script) {
-    if ($script['type'] === 'file' && $script['scope'] !== 'critical') {
-      $data = str_replace(array(
-        $GLOBALS['base_url'] . '/',
-        '.js',
-      ), '', $script['data']);
-
-      $require['shim'] .= "\n    '$data': { deps: ['jquery'], exports: '$data'},";
-      $require['require'] .= "\n  '$data',";
-
-      $script = NULL;
-      unset($javascript[$script]);
-    }
-  }
-
-  // Build the script loader.
-  $js = "requirejs.config({\n  paths: {\n    ";
-  $js .= "baseUrl: '/',\n    ";
-  $js .= "jquery: '" . $jq['correctpath'] . "'\n  }\n});\n";
-  //$js .= "shim: {" . $require['shim'] . "\n  }\n});\n";
-  $js .= "require([" . $require['require'] . "\n]);\n";
-  //$js .= "]);";
-
-  return $js;
-}
-
-
 /*
- * @see file: preprocess/fn.menu.inc
+ * @see file: src/preprocess/fn.menu.inc
  * Cellular menu functions.
  */
 
@@ -847,9 +754,8 @@ function cellular_links__system_main_menu($vars) {
   return $output;
 }
 */
-
 /*
- * @see file: preprocess/fn.preprocess.inc
+ * @see file: src/preprocess/fn.preprocess.inc
  * Cellular functions to set content attributes.
  */
 
@@ -1122,9 +1028,8 @@ function cellular_error_page(&$vars) {
   }
 }
 
-
 /*
- * @see file: preprocess/jquery.inc
+ * @see file: src/preprocess/jquery.inc
  * Functions for updating jQuery & jQuery.ui.
  */
 
@@ -1375,48 +1280,9 @@ function cellular_jqueryui_update_css(&$css) {
 
 
 /*
- * @see file: preprocess/plugin_js.inc
+ * @see file: src/preprocess/plugin_js.inc
  * Functions to add javascript plugins.
  */
-
-/**
- * Build default modernizr queries using theme settings.
- */
-function cellular_modernizr_default() {
-  $css_dir = '/css/';
-  $ext = CELLULAR_CSS_EXT;
-  // Build yepnope query based on theme settings.
-  $mq = cellular_mq();
-
-  $tests = array();
-  // Test SVG
-  $tests['svg'] = array(
-    'test' => 'Modernizr.svg',
-    'yep' => $css_dir . "icons-svg" . $ext,
-    'nope' => $css_dir . "icons-png" . $ext,
-  );
-
-  if (theme_get_setting('mq_mobile_enable') == 1 && !empty($mq['mobile'])) {
-    $tests['mobile'] = array(
-      'test' => 'Modernizr.mq(\'' . $mq['mobile'] . '\')',
-      'yep' => $css_dir . "conditional-mobile" . $ext,
-    );
-  }
-  if (theme_get_setting('mq_normal_enable') == 1 && !empty($mq['normal'])) {
-    $tests['normal'] = array(
-      'test' => 'Modernizr.mq(\'' . $mq['normal'] . '\')',
-      'yep' => $css_dir . "conditional-style" . $ext,
-    );
-  }
-  if (theme_get_setting('mq_large_enable') == 1 && !empty($mq['large'])) {
-    $tests['large'] = array(
-      'test' => 'Modernizr.mq(\'' . $mq['large'] . '\')',
-      'yep' => $css_dir . "conditional-large" . $ext,
-    );
-  }
-
-  cellular_modernizr($tests);
-}
 
 /**
  * Update Drupal's default jQuery plugins.
@@ -1486,85 +1352,67 @@ function cellular_plugins_js() {
   // Scripts to add, relative to /libraries/cellular/js/
   $js_plugins = array();
 
-  theme_get_setting('modernizr') == 1 ? $js_plugins['modernizr'] = array(
-    'group' => JS_LIBRARY,
-    'object' => 'Modernizr',
-    'file' => 'modernizr',
-    'version' => '2.8.3',
-    'weight' => -1000,
-    'scope' => 'critical',
-  ) : NULL;
-
-  theme_get_setting('requirejs') == 1 ? $js_plugins['require'] = array(
-    'group' => JS_LIBRARY,
-    'file' => 'require',
-    'version' => '2.1.20',
-    'weight' => 0,
-    'scope' => 'critical',
-  ) : NULL;
-
   // Add migrate to prevent plugins from breaking with jQuery > v1.9.
   theme_get_setting('jquery_migrate') == 1 && floatval(substr($jquery['version'], 2)) >= 9 ?
-  $js_plugins['migrate'] = array(
-    'group' => JS_LIBRARY,
-    'file' => 'jquery.migrate',
-    'version' => '1.2.1',
-    'weight' => -96,
-  ) : NULL;
+          $js_plugins['migrate'] = array(
+        'group' => JS_LIBRARY,
+        'file' => 'jquery.migrate',
+        'version' => '1.2.1',
+        'weight' => -96,
+          ) : NULL;
   theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = array(
-    'object' => 'backstretch',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js',
-    'file' => 'jquery.backstretch',
-    'version' => '2.0.4',
-  ) : NULL;
+        'object' => 'backstretch',
+        'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js',
+        'file' => 'jquery.backstretch',
+        'version' => '2.0.4',
+          ) : NULL;
   theme_get_setting('d3js') == 1 ? $js_plugins['d3'] = array(
-    'object' => 'd3',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3',
-    'file' => 'd3',
-    'version' => '3.4.11',
-  ) : NULL;
+        'object' => 'd3',
+        'cdn' => '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3',
+        'file' => 'd3',
+        'version' => '3.4.11',
+          ) : NULL;
   theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = array(
-    'file' => 'jquery.freetile',
-    'version' => '0.3.1',
-  ) : NULL;
+        'file' => 'jquery.freetile',
+        'version' => '0.3.1',
+          ) : NULL;
   theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = array(
-    'file' => 'jquery.flowtype',
-    'version' => '',
-  ) : NULL;
+        'file' => 'jquery.flowtype',
+        'version' => '',
+          ) : NULL;
   theme_get_setting('jparallax') == 1 ? $js_plugins['jparallax'] = array(
-    'file' => 'jquery.parallax',
-    'version' => '2.0',
-  ) : NULL;
+        'file' => 'jquery.parallax',
+        'version' => '2.0',
+          ) : NULL;
   theme_get_setting('prism') == 1 ? $js_plugins['prism'] = array(
-    'group' => JS_DEFAULT,
-    'object' => 'Prism',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js',
-    'file' => 'prism',
-    'version' => '0.0.1',
-  ) : NULL;
+        'group' => JS_DEFAULT,
+        'object' => 'Prism',
+        'cdn' => '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js',
+        'file' => 'prism',
+        'version' => '0.0.1',
+          ) : NULL;
   theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = array(
-    'object' => 'smoove',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
-    'file' => 'jquery.smoove',
-    'version' => '0.2.6',
-  ) : NULL;
+        'object' => 'smoove',
+        'cdn' => '//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js',
+        'file' => 'jquery.smoove',
+        'version' => '0.2.6',
+          ) : NULL;
   theme_get_setting('snap-svg') == 1 ? $js_plugins['snap-svg'] = array(
-    'file' => 'snap.svg',
-    'version' => '0.3.0',
-  ) : NULL;
+        'file' => 'snap.svg',
+        'version' => '0.3.0',
+          ) : NULL;
   theme_get_setting('threejs') == 1 ? $js_plugins['threejs'] = array(
-    'object' => 'THREE',
-    'cdn' => '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three',
-    'file' => 'three',
-    'version' => 'r68',
-  ) : NULL;
+        'object' => 'THREE',
+        'cdn' => '//cdnjs.cloudflare.com/ajax/libs/three.js/r68/three',
+        'file' => 'three',
+        'version' => 'r68',
+          ) : NULL;
 
   if (theme_get_setting('gsap') == 1) {
-    $gsappath = theme_get_setting('min_script') == 1 ? 'gsap/minified/' : 'gsap/uncompressed/';
     $gsap['cssplugin'] = array(
       'object' => 'CSSPlugin',
       'cdn' => '//cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/plugins/CSSPlugin.min.js',
-      'file' => $gsappath . 'plugins/CSSPlugin',
+      'file' => 'gsap/minified/plugins/CSSPlugin',
       'version' => '1.13.1',
       'weight' => 1,
     );
@@ -1601,9 +1449,8 @@ function cellular_plugins_js() {
   return $js_plugins;
 }
 
-
 /*
- * @see file: preprocess/plugin_css.inc
+ * @see file: src/preprocess/plugin_css.inc
  * Functions to add javascript plugins.
  */
 
@@ -1634,7 +1481,7 @@ function cellular_plugins_css() {
 
 
 /*
- * @see file: preprocess/alter.inc
+ * @see file: src/preprocess/alter.inc
  * Alter misc. hooks for templates.
  */
 
@@ -1645,7 +1492,6 @@ function cellular_html_head_alter(&$head_elements) {
   // Remove unwanted meta tags.
   unset($head_elements['system_meta_generator']);
 }
-
 
 /**
  * Implements hook_page_alter().
@@ -1693,14 +1539,24 @@ function cellular_page_alter(&$vars) {
   );
 
   if (theme_get_setting('cellularui') == 1) {
+    $cellular_settings = array('cellularui' => TRUE);
+
     $scripts['cellularui'] = array(
       'object' => 'cellular',
-      'file' => 'cellular-ui/jquery.cellular-ui' . CELLULAR_JS_EXT,
+      'file' => 'jquery.cellular-ui' . CELLULAR_JS_EXT,
       'group' => JS_THEME,
       'weight' => 98,
     );
+
+    if (theme_get_setting('social_media_follow') == 1) {
+      $cellular_settings['jSocial_follow'] = cellular_social_media_follow();
+    }
+
+    if (theme_get_setting('social_media_share') == 1) {
+      $cellular_settings['jSocial_share'] = cellular_social_media_share();
+    }
     // Add cellular to Drupal.settings.
-    drupal_add_js(array('cellular' => array('cellularui' => TRUE)), 'setting');
+    drupal_add_js(array('cellular' => $cellular_settings), 'setting');
   }
   // Attach styles.
   cellular_attach_css($vars['content'], $styles);
@@ -1712,15 +1568,12 @@ function cellular_page_alter(&$vars) {
   // Add critical css inline if set.
   cellular_critical_css($vars);
   // Add to Cellular plugin settings to Drupal.settings.
-  drupal_add_js(array('cellular' => cellular_js_settings()), 'setting');
-  // Add modernizr queries.
-  cellular_modernizr_default();
+  drupal_add_js(array('cellular' => cellular_js_plugin_settings()), 'setting');
   //dpm($vars);
 }
 
-
 /*
- * @see file: preprocess/alter_css.inc
+ * @see file: src/preprocess/alter_css.inc
  * Add/Update/Delete stylesheets.
  */
 
@@ -1740,7 +1593,7 @@ function cellular_css_alter(&$css) {
 
 
 /*
- * @see file: preprocess/alter_js.inc
+ * @see file: src/preprocess/alter_js.inc
  * Add/Update/Delete javascript.
  */
 
@@ -1753,25 +1606,11 @@ function cellular_js_alter(&$javascript) {
     cellular_jquery_update($javascript);
     cellular_jqueryui_update_js($javascript);
   }
-
-  if (theme_get_setting('requirejs') == 1) {
-    $javascript['requirejs'] = array(
-      'data' => cellular_requirejs($javascript),
-      'type' => 'inline',
-      'scope' => 'critical',
-      'group' => JS_LIBRARY,
-      'defer' => FALSE,
-      'every_page' => TRUE,
-      'weight' => 100,
-    );
-  }
-
-   // dpm($javascript);
+  // dpm($javascript);
 }
 
-
 /*
- * @see file: preprocess/alter_form.inc
+ * @see file: src/preprocess/alter_form.inc
  * Alter specific forms.
  */
 
@@ -1874,9 +1713,8 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-
 /*
- * @see file: preprocess/preprocess.inc
+ * @see file: src/preprocess/preprocess.inc
  * Template preprocess functions.
  */
 
@@ -1986,8 +1824,9 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['classes_array'][] = 'clearfix';
 }
 
+
 /*
- * @see file: preprocess/preprocess_page.inc
+ * @see file: src/preprocess/preprocess_page.inc
  * Template page preprocess functions.
  */
 
@@ -2003,11 +1842,15 @@ function cellular_preprocess_page(&$vars) {
   cellular_test_sidebar($vars);
   // Link site name to frontpage.
   $vars['site_name'] = l($vars['site_name'], '<front>');
-  // Set Social Media links.
-  $vars['page']['social_media_share'] = cellular_social_media_share();
-  $vars['page']['social_media_follow'] = cellular_social_media_follow();
   // Set search block variable for addition to page templates.
   $vars['page']['search_box'] = drupal_get_form('search_form');
+  // Add JS classes to body.
+  drupal_add_js('document.body.className += " javascript cellular";', array(
+    'type' => 'inline',
+    'scope' => 'critical',
+    'weight' => 1,
+  ));
+
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright" : '';
@@ -2016,12 +1859,25 @@ function cellular_preprocess_page(&$vars) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
 
-  /* Work in progress... 
-  if (!empty($vars['panels_everywhere_site_template'])) {
+  /* Work in progress...
+    if (!empty($vars['panels_everywhere_site_template'])) {
     $vars['template_file'] = 'page--panels-everywhere';
-  }
+    }
    */
   //dpm($vars);
+}
+
+/**
+ *
+ */
+function cellular_init_theme() {
+  $output = '';
+  $output .= '<div id="skipLinks" class="hidden">';
+  $output .= '<a href="#content">' . print t('Skip to main content') . '</a>';
+  $output .= '<a href="#nav">' . print t('Skip to navigation') . '</a>';
+  $output .= '</div>';
+
+  return $output;
 }
 
 /**
@@ -2046,7 +1902,7 @@ function cellular_preprocess_maintenance_page(&$vars) {
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ?
-  "&copy; " . date("Y") . " $copyright" : '';
+      "&copy; " . date("Y") . " $copyright" : '';
   // Add template suggestion for custom content types(page--content-type.tpl.php)
   if (isset($vars['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
@@ -2055,9 +1911,8 @@ function cellular_preprocess_maintenance_page(&$vars) {
   cellular_error_page($vars);
 }
 
-
 /*
- * @see file: preprocess/theme.inc
+ * @see file: src/preprocess/theme.inc
  * Set element markup.
  */
 
@@ -2236,9 +2091,8 @@ function cellular_feed_icon(&$vars) {
   return $icon;
 }
 
-
 /*
- * @see file: preprocess/theme_form.inc
+ * @see file: src/preprocess/theme_form.inc
  * Theme markup of form elements.
  */
 
@@ -2446,9 +2300,8 @@ function cellular_textarea(&$vars) {
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
 
-
 /*
- * @see file: preprocess/theme_pager.inc
+ * @see file: src/preprocess/theme_pager.inc
  * Generate & theme drupal pager.
  */
 
@@ -2598,9 +2451,8 @@ function cellular_pager($vars) {
   }
 }
 
-
 /*
- * @see file: preprocess/panels.inc
+ * @see file: src/preprocess/panels.inc
  * Custom Panels functions.
  */
 
@@ -2722,7 +2574,7 @@ function cellular_preprocess_panels_pane(&$vars) {
  */
 
 /*
- * @see file: preprocess/social.inc
+ * @see file: src/preprocess/social.inc
  * Generate social media links.
  */
 
@@ -2743,17 +2595,16 @@ function cellular_build_links($links, $parent) {
     if (!empty($link['tag'])) {
       // Use preformatted html if set.
       $output .= "\n " . $link['tag'] . "\n";
-    }
-    else {
+    } else {
       // Or create link using key's attributes:
       if (!empty($link['url'])) {
         $text = $parent['link_text'] . $link['name'];
         $output .= l(t($text), $link['url'], array(
-          'attributes' => array(
-            'class' => array(
-              $parent['link_class'],
-              $link['class'],
-        )))) . "\n";
+              'attributes' => array(
+                'class' => array(
+                  $parent['link_class'],
+                  $link['class'],
+            )))) . "\n";
       }
     }
 
@@ -2801,6 +2652,9 @@ function cellular_sm_settings($type) {
         'linkedin' => theme_get_setting('share_linkedin'),
         'pinterest' => theme_get_setting('share_pinterest'),
         'reddit' => theme_get_setting('share_reddit'),
+        'digg' => theme_get_setting('share_digg'),
+        'stumbleupon' => theme_get_setting('share_stumbleupon'),
+        'tumblr' => theme_get_setting('share_tumblr'),
       );
       break;
   }
@@ -2850,54 +2704,33 @@ function cellular_sm_urls($type) {
  *   Formatted HTML.
  */
 function cellular_social_media_follow() {
-  if (theme_get_setting('social_media_follow') == 1) {
-    $set = cellular_sm_settings('follow');
-    $url = cellular_sm_urls('follow');
+  $set = cellular_sm_settings('follow');
+  $url = cellular_sm_urls('follow');
 
-    $output = '';
-    $block_title = $set['title'];
-    $media_block = array(
-      'title' => !empty($block_title) ? "<h3>$block_title</h3>\n" : '',
-      'id' => 'social-media-follow',
-      'link_class' => 'social icon',
-      'link_text' => 'Share this page on ',
-    );
+  $links = array();
 
-    $links = array();
-    $set['fb'] == 1 ? $links['facebook'] = array(
-      'url' => $url['fb'],
-      'class' => 'facebook',
-      'name' => 'Facebook',
-    ) : NULL;
-    $set['google'] == 1 ? $links['google+'] = array(
-      'url' => $url['google'],
-      'class' => 'google',
-      'name' => 'Google+',
-    ) : NULL;
-    $set['twitter'] == 1 ? $links['twitter'] = array(
-      'url' => $url['twitter'],
-      'class' => 'twitter-bird',
-      'name' => 'Twitter',
-    ) : NULL;
-    $set['linkedin'] == 1 ? $links['linkedin'] = array(
-      'url' => $url['linkedin'],
-      'class' => 'linkedin',
-      'name' => 'LinkedIn',
-    ) : NULL;
-    $set['github'] == 1 ? $links['github'] = array(
-      'url' => $url['github'],
-      'class' => 'github-octo',
-      'name' => 'Github',
-    ) : NULL;
+  $set['fb'] == 1 ? $links['facebook'] = array(
+        'title' => "Facebook",
+        'url' => $url['facebook'],
+          ) : NULL;
+  $set['google'] == 1 ? $links['google+'] = array(
+        'title' => "Google+",
+        'url' => $url['google'],
+          ) : NULL;
+  $set['twitter'] == 1 ? $links['twitter'] = array(
+        'title' => "Twitter",
+        'url' => $url['twitter'],
+          ) : NULL;
+  $set['linkedin'] == 1 ? $links['linkedin'] = array(
+        'title' => "LinkedIn",
+        'url' => $url['linkedin'],
+          ) : NULL;
+  $set['github'] == 1 ? $links['github'] = array(
+        'title' => "Github",
+        'url' => $url['github'],
+          ) : NULL;
 
-    $content = cellular_build_links($links, $media_block);
-    if (!empty($content)) {
-      $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-      $output .= $media_block['title'] . $content . "</div>\n";
-    }
-
-    return $output;
-  }
+  return $links;
 }
 
 /**
@@ -2907,74 +2740,25 @@ function cellular_social_media_follow() {
  *   Formatted HTML.
  */
 function cellular_social_media_share() {
-  if (theme_get_setting('social_media_share') == 1) {
-    global $base_url;
-    $set = cellular_sm_settings('share');
-    $output = '';
-    $page = array(
-      'url' => $base_url . '/' . current_path(),
-      'title' => drupal_get_title(),
-    );
-    $block_title = theme_get_setting('sm_share_title');
-    $media_block = array(
-      'title' => !empty($block_title) ? "<h3>$block_title</h3>\n" : '',
-      'id' => 'social-media-share',
-      'link_class' => 'social icon',
-      'link_text' => 'Share this page on ',
-    );
+  global $base_url;
+  $set = cellular_sm_settings('share');
+  $links = array();
 
-    $links = array();
+  $set['fb'] == 1 ? $links[] = 'facebook' : NULL;
+  $set['google'] == 1 ? $links[] = 'google' : NULL;
+  $set['twitter'] == 1 ? $links[] = 'twitter' : NULL;
+  $set['linkedin'] == 1 ? $links[] = 'linkedin' : NULL;
+  $set['pinterest'] == 1 ? $links[] = 'pinterest' : NULL;
+  $set['reddit'] == 1 ? $links[] = 'reddit' : NULL;
+  $set['digg'] == 1 ? $links[] = 'digg' : NULL;
+  $set['stumbleupon'] == 1 ? $links[] = 'stumbleupon' : NULL;
+  $set['tumblr'] == 1 ? $links[] = 'tumblr' : NULL;
 
-    $set['fb'] == 1 ? $links['facebook'] = array(
-      'name' => 'Facebook',
-      'script' => NULL,
-      'url' => '//facebook.com/sharer/sharer.php?u=' . $page['url'],
-      'class' => 'facebook',
-    ) : NULL;
-    $set['google'] == 1 ? $links['google+'] = array(
-      'name' => 'Google+',
-      'script' => NULL,
-      'url' => '//plus.google.com/share?url=' . $page['url'],
-      'class' => 'google',
-    ) : NULL;
-    $set['twitter'] == 1 ? $links['twitter'] = array(
-      'name' => 'Twitter',
-      'script' => NULL,
-      'url' => '//twitter.com/share',
-      'class' => 'twitter-bird',
-    ) : NULL;
-    $set['linkedin'] == 1 ? $links['linkedin'] = array(
-      'name' => 'LinkedIn',
-      'url' => '//linkedin.com/shareArticle?mini=true&url=' .
-      $page['url'] . '&title=' . $page['title'] . '&source=' . $base_url,
-      'class' => 'linkedin',
-    ) : NULL;
-    $set['pinterest'] == 1 ? $links['pinterest'] = array(
-      'name' => 'Pinterest',
-      'url' => '//pinterest.com/pin/create/bookmarklet/?media=&url=' .
-      $page['url'] . '&is_video=false&description=' . $page['title'],
-      'class' => 'pinterest',
-    ) : NULL;
-    $set['reddit'] == 1 ? $links['reddit'] = array(
-      'name' => 'Reddit',
-      'url' => '//reddit.com/submit?url=' . $page['url'],
-      'class' => 'reddit',
-    ) : NULL;
-
-    $content = cellular_build_links($links, $media_block);
-
-    if (!empty($content)) {
-      $output .= "\n<div id=\"" . $media_block['id'] . "\">\n";
-      $output .= $media_block['title'] . $content . "</div>";
-    }
-
-    return $output;
-  }
+  return $links;
 }
 
-
 /*
- * @see file: preprocess/views.inc
+ * @see file: src/preprocess/views.inc
  * Preprocess functions for Views.
  */
 
@@ -2994,9 +2778,8 @@ function cellular_preprocess_views_view(&$vars) {
   }
 }
 
-
 /*
- * @see file: preprocess/process.inc
+ * @see file: src/preprocess/process.inc
  * Cellular process functions.
  */
 

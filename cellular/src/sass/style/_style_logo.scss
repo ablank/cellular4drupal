@@ -1,0 +1,34 @@
+/**
+  * @file
+  * Logo link style
+*/
+
+.logo {
+  // Container for logo
+  float: left;
+  left: 5%;
+  padding: $logo_pad;
+  z-index: 9;
+  transition: width,height,padding 200ms;
+
+  a {
+    // Logo link to frontpage.
+    display: block;
+    text-indent: -999em;
+    width: $logo_width;
+    height: $logo_height;
+    background-image: $logo_png;
+    background-image: $logo_svg;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border: none;
+    text-decoration: none;
+    @include transition();
+    @include box-shadow(0 0 0 0 $white);
+
+    &:hover {
+      @include box-shadow(0 0 .4em 0 $hilight);
+      //  @include translate3d(0,-.1em,1em);
+    }
+  }
+}

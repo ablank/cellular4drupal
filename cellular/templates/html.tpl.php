@@ -3,7 +3,6 @@
  * @file
  * HTML Template.
  */
-
 /*
   Variables:
   - $css: An array of CSS files for the current page.
@@ -40,19 +39,18 @@
 ?>
 <?php print $doctype; ?>
 <html<?php print $html_attributes . $rdf_prefixes; ?>>
-<head>
-  <!--[if IE]><![endif]-->
-  <title><?php print $head_title; ?></title>
-  <?php print $head; ?>
-  <?php print $styles; ?>
-  <?php print $critical_js; ?>
-</head>
+  <head>
+    <!--[if IE]><![endif]-->
+    <title><?php print $head_title; ?></title>
+    <?php print $head; ?>
+    <?php print $styles; ?>
+  </head>
 
-<body<?php print $body_attributes; ?>>
-
-<?php print $page_top; ?>
-<?php print $page; ?>
-<?php print $scripts; ?>
-<?php print $page_bottom; ?>
-</body>
+  <body<?php print $body_attributes; ?>>
+    <?php print $critical_js; ?>
+    <?php print $page_top; ?>
+    <?php print $page; ?>
+    <?php print $scripts; ?>
+    <?php print $page_bottom; ?>
+  </body>
 </html>

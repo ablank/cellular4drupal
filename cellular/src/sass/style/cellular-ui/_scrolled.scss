@@ -1,0 +1,33 @@
+/**
+  * @file
+  * CellularUI : window scrolled styling
+*/
+$scroll_header: $header_height / 2;
+.scrolled {
+  #header {
+    height: $scroll_header;
+    overflow: hidden;
+    .logo {
+      padding: 0;
+      a {
+        width: $scroll_header;
+        height: $scroll_header;
+        background-size: $scroll_header;
+      }
+    }
+  }
+  .jMmenu-trigger {
+    // Element, used as the menu trigger.
+    top: ($scroll_header * 0.1)!important;
+    width: $scroll_header * 0.8;
+    height: $scroll_header * 0.8;
+    background-size: ($scroll_header * 0.8) * 3;
+    border: 1px solid $border_color;
+  }
+  &.jMmenu-active,
+  &.jMmenu-inactive {
+    .jMmenu-menu {
+      top: $scroll_header;
+    }
+  }
+}

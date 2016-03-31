@@ -4,20 +4,10 @@
  */
 
 module.exports = {
-  php: {
-    files: [
-      'preprocess/**/*.inc'
-    ],
-    tasks: [
-      'concat:template',
-      'concat:theme_settings'
-    ]
-  },
   javascript: {
-    files: ['js/**/*.js'],
+    files: ['src/js/**/*'],
     tasks: [
-      'concat:cellularUI',
-      // 'uglify',
+      'concat',
       'jshint'
     ],
     options: {
@@ -25,7 +15,7 @@ module.exports = {
     }
   },
   stylesheets: {
-    files: ['sass/**/*.scss'],
-    tasks: ['compass']
+    files: ['src/sass/**/*'],
+    tasks: ['compass', 'px_to_rem']
   }
 };

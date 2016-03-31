@@ -1,0 +1,45 @@
+/**
+  * @file
+  * General styling for icons.
+*/
+
+.icon {
+  display: inline;
+  display: inline-block;
+  width: $icon_size;
+  height: $icon_size;
+  text-indent: -999em;
+  margin: .4em;
+  padding: $icon_padding;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: none;
+
+  &:hover {
+    border-color: $hilight;
+  }
+
+  &.search {
+    text-indent: 0;
+  }
+}
+
+/* Iterate over lists of icons to include. */
+
+@if($use_ui_icons){
+  @each $icon in $ui_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}
+@if($use_tech_icons){
+  @each $icon in $tech_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}

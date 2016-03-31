@@ -14,14 +14,9 @@ module.exports = {
     }
   },
   js: [
-    'js/*.js',
-    '!js/**/*.min.js',
-    'js/cellularUI/jquery.cellularUI.js'
-  ]
-  ,
+    'src/js/*.js'
+  ],
   cellularUI: [
-    'js/cellularUI/jquery.cellularUI.js',
-    'js/cellularUI/src/*.js'
+    'src/js/cellular-ui/jquery.cellular-ui.js'
   ]
-
 };

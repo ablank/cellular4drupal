@@ -8,7 +8,7 @@
 module.exports = {
   compile: {
     options: {
-      config: 'config/compass.rb'
+      config: 'grunt/config/compass.rb'
     }
   }
 };

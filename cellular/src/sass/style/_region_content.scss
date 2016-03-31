@@ -1,0 +1,25 @@
+/**
+  * @file
+  * Content region styles
+*/
+
+#content {
+  z-index: 1;
+  background: $white;
+
+  @if($header_position == 'absolute' OR 'fixed') {
+    margin-top: $header_height;
+  }
+}
+
+#content-top {
+}
+
+#content-bottom {
+}
+
+#console {
+}
+.messages {
+  padding: 1em 1.4em;
+}
