@@ -17,15 +17,12 @@ table {
 
 th,
 thead {
-  padding: $tiny;
   font-family: $h_font;
   font-weight: $h_weight;
   font-size: $normal;
   text-align: center;
-  background: lighten($light_grey, 15%);
-  color: $grey;
+  color: $dark_grey;
   border: $cell_border;
-  border-bottom-color: $grey;
 }
 
 tr:nth-child(even) {

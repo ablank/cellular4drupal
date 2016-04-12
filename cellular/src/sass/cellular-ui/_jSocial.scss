@@ -1,0 +1,94 @@
+/**
+  * @file
+  * CellularUI : jTabs
+*/
+$icon_size: 1.4em;
+
+.jSocial{
+  z-index: 1;
+  display: block;
+  margin: 1em 0 0 0;
+  padding: 1em;
+  background-color: $white;
+  border-radius: 0.4em;
+  @include box-shadow();
+
+  .title {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .icon {
+    width: $icon_size;
+    height: $icon_size;
+    margin: $icon_size * 0.2;
+    padding: $icon_size * 0.2;
+    border: 1px solid $grey;
+    border-radius: 50%;
+    background-size: $icon_size;
+    background-color: $light_grey;// $white;
+    background-position: center center;
+    text-indent: -999em;
+
+    &:hover {
+      background-color: $white;// $white;
+    }
+
+    @if($use_social_icons){
+      @each $icon in $social_icons {
+        &.#{$icon} {
+          background-image: url('#{$icon_source_png}#{$icon}.png');
+          background-image: url('#{$icon_source_svg}#{$icon}.svg');
+        }
+      }
+    }
+  }
+
+  &.horizontal,
+  &.vertical {
+    z-index: 10;
+    position: fixed;
+    margin: 0;
+
+    .icon {
+      border-radius: 0;
+    }
+  }
+
+}
+
+.jSocial.horizontal {
+  bottom: 0;
+  left: 0;
+  padding: 0 1em;
+
+  h3 {
+    display: inline;
+  }
+
+}
+
+.jSocial.vertical {
+  top: $header_height;
+  right: 0;
+  width: $icon_size * 1.5;
+  padding: $icon_size ($icon_size * 0.2);
+
+  .title {
+    position: absolute;
+    left: -999em;
+  }
+  .icon {
+    margin: auto;
+  }
+
+}
+
+.jSocial-share {
+
+}
+
+.jSocial-follow {
+
+}

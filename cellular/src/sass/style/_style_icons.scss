@@ -8,11 +8,9 @@
   display: inline-block;
   width: $icon_size;
   height: $icon_size;
-  text-indent: -999em;
-  margin: .4em;
-  padding: $icon_padding;
+  padding: 0 0 0 ($icon_size + ($icon_size * 0.1));
   vertical-align: middle;
-  background-position: center center;
+  background-position: left center;
   background-repeat: no-repeat;
   background-color: none;
 
@@ -27,6 +25,14 @@
 
 /* Iterate over lists of icons to include. */
 
+@if($use_social_icons){
+  @each $icon in $social_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}
 @if($use_ui_icons){
   @each $icon in $ui_icons {
     .icon.#{$icon} {

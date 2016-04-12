@@ -20,19 +20,17 @@
   }
 }
 
-  // Page anchors.
+// Page anchors.
 a[id^=comment-] {
   position: absolute;
   left: -999em;
   visibility: hidden;
 }
 
-  // Comment reply threads.
+// Comment reply threads.
 .indented {
-    margin-bottom: 0.1em;
-    padding: 0 0 0 1em;
-    border-left: $light_grey 1px solid;
-    border-bottom: $light_grey 1px solid;
+  margin-bottom: 0.1em;
+  padding: 0 0 0 1em;
 
   .comment {
     background-color: darken($white, 10%);

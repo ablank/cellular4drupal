@@ -44,22 +44,13 @@
   padding: 1em;
 }
 
-//ctools-use-ajax ctools-auto-submit-click js-hide
-.javascript .js-hide {
-  display: none;
-  &.progress-disabled:after {
-    padding: 0 1.2em;
-    @include transition();
-    @include loader('spinna', null, 1em, $hilight, 2s);
-  }
-}
 
+/* Loading indicator */
 div,
 a,
 input,
 button,
 select {
-  // Loading throbber.
   &.progress-disabled {
     outline: none;
     @include transition();
@@ -73,6 +64,16 @@ select {
   }
 }
 
+//ctools-use-ajax ctools-auto-submit-click js-hide
+.javascript .js-hide {
+  display: none;
+  &.progress-disabled:after {
+    padding: 0 1.2em;
+    @include transition();
+    @include loader('spinna', null, 1em, $hilight, 2s);
+  }
+}
+
 .description {
   text-align: center;
   font-style: italic;
@@ -80,3 +81,8 @@ select {
   font-size: 0.8em;
 }
 
+.mollom-image-captcha-instructions {
+  text-align: center;
+  margin: 0.4em;
+  padding: 0.2em 0.8em;
+}

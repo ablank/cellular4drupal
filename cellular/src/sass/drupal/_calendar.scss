@@ -27,6 +27,7 @@
 
 .month-view {
   table {
+    width: 100%;
     border-collapse: separate;
     border-spacing: 0.1em;
     padding: 0.2em;
@@ -73,7 +74,7 @@
 
   td {
     width: 14%; // ~ 100% / 7 days
-    min-width: 5em;
+    //min-width: 5em;
     background-color: $white;
     border-right: $grey 1px solid;
     border-bottom: $grey 1px solid;

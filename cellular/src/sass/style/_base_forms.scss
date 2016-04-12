@@ -32,7 +32,7 @@ form {
   }
 
   &.vertical {
-text-align: center;
+    text-align: center;
 
     label,
     input[type="text"],
@@ -232,6 +232,7 @@ button,
 input[type="button"],
 input[type="submit"]{
   @include button();
+  display: block;
 }
 
 //Form Alert Classes

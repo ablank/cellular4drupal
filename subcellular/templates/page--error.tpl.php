@@ -73,70 +73,60 @@
   comment/reply/12345).
 
  */
-
 ?>
 
 <div id="skipLinks" class="hidden">
-  <a href="#content-main"><?php print t('Skip to main content'); ?></a>
+  <a href="#content"><?php print t('Skip to main content'); ?></a>
   <a href="#nav"><?php print t('Skip to navigation'); ?></a>
 </div>
 
-<div id="page-wrap">
-  <div id="header">
-    <div class="logo">
-      <?php
-      if ($site_name) :
-        print $site_name;
-      endif;
+<div id="page-wrap" class="cell">
 
-      ?>
-    </div>
-    <?php if (isset($main_menu)) : ?>
-      <div id="nav">
-        <?php print render($main_menu); ?>
+  <div id="header" class="cell">
+    <div class="cell container">
+      <div class="logo">
+        <?php
+        if ($site_name) :
+          print $site_name;
+        endif;
+        ?>
       </div>
-    <?php endif; ?>
+      <?php if (isset($main_menu)) : ?>
+        <div id="nav">
+          <?php print render($main_menu); ?>
+        </div>
+      <?php endif; ?>
+    </div>
     <?php print render($page['header']); ?>
   </div>
-  <!-- /#header -->
 
-  <div id="app" class="cell center">
+  <div id="content" class="cell container">
     <?php
     print render($title_prefix);
-    // Error Details.
-    print '<h1 id="page-title">' . $http_status . '</h1>';
+    print "<h1>Oops!</h1>\n<em>There was a bit of a snag...</em>";
+    print '<h2 id="page-title">' . $http_status . '</h2>';
     print render($title_suffix);
 
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
-
     ?>
-    <div id="content-wrap">
-      <div id="content">
+    <div id="content-main">
 
-        <div class="error-message">
-          <?php
-          // Error message.
-          print $messages;
-
-          ?>
-        </div>
-        <?php print render($page['content']); ?>
-        <div class="search">
-          <?php print render($page['search_box']); ?>
-        </div>
+      <div class="error-message">
+        <?php print $messages; ?>
+      </div>
+      <?php print render($page['content']); ?>
+      <div class="search">
+        <?php print render($page['search_box']); ?>
       </div>
     </div>
-    <!-- /content-wrap-->
   </div>
-  <!-- /app-->
 
   <?php
   if ($page['footer_top']) :
     print render($page['footer_top']);
   endif;
-
   ?>
   <div id="footer" class="cell">
 
@@ -144,10 +134,8 @@
     if ($page['footer']) :
       print render($page['footer']);
     endif;
-
     ?>
   </div>
-  <!-- /#footer -->
 
   <?php if ($page['footer_bottom'] || $page['copyright']) : ?>
     <div id="footer-bottom" class="cell">
@@ -155,14 +143,11 @@
       if ($page['footer_bottom']) :
         print render($page['footer_bottom']);
       endif;
-
       ?>
 
       <?php if ($page['copyright']): ?>
         <div id="copyright"><?php print $page['copyright']; ?></div>
       <?php endif; ?>
     </div>
-    <!-- /#footer-bottom -->
   <?php endif; ?>
 </div>
-<!-- /#page-wrap-->

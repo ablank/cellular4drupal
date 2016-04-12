@@ -13,6 +13,6 @@
 
   a {
     @include button($white, $dark_grey, $hilight, 'flat');
-    padding: .4em .6em;
+    padding: 0.2em 0.4em;
   }
 }

@@ -24,3 +24,12 @@ html.js input.webform-calendar {
 .webform-container-inline div.ajax-progress-bar div {
   display: inherit;
 }
+
+.container-inline-date {
+
+  div,
+  label {
+    display: inline;
+    display: inline-block;
+  }
+}
