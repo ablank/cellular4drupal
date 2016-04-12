@@ -754,209 +754,11 @@ function cellular_links__system_main_menu($vars) {
   return $output;
 }
 */
+
 /*
  * @see file: src/preprocess/fn.preprocess.inc
  * Cellular functions to set content attributes.
  */
-
-/**
- * Add HTTP Response Headers.
- */
-function cellular_http_headers() {
-  // Try to prevent clickjacking.
-  drupal_add_http_header('X-Frame-Options', 'DENY');
-  // Set IE compatibility mode.
-  drupal_add_http_header('X-UA-Compatible', 'IE=Edge,chrome=1');
-}
-
-/**
- * Set html attributes.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_html_attributes(&$vars) {
-  global $language;
-
-  $vars['doctype'] = "<!DOCTYPE html>\n";
-  $html_attributes = array(
-    'lang' => $language->language,
-    'xml:lang' => $language->language,
-    'dir' => $language->dir,
-  );
-  // Check support for RDF, adding namespace if needed.
-  if (module_exists('rdf')) {
-    // Set namespace.
-    $html_attributes['xmlns'] = 'http://www.w3.org/1999/xhtml';
-  }
-
-  $vars['html_attributes'] = drupal_attributes($html_attributes);
-}
-
-/**
- * Convert xmlns to profile.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_rdf(&$vars) {
-  // Add extra namespaces if needed:
-  // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
-  // Check support for RDF & add attributes:
-  if (module_exists('rdf')) {
-    // @see http://phase2technology.com/?p=552
-    $head_attributes = array();
-    $prefixes = array();
-    $namespaces = explode("\n", trim($vars['rdf_namespaces']));
-
-    foreach ($namespaces as $name) {
-      list($key, $url) = explode('=', $name, 2);
-      list($xml, $space) = explode(':', $key, 2);
-      unset($xml);
-      $url = trim(str_replace('"', '', $url));
-      $prefixes[] = "\n" . $space . ": " . $url;
-    }
-    $head_attributes['prefix'] = implode(' ', $prefixes);
-
-    $vars['rdf_prefixes'] = drupal_attributes($head_attributes);
-  }
-}
-
-/**
- * Add variable classes to <body>.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_body_attributes(&$vars) {
-  $body_attributes = array();
-  $path = drupal_get_path_alias();
-  // Page URL is used to set id & classes of body.
-  $aliases = explode('/', $path);
-  // Set the current page as body id:
-  $body_attributes['id'] = array_pop($aliases);
-
-  // Add body classes:
-  foreach ($aliases as $alias) {
-    $body_attributes['class'][] = $alias;
-  }
-
-  // Sidebar class is generated if region is used on page.
-  $body_attributes['class'][] = cellular_test_sidebar($vars);
-  drupal_is_front_page() ? $body_attributes['class'][] = 'frontpage' : NULL;
-  user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
-
-  $vars['body_attributes'] = drupal_attributes($body_attributes);
-}
-
-/**
- * Build links to favicons & apple-touch-icons.
- */
-function cellular_favicons() {
-  // Get icon file names from theme settings.
-  $settings = array(
-    'favicon' => theme_get_setting('favicon'),
-    'favicon-32' => theme_get_setting('favicon_32'),
-    'apple-default' => theme_get_setting('apple_icon_57'),
-    'apple-72' => theme_get_setting('apple_icon_72'),
-    'apple-114' => theme_get_setting('apple_icon_114'),
-    'apple-144' => theme_get_setting('apple_icon_144'),
-  );
-
-  $favicons = array();
-  !empty($settings['favicon']) ? $favicons['favicon-16x16'] = array(
-    'rel' => 'shortcut icon',
-    'type' => 'image/x-icon',
-    'size' => NULL,
-    'href' => $settings['favicon'],
-    'weight' => 95,
-  ) : NULL;
-  !empty($settings['favicon-32']) ? $favicons['favicon-32x32'] = array(
-    'rel' => 'shortcut icon',
-    'type' => 'image/png',
-    'size' => '32x32',
-    'href' => $settings['favicon-32'],
-    'weight' => 96,
-  ) : NULL;
-  /* Older iOS devices don't understand the sizes attribute and use
-   * whichever value is last, so 'default' is given highest weight.
-   */
-  !empty($settings['apple-default']) ? $favicons['apple-default'] = array(
-    'rel' => 'apple-touch-icon',
-    'size' => NULL,
-    'href' => $settings['apple-default'],
-    'weight' => 100,
-  ) : NULL;
-  !empty($settings['apple-72']) ? $favicons['apple-72x72'] = array(
-    'rel' => 'apple-touch-icon',
-    'size' => '72x72',
-    'href' => $settings['apple-72'],
-    'weight' => 99,
-  ) : NULL;
-  !empty($settings['apple-114']) ? $favicons['apple-114x114'] = array(
-    'rel' => 'apple-touch-icon',
-    'size' => '114x114',
-    'href' => $settings['apple-114'],
-    'weight' => 98,
-  ) : NULL;
-  !empty($settings['apple-144']) ? $favicons['apple-144x144'] = array(
-    'rel' => 'apple-touch-icon',
-    'size' => '144x144',
-    'href' => $settings['apple-144'],
-    'weight' => 97,
-  ) : NULL;
-
-  foreach ($favicons as &$favicon) {
-    if (isset($favicon)) {
-      // Set tag type to <link>
-      $favicon['tag'] = 'link';
-      // Set href relative to /assets/favicons/
-      $favicon['href'] = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH . '/assets/favicons/' . $favicon['href'];
-    }
-  }
-
-  cellular_build_head_tags($favicons);
-}
-
-/**
- * Add meta tags to <head>.
- *
- * @param array $vars
- *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_metatags(&$vars) {
-  $meta_tags = array(
-    'viewport' => array(
-      'tag' => 'meta',
-      'name' => 'viewport',
-      'content' => 'width=device-width, initial-scale=1',
-      'weight' => 0,
-    ),
-    'robots' => array(
-      'tag' => 'meta',
-      'name' => 'robots',
-      'content' => 'index, follow',
-      'weight' => 2,
-    ),
-    'humans' => array(
-      'tag' => 'link',
-      'type' => 'text/plain',
-      'rel' => 'author',
-      'href' => $GLOBALS['base_url'] . '/humans.txt',
-      'weight' => 3,
-    ),
-  );
-
-  // Add conditional metatags:
-  isset($vars['grddl_profile']) ? $meta_tags['grddl'] = array(
-    'tag' => 'link',
-    'rel' => 'profile',
-    'href' => $vars['grddl_profile'],
-    'weight' => 4,
-  ) : NULL;
-
-  cellular_build_head_tags($meta_tags);
-}
 
 /**
  * Test if sidebar regions are used and return the appropriate class.
@@ -970,15 +772,43 @@ function cellular_test_sidebar(&$vars) {
 
   if (!isset($sidebar_left) && !isset($sidebar_right)) {
     $vars['page']['content_class'] = theme_get_setting('content_class_no_sidebar');
-  }
-  elseif (isset($sidebar_left) && isset($sidebar_right)) {
+  } elseif (isset($sidebar_left) && isset($sidebar_right)) {
     $vars['page']['content_class'] = theme_get_setting('content_class_dual_sidebars');
     $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_dual_sidebars');
-  }
-  elseif (isset($sidebar_left) || isset($sidebar_right)) {
+  } elseif (isset($sidebar_left) || isset($sidebar_right)) {
     $vars['page']['content_class'] = theme_get_setting('content_class_single_sidebar');
     $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_single_sidebar');
   }
+}
+
+/**
+ *
+ */
+function cellular_user_link(&$vars) {
+  global $user;
+
+  $params = array('query' => drupal_get_destination());
+  /*
+    unset($_GET['destination']);
+    drupal_static_reset('drupal_get_destination');
+    drupal_get_destination();
+   */
+  $output = '<div class="user-links">';
+  if (user_is_logged_in()) {
+    $output .= t('<a href="@user-account">My Account</a> | <a href="@user-logout">Logout</a>', array(
+      '@user-logout' => url('user/logout', $params),
+      '@user-account' => url('user/' . $user->uid),
+    ));
+  } else {
+    $output .= t('<a href="@user-login" class="@class">Login</a> / <a href="@user-register" class="@class">Register</a>', array(
+      '@user-login' => url('user/login', $params),
+      '@user-register' => url('user/register'),
+      '@class' => module_exists('colorbox_node') && theme_get_setting('use_colorbox') ? 'colorbox-node' : '',
+    ));
+  }
+  $output.= '</div>';
+
+  $vars['page']['user_links'] = $output;
 }
 
 /* Under development, process vars for comment & node */
@@ -990,7 +820,16 @@ function cellular_author_info(&$vars) {
   // Author info
   $aid = user_load($vars['uid']);
   if (!empty($aid)) {
-    $author = theme('user_picture', array('account' => $aid));
+    dpm($vars);
+    /* $author = theme('image_style', array(
+     * 'style_name' => 'thumbnail',
+     * 'path' => $user->picture->uri,
+     * )); */
+    $author = theme('user_picture', array(
+      'account' => $aid,
+      'style_name' => 'thumbnail',
+      '#attributes' => array('class' => array('author-image')),
+    ));
     $author .= $aid->name;
   }
 
@@ -1609,6 +1448,7 @@ function cellular_js_alter(&$javascript) {
   // dpm($javascript);
 }
 
+
 /*
  * @see file: src/preprocess/alter_form.inc
  * Alter specific forms.
@@ -1651,7 +1491,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
           $form['actions']['submit']['#attributes']['class'][] = 'clearfix';
           break;
       }
-      
+
       // Username
       $form['name'] = array(
         '#type' => 'textfield',
@@ -1667,7 +1507,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
         '#size' => CELLULAR_INPUT_SIZE,
       );
       // Submit button
-      $form['actions']['submit']['#attributes']['#value'] = t('Log in');
+      $form['actions']['submit']['#attributes']['value'] = t('Log in');
 
       /* Request New Password & Register New Account Links. */
       $login_links = NULL;
@@ -1695,9 +1535,9 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
     /* Comment Form. */
     case 'comment-form':
-      
+
       $form['comment_body']['und'][0]['#title_display'] = 'invisible';
-      $form['comment_body']['und'][0]['#default_value'] = t('What do you think?');
+      $form['comment_body']['und'][0]['#default_value'] = '';
       // Hide unwanted form fields.
       $form['author']['#access'] = FALSE;
       $form['subject']['#access'] = FALSE;
@@ -1706,23 +1546,24 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['submit']['#value'] = t('Submit');
       $form['actions']['submit']['#attributes']['class'][] = 'right';
 
-      
+
       // Remove text format option descriptions.
       $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
       break;
   }
 }
 
+
 /*
- * @see file: src/preprocess/preprocess.inc
- * Template preprocess functions.
+ * @see file: src/preprocess/preprocess_html.inc
+ * HTML preprocess functions.
  */
 
 /**
  * Implements template_preprocess_html().
  */
 function cellular_preprocess_html(&$vars) {
-  
+
   cellular_http_headers();
   cellular_html_attributes($vars);
   cellular_rdf($vars);
@@ -1730,7 +1571,7 @@ function cellular_preprocess_html(&$vars) {
   cellular_favicons();
   cellular_body_attributes($vars);
 
-/*
+  /*
     $cookie = variable_get('site_name', "Just another Drupal Site");
     $cookie .='-visited';
     $cookie = trim($cookie, '=,; \t\r\n\013\014');
@@ -1739,15 +1580,226 @@ function cellular_preprocess_html(&$vars) {
     if (isset($_COOKIE[$cookie])) {
     drupal_set_message("OK, Cookie: ' " . $_COOKIE[$cookie] . " ' set!");
     }
- */
+   */
   //dpm($vars);
 }
+
+/**
+ * Add HTTP Response Headers.
+ */
+function cellular_http_headers() {
+  // Try to prevent clickjacking.
+  drupal_add_http_header('X-Frame-Options', 'DENY');
+  // Set IE compatibility mode.
+  drupal_add_http_header('X-UA-Compatible', 'IE=Edge');
+}
+
+/**
+ * Set html attributes.
+ *
+ * @param array $vars
+ *   Associative array of variables to merge with defaults from the theme registry.
+ */
+function cellular_html_attributes(&$vars) {
+  global $language;
+
+  $vars['doctype'] = "<!DOCTYPE html>\n";
+  $html_attributes = array(
+    'lang' => $language->language,
+    'xml:lang' => $language->language,
+    'dir' => $language->dir,
+  );
+  // Check support for RDF, adding namespace if needed.
+  if (module_exists('rdf')) {
+    // Set namespace.
+    $html_attributes['xmlns'] = 'http://www.w3.org/1999/xhtml';
+  }
+
+  $vars['html_attributes'] = drupal_attributes($html_attributes);
+}
+
+/**
+ * Convert xmlns to profile.
+ *
+ * @param array $vars
+ *   Associative array of variables to merge with defaults from the theme registry.
+ */
+function cellular_rdf(&$vars) {
+  // Add extra namespaces if needed:
+  // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
+  // Check support for RDF & add attributes:
+  if (module_exists('rdf')) {
+    // @see http://phase2technology.com/?p=552
+    $head_attributes = array();
+    $prefixes = array();
+    $namespaces = explode("\n", trim($vars['rdf_namespaces']));
+
+    foreach ($namespaces as $name) {
+      list($key, $url) = explode('=', $name, 2);
+      list($xml, $space) = explode(':', $key, 2);
+      unset($xml);
+      $url = trim(str_replace('"', '', $url));
+      $prefixes[] = "\n" . $space . ": " . $url;
+    }
+    $head_attributes['prefix'] = implode(' ', $prefixes);
+
+    $vars['rdf_prefixes'] = drupal_attributes($head_attributes);
+  }
+
+  // Check if google+ metatags are present, add emtpy string if not.
+  if (!module_exists('metatag_google_plus')) {
+    $vars['schemaorg'] = '';
+  }
+}
+
+/**
+ * Add variable classes to <body>.
+ *
+ * @param array $vars
+ *   Associative array of variables to merge with defaults from the theme registry.
+ */
+function cellular_body_attributes(&$vars) {
+  $body_attributes = array();
+  $path = drupal_get_path_alias();
+  // Page URL is used to set id & classes of body.
+  $aliases = explode('/', $path);
+  // Set the current page as body id:
+  $body_attributes['id'] = array_pop($aliases);
+
+  // Add body classes:
+  foreach ($aliases as $alias) {
+    $body_attributes['class'][] = $alias;
+  }
+
+  // Sidebar class is generated if region is used on page.
+  $body_attributes['class'][] = cellular_test_sidebar($vars);
+  drupal_is_front_page() ? $body_attributes['class'][] = 'frontpage' : NULL;
+  user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
+
+  $vars['body_attributes'] = drupal_attributes($body_attributes);
+}
+
+/**
+ * Build links to favicons & apple-touch-icons.
+ */
+function cellular_favicons() {
+  // Get icon file names from theme settings.
+  $settings = array(
+    'favicon' => theme_get_setting('favicon'),
+    'favicon-32' => theme_get_setting('favicon_32'),
+    'apple-default' => theme_get_setting('apple_icon_57'),
+    'apple-72' => theme_get_setting('apple_icon_72'),
+    'apple-114' => theme_get_setting('apple_icon_114'),
+    'apple-144' => theme_get_setting('apple_icon_144'),
+  );
+
+  $favicons = array();
+  !empty($settings['favicon']) ? $favicons['favicon-16x16'] = array(
+        'rel' => 'shortcut icon',
+        'type' => 'image/x-icon',
+        'size' => NULL,
+        'href' => $settings['favicon'],
+        'weight' => 95,
+          ) : NULL;
+  !empty($settings['favicon-32']) ? $favicons['favicon-32x32'] = array(
+        'rel' => 'shortcut icon',
+        'type' => 'image/png',
+        'size' => '32x32',
+        'href' => $settings['favicon-32'],
+        'weight' => 96,
+          ) : NULL;
+  /* Older iOS devices don't understand the sizes attribute and use
+   * whichever value is last, so 'default' is given highest weight.
+   */
+  !empty($settings['apple-default']) ? $favicons['apple-default'] = array(
+        'rel' => 'apple-touch-icon',
+        'size' => NULL,
+        'href' => $settings['apple-default'],
+        'weight' => 100,
+          ) : NULL;
+  !empty($settings['apple-72']) ? $favicons['apple-72x72'] = array(
+        'rel' => 'apple-touch-icon',
+        'size' => '72x72',
+        'href' => $settings['apple-72'],
+        'weight' => 99,
+          ) : NULL;
+  !empty($settings['apple-114']) ? $favicons['apple-114x114'] = array(
+        'rel' => 'apple-touch-icon',
+        'size' => '114x114',
+        'href' => $settings['apple-114'],
+        'weight' => 98,
+          ) : NULL;
+  !empty($settings['apple-144']) ? $favicons['apple-144x144'] = array(
+        'rel' => 'apple-touch-icon',
+        'size' => '144x144',
+        'href' => $settings['apple-144'],
+        'weight' => 97,
+          ) : NULL;
+
+  foreach ($favicons as &$favicon) {
+    if (isset($favicon)) {
+      // Set tag type to <link>
+      $favicon['tag'] = 'link';
+      // Set href relative to /assets/favicons/
+      $favicon['href'] = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH . '/assets/favicons/' . $favicon['href'];
+    }
+  }
+
+  cellular_build_head_tags($favicons);
+}
+
+/**
+ * Add meta tags to <head>.
+ *
+ * @param array $vars
+ *   Associative array of variables to merge with defaults from the theme registry.
+ */
+function cellular_metatags(&$vars) {
+  $meta_tags = array(
+    'viewport' => array(
+      'tag' => 'meta',
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1',
+      'weight' => 0,
+    ),
+    'robots' => array(
+      'tag' => 'meta',
+      'name' => 'robots',
+      'content' => 'index, follow',
+      'weight' => 2,
+    ),
+    'humans' => array(
+      'tag' => 'link',
+      'type' => 'text/plain',
+      'rel' => 'author',
+      'href' => $GLOBALS['base_url'] . '/humans.txt',
+      'weight' => 3,
+    ),
+  );
+
+  // Add conditional metatags:
+  isset($vars['grddl_profile']) ? $meta_tags['grddl'] = array(
+        'tag' => 'link',
+        'rel' => 'profile',
+        'href' => $vars['grddl_profile'],
+        'weight' => 4,
+          ) : NULL;
+
+  cellular_build_head_tags($meta_tags);
+}
+
+
+/*
+ * @see file: src/preprocess/preprocess_node.inc
+ * Node preprocess functions.
+ */
 
 /**
  * Implements template_preprocess_node().
  */
 function cellular_preprocess_node(&$vars) {
   $node = $vars['elements']['#node'];
+
   // Set attributes.
   $vars['title_attributes_array']['class'][] = 'node-title';
   $vars['content_attributes_array']['class'][] = 'node-content';
@@ -1764,64 +1816,17 @@ function cellular_preprocess_node(&$vars) {
   // Push variables to the node array.
   $vars['post_date'] = $date;
   $vars['author'] = $author;
-
-  // dpm($node);
-}
-
-/**
- * Implements template_preprocess_block().
- */
-function cellular_preprocess_block(&$vars) {
-  $block = $vars['elements']['#block'];
-  // Hide block titles in the header regions.
-  switch ($block->region) {
-    case 'header':
-    case 'header-top':
-    case 'header-bottom':
-      $vars['title_attributes']['class'][] = 'element-invisible';
-
+  // Set default template suggestions.
+  //$vars['theme_hook_suggestions'][] = 'node__' . $vars['type'];
+  // Set custom template suggestions.
+  switch ($vars['node']->type) {
+    case 'forum':
+      $vars['theme_hook_suggestions'][] = 'forum_post';
+      //$vars['theme_hook_suggestions'] = array('forum_post');
+      //$vars['theme_hook_suggestion'] = 'forum_post';
       break;
   }
-}
-
-/**
- * Implements template_preprocess_comment().
- */
-function cellular_preprocess_comment(&$vars) {
-  $comment = $vars ['elements']['#comment'];
-  //dpm($comment);
-  // Set the template used by comments.
-  $vars['theme_hook_suggestions'][] = 'comment';
-  $vars['title_attributes_array']['class'][] = 'comment-title';
-  $vars['content_attributes_array']['class'][] = 'comment-content';
-  $vars['content_attributes_array']['class'][] = 'clearfix';
-
-  if (!empty($vars['new'])) {
-    $vars['classes_array'][] = 'new';
-  }
-  $submitted = '';
-  if (!empty($vars['author'])) {
-    $submitted .= '<span class="comment-author">';
-    $submitted .= $vars['picture'];
-    $submitted .= '<div>' . t('Posted by !username', array(
-      '!username' => $vars['author'],
-    )) . '</div>';
-    $submitted .= '</span>';
-  }
-
-  $submitted .= '<span class="comment-date">' . $vars['created'] . '</span>';
-
-  // No need to link comments...
-  $vars['title'] = $comment->subject;
-
-  $vars['submitted'] = $submitted;
-}
-
-/**
- * Implements template_preprocess_comment_wrapper.
- */
-function cellular_preprocess_comment_wrapper(&$vars) {
-  $vars['classes_array'][] = 'clearfix';
+  /**/
 }
 
 
@@ -1838,6 +1843,8 @@ function cellular_preprocess_page(&$vars) {
   cellular_error_page($vars);
   // Set main menu.
   cellular_main_menu($vars);
+  // Generate user account/login/register/logout link.
+  cellular_user_link($vars);
   // Set classes for content & sidebar regions.
   cellular_test_sidebar($vars);
   // Link site name to frontpage.
@@ -1911,9 +1918,107 @@ function cellular_preprocess_maintenance_page(&$vars) {
   cellular_error_page($vars);
 }
 
+
+/*
+ * @see file: src/preprocess/preprocess_block.inc
+ * Block preprocess functions.
+ */
+
+/**
+ * Implements template_preprocess_block().
+ */
+function cellular_preprocess_block(&$vars) {
+  $block = $vars['elements']['#block'];
+  // Hide block titles in the header regions.
+  switch ($block->region) {
+    case 'header':
+    case 'header-top':
+    case 'header-bottom':
+      $vars['title_attributes']['class'][] = 'element-invisible';
+
+      break;
+  }
+}
+
+
+/*
+ * @see file: src/preprocess/preprocess_comments.inc
+ *  Cellular comment preprocess functions.
+ */
+
+/**
+ * Implements template_preprocess_comment_wrapper().
+ */
+function cellular_preprocess_comment_wrapper(&$vars) {
+
+  $vars['theme_hook_suggestions'][] = 'comment_wrapper';
+  $vars['theme_hook_suggestions'][] = 'comment_wrapper__' . $vars['node']->type;
+  $vars['classes_array'][] = 'clearfix';
+}
+
+/**
+ * Implements template_preprocess_comment().
+ */
+function cellular_preprocess_comment(&$vars) {
+  $comment = $vars ['elements']['#comment'];
+  //dpm($comment);
+  // Set the template used by comments.
+  $vars['theme_hook_suggestions'][] = 'comment';
+  $vars['theme_hook_suggestions'][] = 'comment__' . $vars['node']->type;
+  $vars['title_attributes_array']['class'][] = 'comment-title';
+  $vars['content_attributes_array']['class'][] = 'comment-content';
+
+  switch ($vars['node']->type) {
+    case 'forum':
+      cellular_preprocess_forum_reply($vars);
+      break;
+  }
+
+  if (!empty($vars['new'])) {
+    $vars['classes_array'][] = 'new';
+  }
+  $submitted = '';
+  if (!empty($vars['author'])) {
+    $submitted .= '<span class="comment-author">';
+    $submitted .= $vars['picture'];
+    $submitted .= '<div>' . t('Posted by !username', array(
+          '!username' => $vars['author'],
+        )) . '</div>';
+    $submitted .= '</span>';
+  }
+
+  $submitted .= '<span class="comment-date">' . $vars['created'] . '</span>';
+
+  // No need to link comments...
+  $vars['title'] = $comment->subject;
+
+  $vars['submitted'] = $submitted;
+}
+
+function cellular_preprocess_forum_reply(&$vars) {
+
+}
+
+
 /*
  * @see file: src/preprocess/theme.inc
  * Set element markup.
+ */
+/**
+ * Implements hook_theme().
+ */
+/*
+  function cellular_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__forum'] = array(
+  'render element' => 'content',
+  'base hook' => 'node',
+  'template' => 'node--forum',
+  'path' => drupal_get_path('theme', 'cellular') . '/templates',
+  );
+
+  return $theme;
+  }
  */
 
 /**
@@ -1969,8 +2074,7 @@ function cellular_links($vars) {
       if (isset($link['href'])) {
         // Pass in $link as $options, they share the same keys.
         $output .= l(ucfirst($link['title']), $link['href'], $link);
-      }
-      elseif (!empty($link['title'])) {
+      } elseif (!empty($link['title'])) {
         // Some links are actually not links, but we wrap these in <span> for adding title and class attributes.
         if (empty($link['html'])) {
           $link['title'] = check_plain(ucfirst($link['title']));
@@ -2013,8 +2117,8 @@ function cellular_field(&$vars) {
   }
   // Wrap field if set.
   if ($wrap == 1) {
-    $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
-    . "\n $output \n</div>\n";
+    $prefix = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">\n";
+    $output = $prefix . $output . "\n</div>\n";
   }
 
   return $output;
@@ -2091,6 +2195,7 @@ function cellular_feed_icon(&$vars) {
   return $icon;
 }
 
+
 /*
  * @see file: src/preprocess/theme_form.inc
  * Theme markup of form elements.
@@ -2146,21 +2251,24 @@ function cellular_form_element(&$vars) {
   }
 
   $prefix = isset($element['#field_prefix']) ?
-  '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
+      '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
   $suffix = isset($element['#field_suffix']) ?
-  '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
-
+      '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
+  /*
+    if (empty($vars['#title'])) {
+    $vars['#title'] = '';
+    }
+   */
   if (isset($element['#title_display'])) {
+    $label = theme('form_element_label', $vars);
     switch ($element['#title_display']) {
       case 'before':
       case 'invisible':
-        $output .= ' ' . theme('form_element_label', $vars);
-        $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+        $output .= $label . $prefix . $element['#children'] . $suffix . "\n";
         break;
 
       case 'after':
-        $output .= ' ' . $prefix . $element['#children'] . $suffix;
-        $output .= ' ' . theme('form_element_label', $vars) . "\n";
+        $output .= $prefix . $element['#children'] . $suffix . $label . "\n";
         break;
 
       case 'attribute':
@@ -2213,11 +2321,13 @@ function cellular_button(&$vars) {
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
-  !empty($element['#title']) ?
-  $output .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
-  !empty($element['#description']) ?
-  $output .= '<div class="description">' . t($element['#description']) . "</div>\n" : NULL;
-  // Add form elements.
+  if (!empty($element['#title'])) {
+    $output .= '<legend>' . $element['#title'] . "</legend>\n";
+  }
+  if (!empty($element['#description'])) {
+    $output .= '<div class="description">' . t($element['#description']) . "</div>\n";
+  }
+// Add form elements.
   $output .= $element['#children'];
   $output .=!empty($element['#value']) ? $element['#value'] . "\n" : NULL;
   $output .= "</fieldset>\n";
@@ -2263,7 +2373,6 @@ function cellular_radio(&$vars) {
 function cellular_select(&$vars) {
   $element = $vars['element'];
   $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'select';
 
   $output = '<select' . drupal_attributes($attributes) . ">\n";
   $output .= form_select_options($element) . "\n";
@@ -2292,13 +2401,13 @@ function cellular_textfield(&$vars) {
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
   $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'textarea';
   $attributes['placeholder'] = t($element['#default_value']);
   $attributes['cols'] = isset($element['#cols']) ? $element['#cols'] : 60;
   $attributes['rows'] = isset($element['#rows']) ? $element['#rows'] : 5;
 
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
+
 
 /*
  * @see file: src/preprocess/theme_pager.inc
@@ -2309,11 +2418,11 @@ function cellular_textarea(&$vars) {
  * Implements theme_pager().
  */
 function cellular_pager($vars) {
+  $output = '';
   $tags = $vars['tags'];
   $element = $vars['element'];
   $parameters = $vars['parameters'];
   $quantity = $vars['quantity'];
-  $output = '';
   global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
@@ -2328,7 +2437,7 @@ function cellular_pager($vars) {
   // max is the maximum page number
   $pager_max = $pager_total[$element];
   // End of marker calculations.
-    // Prepare for generation loop.
+  // Prepare for generation loop.
   if ($pager_max > 1) {
     $i = $pager_first;
     if ($pager_last > $pager_max) {

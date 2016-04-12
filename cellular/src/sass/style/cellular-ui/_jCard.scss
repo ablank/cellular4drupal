@@ -9,23 +9,30 @@
 .jCard-wrap {
   display: inline-block;
   vertical-align: top;
-  margin: 1em;
-  padding: 1em;
+  margin: 0.2em auto;
+  padding: 0.2em;
   color: $panel_color;
   background: $panel_background;
-  border: 1px solid $grey;
+  border: 1px solid $light_grey;
   box-shadow: 0 0 0.1em 0.1em $light_grey;
-  transition: all 400ms;
+  @include transition();
+
   img {
     //@include transition();
   }
   .title {
     margin: 0;
     padding: 0.3em;
-    background-color: $grey;
-    color: $white;
+    font-size: 0.9em;
+    background-color: $dark_grey;
     @include transition();
+
+    a,
+    a:visited {
+      color: $white;
+    }
   }
+
   a,
   p,
   li {
@@ -37,8 +44,8 @@
   }
   &.active,
   &:active,
-  &:focus,
-  &:hover {
+    &:focus,
+    &:hover {
     color: $active_color;
     text-decoration: none;
     border: 1px solid $light_grey;
@@ -48,7 +55,12 @@
       border: 2px solid $dark_grey;
     }
     .title {
-      background-color: $dark_grey;
+      background-color: $active_color;
+
+      a,
+      a:visited{
+        color: $white;
+      }
     }
     a,
     p,

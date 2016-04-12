@@ -44,6 +44,16 @@
   padding: 1em;
 }
 
+//ctools-use-ajax ctools-auto-submit-click js-hide
+.javascript .js-hide {
+  display: none;
+  &.progress-disabled:after {
+    padding: 0 1.2em;
+    @include transition();
+    @include loader('spinna', null, 1em, $hilight, 2s);
+  }
+}
+
 div,
 a,
 input,
@@ -62,3 +72,11 @@ select {
     }
   }
 }
+
+.description {
+  text-align: center;
+  font-style: italic;
+  margin: 0.2em auto 1.8em;
+  font-size: 0.8em;
+}
+

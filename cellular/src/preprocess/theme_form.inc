@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Theme markup of form elements.
@@ -54,21 +55,24 @@ function cellular_form_element(&$vars) {
   }
 
   $prefix = isset($element['#field_prefix']) ?
-  '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
+      '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
   $suffix = isset($element['#field_suffix']) ?
-  '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
-
+      '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
+  /*
+    if (empty($vars['#title'])) {
+    $vars['#title'] = '';
+    }
+   */
   if (isset($element['#title_display'])) {
+    $label = theme('form_element_label', $vars);
     switch ($element['#title_display']) {
       case 'before':
       case 'invisible':
-        $output .= ' ' . theme('form_element_label', $vars);
-        $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+        $output .= $label . $prefix . $element['#children'] . $suffix . "\n";
         break;
 
       case 'after':
-        $output .= ' ' . $prefix . $element['#children'] . $suffix;
-        $output .= ' ' . theme('form_element_label', $vars) . "\n";
+        $output .= $prefix . $element['#children'] . $suffix . $label . "\n";
         break;
 
       case 'attribute':
@@ -121,11 +125,13 @@ function cellular_button(&$vars) {
 function cellular_fieldset(&$vars) {
   $element = $vars['element'];
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
-  !empty($element['#title']) ?
-  $output .= '<legend>' . $element['#title'] . "</legend>\n" : NULL;
-  !empty($element['#description']) ?
-  $output .= '<div class="description">' . t($element['#description']) . "</div>\n" : NULL;
-  // Add form elements.
+  if (!empty($element['#title'])) {
+    $output .= '<legend>' . $element['#title'] . "</legend>\n";
+  }
+  if (!empty($element['#description'])) {
+    $output .= '<div class="description">' . t($element['#description']) . "</div>\n";
+  }
+// Add form elements.
   $output .= $element['#children'];
   $output .=!empty($element['#value']) ? $element['#value'] . "\n" : NULL;
   $output .= "</fieldset>\n";
@@ -171,7 +177,6 @@ function cellular_radio(&$vars) {
 function cellular_select(&$vars) {
   $element = $vars['element'];
   $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'select';
 
   $output = '<select' . drupal_attributes($attributes) . ">\n";
   $output .= form_select_options($element) . "\n";
@@ -200,7 +205,6 @@ function cellular_textfield(&$vars) {
 function cellular_textarea(&$vars) {
   $element = $vars['element'];
   $attributes = cellular_form_element_attributes($element);
-  $attributes['type'] = 'textarea';
   $attributes['placeholder'] = t($element['#default_value']);
   $attributes['cols'] = isset($element['#cols']) ? $element['#cols'] : 60;
   $attributes['rows'] = isset($element['#rows']) ? $element['#rows'] : 5;

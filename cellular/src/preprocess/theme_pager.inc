@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Generate & theme drupal pager.
@@ -8,11 +9,11 @@
  * Implements theme_pager().
  */
 function cellular_pager($vars) {
+  $output = '';
   $tags = $vars['tags'];
   $element = $vars['element'];
   $parameters = $vars['parameters'];
   $quantity = $vars['quantity'];
-  $output = '';
   global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
@@ -27,7 +28,7 @@ function cellular_pager($vars) {
   // max is the maximum page number
   $pager_max = $pager_total[$element];
   // End of marker calculations.
-    // Prepare for generation loop.
+  // Prepare for generation loop.
   if ($pager_max > 1) {
     $i = $pager_first;
     if ($pager_last > $pager_max) {

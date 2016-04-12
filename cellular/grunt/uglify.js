@@ -7,7 +7,7 @@ module.exports = {
   options: {
     compress: true,
     beautify: false,
-    preserveComments: 'some',
+    preserveComments: false,
     wrap: true
             // screwIE8: true
   },
@@ -15,9 +15,7 @@ module.exports = {
     files: [{
         expand: true,
         cwd: 'js',
-        src: [
-          '**/*.js',
-        ],
+        src: ['*.js'],
         dest: 'js/'
       }]
   }

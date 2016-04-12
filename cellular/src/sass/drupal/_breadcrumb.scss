@@ -21,8 +21,7 @@
     background-repeat: no-repeat;
     background-size: 1em;
     background-position: left center;
-    background-image: url(../assets/icons/png/arrow-right.png);
-    background-image: url(../assets/icons/svg/arrow-right.svg);
+    background-image: url(../assets/icons/min/png/arrow-right.png);
 
     a {
       color: $white;
@@ -32,8 +31,7 @@
       background-image: none;
 
       a {
-        background-image: url(../assets/icons/png/home.png);
-          background-image: url(../assets/icons/svg/home.svg);
+        background-image: url(../assets/icons/min/png/home.png);
         background-repeat: no-repeat;
         background-position: left center;
         padding: 0 0 0 2em;

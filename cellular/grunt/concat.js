@@ -38,8 +38,11 @@ module.exports = {
       'src/preprocess/alter_css.inc',
       'src/preprocess/alter_js.inc',
       'src/preprocess/alter_form.inc',
-      'src/preprocess/preprocess.inc',
+      'src/preprocess/preprocess_html.inc',
+      'src/preprocess/preprocess_node.inc',
       'src/preprocess/preprocess_page.inc',
+      'src/preprocess/preprocess_block.inc',
+      'src/preprocess/preprocess_comments.inc',
       'src/preprocess/theme.inc',
       'src/preprocess/theme_form.inc',
       'src/preprocess/theme_pager.inc',
@@ -50,7 +53,6 @@ module.exports = {
     ],
     dest: 'template.php'
   },
-
   theme_settings: {
     options: {
       banner: '/**\n\

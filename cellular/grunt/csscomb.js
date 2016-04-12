@@ -10,7 +10,7 @@ module.exports = {
   all: {
     expand: true,
     cwd: 'css',
-    src: ['**/*.css', '!**/*.min.css'],
+    src: ['*.css'],
     dest: 'css/'
   }
 };

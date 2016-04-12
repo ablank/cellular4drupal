@@ -1,14 +1,1 @@
-/**
- * @file
- * Custom javascript for use in your theme.
- */
-
-(function ($) {
-  Drupal.behaviors.theme = {
-    attach: function (context, settings) {
-
-
-      /* End Drupal.behaviors.theme */
-    }
-  };
-})(jQuery);
+!function(a,b){!function(a){Drupal.behaviors.theme={attach:function(b,c){a("a[href^=tel]").each(function(){var b=a(this).attr("href").match(/\d+/g);a(this).attr("href","tel:"+b.join(""))})}}}(jQuery),b["true"]=a}({},function(){return this}());

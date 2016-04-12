@@ -13,13 +13,12 @@ module.exports = {
         expand: true,
         cwd: 'assets/images',
         src: [
-          'gif/**/*.gif',
-          'jpg/**/*.jpg',
-          'png/**/*.png',
-          'svg/**/*.svg'
-        ]
-        ,
-        dest: 'assets/images/min/'
+          '**/*.gif',
+          '**/*.jpg',
+          '**/*.png',
+          '**/*.svg'
+        ],
+        dest: 'assets/images/'
       }
     ]
   },
@@ -29,11 +28,24 @@ module.exports = {
         expand: true,
         cwd: 'assets/icons',
         src: [
-          'png/**/*.png',
-          'svg/**/*.svg'
-        ]
-        ,
-        dest: 'assets/icons/min/'
+          '**/*.gif',
+          '**/*.png',
+          '**/*.svg'
+        ],
+        dest: 'assets/icons/'
+      }
+    ]
+  },
+  favicons: {
+    files: [
+      {
+        expand: true,
+        cwd: 'src/assets/favicons',
+        src: [
+          '**/*.png',
+          '**/*.ico'
+        ],
+        dest: 'assets/favicons/'
       }
     ]
   }

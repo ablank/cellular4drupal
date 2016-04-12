@@ -1,0 +1,51 @@
+/**
+  * @file
+  * General styling for icons.
+*/
+
+.icon {
+  display: inline;
+  display: inline-block;
+  width: $icon_size;
+  height: $icon_size;
+  padding: 0 0 0 ($icon_size + ($icon_size * 0.1));
+  vertical-align: middle;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: none;
+
+  &:hover {
+    border-color: $hilight;
+  }
+
+  &.search {
+    text-indent: 0;
+  }
+}
+
+/* Iterate over lists of icons to include. */
+
+@if($use_social_icons){
+  @each $icon in $social_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}
+@if($use_ui_icons){
+  @each $icon in $ui_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}
+@if($use_tech_icons){
+  @each $icon in $tech_icons {
+    .icon.#{$icon} {
+      background-image: url('#{$icon_source_png}#{$icon}.png');
+      background-image: url('#{$icon_source_svg}#{$icon}.svg');
+    }
+  }
+}

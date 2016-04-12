@@ -1,7 +1,24 @@
 <?php
+
 /**
  * @file
  * Set element markup.
+ */
+/**
+ * Implements hook_theme().
+ */
+/*
+  function cellular_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__forum'] = array(
+  'render element' => 'content',
+  'base hook' => 'node',
+  'template' => 'node--forum',
+  'path' => drupal_get_path('theme', 'cellular') . '/templates',
+  );
+
+  return $theme;
+  }
  */
 
 /**
@@ -57,8 +74,7 @@ function cellular_links($vars) {
       if (isset($link['href'])) {
         // Pass in $link as $options, they share the same keys.
         $output .= l(ucfirst($link['title']), $link['href'], $link);
-      }
-      elseif (!empty($link['title'])) {
+      } elseif (!empty($link['title'])) {
         // Some links are actually not links, but we wrap these in <span> for adding title and class attributes.
         if (empty($link['html'])) {
           $link['title'] = check_plain(ucfirst($link['title']));
@@ -101,8 +117,8 @@ function cellular_field(&$vars) {
   }
   // Wrap field if set.
   if ($wrap == 1) {
-    $output = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">"
-    . "\n $output \n</div>\n";
+    $prefix = "<div class=\"" . $vars['classes'] . '"' . $vars['attributes'] . ">\n";
+    $output = $prefix . $output . "\n</div>\n";
   }
 
   return $output;

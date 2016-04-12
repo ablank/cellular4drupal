@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Collect Drupal specific  styles
+ */
+
+@import "variables";
+
+@import "drupal/drupal-ids";
+@import "drupal/drupal-classes";
+@import "drupal/powered-by";
+@import "drupal/breadcrumb";
+@import "drupal/postinfo";
+@import "drupal/pager";
+@import "drupal/user";
+@import "drupal/search";
+@import "drupal/comments";
+@import "drupal/menus";
+@import "drupal/tabs";
+// Replaces default module styles.
+@import "drupal/views";
+@import "drupal/colorbox";
+@import "drupal/calendar";
+@import "drupal/forum";
+@import "drupal/flag";
+@import "drupal/webform";
+@import "drupal/panels";
+@import "drupal/reveal";

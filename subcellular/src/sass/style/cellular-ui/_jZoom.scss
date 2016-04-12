@@ -1,0 +1,22 @@
+.jZoom {
+
+}
+.jZoom-wrap {
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.jZoom-trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  text-indent: -999em;
+  background: $red;
+}
+.jZoom-window {
+  position:absolute;
+  top: 2em;
+  left: 2em;
+}

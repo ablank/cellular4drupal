@@ -67,6 +67,7 @@ settings[field_wrappers]            = 0
 settings[login_block_register]      = 0
 settings[login_block_password]      = 0
 settings[login_block_orientation]   = vertical
+settings[use_colorbox]              = 0
 
 ;----------// Styles
 settings[inline_critical_css]           = 0

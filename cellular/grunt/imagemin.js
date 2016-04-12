@@ -11,14 +11,14 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: 'src/assets/images',
+        cwd: 'assets/images',
         src: [
-          'gif/**/*.gif',
-          'jpg/**/*.jpg',
-          'png/**/*.png',
-          'svg/**/*.svg'
+          '**/*.gif',
+          '**/*.jpg',
+          '**/*.png',
+          '**/*.svg'
         ],
-        dest: 'assets/images'
+        dest: 'assets/images/'
       }
     ]
   },
@@ -26,12 +26,13 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: 'src/assets/icons',
+        cwd: 'assets/icons',
         src: [
-          'png/**/*.png',
-          'svg/**/*.svg'
+          '**/*.gif',
+          '**/*.png',
+          '**/*.svg'
         ],
-        dest: 'assets/icons'
+        dest: 'assets/icons/'
       }
     ]
   },
@@ -41,10 +42,10 @@ module.exports = {
         expand: true,
         cwd: 'src/assets/favicons',
         src: [
-          'png/**/*.png',
-          'svg/**/*.ico'
+          '**/*.png',
+          '**/*.ico'
         ],
-        dest: 'assets/favicons'
+        dest: 'assets/favicons/'
       }
     ]
   }

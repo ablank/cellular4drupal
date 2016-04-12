@@ -1,0 +1,263 @@
+/**
+  * @file
+  * Form styling
+*/
+
+$i_pad: 0.4em;
+$i_width: 90%;
+
+form {
+  display: block;
+  max-width: 32em;
+  margin: auto;
+  padding: 0;
+
+  // Form Alignment Classes
+  &.horizontal {
+    display: inline;
+    max-width: none;
+    padding: 0;
+
+    label,
+    input {
+      display: inline;
+      clear: none;
+    }
+
+    input[type="submit"] {
+      margin: 0 $tiny;
+      float: none;
+      display: inline;
+    }
+  }
+
+  &.vertical {
+    text-align: center;
+
+    label,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+    }
+
+    input[type=submit] {
+      float: none;
+      margin: $tiny auto;
+    }
+  }
+}
+
+fieldset {
+  padding: $normal;
+  margin: $tiny;
+  border: $light_grey $border;
+  //@include clear();
+}
+
+legend {
+  font-family: $h_font;
+  font-weight: $h_weight;
+  font-size: $big;
+  padding: 0 $small;
+  color: $grey;
+}
+
+label {
+  display: block;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  text-align: left;
+  margin: $i_pad 0 0;
+  padding: 1em $i_pad 0;
+}
+
+input,
+select,
+textarea {
+  display: inline;
+  display: inline-block;
+  text-align: left;
+  text-indent: $i_pad;
+  font: 1em/1.6em $p_font;
+  font-size: 100%;
+  vertical-align: middle;
+  padding: $i_pad 0;
+  color: $p_color;
+  background: darken($white, 1%);
+  border: $grey thin solid;
+  width: 96%; // Leave some room so elements aren't cut off.
+  margin: auto;
+  @include border-radius();
+  @include transition();
+
+  &:focus {
+    outline: none;
+    color: $p_color;
+    background: $white;
+    box-shadow: 0 0 0.2em 0 $hilight;
+  }
+
+
+  &.year,
+  &.month,
+  &.day,
+  &.hour,
+  &.minute {
+    width: auto;
+  }
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  //width: $i_width;
+}
+
+select {
+  cursor: pointer;
+  margin: $i_pad auto;
+  padding: $i_pad;
+  text-indent: unset;
+}
+
+optgroup {
+  background: darken($white, 5%);
+}
+
+option {
+  border-bottom: $grey thin dotted;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+
+  &.required,
+  &[required]{
+    box-shadow: 0 0 0.1em 0 $hilight;
+
+    &:after {
+      //content: ' *';
+    }
+  }
+
+  &[type="hidden"] {
+    display: none;
+  }
+
+  &[type="image"] {
+    width: auto;
+    border: none;
+  }
+
+  &[type="text"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="search"],
+  &[type="email"],
+  &[type="password"] {
+
+  }
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    @include checkbox();
+  }
+
+  &[type="checkbox"] {
+    + label {
+      &:before {
+        @include border-radius();
+      }
+    }
+
+    &:checked {
+      + label {
+        &:after {
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAw9JREFUWIXtVEtrE1EYPd+9c+9M0tSdG1FEUcQnCK5duBLRHyE+UBQVRCviK8UK7UKpuBCsKOi2rrS4UDBWFNHa0koV2sZXrYrPdiamSSb3c6Fpx2bSNjXNyjOr+R73nHtmvg/4jyqB7lMTOsHoBDstTlchLqrC3oHlXMMHAUB+ldDv9Paq8AIAGIIeUrJw+8jFyL1getYdoAdUzxFeBADWR4vlB7lrtjnH8QhL8RR5dILxDBy9EL0xsWT2HGAQGWqD/M2h3qu8+WD2V02AaBcnOMpLAAAGsJLW1dGG0XcT66xZYe/GYpM1xwuv6q3Kym/ySKjQipMziFxqg4QEAPIJ1oDV7MW9L1URINrFUY7yssK7eqVSMTdWX2mecHRgIZ7AL8w8PSaONcbqJmupqAOUpjZYv60HAJVU372f3rmqCBAPxCGu4RUBMdD9ug5xZCfrq8wU9GCByZgzwZAe0EOe712eqrUiDtAw3YIcv4zwBFRS7UMcZqresSb7mt2cWZnZC4CKqgxS0FiCNfg0MSUS4oCpMauDMd2v+7yTXut0xI85oPt0lxpUAhTySMQoRS1F3R2YxzXcFAzJHxLytdw5HfK/BLj17hX9Qj+kbLEBAMAOb0YXNgRj9JNusmQVjFn9VkcqnrpXtoA/B26ze22/VDFl6DqeQwOAaBd7OMZrg3n5WcIZdKZ9ewDjMwsA2UT2S2RtROfn5tdzlMOqaylNAjvQCwu3C+u2AKfbuesd9hrLEVA0BS67DXa3/bbU/8ua68jQHVasg3FryGJryNpdDnmoAMQxSsO0TffrkHIABIsdXvm3KkAP6Fb3tNtXrgAZFswlcsnImshyf76/inXIp5gANajy4qXY6Lf7brkCSi4izvM+u8f2pjwhD6ikakmfSb8vlxwo4QAA5BK5lLPO+WpqzRYzp/RCU69Vxn5jb8okMumZCJh0FXtx75LdYz8lP3w3UI6gB/TZkfjIt5mQTykAAGMUW3WvzoclVVJ5sU+xhpmSA2F7PwS1p2obTcQcLkrksD91LHX+XwT8xy85FxgqkTppPAAAAABJRU5ErkJggg==);
+          background-image: url('../assets/icons/svg/check.svg');
+        }
+      }
+    }
+
+    &.switch {
+
+    }
+  }
+
+  &[type=radio] {
+    + label {
+      &:before {
+        @include border-radius(50%);
+      }
+    }
+
+    &:checked {
+      + label {
+        &:after {
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAydJREFUWIXdlk1oFEkUx/+vqqu7k+7B6CyuH+AHRhdW3WVX9qJC8OJFMHpQBCVBUAQ9eVwQQjCId5Ele9hdBC96NfHgyU/EL1SMRqNo9JRoYkz3OJnuqXp70JiZ9IyOmZmA/m/96uP/66pX9Qr4psUgMKiaKSoffAbSYusQp7iNPV7FDvtsMwEA5cnQe8pQhvopoP/yIt+NndC1AeiGUk3qhF6o95qUsSuZVIyLSA7Jv+O++DA6kZ8xgPuXuyFujnv0D3pOJcbTJYfkmD1ob84eyN4sC1uuwel29kVrosszNQcA/aNuyq3OXXe73faykKWCjScb26Jfo3+MZ6pKMABgm8k0mdbG3xufxL3xg+ntCQPvuLd24o+Ju3qeLrs6M5EckbrhcsMvYWf4sDBebNIBK14Sn6+1OQDotJZRc9SLHcWrXmTkNXgH4xXx4lqbTypeGS/1f/P3F8amtqADwm62h6M1UbpeAADg3HOGc89zC9EJAxSsgGe8Fr1A19UcAPKL8vN9+Bsnvz8BkE3bdLqiy6sq6bQGBLYmAHRKt1R3q1coAWhfb0oAwMayWbD/IAfLkwAEf9YACKkEAGniWfPPT3lNAWTo3awBZGksASCyop9y9c9CyhLEhOhPADDzdWvYqjuANWQBjGtJAPA5NajqDqBeKrDhngRABplLYkQ8k6MlK3RNJN9IiFExEIrwagIAnTBgHHfuO0A9zgMD7n0XBDo2WQeKAQCED8N/xZi47Txyau7v9Dmgd3QjQHCqMF5c989Ck6bdakBl1Iva5YN6rqCeqYAM7Sn8e6DEkyy6FI24Le4da8jaBQlRbYGyH9tw+9xYaNEadAWJx2nJjMtdzD11W9yb4rXYLt9K26QNWH1dYoiMgHvLhRpUgTCidfzo+IVS/T5786SOpH5iyadJ0Lp4aYxoWQQzx3xuCOSYhHqhoF4pcJ5vkKE9QVcwUK7/l6++HZCpn1PtzPwnETUbz0DP0zC+AdsfVoUigggF5IiEeC/A4AECHQsQnJq+518PMKkOCB/+RmLaAmA9CCvBmPtxlrcAngC4xoZ7wqPhFdTnMH+H+h/GuyfZJY5SZQAAAABJRU5ErkJggg==);
+          background-image: url('../assets/icons/svg/radio.svg');
+        }
+      }
+    }
+  }
+
+  &[type=range] {
+    width: 100%;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+    /* Hide default slider */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      background: transparent; /* Hides the slider so custom styles can be added */
+      border-color: transparent;
+      color: transparent;
+    }
+  }
+
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"]{
+  @include button();
+  display: block;
+}
+
+//Form Alert Classes
+.ok,
+.warning,
+.error {
+  font-weight: bold;
+  border: .2em solid;
+  @include border-radius();
+}
+
+.ok {
+  color: $ok_color;
+  background-color: lighten($ok_color, 65%);
+  border-color: $ok_color;
+}
+
+.warning {
+  color: $warning_color;
+  background-color: lighten($warning_color, 65%);
+  border-color: $warning_color;
+}
+
+.error {
+  color: $error_color;
+  background-color: lighten($error_color, 65%);
+  border-color: $error_color;
+}

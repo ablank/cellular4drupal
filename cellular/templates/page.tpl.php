@@ -104,23 +104,28 @@
         <?php print render($page['header_top']); ?>
       </div>
     <?php endif; ?>
-    <div class="logo">
-      <?php
-      if (!empty($site_name)) :
-        print $site_name;
-      endif;
-      ?>
-    </div>
-    <?php if (!empty($main_menu)) : ?>
-      <div id="nav">
-        <?php print render($main_menu); ?>
+    <div class="cell container">
+      <div class="logo">
+        <?php
+        if (!empty($site_name)) :
+          print $site_name;
+        endif;
+        ?>
       </div>
-    <?php endif; ?>
-    <?php if ($page['header_bottom']) : ?>
-      <div id="header-bottom" class="cell-100">
+      <?php if (!empty($main_menu)) : ?>
+        <div id="nav">
+          <?php print render($main_menu); ?>
+        </div>
+      <?php endif; ?>
+    </div>
+
+    <div id="header-bottom" class="cell-100">
+      <?php print $page['user_links']; ?>
+      <div class="container">
         <?php print render($page['header_bottom']); ?>
       </div>
-    <?php endif; ?>
+    </div>
+
   </div>
 
   <div id="content" class="cell container">
@@ -207,16 +212,20 @@
     <div id="footer" class="cell">
       <?php if ($page['footer_top']) : ?>
         <div id="footer-top" class="cell-100">
-          <?php print render($page['footer_top']); ?>
+          <div class="container">
+            <?php print render($page['footer_top']); ?>
+          </div>
         </div>
       <?php endif; ?>
-      <?php
-      if ($page['footer']) :
-        print render($page['footer']);
-      endif;
-      ?>
+      <?php if ($page['footer']) : ?>
+        <div class="cell-100 container">
+          <?php print render($page['footer']); ?>
+        </div>
+      <?php endif; ?>
       <div id="footer-bottom" class="cell-100">
-        <?php if ($page['footer_bottom']) : ?>
+        <div class="container">
+          <?php if ($page['footer_bottom']) : ?>
+          </div>
           <?php print render($page['footer_bottom']); ?>
         <?php endif; //#footer-bottom   ?>
       </div>

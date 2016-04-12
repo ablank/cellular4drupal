@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Alter specific forms.
@@ -41,7 +42,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
           $form['actions']['submit']['#attributes']['class'][] = 'clearfix';
           break;
       }
-      
+
       // Username
       $form['name'] = array(
         '#type' => 'textfield',
@@ -57,7 +58,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
         '#size' => CELLULAR_INPUT_SIZE,
       );
       // Submit button
-      $form['actions']['submit']['#attributes']['#value'] = t('Log in');
+      $form['actions']['submit']['#attributes']['value'] = t('Log in');
 
       /* Request New Password & Register New Account Links. */
       $login_links = NULL;
@@ -85,9 +86,9 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
 
     /* Comment Form. */
     case 'comment-form':
-      
+
       $form['comment_body']['und'][0]['#title_display'] = 'invisible';
-      $form['comment_body']['und'][0]['#default_value'] = t('What do you think?');
+      $form['comment_body']['und'][0]['#default_value'] = '';
       // Hide unwanted form fields.
       $form['author']['#access'] = FALSE;
       $form['subject']['#access'] = FALSE;
@@ -96,7 +97,7 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['submit']['#value'] = t('Submit');
       $form['actions']['submit']['#attributes']['class'][] = 'right';
 
-      
+
       // Remove text format option descriptions.
       $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';
       break;

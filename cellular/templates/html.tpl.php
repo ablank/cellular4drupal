@@ -38,7 +38,7 @@
  */
 ?>
 <?php print $doctype; ?>
-<html<?php print $html_attributes . $rdf_prefixes; ?>>
+<html<?php print $html_attributes . $rdf_prefixes . $schemaorg; ?>>
   <head>
     <!--[if IE]><![endif]-->
     <title><?php print $head_title; ?></title>

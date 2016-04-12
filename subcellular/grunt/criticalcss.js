@@ -8,7 +8,7 @@
 module.exports = {
   front: {
     options: {
-      url: 'http://dev/drupal7',//'http://localhost:90/drupal7/',
+      url: 'http://localhost/sitename', // Index page to test.
       width: 1400,
       height: 900,
       filename: 'css/style.css',
@@ -17,7 +17,7 @@ module.exports = {
   },
   standard: {
     options: {
-      url: 'http://dev/drupal7/content/abluo', //'http://localhost:90/drupal7/node/120',
+      url: 'http://localhost/sitename/page', // Standard page to test.
       width: 1400,
       height: 900,
       filename: 'css/style.css',

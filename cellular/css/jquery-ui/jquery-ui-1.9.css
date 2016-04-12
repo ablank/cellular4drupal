@@ -14,21 +14,6 @@ jquery.ui.selectable.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css,
 visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&cornerRadius=.4em&bgColorHeader=%23fff&bgTextureHeader=flat&bgImgOpacityHeader=0&borderColorHeader=%23222&fcHeader=%23222&iconColorHeader=%23222&bgColorContent=%23fff&bgTextureContent=flat&bgImgOpacityContent=0&borderColorContent=%23aaa&fcContent=%23222&iconColorContent=%23222&bgColorDefault=%23f50&bgTextureDefault=flat&bgImgOpacityDefault=0&borderColorDefault=%23fff&fcDefault=%23fff&iconColorDefault=%23fff&bgColorHover=%23d50&bgTextureHover=flat&bgImgOpacityHover=0&borderColorHover=%23fff&fcHover=%23fff&iconColorHover=%23fff&bgColorActive=%23fff&bgTextureActive=flat&bgImgOpacityActive=0&borderColorActive=%23f50&fcActive=%23f50&iconColorActive=%23f50&bgColorHighlight=%23ffd&bgTextureHighlight=flat&bgImgOpacityHighlight=0&borderColorHighlight=%23fd1&fcHighlight=%23222&iconColorHighlight=%2315f&bgColorError=%23fee&bgTextureError=flat&bgImgOpacityError=0&borderColorError=%23c00&fcError=%23c00&iconColorError=%23c00&bgColorOverlay=%23aaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23aaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=.8em&offsetTopShadow=-.8em&offsetLeftShadow=-.8em&cornerRadiusShadow=.4em
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 /**
- * Stylesheet breakpoints
- */
-/**
- * Variables : General variables available to Cellular
- *
- */
-/* Select the icon groups to include:
-  - Set to 'true' or 'false' to include or exclude entire icon group.
-*/
-/* Select the icons to include:
-  - Use only the base filename, .png or .svg will be added based on context
-  - CSS class will be generated from the base filename.
-  - Comment-out icons to remove them individually from the stylesheet.
-*/
-/**
   * @file
   // Cellular SASS mixins
   //    tread with caution
@@ -66,6 +51,12 @@ visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&co
   * http://codepen.io/TaniaLD/pen/oKxep
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
+*/
+/* Set true' or 'false' to include or exclude entire icon group. */
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
 */
 /**
  * @file
@@ -263,7 +254,7 @@ visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&co
   cursor: pointer;
   position: relative;
   margin-top: 2px;
-  padding: 0.5em 0.5em 0.5em 0.7em;
+  padding: .5em .5em .5em .7em;
   zoom: 1;
 }
 
@@ -274,7 +265,7 @@ visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&co
 
 /* line 202, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-accordion .ui-accordion-noicons {
-  padding-left: 0.7em;
+  padding-left: .7em;
 }
 
 /* line 206, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -285,7 +276,7 @@ visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&co
 /* line 210, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
   position: absolute;
-  left: 0.5em;
+  left: .5em;
   top: 50%;
   margin-top: -8px;
 }
@@ -318,7 +309,7 @@ visit http://jqueryui.com/themeroller/?ffDefault=&fwDefault=normal&fsDefault=&co
   display: inline-block;
   position: relative;
   padding: 0;
-  margin-right: 0.1em;
+  margin-right: .1em;
   cursor: pointer;
   text-align: center;
   zoom: 1;
@@ -366,26 +357,26 @@ button.ui-button-icons-only {
 
 /* line 287, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-button-text-only .ui-button-text {
-  padding: 0.4em 1em;
+  padding: .4em 1em;
 }
 
 /* line 291, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-button-icon-only .ui-button-text,
 .ui-button-icons-only .ui-button-text {
-  padding: 0.4em;
+  padding: .4em;
   text-indent: -9999999px;
 }
 
 /* line 297, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-button-text-icon-primary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
-  padding: 0.4em 1em 0.4em 2.1em;
+  padding: .4em 1em .4em 2.1em;
 }
 
 /* line 302, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-button-text-icon-secondary .ui-button-text,
 .ui-button-text-icons .ui-button-text {
-  padding: 0.4em 2.1em 0.4em 1em;
+  padding: .4em 2.1em .4em 1em;
 }
 
 /* line 307, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -397,7 +388,7 @@ button.ui-button-icons-only {
 /* no icon support for input elements, provide padding by default */
 /* line 314, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 input.ui-button {
-  padding: 0.4em 1em;
+  padding: .4em 1em;
 }
 
 /*button icon element(s) */
@@ -422,20 +413,20 @@ input.ui-button {
 .ui-button-text-icon-primary .ui-button-icon-primary,
 .ui-button-text-icons .ui-button-icon-primary,
 .ui-button-icons-only .ui-button-icon-primary {
-  left: 0.5em;
+  left: .5em;
 }
 
 /* line 341, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-button-text-icon-secondary .ui-button-icon-secondary,
 .ui-button-text-icons .ui-button-icon-secondary,
 .ui-button-icons-only .ui-button-icon-secondary {
-  right: 0.5em;
+  right: .5em;
 }
 
 /* line 347, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-button-text-icons .ui-button-icon-secondary,
 .ui-button-icons-only .ui-button-icon-secondary {
-  right: 0.5em;
+  right: .5em;
 }
 
 /*button sets*/
@@ -447,7 +438,7 @@ input.ui-button {
 /* line 358, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-buttonset .ui-button {
   margin-left: 0;
-  margin-right: -0.3em;
+  margin-right: -.3em;
 }
 
 /* workarounds */
@@ -461,14 +452,14 @@ button.ui-button::-moz-focus-inner {
 /* line 372, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker {
   width: 17em;
-  padding: 0.2em 0.2em 0;
+  padding: .2em .2em 0;
   display: none;
 }
 
 /* line 378, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker .ui-datepicker-header {
   position: relative;
-  padding: 0.2em 0;
+  padding: .2em 0;
 }
 
 /* line 383, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -544,14 +535,14 @@ button.ui-button::-moz-focus-inner {
 /* line 442, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker table {
   width: 100%;
-  font-size: 0.9em;
+  font-size: .9em;
   border-collapse: collapse;
-  margin: 0 0 0.4em;
+  margin: 0 0 .4em;
 }
 
 /* line 449, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker th {
-  padding: 0.7em 0.3em;
+  padding: .7em .3em;
   text-align: center;
   font-weight: bold;
   border: 0;
@@ -567,7 +558,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker td span,
 .ui-datepicker td a {
   display: block;
-  padding: 0.2em;
+  padding: .2em;
   text-align: right;
   text-decoration: none;
 }
@@ -575,8 +566,8 @@ button.ui-button::-moz-focus-inner {
 /* line 469, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker .ui-datepicker-buttonpane {
   background-image: none;
-  margin: 0.7em 0 0 0;
-  padding: 0 0.2em;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
@@ -585,9 +576,9 @@ button.ui-button::-moz-focus-inner {
 /* line 478, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker .ui-datepicker-buttonpane button {
   float: right;
-  margin: 0.5em 0.2em 0.4em;
+  margin: .5em .2em .4em;
   cursor: pointer;
-  padding: 0.2em 0.6em 0.3em 0.6em;
+  padding: .2em .6em .3em .6em;
   width: auto;
   overflow: visible;
 }
@@ -611,7 +602,7 @@ button.ui-button::-moz-focus-inner {
 /* line 501, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-datepicker-multi .ui-datepicker-group table {
   width: 95%;
-  margin: 0 auto 0.4em;
+  margin: 0 auto .4em;
 }
 
 /* line 506, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -648,7 +639,7 @@ button.ui-button::-moz-focus-inner {
 .ui-datepicker-row-break {
   clear: both;
   width: 100%;
-  font-size: 0;
+  font-size: 0em;
 }
 
 /* RTL support */
@@ -731,27 +722,27 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.2em;
+  padding: .2em;
   width: 300px;
   overflow: hidden;
 }
 
 /* line 610, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-dialog .ui-dialog-titlebar {
-  padding: 0.4em 1em;
+  padding: .4em 1em;
   position: relative;
 }
 
 /* line 615, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-dialog .ui-dialog-title {
   float: left;
-  margin: 0.1em 16px 0.1em 0;
+  margin: .1em 16px .1em 0;
 }
 
 /* line 620, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
-  right: 0.3em;
+  right: .3em;
   top: 50%;
   width: 19px;
   margin: -10px 0 0 0;
@@ -775,7 +766,7 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-content {
   position: relative;
   border: 0;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   background: none;
   overflow: auto;
   zoom: 1;
@@ -786,8 +777,8 @@ button.ui-button::-moz-focus-inner {
   text-align: left;
   border-width: 1px 0 0 0;
   background-image: none;
-  margin: 0.5em 0 0 0;
-  padding: 0.3em 1em 0.5em 0.4em;
+  margin: .5em 0 0 0;
+  padding: .3em 1em .5em .4em;
 }
 
 /* line 657, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -797,7 +788,7 @@ button.ui-button::-moz-focus-inner {
 
 /* line 661, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-dialog .ui-dialog-buttonpane button {
-  margin: 0.5em 0.4em 0.5em 0;
+  margin: .5em .4em .5em 0;
   cursor: pointer;
 }
 
@@ -850,7 +841,7 @@ button.ui-button::-moz-focus-inner {
 .ui-menu .ui-menu-item a {
   text-decoration: none;
   display: block;
-  padding: 2px 0.4em;
+  padding: 2px .4em;
   line-height: 1.5;
   zoom: 1;
   font-weight: normal;
@@ -866,7 +857,7 @@ button.ui-button::-moz-focus-inner {
 /* line 720, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-menu .ui-state-disabled {
   font-weight: normal;
-  margin: 0.4em 0 0.2em;
+  margin: .4em 0 .2em;
   line-height: 1.5;
 }
 
@@ -891,8 +882,8 @@ button.ui-button::-moz-focus-inner {
 /* line 743, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-menu .ui-icon {
   position: absolute;
-  top: 0.2em;
-  left: 0.2em;
+  top: .2em;
+  left: .2em;
 }
 
 /* right-aligned */
@@ -934,7 +925,7 @@ button.ui-button::-moz-focus-inner {
 .ui-slider .ui-slider-range {
   position: absolute;
   z-index: 1;
-  font-size: 0.7em;
+  font-size: .7em;
   display: block;
   border: 0;
   background-position: 0 0;
@@ -942,13 +933,13 @@ button.ui-button::-moz-focus-inner {
 
 /* line 789, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-slider-horizontal {
-  height: 0.8em;
+  height: .8em;
 }
 
 /* line 793, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-slider-horizontal .ui-slider-handle {
-  top: -0.3em;
-  margin-left: -0.6em;
+  top: -.3em;
+  margin-left: -.6em;
 }
 
 /* line 798, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -969,15 +960,15 @@ button.ui-button::-moz-focus-inner {
 
 /* line 811, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-slider-vertical {
-  width: 0.8em;
+  width: .8em;
   height: 100px;
 }
 
 /* line 816, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-slider-vertical .ui-slider-handle {
-  left: -0.3em;
+  left: -.3em;
   margin-left: 0;
-  margin-bottom: -0.6em;
+  margin-bottom: -.6em;
 }
 
 /* line 822, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -1010,9 +1001,9 @@ button.ui-button::-moz-focus-inner {
   border: none;
   background: none;
   padding: 0;
-  margin: 0.2em 0;
+  margin: .2em 0;
   vertical-align: middle;
-  margin-left: 0.4em;
+  margin-left: .4em;
   margin-right: 22px;
 }
 
@@ -1020,7 +1011,7 @@ button.ui-button::-moz-focus-inner {
 .ui-spinner-button {
   width: 16px;
   height: 50%;
-  font-size: 0.5em;
+  font-size: .5em;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -1068,7 +1059,7 @@ button.ui-button::-moz-focus-inner {
 /* line 899, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-tabs {
   position: relative;
-  padding: 0.2em;
+  padding: .2em;
   zoom: 1;
 }
 
@@ -1076,7 +1067,7 @@ button.ui-button::-moz-focus-inner {
 /* line 907, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-tabs .ui-tabs-nav {
   margin: 0;
-  padding: 0.2em 0.2em 0;
+  padding: .2em .2em 0;
 }
 
 /* line 912, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -1085,7 +1076,7 @@ button.ui-button::-moz-focus-inner {
   float: left;
   position: relative;
   top: 0;
-  margin: 1px 0.2em 0 0;
+  margin: 1px .2em 0 0;
   border-bottom: 0;
   padding: 0;
   white-space: nowrap;
@@ -1094,7 +1085,7 @@ button.ui-button::-moz-focus-inner {
 /* line 923, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-tabs .ui-tabs-nav li a {
   float: left;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   text-decoration: none;
 }
 
@@ -1132,7 +1123,7 @@ button.ui-button::-moz-focus-inner {
   position: absolute;
   z-index: 9999;
   max-width: 300px;
-  box-shadow: 0 0 5px #444;
+  box-shadow: 0 0 5px #444444;
 }
 
 /* Fades and background-images don't work well together in IE6, drop the image */
@@ -1159,27 +1150,27 @@ body .ui-tooltip {
 
 /* line 992, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-content {
-  border: 1px solid #444;
-  background: #fefefe;
-  color: #444;
+  border: 1px solid #444444;
+  background: #FEFEFE;
+  color: #444444;
 }
 
 /* line 998, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-content a {
-  color: #444;
+  color: #444444;
 }
 
 /* line 1002, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-header {
-  border: 1px solid #444;
-  background: #fefefe;
-  color: #444;
+  border: 1px solid #444444;
+  background: #FEFEFE;
+  color: #444444;
   font-weight: bold;
 }
 
 /* line 1009, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-header a {
-  color: #444;
+  color: #444444;
 }
 
 /* Interaction states
@@ -1188,17 +1179,17 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  border: 1px solid #fefefe;
-  background: #29b4de;
+  border: 1px solid #FEFEFE;
+  background: #29B4DE;
   font-weight: normal;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 1025, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 
@@ -1209,10 +1200,10 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fefefe;
-  background: #29b4de;
+  border: 1px solid #FEFEFE;
+  background: #29B4DE;
   font-weight: normal;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 1044, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -1220,7 +1211,7 @@ body .ui-tooltip {
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 
@@ -1228,17 +1219,17 @@ body .ui-tooltip {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-  border: 1px solid #29b4de;
-  background: #fefefe;
+  border: 1px solid #29B4DE;
+  background: #FEFEFE;
   font-weight: normal;
-  color: #29b4de;
+  color: #29B4DE;
 }
 
 /* line 1061, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-  color: #29b4de;
+  color: #29B4DE;
   text-decoration: none;
 }
 
@@ -1248,39 +1239,39 @@ body .ui-tooltip {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  border: 1px solid #ec2;
+  border: 1px solid #EC2;
   background: #f1f1f1;
-  color: #444;
+  color: #444444;
 }
 
 /* line 1079, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-highlight a,
 .ui-widget-content .ui-state-highlight a,
 .ui-widget-header .ui-state-highlight a {
-  color: #444;
+  color: #444444;
 }
 
 /* line 1085, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  border: 1px solid #8c0d00;
+  border: 1px solid #8C0D00;
   background: #f1f1f1;
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1093, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1099, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1105, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -1294,7 +1285,7 @@ body .ui-tooltip {
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary,
 .ui-widget-header .ui-priority-secondary {
-  opacity: 0.7;
+  opacity: .7;
   filter: Alpha(Opacity=70);
   font-weight: normal;
 }
@@ -1303,7 +1294,7 @@ body .ui-tooltip {
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled,
 .ui-widget-header .ui-state-disabled {
-  opacity: 0.35;
+  opacity: .35;
   filter: Alpha(Opacity=35);
   background-image: none;
 }
@@ -2241,7 +2232,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-  border-top-left-radius: 0.4em;
+  border-top-left-radius: .4em;
 }
 
 /* line 1886, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -2249,7 +2240,7 @@ body .ui-tooltip {
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-  border-top-right-radius: 0.4em;
+  border-top-right-radius: .4em;
 }
 
 /* line 1893, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -2257,7 +2248,7 @@ body .ui-tooltip {
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-  border-bottom-left-radius: 0.4em;
+  border-bottom-left-radius: .4em;
 }
 
 /* line 1900, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
@@ -2265,23 +2256,23 @@ body .ui-tooltip {
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-  border-bottom-right-radius: 0.4em;
+  border-bottom-right-radius: .4em;
 }
 
 /* Overlays */
 /* line 1909, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-overlay {
   background: #f1f1f1;
-  opacity: 0.3;
+  opacity: .3;
   filter: Alpha(Opacity=30);
 }
 
 /* line 1915, ../../src/sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-shadow {
-  margin: -0.8em 0 0 -0.8em;
-  padding: 0.8em;
+  margin: -.8em 0 0 -.8em;
+  padding: .8em;
   background: #f1f1f1;
-  opacity: 0.3;
+  opacity: .3;
   filter: Alpha(Opacity=30);
-  border-radius: 0.4em;
+  border-radius: .4em;
 }

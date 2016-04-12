@@ -13,6 +13,8 @@ function cellular_preprocess_page(&$vars) {
   cellular_error_page($vars);
   // Set main menu.
   cellular_main_menu($vars);
+  // Generate user account/login/register/logout link.
+  cellular_user_link($vars);
   // Set classes for content & sidebar regions.
   cellular_test_sidebar($vars);
   // Link site name to frontpage.

@@ -8,9 +8,9 @@ $i_width: 90%;
 
 form {
   display: block;
-  margin: 0 auto;
+  max-width: 32em;
+  margin: auto;
   padding: 0;
-  text-align: center;
 
   // Form Alignment Classes
   &.horizontal {
@@ -27,22 +27,23 @@ form {
     input[type="submit"] {
       margin: 0 $tiny;
       float: none;
+      display: inline;
     }
   }
 
   &.vertical {
+text-align: center;
+
     label,
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-      float: left;
-      clear: left;
+      display: block;
     }
 
     input[type=submit] {
-      float: right;
-      clear: left;
-      margin: $tiny 0;
+      float: none;
+      margin: $tiny auto;
     }
   }
 }
@@ -51,7 +52,7 @@ fieldset {
   padding: $normal;
   margin: $tiny;
   border: $light_grey $border;
-  //@include clearfix();
+  //@include clear();
 }
 
 legend {
@@ -85,7 +86,7 @@ textarea {
   color: $p_color;
   background: darken($white, 1%);
   border: $grey thin solid;
-  width: auto;
+  width: 96%; // Leave some room so elements aren't cut off.
   margin: auto;
   @include border-radius();
   @include transition();
@@ -96,6 +97,15 @@ textarea {
     background: $white;
     box-shadow: 0 0 0.2em 0 $hilight;
   }
+
+
+  &.year,
+  &.month,
+  &.day,
+  &.hour,
+  &.minute {
+    width: auto;
+  }
 }
 
 textarea {
@@ -105,8 +115,6 @@ textarea {
 }
 
 select {
-  width: auto;
-  display: inline;
   cursor: pointer;
   margin: $i_pad auto;
   padding: $i_pad;
@@ -224,7 +232,6 @@ button,
 input[type="button"],
 input[type="submit"]{
   @include button();
-  margin: $i_pad 0;
 }
 
 //Form Alert Classes

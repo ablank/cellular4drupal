@@ -176,6 +176,12 @@ $form[0]['markup_settings']['breadcrumb_display'] = array(
 '#description' => t("Show breadcrumb navigation (Doesn't display on frontpage)"),
 '#default_value' => theme_get_setting('breadcrumb_display'),
 );
+$form[0]['markup_settings']['use_colorbox'] = array(
+'#type' => 'checkbox',
+'#title' => t('Use Colorbox for User Login/Register links.'),
+'#description' => t("Use Colorbox Node (<em>if available</em>) to display User Login/Register forms."),
+'#default_value' => theme_get_setting('use_colorbox'),
+);
 $form[0]['markup_settings']['copyright'] = array(
 '#type' => 'textfield',
 '#title' => t('Copyright'),

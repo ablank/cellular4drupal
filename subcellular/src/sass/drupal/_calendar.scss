@@ -1,0 +1,109 @@
+.calendar {
+  width: 100%;
+}
+.date-nav-wrapper {
+  background: darken($c2, 5%);
+  padding: .6em 0;
+
+  .date-nav {
+    padding: .4em 0;
+  }
+
+  .pager {
+    margin: .1em auto 0;
+    padding: .4em .4em 0;
+  }
+
+  .date-prev,
+  .date-next {
+    position: relative;
+    padding: 0 2em;
+
+    a {
+      @include button();
+    }
+  }
+}
+
+.month-view {
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0.1em;
+    padding: 0.2em;
+    border: $grey 1px solid;
+  }
+
+  th {
+    color: $grey;
+  }
+  td {
+    padding: 0.2em;
+
+    &.date-box {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+.date-box {
+
+  .month.day {
+    background-color: $grey;
+    color: $white;
+    padding: 0 0.5em;
+    @include round($tiny, 'top');
+  }
+
+  a,
+  a:visited{
+    color: $white;
+  }
+
+  a {
+    &:active,
+      &:hover,
+      &:focus,
+      &:visited {
+      color: lighten($hilight, 33%);
+    }
+  }
+}
+
+.single-day{
+
+  td {
+    width: 14%; // ~ 100% / 7 days
+    //min-width: 5em;
+    background-color: $white;
+    border-right: $grey 1px solid;
+    border-bottom: $grey 1px solid;
+    border-left: $grey 1px solid;
+    @include round($tiny, 'bottom');
+
+    &.today {
+      border-color: $hilight;
+      @include box-shadow($hilight);
+    }
+
+    &.past {
+      background-color: darken($white, 15%);
+    }
+
+  }
+
+  a,
+  a:visited{
+    background: darken($white, 5%);
+    border: $light_grey 1px solid;
+  }
+
+  a {
+    &:active,
+      &:hover,
+      &:focus,
+      &:visited {
+      border-color: $grey;
+    }
+  }
+}

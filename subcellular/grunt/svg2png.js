@@ -4,37 +4,39 @@
  */
 
 module.exports = {
-  images: {
-    files: [
-      {
-        cwd: 'assets/images/svg/',
-        src: ['*.svg'],
-        dest: 'assets/images/png/'
-      }
-    ]
-  },
   icons: {
     files: [
       {
-        cwd: 'assets/icons/svg/',
-        src: ['*.svg'],
+        cwd: 'src/assets/icons/svg/',
+        src: ['**/*.svg'],
         dest: 'assets/icons/png/'
       }
     ]
   },
-  favicons: {
+  images: {
     files: [
       {
-        cwd: 'assets/favicons/',
-        src: ['apple-touch-icon.svg'],
-        dest: 'assets/favicons/',
-        size: [
-          144,
-          114,
-          96,
-          95
-        ]
+        cwd: 'src/assets/images/svg/',
+        src: ['**/*.svg'],
+        dest: 'assets/images/png/'
       }
     ]
   }
+  /*
+   favicons: {
+   files: [
+   {
+   cwd: 'src/assets/favicons/',
+   src: ['apple-touch-icon.svg'],
+   dest: 'test/favicons/',
+   size: [
+   144,
+   114,
+   96,
+   95
+   ]
+   }
+   ]
+   }
+   */
 };

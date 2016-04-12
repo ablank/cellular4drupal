@@ -5,12 +5,12 @@
 
 module.exports = {
   options: {
-    config: 'config/csscomb.json'
+    config: 'grunt/config/csscomb.json'
   },
   all: {
     expand: true,
     cwd: 'css',
-    src: ['**/*.css'],
-    dest: 'css'
+    src: ['*.css'],
+    dest: 'css/'
   }
 };

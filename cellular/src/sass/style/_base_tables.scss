@@ -8,8 +8,6 @@ $cell_border: $light_grey 1px solid;
 table {
   margin: 0 auto;
   border-collapse: collapse;
-  border-spacing: 0;
-  border: $table_border;
 
   img {
     display: inline;
@@ -41,6 +39,7 @@ tr:nth-child(odd) {
 td {
   padding: $tiny;
   border: $cell_border;
+  @include round($tiny, 'bottom');
 }
 
 tfoot {

@@ -6,20 +6,11 @@
  */
 
 module.exports = {
-  base: {
+  build: {
     expand: true,
     cwd: 'css',
-    src: ['*.css', '!*.min.css'],
-    dest: 'css',
-    ext: '.min.css',
-    banner: ''
-  },
-  jquery_ui: {
-    expand: true,
-    cwd: 'css/jquery-ui',
-    src: ['*.css', '!*.min.css'],
-    dest: 'css/jquery-ui',
-    ext: '.min.css',
-    banner: ''
+    src: ['*.css'],
+    dest: 'css/',
+    ext: '.css'
   }
 };

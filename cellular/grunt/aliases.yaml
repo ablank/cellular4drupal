@@ -9,8 +9,8 @@ default:
     - 'jshint:js'
     - 'copy'
     - 'uglify'
-    - 'newer:svg2png'
-    - 'newer:imagemin'
+    - 'svg2png'
+    - 'imagemin'
 dev:
     - 'concat'
     - 'compass'
