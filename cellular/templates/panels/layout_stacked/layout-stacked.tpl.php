@@ -10,155 +10,50 @@
  *  $content['footer']
  */
 
+$id = !empty($css_id) ? " id=\"$css_id\"" : '';
 ?>
-
-<div<?php
-if (!empty($css_id)):
-  print " id=\"$css_id\"";
-endif;
-
-?> class="panels cell <?php print ($classes); ?>">
-
+<div<?php print "$id class=\"panels cell $classes\" $attributes"; ?>>
   <?php if (!empty($content['header'])): ?>
-    <div class="header cell">
-      <?php print $content['header']; ?>
+    <div<?php print drupal_attributes($region_attributes['header']) ?>>
+      <?php print $content['header'] ?>
     </div>
   <?php endif; ?>
 
-  <?php if (!empty($content['cell_0'])): ?>
-    <div class="content cell">
-      <?php print $content['cell_0']; ?>
+  <?php
+  dpm($stack);
+  foreach ($stack as $stack_idx => $stacks):
+    foreach ($stacks as $stack_region => $region):
+      $regions = array();
+      // $key = region name, i.e. 'split'
+      // $region = array of regions i.e. '0 => split_left_0'
+      //  print_r($region_name);
+
+      for ($i = 0; $i < count($region_name); $i+=1) {
+        // Iterate over each stack to see if it needs to be printed.
+        if (!empty($content[$region_name[$i]])) {
+          $regions[] = $region_name[$i];
+        }
+      }
+
+      // Iterate over each region.
+      if (!empty($regions)):
+        ?>
+
+        <div class="cell stack_<?php print $key; ?>">
+          <?php foreach ($regions as $idx => $region_content): ?>
+              <div<?php print drupal_attributes($region_attributes[$region_content]); ?>>
+                <?php print $content[$region_content]; ?>
+              </div>
+          <?php endforeach; ?>
+        </div>
+
+      <?php endif; ?>
+    <?php endforeach; ?>
+  <?php endforeach; ?>
+
+  <?php if (!empty($content['footer'])): ?>
+    <div<?php print drupal_attributes($region_attributes['footer']) ?>>
+      <?php print $content['footer'] ?>
     </div>
   <?php endif; ?>
-
-  <?php if (!empty($content['cell_50_left_0']) || !empty($content['cell_50_right_0'])): ?>
-    <div class="cell">
-      <?php if (!empty($content['cell_50_left_0'])): ?>
-        <div class="content cell-50">
-          <?php print $content['cell_50_left_0']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_50_right_0'])): ?>
-        <div class="content cell-50">
-          <?php print $content['cell_50_right_0']; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
-
-
-  <?php if (!empty($content['cell_33_left_0']) || !empty($content['cell_33_center_0']) || !empty($content['cell_33_right_0'])): ?>
-    <div class="cell">
-      <?php if (!empty($content['cell_33_left_0'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_left_0']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_33_center_0'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_center_0']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_33_right_0'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_right_0']; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
-
-
-
-  <?php if (!empty($content['cell_1'])): ?>
-    <div class="content cell">
-      <?php print $content['cell_1']; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php if (!empty($content['cell_50_left_1']) || !empty($content['cell_50_right_1'])): ?>
-    <div class="cell">
-      <?php if (!empty($content['cell_50_left_1'])): ?>
-        <div class="content cell-50">
-          <?php print $content['cell_50_left_1']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_50_right_1'])): ?>
-        <div class="content cell-50">
-          <?php print $content['cell_50_right_1']; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
-
-
-  <?php if (!empty($content['cell_33_left_1']) || !empty($content['cell_33_center_1']) || !empty($content['cell_33_right_1'])): ?>
-    <div class="cell">
-      <?php if (!empty($content['cell_33_left_1'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_left_1']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_33_center_1'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_center_1']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_33_right_1'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_right_1']; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
-
-
-
-  <?php if (!empty($content['cell_2'])): ?>
-    <div class="content cell">
-      <?php print $content['cell_2']; ?>
-    </div>
-  <?php endif; ?>
-
-  <?php if (!empty($content['cell_50_left_2']) || !empty($content['cell_50_right_2'])): ?>
-    <div class="cell">
-      <?php if (!empty($content['cell_50_left_2'])): ?>
-        <div class="content cell-50">
-          <?php print $content['cell_50_left_2']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_50_right_2'])): ?>
-        <div class="content cell-50">
-          <?php print $content['cell_50_right_2']; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
-
-
-  <?php if (!empty($content['cell_33_left_2']) || !empty($content['cell_33_center_2']) || !empty($content['cell_33_right_2'])): ?>
-    <div class="cell">
-      <?php if (!empty($content['cell_33_left_2'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_left_2']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_33_center_2'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_center_2']; ?>
-        </div>
-      <?php endif; ?>
-      <?php if (!empty($content['cell_33_right_2'])): ?>
-        <div class="content cell-33">
-          <?php print $content['cell_33_right_2']; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
-
-<?php if (!empty($content['footer'])): ?>
-  <div class="footer cell">
-    <?php print $content['footer']; ?>
-  </div>
-<?php endif; ?>
-
 </div>

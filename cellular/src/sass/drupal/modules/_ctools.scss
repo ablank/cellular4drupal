@@ -1,0 +1,39 @@
+.ctools-locked {
+  color: $red;
+  border: 1px solid $red;
+  padding: 1em;
+}
+
+.ctools-owns-lock {
+  background: lighten($yellow, 50%);
+  border: 1px solid $yellow;
+  padding: 1em;
+}
+
+div,
+a,
+input,
+button,
+select {
+  // Loading throbber.
+  &.progress-disabled {
+    outline: none;
+    @include transition();
+    @include loader('spinna', null, 1em, $hilight, 2s);
+    //@include loader('img', '../assets/images/gif/spinner_36.gif', 36px, $hilight, 2s);
+    padding-right: 1.4em;
+
+    & + .ajax-progress {
+      display: none;
+    }
+  }
+}
+
+.javascript .js-hide {
+  display: none;
+  &.progress-disabled:after {
+    padding: 0 1.2em;
+    @include transition();
+    @include loader('spinna', null, 1em, $hilight, 2s);
+  }
+}

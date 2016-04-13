@@ -1,34 +1,9 @@
 <?php
 /**
  * @file
- * Template for a 2 column (20%/80%) panel layout.
- */
-/* Variables:
- * $css_id: An optional CSS id to use for the layout.
- *
- *  $content['left']
- *  $content['right']
+ * Template for 2 column (20%/80%) panel layout.
  */
 
-?>
+$template = '/templates/panels/_include/proto.tpl.inc';
 
-<div<?php
-if (!empty($css_id)):
-  print " id=\"$css_id\"";
-endif;
-
-?> class="panels cell <?php print ($classes); ?>">
-
-    <?php if ($content['left']): ?>
-    <div class="panel-left cell-20">
-    <?php print $content['left']; ?>
-    </div>
-  <?php endif; ?>
-
-    <?php if ($content['right']): ?>
-    <div class="panel-right cell-80">
-    <?php print $content['right']; ?>
-    </div>
-<?php endif; ?>
-
-</div>
+require drupal_get_path('theme', 'cellular') . $template;

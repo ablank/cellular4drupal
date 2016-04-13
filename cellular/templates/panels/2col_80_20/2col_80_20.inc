@@ -3,6 +3,11 @@
  * @file
  * Vars & regions for a 2 column (80%/20%) panel layout.
  */
+
+$inc_path = drupal_get_path('theme', 'cellular') .'/templates/panels/_include/';
+
+include_once  $inc_path . 'preprocess.inc';
+
 $plugin = array(
   'category' => t('Cellular | Prototype'),
   'title' => t('2 Columns @ 80/20'),
@@ -15,3 +20,11 @@ $plugin = array(
     'right' => t('Right Column'),
   ),
 );
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function template_preprocess_2col_80_20(&$variables) {
+
+  cellular_panels_preprocess_split($variables, 80, 20);
+}

@@ -17,11 +17,11 @@
 @import "drupal/menus";
 @import "drupal/tabs";
 // Replaces default module styles.
-@import "drupal/views";
-@import "drupal/colorbox";
-@import "drupal/calendar";
-@import "drupal/forum";
-@import "drupal/flag";
-@import "drupal/webform";
-@import "drupal/panels";
-@import "drupal/reveal";
+@import "drupal/modules/ctools";
+@import "drupal/modules/views";
+@import "drupal/modules/colorbox";
+@import "drupal/modules/calendar";
+@import "drupal/modules/forum";
+@import "drupal/modules/flag";
+@import "drupal/modules/webform";
+@import "drupal/modules/panels";

@@ -3,13 +3,13 @@
  * @file
  * Template for the Inset Left column panel layout.
  */
+
 /* Variables:
  *  $content['inset']
  *  $content['header']
  *  $content['body']
  *  $content['footer']
  */
-
 ?>
 
 <div<?php
@@ -19,29 +19,63 @@ endif;
 
 ?> class="panels cell <?php print ($classes); ?>">
 
-  <div class="cell-75">
-    <?php if (!empty($content['header'])): ?>
-      <div class="header cell">
-        <?php print $content['header']; ?>
-      </div>
-    <?php endif; ?>
+  <?php
+  // Main content regions
+  if (!empty($content['header']) ||
+  !empty($content['body']) ||
+  !empty($content['footer'])
+  ):
 
-    <?php if (!empty($content['body'])): ?>
-      <div class="content cell">
-        <?php print $content['body']; ?>
-      </div>
-    <?php endif; ?>
-  </div>
+    ?>
+    <div class="cell-75">
 
-  <?php if (!empty($content['footer'])): ?>
-    <div class="footer cell">
-      <?php print $content['footer']; ?>
+      <?php
+      // Header
+      if (!empty($content['header'])):
+
+        ?>
+        <div class="header cell">
+          <?php print $content['header']; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php
+      // Body
+      if (!empty($content['body'])):
+
+        ?>
+        <div class="content cell">
+          <?php print $content['body']; ?>
+        </div>
+      <?php endif; ?>
     </div>
-  <?php endif; ?>
-</div>
 
-<?php if (!empty($content['inset'])): ?>
-  <div class="inset cell-25">
+    <?php
+    // Footer
+    if (!empty($content['footer'])):
+
+      ?>
+      <div class="footer cell">
+        <?php print $content['footer']; ?>
+      </div>
+    <?php endif; ?>
+
+  </div>
+<?php endif; ?>
+
+<?php
+// Inset region
+if (!empty($content['inset'])):
+
+  ?>
+  <div class="inset cell-25
+  <?php
+  if (empty($content['header']) &&
+  empty($content['body']) &&
+  empty($content['footer'])
+  ):
+
+    ?> offset-75<?php endif; ?>">
     <?php print $content['inset']; ?>
   </div>
 <?php endif; ?>

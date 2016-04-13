@@ -3,6 +3,7 @@
  * @file
  * Template for a single column panel layout.
  */
+
 /* Variables:
  * $css_id: An optional CSS id to use for the layout.
  *
@@ -21,7 +22,6 @@ endif;
   <?php
   if ($content['body']):
     print $content['body'];
-  endif;
-  ?>
+  endif;?>
 
 </div>
