@@ -1,0 +1,3 @@
+;----------// Theme Information
+name        = Cellular
+description = Tame the Drupal for easier front end development.

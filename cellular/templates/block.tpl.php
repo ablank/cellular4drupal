@@ -16,7 +16,7 @@
   following:
   - block: The current template type, i.e., "theming hook".
   - block-[module]: The module generating the block. For example, the user
-  module is responsible for handling the default user navigation block. In
+  module is responsible for handling the default user main-menuigation block. In
   that case the class would be 'block-user'.
   - $title_prefix (array): An array containing additional output populated by
   modules, intended to be displayed in front of the main title tag that

@@ -15,5 +15,6 @@ function cellular_css_alter(&$css) {
   if (theme_get_setting('jquery_update') == 1) {
     cellular_jqueryui_update_css($css);
   }
-  // dpm($css);
+
+  //dpm($css);
 }

@@ -12,9 +12,8 @@ function cellular_process_html(&$vars) {
   $vars['critical_js'] = drupal_get_js('critical');
   // Get updated styles.
   $vars['styles'] = drupal_get_css();
-   //dpm($vars);
+  //dpm($vars);
 }
-
 /**
  * Implements template_process_page().
 function cellular_process_page(&$vars) {

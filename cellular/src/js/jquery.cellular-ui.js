@@ -40,11 +40,23 @@ scrollTop: jQuery(target).offset().top
 * Get the breakpoints specified in CSS
 */
 cellular.breakpoint = function () {
-var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content');
-return {
+var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
+obj;
+if (content) {
+obj = {
 size: content.match(/\d/g).join(""),
 type: content.match(/\w*[^\"\'](?=-)/g).join("")
 };
+}
+else {
+var ww = jQuery(window).width();
+console.log(ww);
+obj = {
+size: '',
+type: ''
+};
+}
+return obj;
 };
 /**
 * Add active class to element, remove active class from element siblings
@@ -166,34 +178,43 @@ jQuery('body').removeClass(ob)
 */
 cellular.scrollstate = cellular.debounce(function (e, y) {
 var el = jQuery('body'),
-cclass = 'scrolled',
+cclass = 'scrolling',
 uc = cclass + '-up',
 dc = cclass + '-down',
+dst = jQuery(document).scrollTop(),
+region = el.height() / 3,
 //y = cellular.state.scrolltop,
 scrolltimeout = null;
-cellular.state.scrolltop = $(document).scrollTop();
-el.attr('data-scrolltop', cellular.state.scrolltop);
-// Detect if page is scrolled
-if (cellular.state.scrolltop < 10) {
-el.removeClass(cclass);
+if (dst > 30) {
+el.addClass('scrolled');
+}
+else {
+el.removeClass('scrolled');
+}
+if (dst > cellular.state.scrolltop) {
+el.addClass(dc)
+.removeClass(uc);
 } else {
-el.addClass(cclass);
+el.addClass(uc)
+.removeClass(dc);
 }
-/*
-cellular.scrolltimer(el, uc, dc);
-// Detect scroll direction
-if (cellular.state.scrolltop > y) { // scroll down
-if (!el.hasClass(dc)) {
-el.removeClass(uc)
-.addClass(dc);
+// Detect if page is scrolled
+if (dst < region) {
+el.removeClass('page-middle page-bottom')
+.addClass('page-top');
 }
-} else if (cellular.state.scrolltop < y) { // scroll up
-if (!el.hasClass(uc)) {
-el.removeClass(dc)
-.addClass(uc);
+else if (dst > region && dst < region * 2) {
+el.removeClass('page-top page-bottom')
+.addClass('page-middle');
 }
+else {
+el.removeClass('page-top page-middle')
+.addClass('page-bottom');
 }
-*/
+//Update global state
+cellular.state.scrolltop = dst;
+// % of doc scrolled
+cellular.state.scrolled = (dst/(el.height()-jQuery(window).height())) * 100;
 }, 0, true);
 (function state() {
 // Get initial state
@@ -290,6 +311,39 @@ jQuery(this).deactivate();
 return this.each(fn.init);
 };
 /**
+* jFormal: Improve form interaction
+*/
+cellular.jFormal = function (opts) {
+var o = jQuery.extend({
+inputs: [
+'input[type="text"]',
+'input[type="email"]',
+'input[type="password"]',
+'textarea'
+]
+}, opts);
+return this.each(function () {
+var inputs = o.inputs.join(',');
+// get/set value of inputs
+jQuery(inputs).each(function () {
+var $t = jQuery(this),
+hold = holder = $t.attr('placeholder');
+$t.on('focus', function () {
+holder = '';
+if (this.value === this.defaultValue) {
+this.value = '';
+}
+}).on('blur', function () {
+// Reset to default value if no changes were made.
+holder = hold;
+if (this.value === '' || null) {
+this.value = this.defaultValue;
+}
+});
+});
+});
+};
+/**
 * jMmenu: Hamburger menu for mobile devices
 */
 cellular.jMmenu = function (opts) {
@@ -329,9 +383,9 @@ jQuery('.' + o.cclass + '-menu').removeClass(o.cclass + '-menu')
 .prependTo($obj);
 jQuery('.' + o.cclass + '-triggertext').remove();
 }
-fn.trigger($obj, state);
+fn.menutrigger($obj, state);
 }, o.throttle);
-fn.trigger = function ($obj, state) {
+fn.menutrigger = function ($obj, state) {
 var classes = [
 o.cclass + '-active',
 o.cclass + '-inactive'
@@ -352,12 +406,23 @@ o.parent.addClass(classes[1])
 }
 }
 };
+fn.style = function ($obj) {
+var menu = $obj.find('>ul'),
+nested = menu.find('ul');
+if (nested.length > 0) {
+var child = menu.find('li ul');
+child.addClass('child')
+.parent().addClass('parent');
+}
+};
 fn.init = function () {
 var $obj = jQuery(this),
 state = {
 active: false,
 mmenu: false
 };
+$obj.addClass(o.cclass)
+.once(o.cclass, fn.style($obj));
 fn.mediaQuery($obj, state);
 jQuery(window).on('resize', function () {
 fn.mediaQuery($obj, state);
@@ -366,14 +431,36 @@ $obj.on('click', function () {
 //console.log(this);
 if (state.mmenu) {
 state.active = state.active ? false : true;
-fn.trigger($obj, state);
+fn.menutrigger($obj, state);
 }
 });
 jQuery(document).on('keyup', function (e) {
 if (state.active === true && e.which === 27) {
 e.preventDefault();
 state.active = false;
-fn.trigger($obj, state);
+fn.menutrigger($obj, state);
+}
+});
+jQuery('.' + o.cclass + (' .parent')).on('mouseenter focus', function (e) {
+jQuery(this).addClass('active')
+.children(':gt(0)').addClass('active');
+});
+jQuery('.' + o.cclass + (' .parent')).on('mouseleave blur', function (e) {
+jQuery(this).removeClass('active')
+.children(':gt(0)').removeClass('active');
+});
+jQuery('.' + o.cclass + ('-menu .parent a')).on('click', function (e) {
+var parent = jQuery(this).parent(),
+child = parent.children(':gt(0)'); //find('> .child');
+if (child.length) {
+e.preventDefault();
+if (child.hasClass('active')) {
+parent.removeClass('active');
+child.removeClass('active');
+} else {
+parent.addClass('active');
+child.addClass('active');
+}
 }
 });
 };
@@ -701,7 +788,10 @@ $obj.height(state.maxheight);
 fn.style = function ($obj, state) {
 var li = $obj.find('> li');
 $obj.addClass(cellular.opts.cclass)
-.wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />');
+.wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />')
+.parent().css({
+willChange: "contents"
+});
 li.addClass(o.cclass + '-slide')
 .each(function () {
 var $t = jQuery(this);
@@ -780,33 +870,51 @@ fn.updateinterval($obj, state);
 return this.each(fn.init);
 };
 cellular.jSocial = function (opts) {
-var tit = document.title,
+var doctitle = document.title,
 page = $("link[rel='canonical']") ? $("link[rel='canonical']").attr('href') : window.location;
 var o = jQuery.extend({
-showshare: true,
-showfollow: false,
-sharetitle: "Share this page",
-followtitle: "Follow Us",
+sharetitle: "", // "Share this page",
+followtitle: "", // "Follow Us",
 buttonclass: "social",
 share: [
-'facebook',
-'digg',
-'google',
-'twitter',
-'linkedin',
-'pinterest',
-'reddit',
-'stumbleupon',
-'tumblr'
+// 'facebook',
+// 'digg',
+// 'google',
+// 'twitter',
+// 'linkedin',
+// 'pinterest',
+// 'reddit',
+// 'stumbleupon',
+//'tumblr'
 ],
-sharelinks: {
+follow: {
+/*
+facebook: {
+title: "Facebook",
+url: "https://facebook.com"
+}
+*/
+}
+}, opts),
+fn = {};
+/**
+* Generate markup for buttons.
+*
+* @param object $obj
+*/
+fn.style = function ($obj) {
+$obj.once('jSocial', function () {
+if (o.share) {
+var sWrap = $('<div class="jSocial-share" />'),
+sharetitle,
+sharelinks = {
 facebook: {
 title: "Facebook",
 url: "http://facebook.com/sharer/sharer.php?u=" + page
 },
 digg: {
 title: "Digg",
-url: "http://digg.com/submit?url=" + page + "&title=" + tit
+url: "http://digg.com/submit?url=" + page + "&title=" + doctitle
 },
 google: {
 title: "Google",
@@ -814,30 +922,46 @@ url: "https://plus.google.com/share?url=" + page
 },
 twitter: {
 title: "Twitter",
-url: "https://twitter.com/intent/tweet?url=" + page + "&text=" + tit
+url: "https://twitter.com/intent/tweet?url=" + page + "&text=" + doctitle
 },
 linkedin: {
 title: "LinkedIn",
-url: "http://linkedin.com/shareArticle?url=" + page + "&title=" + tit
+url: "http://linkedin.com/shareArticle?url=" + page + "&title=" + doctitle
 },
 pinterest: {
 title: "Pinterest",
-url: "http://pinterest.com/pin/create/bookmarklet/?url=" + page + "&description=" + tit
+url: "http://pinterest.com/pin/create/bookmarklet/?url=" + page + "&description=" + doctitle
 },
 reddit: {
 title: "Reddit",
-url: "http://reddit.com/submit?url=" + page + "&title=" + tit
+url: "http://reddit.com/submit?url=" + page + "&title=" + doctitle
 },
 stumbleupon: {
 title: "StumbleUpon",
-url: "http://www.stumbleupon.com/submit?url=" + page + "&title=" + tit
+url: "http://www.stumbleupon.com/submit?url=" + page + "&title=" + doctitle
 },
 tumblr: {
 title: "Tumblr",
-url: "https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + page + "&title=" + tit
+url: "https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + page + "&title=" + doctitle
 }
-},
-follow: {
+};
+if (o.sharetitle) {
+sWrap.append('<span class="title">' + o.sharetitle + '</span>');
+sharetitle = o.sharetitle + ' on ';
+}
+o.share.map(function (i) {
+sWrap.buttonize(sharelinks[i].url, sharetitle + sharelinks[i].title, [
+sharelinks[i].title.toLowerCase(),
+o.buttonclass,
+'icon'
+]);
+});
+$obj.append(sWrap);
+}
+if (Object.keys(o.follow) !== 'undefined') {
+var fWrap = $('<div class="jSocial-follow" />'),
+followtitle = ''
+/*
 facebook: {
 title: "Facebook",
 url: "https://facebook.com"
@@ -861,37 +985,8 @@ url: "https://pinterest.com"
 yelp: {
 title: "Yelp",
 url: "https://yelp.com"
-}
-}
-}, opts),
-fn = {};
-/**
-* Generate markup for buttons.
-*
-* @param object $obj
-*/
-fn.style = function ($obj) {
-$obj.once('jSocial', function () {
-if (o.showshare) {
-var sWrap = $('<div class="jSocial-share" />'),
-sharetitle = '';
-if (o.sharetitle.length !== 0) {
-sWrap.append('<span class="title">' + o.sharetitle + '</span>');
-sharetitle = o.sharetitle + ' on ';
-}
-o.share.map(function (i) {
-sWrap.buttonize(o.sharelinks[i].url, sharetitle + o.sharelinks[i].title, [
-o.sharelinks[i].title.toLowerCase(),
-o.buttonclass,
-'icon'
-]);
-});
-$obj.append(sWrap);
-}
-if (o.showfollow) {
-var fWrap = $('<div class="jSocial-follow" />'),
-followtitle = '';
-if (o.followtitle.length !== 0) {
+}*/;
+if (o.followtitle) {
 fWrap.append('<span class="title">' + o.followtitle + '</span>');
 followtitle = o.followtitle + ' on ';
 }
@@ -981,7 +1076,7 @@ return this.each(fn.init);
 cellular.jTooltip = function (opts) {
 var o = jQuery.extend({
 trigger: 'jTooltip-trigger', // Class used to trigger tooltip.
-triggerbtn: 'jTooltip-trigger-btn', // OR false, used to trigger tooltip
+triggerbtn: false, //'jTooltip-trigger-btn', // class-name OR false, used to trigger tooltip
 triggerbtntext: 'About this',
 cclass: 'jTooltip-tooltip',
 dataattr: 'data-tooltip',
@@ -1004,7 +1099,7 @@ $obj.wrap('<div class="' + o.cclass + '-wrap" />');
 tooltip.classify([o.cclass]);
 $obj.after(tooltip);
 if (o.triggerbtn !== false) {
-var btn = jQuery('<span aria-label="' + o.triggerbtntext + '" />');
+var btn = jQuery('<span aria-label="' + o.triggerbtntext + '">?</span>');
 btn.classify([o.trigger, o.triggerbtn])
 .prop('tabindex', $obj.prop('tabindex'));
 $obj.before(btn);

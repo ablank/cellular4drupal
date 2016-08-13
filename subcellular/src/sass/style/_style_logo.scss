@@ -21,11 +21,11 @@
     background-repeat: no-repeat;
     border: none;
     text-decoration: none;
-    transition: width,height,padding 300ms ease-in-out;
-    @include box-shadow(0 0 0 0 $white);
+    transition: width,height,padding,box-shadow 300ms ease-in-out;
+    box-shadow: 0 0 0 0 $white;
 
     &:hover {
-      @include box-shadow(0 0 .4em 0 $hilight);
+      box-shadow: 0 0 .4em 0 $hilight;
       //  @include translate3d(0,-.1em,1em);
     }
   }

@@ -20,27 +20,7 @@ function cellular_main_menu(&$vars) {
   }
 
   $vars['main_menu'] = $menu_data;
-  /*
-   Work in progress to generate id from template function
-   ... currently wrapping menu in <div id="nav"/> page template.
-
-  //$vars['main_menu']['#theme_wrappers'] = array('cellular_menu_tree__main_menu');
-
-    $vars['main_menu'] = theme('links__system_main_menu', array(
-    'links' => $menu_data,
-    'attributes' => array(
-    'id' => 'nav',
-    'class' => array(
-    'primary'
-    )
-    ),
-    // 'heading' => t('Main menu'),
-    ));
-   */
-  // dpm($menu_data);
-  // dpm($vars);
 }
-
 /**
  * Implements links__system_main_menu.
 function cellular_links__system_main_menu($vars) {

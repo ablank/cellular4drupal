@@ -1,24 +1,63 @@
-
-.tabs.primary {
-	margin: 2em 0 1em;
-	border-bottom: $grey 1px solid;
-	li {
-		list-style: none;
-		display: inline;
-		margin: 0 .1em;
-	}
-	a {
-		padding: .4em .8em 0.2em;
-		color: $dark_grey;
-		border: $grey 1px solid;
-		border-bottom: none;
-		background-color: $light_grey;
-		@include round($tiny, 'top');
-		&.active {
-			background-color: $white;
-		}
-		&:hover {
-			background-color: lighten($light_grey, 20%);
-		}
-	}
+.tabs {
+  margin: 2em 0 1em;
+  border-bottom: $grey 1px solid;
+  @include clear();
+  li {
+    list-style: none;
+    float: left;
+    display: block;
+    margin: 0 .1em;
+  }
+  a {
+    &,
+    &:visited {
+      display: block;
+      padding: .4em .8em 0.2em;
+      border: 1px solid;
+      border-bottom: none;
+      color: $dark_grey;
+      background-color: $light_grey;
+      @include round($tiny, 'top');
+    }
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      position: relative;
+      top: 1px;
+      text-decoration: underline;
+      background-color: darken($white, 4%);
+      border-bottom: darken($white, 10%) 1px solid;
+      color: $hilight;
+    }
+    &.active {
+      background-color: $white;
+      border-bottom-color: $white;
+    }
+  }
+  &.secondary {
+    margin: -1em 0 0 0;
+    padding: 1em;
+    border-bottom: 1px solid;
+    background-color: transparent;
+    a {
+      &,
+      &:visited {
+        padding: .4em .8em;
+        border: 1px solid;
+        color: $white;
+        background-color: $dark_grey;
+        @include round($tiny);
+      }
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $hilight;
+        background-color: $white;
+      }
+      /*
+      */
+    }
+  }
 }

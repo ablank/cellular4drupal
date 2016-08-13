@@ -10,7 +10,7 @@ cellular.jTooltip = function (opts) {
     offsetX: 10,
     offsetY: 5
   }, opts),
-          fn = {};
+    fn = {};
   /**
    * Generate markup for buttons.
    *
@@ -26,7 +26,7 @@ cellular.jTooltip = function (opts) {
     if (o.triggerbtn !== false) {
       var btn = jQuery('<span aria-label="' + o.triggerbtntext + '" />');
       btn.classify([o.trigger, o.triggerbtn])
-              .prop('tabindex', $obj.prop('tabindex'));
+        .prop('tabindex', $obj.prop('tabindex'));
       $obj.before(btn);
     } else {
       $obj.addClass(o.trigger);
@@ -39,9 +39,9 @@ cellular.jTooltip = function (opts) {
 
     jQuery('.' + o.trigger).on('mouseenter focus', function (e) {
       var $t = jQuery(this),
-              tooltip = $t.nextAll('.' + o.cclass + ':first'),
-              btn = {},
-              position = {};
+        tooltip = $t.nextAll('.' + o.cclass + ':first'),
+        btn = {},
+        position = {};
 
       switch (o.bindto) {
         case 'event':
@@ -68,11 +68,11 @@ cellular.jTooltip = function (opts) {
       }
 
       tooltip.css(position)
-              .activate();
+        .activate();
     })
-            .on('mouseleave blur', function (e) {
-              jQuery(this).nextAll('.' + o.cclass + ':first').deactivate();
-            });
+      .on('mouseleave blur', function (e) {
+        jQuery(this).nextAll('.' + o.cclass + ':first').deactivate();
+      });
   };
   /**
    * Init jSocial

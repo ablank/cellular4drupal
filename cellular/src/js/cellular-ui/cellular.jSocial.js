@@ -1,89 +1,31 @@
 cellular.jSocial = function (opts) {
-  var tit = document.title,
-          page = $("link[rel='canonical']") ? $("link[rel='canonical']").attr('href') : window.location;
+  var doctitle = document.title,
+    page = $("link[rel='canonical']") ? $("link[rel='canonical']").attr('href') : window.location;
   var o = jQuery.extend({
-    showshare: true,
-    showfollow: false,
-    sharetitle: "Share this page",
-    followtitle: "Follow Us",
+    sharetitle: "", // "Share this page",
+    followtitle: "", // "Follow Us",
     buttonclass: "social",
     share: [
-      'facebook',
-      'digg',
-      'google',
-      'twitter',
-      'linkedin',
-      'pinterest',
-      'reddit',
-      'stumbleupon',
-      'tumblr'
+      // 'facebook',
+      // 'digg',
+      // 'google',
+      // 'twitter',
+      // 'linkedin',
+      // 'pinterest',
+      // 'reddit',
+      // 'stumbleupon',
+      //'tumblr'
     ],
-    sharelinks: {
-      facebook: {
-        title: "Facebook",
-        url: "http://facebook.com/sharer/sharer.php?u=" + page
-      },
-      digg: {
-        title: "Digg",
-        url: "http://digg.com/submit?url=" + page + "&title=" + tit
-      },
-      google: {
-        title: "Google",
-        url: "https://plus.google.com/share?url=" + page
-      },
-      twitter: {
-        title: "Twitter",
-        url: "https://twitter.com/intent/tweet?url=" + page + "&text=" + tit
-      },
-      linkedin: {
-        title: "LinkedIn",
-        url: "http://linkedin.com/shareArticle?url=" + page + "&title=" + tit
-      },
-      pinterest: {
-        title: "Pinterest",
-        url: "http://pinterest.com/pin/create/bookmarklet/?url=" + page + "&description=" + tit
-      },
-      reddit: {
-        title: "Reddit",
-        url: "http://reddit.com/submit?url=" + page + "&title=" + tit
-      },
-      stumbleupon: {
-        title: "StumbleUpon",
-        url: "http://www.stumbleupon.com/submit?url=" + page + "&title=" + tit
-      },
-      tumblr: {
-        title: "Tumblr",
-        url: "https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + page + "&title=" + tit
-      }
-    },
     follow: {
-      facebook: {
-        title: "Facebook",
-        url: "https://facebook.com"
-      },
-      google: {
-        title: "Google",
-        url: "https://plus.google.com"
-      },
-      twitter: {
-        title: "Twitter",
-        url: "https://twitter.com"
-      },
-      linkedin: {
-        title: "LinkedIn",
-        url: "https://linkedin.com"
-      },
-      pinterest: {
-        title: "Pinterest",
-        url: "https://pinterest.com"
-      },
-      yelp: {
-        title: "Yelp",
-        url: "https://yelp.com"
-      }
+      /*
+       facebook: {
+       title: "Facebook",
+       url: "https://facebook.com"
+       }
+       */
     }
   }, opts),
-          fn = {};
+    fn = {};
   /**
    * Generate markup for buttons.
    *
@@ -92,18 +34,57 @@ cellular.jSocial = function (opts) {
   fn.style = function ($obj) {
     $obj.once('jSocial', function () {
 
-      if (o.showshare) {
+      if (o.share) {
         var sWrap = $('<div class="jSocial-share" />'),
-                sharetitle = '';
+          sharetitle,
+          sharelinks = {
+            facebook: {
+              title: "Facebook",
+              url: "http://facebook.com/sharer/sharer.php?u=" + page
+            },
+            digg: {
+              title: "Digg",
+              url: "http://digg.com/submit?url=" + page + "&title=" + doctitle
+            },
+            google: {
+              title: "Google",
+              url: "https://plus.google.com/share?url=" + page
+            },
+            twitter: {
+              title: "Twitter",
+              url: "https://twitter.com/intent/tweet?url=" + page + "&text=" + doctitle
+            },
+            linkedin: {
+              title: "LinkedIn",
+              url: "http://linkedin.com/shareArticle?url=" + page + "&title=" + doctitle
+            },
+            pinterest: {
+              title: "Pinterest",
+              url: "http://pinterest.com/pin/create/bookmarklet/?url=" + page + "&description=" + doctitle
+            },
+            reddit: {
+              title: "Reddit",
+              url: "http://reddit.com/submit?url=" + page + "&title=" + doctitle
+            },
+            stumbleupon: {
+              title: "StumbleUpon",
+              url: "http://www.stumbleupon.com/submit?url=" + page + "&title=" + doctitle
+            },
+            tumblr: {
+              title: "Tumblr",
+              url: "https://www.tumblr.com/widgets/share/tool?canonicalUrl=" + page + "&title=" + doctitle
+            }
+          };
 
-        if (o.sharetitle.length !== 0) {
+
+        if (o.sharetitle) {
           sWrap.append('<span class="title">' + o.sharetitle + '</span>');
           sharetitle = o.sharetitle + ' on ';
         }
 
         o.share.map(function (i) {
-          sWrap.buttonize(o.sharelinks[i].url, sharetitle + o.sharelinks[i].title, [
-            o.sharelinks[i].title.toLowerCase(),
+          sWrap.buttonize(sharelinks[i].url, sharetitle + sharelinks[i].title, [
+            sharelinks[i].title.toLowerCase(),
             o.buttonclass,
             'icon'
           ]);
@@ -112,11 +93,36 @@ cellular.jSocial = function (opts) {
         $obj.append(sWrap);
       }
 
-      if (o.showfollow) {
+      if (Object.keys(o.follow) !== 'undefined') {
         var fWrap = $('<div class="jSocial-follow" />'),
-                followtitle = '';
+          followtitle = ''
+          /*
+           facebook: {
+           title: "Facebook",
+           url: "https://facebook.com"
+           },
+           google: {
+           title: "Google",
+           url: "https://plus.google.com"
+           },
+           twitter: {
+           title: "Twitter",
+           url: "https://twitter.com"
+           },
+           linkedin: {
+           title: "LinkedIn",
+           url: "https://linkedin.com"
+           },
+           pinterest: {
+           title: "Pinterest",
+           url: "https://pinterest.com"
+           },
+           yelp: {
+           title: "Yelp",
+           url: "https://yelp.com"
+           }*/;
 
-        if (o.followtitle.length !== 0) {
+        if (o.followtitle) {
           fWrap.append('<span class="title">' + o.followtitle + '</span>');
           followtitle = o.followtitle + ' on ';
         }

@@ -9,7 +9,7 @@ module.exports = {
       {
         cwd: 'src/assets/icons/svg/',
         src: ['**/*.svg'],
-        dest: 'assets/icons/png/'
+        dest: 'src/assets/icons/png/'
       }
     ]
   },
@@ -18,25 +18,8 @@ module.exports = {
       {
         cwd: 'src/assets/images/svg/',
         src: ['**/*.svg'],
-        dest: 'assets/images/png/'
+        dest: 'src/assets/images/png/'
       }
     ]
   }
-  /*
-   favicons: {
-   files: [
-   {
-   cwd: 'src/assets/favicons/',
-   src: ['apple-touch-icon.svg'],
-   dest: 'test/favicons/',
-   size: [
-   144,
-   114,
-   96,
-   95
-   ]
-   }
-   ]
-   }
-   */
 };

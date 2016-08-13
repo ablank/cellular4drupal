@@ -7,27 +7,8 @@
 /**
  * Yoga hook_css_alter().
  */
-function yoga_css_alter(&$css) {
-  // Uncomment this block to add stylesheets to theme.
-  /*
-    $add_css = array(
-    'myStyle' => array(// default params
-    'file' => 'my.awesome.css',
-    'preprocess' => TRUE,
-    'media' => 'all',
-    'every_page' => TRUE,
-    'group' => CSS_THEME,
-    'weight' => 10
-    ),
-    'otherStyle' => array(// minimum setup
-    'file' => 'moar.css',
-    ),
-    );
-
-    cellular_add_css($css, $add_css);
-   */
-
-  /* Remove stylesheets set by modules.
+function subcellular_css_alter(&$css) {
+  /* Remove stylesheets:
    * $key : Module name.
    * $value : Path relative to each module's directory.
    *

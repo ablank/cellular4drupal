@@ -102,7 +102,7 @@ function cellular_sm_urls($type) {
   switch ($type) {
     case 'follow':
       $output = array(
-        'fb' => theme_get_setting('follow_facebook_url'),
+        'facebook' => theme_get_setting('follow_facebook_url'),
         'google' => theme_get_setting('follow_google_plus_url'),
         'twitter' => theme_get_setting('follow_twitter_url'),
         'linkedin' => theme_get_setting('follow_linkedin_url'),
@@ -112,7 +112,7 @@ function cellular_sm_urls($type) {
 
     case 'share':
       $output = array(
-        'fb' => theme_get_setting('share_facebook_url'),
+        'facebook' => theme_get_setting('share_facebook_url'),
         'google' => theme_get_setting('share_google_plus_url'),
         'twitter' => theme_get_setting('share_twitter_url'),
         'linkedin' => theme_get_setting('share_linkedin_url'),
@@ -140,8 +140,8 @@ function cellular_social_media_follow() {
         'title' => "Facebook",
         'url' => $url['facebook'],
           ) : NULL;
-  $set['google'] == 1 ? $links['google+'] = array(
-        'title' => "Google+",
+  $set['google'] == 1 ? $links['google'] = array(
+        'title' => "Google",
         'url' => $url['google'],
           ) : NULL;
   $set['twitter'] == 1 ? $links['twitter'] = array(
@@ -157,6 +157,10 @@ function cellular_social_media_follow() {
         'url' => $url['github'],
           ) : NULL;
 
+  if(empty($links)){
+    $links = NULL;
+  }
+  
   return $links;
 }
 
@@ -180,6 +184,10 @@ function cellular_social_media_share() {
   $set['digg'] == 1 ? $links[] = 'digg' : NULL;
   $set['stumbleupon'] == 1 ? $links[] = 'stumbleupon' : NULL;
   $set['tumblr'] == 1 ? $links[] = 'tumblr' : NULL;
+
+  if(empty($links)){
+    $links = NULL;
+  }
 
   return $links;
 }

@@ -2,8 +2,9 @@
   * @file
   * CellularUI : jMMenu
 */
+
 @media screen and (max-width: $res_mobile) {
-  #nav {
+  #main-menu {
     ul.menu {
       // Hides navigation prior to js loading & acting on DOM to prevent
       // jankiness caused by js acting on the DOM.
@@ -11,6 +12,7 @@
     }
   }
 }
+
 .cellular {
   .jMmenu-trigger {
     // Wrqpper element, used as the menu trigger.
@@ -59,45 +61,80 @@
     top: $header_height;
     z-index: 999;
     margin: 0;
-    opacity: 0;
+    //opacity: 0;
     overflow: hidden;
-    background-color: rgba($black, 0.6);
-    transform: translate3d(0,0,0);
+    background-color: rgba($white, 0.7);
+    transform: translate3d(0, 0, 0);
     @include transition();
     li {
       display: block;
       margin: 0.2em auto;
       list-style: none;
       max-width: none;
-    }
-    a,
-    a:visited {
-      display: block;
-      height: 1em;
-      padding: 0.6em 1em 0.8em;
-      text-decoration: none;
-      font-size: 0.9em;
-      font-family: $h_font;
-      font-weight: bold;
-      color: $white;
-      background-image: none;
-      border-bottom: 1px solid;
-      background-color: $dark_grey;
-      &.active,
-      &:active,
-        &:focus,
-        &:hover {
-        color: $hilight;
-        background-color: $black;
+      &.parent {
+        &:after {
+          position: absolute;
+          top: 1em;
+          right: 0.2em;
+          @include triangle(0.8em, 0.6em, $dark_grey, 'down');
+          @include transition();
+        }
+        &.active:after,
+        &:hover:after {
+          @include triangle(0.8em, 0.6em, $hilight, 'down');
+          transform: rotateY(180deg);
+        }
       }
+    }
+    .child {
+      z-index: 1;
+      border-left: $grey 1px solid;
+
+      li {
+        overflow: hidden;
+        max-height: 0;
+        border: $light_grey 1px solid;
+        border-radius: 0.8em;
+        transition: max-height 0.25s;
+      }
+      &.active{
+
+        > li {
+          max-height: 32em;
+          transition: max-height 0.5s ease-in;
+        }
+      }
+    }
+    a{
+      &,
+      &:visited {
+        display: block;
+        height: 1em;
+        padding: 0.6em 1em 0.8em;
+        text-decoration: none;
+        font-size: 0.9em;
+        font-family: $h_font;
+        font-weight: bold;
+        background-image: none;
+        border-bottom: 1px solid;
+        color: $dark_grey;
+        background-color: $white;
+        @include box-shadow();
+      }
+      &:active,
+      &:focus,
+      &:hover {
+        color: $hilight;
+        background-color: $white;
+      }
+    }
+    .active > a {
+      color: $hilight;
+      background-color: $white;
     }
     ul {
       // Styling for nested menus.
-      margin: 0 0 0 0.4em;
-      background-color: rgba($black, 0.4);
-    }
-    &.active {
-      opacity: 1;
+      margin: 0 0 0 0.8em;
     }
   }
   // Styles applied after js loads
@@ -148,7 +185,7 @@
       right: 0;
     }
   }
-  // Styles applied to pge elements.
+  // Styles applied to page elements.
   &.jMmenu-active {
     &.push-left,
     &.push-right {

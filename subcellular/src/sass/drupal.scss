@@ -1,7 +1,7 @@
 /**
- * @file
- * Collect Drupal specific  styles
- */
+  * @file
+  * Collect Drupal specific  styles
+*/
 
 @import "variables";
 
@@ -10,18 +10,19 @@
 @import "drupal/powered-by";
 @import "drupal/breadcrumb";
 @import "drupal/postinfo";
-@import "drupal/pager";
-@import "drupal/user";
-@import "drupal/search";
 @import "drupal/comments";
+@import "drupal/pager";
+@import "drupal/forms";
 @import "drupal/menus";
 @import "drupal/tabs";
+@import "drupal/search";
 // Replaces default module styles.
-@import "drupal/views";
-@import "drupal/colorbox";
-@import "drupal/calendar";
-@import "drupal/forum";
-@import "drupal/flag";
-@import "drupal/webform";
-@import "drupal/panels";
-@import "drupal/reveal";
+@import "drupal/modules/calendar";
+@import "drupal/modules/colorbox";
+@import "drupal/modules/ctools";
+@import "drupal/modules/date";
+@import "drupal/modules/flag";
+@import "drupal/modules/forum";
+@import "drupal/modules/panels";
+@import "drupal/modules/views";
+@import "drupal/modules/webform";

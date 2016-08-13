@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme markup of form elements.
@@ -10,11 +9,14 @@
  */
 function cellular_form($vars) {
   $element = $vars['element'];
+  // Chrome prevents form submission if a field is required & hidden-
+  // Add novalidate to ignore browser & rely on js for client validation.
+  $element['#attributes']['novalidate'] = 1;
   // $element['#attributes']['class'][] = 'cell';
-  if (isset($element['#action'])) {
+  element_set_attributes($element, array('method', 'id'));
+  if (!empty($element['#action'])) {
     $element['#attributes']['action'] = drupal_strip_dangerous_protocols($element['#action']);
   }
-  element_set_attributes($element, array('method', 'id'));
   if (empty($element['#attributes']['accept-charset'])) {
     $element['#attributes']['accept-charset'] = "UTF-8";
   }
@@ -31,61 +33,16 @@ function cellular_form($vars) {
 function cellular_container(&$vars) {
   $element = $vars['element'];
   // Special handling for form elements.
-  if (isset($element['#array_parents'])) {
+  if (!empty($element['#array_parents'])) {
     // Add the 'form-wrapper' class.
     $element['#attributes']['class'][] = array('center');
     // Assign an html ID if not present.
-    if (!isset($element['#attributes']['id'])) {
+    if (empty($element['#attributes']['id'])) {
       $element['#attributes']['id'] = $element['#id'];
     }
   }
 
   return $element['#children'];
-}
-
-/**
- * Implements theme_form_element().
- */
-function cellular_form_element(&$vars) {
-  $element = $vars['element'];
-  $output = '';
-
-  if (isset($element['#disabled'])) {
-    $element['#attributes']['class'][] = 'disabled';
-  }
-
-  $prefix = isset($element['#field_prefix']) ?
-      '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : NULL;
-  $suffix = isset($element['#field_suffix']) ?
-      '<span class="field-suffix">' . $element['#field_suffix'] . '</span>' : NULL;
-  /*
-    if (empty($vars['#title'])) {
-    $vars['#title'] = '';
-    }
-   */
-  if (isset($element['#title_display'])) {
-    $label = theme('form_element_label', $vars);
-    switch ($element['#title_display']) {
-      case 'before':
-      case 'invisible':
-        $output .= $label . $prefix . $element['#children'] . $suffix . "\n";
-        break;
-
-      case 'after':
-        $output .= $prefix . $element['#children'] . $suffix . $label . "\n";
-        break;
-
-      case 'attribute':
-      case 'none':
-        $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-        break;
-    }
-  }
-  if (!empty($element['#description'])) {
-    $output .= "\n<div class=\"description\">\n" . $element['#description'] . "\n</div>\n";
-  }
-
-  return $output;
 }
 
 /**
@@ -102,19 +59,6 @@ function cellular_button(&$vars) {
   if (!empty($element['#attributes']['disabled'])) {
     $element['#attributes']['class'][] = 'disabled';
   }
-  /* // May add this back if I can get css styling dialed in...
-    switch ($element['#parents'][0]) {
-    case 'preview':
-    case 'submit':
-    $element['#attributes']['class'][] = 'right';
-    break;
-
-    case 'delete':
-    default:
-    $element['#attributes']['class'][] = 'left';
-    break;
-    }
-   */
 
   return "\n<input" . drupal_attributes($element['#attributes']) . " />\n";
 }
@@ -206,8 +150,91 @@ function cellular_textarea(&$vars) {
   $element = $vars['element'];
   $attributes = cellular_form_element_attributes($element);
   $attributes['placeholder'] = t($element['#default_value']);
-  $attributes['cols'] = isset($element['#cols']) ? $element['#cols'] : 60;
-  $attributes['rows'] = isset($element['#rows']) ? $element['#rows'] : 5;
+  $attributes['cols'] = !empty($element['#cols']) ? $element['#cols'] : 60;
+  $attributes['rows'] = !empty($element['#rows']) ? $element['#rows'] : 5;
 
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
+/**
+ * Implements theme_webform_element().
+function cellular_webform_element($vars) {
+  // Ensure defaults.
+  $vars['element'] += array(
+    '#title_display' => 'before',
+  );
+
+  $element = $vars['element'];
+
+  // All elements using this for display only are given the "display" type.
+  if (isset($element['#format']) && $element['#format'] == 'html') {
+    $type = 'display';
+  }
+  else {
+    $type = (isset($element['#type']) && !in_array($element['#type'], array('markup', 'textfield', 'webform_email', 'webform_number')))
+      ? $element['#type'] : $element['#webform_component']['type'];
+  }
+
+  // Convert the parents array into a string, excluding the "submitted" wrapper.
+  $nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
+  $parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
+
+  // Get description
+  $description = $element['#description'];
+  if (!empty($description)) {
+    if (theme_get_setting('ui_tooltips') == 1) {
+      $element ['#attributes']['data-tooltip'] = $description;
+      //$element['#description'] = NULL;
+      //unset($element['#description']);
+    }
+    else {
+      $description = "<div class=\"description\">$description</div>\n";
+    }
+  }
+
+  $wrapper_classes = array();
+  if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
+    $wrapper_classes[] = 'container-inline';
+  }
+  $output = '<div class="' . implode(' ', $wrapper_classes) . '" id="webform-component-' . $parents . '">' . "\n";
+
+  // If #title_display is none, set it to invisible instead - none only used if
+  // we have no title at all to use.
+  if ($element['#title_display'] == 'none') {
+    $vars['element']['#title_display'] = 'invisible';
+    $element['#title_display'] = 'invisible';
+  }
+  // If #title is not set, we don't display any label or required marker.
+  if (!isset($element['#title'])) {
+    $element['#title_display'] = 'none';
+  }
+  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . _webform_filter_xss($element['#field_prefix']) . '</span> '
+    : '';
+  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . _webform_filter_xss($element['#field_suffix']) . '</span>'
+    : '';
+
+  switch ($element['#title_display']) {
+    case 'inline':
+    case 'before':
+    case 'invisible':
+      $output .= ' ' . theme('form_element_label', $vars);
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+
+    case 'after':
+      $output .= ' ' . $prefix . $element['#children'] . $suffix;
+      $output .= ' ' . theme('form_element_label', $vars) . "\n";
+      break;
+
+    case 'none':
+    case 'attribute':
+      // Output no label and no required marker, only the children.
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+  }
+
+  $output .= $description;
+  $output .= "</div>\n";
+  dpm($element);
+  return $output;
+}
+ */

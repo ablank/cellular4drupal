@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Set element markup.
@@ -74,7 +73,8 @@ function cellular_links($vars) {
       if (isset($link['href'])) {
         // Pass in $link as $options, they share the same keys.
         $output .= l(ucfirst($link['title']), $link['href'], $link);
-      } elseif (!empty($link['title'])) {
+      }
+      elseif (!empty($link['title'])) {
         // Some links are actually not links, but we wrap these in <span> for adding title and class attributes.
         if (empty($link['html'])) {
           $link['title'] = check_plain(ucfirst($link['title']));
@@ -156,8 +156,6 @@ function cellular_file_icon(&$vars) {
   $mime = check_plain($file->filemime);
   $generic_mime = (string) file_icon_map($file);
 
-  // $dashed_mime = strtr($file->filemime, array('/' => '-'));
-  // $icon_path = $icon_directory . '/' . $dashed_mime . '.png';
   // Use generic icons for each category that provides such icons.
   foreach (array('audio', 'image', 'text', 'video') as $category) {
     if (strpos($file->filemime, $category . '/') == 0) {

@@ -14,9 +14,14 @@ $scroll_header: $header_height / 2;
       a {
         width: $scroll_header;
         height: $scroll_header;
+        msrgin: 0;
+        padding: 0;
         background-size: $scroll_header;
       }
     }
+  }
+  #main-menu {
+    top: 0;
   }
   .jMmenu-trigger {
     // Element, used as the menu trigger.

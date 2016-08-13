@@ -1,4 +1,4 @@
-#app .menu,
+.menu,
 .inline.links{
   display: block;
   clear: both;
@@ -16,3 +16,32 @@
     padding: 0.2em 0.4em;
   }
 }
+
+.links {
+    padding: 1em;
+    border-bottom: 1px solid;
+    background-color: transparent;
+    list-style: none;
+    @include clear();
+    li {
+  float: left;
+display: block;
+    }
+    a {
+      &,
+      &:visited {
+        padding: .4em .8em;
+        border: 1px solid;
+        color: $white;
+        background-color: $dark_grey;
+        @include round($tiny);
+      }
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $hilight;
+        background-color: $white;
+      }
+    }
+  }

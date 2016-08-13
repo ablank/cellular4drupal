@@ -1,16 +1,17 @@
 <?php
 /**
- * @file
- * SubCellular Starter Theme for Drupal 7.
- *
- * @author Adam Blankenship
- * 
- * @see http://live-cellular.gotpantheon.com
- * @see https://github.com/ablank/cellular
- */
+    * @file
+    * Subcellular Starter Theme for Drupal 7.
+    *
+    * @author Adam Blankenship
+    * 
+    * @see http://live-cellular.gotpantheon.com
+    * @see https://github.com/ablank/cellular
+    */
+
 
 /*
- * @see file: preprocess/_init.inc
+ * @see file: src/preprocess/_init.inc
  * Initialize constants & globals
  */
 
@@ -33,7 +34,7 @@
 */
 
 /*
- * @see file: preprocess/alter.inc
+ * @see file: src/preprocess/alter.inc
  * Alter hooks for templates.
  */
 
@@ -90,13 +91,14 @@ function subcellular_page_alter(&$vars) {
 }
  */
 
+
 /*
- * @see file: preprocess/alter_css.inc
+ * @see file: src/preprocess/alter_css.inc
  * Add/Update/Delete stylesheets.
  */
 
 /**
- * Subcellular hook_css_alter().
+ * Yoga hook_css_alter().
  */
 function subcellular_css_alter(&$css) {
   // Uncomment this block to add stylesheets to theme.
@@ -148,13 +150,14 @@ function subcellular_css_alter(&$css) {
    */
 }
 
+
 /*
- * @see file: preprocess/alter_js.inc
+ * @see file: src/preprocess/alter_js.inc
  * Add and update javascript.
  */
 
 /**
- * Subcellular hook_js_alter().
+ * Yoga hook_js_alter().
  */
 function subcellular_js_alter(&$javascript) {
   // 
@@ -215,6 +218,16 @@ function subcellular_js_alter(&$javascript) {
 
   cellular_modernizr($tests);
    */
+/*
+  // Move scripts to the document <head>
+  $critical_js = array(
+    'misc/ajax.js',
+    'sites/all/themes/Cellular/Cellular/js/script.js',
+  );
+  foreach($critical_js as &$script){
+    $javascript[$script]['scope'] = 'critical';
+  }
+*/
 }
 
 

@@ -1,16 +1,14 @@
 /**
  * @file
- * Configure grunt compass.
- *
- * OutputStyle: expanded | nested | compact | compressed
+ * Configure grunt autoprefixr.
  */
 
 module.exports = {
   all: {
     expand: true,
     flatten: true,
-    cwd: 'css',
-    src: ['*.css'],
+    cwd: 'src/css',
+    src: '*.css',
     dest: 'css/'
   }
 };

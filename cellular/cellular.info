@@ -1,7 +1,7 @@
 ;----------// Theme Information
-
 name        = Cellular
 description = Tame the Drupal for easier front end development.
+
 core        = 7.x
 engine      = phptemplate
 screenshot  = screenshot.png
@@ -43,15 +43,17 @@ regions[header_bottom]      = Header Bottom
 regions[console]            = Console
 regions[content_top]        = Content Top
 regions[content_bottom]     = Content Bottom
-regions[sidebar_left]       = Left Sidebar
-regions[sidebar_right]      = Right Sidebar
 regions[footer_top]         = Footer Top
 regions[footer]             = Footer
 regions[footer_bottom]      = Footer Bottom
 
-;----------// Theme Settings
-
+; Theme Settings
+;
+;
+;
 ;----------// Meta Settings
+settings[libpath]               = sites/all/libraries/cellular
+settings[cookie_time]           = 3
 settings[favicon]               = favicon.ico
 settings[favicon_32]            = favicon-32.png
 settings[apple_icon_57]         = apple-touch-icon-57.png
@@ -72,11 +74,6 @@ settings[use_colorbox]              = 0
 ;----------// Styles
 settings[inline_critical_css]           = 0
 settings[remove_drupal_css]             = select
-settings[content_class_no_sidebar]      = cell-100
-settings[content_class_single_sidebar]  = cell-70
-settings[content_class_dual_sidebars]   = cell-60
-settings[sidebar_class_single_sidebar]  = cell-30
-settings[sidebar_class_dual_sidebars]   = cell-20
 
 ;----------// Conditional Styles
 settings[mq_mobile_enable]      = 0
@@ -103,15 +100,18 @@ settings[flowtype]              = 0
 settings[freetile]              = 0
 settings[jparallax]             = 0
 settings[smoove]                = 0
+settings[nprogress]             = 0
 
 ;----------// Javascript Libraries
-settings[requirejs]             = 0
 settings[d3js]                  = 0
 settings[gsap]                  = 0
 settings[prism]                 = 0
 settings[reveal]                = 0
 settings[snap-svg]              = 0
 settings[threejs]               = 0
+
+;----------// UI
+settings[ui_tooltips]           = 1
 
 ;----------// Social Media
 settings[social_media_share]    = 0

@@ -7,9 +7,7 @@ $use_social_icons: true;
 $icon_source_png: '../assets/icons/png/';
 $icon_source_svg: '../assets/icons/svg/';
 // Size of icon wrapper
-$icon_size: 32px;
-// Set padding to offset image from border.
-$icon_padding: 10px;
+$icon_size: 2em;
 
 /* Select the icons to include:
   - Use only the base filename, .png or .svg will be added based on context
@@ -38,6 +36,8 @@ eye
 film
 folder
 gear
+heart
+heart_sprite
 home
 key
 lock
@@ -50,6 +50,8 @@ plus
 print
 search
 spreadsheet
+star
+star_sprite
 user
 user-social
 video
@@ -111,5 +113,6 @@ technorati
 tumblr
 twitter
 twitter-t
+yelp
 youtube
 );

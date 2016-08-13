@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme-settings: Display & styling settings.

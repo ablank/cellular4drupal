@@ -5,6 +5,8 @@
 
 module.exports = {
   assets: [
+    //"assets/images/**/*",
+    //"assets/icons/**/*",
     "css/**/*",
     "js/**/*"
   ]

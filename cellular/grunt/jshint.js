@@ -5,13 +5,16 @@
 
 module.exports = {
   options: {
+    browser: true,
     curly: true,
     eqeqeq: true,
     eqnull: true,
-    browser: true,
+    force: true,
     globals: {
       jQuery: true
-    }
+    },
+    undef: true,
+    unused: true
   },
   js: [
     'src/js/*.js'

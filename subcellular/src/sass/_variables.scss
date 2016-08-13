@@ -21,10 +21,11 @@ $res_default: 960px;
 $res_large: 1280px;
 
 // Sizing vars
-$tiny: 0.3em;
-$small: 0.75em;
-$normal: 1em;
-$big: 1.4em;
+$size: 1em;
+$tiny: $size * 0.3;
+$small: $size * 0.75;
+$big: $size * 1.4;
+$normal: $size;
 $border: thin solid;
 
 // Shadows: $h-off $v-off $blur $spread
@@ -67,18 +68,15 @@ $region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 
 // Content Regions
 $regions_list : (
 console
-header-top
 header
+header-top
 header-bottom
-content-top
 content
+content-top
 content-bottom
-sidebar-left
-sidebar-right
 footer
-footer_left
-footer-right
-footer-middle
+footer-top
+footer-bottom
 );
 
 // Define all regions using list.

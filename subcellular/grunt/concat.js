@@ -28,6 +28,7 @@ module.exports = {
       'src/preprocess/alter.inc',
       'src/preprocess/alter_css.inc',
       'src/preprocess/alter_js.inc',
+      'src/preprocess/preprocess_html.inc',
       'src/preprocess/preprocess.inc'
     ],
     dest: 'template.php'
@@ -47,25 +48,39 @@ module.exports = {
       }
     },
     src: [
+      /**
+       * Init Objects
+       */
       'src/js/cellular-ui/init/jquery.init.js',
       'src/js/cellular-ui/init/drupal.init.js',
       'src/js/cellular-ui/init/cellular.init.js',
+      /**
+       * Components
+       */
       'src/js/cellular-ui/functions.js',
-      'src/js/cellular-ui/state.js',
+      'src/js/cellular-ui/cellular.body.js',
       'src/js/cellular-ui/cellular.jAccordion.js',
       'src/js/cellular-ui/cellular.jCard.js',
-      'src/js/cellular-ui/cellular.jEqualheight.js',
+      'src/js/cellular-ui/cellular.jFormal.js',
       'src/js/cellular-ui/cellular.jMmenu.js',
-      //'src/js/cellular-ui/cellular.jModal.js',
       'src/js/cellular-ui/cellular.jScrolli.js',
       'src/js/cellular-ui/cellular.jSocial.js',
       'src/js/cellular-ui/cellular.jTabs.js',
       'src/js/cellular-ui/cellular.jTooltip.js',
-      //'src/js/cellular-ui/cellular.jZoom.js',
-      //'src/js/cellular-ui/cellular.jFormal.js',
+      /**
+       * Under Development...
+       */
+      //'src/js/cellular-ui/dev/cellular.jAV.js',
+      //'src/js/cellular-ui/dev/cellular.jEqualheight.js',
+      //'src/js/cellular-ui/dev/cellular.jModal.js',
+      //'src/js/cellular-ui/dev/cellular.jZoom.js',
       //'src/js/cellular-ui/dev/cellular.jParallax.js',
+      //'src/js/cellular-ui/dev/cellular.jScrollindicator.js',
       //'src/js/cellular-ui/dev/cellular.jScrolltrigger.js',
       //'src/js/cellular-ui/dev/cellular.jSticky.js',
+      /**
+       * Close objects
+       */
       'src/js/cellular-ui/init/cellular.end.js',
       'src/js/cellular-ui/init/drupal.end.js',
       'src/js/cellular-ui/init/jquery.end.js'

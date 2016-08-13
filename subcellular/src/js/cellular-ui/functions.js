@@ -40,7 +40,7 @@ cellular.activate = function (theclass) {
 
     if (!$t.hasClass(theclass)) {
       $t.addClass(theclass)
-              .siblings().removeClass(theclass);
+        .siblings().removeClass(theclass);
     }
   });
 };
@@ -88,14 +88,14 @@ cellular.debounce = function (func, wait, immediate) {
 
   return function () {
     var context = this,
-            args = arguments,
-            later = function () {
-              timeout = null;
-              if (!immediate) {
-                func.apply(context, args);
-              }
-            },
-            callNow = immediate && !timeout;
+      args = arguments,
+      later = function () {
+        timeout = null;
+        if (!immediate) {
+          func.apply(context, args);
+        }
+      },
+      callNow = immediate && !timeout;
 
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
@@ -111,13 +111,13 @@ cellular.debounce = function (func, wait, immediate) {
  */
 cellular.transitionend = function () {
   var t,
-          el = document.createElement("test"),
-          transitions = {
-            transition: "transitionend",
-            OTransition: "oTransitionEnd",
-            MozTransition: "transitionend",
-            WebkitTransition: "webkitTransitionEnd"
-          };
+    el = document.createElement("test"),
+    transitions = {
+      transition: "transitionend",
+      OTransition: "oTransitionEnd",
+      MozTransition: "transitionend",
+      WebkitTransition: "webkitTransitionEnd"
+    };
 
   for (t in transitions) {
     if (el.style[t] !== undefined) {
@@ -146,10 +146,10 @@ cellular.scrolltimer = function (el, uc, dc) {
  */
 cellular.buttonize = function (href, title, classes) {
   var btn = $('<a />')
-          .attr('href', href)
-          .attr('title', title)
-          .text(title)
-          .classify(classes);
+    .attr('href', href)
+    .attr('title', title)
+    .text(title)
+    .classify(classes);
 
   return $(this).append(btn);
 };

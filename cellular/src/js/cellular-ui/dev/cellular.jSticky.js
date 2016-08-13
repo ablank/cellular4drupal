@@ -1,28 +1,25 @@
 cellular.jSticky = function (opts) {
-  o = jQuery.extend({
-    sspeed: 500,
-    delay: 200
-  }, opts);
-
-  var fn = {};
+  var fn = {},
+    o = jQuery.extend({
+      cclass = "jSticky",
+      offset: "20%" //Distance from top before activating sticky.
+    }, opts);
 
   fn.style = function ($obj) {
-    $obj.addClass(cellular.opts.cclass);
+    $obj.classify([o.cclass]);
   };
 
-  fn.update = function ($obj, offset, ostyle) {
-    var scroll = jQuery(window).scrollTop();
+  fn.update = function ($obj, ostyle) {
+    var offsets = $obj.offset(),
+      scroll = jQuery(window).scrollTop();
 
-    if (scroll >= offset) {
-      $obj.addClass("mini")
-              .css({
-                "position": "absolute",
-                "left": $obj.offset().left
-              })
-              .stop().animate({
-        "top": scroll
-      })
-              .minimenu();
+    if (scroll >= offsets.top) {
+      $obj.activate()
+        .css({
+          "position": "fixed",
+          "left": offsets.left,
+          "top": 0
+        });
 
     } else {
       $obj.removeClass("mini");
@@ -32,15 +29,18 @@ cellular.jSticky = function (opts) {
     }
   };
 
-  return this.each(function () {
-    var $obj = jQuery(this);
-    var ostyle = $obj.css(["position", "left", "top", "z-index"]);
-    var offset = $obj.offset().top; // - $obj.height();
 
+  /**
+   * Init jSticky
+   */
+  fn.init = function ($obj) {
+    var ostyle = $obj.css(["position", "left", "top", "z-index"]);
 
     fn.style($obj);
     $(window).scroll(function () {
-      fn.update($obj, offset, ostyle);
+      fn.update($obj, ostyle);
     });
-  });
+  };
+
+  return this.each(fn.init(jQuery(this)));
 };

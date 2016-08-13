@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme-settings: Javascript options.
@@ -9,7 +8,7 @@ $form[0]['js'] = array(
   '#type' => 'fieldset',
   '#title' => t('Javascript'),
   '#description' => is_dir('sites/all/libraries/cellular') ? NULL :
-      t('<div class="messages error"> <h2>These features require the <a href="@url">Cellular Library</a>.</h2> </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
+  t('<div class="messages error"> <h2>These features require the <a href="@url">Cellular Library</a>.</h2> </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
@@ -76,13 +75,13 @@ $form[0]['js']['update']['jquery']['jquery_migrate'] = array(
   '#title' => t('jQuery Migrate'),
   '#description' => t("Include jQuery.migrate for versions > 1.9 to prevent deprecated functions from breaking."),
   '#default_value' => theme_get_setting('jquery_migrate'),
-    /*
-      '#states' => array(
-      'visible' => array(
-      ':input[name="jquery_version"]' => array('selected' => floatval(substr( $somevarforjquery['version'], 2)) >= 9 ),
-      ),
-      ),
-     */
+ /*
+  '#states' => array(
+  'visible' => array(
+  ':input[name="jquery_version"]' => array('selected' => floatval(substr( $somevarforjquery['version'], 2)) >= 9 ),
+  ),
+  ),
+ */
 );
 
 // jQuery.ui stuff.
@@ -112,7 +111,7 @@ $form[0]['js']['update']['jqueryui']['jqueryui_theme'] = array(
 $form[0]['js']['plugins'] = array(
   '#type' => 'fieldset',
   '#title' => t('jQuery Plugins'),
-  '#description' => t("jQuery plugins will load from CDNJS if possible, or use local source as fallback if the CDN source is unavailable."),
+  '#description' => t("jQuery plugins are called from <code>/js/plugins.js</code> using simple configurations that you may update to meet your needs- see each plugin's documentation page for all available options. <br/>The required plugin files will load from CDNJS if possible, or use the local Cellular library to provide a fallback file if the CDN source is unavailable."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );
@@ -159,11 +158,18 @@ $form[0]['js']['plugins']['smoove'] = array(
   '#default_value' => theme_get_setting('smoove'),
 );
 
+$form[0]['js']['plugins']['nprogress'] = array(
+  '#type' => 'checkbox',
+  '#title' => l('NProgress', 'http://ricostacruz.com/nprogress/'),
+  '#description' => t('Slim progress bars for Ajaxy applications. Inspired by Google, YouTube, and Medium.'),
+  '#default_value' => theme_get_setting('nprogress'),
+);
+
 // Pre-configured 3rd party plugins.
 $form[0]['js']['lib'] = array(
   '#type' => 'fieldset',
   '#title' => t('Javascript Libraries'),
-  '#description' => t("Javascript libraries will load from CDNJS if possible, or use local source as fallback if CDN is unavailable."),
+  '#description' => t("Javascript libraries load the library specified and nothing more- you may add your script to call library functions in <code>/js/script.js</code>, or add a separate js file in <code>/preprocess/alter_js.inc</code> and re-compile with grunt. <br/>The required library files will load from CDNJS if possible, or use the local Cellular library to provide a fallback file if the CDN source is unavailable."),
   '#collapsible' => TRUE,
   '#collapsed' => TRUE,
 );

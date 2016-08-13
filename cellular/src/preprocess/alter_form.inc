@@ -2,13 +2,15 @@
 
 /**
  * @file
- * Alter specific forms.
+ * Alter forms.
  */
 
 /**
  * Implements hook_form_alter().
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
+//dpm($form_state);
+  //$form['#validate'][] = 'cellular_form_validate';
 
   switch ($form['#id']) {
     /* Search page. */

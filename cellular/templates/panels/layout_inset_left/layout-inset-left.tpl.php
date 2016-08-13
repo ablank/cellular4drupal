@@ -24,7 +24,7 @@ endif;
   if (!empty($content['inset'])):
 
     ?>
-    <div class="inset cell-25">
+    <div class="inset pad cell-25">
       <?php print $content['inset']; ?>
     </div>
   <?php endif; ?>

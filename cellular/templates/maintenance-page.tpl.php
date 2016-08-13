@@ -24,29 +24,22 @@ $maintenance_message = 'We apologize for the inconvenience- check back in a few 
     <title><?php print $head_title; ?></title>
     <?php print $head; ?>
     <?php print $styles; ?>
-    <?php print $scripts; ?>
   </head>
   <body class="<?php print $classes; ?>">
 
+    <?php print $page['skiplinks']; ?>
+
     <div id="page-wrap">
 
-      <div id="skipLinks" class="hidden">
-        <a href="#content"><?php print t('Skip to main content'); ?></a>
-        <a href="#nav"><?php print t('Skip to navigation'); ?></a>
-      </div>
-
       <div id="header">
-
-        <div class="logo">
-          <?php
-          if (!empty($site_name)) :
-            print $site_name;
-          endif;
-          ?>
-        </div>
+        <?php
+        if (!empty($page['logo'])) :
+          print $page['logo'];
+        endif;
+        ?>
 
         <?php if (!empty($main_menu)) : ?>
-          <div id="nav">
+          <div id="main-menu">
             <?php print render($main_menu); ?>
           </div>
         <?php endif; ?>
@@ -71,5 +64,6 @@ $maintenance_message = 'We apologize for the inconvenience- check back in a few 
       </div>
     </div>
     </div>
+    <?php print $scripts; ?>
   </body>
 </html>

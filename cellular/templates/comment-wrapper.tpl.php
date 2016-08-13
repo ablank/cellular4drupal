@@ -36,16 +36,19 @@
  * @ingroup themeable
  */
 ?>
-<div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php print render($content['comments']); ?>
 
-  <?php if ($content['comment_form']): ?>
-    <h2><?php print t('Post your comment'); ?></h2>
-    <?php print render($content['comment_form']); ?>
-  <?php endif; ?>
-  <?php if ($content['comments'] && $node->type != 'forum'): ?>
-    <?php print render($title_prefix); ?>
-    <h2><?php print t('Comments'); ?></h2>
-    <?php print render($title_suffix); ?>
-  <?php endif; ?>
-</div>
+<?php if ($content['comment_form']): ?>
+  <h2><?php print render($content['comment_form']['#title']); ?></h2>
+  <?php print render($content['comment_form']); ?>
+<?php endif; ?>
+
+<?php if (!empty($content['comments'])): ?>
+  <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+    <?php
+    print render($title_prefix);
+    print '<h2>' . t('Comments') . '</h2>';
+    print render($title_suffix);
+    print render($content['comments']);
+    ?>
+  </div>
+<?php endif; ?>

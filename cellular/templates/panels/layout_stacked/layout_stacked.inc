@@ -199,8 +199,8 @@ function template_preprocess_layout_stacked(&$variables) {
     }
   }
   //dpm($variables['region_attributes']);
-  dpm($variables['stack']);
-  dpm($variables['content']);
+  //dpm($variables['stack']);
+  //dpm($variables['content']);
 }
 /**
  * Panels layout settings.

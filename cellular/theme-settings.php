@@ -34,7 +34,10 @@ $cdn = array(
 'cloudflare' => t('Cloudflare'),
 ),
 'jquery' => array(
+'3.1.0' => '3.1.0',
+'2.2.4' => '2.2.4',
 '2.1.4' => '2.1.4',
+'1.12.4' => '1.12.4',
 '1.11.1' => '1.11.1',
 '1.10.2' => '1.10.2',
 '1.9.1' => '1.9.1',
@@ -98,6 +101,20 @@ $form[0]['meta']['dev'] = array(
 '#default_value' => theme_get_setting('dev'),
 );
 */
+$form[0]['meta']['cookie_time'] = array(
+'#type' => 'textfield',
+'#title' => t('Cookie Expiration'),
+'#description' => t('Number of days before the theme cookie expires. A <code>first-visit</code> class is added to <code>&lt;body&gt;</code> and <code>Drupal.settings.cellular.first_visit = true</code>.'),
+'#default_value' => theme_get_setting('cookie_time'),
+);
+$form[0]['meta']['libpath'] = array(
+'#type' => 'textfield',
+'#title' => t('Cellular Library'),
+'#description' => t('Site relative path to the <a href="@lib">Cellular Library</a>', array(
+'@lib' => 'https://github.com/ablank/cellular.library',
+)),
+'#default_value' => theme_get_setting('libpath'),
+);
 $form[0]['meta']['favicons'] = array(
 '#type' => 'fieldset',
 '#title' => t('Favicons'),
@@ -246,62 +263,6 @@ $form[0]['style_settings']['remove_drupal_css'] = array(
 'theme_only' => t('Remove all system & module CSS. Only include theme CSS (group => <code>CSS_THEME</code>).'),
 ),
 );
-$form[0]['style_settings']['add_classes'] = array(
-'#type' => 'fieldset',
-'#title' => t('Content Class Settings'),
-'#description' => t("Classes to add to #content and #sidebars (<em>when using block manager</em>) for simplified layout with a grid."),
-'#collapsible' => TRUE,
-'#collapsed' => TRUE,
-);
-$form[0]['style_settings']['add_classes']['content_class_no_sidebars'] = array(
-'#type' => 'textfield',
-'#title' => t('Default Content Class'),
-'#description' => t("Class to add to #content if no sidebars are present."),
-// '#options' => $grid_values,
-'#default_value' => theme_get_setting('content_class_no_sidebars'),
-);
-$form[0]['style_settings']['add_classes'][0] = array(
-'#type' => 'fieldset',
-'#title' => t('Single Sidebar'),
-'#description' => t("Classes to add to #content and #sidebars for simplified layout with a grid."),
-'#collapsible' => TRUE,
-'#collapsed' => TRUE,
-);
-$form[0]['style_settings']['add_classes'][0]['content_class_single_sidebar'] = array(
-'#type' => 'textfield',
-'#title' => t('Content Class'),
-'#description' => t("Class to add to #content if one sidebar is displayed."),
-// '#options' => $grid_values,
-'#default_value' => theme_get_setting('content_class_single_sidebar'),
-);
-$form[0]['style_settings']['add_classes'][0]['sidebar_class_single_sidebar'] = array(
-'#type' => 'textfield',
-'#title' => t('Sidebar Class'),
-'#description' => t("Class to add to #sidebar-left || #sidebar-right if a single sidebar is displayed."),
-// '#options' => $grid_values,
-'#default_value' => theme_get_setting('sidebar_class_single_sidebar'),
-);
-$form[0]['style_settings']['add_classes'][1] = array(
-'#type' => 'fieldset',
-'#title' => t('Dual Sidebars'),
-'#description' => t("Classes to add to #content and #sidebars for simplified layout with a grid."),
-'#collapsible' => TRUE,
-'#collapsed' => TRUE,
-);
-$form[0]['style_settings']['add_classes'][1]['content_class_dual_sidebars'] = array(
-'#type' => 'textfield',
-'#title' => t('Content Class'),
-'#description' => t("Class to add to #content if both sidebars are displayed."),
-// '#options' => $grid_values,
-'#default_value' => theme_get_setting('content_class_dual_sidebars'),
-);
-$form[0]['style_settings']['add_classes'][1]['sidebar_class_dual_sidebars'] = array(
-'#type' => 'textfield',
-'#title' => t('Sidebar Class'),
-'#description' => t("Class added to #sidebar-left AND #sidebar-right if both sidebars are displayed."),
-// '#options' => $grid_values,
-'#default_value' => theme_get_setting('sidebar_class_dual_sidebars'),
-);
 /*
 * @see file: src/preprocess/theme-settings/js.inc
 * Theme-settings: Javascript options.
@@ -404,7 +365,7 @@ $form[0]['js']['update']['jqueryui']['jqueryui_theme'] = array(
 $form[0]['js']['plugins'] = array(
 '#type' => 'fieldset',
 '#title' => t('jQuery Plugins'),
-'#description' => t("jQuery plugins will load from CDNJS if possible, or use local source as fallback if the CDN source is unavailable."),
+'#description' => t("jQuery plugins are called from <code>/js/plugins.js</code> using simple configurations that you may update to meet your needs- see each plugin's documentation page for all available options. <br/>The required plugin files will load from CDNJS if possible, or use the local Cellular library to provide a fallback file if the CDN source is unavailable."),
 '#collapsible' => TRUE,
 '#collapsed' => TRUE,
 );
@@ -444,11 +405,17 @@ $form[0]['js']['plugins']['smoove'] = array(
 '#description' => t('Smoove makes it easy to implement awesome CSS3 transition effects, making your content smoothly glide into the page as your scroll down the page.'),
 '#default_value' => theme_get_setting('smoove'),
 );
+$form[0]['js']['plugins']['nprogress'] = array(
+'#type' => 'checkbox',
+'#title' => l('NProgress', 'http://ricostacruz.com/nprogress/'),
+'#description' => t('Slim progress bars for Ajaxy applications. Inspired by Google, YouTube, and Medium.'),
+'#default_value' => theme_get_setting('nprogress'),
+);
 // Pre-configured 3rd party plugins.
 $form[0]['js']['lib'] = array(
 '#type' => 'fieldset',
 '#title' => t('Javascript Libraries'),
-'#description' => t("Javascript libraries will load from CDNJS if possible, or use local source as fallback if CDN is unavailable."),
+'#description' => t("Javascript libraries load the library specified and nothing more- you may add your script to call library functions in <code>/js/script.js</code>, or add a separate js file in <code>/preprocess/alter_js.inc</code> and re-compile with grunt. <br/>The required library files will load from CDNJS if possible, or use the local Cellular library to provide a fallback file if the CDN source is unavailable."),
 '#collapsible' => TRUE,
 '#collapsed' => TRUE,
 );
@@ -485,10 +452,6 @@ $form[0]['js']['lib']['threejs'] = array(
 /*
 * @see file: src/preprocess/theme-settings/social.inc
 * Theme-settings: Social media link settings.
-*/
-/*
-settings[sm_follow_title]       = Follow Us
-settings[sm_share_title]        = Share this page
 */
 $form[0]['social_media'] = array(
 '#type' => 'fieldset',
@@ -567,16 +530,6 @@ $form[0]['social_media']['social_media_follow'] = array(
 '#title' => t('Follow on social media'),
 '#description' => t("Enable the 'Follow Me' bar."),
 '#default_value' => theme_get_setting('social_media_follow'),
-);
-$form[0]['social_media']['sm_follow_title'] = array(
-'#type' => 'textfield',
-'#title' => t('Follow on Social Media Title'),
-'#default_value' => theme_get_setting('sm_follow_title'),
-'#states' => array(
-'visible' => array(
-':input[name="social_media_follow"]' => array('checked' => TRUE),
-),
-),
 );
 // Social media follow config.
 $form[0]['social_media']['follow'] = array(

@@ -21,7 +21,7 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
       $data .= $style['file'];
     }
     if (!empty($data)) {
@@ -49,33 +49,46 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  *   Associative array of stylesheet data to add.
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
- */
-function cellular_add_css(&$css, $array, $cellular = FALSE) {
+ *///&$css
+function cellular_add_css($array, $cellular = FALSE) {
+  $type = 'file';
   foreach ($array as $style) {
     // Set data source as CDN or local host.
-    if (isset($style['data'])) {
-      $data = $style['data'];
-    }
-    if (isset($style['cdn'])) {
+    if (!empty($style['cdn'])) {
       $data = $style['cdn'];
     }
-    elseif (isset($style['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+    elseif (!empty($style['file'])) {
+      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
       $data .= $style['file'];
+    }
+    else {
+      $data = $style['data'];
+    }
+    // Set style attributes.
+    if (!empty($style['type'])) {
+      $type = $style['type'];
+    }
+    else {
+      if (!empty($style['cdn'])) {
+        $type = 'external';
+      }
+      elseif (!empty($style['file'])) {
+        $type = 'file';
+      }
     }
     if (!empty($data)) {
       // Set stylesheet properties.
-      $style['data'] = $data;
-      $style['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
-      $style['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
-      $style['group'] = isset($style['group']) ? $style['group'] : CSS_THEME;
-      $style['weight'] = isset($style['weight']) ? $style['weight'] : 1;
-      $style['type'] = isset($style['cdn']) ? 'external' : 'file';
+      $style['type'] = $type;
+      $style['group'] = !empty($style['group']) ? $style['group'] : CSS_THEME;
+      $style['weight'] = !empty($style['weight']) ? $style['weight'] : 1;
+      $style['every_page'] = !empty($style['every_page']) ? $style['every_page']
+        : TRUE;
+      $style['preprocess'] = !empty($style['preprocess']) ? $style['preprocess']
+        : TRUE;
       $style['media'] = isset($style['media']) ? $style['media'] : 'all';
       $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
-      // Push stylesheet onto $css.
-      $css[$data] = $style;
-      // drupal_add_css($data, $style);
+
+      drupal_add_css($data, $style);
     }
   }
 }
@@ -101,14 +114,16 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
       $ocss = $data;
     }
     else {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data = $cellular === TRUE ? CELLULAR_LIB : '';
       // Or set data to local file.
       $data .= $style['file'];
     }
     // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
-    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
-    $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
+    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess']
+      : TRUE;
+    $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page']
+      : TRUE;
     $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
     $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;
     $css[$ocss]['type'] = isset($style['cdn']) ? 'external' : 'file';
@@ -144,40 +159,6 @@ function cellular_remove_css(&$css, $exclude) {
   }
 }
 
-/*
-  function cellular_remove_css(&$css, $modules) {
-
-  dpm($css);
-  $modules = drupal_array_merge_deep_array($modules);
-  dpm($modules);
-  foreach ($modules as $module => $data) {
-  if (empty($css[$data['data']])) {
-  // Get module stylesheet
-  if (is_array($data)) {
-  foreach ($data as $style) {
-  $index = drupal_get_path('module', $module) . "/$style";
-
-  $css[$index] = NULL;
-  unset($css[$index]);
-  }
-  }
-  else {
-  $index = drupal_get_path('module', $module) . "/$data";
-
-  $css[$index] = NULL;
-  unset($css[$index]);
-  }
-  }
-  else {
-  // Assumes $modules is generated from $css group.
-  $css[$data['data']] = NULL;
-  unset($css[$data['data']]);
-  }
-  }
-  dpm($css);
-  }
- */
-
 /**
  * Remove core stylesheets based on theme settings.
  *
@@ -208,6 +189,10 @@ function cellular_remove_default_css(&$css) {
       'shortcut' => 'shorcut.css',
       'user' => 'user.css',
       // Contrib
+      'admin_menu' => array(
+        'admin_menu.css',
+        'admin_menu_toolbar/admin_menu_toolbar.css'
+      ),
       'calendar' => array(
         'css/calendar.css',
         'css/calendar_multiday.css',
@@ -263,7 +248,7 @@ function cellular_critical_css($vars) {
     $ext = CELLULAR_CSS_EXT;
     $critical_opts = array(
       'type' => 'inline',
-      'scope' => 'header',
+      'scope' => 'critical',
       'group' => CSS_SYSTEM,
       'weight' => -1000,
       'preprocess' => FALSE,

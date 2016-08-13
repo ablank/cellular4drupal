@@ -10,13 +10,29 @@ $form[0]['meta'] = array(
   '#collapsed' => FALSE,
 );
 /*
-$form[0]['meta']['dev'] = array(
+  $form[0]['meta']['dev'] = array(
   '#type' => 'checkbox',
   '#title' => t('Development mode'),
   '#description' => t("Print the page variables array in the messages area, using Devel if available."),
   '#default_value' => theme_get_setting('dev'),
-);
+  );
  */
+
+$form[0]['meta']['cookie_time'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Cookie Expiration'),
+  '#description' => t('Number of days before the theme cookie expires. A <code>first-visit</code> class is added to <code>&lt;body&gt;</code> and <code>Drupal.settings.cellular.first_visit = true</code>.'),
+  '#default_value' => theme_get_setting('cookie_time'),
+);
+
+$form[0]['meta']['libpath'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Cellular Library'),
+  '#description' => t('Site relative path to the <a href="@lib">Cellular Library</a>', array(
+    '@lib' => 'https://github.com/ablank/cellular.library',
+  )),
+  '#default_value' => theme_get_setting('libpath'),
+);
 
 $form[0]['meta']['favicons'] = array(
   '#type' => 'fieldset',

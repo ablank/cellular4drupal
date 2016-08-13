@@ -1,13 +1,14 @@
 /**
   * @file
-  * Primary #nav styling
+  * Primary #main-menu styling
 */
 
 // Display multi-level links using css dropdowns?
-$showDropdowns: true;
+$showDropdowns: true; // Enable dropdowns or not
+$direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
 
 // Primary Navigation
-#nav {
+#main-menu {
   position: absolute;
   top: 2em;
   right: 0;
@@ -15,33 +16,38 @@ $showDropdowns: true;
   padding: 0;
   @include transition();
 
-  a,
-  a:visited {
-    // Common link styling
-    display: block;
-    padding: .4em .8em;
-    font-family: $h_font;
-    font-size: $normal;
-    text-align: left;
-    font-weight: normal;
-    white-space: nowrap;
-    text-decoration: none;
-    color: $grey;
-    background: transparent;
-    border: none;
-    border-bottom: $grey 1px solid;
-    @include border-radius(0);
+  a {
+    &,
+    &:visited {
+      // Common link styling
+      z-index: 2;
+      display: block;
+      margin: 0;
+      padding: .4em .8em;
+      font-family: $h_font;
+      font-size: $normal;
+      text-align: left;
+      font-weight: normal;
+      white-space: nowrap;
+      text-decoration: none;
+      color: $grey;
+      background: $white;
+      box-shadow: $grey 0 0.1em 0.25em;
+      border: none;
+      border-radius: unset;
 
-    &:hover,
+      &:hover,
       &:focus,
       &:active,
       &.active {
-      text-decoration: none;
-      background: $hilight;
-      color: $white;
+        text-decoration: none;
+        background: $hilight;
+        color: $white;
+      }
     }
   }
 
+// Top level list
   > li {
 
     &:first-child {
@@ -51,7 +57,18 @@ $showDropdowns: true;
     &:last-child {
       margin-right: 0;
     }
+
+    &.parent:after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @include triangle(0.8em, 0.6em, $grey, 'down');
+      &:hover {
+        @include triangle(0.8em, 0.6em, $hilight, 'down');
+      }
+    }
   }
+
 
   li {
     float: left;
@@ -64,49 +81,85 @@ $showDropdowns: true;
 
     // Nested menus.
     ul {
+      z-index: 1;
       position: absolute;
-      right: 0;
-      visibility: hidden;
-      opacity: 0;
-      background: $white;
-      background: rgba($white, 0.9);
+      top: 2.2em;
+      margin: 0;
+      overflow: hidden;
+      max-height: 0;
+      background: darken($white, 5%);
+      background: rgba(darken($white, 5%), 0.9);
+      color: $grey;
+      border: none;
       @include transition();
+      @if($direction == "left"){
+        right: 0;
+        //border-right: 1px solid;
+        padding: 0 0.1em 0 0;
+        text-align: right;
+      }
+      @else {
+        left: 0;
+        //border-left: 1px solid;
+        padding: 0 0 0 0.1em;
+        text-align: left;
+      }
+
+      &.active {
+        overflow: visible;
+      }
     }
 
     @if ($showDropdowns) == true {
-      // First nested menu
-      &:hover > ul {
-        visibility: visible;
-        opacity: 1;
-        z-index: 2;
+      // First lefel dropdown
+      &:focus,
+      &:hover,
+      &.active {
+        > ul {
+          max-height: 20em; // May need to adjust up/down depending on # of nested items
+          @include transition();
+        }
       }
 
       li {
-        padding: .1em 0 0 0;
-        z-index: 2;
-        width: 100%;
         float: none;
-        margin: 0;
+        width: 100%;
+        margin: 0 0 0.1em 0;
+        padding: 0;
+        border: none;
 
         ul {
-          // only show 1st 2 levels
-          visibility: hidden;
-          display: none;
+          max-height: unset;
+          top: 0;
+          width: 0;
+          @if($direction == "left"){
+            left: initial;
+            right: 100%;
+          }
+          @else {
+            left: 100%;
+            right: initial;
+          }
         }
+        // Secondary++ menu fly-out
+        &.active,
+        &:focus,
+        &:hover {
+          > ul {
+            width: 100%;
+          }
+        }
+
       }
-      /*
-        // Tertiary nested menu
-        &:hover > ul {
-        top: 0;
-        right: -100%;
-        visibility: visible;
-        opacity: 1;
-        z-index: 1;
-        }
-      */
+    }
+    &.parent:after {
+      position: absolute;
+      bottom: 0;
+      $direction: 0;
+      @include triangle(0.8em, 0.6em, $grey, $direction);
+      &:hover {
+        @include triangle(0.8em, 0.6em, $hilight, $direction);
+      }
     }
   }
-}
-.scrolled #nav {
-  top: 0;
 }

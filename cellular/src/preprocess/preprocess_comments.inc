@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  *  Cellular comment preprocess functions.
@@ -13,6 +12,18 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['theme_hook_suggestions'][] = 'comment_wrapper';
   $vars['theme_hook_suggestions'][] = 'comment_wrapper__' . $vars['node']->type;
   $vars['classes_array'][] = 'clearfix';
+  
+  $title = &$vars['content']['comment_form']['#title'];
+
+  switch ($vars['node']->type) {
+    case 'forum_topic':
+      $title = t('Reply');
+      break;
+    case 'article':
+    default:
+      $title = t('Post your comment');
+      break;
+  }
 }
 
 /**
@@ -41,8 +52,8 @@ function cellular_preprocess_comment(&$vars) {
     $submitted .= '<span class="comment-author">';
     $submitted .= $vars['picture'];
     $submitted .= '<div>' . t('Posted by !username', array(
-          '!username' => $vars['author'],
-        )) . '</div>';
+      '!username' => $vars['author'],
+    )) . '</div>';
     $submitted .= '</span>';
   }
 

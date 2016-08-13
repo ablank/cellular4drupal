@@ -12,12 +12,16 @@
  */
 function cellular_plugins_css() {
   $plugin_path = '/lib/css/';
+  $plugin_css = array();
   // Plugins available through cellular, styles added based on theme settings.
   // $plugin_css paths are relative to /libraries/cellular/css/
-  $plugin_css = array();
   theme_get_setting('prism') == 1 ? $plugin_css['prism'] = array(
     'file' => 'prism.css',
-    'group' => CSS_THEME,
+    'weight' => 101,
+  ) : NULL;
+
+  theme_get_setting('nprogress') == 1 ? $plugin_css['nprogress'] = array(
+    'file' => 'nprogress.css',
     'weight' => 101,
   ) : NULL;
 

@@ -12,12 +12,6 @@ module.exports = {
         cwd: 'src/js',
         src: ['*.js'],
         dest: 'js/'
-      },
-      {
-        expand: true,
-        cwd: 'src/assets/icons/jquery-ui',
-        src: ['*.gif', '*.png'],
-        dest: 'assets/icons/jquery-ui/'
       }
     ]
   }

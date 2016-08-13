@@ -48,7 +48,6 @@ endif;
           <?php print $content['body']; ?>
         </div>
       <?php endif; ?>
-    </div>
 
     <?php
     // Footer
@@ -59,7 +58,6 @@ endif;
         <?php print $content['footer']; ?>
       </div>
     <?php endif; ?>
-
   </div>
 <?php endif; ?>
 
@@ -68,7 +66,7 @@ endif;
 if (!empty($content['inset'])):
 
   ?>
-  <div class="inset cell-25
+  <div class="inset pad cell-25
   <?php
   if (empty($content['header']) &&
   empty($content['body']) &&

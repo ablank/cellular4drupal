@@ -6,7 +6,7 @@ cellular.jAccordion = function (opts) {
     single: false, // Allow multiple panels to be opened or only 1?
     pclass: "panel"
   }, opts),
-          fn = {};
+    fn = {};
 
   o.pselect = '.' + o.pclass;
   /**
@@ -20,10 +20,10 @@ cellular.jAccordion = function (opts) {
     if (o.single) {
       li.siblings().find(o.pselect).slideUp(o.duration, o.easing);
       li.activate()
-              .find(o.pselect).slideDown(o.duration, o.easing);
+        .find(o.pselect).slideDown(o.duration, o.easing);
     } else {
       li.toggleClass(cellular.opts.activeclass)
-              .find(o.pselect).slideToggle(o.duration, o.easing);
+        .find(o.pselect).slideToggle(o.duration, o.easing);
     }
   };
 

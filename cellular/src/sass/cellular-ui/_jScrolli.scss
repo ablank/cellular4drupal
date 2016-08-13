@@ -208,6 +208,10 @@ $width: 800px;
 }
 
 .jScrolli-markers {
+  z-index: 1;
+  float: left;
+  position: relative;
+  left: 50%;
   /*
   position: absolute;
   bottom: 0;
@@ -215,9 +219,6 @@ $width: 800px;
   right: 0;
   line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
   */
-  float: left;
-  position: relative;
-  left: 50%;
 
   li {
     position: relative;

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Cellular javascript functions.
@@ -23,11 +22,13 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
       $data = $script['cdn'];
       $script['type'] = 'external';
       cellular_js_fallback($script, $cellular);
-    } elseif (!empty($script['file'])) {
+    }
+    elseif (!empty($script['file'])) {
       $script['type'] = 'file';
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
       $data .= $script['file'];
-    } else {
+    }
+    else {
       $data = $script['data'];
       $script['type'] = $script['type'];
     }
@@ -36,10 +37,12 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
     $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
     $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
     $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess']
+      : TRUE;
     $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
     $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
-    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page']
+      : TRUE;
     empty($script['version']) ? NULL : $script['version'] = $script['version'];
 
     $vars['#attached']['js'][$data] = $script;
@@ -58,25 +61,29 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
  *   Reference cellular library if TRUE.
  */
 function cellular_add_js($array, $cellular = FALSE) {
+  $type = 'file';
   foreach ($array as $script) {
-    $type = 'file';
     // Test if local or external source is provided.
     if (!empty($script['cdn'])) {
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
-    } elseif (!empty($script['file'])) {
+    }
+    elseif (!empty($script['file'])) {
       $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
       $data .= $script['file'];
-    } else {
+    }
+    else {
       $data = $script['data'];
     }
     // Set script attributes.
     if (!empty($script['type'])) {
       $type = $script['type'];
-    } else {
+    }
+    else {
       if (!empty($script['cdn'])) {
         $type = 'external';
-      } elseif (!empty($script['file'])) {
+      }
+      elseif (!empty($script['file'])) {
         $type = 'file';
       }
     }
@@ -85,8 +92,10 @@ function cellular_add_js($array, $cellular = FALSE) {
     $script['scope'] = !empty($script['scope']) ? $script['scope'] : 'header';
     $script['group'] = !empty($script['group']) ? $script['group'] : JS_THEME;
     $script['weight'] = !empty($script['weight']) ? $script['weight'] : 0;
-    $script['every_page'] = !empty($script['every_page']) ? $script['every_page'] : TRUE;
-    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : TRUE;
+    $script['every_page'] = !empty($script['every_page']) ? $script['every_page']
+      : TRUE;
+    $script['preprocess'] = !empty($script['preprocess']) ? $script['preprocess']
+      : TRUE;
     $script['cache'] = !empty($script['cache']) ? $script['cache'] : TRUE;
     $script['defer'] = !empty($script['defer']) ? $script['defer'] : FALSE;
     empty($script['version']) ? NULL : $script['version'] = $script['version'];
@@ -140,10 +149,11 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
       // If cdn is provided, set data to external source & call local fallback.
       $data = $script['cdn'];
       cellular_js_fallback($script, $cellular);
-    } else {
+    }
+    else {
       // Use local source if no CDN is used.
       if (!empty($script['file'])) {
-        $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+        $data = $cellular ? CELLULAR_LIB : NULL;
         $data .= $script['file'];
       }
     }
@@ -152,27 +162,13 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     $javascript[$ojs]['type'] = !empty($script['cdn']) ? 'external' : 'file';
     $javascript[$ojs]['scope'] = !empty($script['scope']) ? $script['scope'] : $javascript[$ojs]['scope'];
     $javascript[$ojs]['group'] = !empty($script['group']) ? $script['group'] : $javascript[$ojs]['group'];
-    $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page'] : $javascript[$ojs]['every_page'];
+    $javascript[$ojs]['every_page'] = !empty($script['every_page']) ? $script['every_page']
+      : $javascript[$ojs]['every_page'];
     $javascript[$ojs]['weight'] = !empty($script['weight']) ? $script['weight'] : $javascript[$ojs]['weight'];
-    $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess'] : $javascript[$ojs]['preprocess'];
+    $javascript[$ojs]['preprocess'] = !empty($script['preprocess']) ? $script['preprocess']
+      : $javascript[$ojs]['preprocess'];
     $javascript[$ojs]['cache'] = !empty($script['cache']) ? $script['cache'] : $javascript[$ojs]['cache'];
     $javascript[$ojs]['defer'] = !empty($script['defer']) ? $script['defer'] : $javascript[$ojs]['defer'];
     empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
   }
-}
-
-/**
- * Pass variables to javascript , used to call plugin.js if plugins are selected.
- */
-function cellular_js_plugin_settings() {
-  // Javascript Drupal.settings.cellular.plugin === TRUE if selected in theme settings.
-  $js_plugins = array();
-  theme_get_setting('backstretch') == 1 ? $js_plugins['backstretch'] = TRUE : NULL;
-  theme_get_setting('flowtype') == 1 ? $js_plugins['flowtype'] = TRUE : NULL;
-  theme_get_setting('freetile') == 1 ? $js_plugins['freetile'] = TRUE : NULL;
-  theme_get_setting('jparallax') == 1 ? $js_plugins['jparallax'] = TRUE : NULL;
-  theme_get_setting('masonry') == 1 ? $js_plugins['masonry'] = TRUE : NULL;
-  theme_get_setting('smoove') == 1 ? $js_plugins['smoove'] = TRUE : NULL;
-
-  return $js_plugins;
 }

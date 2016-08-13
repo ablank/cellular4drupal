@@ -11,7 +11,7 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: 'assets/images',
+        cwd: 'src/assets/images',
         src: [
           '**/*.gif',
           '**/*.jpg',
@@ -26,7 +26,7 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: 'assets/icons',
+        cwd: 'src/assets/icons',
         src: [
           '**/*.gif',
           '**/*.png',

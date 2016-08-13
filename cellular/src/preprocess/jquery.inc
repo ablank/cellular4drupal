@@ -37,7 +37,6 @@ function cellular_cdn() {
 
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
-  $ext = CELLULAR_JS_EXT;
   /* Available cdns:
    * //ajax.googleapis.com/ajax/libs/jquery/1.10.4/jquery.min.js
    * //ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js
@@ -157,7 +156,8 @@ function cellular_jqueryui_update_js(&$javascript) {
           'version' => $jq['ui']['version'],
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
-          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight'] : -99,
+          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight']
+            : -99,
           'file' => "/jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
           'browsers' => array('IE' => TRUE, '!IE' => TRUE),
@@ -191,7 +191,6 @@ function cellular_jqueryui_update_js(&$javascript) {
  *   Associative array of stylesheets.
  */
 function cellular_jqueryui_update_css(&$css) {
-
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
   $ui['path'] = '/jquery-ui/css/';
@@ -219,20 +218,21 @@ function cellular_jqueryui_update_css(&$css) {
           'version' => $ui['version'],
           'group' => CSS_SYSTEM,
           'every_page' => FALSE,
-          'weight' => !empty($css[$default]['weight']) ? $css[$default]['weight'] : -9,
+          'weight' => !empty($css[$default]['weight']) ? $css[$default]['weight']
+            : -9,
           'file' => NULL,
           'preprocess' => TRUE,
         ),
       );
       // Remove default after collecting style info.
-      unset($css[$default]);
+     // unset($css[$default]);
 
       if ($ui['theme'] === 'custom') {
         // Set path to local custom file if selected.
         $v = $ui['version'] === '1.10.4' ? '1.10' : '1.9';
         $style['ui']['file'] = 'jquery-ui/jquery-ui-' . $v . CELLULAR_CSS_EXT;
 
-        cellular_add_css($css, $style);
+        cellular_add_css($style);
       }
       else {
         if (theme_get_setting('jquery_cdn') == 1) {
@@ -243,7 +243,7 @@ function cellular_jqueryui_update_css(&$css) {
         $ui_path = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
         $style['ui']['file'] = $ui_path . 'jquery-ui' . CELLULAR_CSS_EXT;
 
-        cellular_add_css($css, $style, TRUE);
+        cellular_add_css($style, TRUE);
       }
     }
   }

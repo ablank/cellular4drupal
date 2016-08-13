@@ -17,6 +17,10 @@ form.site-search {
   border: $grey 1px solid;
   border-radius: $br;
 
+  .container-inline {
+    text-indent: unset;
+  }
+
   input {
     display: inline;
     display: inline-block;
@@ -47,16 +51,15 @@ form.site-search {
       float: none;
       padding: 0 1.4em 0 0.2em;
       border: $grey 1px solid;
-      background-position: right 50%;
+      background: $light_grey url('../assets/icons/png/search.png') center right no-repeat;
+      background-image: url('../assets/icons/svg/search.svg');
       background-size: 1.4em;
-      background-image: url('../assets/icons/min/png/search.png');
-      background-image: url('../assets/icons/min/svg/search.svg');
-      background-color: transparent;
-      background-repeat: no-repeat;
+
 
       &:hover,
       &:active,
       &:focus {
+        background-color: darken($light_grey, 8%);
         outline: none;
         border-color: $hilight;
       }

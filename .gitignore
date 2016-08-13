@@ -1,6 +1,7 @@
 test/
 #preprocess/
 node_modules/
+.vscode/
 .sass-cache/
 .gitignore
 .gitattributes

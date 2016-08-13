@@ -1,62 +1,30 @@
 <?php
-
 /**
  * @file
  * Cellular functions to set content attributes.
  */
-
 /**
  * Test if sidebar regions are used and return the appropriate class.
  *
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
- */
-function cellular_test_sidebar(&$vars) {
+
+  function cellular_test_sidebar(&$vars) {
   empty($vars['page']['sidebar_left']) ? NULL : $sidebar_left = 1;
   empty($vars['page']['sidebar_right']) ? NULL : $sidebar_right = 1;
 
   if (!isset($sidebar_left) && !isset($sidebar_right)) {
-    $vars['page']['content_class'] = theme_get_setting('content_class_no_sidebar');
-  } elseif (isset($sidebar_left) && isset($sidebar_right)) {
-    $vars['page']['content_class'] = theme_get_setting('content_class_dual_sidebars');
-    $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_dual_sidebars');
-  } elseif (isset($sidebar_left) || isset($sidebar_right)) {
-    $vars['page']['content_class'] = theme_get_setting('content_class_single_sidebar');
-    $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_single_sidebar');
+  $vars['page']['content_class'] = theme_get_setting('content_class_no_sidebar');
   }
-}
-
-/**
- *
- */
-function cellular_user_link(&$vars) {
-  global $user;
-
-  $params = array('query' => drupal_get_destination());
-  /*
-    unset($_GET['destination']);
-    drupal_static_reset('drupal_get_destination');
-    drupal_get_destination();
-   */
-  $output = '<div class="user-links">';
-  if (user_is_logged_in()) {
-    $output .= t('<a href="@user-account">My Account</a> | <a href="@user-logout">Logout</a>', array(
-      '@user-logout' => url('user/logout', $params),
-      '@user-account' => url('user/' . $user->uid),
-    ));
-  } else {
-    $output .= t('<a href="@user-login" class="@class">Login</a> / <a href="@user-register" class="@class">Register</a>', array(
-      '@user-login' => url('user/login', $params),
-      '@user-register' => url('user/register'),
-      '@class' => module_exists('colorbox_node') && theme_get_setting('use_colorbox') ? 'colorbox-node' : '',
-    ));
+  elseif (isset($sidebar_left) && isset($sidebar_right)) {
+  $vars['page']['content_class'] = theme_get_setting('content_class_dual_sidebars');
+  $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_dual_sidebars');
   }
-  $output.= '</div>';
-
-  $vars['page']['user_links'] = $output;
-}
-
-/* Under development, process vars for comment & node */
+  elseif (isset($sidebar_left) || isset($sidebar_right)) {
+  $vars['page']['content_class'] = theme_get_setting('content_class_single_sidebar');
+  $vars['page']['sidebar_class'] = theme_get_setting('sidebar_class_single_sidebar');
+  }
+  } */
 
 /**
  *

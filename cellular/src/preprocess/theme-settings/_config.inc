@@ -3,7 +3,6 @@
  * @file
  * jQuery CDN & version settings
  */
-
 /*
  * jQuery CDN options.
  */
@@ -15,7 +14,10 @@ $cdn = array(
     'cloudflare' => t('Cloudflare'),
   ),
   'jquery' => array(
+    '3.1.0' => '3.1.0',
+    '2.2.4' => '2.2.4',
     '2.1.4' => '2.1.4',
+    '1.12.4' => '1.12.4',
     '1.11.1' => '1.11.1',
     '1.10.2' => '1.10.2',
     '1.9.1' => '1.9.1',

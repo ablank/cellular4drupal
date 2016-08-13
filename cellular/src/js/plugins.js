@@ -6,20 +6,29 @@
 (function ($) {
   Drupal.behaviors.plugins = {
     attach: function (context, settings) {
+      var opts = Drupal.settings.cellular;
       // CellularUI functions.
-      if (Drupal.settings.cellular.cellularui === true) {
-
-        $('.jCard').jCard();
-        $('.jTooltip').jTooltip();
-
+      if (typeof (opts.ui) !== 'undefined') {
         $('.jAccordion').jAccordion({
           duration: 500, // Duration of transition.
           easing: "swing", // Type of easing.
           single: false // Allow multiple panels to be opened or only 1?
         });
 
-        $('#nav').jMmenu({
+        $('.jCard').jCard();
+
+        $('form').jFormal();
+
+        $('#main-menu').jMmenu({
           animateclass: "slide-down"
+        });
+
+        $('.jSocial.share').jSocial({
+          share: opts.ui.jSocial_share
+        });
+
+        $('.jSocial.follow').jSocial({
+          follow: opts.ui.jSocial_follow
         });
 
         $('.jTabs').jTabs({
@@ -31,47 +40,14 @@
           orient: "vertical" //
         });
 
-        $('.jSocial').jSocial({
-          share: [
-            'facebook',
-            'google',
-            'twitter'
-                    //'digg',
-                    //'linkedin',
-                    //'pinterest',
-                    //'reddit',
-                    //'stumbleupon',
-                    //'tumblr'
-          ]
-                  /*
-                   follow: {
-                   facebook: {
-                   url: "https://facebook.com"
-                   },
-                   google: {
-                   url: "https://plus.google.com"
-                   },
-                   twitter: {
-                   url: "https://twitter.com"
-                   },
-                   linkedin: {
-                   url: "https://linkedin.com"
-                   },
-                   pinterest: {
-                   url: "https://pinterest.com"
-                   },
-                   yelp: {
-                   url: "https://yelp.com"
-                   }
-                   }
-                   */
-        });
+        $('[data-tooltip]').jTooltip();
+        //$('.jTooltip').jTooltip();
 
         $('.jScrolli').jScrolli({
           transition: {
             background: 'img:first', // Selector for applying background image
             pause: 8 // Time (seconds) to pause between slides.
-                    //speed: 500 // Animation speed (milliseconds).
+              //speed: 500 // Animation speed (milliseconds).
           },
           autodim: true,
           delay: 1.4 // Time (seconds) to wait before dimming.
@@ -110,7 +86,7 @@
       }
 
       // Backstretch functions.
-      if (Drupal.settings.cellular.backstretch === true) {
+      if (opts.plugins.backstretch === true) {
         $.backstretch([
           "http://lorempixel.com/800/600/abstract/1",
           "http://lorempixel.com/800/600/abstract/2",
@@ -122,7 +98,7 @@
       }
 
       // Flowtype functions.
-      if (Drupal.settings.cellular.flowtype === true) {
+      if (opts.plugins.flowtype === true) {
         $('#content-wrap').flowtype({
           minimum: 400,
           maximum: 800,
@@ -133,7 +109,7 @@
       }
 
       // Freetile functions.
-      if (Drupal.settings.cellular.freetile === true) {
+      if (opts.plugins.freetile === true) {
         $('.view-content').freetile({
           selector: '.views-row',
           animate: true,
@@ -143,7 +119,7 @@
       }
 
       // jParallax functions.
-      if (Drupal.settings.cellular.jparallax === true) {
+      if (opts.plugins.jparallax === true) {
         $('.parallax').parallax({
           xparallax: false,
           yparallax: true,
@@ -153,7 +129,7 @@
       }
 
       // Smoove functions.
-      if (Drupal.settings.cellular.smoove === true) {
+      if (opts.plugins.smoove === true) {
         $('.smoove').smoove({
           offset: "20%",
           // skew: "20deg",
@@ -162,6 +138,14 @@
         });
       }
 
+      if (opts.plugins.nprogress === true) {
+        $(document).on('ajaxStart', function () {
+          NProgress.start();
+        })
+          .on('ajaxComplete', function () {
+            NProgress.done().remove();
+          });
+      }
       /* End Drupal.behaviors.plugins */
     }
   };

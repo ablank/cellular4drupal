@@ -36,11 +36,12 @@
  * @ingroup themeable
  */
 ?>
+
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($content['comments']); ?>
 
   <?php if ($content['comment_form']): ?>
-    <h2><?php print t('Reply'); ?></h2>
+    <h2><?php print render($content['comment_form']['#title']); ?></h2>
     <?php print render($content['comment_form']); ?>
   <?php endif; ?>
 </div>

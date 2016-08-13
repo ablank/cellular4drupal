@@ -4,10 +4,7 @@
  * @file
  * Theme-settings: Social media link settings.
  */
-/*
-  settings[sm_follow_title]       = Follow Us
-  settings[sm_share_title]        = Share this page
- */
+ 
 $form[0]['social_media'] = array(
   '#type' => 'fieldset',
   '#title' => t('Social Media'),
@@ -97,17 +94,6 @@ $form[0]['social_media']['social_media_follow'] = array(
   '#title' => t('Follow on social media'),
   '#description' => t("Enable the 'Follow Me' bar."),
   '#default_value' => theme_get_setting('social_media_follow'),
-);
-
-$form[0]['social_media']['sm_follow_title'] = array(
-  '#type' => 'textfield',
-  '#title' => t('Follow on Social Media Title'),
-  '#default_value' => theme_get_setting('sm_follow_title'),
-  '#states' => array(
-    'visible' => array(
-      ':input[name="social_media_follow"]' => array('checked' => TRUE),
-    ),
-  ),
 );
 
 // Social media follow config.
