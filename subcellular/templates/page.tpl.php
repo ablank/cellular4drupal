@@ -115,7 +115,25 @@
 
   </div>
 
+
+  <?php if ($page['console'] || ($show_messages && $messages)) : ?>
+    <div id="console" class="cell">
+      <?php
+      print render($page['console']);
+      if ($show_messages && $messages) :
+        print $messages;
+      endif;
+      ?>
+    </div>
+  <?php endif; ?>
+
   <div id="content" class="cell container">
+    <?php
+    // Breadcrumb Navigation.
+    if ($breadcrumb && !$is_front) :
+      print $breadcrumb;
+    endif;
+    ?>
     <?php
     if ($title) :
       print render($title_prefix);
@@ -129,43 +147,25 @@
       </div>
     <?php endif; ?>
     <?php
-    // Breadcrumb Navigation.
-    if ($breadcrumb && !$is_front) :
-      print $breadcrumb;
-    endif;
-    ?>
-    <?php
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
     endif;
     ?>
-    <?php if ($page['console'] || ($show_messages && $messages)) : ?>
-      <div id="console" class="cell-100">
-        <?php
-        print render($page['console']);
-        if ($show_messages && $messages) :
-          print $messages;
-        endif;
-        ?>
+
+    <?php if ($page['content_top']) : ?>
+      <div id="content-top" class="cell-100">
+        <?php print render($page['content_top']); ?>
       </div>
     <?php endif; ?>
-
-    <div id="content">
-      <?php if ($page['content_top']) : ?>
-        <div id="content-top" class="cell-100">
-          <?php print render($page['content_top']); ?>
-        </div>
-      <?php endif; ?>
-      <?php
-      // Main Page Content.
-      print render($page['content']);
-      ?>
-      <?php if ($page['content_bottom']) : ?>
-        <div id="content-bottom" class="cell-100">
-          <?php print render($page['content_bottom']); ?>
-        </div>
-      <?php endif; //#content-bottom  ?>
-    </div>
+    <?php
+    // Main Page Content.
+    print render($page['content']);
+    ?>
+    <?php if ($page['content_bottom']) : ?>
+      <div id="content-bottom" class="cell-100">
+        <?php print render($page['content_bottom']); ?>
+      </div>
+    <?php endif; //#content-bottom  ?>
   </div>
 
   <?php if ($page['footer_top'] || $page['footer'] || $page['footer_bottom'] || $page['copyright']) : ?>

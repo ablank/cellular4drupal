@@ -339,7 +339,10 @@ cellular.jScrolli = function (opts) {
     var li = $obj.find('> li');
 
     $obj.addClass(cellular.opts.cclass)
-      .wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />');
+      .wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />')
+      .parent().css({
+        willChange: "contents"
+      });
 
     li.addClass(o.cclass + '-slide')
       .each(function () {

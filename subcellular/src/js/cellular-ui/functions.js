@@ -21,12 +21,26 @@
  * Get the breakpoints specified in CSS
  */
 cellular.breakpoint = function () {
-  var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content');
+  var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
+    obj;
 
-  return {
-    size: content.match(/\d/g).join(""),
-    type: content.match(/\w*[^\"\'](?=-)/g).join("")
-  };
+  if (content) {
+    obj = {
+      size: content.match(/\d/g).join(""),
+      type: content.match(/\w*[^\"\'](?=-)/g).join("")
+    };
+  }
+  else {
+    var ww = jQuery(window).width();
+
+    console.log(ww);
+    obj = {
+      size: '',
+      type: ''
+    };
+  }
+
+  return obj;
 };
 
 /**

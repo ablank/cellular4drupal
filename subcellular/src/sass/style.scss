@@ -1,10 +1,10 @@
 /**
- * @file
- * Cellular Responsive sCSS framework
- *
- * @author
- * Adam Blankenship
- */
+  * @file
+  * Cellular Responsive sCSS framework
+  *
+  * @author
+  * Adam Blankenship
+*/
 
 @import "variables";
 
@@ -20,6 +20,7 @@
 @import "style/base_grid";
 @import "style/base_animations";
 
+@import "style/region_wrappers";
 @import "style/region_header";
 @import "style/region_navigation";
 @import "style/region_content";

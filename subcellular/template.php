@@ -41,53 +41,7 @@
 /**
  * Implements hook_page_alter().
 function subcellular_page_alter(&$vars) {
-  $styles = array(
-    'mystyle' => array(
-      'file' => 'myStyle.css',
-      'weight' => 10,
-    ),
-    'moarstyle' => array(
-      // CELLULAR_CSS_EXT = .css || .min.css based on theme settings.
-      'file' => 'moar' . CELLULAR_CSS_EXT,
-      'weight' => 9,
-    ),
-    // Single stylesheet used to hack old internet explorer quirks.
-    // Minimal support for deprecated breowsers is fine imo...
-    'ie' => array(
-      'file' => 'ie' . CELLULAR_CSS_EXT,
-      'browsers' => array('IE' => 'lt IE 10', '!IE' => FALSE),
-      'group' => CSS_THEME,
-      'weight' => 999,
-    ),
-    'print' => array(
-      'file' => 'print' . CELLULAR_CSS_EXT,
-      'media' => 'print',
-      'preprocess' => FALSE,
-      'group' => CSS_THEME,
-      'weight' => 101,
-    ),
-  );
-
-  $scripts = array(
-    'script' => array(
-      'cdn' => '//mycdnlink.com/myJavascript.js',
-      'file' => 'myJavascript.js',
-      'object' => 'myTestObject',
-    ),
-    'plugins' => array(
-      // CELLULAR_CSS_EXT = .js || .min.js based on theme settings.
-      'file' => 'myOtherScript' . CELLULAR_JS_EXT,
-      'group' => JS_THEME,
-      'weight' => 99,
-    ),
-  );
-  
-  // Attach styles to content.
-  cellular_attach_css($vars['content'], $styles);
-  // Attach scripts to content.
-  cellular_attach_js($vars['content'], $scripts);
-
-  //dpm($vars);
+ 
 }
  */
 
@@ -101,26 +55,7 @@ function subcellular_page_alter(&$vars) {
  * Yoga hook_css_alter().
  */
 function subcellular_css_alter(&$css) {
-  // Uncomment this block to add stylesheets to theme.
-  /*
-    $add_css = array(
-    'myStyle' => array(// default params
-    'file' => 'my.awesome.css',
-    'preprocess' => TRUE,
-    'media' => 'all',
-    'every_page' => TRUE,
-    'group' => CSS_THEME,
-    'weight' => 10
-    ),
-    'otherStyle' => array(// minimum setup
-    'file' => 'moar.css',
-    ),
-    );
-
-    cellular_add_css($css, $add_css);
-   */
-
-  /* Remove stylesheets set by modules.
+  /* Remove stylesheets:
    * $key : Module name.
    * $value : Path relative to each module's directory.
    *
@@ -161,73 +96,50 @@ function subcellular_css_alter(&$css) {
  */
 function subcellular_js_alter(&$javascript) {
   // 
-  /* Pass a variable to js as Drupal.settings.myVar: */
+}
+
+
+/**
+ * Implements template_preprocess_html().
+ */
+function subcellular_preprocess_html(&$vars) {
   /*
-    drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
-   */
-  /*
-   // Add javascript to theme.
-  $add_js = array(
-    // Local script with minimum setup.
-    'localScript' => array(
-      // Path to the file, relative to /yourTheme/js/
-      'file' => 'myscript.js',
-      'weight' => 10,
+    // Set stylesheets
+    $styles = array(
+    'mystyle' => array(
+    'file' => 'myStyle.css',
+    'weight' => 10,
     ),
-    'cdnScript' => array(
-      'cdn' => '//ajax.googleapis.com/ajax/libs/cdnScript.js',
+    'moarstyle' => array(
+    'file' => 'moar.css',
+    'weight' => 9,
     ),
-    // Add a script using all available parameters.
-    'anotherScript' => array(
-      // URL of the external script.
-      'cdn' => '//ajax.googleapis.com/ajax/libs/anotherScript.js',
-      // DOM object to test for generating fallback.
-      'object' => 'Ascript',
-      // Path to the file, relative to /yourTheme/js/
-      'file' => 'anotherScript.js',
-      'group' => JS_THEME,
-      'every_page' => TRUE,
-      'weight' => 1,
-      'version' => '1.0.9',
+    );
+    // Set scripts.
+    $scripts = array(
+    'script' => array(
+    'cdn' => '//mycdnlink.com/myJavascript.js',
+    'file' => 'myJavascript.js',
+    'object' => 'myTestObject',
     ),
-  );
-
-  cellular_add_js($add_js);
-   */
-
-  /* Add a new yepnope query with modernizr.
-   * @see http://modernizr.com/docs/#load
-   */
-  /*
-  // File paths are relative to the active theme's root directory.
-  $css_dir = '/css/';
-  $js_dir = '/js/';
-  // File extensions based on theme settings to minify css or js.
-  $ext = cellular_ext();
-
-  $tests = array(
-    // Test browser SVG support.
-    'svg' => array(
-      'test' => 'Modernizr.svg',
-      'yep' => $css_dir . 'icons-svg' . $ext['css'],
-      'nope' => $css_dir . 'icons-png' . $ext['css'],
-      //'both' => '/path/to/some/file' . $ext['js'],
-      //'complete' => 'window.location.assign('.$GLOBALS['base_url'].')',
+    'plugins' => array(
+    'file' => 'myOtherScript.js',
+    'group' => JS_THEME,
+    'weight' => 99,
     ),
-  );
+    );
 
-  cellular_modernizr($tests);
+    // Add styles to page.
+    cellular_add_css($styles);
+    // Add scripts to page.
+    cellular_attach_js($scripts);
+
+    // Pass a variable to js as Drupal.settings.myVar:
+    // drupal_add_js(array('myVar' => array('key' => 'value')), 'setting');
+
+    //dpm($vars);
+
    */
-/*
-  // Move scripts to the document <head>
-  $critical_js = array(
-    'misc/ajax.js',
-    'sites/all/themes/Cellular/Cellular/js/script.js',
-  );
-  foreach($critical_js as &$script){
-    $javascript[$script]['scope'] = 'critical';
-  }
-*/
 }
 
 

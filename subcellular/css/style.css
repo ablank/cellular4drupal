@@ -1,10 +1,10 @@
 /**
- * @file
- * Cellular Responsive sCSS framework
- *
- * @author
- * Adam Blankenship
- */
+  * @file
+  * Cellular Responsive sCSS framework
+  *
+  * @author
+  * Adam Blankenship
+*/
 /**
   * @file
   // Cellular SASS mixins
@@ -1144,6 +1144,15 @@ hr.clearfix {
   * @file
   * Content region styles
 */
+/* line 6, ../sass/style/_region_wrappers.scss */
+#page-wrap {
+  padding-top: 6rem;
+}
+
+/**
+  * @file
+  * Content region styles
+*/
 /* line 6, ../sass/style/_region_header.scss */
 #header {
   position: fixed;
@@ -1334,10 +1343,9 @@ hr.clearfix {
 #content {
   z-index: 1;
   background: #FEFEFE;
-  margin-top: 6rem;
 }
 
-/* line 23, ../sass/style/_region_content.scss */
+/* line 19, ../sass/style/_region_content.scss */
 .messages {
   padding: 1em 1.4em;
 }

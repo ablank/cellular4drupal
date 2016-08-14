@@ -17,7 +17,7 @@
 
         $('.jCard').jCard();
 
-        //$('form').jFormal();
+        $('form').jFormal();
 
         $('#main-menu').jMmenu({
           animateclass: "slide-down"
@@ -40,7 +40,8 @@
           orient: "vertical" //
         });
 
-        $('.jTooltip').jTooltip();
+        $('[data-tooltip]').jTooltip();
+        //$('.jTooltip').jTooltip();
 
         $('.jScrolli').jScrolli({
           transition: {

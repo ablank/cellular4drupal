@@ -6,11 +6,11 @@
 // CellularUI functions.
 if(typeof d.ui!=="undefined"){a(".jAccordion").jAccordion({duration:500,// Duration of transition.
 easing:"swing",// Type of easing.
-single:false});a(".jCard").jCard();
-//$('form').jFormal();
-a("#main-menu").jMmenu({animateclass:"slide-down"});a(".jSocial.share").jSocial({share:d.ui.jSocial_share});a(".jSocial.follow").jSocial({follow:d.ui.jSocial_follow});a(".jTabs").jTabs({active:0,// Array index of initially active content.
+single:false});a(".jCard").jCard();a("form").jFormal();a("#main-menu").jMmenu({animateclass:"slide-down"});a(".jSocial.share").jSocial({share:d.ui.jSocial_share});a(".jSocial.follow").jSocial({follow:d.ui.jSocial_follow});a(".jTabs").jTabs({active:0,// Array index of initially active content.
 orient:"horizontal"});a(".jTabs.vertical").jTabs({active:0,// Array index of initially active content.
-orient:"vertical"});a(".jTooltip").jTooltip();a(".jScrolli").jScrolli({transition:{background:"img:first",// Selector for applying background image
+orient:"vertical"});a("[data-tooltip]").jTooltip();
+//$('.jTooltip').jTooltip();
+a(".jScrolli").jScrolli({transition:{background:"img:first",// Selector for applying background image
 pause:8},autodim:true,delay:1.4})}
 // Backstretch functions.
 if(d.plugins.backstretch===true){a.backstretch(["http://lorempixel.com/800/600/abstract/1","http://lorempixel.com/800/600/abstract/2","http://lorempixel.com/800/600/abstract/3"],{duration:3e3,fade:750})}

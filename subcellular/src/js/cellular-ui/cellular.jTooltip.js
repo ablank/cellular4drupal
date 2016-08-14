@@ -1,7 +1,7 @@
 cellular.jTooltip = function (opts) {
   var o = jQuery.extend({
     trigger: 'jTooltip-trigger', // Class used to trigger tooltip.
-    triggerbtn: 'jTooltip-trigger-btn', // OR false, used to trigger tooltip
+    triggerbtn: false, //'jTooltip-trigger-btn', // class-name OR false, used to trigger tooltip
     triggerbtntext: 'About this',
     cclass: 'jTooltip-tooltip',
     dataattr: 'data-tooltip',
@@ -24,7 +24,7 @@ cellular.jTooltip = function (opts) {
     tooltip.classify([o.cclass]);
     $obj.after(tooltip);
     if (o.triggerbtn !== false) {
-      var btn = jQuery('<span aria-label="' + o.triggerbtntext + '" />');
+      var btn = jQuery('<span aria-label="' + o.triggerbtntext + '">?</span>');
       btn.classify([o.trigger, o.triggerbtn])
         .prop('tabindex', $obj.prop('tabindex'));
       $obj.before(btn);

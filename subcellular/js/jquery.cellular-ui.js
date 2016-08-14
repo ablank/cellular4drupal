@@ -6,7 +6,7 @@
 * 
 * @see http://live-cellular.gotpantheon.com/cellular-ui
 */
-(function(a){var b={};b.opts={cclass:"cellular",activeclass:"active",breakpoint:"window_mobile"};b.state={breakpoint:0,scrolltop:0,scrolltimer:0};/**
+(function(a){Drupal.behaviors.cellular={attach:function(b,c){var d={};d.opts={cclass:"cellular",activeclass:"active",breakpoint:"window_mobile"};d.state={breakpoint:0,scrolltop:0,scrolltimer:0};/**
 * Cellular utility functions
 */
 /**
@@ -17,104 +17,111 @@
 jQuery('a[href^="#"]').on("click",function(a){var b=jQuery(this).attr("href");a.preventDefault();jQuery("html, body").stop().animate({scrollTop:jQuery(b).offset().top},1500)})})();/**
 * Get the breakpoints specified in CSS
 */
-b.breakpoint=function(){var a=window.getComputedStyle(document.querySelector("body"),":before").getPropertyValue("content");return{size:a.match(/\d/g).join(""),type:a.match(/\w*[^\"\'](?=-)/g).join("")}};/**
+d.breakpoint=function(){var a=window.getComputedStyle(document.querySelector("body"),":before").getPropertyValue("content"),b;if(a){b={size:a.match(/\d/g).join(""),type:a.match(/\w*[^\"\'](?=-)/g).join("")}}else{var c=jQuery(window).width();console.log(c);b={size:"",type:""}}return b};/**
 * Add active class to element, remove active class from element siblings
 */
-b.activate=function(a){a=a?a:b.opts.activeclass;return this.each(function(){var b=jQuery(this);if(!b.hasClass(a)){b.addClass(a).siblings().removeClass(a)}})};/**
+d.activate=function(a){a=a?a:d.opts.activeclass;return this.each(function(){var b=jQuery(this);if(!b.hasClass(a)){b.addClass(a).siblings().removeClass(a)}})};/**
 * Remove 'active' class
 */
-b.deactivate=function(a){a=a?a:b.opts.activeclass;return this.each(function(){jQuery(this).removeClass(a)})};/**
+d.deactivate=function(a){a=a?a:d.opts.activeclass;return this.each(function(){jQuery(this).removeClass(a)})};/**
 * Wrap element's children after 1st child
 */
-b.kidWrap=function(){return this.each(function(){var a=jQuery(this);if(a.children().length>1){a.children(":gt(0)").wrapAll("<div>")}})};/**
+d.kidWrap=function(){return this.each(function(){var a=jQuery(this);if(a.children().length>1){a.children(":gt(0)").wrapAll("<div>")}})};/**
 * Add array of classes to element
 */
-b.classify=function(a){return this.each(function(){jQuery(this).addClass(a.join(" "))})};/**
+d.classify=function(a){return this.each(function(){jQuery(this).addClass(a.join(" "))})};/**
 * Debounce fn borrowed from Underscore.js
 */
-b.debounce=function(a,b,c){var d;return function(){var e=this,f=arguments,g=function(){d=null;if(!c){a.apply(e,f)}},h=c&&!d;clearTimeout(d);d=setTimeout(g,b);if(h){a.apply(e,f)}}};/**
+d.debounce=function(a,b,c){var d;return function(){var e=this,f=arguments,g=function(){d=null;if(!c){a.apply(e,f)}},h=c&&!d;clearTimeout(d);d=setTimeout(g,b);if(h){a.apply(e,f)}}};/**
 * Detect css transition end event.
 * @see Function from David Walsh: http://davidwalsh.name/css-animation-callback
 */
-b.transitionend=function(){var a,b=document.createElement("test"),c={transition:"transitionend",OTransition:"oTransitionEnd",MozTransition:"transitionend",WebkitTransition:"webkitTransitionEnd"};for(a in c){if(b.style[a]!==undefined){return c[a]}}};/**
+d.transitionend=function(){var a,b=document.createElement("test"),c={transition:"transitionend",OTransition:"oTransitionEnd",MozTransition:"transitionend",WebkitTransition:"webkitTransitionEnd"};for(a in c){if(b.style[a]!==undefined){return c[a]}}};/**
 * Reset scroll timer
 */
-b.scrolltimer=function(a,c,d){window.clearTimeout(b.state.scrolltimer);b.state.scrolltimer=window.setTimeout(function(){a.removeClass(c+" "+d)},2e3)};/**
+d.scrolltimer=function(a,b,c){window.clearTimeout(d.state.scrolltimer);d.state.scrolltimer=window.setTimeout(function(){a.removeClass(b+" "+c)},2e3)};/**
 *
 * @param {string} href
 * @param {string} title
 * @param {array} classes
 * @returns {string}
 */
-b.buttonize=function(b,c,d){var e=a("<a />").attr("href",b).attr("title",c).text(c).classify(d);return a(this).append(e)};/**
+d.buttonize=function(b,c,d){var e=a("<a />").attr("href",b).attr("title",c).text(c).classify(d);return a(this).append(e)};/**
 * Set state on window resize
 */
-b.windowstate=b.debounce(function(){var a=b.state.breakpoint;b.state.breakpoint=b.breakpoint().type;jQuery("body").removeClass(a).addClass(b.state.breakpoint)},100);/**
+d.windowstate=d.debounce(function(){var a=d.state.breakpoint;d.state.breakpoint=d.breakpoint().type;jQuery("body").removeClass(a).addClass(d.state.breakpoint)},100);/**
 * Set state on document scroll
 */
-b.scrollstate=b.debounce(function(a,c){var d=jQuery("body"),e="scrolling",f=e+"-up",g=e+"-down",h=jQuery(document).scrollTop(),i=d.height()/3,
+d.scrollstate=d.debounce(function(a,b){var c=jQuery("body"),e="scrolling",f=e+"-up",g=e+"-down",h=jQuery(document).scrollTop(),i=c.height()/3,
 //y = cellular.state.scrolltop,
-j=null;if(h>30){d.addClass("scrolled")}else{d.removeClass("scrolled")}if(h>b.state.scrolltop){d.addClass(g).removeClass(f)}else{d.addClass(f).removeClass(g)}
+j=null;if(h>30){c.addClass("scrolled")}else{c.removeClass("scrolled")}if(h>d.state.scrolltop){c.addClass(g).removeClass(f)}else{c.addClass(f).removeClass(g)}
 // Detect if page is scrolled
-if(h<i){d.removeClass("page-middle page-bottom").addClass("page-top")}else if(h>i&&h<i*2){d.removeClass("page-top page-bottom").addClass("page-middle")}else{d.removeClass("page-top page-middle").addClass("page-bottom")}
+if(h<i){c.removeClass("page-middle page-bottom").addClass("page-top")}else if(h>i&&h<i*2){c.removeClass("page-top page-bottom").addClass("page-middle")}else{c.removeClass("page-top page-middle").addClass("page-bottom")}
 //Update global state
-b.state.scrolltop=h;
+d.state.scrolltop=h;
 // % of doc scrolled
-b.state.scrolled=h/(d.height()-jQuery(window).height())*100},0,true);(function c(){
+d.state.scrolled=h/(c.height()-jQuery(window).height())*100},0,true);(function e(){
 // Get initial state
-b.windowstate();b.scrollstate();
+d.windowstate();d.scrollstate();
 // Update state on user interaction
-jQuery(window).on("resize",b.windowstate);jQuery(document).on("scroll",b.scrollstate)})();b.jAccordion=function(a){var c=jQuery.extend({active:0,// Index value of initial content to display.
+jQuery(window).on("resize",d.windowstate);jQuery(document).on("scroll",d.scrollstate)})();d.jAccordion=function(a){var b=jQuery.extend({active:0,// Index value of initial content to display.
 duration:500,// Duration of transition.
 easing:"swing",// Type of easing.
 single:false,// Allow multiple panels to be opened or only 1?
-pclass:"panel"},a),d={};c.pselect="."+c.pclass;/**
+pclass:"panel"},a),c={};b.pselect="."+b.pclass;/**
 * The <li> object to show.
 *
 * @param object li
 *  $('<li>')
 */
-d.showContent=function(a){if(c.single){a.siblings().find(c.pselect).slideUp(c.duration,c.easing);a.activate().find(c.pselect).slideDown(c.duration,c.easing)}else{a.toggleClass(b.opts.activeclass).find(c.pselect).slideToggle(c.duration,c.easing)}};/**
+c.showContent=function(a){if(b.single){a.siblings().find(b.pselect).slideUp(b.duration,b.easing);a.activate().find(b.pselect).slideDown(b.duration,b.easing)}else{a.toggleClass(d.opts.activeclass).find(b.pselect).slideToggle(b.duration,b.easing)}};/**
 * Generate markup for controls & other elements.
 *
 * @param object $obj
 */
-d.style=function(a){a.once("jAccordion",function(){a.find("> li").each(function(){var a=jQuery(this);a.kidWrap();a.children().eq(0).addClass("title");a.children().eq(1).classify([b.opts.cclass,"panel"]);a.find(c.pselect).hide();a.find(".title").click(function(b){b.preventDefault();d.showContent(a)})})})};/**
+c.style=function(a){a.once("jAccordion",function(){a.find("> li").each(function(){var a=jQuery(this);a.kidWrap();a.children().eq(0).addClass("title");a.children().eq(1).classify([d.opts.cclass,"panel"]);a.find(b.pselect).hide();a.find(".title").click(function(b){b.preventDefault();c.showContent(a)})})})};/**
 * Init jAccordion
 */
-d.init=function(){var a=jQuery(this);
+c.init=function(){var a=jQuery(this);
 // Generate markup for accordion
-d.style(a);
+c.style(a);
 //Set default content
-d.showContent(a.children().eq(c.active))};return this.each(d.init)};b.jCard=function(a){var b=jQuery.extend({cclass:"jCard"},a),c={};c.init=function(){var a=jQuery(this);a.once(b.cclass,function(){var c=a.find("a").eq(0);var d=c.attr("href");if(d!==undefined){var e=jQuery('<a href="'+d+'" />').classify([b.cclass+"-wrap",c.attr("class")?c.attr("class"):null]);
+c.showContent(a.children().eq(b.active))};return this.each(c.init)};d.jCard=function(a){var b=jQuery.extend({cclass:"jCard"},a),c={};c.init=function(){var a=jQuery(this);a.once(b.cclass,function(){var c=a.find("a").eq(0);var d=c.attr("href");if(d!==undefined){var e=jQuery('<a href="'+d+'" />').classify([b.cclass+"-wrap",c.attr("class")?c.attr("class"):null]);
 // .data(a.data());
 a.wrap(e).find("h2, h3").addClass("title")}});a.on("mouseenter touchstart",function(){jQuery(this).activate()}).on("mouseleave touchend",function(){jQuery(this).deactivate()})};return this.each(c.init)};/**
+* jFormal: Improve form interaction
+*/
+d.jFormal=function(a){var b=jQuery.extend({inputs:['input[type="text"]','input[type="email"]','input[type="password"]',"textarea"]},a);return this.each(function(){var a=b.inputs.join(",");
+// get/set value of inputs
+jQuery(a).each(function(){var a=jQuery(this),b=holder=a.attr("placeholder");a.on("focus",function(){holder="";if(this.value===this.defaultValue){this.value=""}}).on("blur",function(){
+// Reset to default value if no changes were made.
+holder=b;if(this.value===""||null){this.value=this.defaultValue}})})})};/**
 * jMmenu: Hamburger menu for mobile devices
 */
-b.jMmenu=function(a){var c=jQuery.extend({breakpoint:b.opts.breakpoint,// Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
+d.jMmenu=function(a){var b=jQuery.extend({breakpoint:d.opts.breakpoint,// Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
 parent:jQuery("body"),// Parent element used to attach menu
 cclass:"jMmenu",// Menu class to test
 triggertext:"Menu",animateclass:"slide-right",// Type of animation
-throttle:101},a),d={};d.mediaQuery=b.debounce(function(a,e){if(c.breakpoint===b.state.breakpoint){var f=a.children([0]),g=null;e.mmenu=true;c.parent.addClass(c.animateclass);if(c.triggertext){g='<span class="'+c.cclass+'-triggertext">'+c.triggertext+"</span>"}a.addClass(c.cclass+"-trigger").append(g);f.addClass(c.cclass+"-menu").prependTo(c.parent)}else{e.mmenu=false;e.active=false;c.parent.removeClass(c.cclass+"-active "+c.cclass+"-inactive "+c.animateclass);a.attr("aria-label","Menu").removeClass(c.cclass+"-trigger");jQuery("."+c.cclass+"-menu").removeClass(c.cclass+"-menu").prependTo(a);jQuery("."+c.cclass+"-triggertext").remove()}d.menutrigger(a,e)},c.throttle);d.menutrigger=function(a,b){var d=[c.cclass+"-active",c.cclass+"-inactive"];if(b.active){a.activate().attr("aria-label","Close Menu");jQuery("."+c.cclass+"-menu").addClass("active");c.parent.addClass(d[0]).removeClass(d[1])}else{a.deactivate().attr("aria-label","Open Menu");jQuery("."+c.cclass+"-menu").removeClass("active");if(b.mmenu){c.parent.addClass(d[1]).removeClass(d[0])}}};d.style=function(a){var b=a.find(">ul"),c=b.find("ul");if(c.length>0){var d=b.find("li ul");d.addClass("child").parent().addClass("parent")}};d.init=function(){var a=jQuery(this),b={active:false,mmenu:false};a.addClass(c.cclass).once(c.cclass,d.style(a));d.mediaQuery(a,b);jQuery(window).on("resize",function(){d.mediaQuery(a,b)});a.on("click",function(){
+throttle:101},a),c={};c.mediaQuery=d.debounce(function(a,e){if(b.breakpoint===d.state.breakpoint){var f=a.children([0]),g=null;e.mmenu=true;b.parent.addClass(b.animateclass);if(b.triggertext){g='<span class="'+b.cclass+'-triggertext">'+b.triggertext+"</span>"}a.addClass(b.cclass+"-trigger").append(g);f.addClass(b.cclass+"-menu").prependTo(b.parent)}else{e.mmenu=false;e.active=false;b.parent.removeClass(b.cclass+"-active "+b.cclass+"-inactive "+b.animateclass);a.attr("aria-label","Menu").removeClass(b.cclass+"-trigger");jQuery("."+b.cclass+"-menu").removeClass(b.cclass+"-menu").prependTo(a);jQuery("."+b.cclass+"-triggertext").remove()}c.menutrigger(a,e)},b.throttle);c.menutrigger=function(a,c){var d=[b.cclass+"-active",b.cclass+"-inactive"];if(c.active){a.activate().attr("aria-label","Close Menu");jQuery("."+b.cclass+"-menu").addClass("active");b.parent.addClass(d[0]).removeClass(d[1])}else{a.deactivate().attr("aria-label","Open Menu");jQuery("."+b.cclass+"-menu").removeClass("active");if(c.mmenu){b.parent.addClass(d[1]).removeClass(d[0])}}};c.style=function(a){var b=a.find(">ul"),c=b.find("ul");if(c.length>0){var d=b.find("li ul");d.addClass("child").parent().addClass("parent")}};c.init=function(){var a=jQuery(this),d={active:false,mmenu:false};a.addClass(b.cclass).once(b.cclass,c.style(a));c.mediaQuery(a,d);jQuery(window).on("resize",function(){c.mediaQuery(a,d)});a.on("click",function(){
 //console.log(this);
-if(b.mmenu){b.active=b.active?false:true;d.menutrigger(a,b)}});jQuery(document).on("keyup",function(c){if(b.active===true&&c.which===27){c.preventDefault();b.active=false;d.menutrigger(a,b)}});jQuery("."+c.cclass+" .parent").on("mouseenter focus",function(a){jQuery(this).addClass("active").children(":gt(0)").addClass("active")});jQuery("."+c.cclass+" .parent").on("mouseleave blur",function(a){jQuery(this).removeClass("active").children(":gt(0)").removeClass("active")});jQuery("."+c.cclass+"-menu .parent a").on("click",function(a){var b=jQuery(this).parent(),c=b.children(":gt(0)");//find('> .child');
-if(c.length){a.preventDefault();if(c.hasClass("active")){b.removeClass("active");c.removeClass("active")}else{b.addClass("active");c.addClass("active")}}})};return this.each(d.init)};/**
+if(d.mmenu){d.active=d.active?false:true;c.menutrigger(a,d)}});jQuery(document).on("keyup",function(b){if(d.active===true&&b.which===27){b.preventDefault();d.active=false;c.menutrigger(a,d)}});jQuery("."+b.cclass+" .parent").on("mouseenter focus",function(a){jQuery(this).addClass("active").children(":gt(0)").addClass("active")});jQuery("."+b.cclass+" .parent").on("mouseleave blur",function(a){jQuery(this).removeClass("active").children(":gt(0)").removeClass("active")});jQuery("."+b.cclass+"-menu .parent a").on("click",function(a){var b=jQuery(this).parent(),c=b.children(":gt(0)");//find('> .child');
+if(c.length){a.preventDefault();if(c.hasClass("active")){b.removeClass("active");c.removeClass("active")}else{b.addClass("active");c.addClass("active")}}})};return this.each(c.init)};/**
 * jScrolli : Content carousel/slider
 */
-b.jScrolli=function(c){var d=a.extend({cclass:"jScrolli",// Object class selector
+d.jScrolli=function(b){var c=a.extend({cclass:"jScrolli",// Object class selector
 active:0,// Index of initially selected slide
 background:"img:first",// Selector for applying background image
 title:"h2, h3",// Selector for applying title class
 //width: "100%", // 'auto' or '[value]', i.e. '300px'
 height:"auto",// 'auto' or '[value]', i.e. '300px'
 controls:{showmarkers:true,showcontrols:true,keyboard:true,swipe:true,autoplay:true,pauseonhover:true,autodim:true,delay:1.4,// Time (seconds) to wait before dimming.
-text:{next:"Next",prev:"Prev",pause:"Pause",play:"Play"}},transition:{pause:5},caption:{enable:true,autohide:false,selector:".caption"}},c),e={};/**
+text:{next:"Next",prev:"Prev",pause:"Pause",play:"Play"}},transition:{pause:5},caption:{enable:true,autohide:false,selector:".caption"}},b),e={};/**
 * Format html buttons for controls.
 *
 * @param string $text
 * @returns string
 */
-e.button=function(a){return'<a class="'+d.cclass+"-control "+a.toLowerCase()+'">'+a+"</a>"};/**
+e.button=function(a){return'<a class="'+c.cclass+"-control "+a.toLowerCase()+'">'+a+"</a>"};/**
 * Update next/prev slides.
 *
 * @param object state
@@ -126,40 +133,40 @@ e.normalize=function(a){a.prev=a.current-1;a.next=a.current+1;if(a.prev<0){a.pre
 * @param object $obj
 * @param object state
 */
-e.go=function(a,c,f){if(!f.paused){var g="transition",h=c.find("."+d.cclass+"-slide");f.current=parseInt(a);
+e.go=function(a,b,f){if(!f.paused){var g="transition",h=b.find("."+c.cclass+"-slide");f.current=parseInt(a);
 // Normalize state
 e.normalize(f);
 // Update classes on slides for css transition
 jQuery(h[f.prev]).activate("previous");jQuery(h[f.next]).activate("next");jQuery(h[a]).activate();
 // Listen for transition to complete & update classes
-c.parent().addClass(g).on(b.transitionend(),function(){jQuery(this).removeClass(g)});
+b.parent().addClass(g).on(d.transitionend(),function(){jQuery(this).removeClass(g)});
 // Update the marker
-if(d.controls.showmarkers){e.mark(c,f)}
+if(c.controls.showmarkers){e.mark(b,f)}
 // Update the caption
-if(d.caption.enable){e.caption(h,f)}
+if(c.caption.enable){e.caption(h,f)}
 // Reset the autoplay timer
-if(d.controls.autoplay){e.updateinterval(c,f)}}};/**
+if(c.controls.autoplay){e.updateinterval(b,f)}}};/**
 * Update the current marker.
 */
-e.mark=function(a,b){a.siblings().find("."+d.cclass+"-marker").eq(b.current).activate()};/**
+e.mark=function(a,b){a.siblings().find("."+c.cclass+"-marker").eq(b.current).activate()};/**
 * Update slide caption
 */
-e.caption=function(c,e){var f=c.parent().parent(),g=f.find("> .caption p");
+e.caption=function(b,e){var f=b.parent().parent(),g=f.find("> .caption p");
 // Get current slide's caption
-e.caption=f.find(d.caption.selector).eq(e.current).text();g.on(b.transitionend(),function(){
+e.caption=f.find(c.caption.selector).eq(e.current).text();g.on(d.transitionend(),function(){
 // Update the active caption
 a(this).text(e.caption).activate()})};/**
 * Reset autoplay timer.
 */
-e.updateinterval=function(a,b){if(d.controls.autoplay&&!b.paused){clearInterval(b.interval);b.interval=setInterval(function(){b.current=b.next;e.go(b.current,a,b)},d.transition.pause*1e3)}};/**
+e.updateinterval=function(a,b){if(c.controls.autoplay&&!b.paused){clearInterval(b.interval);b.interval=setInterval(function(){b.current=b.next;e.go(b.current,a,b)},c.transition.pause*1e3)}};/**
 * Add event listeners
 *
 * @param {type} $obj
 * @param {type} state
 */
-e.events=function(a,b){var c=a.siblings(".controls"),f=a.parent(),g=null,h=null;
+e.events=function(a,b){var d=a.siblings(".controls"),f=a.parent(),g=null,h=null;
 // Link markers to respective slides
-if(d.controls.showmarkers){a.siblings().find("."+d.cclass+"-marker").on("click",function(){b.current=jQuery(this).attr("data-href");b.paused=false;e.go(b.current,a,b)})}
+if(c.controls.showmarkers){a.siblings().find("."+c.cclass+"-marker").on("click",function(){b.current=jQuery(this).attr("data-href");b.paused=false;e.go(b.current,a,b)})}
 // Previous
 f.find(".prev").on("click",function(c){b.current=b.prev;b.paused=false;e.go(b.current,a,b)});
 // Next
@@ -183,36 +190,36 @@ console.log(state.paused);
 });
 */
 // Pause/showcontrols
-f.on({mouseover:function(){b.active=true;if(d.controls.pauseonhover){b.paused=true}if(d.controls.autodim){f.activate();window.clearTimeout(f.timeout)}},mouseout:function(){b.active=false;if(d.controls.pauseonhover){b.paused=false}if(d.controls.autodim){f.timeout=window.setTimeout(function(){f.deactivate()},d.controls.delay*1e3)}}});
+f.on({mouseover:function(){b.active=true;if(c.controls.pauseonhover){b.paused=true}if(c.controls.autodim){f.activate();window.clearTimeout(f.timeout)}},mouseout:function(){b.active=false;if(c.controls.pauseonhover){b.paused=false}if(c.controls.autodim){f.timeout=window.setTimeout(function(){f.deactivate()},c.controls.delay*1e3)}}});
 // Keyboard
-if(d.controls.keyboard){jQuery(document).on("keyup",function(c){var d=[37,// left
+if(c.controls.keyboard){jQuery(document).on("keyup",function(c){var d=[37,// left
 39];if(d.indexOf(c.which)!==-1){c.preventDefault();b.paused=false;switch(c.which){case 37:b.current=b.prev;break;case 39:b.current=b.next;break}e.go(b.current,a,b)}})}};/**
 * Set height explicitly to prevent 'jumping' content.
 *
 * @param object $obj
 * @param object state
 */
-e.setheight=function(a,b){jQuery(document).ready(function(){if(d.height==="auto"){a.find("> li").each(function(){var a=this.clientHeight;if(a>b.maxheight){b.maxheight=a}})}else{b.maxheight=d.height}a.height(b.maxheight)})};/**
+e.setheight=function(a,b){jQuery(document).ready(function(){if(c.height==="auto"){a.find("> li").each(function(){var a=this.clientHeight;if(a>b.maxheight){b.maxheight=a}})}else{b.maxheight=c.height}a.height(b.maxheight)})};/**
 * Generate markup for controls & other elements.
 *
 * @param object $obj
 * @param object state
 */
-e.style=function(a,c){var f=a.find("> li");a.addClass(b.opts.cclass).wrap('<div class="'+b.opts.cclass+" "+d.cclass+'-wrap" />');f.addClass(d.cclass+"-slide").each(function(){var a=jQuery(this);a.children().wrapAll('<div class="'+d.cclass+'-slide-content cell" />');if(d.title){a.find(d.title).addClass("title")}if(d.background){var b=a.find(d.background);if(b.length){b.hide();a.css({"background-image":"url("+b.attr("src")+")"}).addClass(d.cclass+"-background")}}});e.setheight(a,c);if(d.controls.showmarkers){var g=jQuery('<ul class="'+d.cclass+'-markers"/>');for(var h=0;h<f.length;h+=1){g.append('<li class="'+d.cclass+'-marker" data-href="'+h+'">'+(h+1)+"</li>")}a.after(g);e.mark(a,c)}if(d.caption.enable){var i=a.find(d.caption.selector);if(i.length){i.hide();a.after('<div class="'+d.cclass+'-caption"><p/></div>')}}if(d.controls.showcontrols){var j,k=[e.button(d.controls.text.prev),e.button(d.controls.text.next)];for(j=0;j<k.length;j+=1){a.parent().prepend(k[j])}}};/**
+e.style=function(a,b){var f=a.find("> li");a.addClass(d.opts.cclass).wrap('<div class="'+d.opts.cclass+" "+c.cclass+'-wrap" />').parent().css({willChange:"contents"});f.addClass(c.cclass+"-slide").each(function(){var a=jQuery(this);a.children().wrapAll('<div class="'+c.cclass+'-slide-content cell" />');if(c.title){a.find(c.title).addClass("title")}if(c.background){var b=a.find(c.background);if(b.length){b.hide();a.css({"background-image":"url("+b.attr("src")+")"}).addClass(c.cclass+"-background")}}});e.setheight(a,b);if(c.controls.showmarkers){var g=jQuery('<ul class="'+c.cclass+'-markers"/>');for(var h=0;h<f.length;h+=1){g.append('<li class="'+c.cclass+'-marker" data-href="'+h+'">'+(h+1)+"</li>")}a.after(g);e.mark(a,b)}if(c.caption.enable){var i=a.find(c.caption.selector);if(i.length){i.hide();a.after('<div class="'+c.cclass+'-caption"><p/></div>')}}if(c.controls.showcontrols){var j,k=[e.button(c.controls.text.prev),e.button(c.controls.text.next)];for(j=0;j<k.length;j+=1){a.parent().prepend(k[j])}}};/**
 * Init jScrolli
 */
 e.init=function(){var a=jQuery(this),b={active:true,paused:false,count:a.find("> li").length-1,
 //height: o.height ? o.height : fn.setheight($obj, state),
-width:d.width?d.width:a.width(),maxheight:0,interval:0,controls:0,caption:jQuery(d.caption.selector).html(),current:d.active?d.active:0};
+width:c.width?c.width:a.width(),maxheight:0,interval:0,controls:0,caption:jQuery(c.caption.selector).html(),current:c.active?c.active:0};
 // o.caption.selector = o.caption.selector === 'auto' ? '[title]' : o.caption.selector;
 // Add markup
-a.once(d.cclass,function(){e.style(a,b)});
+a.once(c.cclass,function(){e.style(a,b)});
 // Add Event Listeners
 e.events(a,b);
 // Activate 1st slide
 e.go(b.current,a,b);
 // Start autoplay
-e.updateinterval(a,b)};return this.each(e.init)};b.jSocial=function(b){var c=document.title,d=a("link[rel='canonical']")?a("link[rel='canonical']").attr("href"):window.location;var e=jQuery.extend({sharetitle:"",// "Share this page",
+e.updateinterval(a,b)};return this.each(e.init)};d.jSocial=function(b){var c=document.title,d=a("link[rel='canonical']")?a("link[rel='canonical']").attr("href"):window.location;var e=jQuery.extend({sharetitle:"",// "Share this page",
 followtitle:"",// "Follow Us",
 buttonclass:"social",share:[],follow:{}},b),f={};/**
 * Generate markup for buttons.
@@ -227,7 +234,7 @@ f.init=function(){
 f.style(jQuery(this))};return this.each(f.init)};/**
 * jTabs : Tabify a list of content
 */
-b.jTabs=function(a){var b=jQuery.extend({active:0,// Array index of initially active tab
+d.jTabs=function(a){var b=jQuery.extend({active:0,// Array index of initially active tab
 orient:"horizontal",// || "vertical"
 cclass:"jTabs"},a),c={};/**
 *
@@ -246,16 +253,15 @@ a.children().eq(1).addClass("content").hide()})});
 //Add classes/functions to each panel
 d.each(function(){var b=jQuery(this);b.click(function(d){d.preventDefault();c.showContent(a,b)})});
 //Set default content
-c.showContent(a,d.eq([b.active]))};return this.each(c.init)};b.jTooltip=function(a){var b=jQuery.extend({trigger:"jTooltip-trigger",// Class used to trigger tooltip.
-triggerbtn:"jTooltip-trigger-btn",// OR false, used to trigger tooltip
+c.showContent(a,d.eq([b.active]))};return this.each(c.init)};d.jTooltip=function(a){var b=jQuery.extend({trigger:"jTooltip-trigger",// Class used to trigger tooltip.
+triggerbtn:false,//'jTooltip-trigger-btn', // class-name OR false, used to trigger tooltip
 triggerbtntext:"About this",cclass:"jTooltip-tooltip",dataattr:"data-tooltip",bindto:"btn",// OR 'event' OR {}
 wrap:true,offsetX:10,offsetY:5},a),c={};/**
 * Generate markup for buttons.
 *
 * @param object $obj
 */
-c.style=function(a,c){var d=jQuery("<div>"+a.attr(b.dataattr)+"</div>");if(b.wrap){a.wrap('<div class="'+b.cclass+'-wrap" />')}d.classify([b.cclass]);a.after(d);if(b.triggerbtn!==false){var e=jQuery('<span aria-label="'+b.triggerbtntext+'" />');e.classify([b.trigger,b.triggerbtn]).prop("tabindex",a.prop("tabindex"));a.before(e)}else{a.addClass(b.trigger)}c(a)};c.events=function(a){jQuery("."+b.trigger).on("mouseenter focus",function(a){var c=jQuery(this),d=c.nextAll("."+b.cclass+":first"),e={},f={};switch(b.bindto){case"event":f={top:parseInt(a.clientY)+b.offsetY+"px",left:parseInt(a.clientX)+b.offsetX+"px"};break;case"btn":e=this.getBoundingClientRect();f={top:e.top+c.height()/2+b.offsetY+"px",left:e.left+c.width()+b.offsetX+"px"};break;default:case{}:e={}.getBoundingClientRect();f={top:e.top+c.height()/2+b.offsetY+"px",left:e.left+c.width()/2+b.offsetX+"px"};break}d.css(f).activate()}).on("mouseleave blur",function(a){jQuery(this).nextAll("."+b.cclass+":first").deactivate()})};/**
+c.style=function(a,c){var d=jQuery("<div>"+a.attr(b.dataattr)+"</div>");if(b.wrap){a.wrap('<div class="'+b.cclass+'-wrap" />')}d.classify([b.cclass]);a.after(d);if(b.triggerbtn!==false){var e=jQuery('<span aria-label="'+b.triggerbtntext+'">?</span>');e.classify([b.trigger,b.triggerbtn]).prop("tabindex",a.prop("tabindex"));a.before(e)}else{a.addClass(b.trigger)}c(a)};c.events=function(a){jQuery("."+b.trigger).on("mouseenter focus",function(a){var c=jQuery(this),d=c.nextAll("."+b.cclass+":first"),e={},f={};switch(b.bindto){case"event":f={top:parseInt(a.clientY)+b.offsetY+"px",left:parseInt(a.clientX)+b.offsetX+"px"};break;case"btn":e=this.getBoundingClientRect();f={top:e.top+c.height()/2+b.offsetY+"px",left:e.left+c.width()+b.offsetX+"px"};break;default:case{}:e={}.getBoundingClientRect();f={top:e.top+c.height()/2+b.offsetY+"px",left:e.left+c.width()/2+b.offsetX+"px"};break}d.css(f).activate()}).on("mouseleave blur",function(a){jQuery(this).nextAll("."+b.cclass+":first").deactivate()})};/**
 * Init jSocial
 */
-c.init=function(){c.style(jQuery(this),c.events)};return this.each(c.init)};b.jScrollindicator=function(a){var c=jQuery.extend({cclass:"jScrollindicator",orient:"horizontal",// horizontal || vertical
-attach:"body",parent:null},a),d={};d.init=function(){var a=jQuery(this),d={scrolled:0};a.once(c.cclass,function(){});a.on("scroll",b.debounce(function(a,b){if(c.parent){console.log(c.parent);var d=jQuery("."+c.cclass),e=d.parent(c.parent),f=jQuery(document).scrollTop();b.scrolled=f/(a.height()-e.height())*100;console.log("scrolled: "+b.scrolled)}},100))};return this.each(d.init)};jQuery.fn.extend(b)})(jQuery);b["true"]=a})({},function(){return this}());
+c.init=function(){c.style(jQuery(this),c.events)};return this.each(c.init)};jQuery.fn.extend(d)}}})(jQuery);b["true"]=a})({},function(){return this}());

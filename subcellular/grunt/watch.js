@@ -4,6 +4,12 @@
  */
 
 module.exports = {
+  info: {
+    files: ['src/info/**/*'],
+    tasks: [
+      'concat:theme_info'
+    ]
+  },
   php: {
     files: ['src/preprocess/**/*'],
     tasks: [

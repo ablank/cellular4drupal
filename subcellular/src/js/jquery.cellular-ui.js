@@ -7,6 +7,8 @@
 * @see http://live-cellular.gotpantheon.com/cellular-ui
 */
 (function ($) {
+Drupal.behaviors.cellular = {
+attach: function (context, settings) {
 var cellular = {};
 cellular.opts = {
 cclass: "cellular",
@@ -38,11 +40,23 @@ scrollTop: jQuery(target).offset().top
 * Get the breakpoints specified in CSS
 */
 cellular.breakpoint = function () {
-var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content');
-return {
+var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
+obj;
+if (content) {
+obj = {
 size: content.match(/\d/g).join(""),
 type: content.match(/\w*[^\"\'](?=-)/g).join("")
 };
+}
+else {
+var ww = jQuery(window).width();
+console.log(ww);
+obj = {
+size: '',
+type: ''
+};
+}
+return obj;
 };
 /**
 * Add active class to element, remove active class from element siblings
@@ -295,6 +309,39 @@ jQuery(this).deactivate();
 });
 };
 return this.each(fn.init);
+};
+/**
+* jFormal: Improve form interaction
+*/
+cellular.jFormal = function (opts) {
+var o = jQuery.extend({
+inputs: [
+'input[type="text"]',
+'input[type="email"]',
+'input[type="password"]',
+'textarea'
+]
+}, opts);
+return this.each(function () {
+var inputs = o.inputs.join(',');
+// get/set value of inputs
+jQuery(inputs).each(function () {
+var $t = jQuery(this),
+hold = holder = $t.attr('placeholder');
+$t.on('focus', function () {
+holder = '';
+if (this.value === this.defaultValue) {
+this.value = '';
+}
+}).on('blur', function () {
+// Reset to default value if no changes were made.
+holder = hold;
+if (this.value === '' || null) {
+this.value = this.defaultValue;
+}
+});
+});
+});
 };
 /**
 * jMmenu: Hamburger menu for mobile devices
@@ -741,7 +788,10 @@ $obj.height(state.maxheight);
 fn.style = function ($obj, state) {
 var li = $obj.find('> li');
 $obj.addClass(cellular.opts.cclass)
-.wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />');
+.wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />')
+.parent().css({
+willChange: "contents"
+});
 li.addClass(o.cclass + '-slide')
 .each(function () {
 var $t = jQuery(this);
@@ -1026,7 +1076,7 @@ return this.each(fn.init);
 cellular.jTooltip = function (opts) {
 var o = jQuery.extend({
 trigger: 'jTooltip-trigger', // Class used to trigger tooltip.
-triggerbtn: 'jTooltip-trigger-btn', // OR false, used to trigger tooltip
+triggerbtn: false, //'jTooltip-trigger-btn', // class-name OR false, used to trigger tooltip
 triggerbtntext: 'About this',
 cclass: 'jTooltip-tooltip',
 dataattr: 'data-tooltip',
@@ -1049,7 +1099,7 @@ $obj.wrap('<div class="' + o.cclass + '-wrap" />');
 tooltip.classify([o.cclass]);
 $obj.after(tooltip);
 if (o.triggerbtn !== false) {
-var btn = jQuery('<span aria-label="' + o.triggerbtntext + '" />');
+var btn = jQuery('<span aria-label="' + o.triggerbtntext + '">?</span>');
 btn.classify([o.trigger, o.triggerbtn])
 .prop('tabindex', $obj.prop('tabindex'));
 $obj.before(btn);
@@ -1102,39 +1152,9 @@ fn.style(jQuery(this), fn.events);
 };
 return this.each(fn.init);
 };
-cellular.jScrollindicator = function (opts) {
-var o = jQuery.extend({
-cclass: "jScrollindicator",
-orient: "horizontal", // horizontal || vertical
-attach: "body",
-parent: null
-}, opts),
-fn = {};
-fn.init = function () {
-var $obj = jQuery(this),
-state = {scrolled: 0};
-$obj.once(o.cclass, function () {
-/*
-var classes = [
-o.cclass,
-o.orient
-],
-indicator = jQuery('<div class="'+cellular.classify(classes)+' " />');
-jQuery(o.attach).prepend(indicator);
-*/
-});
-$obj.on('scroll', cellular.debounce(function($obj, state) {
-if(o.parent){
-console.log(o.parent);
-var ind = jQuery('.'+o.cclass),
-parent = ind.parent(o.parent),
-dst = jQuery(document).scrollTop();
-state.scrolled = (dst/($obj.height()-parent.height())) * 100;
-console.log('scrolled: '+ state.scrolled);
-}
-}, 100));
-};
-return this.each(fn.init);
-};
 jQuery.fn.extend(cellular);
+//Drupal.behaviors.cellular = {
+//attach: function (context, settings) {
+}
+};
 })(jQuery);

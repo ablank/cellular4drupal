@@ -106,6 +106,9 @@ settings[reveal]                = 0
 settings[snap-svg]              = 0
 settings[threejs]               = 0
 
+;----------// UI
+settings[ui_tooltips]           = 1
+
 ;----------// Social Media
 settings[social_media_share]    = 0
 
