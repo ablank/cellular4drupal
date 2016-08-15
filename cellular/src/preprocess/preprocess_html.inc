@@ -133,12 +133,14 @@ function cellular_http_headers() {
  * Set cookie for site, used to load additional resources if needed.
  */
 function cellular_cookies() {
-  $cookie = variable_get('site_name', "Just another Drupal Site");
-  $cookie = preg_replace("/[ \d]+/", '', strtolower($cookie)) . '98';
+  if (!empty(theme_get_setting('cookie_time'))) {
+    $cookie = variable_get('site_name', "Just another Drupal Site");
+    $cookie = preg_replace("/[ \d]+/", '', strtolower($cookie)) . '98';
 
-  setcookie($cookie, TRUE, time() + (86400 * theme_get_setting('cookie_time')));
+    setcookie($cookie, TRUE, time() + (86400 * theme_get_setting('cookie_time')));
 
-  return !empty($_COOKIE[$cookie]) ? TRUE : FALSE;
+    return !empty($_COOKIE[$cookie]) ? TRUE : FALSE;
+  }
 }
 
 /**

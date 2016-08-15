@@ -119,7 +119,6 @@ module.exports = {
       'src/js/cellular-ui/cellular.jScrolli.js',
       'src/js/cellular-ui/cellular.jSocial.js',
       'src/js/cellular-ui/cellular.jTabs.js',
-      'src/js/cellular-ui/cellular.jTooltip.js',
       /**
        * Under Development...
        */
@@ -131,6 +130,7 @@ module.exports = {
       //'src/js/cellular-ui/dev/cellular.jScrollindicator.js',
       //'src/js/cellular-ui/dev/cellular.jScrolltrigger.js',
       //'src/js/cellular-ui/dev/cellular.jSticky.js',
+      //'src/js/cellular-ui/dev/cellular.jTooltip.js',
       /**
        * Close objects
        */

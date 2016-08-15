@@ -101,19 +101,16 @@ body div#toolbar.toolbar {
   padding: 0;
 }
 /* line 66, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu a,
-#admin-menu a:visited {
+#admin-menu a, #admin-menu a:visited {
   display: block;
-  color: #f5f5f5;
+  color: #F5F5F5;
   margin: 0;
   padding: 0.2em;
 }
 /* line 73, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu a:active,
-#admin-menu a:hover,
-#admin-menu a:focus {
+#admin-menu a:active, #admin-menu a:hover, #admin-menu a:focus {
   text-decoration: none;
-  color: #f5f5f5;
+  color: #F5F5F5;
   background-color: #555;
 }
 
@@ -206,8 +203,7 @@ body div#toolbar.toolbar {
   left: 100%;
 }
 /* line 137, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu-menu .dropdown a,
-#admin-menu-menu .dropdown a:visited,
+#admin-menu-menu .dropdown a, #admin-menu-menu .dropdown a:visited,
 #admin-menu-icon .dropdown a,
 #admin-menu-icon .dropdown a:visited,
 #admin-menu-account .dropdown a,
@@ -271,13 +267,13 @@ body div#toolbar.toolbar {
 .user-links a:visited {
   margin: 0 0.2em;
   padding: 0.4em;
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 /* line 18, ../sass/drupal/user/_user.scss */
 .user-links a:active,
 .user-links a:hover,
 .user-links a:focus {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }

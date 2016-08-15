@@ -104,7 +104,7 @@ $form[0]['meta']['dev'] = array(
 $form[0]['meta']['cookie_time'] = array(
 '#type' => 'textfield',
 '#title' => t('Cookie Expiration'),
-'#description' => t('Number of days before the theme cookie expires. A <code>first-visit</code> class is added to <code>&lt;body&gt;</code> and <code>Drupal.settings.cellular.first_visit = true</code>.'),
+'#description' => t('Number of days before the theme cookie expires. A <code>first-visit</code> class is added to <code>&lt;body&gt;</code> and <code>Drupal.settings.cellular.first_visit = true</code>. Set to "0" to disable the cookie.'),
 '#default_value' => theme_get_setting('cookie_time'),
 );
 $form[0]['meta']['libpath'] = array(

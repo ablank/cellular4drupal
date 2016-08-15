@@ -1739,12 +1739,14 @@ function cellular_http_headers() {
  * Set cookie for site, used to load additional resources if needed.
  */
 function cellular_cookies() {
-  $cookie = variable_get('site_name', "Just another Drupal Site");
-  $cookie = preg_replace("/[ \d]+/", '', strtolower($cookie)) . '98';
+  if (!empty(theme_get_setting('cookie_time'))) {
+    $cookie = variable_get('site_name', "Just another Drupal Site");
+    $cookie = preg_replace("/[ \d]+/", '', strtolower($cookie)) . '98';
 
-  setcookie($cookie, TRUE, time() + (86400 * theme_get_setting('cookie_time')));
+    setcookie($cookie, TRUE, time() + (86400 * theme_get_setting('cookie_time')));
 
-  return !empty($_COOKIE[$cookie]) ? TRUE : FALSE;
+    return !empty($_COOKIE[$cookie]) ? TRUE : FALSE;
+  }
 }
 
 /**
@@ -2505,8 +2507,10 @@ function cellular_textarea(&$vars) {
 
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
+
 /**
  * Implements theme_webform_element().
+ */
 function cellular_webform_element($vars) {
   // Ensure defaults.
   $vars['element'] += array(
@@ -2584,10 +2588,9 @@ function cellular_webform_element($vars) {
 
   $output .= $description;
   $output .= "</div>\n";
-  dpm($element);
+  //dpm($element);
   return $output;
 }
- */
 
 
 

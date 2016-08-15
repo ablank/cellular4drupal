@@ -346,7 +346,7 @@ this.value = this.defaultValue;
 /**
 * jMmenu: Hamburger menu for mobile devices
 */
-cellular.jMmenu = function (opts) {
+cellular.jMmenu = function(opts) {
 var o = jQuery.extend({
 breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
 parent: jQuery('body'), // Parent element used to attach menu
@@ -356,7 +356,7 @@ animateclass: "slide-right", // Type of animation
 throttle: 101 // Time in ms to throttle window resize event
 }, opts),
 fn = {};
-fn.mediaQuery = cellular.debounce(function ($obj, state) {
+fn.mediaQuery = cellular.debounce(function($obj, state) {
 if (o.breakpoint === cellular.state.breakpoint) {
 var $menu = $obj.children([0]),
 label = null;
@@ -385,7 +385,7 @@ jQuery('.' + o.cclass + '-triggertext').remove();
 }
 fn.menutrigger($obj, state);
 }, o.throttle);
-fn.menutrigger = function ($obj, state) {
+fn.menutrigger = function($obj, state) {
 var classes = [
 o.cclass + '-active',
 o.cclass + '-inactive'
@@ -406,16 +406,72 @@ o.parent.addClass(classes[1])
 }
 }
 };
-fn.style = function ($obj) {
+fn.style = function($obj) {
 var menu = $obj.find('>ul'),
 nested = menu.find('ul');
 if (nested.length > 0) {
 var child = menu.find('li ul');
 child.addClass('child')
-.parent().addClass('parent');
+.parent().addClass('parent')
+.css({
+willChange: 'contents'
+});
 }
 };
-fn.init = function () {
+fn.listen = function($obj, state) {
+jQuery(window).on('resize', function() {
+fn.mediaQuery($obj, state);
+});
+$obj.on('click', function() {
+if (state.mmenu) {
+state.active = state.active ? false : true;
+fn.menutrigger($obj, state);
+}
+});
+jQuery(document).on('keyup', function(e) {
+if (state.active === true && e.which === 27) {
+e.preventDefault();
+state.active = false;
+fn.menutrigger($obj, state);
+}
+});
+jQuery('.parent > a').on('click', function(e) {
+if (state.mmenu) {
+var parent = jQuery(this).parent(),
+child = parent.children(':gt(0)');
+if (child.length > 0) {
+e.preventDefault();
+if (child.hasClass('active')) {
+parent.removeClass('active');
+child.removeClass('active');
+}
+else {
+parent.addClass('active');
+child.addClass('active');
+}
+}
+}
+});
+/*
+jQuery('.' + o.cclass + ('-menu .parent a')).on('focus click', function(e) {
+e.preventDefault();
+var $t = jQuery(this),
+parent = $t.parent();
+if (parent.hasClass('active')) {
+parent.removeClass('active')
+.children(':gt(0)').removeClass('active');
+} else {
+parent.addClass('active')
+.children(':gt(0)').addClass('active');
+}
+});
+jQuery('.' + o.cclass + ('-menu .parent a')).on('blur', function(e) {
+jQuery(this).parent().removeClass('active')
+.children(':gt(0)').removeClass('active');
+});
+*/
+};
+fn.init = function() {
 var $obj = jQuery(this),
 state = {
 active: false,
@@ -424,45 +480,7 @@ mmenu: false
 $obj.addClass(o.cclass)
 .once(o.cclass, fn.style($obj));
 fn.mediaQuery($obj, state);
-jQuery(window).on('resize', function () {
-fn.mediaQuery($obj, state);
-});
-$obj.on('click', function () {
-//console.log(this);
-if (state.mmenu) {
-state.active = state.active ? false : true;
-fn.menutrigger($obj, state);
-}
-});
-jQuery(document).on('keyup', function (e) {
-if (state.active === true && e.which === 27) {
-e.preventDefault();
-state.active = false;
-fn.menutrigger($obj, state);
-}
-});
-jQuery('.' + o.cclass + (' .parent')).on('mouseenter focus', function (e) {
-jQuery(this).addClass('active')
-.children(':gt(0)').addClass('active');
-});
-jQuery('.' + o.cclass + (' .parent')).on('mouseleave blur', function (e) {
-jQuery(this).removeClass('active')
-.children(':gt(0)').removeClass('active');
-});
-jQuery('.' + o.cclass + ('-menu .parent a')).on('click', function (e) {
-var parent = jQuery(this).parent(),
-child = parent.children(':gt(0)'); //find('> .child');
-if (child.length) {
-e.preventDefault();
-if (child.hasClass('active')) {
-parent.removeClass('active');
-child.removeClass('active');
-} else {
-parent.addClass('active');
-child.addClass('active');
-}
-}
-});
+fn.listen($obj, state);
 };
 return this.each(fn.init);
 };
@@ -1070,85 +1088,6 @@ fn.showContent($obj, li);
 });
 //Set default content
 fn.showContent($obj, tab.eq([o.active]));
-};
-return this.each(fn.init);
-};
-cellular.jTooltip = function (opts) {
-var o = jQuery.extend({
-trigger: 'jTooltip-trigger', // Class used to trigger tooltip.
-triggerbtn: false, //'jTooltip-trigger-btn', // class-name OR false, used to trigger tooltip
-triggerbtntext: 'About this',
-cclass: 'jTooltip-tooltip',
-dataattr: 'data-tooltip',
-bindto: 'btn', // OR 'event' OR {}
-wrap: true,
-offsetX: 10,
-offsetY: 5
-}, opts),
-fn = {};
-/**
-* Generate markup for buttons.
-*
-* @param object $obj
-*/
-fn.style = function ($obj, callback) {
-var tooltip = jQuery('<div>' + $obj.attr(o.dataattr) + '</div>');
-if (o.wrap) {
-$obj.wrap('<div class="' + o.cclass + '-wrap" />');
-}
-tooltip.classify([o.cclass]);
-$obj.after(tooltip);
-if (o.triggerbtn !== false) {
-var btn = jQuery('<span aria-label="' + o.triggerbtntext + '">?</span>');
-btn.classify([o.trigger, o.triggerbtn])
-.prop('tabindex', $obj.prop('tabindex'));
-$obj.before(btn);
-} else {
-$obj.addClass(o.trigger);
-}
-callback($obj);
-};
-fn.events = function ($obj) {
-jQuery('.' + o.trigger).on('mouseenter focus', function (e) {
-var $t = jQuery(this),
-tooltip = $t.nextAll('.' + o.cclass + ':first'),
-btn = {},
-position = {};
-switch (o.bindto) {
-case 'event':
-position = {
-'top': (parseInt(e.clientY) + o.offsetY) + 'px',
-'left': (parseInt(e.clientX) + o.offsetX) + 'px'
-};
-break;
-case 'btn':
-btn = this.getBoundingClientRect();
-position = {
-'top': (btn.top + ($t.height() / 2) + o.offsetY) + 'px',
-'left': (btn.left + $t.width() + o.offsetX) + 'px'
-};
-break;
-default:
-case {}:
-btn = {}.getBoundingClientRect();
-position = {
-'top': (btn.top + ($t.height() / 2) + o.offsetY) + 'px',
-'left': (btn.left + ($t.width() / 2) + o.offsetX) + 'px'
-};
-break;
-}
-tooltip.css(position)
-.activate();
-})
-.on('mouseleave blur', function (e) {
-jQuery(this).nextAll('.' + o.cclass + ':first').deactivate();
-});
-};
-/**
-* Init jSocial
-*/
-fn.init = function () {
-fn.style(jQuery(this), fn.events);
 };
 return this.each(fn.init);
 };

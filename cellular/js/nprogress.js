@@ -1,1 +1,0 @@
-(function(a,b){NProgress.start();document.addEventListener("load",function(a){NProgress.done()});b["true"]=a})({},function(){return this}());

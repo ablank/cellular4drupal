@@ -2,18 +2,18 @@
  * jMmenu: Hamburger menu for mobile devices
  */
 
-cellular.jMmenu = function (opts) {
+cellular.jMmenu = function(opts) {
   var o = jQuery.extend({
-    breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
-    parent: jQuery('body'), // Parent element used to attach menu
-    cclass: "jMmenu", // Menu class to test
-    triggertext: "Menu",
-    animateclass: "slide-right", // Type of animation
-    throttle: 101 // Time in ms to throttle window resize event
-  }, opts),
+      breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
+      parent: jQuery('body'), // Parent element used to attach menu
+      cclass: "jMmenu", // Menu class to test
+      triggertext: "Menu",
+      animateclass: "slide-right", // Type of animation
+      throttle: 101 // Time in ms to throttle window resize event
+    }, opts),
     fn = {};
 
-  fn.mediaQuery = cellular.debounce(function ($obj, state) {
+  fn.mediaQuery = cellular.debounce(function($obj, state) {
     if (o.breakpoint === cellular.state.breakpoint) {
       var $menu = $obj.children([0]),
         label = null;
@@ -45,7 +45,7 @@ cellular.jMmenu = function (opts) {
     fn.menutrigger($obj, state);
   }, o.throttle);
 
-  fn.menutrigger = function ($obj, state) {
+  fn.menutrigger = function($obj, state) {
     var classes = [
       o.cclass + '-active',
       o.cclass + '-inactive'
@@ -68,7 +68,7 @@ cellular.jMmenu = function (opts) {
     }
   };
 
-  fn.style = function ($obj) {
+  fn.style = function($obj) {
     var menu = $obj.find('>ul'),
       nested = menu.find('ul');
 
@@ -76,11 +76,78 @@ cellular.jMmenu = function (opts) {
       var child = menu.find('li ul');
 
       child.addClass('child')
-        .parent().addClass('parent');
+        .parent().addClass('parent')
+        .css({
+          willChange: 'contents'
+        });
     }
   };
 
-  fn.init = function () {
+  fn.listen = function($obj, state) {
+
+    jQuery(window).on('resize', function() {
+      fn.mediaQuery($obj, state);
+    });
+
+    $obj.on('click', function() {
+      if (state.mmenu) {
+        state.active = state.active ? false : true;
+        fn.menutrigger($obj, state);
+      }
+    });
+
+    jQuery(document).on('keyup', function(e) {
+      if (state.active === true && e.which === 27) {
+        e.preventDefault();
+        state.active = false;
+        fn.menutrigger($obj, state);
+      }
+    });
+
+    jQuery('.parent > a').on('click', function(e) {
+      if (state.mmenu) {
+        var parent = jQuery(this).parent(),
+          child = parent.children(':gt(0)');
+
+        if (child.length > 0) {
+          e.preventDefault();
+
+          if (child.hasClass('active')) {
+            parent.removeClass('active');
+            child.removeClass('active');
+          } 
+          else {
+            parent.addClass('active');
+            child.addClass('active');
+          }
+        }
+      }
+    });
+
+    /*
+        jQuery('.' + o.cclass + ('-menu .parent a')).on('focus click', function(e) {
+          e.preventDefault();
+
+          var $t = jQuery(this),
+          parent = $t.parent();
+
+          if (parent.hasClass('active')) {
+            parent.removeClass('active')
+              .children(':gt(0)').removeClass('active');
+          } else {
+            parent.addClass('active')
+              .children(':gt(0)').addClass('active');
+          }
+        });
+
+        jQuery('.' + o.cclass + ('-menu .parent a')).on('blur', function(e) {
+          jQuery(this).parent().removeClass('active')
+            .children(':gt(0)').removeClass('active');
+        });
+        */
+  };
+
+  fn.init = function() {
     var $obj = jQuery(this),
       state = {
         active: false,
@@ -92,54 +159,7 @@ cellular.jMmenu = function (opts) {
 
     fn.mediaQuery($obj, state);
 
-    jQuery(window).on('resize', function () {
-      fn.mediaQuery($obj, state);
-    });
-
-    $obj.on('click', function () {
-      //console.log(this);
-      if (state.mmenu) {
-        state.active = state.active ? false : true;
-        fn.menutrigger($obj, state);
-      }
-    });
-
-    jQuery(document).on('keyup', function (e) {
-      if (state.active === true && e.which === 27) {
-        e.preventDefault();
-        state.active = false;
-        fn.menutrigger($obj, state);
-      }
-    });
-
-    jQuery('.' + o.cclass + (' .parent')).on('mouseenter focus', function (e) {
-      jQuery(this).addClass('active')
-        .children(':gt(0)').addClass('active');
-    });
-
-    jQuery('.' + o.cclass + (' .parent')).on('mouseleave blur', function (e) {
-      jQuery(this).removeClass('active')
-        .children(':gt(0)').removeClass('active');
-    });
-
-    jQuery('.' + o.cclass + ('-menu .parent a')).on('click', function (e) {
-      var parent = jQuery(this).parent(),
-        child = parent.children(':gt(0)'); //find('> .child');
-
-      if (child.length) {
-        e.preventDefault();
-
-        if (child.hasClass('active')) {
-          parent.removeClass('active');
-          child.removeClass('active');
-        } else {
-          parent.addClass('active');
-          child.addClass('active');
-        }
-      }
-
-    });
-
+    fn.listen($obj, state);
   };
 
   return this.each(fn.init);

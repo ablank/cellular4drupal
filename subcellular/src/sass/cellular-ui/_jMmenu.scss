@@ -30,6 +30,8 @@
     background-image: url('../assets/icons/png/menu.png');
     background-image: url('../assets/icons/svg/menu.svg');
     border: 2px solid $border_color;
+    box-shadow: 0 0 0 0 $white;
+    will-change: background-position, box-shadow;
     @include border-radius();
     @include transition();
     &:hover {
@@ -72,16 +74,25 @@
       list-style: none;
       max-width: none;
       &.parent {
+        a {
+          cursor: pointer;
+        }
         &:after {
           position: absolute;
           top: 1em;
           right: 0.2em;
-          @include triangle(0.8em, 0.6em, $dark_grey, 'down');
+          @include triangle(0.8em,
+          0.6em,
+          $dark_grey,
+          'down');
           @include transition();
         }
         &.active:after,
         &:hover:after {
-          @include triangle(0.8em, 0.6em, $hilight, 'down');
+          @include triangle(0.8em,
+          0.6em,
+          $hilight,
+          'down');
           transform: rotateY(180deg);
         }
       }
@@ -89,7 +100,6 @@
     .child {
       z-index: 1;
       border-left: $grey 1px solid;
-
       li {
         overflow: hidden;
         max-height: 0;
@@ -97,15 +107,14 @@
         border-radius: 0.8em;
         transition: max-height 0.25s;
       }
-      &.active{
-
+      &.active {
         > li {
           max-height: 32em;
           transition: max-height 0.5s ease-in;
         }
       }
     }
-    a{
+    a {
       &,
       &:visited {
         display: block;
@@ -128,7 +137,7 @@
         background-color: $white;
       }
     }
-    .active > a {
+    .active> a {
       color: $hilight;
       background-color: $white;
     }
