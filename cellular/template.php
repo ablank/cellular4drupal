@@ -1739,7 +1739,7 @@ function cellular_http_headers() {
  * Set cookie for site, used to load additional resources if needed.
  */
 function cellular_cookies() {
-  if (!empty(theme_get_setting('cookie_time'))) {
+  if (theme_get_setting('cookie_time') == TRUE) {
     $cookie = variable_get('site_name', "Just another Drupal Site");
     $cookie = preg_replace("/[ \d]+/", '', strtolower($cookie)) . '98';
 
