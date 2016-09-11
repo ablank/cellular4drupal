@@ -5,7 +5,8 @@ default:
     - 'autoprefixer'
     - 'px_to_rem'
     - 'jshint:js'
-    - 'uglify:build'
+    - 'copy'
+    #- 'uglify:build'
     - 'svg2png'
     - 'imagemin'
 dev:

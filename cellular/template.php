@@ -1,15 +1,13 @@
 <?php
 /**
-    * @file
-    * Cellular Base Theme for Drupal 7.
-    *
-    * @author Adam Blankenship
-    * 
-    * @see http://live-cellular.gotpantheon.com
-    * @see https://github.com/ablank/cellular
-    */
-
-
+ * @file
+ * Cellular Base Theme for Drupal 7.
+ *
+ * @author Adam Blankenship
+ *
+ * @see http://live-cellular.gotpantheon.com
+ * @see https://github.com/ablank/cellular
+ */
 /*
  * @see file: src/preprocess/_init.inc
  * Initialize constants & global variables.
@@ -174,8 +172,6 @@ function cellular_proccess_asset(&$asset, $cellular = NULL) {
     $asset['type'] = isset($asset['cdn']) ? 'external' : 'file';
   }
 }
-
-
 /*
  * @see file: src/preprocess/fn.css.inc
  * Cellular stylesheet functions.
@@ -442,8 +438,6 @@ function cellular_critical_css($vars) {
     drupal_add_css(file_get_contents(CURRENT_THEME_PATH . '/css/' . $critical_file), $critical_opts);
   }
 }
-
-
 /*
  * @see file: src/preprocess/fn.form.inc
  * Cellular form utility functions.
@@ -517,54 +511,52 @@ function cellular_xinput($element, $type) {
 
   return "<input" . drupal_attributes($attributes) . " />";
 }
-
-
 /*
  * @see file: src/preprocess/fn.form_validate.inc
  * Cellular form validation.
-function cellular_form_validate($form, &$form_state) {
- // dpm($form);
-}
+  function cellular_form_validate($form, &$form_state) {
+  // dpm($form);
+  }
  */
 
 /*
  *
-function webform_client_form_validate($form, &$form_state) {
+  function webform_client_form_validate($form, &$form_state) {
   $node = node_load($form_state['values']['details']['nid']);
   $finished = $form_state['values']['details']['finished'];
 
   // Check that the submissions have not exceeded the total submission limit.
   if ($node->webform['total_submit_limit'] != -1) {
-    module_load_include('inc', 'webform', 'includes/webform.submissions');
-    // Check if the total number of entries was reached before the user submitted
-    // the form.
-    if (!$finished && $total_limit_exceeded = _webform_submission_total_limit_check($node)) {
-      // Show the user the limit has exceeded.
-      theme('webform_view_messages', array('node' => $node, 'teaser' => 0, 'page' => 1, 'submission_count' => 0, 'total_limit_exceeded' => $total_limit_exceeded, 'allowed_roles' => array_keys(user_roles()), 'closed' => FALSE, 'cached' => FALSE));
-      form_set_error('', NULL);
-      return;
-    }
+  module_load_include('inc', 'webform', 'includes/webform.submissions');
+  // Check if the total number of entries was reached before the user submitted
+  // the form.
+  if (!$finished && $total_limit_exceeded = _webform_submission_total_limit_check($node)) {
+  // Show the user the limit has exceeded.
+  theme('webform_view_messages', array('node' => $node, 'teaser' => 0, 'page' => 1, 'submission_count' => 0, 'total_limit_exceeded' => $total_limit_exceeded, 'allowed_roles' => array_keys(user_roles()), 'closed' => FALSE, 'cached' => FALSE));
+  form_set_error('', NULL);
+  return;
+  }
   }
 
   // Check that the user has not exceeded the submission limit.
   // This usually will only apply to anonymous users when the page cache is
   // enabled, because they may submit the form even if they do not have access.
   if ($node->webform['submit_limit'] != -1) { // -1: Submissions are never throttled.
-    module_load_include('inc', 'webform', 'includes/webform.submissions');
+  module_load_include('inc', 'webform', 'includes/webform.submissions');
 
-    if (!$finished && $user_limit_exceeded = _webform_submission_user_limit_check($node)) {
-      // Assume that webform_view_messages will print out the necessary message,
-      // then stop the processing of the form with an empty form error.
-      theme('webform_view_messages', array('node' => $node, 'teaser' => 0, 'page' => 1, 'submission_count' => 0, 'user_limit_exceeded' => $user_limit_exceeded, 'allowed_roles' => array_keys(user_roles()), 'closed' => FALSE, 'cached' => FALSE));
-      form_set_error('', NULL);
-      return;
-    }
+  if (!$finished && $user_limit_exceeded = _webform_submission_user_limit_check($node)) {
+  // Assume that webform_view_messages will print out the necessary message,
+  // then stop the processing of the form with an empty form error.
+  theme('webform_view_messages', array('node' => $node, 'teaser' => 0, 'page' => 1, 'submission_count' => 0, 'user_limit_exceeded' => $user_limit_exceeded, 'allowed_roles' => array_keys(user_roles()), 'closed' => FALSE, 'cached' => FALSE));
+  form_set_error('', NULL);
+  return;
+  }
   }
 
   // Run all #element_validate and #required checks. These are skipped initially
   // by setting #validated = TRUE on all components when they are added.
   _webform_client_form_validate($form, $form_state);
-}
+  }
 
  */
 
@@ -741,8 +733,6 @@ function cellular_js_override(&$javascript, $script, $cellular = FALSE) {
     empty($script['version']) ? NULL : $javascript[$ojs]['version'] = $script['version'];
   }
 }
-
-
 /*
  * @see file: src/preprocess/fn.menu.inc
  * Cellular menu functions.
@@ -767,17 +757,16 @@ function cellular_main_menu(&$vars) {
 }
 /**
  * Implements links__system_main_menu.
-function cellular_links__system_main_menu($vars) {
+  function cellular_links__system_main_menu($vars) {
   $output = "<ul id=\"nav\">\n";
   foreach ($vars['links'] as $key => $link) {
-    $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
+  $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
   }
   $output .= "</ul>\n";
 
   return $output;
-}
-*/
-
+  }
+ */
 /*
  * @see file: src/preprocess/fn.preprocess.inc
  * Cellular functions to set content attributes.
@@ -858,8 +847,6 @@ function cellular_error_page(&$vars) {
       break;
   }
 }
-
-
 /*
  * @see file: src/preprocess/jquery.inc
  * Functions for updating jQuery & jQuery.ui.
@@ -1109,8 +1096,6 @@ function cellular_jqueryui_update_css(&$css) {
     }
   }
 }
-
-
 /*
  * @see file: src/preprocess/plugin_js.inc
  * Functions to add javascript plugins.
@@ -1304,8 +1289,6 @@ function cellular_plugins_js() {
 
   return $js_plugins;
 }
-
-
 /*
  * @see file: src/preprocess/plugin_css.inc
  * Functions to add javascript plugins.
@@ -1339,8 +1322,6 @@ function cellular_plugins_css() {
 
   return $plugin_css;
 }
-
-
 /*
  * @see file: src/preprocess/alter.inc
  * Alter misc. hooks for templates.
@@ -1443,8 +1424,6 @@ function cellular_page_alter(&$vars) {
 
    */
 }
-
-
 /*
  * @see file: src/preprocess/alter_css.inc
  * Add/Update/Delete stylesheets.
@@ -1464,8 +1443,6 @@ function cellular_css_alter(&$css) {
 
   //dpm($css);
 }
-
-
 /*
  * @see file: src/preprocess/alter_js.inc
  * Add/Update/Delete javascript.
@@ -1506,8 +1483,6 @@ function cellular_js_alter(&$javascript) {
 
   //dpm($javascript);
 }
-
-
 /*
  * @see file: src/preprocess/alter_form.inc
  * Alter forms.
@@ -1613,8 +1588,6 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       break;
   }
 }
-
-
 /*
  * @see file: src/preprocess/preprocess_html.inc
  * HTML preprocess functions.
@@ -1954,8 +1927,6 @@ function cellular_metatags(&$vars) {
 
   cellular_build_head_tags($meta_tags);
 }
-
-
 /*
  * @see file: src/preprocess/preprocess_node.inc
  * Node preprocess functions.
@@ -1995,8 +1966,6 @@ function cellular_preprocess_node(&$vars) {
   }
   /**/
 }
-
-
 /*
  * @see file: src/preprocess/preprocess_page.inc
  * Template page preprocess functions.
@@ -2071,8 +2040,6 @@ function cellular_preprocess_maintenance_page(&$vars) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
 }
-
-
 /*
  * @see file: src/preprocess/preprocess_block.inc
  * Block preprocess functions.
@@ -2093,8 +2060,6 @@ function cellular_preprocess_block(&$vars) {
       break;
   }
 }
-
-
 /*
  * @see file: src/preprocess/preprocess_comments.inc
  *  Cellular comment preprocess functions.
@@ -2164,8 +2129,6 @@ function cellular_preprocess_comment(&$vars) {
 function cellular_preprocess_forum_reply(&$vars) {
 
 }
-
-
 /*
  * @see file: src/preprocess/theme.inc
  * Set element markup.
@@ -2359,8 +2322,6 @@ function cellular_feed_icon(&$vars) {
 
   return $icon;
 }
-
-
 /*
  * @see file: src/preprocess/theme_form.inc
  * Theme markup of form elements.
@@ -2519,21 +2480,21 @@ function cellular_textarea(&$vars) {
 }
 /**
  * Implements theme_webform_element().
-function cellular_webform_element($vars) {
+  function cellular_webform_element($vars) {
   // Ensure defaults.
   $vars['element'] += array(
-    '#title_display' => 'before',
+  '#title_display' => 'before',
   );
 
   $element = $vars['element'];
 
   // All elements using this for display only are given the "display" type.
   if (isset($element['#format']) && $element['#format'] == 'html') {
-    $type = 'display';
+  $type = 'display';
   }
   else {
-    $type = (isset($element['#type']) && !in_array($element['#type'], array('markup', 'textfield', 'webform_email', 'webform_number')))
-      ? $element['#type'] : $element['#webform_component']['type'];
+  $type = (isset($element['#type']) && !in_array($element['#type'], array('markup', 'textfield', 'webform_email', 'webform_number')))
+  ? $element['#type'] : $element['#webform_component']['type'];
   }
 
   // Convert the parents array into a string, excluding the "submitted" wrapper.
@@ -2543,65 +2504,64 @@ function cellular_webform_element($vars) {
   // Get description
   $description = $element['#description'];
   if (!empty($description)) {
-    if (theme_get_setting('ui_tooltips') == 1) {
-      $element ['#attributes']['data-tooltip'] = $description;
-      //$element['#description'] = NULL;
-      //unset($element['#description']);
-    }
-    else {
-      $description = "<div class=\"description\">$description</div>\n";
-    }
+  if (theme_get_setting('ui_tooltips') == 1) {
+  $element ['#attributes']['data-tooltip'] = $description;
+  //$element['#description'] = NULL;
+  //unset($element['#description']);
+  }
+  else {
+  $description = "<div class=\"description\">$description</div>\n";
+  }
   }
 
   $wrapper_classes = array();
   if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
-    $wrapper_classes[] = 'container-inline';
+  $wrapper_classes[] = 'container-inline';
   }
   $output = '<div class="' . implode(' ', $wrapper_classes) . '" id="webform-component-' . $parents . '">' . "\n";
 
   // If #title_display is none, set it to invisible instead - none only used if
   // we have no title at all to use.
   if ($element['#title_display'] == 'none') {
-    $vars['element']['#title_display'] = 'invisible';
-    $element['#title_display'] = 'invisible';
+  $vars['element']['#title_display'] = 'invisible';
+  $element['#title_display'] = 'invisible';
   }
   // If #title is not set, we don't display any label or required marker.
   if (!isset($element['#title'])) {
-    $element['#title_display'] = 'none';
+  $element['#title_display'] = 'none';
   }
   $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . _webform_filter_xss($element['#field_prefix']) . '</span> '
-    : '';
+  : '';
   $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . _webform_filter_xss($element['#field_suffix']) . '</span>'
-    : '';
+  : '';
 
   switch ($element['#title_display']) {
-    case 'inline':
-    case 'before':
-    case 'invisible':
-      $output .= ' ' . theme('form_element_label', $vars);
-      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-      break;
+  case 'inline':
+  case 'before':
+  case 'invisible':
+  $output .= ' ' . theme('form_element_label', $vars);
+  $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+  break;
 
-    case 'after':
-      $output .= ' ' . $prefix . $element['#children'] . $suffix;
-      $output .= ' ' . theme('form_element_label', $vars) . "\n";
-      break;
+  case 'after':
+  $output .= ' ' . $prefix . $element['#children'] . $suffix;
+  $output .= ' ' . theme('form_element_label', $vars) . "\n";
+  break;
 
-    case 'none':
-    case 'attribute':
-      // Output no label and no required marker, only the children.
-      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-      break;
+  case 'none':
+  case 'attribute':
+  // Output no label and no required marker, only the children.
+  $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+  break;
   }
 
   $output .= $description;
   $output .= "</div>\n";
   //dpm($element);
   return $output;
-}
+  }
 
  */
-
 /*
  * @see file: src/preprocess/theme_pager.inc
  * Generate & theme drupal pager.
@@ -2752,8 +2712,6 @@ function cellular_pager($vars) {
     return $output;
   }
 }
-
-
 /*
  * @see file: src/preprocess/panels.inc
  * Custom Panels functions.
@@ -2770,7 +2728,7 @@ function cellular_panels_default_style_render_region($vars) {
  * Implements template_preprocess_panels_pane().
  *
  * @param array $vars
-function cellular_preprocess_panels_pane(&$vars) {
+  function cellular_preprocess_panels_pane(&$vars) {
   $content = &$vars['content'];
 
   $vars['contextual_links'] = array();
@@ -2778,46 +2736,46 @@ function cellular_preprocess_panels_pane(&$vars) {
   $vars['admin_links'] = '';
 
   if (module_exists('contextual') && user_access('access contextual links')) {
-    $links = array();
-    // These are specified by the content.
-    if (!empty($content->admin_links)) {
-      $links += $content->admin_links;
-    }
+  $links = array();
+  // These are specified by the content.
+  if (!empty($content->admin_links)) {
+  $links += $content->admin_links;
+  }
 
-    // Take any that may have been in the render array we were given and
-    // move them up so they appear outside the pane properly.
-    if (is_array($content->content) && isset($content->content['#contextual_links'])) {
-      $element = array(
-        '#type' => 'contextual_links',
-        '#contextual_links' => $content->content['#contextual_links'],
-      );
-      unset($content->content['#contextual_links']);
+  // Take any that may have been in the render array we were given and
+  // move them up so they appear outside the pane properly.
+  if (is_array($content->content) && isset($content->content['#contextual_links'])) {
+  $element = array(
+  '#type' => 'contextual_links',
+  '#contextual_links' => $content->content['#contextual_links'],
+  );
+  unset($content->content['#contextual_links']);
 
-      // Add content to $element array
-      if (is_array($content->content)) {
-        $element['#element'] = $content->content;
-      }
+  // Add content to $element array
+  if (is_array($content->content)) {
+  $element['#element'] = $content->content;
+  }
 
-      $element = contextual_pre_render_links($element);
-      if(!empty($element['#links'])) {
-        $links += $element['#links'];
-      }
-    }
+  $element = contextual_pre_render_links($element);
+  if(!empty($element['#links'])) {
+  $links += $element['#links'];
+  }
+  }
 
-    if ($links) {
-      $build = array(
-        '#prefix' => '<div class="contextual-links-wrapper">',
-        '#suffix' => '</div>',
-        '#theme' => 'links__contextual',
-        '#links' => $links,
-        '#attributes' => array('class' => array('contextual-links')),
-        '#attached' => array(
-          'library' => array(array('contextual', 'contextual-links')),
-        ),
-      );
-      $vars['classes_array'][] = 'contextual-links-region';
-      $vars['admin_links'] = drupal_render($build);
-    }
+  if ($links) {
+  $build = array(
+  '#prefix' => '<div class="contextual-links-wrapper">',
+  '#suffix' => '</div>',
+  '#theme' => 'links__contextual',
+  '#links' => $links,
+  '#attributes' => array('class' => array('contextual-links')),
+  '#attached' => array(
+  'library' => array(array('contextual', 'contextual-links')),
+  ),
+  );
+  $vars['classes_array'][] = 'contextual-links-region';
+  $vars['admin_links'] = drupal_render($build);
+  }
   }
 
   // basic classes
@@ -2832,17 +2790,17 @@ function cellular_preprocess_panels_pane(&$vars) {
   // Sometimes type and subtype are the same. Avoid redundant classes.
   $vars['classes_array'][] = $type_class;
   if ($type_class != $subtype_class) {
-    $vars['classes_array'][] = $subtype_class;
+  $vars['classes_array'][] = $subtype_class;
   }
 
   // Add id and custom class if sent in.
   if (!empty($content->content)) {
-    if (!empty($content->css_id)) {
-      $vars['id'] = ' id="' . $content->css_id . '"';
-    }
-    if (!empty($content->css_class)) {
-      $vars['classes_array'][] = $content->css_class;
-    }
+  if (!empty($content->css_id)) {
+  $vars['id'] = ' id="' . $content->css_id . '"';
+  }
+  if (!empty($content->css_class)) {
+  $vars['classes_array'][] = $content->css_class;
+  }
   }
 
   // Set up some placeholders for constructing template file names.
@@ -2865,16 +2823,15 @@ function cellular_preprocess_panels_pane(&$vars) {
   $vars['links'] = !empty($content->links) ? theme('links', array('links' => $content->links)) : '';
   $vars['more'] = '';
   if (!empty($content->more)) {
-    if (empty($content->more['title'])) {
-      $content->more['title'] = t('More');
-    }
-    $vars['more'] = l($content->more['title'], $content->more['href'], $content->more);
+  if (empty($content->more['title'])) {
+  $content->more['title'] = t('More');
+  }
+  $vars['more'] = l($content->more['title'], $content->more['href'], $content->more);
   }
 
   $vars['content'] = !empty($content->content) ? $content->content : '';
-}
+  }
  */
-
 /*
  * @see file: src/preprocess/social.inc
  * Generate social media links.
@@ -3067,8 +3024,6 @@ function cellular_social_media_share() {
 
   return $links;
 }
-
-
 /*
  * @see file: src/preprocess/views.inc
  * Preprocess functions for Views.
@@ -3089,8 +3044,6 @@ function cellular_preprocess_views_view(&$vars) {
     }
   }
 }
-
-
 /*
  * @see file: src/preprocess/process.inc
  * Cellular process functions.

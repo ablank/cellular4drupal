@@ -7,10 +7,10 @@ module.exports = {
   build: {
     options: {
       compress: false,
-      //beautify: true,
+      beautify: false,
       preserveComments: true,
-      // screwIE8: true
-      wrap: true
+      screwIE8: false,
+      wrap: false
     },
     files: [{
         expand: true,

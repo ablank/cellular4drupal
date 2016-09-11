@@ -1,6 +1,43 @@
-(function(a,b){/**
+/**
  * @file
  * Custom javascript for use in your theme.
  */
-(function(a){Drupal.behaviors.cellular_user={attach:function(b,c){var d='input[type="checkbox"], input[type="radio"]';/* Check for checkboxes/radios without labels & add if necessary */
-jQuery(d).once(d,function(){var b=a(this);if(b.attr("type")==="checkbox"||"radio"){if(b.next("label").length<1&&typeof b.attr("id")!=="undefined"){var c=a('<label for="'+b.attr("id")+'" />').css({padding:"0.15em","vertical-align":"top"});b.after(c)}}var d=a('label[for="repeat-settings-fieldset"]'),e=d.prev().find("label");d.prev().nextAll().wrapAll('<div class="daterepeat" />');a(".daterepeat").hide();e.on("click",function(){a(".daterepeat").slideToggle()})})}}})(jQuery);b["true"]=a})({},function(){return this}());
+
+(function ($) {
+  Drupal.behaviors.cellular_user = {
+    attach: function (context, settings) {
+      var maybeEmptyInput = 'input[type="checkbox"], input[type="radio"]';
+      /* Check for checkboxes/radios without labels & add if necessary */
+      jQuery(maybeEmptyInput).once(maybeEmptyInput, function () {
+        var $t = $(this);
+        if ($t.attr('type') === 'checkbox' || 'radio') {
+          if ($t.next('label').length < 1 && typeof ($t.attr('id')) !== 'undefined') {
+            var $box = $('<label for="' + $t.attr('id') + '" />').css({
+              "padding": "0.15em",
+              "vertical-align": "top"
+            });
+            $t.after($box);
+          }
+        }
+
+        var daterepeat = $('label[for="repeat-settings-fieldset"]'),
+          daterepeat_trigger = daterepeat.prev().find('label');
+
+        daterepeat.prev().nextAll().wrapAll('<div class="daterepeat" />');
+
+        $('.daterepeat').hide();
+
+        daterepeat_trigger.on('click', function () {
+          $('.daterepeat').slideToggle();
+        });
+      });
+
+      /*
+       'container-inline-date'
+       $('.date--fieldset').find();
+       */
+
+      /* End Drupal.behaviors.cellular_user */
+    }
+  };
+})(jQuery);
