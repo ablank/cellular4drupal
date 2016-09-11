@@ -12,7 +12,7 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['theme_hook_suggestions'][] = 'comment_wrapper';
   $vars['theme_hook_suggestions'][] = 'comment_wrapper__' . $vars['node']->type;
   $vars['classes_array'][] = 'clearfix';
-  
+
   $title = &$vars['content']['comment_form']['#title'];
 
   switch ($vars['node']->type) {

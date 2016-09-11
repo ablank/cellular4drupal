@@ -101,43 +101,47 @@ body div#toolbar.toolbar {
   padding: 0;
 }
 /* line 66, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu a, #admin-menu a:visited {
+#admin-menu a,
+#admin-menu a:visited {
   display: block;
-  color: #F5F5F5;
+  color: #f5f5f5;
   margin: 0;
   padding: 0.2em;
+  background-color: #3b3b3b;
 }
-/* line 73, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu a:active, #admin-menu a:hover, #admin-menu a:focus {
+/* line 74, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu a:active,
+#admin-menu a:hover,
+#admin-menu a:focus {
   text-decoration: none;
-  color: #F5F5F5;
-  background-color: #555;
+  color: #f5f5f5;
+  background-color: #111;
 }
 
-/* line 83, ../sass/drupal/user/_admin_menu.scss */
+/* line 84, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-wrapper {
   padding: 0 1em;
 }
 
-/* line 91, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu-menu > li,
-#admin-menu-icon > li,
-#admin-menu-account > li {
+/* line 92, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu li:first-child,
+#admin-menu-icon li:first-child,
+#admin-menu-account li:first-child {
   float: left;
   margin: 0 0.4em;
   padding: 0;
 }
-/* line 95, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu-menu > li.expandable,
-#admin-menu-icon > li.expandable,
-#admin-menu-account > li.expandable {
+/* line 96, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu li:first-child.expandable,
+#admin-menu-icon li:first-child.expandable,
+#admin-menu-account li:first-child.expandable {
   padding-right: 0.5em;
   border-bottom: #999 1px solid;
 }
-/* line 98, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu-menu > li.expandable:after,
-#admin-menu-icon > li.expandable:after,
-#admin-menu-account > li.expandable:after {
+/* line 99, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu li:first-child.expandable:after,
+#admin-menu-icon li:first-child.expandable:after,
+#admin-menu-account li:first-child.expandable:after {
   content: "";
   position: absolute;
   width: 0;
@@ -149,6 +153,29 @@ body div#toolbar.toolbar {
   right: 0;
 }
 /* line 106, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu li:first-child a,
+#admin-menu-menu li:first-child a:visited,
+#admin-menu-icon li:first-child a,
+#admin-menu-icon li:first-child a:visited,
+#admin-menu-account li:first-child a,
+#admin-menu-account li:first-child a:visited {
+  background-color: transparent;
+}
+/* line 110, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu li:first-child a:active,
+#admin-menu-menu li:first-child a:hover,
+#admin-menu-menu li:first-child a:focus,
+#admin-menu-icon li:first-child a:active,
+#admin-menu-icon li:first-child a:hover,
+#admin-menu-icon li:first-child a:focus,
+#admin-menu-account li:first-child a:active,
+#admin-menu-account li:first-child a:hover,
+#admin-menu-account li:first-child a:focus {
+  text-decoration: none;
+  color: #f5f5f5;
+  background-color: #1e1e1e;
+}
+/* line 120, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-menu .dropdown,
 #admin-menu-icon .dropdown,
 #admin-menu-account .dropdown {
@@ -160,13 +187,13 @@ body div#toolbar.toolbar {
   background-color: #555;
   border: #999 0.1em solid;
 }
-/* line 114, ../sass/drupal/user/_admin_menu.scss */
+/* line 128, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-menu .dropdown.active,
 #admin-menu-icon .dropdown.active,
 #admin-menu-account .dropdown.active {
   left: initial;
 }
-/* line 117, ../sass/drupal/user/_admin_menu.scss */
+/* line 131, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-menu .dropdown li,
 #admin-menu-icon .dropdown li,
 #admin-menu-account .dropdown li {
@@ -175,13 +202,31 @@ body div#toolbar.toolbar {
   min-width: 10em;
   line-height: 1.4em;
 }
-/* line 122, ../sass/drupal/user/_admin_menu.scss */
+/* line 136, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-menu .dropdown li.expandable,
 #admin-menu-icon .dropdown li.expandable,
 #admin-menu-account .dropdown li.expandable {
   line-height: 1.4em;
 }
-/* line 124, ../sass/drupal/user/_admin_menu.scss */
+/* line 139, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown li.expandable > li > a,
+#admin-menu-menu .dropdown li.expandable > li > a:visited,
+#admin-menu-icon .dropdown li.expandable > li > a,
+#admin-menu-icon .dropdown li.expandable > li > a:visited,
+#admin-menu-account .dropdown li.expandable > li > a,
+#admin-menu-account .dropdown li.expandable > li > a:visited {
+  background-color: #555;
+}
+/* line 143, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown li.expandable > li > a:focus,
+#admin-menu-menu .dropdown li.expandable > li > a:hover,
+#admin-menu-icon .dropdown li.expandable > li > a:focus,
+#admin-menu-icon .dropdown li.expandable > li > a:hover,
+#admin-menu-account .dropdown li.expandable > li > a:focus,
+#admin-menu-account .dropdown li.expandable > li > a:hover {
+  background-color: #3b3b3b;
+}
+/* line 148, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-menu .dropdown li.expandable:after,
 #admin-menu-icon .dropdown li.expandable:after,
 #admin-menu-account .dropdown li.expandable:after {
@@ -195,27 +240,41 @@ body div#toolbar.toolbar {
   top: 0.7em;
   right: 0.2em;
 }
-/* line 131, ../sass/drupal/user/_admin_menu.scss */
+/* line 155, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-menu .dropdown li .dropdown.active,
 #admin-menu-icon .dropdown li .dropdown.active,
 #admin-menu-account .dropdown li .dropdown.active {
   top: 0;
   left: 100%;
 }
-/* line 137, ../sass/drupal/user/_admin_menu.scss */
-#admin-menu-menu .dropdown a, #admin-menu-menu .dropdown a:visited,
+/* line 161, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown a,
+#admin-menu-menu .dropdown a:visited,
 #admin-menu-icon .dropdown a,
 #admin-menu-icon .dropdown a:visited,
 #admin-menu-account .dropdown a,
 #admin-menu-account .dropdown a:visited {
   padding: 0.3em 1em 0.3em 0.2em;
+  background-color: #555;
+}
+/* line 166, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown a:active,
+#admin-menu-menu .dropdown a:hover,
+#admin-menu-menu .dropdown a:focus,
+#admin-menu-icon .dropdown a:active,
+#admin-menu-icon .dropdown a:hover,
+#admin-menu-icon .dropdown a:focus,
+#admin-menu-account .dropdown a:active,
+#admin-menu-account .dropdown a:hover,
+#admin-menu-account .dropdown a:focus {
+  background-color: #111;
 }
 
-/* line 148, ../sass/drupal/user/_admin_menu.scss */
+/* line 175, ../sass/drupal/user/_admin_menu.scss */
 .admin-menu-icon {
   padding-right: 0.6em;
 }
-/* line 150, ../sass/drupal/user/_admin_menu.scss */
+/* line 177, ../sass/drupal/user/_admin_menu.scss */
 .admin-menu-icon > a {
   text-indent: -999em;
   width: 2em;
@@ -226,27 +285,27 @@ body div#toolbar.toolbar {
   border: #2b2b2b;
   border-radius: 50%;
 }
-/* line 160, ../sass/drupal/user/_admin_menu.scss */
+/* line 187, ../sass/drupal/user/_admin_menu.scss */
 .admin-menu-icon > .dropdown {
   top: 1.8em;
 }
 
-/* line 165, ../sass/drupal/user/_admin_menu.scss */
+/* line 192, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-account {
   float: right;
 }
-/* line 168, ../sass/drupal/user/_admin_menu.scss */
+/* line 194, ../sass/drupal/user/_admin_menu.scss */
 #admin-menu-account .dropdown.active {
   right: 0;
 }
 
 @media print {
-  /* line 175, ../sass/drupal/user/_admin_menu.scss */
+  /* line 201, ../sass/drupal/user/_admin_menu.scss */
   body.admin-menu {
     margin-top: 0 !important;
   }
 
-  /* line 178, ../sass/drupal/user/_admin_menu.scss */
+  /* line 204, ../sass/drupal/user/_admin_menu.scss */
   #admin-menu {
     display: none !important;
   }
@@ -267,13 +326,13 @@ body div#toolbar.toolbar {
 .user-links a:visited {
   margin: 0 0.2em;
   padding: 0.4em;
-  color: #FEFEFE;
+  color: #fefefe;
   text-decoration: none;
 }
 /* line 18, ../sass/drupal/user/_user.scss */
 .user-links a:active,
 .user-links a:hover,
 .user-links a:focus {
-  color: #FEFEFE;
+  color: #fefefe;
   text-decoration: none;
 }

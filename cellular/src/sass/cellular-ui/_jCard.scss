@@ -45,8 +45,8 @@
   }
   &.active,
   &:active,
-    &:focus,
-    &:hover {
+  &:focus,
+  &:hover {
     color: $active_color;
     text-decoration: none;
     border: 1px solid $light_grey;

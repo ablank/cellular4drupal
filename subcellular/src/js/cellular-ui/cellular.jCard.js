@@ -12,7 +12,7 @@ cellular.jCard = function (opts) {
       var href = a1.attr('href');
 
       if (href !== undefined) {
-        var wrapperlink = jQuery('<a href="' + href + '" />').classify([
+        var wrapperlink = jQuery('<a href="' + href + '" tabindex="0" />').classify([
           o.cclass + '-wrap',
           a1.attr('class') ? a1.attr('class') : null
         ]);

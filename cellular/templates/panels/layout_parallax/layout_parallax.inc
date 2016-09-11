@@ -3,7 +3,6 @@
  * @file
  * Vars & regions for a parallax layout.
  */
-
 $plugin = array(
   'category' => t('Cellular | Layouts'),
   'title' => t('Parallax'),

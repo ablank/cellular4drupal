@@ -6,7 +6,7 @@
 // CellularUI functions.
 if(typeof d.ui!=="undefined"){a(".jAccordion").jAccordion({duration:500,// Duration of transition.
 easing:"swing",// Type of easing.
-single:false});a(".jCard").jCard();a("form").jFormal();a("#main-menu").jMmenu({animateclass:"slide-down"});a(".jScrolli").jScrolli({transition:{background:"img:first",// Selector for applying background image
+single:false});a(".jCard").jCard();a("form").jFormal();a("#main-menu").jMmenu({animateclass:"slide-down"});a(".jModal").jModal({});a(".jScrolli").jScrolli({transition:{background:"img:first",// Selector for applying background image
 pause:8},autodim:true,delay:1.4});a(".jSocial.share").jSocial({share:d.ui.jSocial_share});a(".jSocial.follow").jSocial({follow:d.ui.jSocial_follow});a(".jTabs").jTabs({active:0,// Array index of initially active content.
 orient:"horizontal"});a(".jTabs.vertical").jTabs({active:0,// Array index of initially active content.
 orient:"vertical"})}

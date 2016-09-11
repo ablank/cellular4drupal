@@ -2,18 +2,19 @@
  * jMmenu: Hamburger menu for mobile devices
  */
 
-cellular.jMmenu = function(opts) {
+cellular.jMmenu = function (opts) {
   var o = jQuery.extend({
-      breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
-      parent: jQuery('body'), // Parent element used to attach menu
-      cclass: "jMmenu", // Menu class to test
-      triggertext: "Menu",
-      animateclass: "slide-right", // Type of animation
-      throttle: 101 // Time in ms to throttle window resize event
-    }, opts),
+    breakpoint: cellular.opts.breakpoint, // 'window_mobile'|| 'window_narrow' || 'window_default'
+    parent: jQuery('body'), // Parent element used to attach menu
+    cclass: "jMmenu", // Menu class to test
+    triggertext: "Menu",
+    animateclass: "slide-right", // Type of animation
+    throttle: 101 // Time in ms to throttle window resize event
+  }, opts),
     fn = {};
 
-  fn.mediaQuery = cellular.debounce(function($obj, state) {
+  fn.mediaQuery = cellular.debounce(function ($obj, state) {
+    console.log(cellular.opts.breakpoint);
     if (o.breakpoint === cellular.state.breakpoint) {
       var $menu = $obj.children([0]),
         label = null;
@@ -23,7 +24,8 @@ cellular.jMmenu = function(opts) {
       if (o.triggertext) {
         label = '<span class="' + o.cclass + '-triggertext">' + o.triggertext + '</span>';
       }
-      $obj.addClass(o.cclass + '-trigger')
+      $obj.prop("tabindex", "0")
+        .addClass(o.cclass + '-trigger')
         .append(label);
 
       $menu.addClass(o.cclass + '-menu')
@@ -35,7 +37,7 @@ cellular.jMmenu = function(opts) {
         o.cclass + '-active ' +
         o.cclass + '-inactive ' +
         o.animateclass
-      );
+        );
       $obj.attr('aria-label', "Menu")
         .removeClass(o.cclass + '-trigger');
       jQuery('.' + o.cclass + '-menu').removeClass(o.cclass + '-menu')
@@ -45,7 +47,7 @@ cellular.jMmenu = function(opts) {
     fn.menutrigger($obj, state);
   }, o.throttle);
 
-  fn.menutrigger = function($obj, state) {
+  fn.menutrigger = function ($obj, state) {
     var classes = [
       o.cclass + '-active',
       o.cclass + '-inactive'
@@ -68,10 +70,11 @@ cellular.jMmenu = function(opts) {
     }
   };
 
-  fn.style = function($obj) {
+  fn.style = function ($obj) {
     var menu = $obj.find('>ul'),
       nested = menu.find('ul');
 
+    // Add classes for parent/child.
     if (nested.length > 0) {
       var child = menu.find('li ul');
 
@@ -83,28 +86,36 @@ cellular.jMmenu = function(opts) {
     }
   };
 
-  fn.listen = function($obj, state) {
+  fn.listen = function ($obj, state) {
 
-    jQuery(window).on('resize', function() {
+    jQuery(window).on('resize', function () {
       fn.mediaQuery($obj, state);
     });
 
-    $obj.on('click', function() {
+    $obj.on('click', function () {
       if (state.mmenu) {
         state.active = state.active ? false : true;
         fn.menutrigger($obj, state);
       }
     });
 
-    jQuery(document).on('keyup', function(e) {
+    jQuery(document).on('keyup', function (e) {
+      // ENTER opens menu.
+       if (jQuery('.' + o.cclass + '-trigger').is(":focus") && e.which === 13) {
+       e.preventDefault();
+       state.active = state.active === false ? true : false;
+       fn.menutrigger($obj, state);
+       }
+      // ESC closes menu.
       if (state.active === true && e.which === 27) {
         e.preventDefault();
         state.active = false;
         fn.menutrigger($obj, state);
       }
+
     });
 
-    jQuery('.parent > a').on('click', function(e) {
+    jQuery('.parent > a').click(function (e) {
       if (state.mmenu) {
         var parent = jQuery(this).parent(),
           child = parent.children(':gt(0)');
@@ -115,7 +126,7 @@ cellular.jMmenu = function(opts) {
           if (child.hasClass('active')) {
             parent.removeClass('active');
             child.removeClass('active');
-          } 
+          }
           else {
             parent.addClass('active');
             child.addClass('active');
@@ -123,31 +134,9 @@ cellular.jMmenu = function(opts) {
         }
       }
     });
-
-    /*
-        jQuery('.' + o.cclass + ('-menu .parent a')).on('focus click', function(e) {
-          e.preventDefault();
-
-          var $t = jQuery(this),
-          parent = $t.parent();
-
-          if (parent.hasClass('active')) {
-            parent.removeClass('active')
-              .children(':gt(0)').removeClass('active');
-          } else {
-            parent.addClass('active')
-              .children(':gt(0)').addClass('active');
-          }
-        });
-
-        jQuery('.' + o.cclass + ('-menu .parent a')).on('blur', function(e) {
-          jQuery(this).parent().removeClass('active')
-            .children(':gt(0)').removeClass('active');
-        });
-        */
   };
 
-  fn.init = function() {
+  fn.init = function () {
     var $obj = jQuery(this),
       state = {
         active: false,

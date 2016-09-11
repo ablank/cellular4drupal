@@ -82,7 +82,7 @@ settings[mq_large]              = screen and (min-width: 1024px)
 ;----------// jQuery Update
 settings[jquery_update]         = 1
 settings[jquery_plugins_update] = 1
-settings[jquery_cdn]            = 1
+settings[jquery_cdn]            = 0
 settings[jquery_cdn_source]     = google
 settings[jquery_version]        = 1.12.4
 settings[jquery_migrate]        = 1

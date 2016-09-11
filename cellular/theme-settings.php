@@ -101,6 +101,12 @@ $form[0]['meta']['dev'] = array(
 '#default_value' => theme_get_setting('dev'),
 );
 */
+$form[0]['meta']['copyright'] = array(
+'#type' => 'textfield',
+'#title' => t('Copyright'),
+'#description' => t("The name of the person or organization to display indicating copyright ownership. Leave field empty to disable display."),
+'#default_value' => theme_get_setting('copyright'),
+);
 $form[0]['meta']['cookie_time'] = array(
 '#type' => 'textfield',
 '#title' => t('Cookie Expiration'),
@@ -198,12 +204,6 @@ $form[0]['markup_settings']['use_colorbox'] = array(
 '#title' => t('Use Colorbox for User Login/Register links.'),
 '#description' => t("Use Colorbox Node (<em>if available</em>) to display User Login/Register forms."),
 '#default_value' => theme_get_setting('use_colorbox'),
-);
-$form[0]['markup_settings']['copyright'] = array(
-'#type' => 'textfield',
-'#title' => t('Copyright'),
-'#description' => t("The name of the person or organization to display indicating copyright ownership. Leave field empty to disable display."),
-'#default_value' => theme_get_setting('copyright'),
 );
 $form[0]['markup_settings']['login'] = array(
 '#type' => 'fieldset',

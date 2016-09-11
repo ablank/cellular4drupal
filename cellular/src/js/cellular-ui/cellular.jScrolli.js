@@ -75,14 +75,19 @@ cellular.jScrolli = function (opts) {
     if (!state.paused) {
       var tclass = 'transition',
         li = $obj.find('.' + o.cclass + '-slide');
+      // Unset tabindexes
+      li.find('a').prop("tabindex", "-1");
+      // Get current slide.
       state.current = parseInt(index);
-      // Normalize state
+      // Normalize state.
       fn.normalize(state);
-      // Update classes on slides for css transition
+      // Update classes on slides for css transition.
       jQuery(li[state.prev]).activate('previous');
       jQuery(li[state.next]).activate('next');
-      jQuery(li[index]).activate();
-      // Listen for transition to complete & update classes
+      jQuery(li[index]).activate()
+        .find('a').prop("tabindex", "-1");
+
+      // Listen for transition to complete & update classes.
       $obj.parent().addClass(tclass)
         .on(cellular.transitionend(), function () {
           jQuery(this).removeClass(tclass);
@@ -338,13 +343,15 @@ cellular.jScrolli = function (opts) {
   fn.style = function ($obj, state) {
     var li = $obj.find('> li');
 
-    $obj.addClass(cellular.opts.cclass)
+    $obj.prop("tabindex", "0")
+      .addClass(cellular.opts.cclass)
       .wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />')
       .parent().css({
-        willChange: "contents"
-      });
+      willChange: "contents"
+    });
 
-    li.addClass(o.cclass + '-slide')
+    li.prop('tabindex', "-1")
+      .addClass(o.cclass + '-slide')
       .each(function () {
         var $t = jQuery(this);
         $t.children().wrapAll('<div class="' + o.cclass + '-slide-content cell" />');

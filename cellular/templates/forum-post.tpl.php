@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Theme implementation: Template for each forum post whether node or comment.
@@ -51,7 +50,7 @@
     <?php /* End of posted on div. */ ?>
 
     <?php if (!empty($in_reply_to)): ?>
-   	 <span class="forum-in-reply-to"><?php print $in_reply_to; ?></span>
+      <span class="forum-in-reply-to"><?php print $in_reply_to; ?></span>
     <?php endif; ?>
 
     <?php /* Add a note when a post is unpublished so it doesn't rely on theming. */ ?>
@@ -78,15 +77,15 @@
 
       <div class="forum-post-content">
         <?php
-          // @codingStandardsIgnoreStart
-          // We hide the comments and links now so that we can render them later.
-          hide($content['taxonomy_forums']);
-          hide($content['comments']);
-          hide($content['links']);
-          if (!$top_post)
-            hide($content['body']);
-          print render($content);
-          // @codingStandardsIgnoreEnd
+        // @codingStandardsIgnoreStart
+        // We hide the comments and links now so that we can render them later.
+        hide($content['taxonomy_forums']);
+        hide($content['comments']);
+        hide($content['links']);
+        if (!$top_post)
+          hide($content['body']);
+        print render($content);
+        // @codingStandardsIgnoreEnd
         ?>
       </div>
 

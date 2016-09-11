@@ -225,7 +225,7 @@ function cellular_jqueryui_update_css(&$css) {
         ),
       );
       // Remove default after collecting style info.
-     // unset($css[$default]);
+      // unset($css[$default]);
 
       if ($ui['theme'] === 'custom') {
         // Set path to local custom file if selected.

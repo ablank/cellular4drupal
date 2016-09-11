@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to present a picture configured for the
@@ -17,5 +16,5 @@
  */
 ?>
 <?php if ($user_picture): ?>
-    <?php print $user_picture; ?>
+  <?php print $user_picture; ?>
 <?php endif; ?>

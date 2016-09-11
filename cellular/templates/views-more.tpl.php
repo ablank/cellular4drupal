@@ -8,7 +8,6 @@
  * - $link_text: the text for the more link.
  * @ingroup views_templates
  */
-
 ?>
 
 <a href="<?php print $more_url ?>"

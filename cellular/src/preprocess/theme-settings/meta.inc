@@ -18,6 +18,13 @@ $form[0]['meta'] = array(
   );
  */
 
+$form[0]['meta']['copyright'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Copyright'),
+  '#description' => t("The name of the person or organization to display indicating copyright ownership. Leave field empty to disable display."),
+  '#default_value' => theme_get_setting('copyright'),
+);
+
 $form[0]['meta']['cookie_time'] = array(
   '#type' => 'textfield',
   '#title' => t('Cookie Expiration'),

@@ -23,6 +23,9 @@
           animateclass: "slide-down"
         });
 
+        $('.jModal').jModal({
+        });
+
         $('.jScrolli').jScrolli({
           transition: {
             background: 'img:first', // Selector for applying background image

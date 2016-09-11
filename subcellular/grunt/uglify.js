@@ -9,15 +9,15 @@ module.exports = {
       compress: false,
       //beautify: true,
       preserveComments: true,
-        // screwIE8: true
+      // screwIE8: true
       wrap: true
     },
     files: [{
-      expand: true,
-      cwd: 'src/js',
-      src: '*.js',
-      dest: 'js'
-    }]
+        expand: true,
+        cwd: 'src/js',
+        src: '*.js',
+        dest: 'js'
+      }]
   },
   dist: {
     options: {
@@ -46,10 +46,10 @@ module.exports = {
         // screwIE8: true
     },
     files: [{
-      expand: true,
-      cwd: 'src/js',
-      src: '*.js',
-      dest: 'js'
-    }]
+        expand: true,
+        cwd: 'src/js',
+        src: '*.js',
+        dest: 'js'
+      }]
   }
 };

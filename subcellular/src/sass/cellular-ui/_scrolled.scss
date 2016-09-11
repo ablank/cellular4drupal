@@ -7,16 +7,16 @@ $scroll_header: $header_height / 2;
   #header {
     height: $scroll_header;
     overflow: hidden;
-    transition: all 300ms;
+    transition: all 300ms ease;
 
     .logo {
       padding: 0;
       a {
-        width: $scroll_header;
+        width: $scroll_header; // You may need to weak width to fit your image.
         height: $scroll_header;
-        msrgin: 0;
-        padding: 0;
         background-size: $scroll_header;
+        //transform: scale(0.5, 0.5);
+        transition: all 500ms ease-out;
       }
     }
   }

@@ -65,7 +65,7 @@
   <?php print render($title_suffix); ?>
 
   <div class="post-info">
-      <?php print $submitted; ?>
+    <?php print $submitted; ?>
   </div>
 
   <div<?php print $content_attributes; ?>>

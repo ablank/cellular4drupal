@@ -1,37 +1,35 @@
 <?php
 /**
-    * @file
-    * Subcellular Starter Theme for Drupal 7.
-    *
-    * @author Adam Blankenship
-    * 
-    * @see http://live-cellular.gotpantheon.com
-    * @see https://github.com/ablank/cellular
-    */
-
-
+ * @file
+ * Subcellular Starter Theme for Drupal 7.
+ *
+ * @author Adam Blankenship
+ *
+ * @see http://live-cellular.gotpantheon.com
+ * @see https://github.com/ablank/cellular
+ */
 /*
  * @see file: src/preprocess/_init.inc
  * Initialize constants & globals
  */
 
 /* Cellular defined constants:
-'CURRENT_THEME_PATH' : (string) Path to the active theme dirrectory
-                    i.e.: CURRENT_THEME_PATH . '/css/lib/thing.css';
-'CELLULAR_CSS_EXT' : (string) File extension for stylesheets (.min.css or .css).
-                    default: .css
-'CELLULAR_JS_EXT' : (string) File extension for javascript (.min.js or .js).
-                    default: .js
-'CELLULAR_INPUT_SIZE' : (int) Size of the default textfield input.
-                        default: 20
-// May convert to use Libraries module at some point...
-'CELLULAR_LIB' : (string) Path to the Cellular library.
-                  default: /sites/all/libraries/cellular
+  'CURRENT_THEME_PATH' : (string) Path to the active theme dirrectory
+  i.e.: CURRENT_THEME_PATH . '/css/lib/thing.css';
+  'CELLULAR_CSS_EXT' : (string) File extension for stylesheets (.min.css or .css).
+  default: .css
+  'CELLULAR_JS_EXT' : (string) File extension for javascript (.min.js or .js).
+  default: .js
+  'CELLULAR_INPUT_SIZE' : (int) Size of the default textfield input.
+  default: 20
+  // May convert to use Libraries module at some point...
+  'CELLULAR_LIB' : (string) Path to the Cellular library.
+  default: /sites/all/libraries/cellular
 
-// These values can be overridden if necessary by implementing the php runkit,
+  // These values can be overridden if necessary by implementing the php runkit,
  * i.e.:
- runkit_constant_redefine('CELLULAR_LIB', '/path/to/lib');
-*/
+  runkit_constant_redefine('CELLULAR_LIB', '/path/to/lib');
+ */
 
 /*
  * @see file: src/preprocess/alter.inc
@@ -40,12 +38,10 @@
 
 /**
  * Implements hook_page_alter().
-function subcellular_page_alter(&$vars) {
- 
-}
+  function subcellular_page_alter(&$vars) {
+
+  }
  */
-
-
 /*
  * @see file: src/preprocess/alter_css.inc
  * Add/Update/Delete stylesheets.
@@ -84,8 +80,6 @@ function subcellular_css_alter(&$css) {
     cellular_remove_css($css, $exclude);
    */
 }
-
-
 /*
  * @see file: src/preprocess/alter_js.inc
  * Add and update javascript.
@@ -111,7 +105,6 @@ function subcellular_js_alter(&$javascript) {
     }
    */
 }
-
 
 /**
  * Implements template_preprocess_html().
@@ -155,51 +148,49 @@ function subcellular_preprocess_html(&$vars) {
 
    */
 }
-
-
 /**
  * Implements template_preprocess_page().
 function subcellular_preprocess_page(&$vars) {
     if (isset($vars['node']) && $vars['node']-type == 'page') {
    // Do something with content type.
-    }  
+    }
     if (isset($vars['node']) && $vars['node']-nid === '40') {
    // Do something with specific node.
     }
 }
- */ 
+ */
 
 /**
  * Implements template_preprocess_html().
 function subcellular_preprocess_html(&$vars) {
-  
+
 }
- */ 
+ */
 
 /**
  * Implements template_preprocess_node().
 function subcellular_preprocess_node(&$vars) {
-  
+
 }
  */
 
 /**
  * Implements template_preprocess_region().
 function subcellular_preprocess_region(&$vars) {
-  
+
 }
  */
 
 /**
  * Implements template_preprocess_block().
 function subcellular_preprocess_block(&$vars) {
-  
+
 }
  */
 
 /**
  * Implements template_preprocess_comment().
 function subcellular_preprocess_comment(&$vars) {
-  
+
 }
- */ 
+ */

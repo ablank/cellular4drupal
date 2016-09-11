@@ -3,7 +3,6 @@
  * @file
  * Vars & regions for right inset panel layout.
  */
-
 $plugin = array(
   'category' => t('Cellular | Layouts'),
   'title' => t('Inset Right'),

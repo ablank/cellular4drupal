@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a region.
@@ -26,7 +25,6 @@
  */
 ?>
 <?php
-
 // Just print content, no extra markup.
 if (!empty($content)) :
   print $content;

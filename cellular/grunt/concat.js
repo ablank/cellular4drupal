@@ -124,7 +124,7 @@ module.exports = {
        */
       //'src/js/cellular-ui/dev/cellular.jAV.js',
       //'src/js/cellular-ui/dev/cellular.jEqualheight.js',
-      //'src/js/cellular-ui/dev/cellular.jModal.js',
+      'src/js/cellular-ui/dev/cellular.jModal.js',
       //'src/js/cellular-ui/dev/cellular.jZoom.js',
       //'src/js/cellular-ui/dev/cellular.jParallax.js',
       //'src/js/cellular-ui/dev/cellular.jScrollindicator.js',

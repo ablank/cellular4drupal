@@ -34,12 +34,14 @@
     will-change: background-position, box-shadow;
     @include border-radius();
     @include transition();
+    &:focus,
     &:hover {
       box-shadow: 0 0 0.2em 0.1em $hilight;
     }
     &.active {
       // Shift background to indicate state.
       background-position: right center;
+      &:focus,
       &:hover {
         box-shadow: 0 0 0.2em 0.1em $red;
       }
@@ -88,6 +90,7 @@
           @include transition();
         }
         &.active:after,
+        &:focus:after,
         &:hover:after {
           @include triangle(0.8em,
           0.6em,

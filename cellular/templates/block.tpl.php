@@ -3,7 +3,6 @@
  * @file
  * Block template.
  */
-
 /* Variables:
   - $block->subject: Block title.
   - $content: Block content.
@@ -41,7 +40,6 @@
   @see template_preprocess_block()
   @see template_process()
  */
-
 ?>
 <div<?php print " id=\"$block_html_id\" class=\"$classes\"$attributes" ?>>
   <?php
@@ -50,15 +48,16 @@
     print "<h3$title_attributes>$block->subject</h3>";
     print render($title_suffix);
   endif;
-
   ?>
   <?php
   if ($content_attributes) :
     print "<div$content_attributes>";
-  endif; ?>
+  endif;
+  ?>
   <?php print $content ?>
   <?php
   if ($content_attributes) :
     print "</div>";
-  endif; ?>
+  endif;
+  ?>
 </div>

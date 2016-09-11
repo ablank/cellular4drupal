@@ -16,84 +16,88 @@ $border_radius: .5em;
 
 /* Styling common to all UI components */
 .cellular {// Only applies styling if javascript is enabled.
-           .jAccordion,
-           .jBlocklink,
-           .jMmenu,
-           .jTabs {
-             position: relative;
-             display: block;
-             margin: 0 auto;
-             padding: 0;
-             list-style: none;
-             animation: fadein 1200ms;
+  .jAccordion,
+  .jBlocklink,
+  .jMmenu,
+  .jTabs {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    animation: fadein 1200ms;
 
-             li {
-               margin: 0 auto;
-               padding: 0;
-               max-width: 90%;
-             }
+    li {
+      margin: 0 auto;
+      padding: 0;
+      max-width: 90%;
+    }
 
-             .title {
-               cursor: pointer;
-               display: block;
-               margin: 0;
-               max-width: 100%;
-               padding: .6em 1em;
-               background-color: $title_background;
-               color: $title_color;
-               z-index: 2;
-               @include transition();
+    .title {
+      cursor: pointer;
+      display: block;
+      margin: 0;
+      max-width: 100%;
+      padding: .6em 1em;
+      background-color: $title_background;
+      color: $title_color;
+      z-index: 2;
+      @include transition();
 
-               &:hover {
-                 color: $title_color;
-                 background-color: $active_color;
-               }
+      &:focus,
+      &:hover {
+        color: $title_color;
+        background-color: $active_color;
+      }
 
-               a,
-               a:visited {
-                 font-weight: bold;
-                 line-height: 1.4em;
-                 text-decoration: none;
-                 color: $title_color;
-                 border: none;
+      a{
+        &,
+        &:visited {
+          font-weight: bold;
+          line-height: 1.4em;
+          text-decoration: none;
+          color: $title_color;
+          border: none;
 
-                 &:hover,
-                   &:active,
-                   &.active {
-                   border: none;
-                   text-decoration: none;
-                 }
-               }
-             }
+          &.active,
+          &:active,
+          &:focus,
+          &:hover{
+            border: none;
+            text-decoration: none;
+          }
+        }
+      }
+    }
 
-             .panel {
-               // Area content is displayed in accordions & tabs.
-               display: block;
-               background: $panel_background;
-               color: $panel_color;
-               border: $border_color 1px solid;
-               z-index: 1;
-               padding-top: 1em;
-               text-align: center;
+    .panel {
+      // Area content is displayed in accordions & tabs.
+      display: block;
+      background: $panel_background;
+      color: $panel_color;
+      border: $border_color 1px solid;
+      z-index: 1;
+      padding-top: 1em;
+      text-align: center;
 
-               p,
-               li {
-                 text-align: left;
-               }
-             }
+      p,
+      li {
+        text-align: left;
+      }
+    }
 
-             .panel-content {
-               animation: fadein 400ms;
-             }
+    .panel-content {
+      animation: fadein 400ms;
+    }
 
-             // Set appearance of active UI elements
-             .active {
+    // Set appearance of active UI elements
+    .active {
 
-               .title {
-                 background-color: $active_color;
-               }
-             }
-           }
+      .title {
+        background-color: $active_color;
+      }
+    }
+  }
 }
 
 /* Import UI components */

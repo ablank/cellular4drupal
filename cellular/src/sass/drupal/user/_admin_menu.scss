@@ -1,5 +1,5 @@
 // All sizes relative to height
-// 0.9em - 1.1em is a comfortable range to choose from 
+// 0.9em - 1.1em is a comfortable range to choose from
 // 0.85em ~= default admin_menu size.
 $height: 1em;
 //
@@ -69,13 +69,14 @@ body {
       color: $c0;
       margin: 0;
       padding: $height * 0.2;
+      background-color: darken($c2, 10%);
     }
     &:active,
     &:hover,
     &:focus {
       text-decoration: none;
       color: $c0;
-      background-color: $c2;
+      background-color: $c1;
     }
   }
 }
@@ -88,7 +89,7 @@ body {
 #admin-menu-icon,
 #admin-menu-account {
   // Top level list
-  > li {
+  li {
     float: left;
     margin: 0 ($height * 0.4);
     padding: 0;
@@ -101,33 +102,57 @@ body {
         right: 0;
       }
     }
+    a {
+      &,
+      &:visited {
+        background-color: transparent;
+      }
+      &:active,
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $c0;
+        background-color: lighten($c1, 5%);
+      }
+    }
   }
-  // Initial Dropdown / Secondary Lists 
+  // Initial Dropdown / Secondary Lists
   .dropdown {
     z-index: 1;
     position: absolute;
     top: 1.8em;
     left: -999em;
-    min-width: $height * 10;
-    background-color: $c2;
+    min-width: $height * 12;
+    background: $c1;
     border: $c3 ($height * 0.1) solid;
     &.active {
       left: initial;
     }
     li {
+      width: 100%;
       margin: 0 0 1px 0;
       background: darken($c2, 10%);
-      min-width: $height * 10;
       line-height: 1.4em;
       &.expandable {
         line-height: 1.4em;
+        padding-right: 7%;
+        >li>a {
+          &,
+          &:visited {
+            background-color: $c2;
+          }
+          &:focus,
+          &:hover {
+            background-color: darken($c2, 10%);
+          }
+        }
         &:after {
           @include triangle($height * 0.3, $height * 0.6, $c3, 'right');
           top: $height * 0.7;
-          right: 0.2em;
+          right: 0.1em;
         }
       }
-      //Tertiary++ Lists
+      // Tertiary++ Lists
       .dropdown.active {
         top: 0;
         left: 100%;
@@ -137,10 +162,13 @@ body {
       &,
       &:visited {
         padding: ($height * 0.3) $height ($height * 0.3) ($height * 0.2);
+        background-color: $c2;
       }
       &:active,
       &:hover,
-      &:focus {}
+      &:focus {
+        background-color: $c1;
+      }
     }
   }
 }
@@ -164,10 +192,9 @@ body {
 
 #admin-menu-account {
   float: right;
-
-      .dropdown.active {
-        right: 0;
-      }
+  .dropdown.active {
+    right: 0;
+  }
 }
 
 // Hide the menu on print output.

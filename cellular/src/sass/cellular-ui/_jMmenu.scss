@@ -23,7 +23,7 @@
     width: 3em;
     height: 3em;
     padding: 0;
-    background-color: darken($white, 2%);
+    background-color: $white;
     background-size: 9em;
     background-repeat: no-repeat;
     background-position: left center;
@@ -34,12 +34,14 @@
     will-change: background-position, box-shadow;
     @include border-radius();
     @include transition();
+    &:focus,
     &:hover {
       box-shadow: 0 0 0.2em 0.1em $hilight;
     }
     &.active {
       // Shift background to indicate state.
       background-position: right center;
+      &:focus,
       &:hover {
         box-shadow: 0 0 0.2em 0.1em $red;
       }
@@ -70,7 +72,7 @@
     @include transition();
     li {
       display: block;
-      margin: 0.2em auto;
+      margin: auto;
       list-style: none;
       max-width: none;
       &.parent {
@@ -88,6 +90,7 @@
           @include transition();
         }
         &.active:after,
+        &:focus:after,
         &:hover:after {
           @include triangle(0.8em,
           0.6em,

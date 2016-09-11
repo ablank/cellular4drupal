@@ -10,7 +10,8 @@
   height: $header_height;
   background: $white;
   z-index: 10;
-  @include box-shadow(0 0 1em .1em $dark_grey);
+  box-shadow: 0 0 1em .1em $dark_grey;
+  will-change: height;
 }
 
 #header-top {

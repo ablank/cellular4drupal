@@ -155,10 +155,8 @@ function cellular_textarea(&$vars) {
 
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
-
 /**
  * Implements theme_webform_element().
- */
 function cellular_webform_element($vars) {
   // Ensure defaults.
   $vars['element'] += array(
@@ -239,3 +237,5 @@ function cellular_webform_element($vars) {
   //dpm($element);
   return $output;
 }
+
+ */

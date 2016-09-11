@@ -68,7 +68,7 @@ function cellular_mq() {
  * @return array
  *  Extension string for each file type.
  */
-function cellular_ext($type){
+function cellular_ext($type) {
   $settings = array(
     'css' => '.css',
     'js' => '.js',
@@ -142,37 +142,37 @@ function cellular_form_format_opt(&$form, $form_state) {
  *
  * @param array $element
  *   Element to test and return variables of.
-function cellular_dev($element) {
+  function cellular_dev($element) {
   if (theme_get_setting('dev') == 1) {
-    if (module_exists('devel')) {
-      dpm($element);
-    }
-    else {
-      drupal_set_message('<pre>' . print_r($element, TRUE) . '</pre>');
-    }
+  if (module_exists('devel')) {
+  dpm($element);
   }
-}
+  else {
+  drupal_set_message('<pre>' . print_r($element, TRUE) . '</pre>');
+  }
+  }
+  }
  */
-function cellular_proccess_asset(&$asset, $cellular = NULL){
-      // Set data source as CDN or local host.
-    if (isset($asset['data'])) {
-      $data = $asset['data'];
-    }
-    elseif (isset($asset['cdn'])) {
-      $data = $asset['cdn'];
-    }
-    elseif (isset($asset['file'])) {
-      $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
-      //$data .= '/css/' . $asset['file'];
-    }
-    if (!empty($data)) {
-      // Set stylesheet properties.
-      $asset['data'] = $data;
-      $asset['preprocess'] = isset($asset['preprocess']) ? $asset['preprocess'] : TRUE;
-      $asset['every_page'] = isset($asset['every_page']) ? $asset['every_page'] : TRUE;
-      $asset['weight'] = isset($asset['weight']) ? $asset['weight'] : 1;
-      $asset['type'] = isset($asset['cdn']) ? 'external' : 'file';
-    }
+function cellular_proccess_asset(&$asset, $cellular = NULL) {
+  // Set data source as CDN or local host.
+  if (isset($asset['data'])) {
+    $data = $asset['data'];
+  }
+  elseif (isset($asset['cdn'])) {
+    $data = $asset['cdn'];
+  }
+  elseif (isset($asset['file'])) {
+    $data = $cellular == TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH;
+    //$data .= '/css/' . $asset['file'];
+  }
+  if (!empty($data)) {
+    // Set stylesheet properties.
+    $asset['data'] = $data;
+    $asset['preprocess'] = isset($asset['preprocess']) ? $asset['preprocess'] : TRUE;
+    $asset['every_page'] = isset($asset['every_page']) ? $asset['every_page'] : TRUE;
+    $asset['weight'] = isset($asset['weight']) ? $asset['weight'] : 1;
+    $asset['type'] = isset($asset['cdn']) ? 'external' : 'file';
+  }
 }
 
 
@@ -464,13 +464,16 @@ function cellular_form_element_attributes(&$element) {
   //empty($element['#value']) ? NULL : $attributes['value'] = $element['#value'];
   empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
   empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
-  empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
   empty($element['#required']) ? NULL : $attributes['required'] = $element['#required'];
   empty($element['#size']) ? NULL : $attributes['size'] = $element['#size'];
   empty($element['#maxlength']) ? NULL : $attributes['maxlength'] = $element['#maxlength'];
   empty($element['#checked']) ? NULL : $attributes['checked'] = TRUE;
   empty($element['#attributes']['class']) ? NULL : $attributes['class'] = implode(' ', $element['#attributes']['class']);
   empty($element['#default_value']) ? NULL : $attributes['value'] = $element['#default_value'];
+  if (!empty($element['#title'])) {
+    $attributes['title'] = $element['#title'];
+    $attributes['aria-label'] = $element['#title'];
+  }
 
   return $attributes;
 }
@@ -505,6 +508,7 @@ function cellular_xinputs(&$element) {
  */
 function cellular_xinput($element, $type) {
   if (empty($element['#title'])) {
+    // Set an empty string to guarantee <label> is provided, used for fancy styling.
     $element['#title'] = '';
   }
   $attributes = cellular_form_element_attributes($element);
@@ -513,7 +517,6 @@ function cellular_xinput($element, $type) {
 
   return "<input" . drupal_attributes($attributes) . " />";
 }
-
 
 
 /*
@@ -1083,7 +1086,7 @@ function cellular_jqueryui_update_css(&$css) {
         ),
       );
       // Remove default after collecting style info.
-     // unset($css[$default]);
+      // unset($css[$default]);
 
       if ($ui['theme'] === 'custom') {
         // Set path to local custom file if selected.
@@ -1472,6 +1475,7 @@ function cellular_css_alter(&$css) {
  * Implements hook_js_alter().
  */
 function cellular_js_alter(&$javascript) {
+  $cell_path = drupal_get_path('theme', 'cellular');
   // Update jQuery & jQueryUI.
   if (theme_get_setting('jquery_update') == 1) {
     cellular_jquery_update($javascript);
@@ -1483,19 +1487,25 @@ function cellular_js_alter(&$javascript) {
   if (module_exists('admin_menu')) {
     $override['admin_menu'] = array(
       'default' => drupal_get_path('module', 'admin_menu') . '/admin_menu.js',
-      'file' => drupal_get_path('theme', 'cellular') . '/js/admin_menu.js',
+      'file' => $cell_path . '/js/admin_menu.js',
     //'version' => '',
     );
   }
+  if (module_exists('ckeditor')) {
+    /*
+      $override['ckeditor'] = array(
+      'default' => drupal_get_path('module', 'ckeditor') . '/ckeditor.config.js',
+      'file' => $cell_path . '/js/ckeditor.config.js',
+      ); */
+  }
 
   foreach ($override as &$js) {
-    $js['group'] = JS_LIBRARY;
+    $js['group'] = JS_DEFAULT;
     cellular_js_override($javascript, $js);
   }
 
-  // dpm($javascript);
+  //dpm($javascript);
 }
-
 
 
 /*
@@ -1645,7 +1655,9 @@ function cellular_preprocess_html(&$vars) {
     'plugins' => cellular_js_plugin_settings(),
   );
   if (theme_get_setting('cellularui') == 1) {
-    $cellular_settings['ui'] = array();
+    $cellular_settings['ui'] = array(
+      'enable' => TRUE,
+    );
     $scripts['cellularui'] = array(
       'object' => 'cellular',
       'file' => 'jquery.cellular-ui' . CELLULAR_JS_EXT,
@@ -1819,15 +1831,15 @@ function cellular_body_attributes(&$vars, $visited) {
   $path = drupal_get_path_alias();
   // Page URL is used to set id & classes of body.
   $aliases = explode('/', $path);
-  // Set the current page as body id:
+  // Set current page as body id.
   $body_attributes['id'] = array_pop($aliases);
   // Add class for 1st-time visitors.
   $visited ? NULL : $body_attributes['class'][] = 'first-visit';
   // Add path-based classes.
   foreach ($aliases as $alias) {
-    $body_attributes['class'][] = $alias;
+    $body_attributes['class'][] = 'page--' . $alias;
   }
-  // Sidebar class is generated if region is used on page.
+
   drupal_is_front_page() ? $body_attributes['class'][] = 'frontpage' : NULL;
   user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
 
@@ -1942,7 +1954,6 @@ function cellular_metatags(&$vars) {
 
   cellular_build_head_tags($meta_tags);
 }
-
 
 
 /*
@@ -2062,7 +2073,6 @@ function cellular_preprocess_maintenance_page(&$vars) {
 }
 
 
-
 /*
  * @see file: src/preprocess/preprocess_block.inc
  * Block preprocess functions.
@@ -2098,7 +2108,7 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['theme_hook_suggestions'][] = 'comment_wrapper';
   $vars['theme_hook_suggestions'][] = 'comment_wrapper__' . $vars['node']->type;
   $vars['classes_array'][] = 'clearfix';
-  
+
   $title = &$vars['content']['comment_form']['#title'];
 
   switch ($vars['node']->type) {
@@ -2507,10 +2517,8 @@ function cellular_textarea(&$vars) {
 
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
-
 /**
  * Implements theme_webform_element().
- */
 function cellular_webform_element($vars) {
   // Ensure defaults.
   $vars['element'] += array(
@@ -2592,7 +2600,7 @@ function cellular_webform_element($vars) {
   return $output;
 }
 
-
+ */
 
 /*
  * @see file: src/preprocess/theme_pager.inc
@@ -2758,7 +2766,6 @@ function cellular_panels_default_style_render_region($vars) {
   // Remove the panel separator.
   return implode('', $vars['panes']);
 }
-
 /**
  * Implements template_preprocess_panels_pane().
  *
@@ -2868,7 +2875,6 @@ function cellular_preprocess_panels_pane(&$vars) {
 }
  */
 
-
 /*
  * @see file: src/preprocess/social.inc
  * Generate social media links.
@@ -2891,15 +2897,16 @@ function cellular_build_links($links, $parent) {
     if (!empty($link['tag'])) {
       // Use preformatted html if set.
       $output .= "\n " . $link['tag'] . "\n";
-    } else {
+    }
+    else {
       // Or create link using key's attributes:
       if (!empty($link['url'])) {
         $text = $parent['link_text'] . $link['name'];
         $output .= l(t($text), $link['url'], array(
-              'attributes' => array(
-                'class' => array(
-                  $parent['link_class'],
-                  $link['class'],
+          'attributes' => array(
+            'class' => array(
+              $parent['link_class'],
+              $link['class'],
             )))) . "\n";
       }
     }
@@ -3006,30 +3013,30 @@ function cellular_social_media_follow() {
   $links = array();
 
   $set['fb'] == 1 ? $links['facebook'] = array(
-        'title' => "Facebook",
-        'url' => $url['facebook'],
-          ) : NULL;
+    'title' => "Facebook",
+    'url' => $url['facebook'],
+  ) : NULL;
   $set['google'] == 1 ? $links['google'] = array(
-        'title' => "Google",
-        'url' => $url['google'],
-          ) : NULL;
+    'title' => "Google",
+    'url' => $url['google'],
+  ) : NULL;
   $set['twitter'] == 1 ? $links['twitter'] = array(
-        'title' => "Twitter",
-        'url' => $url['twitter'],
-          ) : NULL;
+    'title' => "Twitter",
+    'url' => $url['twitter'],
+  ) : NULL;
   $set['linkedin'] == 1 ? $links['linkedin'] = array(
-        'title' => "LinkedIn",
-        'url' => $url['linkedin'],
-          ) : NULL;
+    'title' => "LinkedIn",
+    'url' => $url['linkedin'],
+  ) : NULL;
   $set['github'] == 1 ? $links['github'] = array(
-        'title' => "Github",
-        'url' => $url['github'],
-          ) : NULL;
+    'title' => "Github",
+    'url' => $url['github'],
+  ) : NULL;
 
-  if(empty($links)){
+  if (empty($links)) {
     $links = NULL;
   }
-  
+
   return $links;
 }
 
@@ -3054,7 +3061,7 @@ function cellular_social_media_share() {
   $set['stumbleupon'] == 1 ? $links[] = 'stumbleupon' : NULL;
   $set['tumblr'] == 1 ? $links[] = 'tumblr' : NULL;
 
-  if(empty($links)){
+  if (empty($links)) {
     $links = NULL;
   }
 

@@ -39,7 +39,9 @@ function cellular_preprocess_html(&$vars) {
     'plugins' => cellular_js_plugin_settings(),
   );
   if (theme_get_setting('cellularui') == 1) {
-    $cellular_settings['ui'] = array();
+    $cellular_settings['ui'] = array(
+      'enable' => TRUE,
+    );
     $scripts['cellularui'] = array(
       'object' => 'cellular',
       'file' => 'jquery.cellular-ui' . CELLULAR_JS_EXT,
@@ -213,15 +215,15 @@ function cellular_body_attributes(&$vars, $visited) {
   $path = drupal_get_path_alias();
   // Page URL is used to set id & classes of body.
   $aliases = explode('/', $path);
-  // Set the current page as body id:
+  // Set current page as body id.
   $body_attributes['id'] = array_pop($aliases);
   // Add class for 1st-time visitors.
   $visited ? NULL : $body_attributes['class'][] = 'first-visit';
   // Add path-based classes.
   foreach ($aliases as $alias) {
-    $body_attributes['class'][] = $alias;
+    $body_attributes['class'][] = 'page--' . $alias;
   }
-  // Sidebar class is generated if region is used on page.
+
   drupal_is_front_page() ? $body_attributes['class'][] = 'frontpage' : NULL;
   user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
 

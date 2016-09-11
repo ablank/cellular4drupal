@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Cellular form validation.
