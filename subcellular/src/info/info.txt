@@ -1,3 +1,9 @@
 ;----------// Theme Information
-name        = Cellular
-description = Tame the Drupal for easier front end development.
+
+name        = Subcellular
+description = Cellular starter theme.
+
+base theme  = cellular
+core        = 7.x
+engine      = phptemplate
+screenshot  = screenshot.png

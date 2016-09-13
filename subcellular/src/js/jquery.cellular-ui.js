@@ -28,32 +28,32 @@
        */
       cellular.breakpoint = function () {
         var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
-          obj;
-        if (content) {
-          obj = {
-            size: content.match(/\d/g).join(""),
-            type: content.match(/\w*[^\"\'](?=-)/g).join("")
-          };
-        } else {
-// Provide default breakpoints if they aren't set in css.
-          var ww = jQuery(window).width();
-          switch (ww) {
-            case ww > 650 && ww < 800:
-              console.log(ww);
-              obj = {
-                size: '',
-                type: ''
-              };
-              break;
-            default:
-              obj = {
-                size: '',
-                type: ''
-              };
-              break;
-          }
+          win = {};
+        /*
+         if (content) {
+         win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");
+         } else {*/
+// Provide default breakpoints if they aren't set by css.
+        var ww = jQuery(window).width();
+        switch (ww) {
+          case ww < 650:
+            win.type = 'window_mobile';
+            break;
+          case ww > 650 && ww < 800:
+            win.type = 'window_narrow';
+            break;
+          case ww > 1200:
+            win.type = 'window_large';
+            break;
+          case ww > 800 && ww < 1200:
+          default:
+            win.type = 'window_default';
+            break;
         }
-        return obj;
+// }
+        jQuery('body').addClass(win.type);
+        win.size = ww;
+        return win;
       };
       /**
        * Add active class to element, remove active class from element siblings
@@ -310,15 +310,14 @@
                 o.cclass + '-wrap',
                 a1.attr('class') ? a1.attr('class') : null
               ]);
-// .data(a.data());
               $obj.wrap(wrapperlink)
                 .find('h2, h3').addClass('title');
             }
           });
           $obj.on('mouseenter touchstart', function () {
-            jQuery(this).activate();
+            $obj.activate();
           }).on('mouseleave touchend', function () {
-            jQuery(this).deactivate();
+            $obj.deactivate();
           });
         };
         return this.each(fn.init);
@@ -370,7 +369,7 @@
         }, opts),
           fn = {};
         fn.mediaQuery = cellular.debounce(function ($obj, state) {
-          console.log(cellular.opts.breakpoint);
+//console.log(cellular.opts.breakpoint);
           if (o.breakpoint === cellular.state.breakpoint) {
             var $menu = $obj.children([0]),
               label = null;
@@ -1099,6 +1098,118 @@
           });
 //Set default content
           fn.showContent($obj, tab.eq([o.active]));
+        };
+        return this.each(fn.init);
+      };
+      cellular.jModal = function (opts) {
+        var o = jQuery.extend({
+          cclass: "jModal",
+          dataattr: "data-modal",
+          groupattr: "data-album",
+          offsetX: 10, // % or vw
+          offsetY: 10, // % or vh
+//caption: "data-caption",
+//timeout: 10000,
+//fitImg: true, // Scale images to user viewport.
+          trigger: "click"
+        }, opts),
+          fn = {};
+        /**
+         *
+         */
+        fn.load = function ($obj, state) {
+          var win = jQuery('.' + o.cclass + '-window'),
+            overlay = jQuery('#' + o.cclass + '-overlay'),
+            contentpane = win.find('.' + o.cclass + '-content'),
+            content;
+// show loading icon
+          state.active = true;
+          overlay.activate();
+// determine content source
+          if (typeof ($obj.attr(o.dataattr)) !== 'undefined') {
+            content = $obj.attr(o.dataattr);
+          }
+          else if ($obj.attr('href') !== 'undefined') {
+            content = $obj.attr('href');
+          }
+// load content
+          $.ajax({
+            url: content,
+            context: document.body,
+            timeout: o.timeout,
+            success: function (data) {
+              console.log(data);
+// Remove loading icon
+// Re-position/re-size window to fit content
+              win.css({
+                height: 100 - (o.offsetY * 2) + 'vh',
+                width: 100 - (o.offsetX * 2) + 'vw',
+                top: o.offsetY + 'vh',
+                left: o.offsetX + 'vw',
+              });
+// Show content
+              contentpane.html(data)
+                .activate();
+            },
+            error: function (jqXHR, textStatus) {
+              state.activate = false;
+              overlay.deactivate();
+              console.log("AJAX Request failed: " + textStatus);
+            }
+          });
+        };
+        fn.close = function (state) {
+          var modal = jQuery('#' + o.cclass + '-overlay');
+          state.active = false;
+          modal.deactivate()
+            .find('.' + o.cclass + '-window').deactivate();
+          modal.find('.' + o.cclass + '-content').deactivate()
+            .html('');
+        };
+        /**
+         * Generate markup for controls & other elements.
+         *
+         * @param object $obj
+         */
+        fn.style = function ($obj) {
+          var modal = jQuery('<div class="' + o.cclass + '-window" />')
+            .append('<div class="' + o.cclass + '-content" />')
+            .append('<span class="' + o.cclass + '-close" aria-label="Close" />'),
+            overlay = jQuery('<div id="' + o.cclass + '-overlay" />').append(modal);
+          if (!jQuery('#' + o.cclass + '-overlay').length) {
+            jQuery('body').append(overlay);
+          }
+        };
+        /**
+         *
+         */
+        fn.events = function ($obj, state) {
+          $obj.on('click', function (e) {
+            e.preventDefault();
+            fn.load($obj, state);
+          });
+          jQuery(document).on('keyup', function (e) {
+            if (state.active === true && e.which === 27) {
+              fn.close(state);
+            }
+          });
+          jQuery('#' + o.cclass + '-overlay, .' + o.cclass + '-close').on('click', function () {
+            fn.close(state);
+          });
+        };
+        /**
+         * Init jModal
+         */
+        fn.init = function () {
+          var $obj = jQuery(this),
+            state = {
+              active: false,
+              group: o.groupattr.length ? o.groupattr : null
+            };
+// Generate markup for modal
+          jQuery('.' + o.cclass).once(o.cclass, fn.style($obj));
+// Listen for events
+          fn.events($obj, state);
         };
         return this.each(fn.init);
       };

@@ -70,19 +70,32 @@ select {
 }
 
 /* line 30, ../sass/ie.scss */
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
   display: inline;
   margin: 0.3em;
   vertical-align: middle;
 }
 /* line 36, ../sass/ie.scss */
-input[type=checkbox]:focus, input[type=radio]:focus {
+input[type=checkbox]:focus,
+input[type=radio]:focus {
   border: thin solid;
 }
 
 /* line 43, ../sass/ie.scss */
 .cell,
-.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10,
+.cell-100,
+.cell-90,
+.cell-80,
+.cell-75,
+.cell-70,
+.cell-60,
+.cell-50,
+.cell-40,
+.cell-30,
+.cell-25,
+.cell-20,
+.cell-10,
 .cell-33,
 .cell-66 {
   zoom: 1;

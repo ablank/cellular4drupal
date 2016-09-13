@@ -14,7 +14,7 @@ cellular.jMmenu = function (opts) {
     fn = {};
 
   fn.mediaQuery = cellular.debounce(function ($obj, state) {
-    console.log(cellular.opts.breakpoint);
+    //console.log(cellular.opts.breakpoint);
     if (o.breakpoint === cellular.state.breakpoint) {
       var $menu = $obj.children([0]),
         label = null;
@@ -101,11 +101,11 @@ cellular.jMmenu = function (opts) {
 
     jQuery(document).on('keyup', function (e) {
       // ENTER opens menu.
-       if (jQuery('.' + o.cclass + '-trigger').is(":focus") && e.which === 13) {
-       e.preventDefault();
-       state.active = state.active === false ? true : false;
-       fn.menutrigger($obj, state);
-       }
+      if (jQuery('.' + o.cclass + '-trigger').is(":focus") && e.which === 13) {
+        e.preventDefault();
+        state.active = state.active === false ? true : false;
+        fn.menutrigger($obj, state);
+      }
       // ESC closes menu.
       if (state.active === true && e.which === 27) {
         e.preventDefault();

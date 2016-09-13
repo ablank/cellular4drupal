@@ -25,13 +25,6 @@ $form[0]['meta']['copyright'] = array(
   '#default_value' => theme_get_setting('copyright'),
 );
 
-$form[0]['meta']['cookie_time'] = array(
-  '#type' => 'textfield',
-  '#title' => t('Cookie Expiration'),
-  '#description' => t('Number of days before the theme cookie expires. A <code>first-visit</code> class is added to <code>&lt;body&gt;</code> and <code>Drupal.settings.cellular.first_visit = true</code>. Set to "0" to disable the cookie.'),
-  '#default_value' => theme_get_setting('cookie_time'),
-);
-
 $form[0]['meta']['libpath'] = array(
   '#type' => 'textfield',
   '#title' => t('Cellular Library'),
@@ -41,12 +34,59 @@ $form[0]['meta']['libpath'] = array(
   '#default_value' => theme_get_setting('libpath'),
 );
 
+$form[0]['meta']['cookie_time'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Cookie Expiration'),
+  '#description' => t('Number of days before the theme cookie expires. A <code>first-visit</code> class is added to <code>&lt;body&gt;</code> and <code>Drupal.settings.cellular.first_visit = true</code>. Set to "0" to disable the cookie.'),
+  '#default_value' => theme_get_setting('cookie_time'),
+);
+
+$form[0]['meta']['secure_sources'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Secure Sources'),
+  '#description' => t("Set HTTP headers restricting content delivery to local or whitelisted domains."),
+  '#default_value' => theme_get_setting('secure_sources'),
+);
+$form[0]['meta']['security'] = array(
+  '#type' => 'fieldset',
+  '#title' => t('Content Security Policy'),
+  '#description' => t("Limit the ability to load content and run scripts to trusted sites only."),
+  '#states' => array(
+    'visible' => array(
+      ':input[name="secure_sources"]' => array('checked' => TRUE),
+    ),
+  ),
+);
+
+$form[0]['meta']['security']['secure_unsafeinline'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Inline Scripts/Styles'),
+  '#description' => t("Allow trusted domains to serve inline scripts/styles."),
+  '#default_value' => theme_get_setting('secure_unsafeinline'),
+);
+
+$form[0]['meta']['security']['secure_unsafeeval'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Eval Script'),
+  '#description' => t("Allow trusted domains to eval scripts."),
+  '#default_value' => theme_get_setting('secure_unsafeeval'),
+);
+
+$form[0]['meta']['security']['site_source_whitelist'] = array(
+  '#type' => 'textarea',
+  '#title' => t('Whitelist'),
+  '#description' => t("List the sites allowed to serve content, separated by a space or comma. See <a href=@url>CSP headers</a> for more info.", array(
+    '@url' => 'https://developer.mozilla.org/en-US/docs/Web/Security/CSP/CSP_policy_directives#Source_lists',
+  )),
+  '#default_value' => theme_get_setting('site_source_whitelist'),
+);
+
 $form[0]['meta']['favicons'] = array(
   '#type' => 'fieldset',
   '#title' => t('Favicons'),
   '#description' => t("Favicons are used by browsers to provide a graphic identity for your site."),
   '#collapsible' => TRUE,
-  '#collapsed' => FALSE,
+  '#collapsed' => TRUE,
 );
 
 $form[0]['meta']['favicons']['favicon'] = array(

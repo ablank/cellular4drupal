@@ -373,7 +373,7 @@ a[id^=comment-] {
 /* line 37, ../sass/drupal/_pager.scss */
 .pager .pager-current {
   cursor: default;
-  margin: 0.2em;
+  margin: -0.5em 0.6em 0;
   padding: 1em;
   font-weight: bold;
   outline: 0;
@@ -834,30 +834,44 @@ form.search-form label {
   border-right: #bbbab7 1px solid;
   border-bottom: #bbbab7 1px solid;
   border-left: #bbbab7 1px solid;
+  vertical-align: top;
   border-bottom-left-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
 }
-/* line 88, ../sass/drupal/modules/_calendar.scss */
+/* line 89, ../sass/drupal/modules/_calendar.scss */
 .single-day td.today {
   border-color: #29b4de;
   box-shadow: #29b4de;
 }
-/* line 93, ../sass/drupal/modules/_calendar.scss */
+/* line 94, ../sass/drupal/modules/_calendar.scss */
 .single-day td.past {
-  background-color: #d8d8d8;
+  background-color: #e5e5e5;
 }
-/* line 99, ../sass/drupal/modules/_calendar.scss */
+/* line 98, ../sass/drupal/modules/_calendar.scss */
+.single-day td.past a,
+.single-day td.past a:visited {
+  color: #bbbab7;
+}
+/* line 107, ../sass/drupal/modules/_calendar.scss */
 .single-day a,
 .single-day a:visited {
+  display: block;
+  padding: 0.3em;
   background: #f1f1f1;
-  border: #f1f1f1 1px solid;
+  border: #bbbab7 1px solid;
+  border-radius: 0.3em;
 }
-/* line 106, ../sass/drupal/modules/_calendar.scss */
+/* line 117, ../sass/drupal/modules/_calendar.scss */
 .single-day a:active,
 .single-day a:hover,
 .single-day a:focus,
 .single-day a:visited {
-  border-color: #bbbab7;
+  background: #fefefe;
+  border-color: #29b4de;
+}
+/* line 126, ../sass/drupal/modules/_calendar.scss */
+.single-day .date-display-single {
+  color: #bbbab7;
 }
 
 /**

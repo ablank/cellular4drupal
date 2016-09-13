@@ -16,16 +16,15 @@ cellular.jCard = function (opts) {
           o.cclass + '-wrap',
           a1.attr('class') ? a1.attr('class') : null
         ]);
-        // .data(a.data());
         $obj.wrap(wrapperlink)
           .find('h2, h3').addClass('title');
       }
     });
 
     $obj.on('mouseenter touchstart', function () {
-      jQuery(this).activate();
+      $obj.activate();
     }).on('mouseleave touchend', function () {
-      jQuery(this).deactivate();
+      $obj.deactivate();
     });
   };
 

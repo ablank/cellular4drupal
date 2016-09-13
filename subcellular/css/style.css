@@ -872,7 +872,15 @@ a img {
   outline: none;
 }
 
-/* line 22, ../sass/style/_base_media.scss */
+/*
+  iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}*/
+/* line 30, ../sass/style/_base_media.scss */
 .iframe-wrap {
   position: relative;
   padding-bottom: 56.25%;
@@ -880,7 +888,7 @@ a img {
   padding-top: 1.5625rem;
   height: 0;
 }
-/* line 28, ../sass/style/_base_media.scss */
+/* line 36, ../sass/style/_base_media.scss */
 .iframe-wrap iframe {
   position: absolute;
   top: 0;
@@ -2331,9 +2339,9 @@ hr.clearfix {
   text-decoration: none;
 }
 
-/* line 4, ../sass/cellular-ui/_jModal.scss */
-.jModal-overlay {
-  z-index: 99;
+/* line 3, ../sass/cellular-ui/_jModal.scss */
+#jModal-overlay {
+  z-index: 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -2342,18 +2350,81 @@ hr.clearfix {
   background: #111;
   background: rgba(17, 17, 17, 0.7);
   opacity: 0;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+/* line 14, ../sass/cellular-ui/_jModal.scss */
+#jModal-overlay.active {
+  z-index: 99;
+  opacity: 1;
 }
 
-/* line 15, ../sass/cellular-ui/_jModal.scss */
+/* line 20, ../sass/cellular-ui/_jModal.scss */
 .jModal-window {
   position: fixed;
   top: 50%;
-  right: 50%;
-  padding: 1em;
+  left: 50%;
   border-radius: 0.3em;
-  background: #fefefe;
+  overflow: hidden;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
+}
+
+/* line 30, ../sass/cellular-ui/_jModal.scss */
+.jModal-content {
+  /*
+    position: absolute;
+    top:1em;
+    right:1em;
+    bottom:  1em;
+    left: 1em;
+  */
+  position: relative;
+  display: block;
+  padding: 1em;
+  border: #bbbab7 1px solid;
+  border-radius: 50%;
+  background: #fefefe;
+  clear: both;
+  zoom: 1;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+/* line 27, ../sass/_mixins/_cellularmixins.scss */
+.jModal-content:after,
+.jModal-content:before {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+/* line 46, ../sass/cellular-ui/_jModal.scss */
+.jModal-content.active {
+  border-radius: 0.3em;
+}
+/* line 48, ../sass/cellular-ui/_jModal.scss */
+.jModal-content.active .jModal-close {
+  width: 1em;
+  height: 1em;
+  background: #8c0d00;
+  border: 0.1em solid #fefefe;
+}
+
+/* line 57, ../sass/cellular-ui/_jModal.scss */
+.jModal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+/* line 65, ../sass/cellular-ui/_jModal.scss */
+.jModal-close:hover,
+.jModal-close:focus {
+  background: #bf1200;
 }
 
 /**
@@ -2375,7 +2446,7 @@ hr.clearfix {
   width: 3em;
   height: 3em;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #fefefe;
   background-size: 9em;
   background-repeat: no-repeat;
   background-position: left center;
@@ -2430,7 +2501,7 @@ hr.clearfix {
 /* line 73, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-menu li {
   display: block;
-  margin: 0.2em auto;
+  margin: auto;
   list-style: none;
   max-width: none;
 }
@@ -2776,11 +2847,11 @@ hr.clearfix {
   position: relative;
   left: 50%;
   /*
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
   */
 }
 /* line 223, ../sass/cellular-ui/_jScrolli.scss */
@@ -3225,7 +3296,6 @@ hr.clearfix {
 /* line 7, ../sass/cellular-ui/_scrolled.scss */
 .scrolled #header {
   height: 48px;
-  overflow: hidden;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -3237,7 +3307,7 @@ hr.clearfix {
 .scrolled #header .logo a {
   width: 48px;
   height: 48px;
-  background-size: 3rem;
+  background-size: 3rem 3rem;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }

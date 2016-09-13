@@ -138,5 +138,11 @@ settings[follow_linkedin]       = 0
 settings[follow_linkedin_url]   = http://linkedin.com/
 settings[follow_github]			    = 0
 settings[follow_github_url]   	= http://github.com/
-settings[follow_yelp]			    = 0
-settings[follow_yelp_url]   	= http://github.com/
+settings[follow_yelp]			      = 0
+settings[follow_yelp_url]   	  = http://github.com/
+
+;----------// Security
+settings[secure_sources]         = 1
+settings[secure_unsafeinline]    = 1
+settings[secure_unsafeeval]      = 1
+settings[site_source_whitelist]  = https://*.googleusercontent.com, http://www.google-analytics.com, https://www.youtube.com, https://youtu.be, https://*.vimeo.com,

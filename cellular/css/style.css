@@ -98,7 +98,7 @@ img {
 */
 /* line 6, ../sass/style/_base_body.scss */
 html {
-  background: #FEFEFE;
+  background: #fefefe;
   overflow: auto;
   overflow-y: scroll;
 }
@@ -168,8 +168,8 @@ h6 {
   font-family: "Quicksand";
   font-weight: normal;
   line-height: 1.1em;
-  margin: 1em auto .2em auto;
-  padding: 0.4em .4em 0 1em;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
 }
 
 /* line 43, ../sass/style/_base_typography.scss */
@@ -236,9 +236,9 @@ blockquote,
 q,
 quote {
   font-style: italic;
-  color: #444444;
+  color: #444;
   background-color: #e5e5e5;
-  color: #444444;
+  color: #444;
 }
 /* line 101, ../sass/style/_base_typography.scss */
 blockquote:before,
@@ -304,7 +304,7 @@ acronym {
 */
 /* line 15, ../sass/style/_base_links.scss */
 a {
-  color: #29B4DE;
+  color: #29b4de;
   text-decoration: none;
   outline: none;
   -webkit-transition: all 500ms ease-out;
@@ -315,7 +315,9 @@ a:visited {
   color: #20a5ce;
 }
 /* line 26, ../sass/style/_base_links.scss */
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   outline: none;
   text-decoration: underline;
   color: #1982a2;
@@ -363,8 +365,8 @@ ol > li:before {
   line-height: 1.4em;
   width: 1.4em;
   height: 1.4em;
-  color: #444444;
-  background: #FEFEFE;
+  color: #444;
+  background: #fefefe;
   border: thin solid;
   border-radius: 50%;
 }
@@ -419,7 +421,7 @@ thead {
   font-weight: normal;
   font-size: 1em;
   text-align: center;
-  color: #444444;
+  color: #444;
   border: #f1f1f1 1px solid;
 }
 
@@ -430,7 +432,7 @@ tr:nth-child(even) {
 
 /* line 32, ../sass/style/_base_tables.scss */
 tr:nth-child(odd) {
-  background: #FEFEFE;
+  background: #fefefe;
 }
 
 /* line 36, ../sass/style/_base_tables.scss */
@@ -511,10 +513,11 @@ legend {
   font-weight: normal;
   font-size: 1.4em;
   color: #bbbab7;
-  background: #FEFEFE;
+  background: #fefefe;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-legend:after, legend:before {
+legend:after,
+legend:before {
   content: "";
   display: block;
   width: 100%;
@@ -560,11 +563,15 @@ select:focus,
 textarea:focus {
   outline: none;
   color: #111;
-  background: #FEFEFE;
-  box-shadow: 0 0 0.2em 0 #29B4DE;
+  background: #fefefe;
+  box-shadow: 0 0 0.2em 0 #29b4de;
 }
 /* line 108, ../sass/style/_base_forms.scss */
-input.year, input.month, input.day, input.hour, input.minute,
+input.year,
+input.month,
+input.day,
+input.hour,
+input.minute,
 select.year,
 select.month,
 select.day,
@@ -607,8 +614,9 @@ option:focus {
 }
 
 /* line 144, ../sass/style/_base_forms.scss */
-input.required, input[required] {
-  box-shadow: 0 0 0.1em 0 #29B4DE;
+input.required,
+input[required] {
+  box-shadow: 0 0 0.1em 0 #29b4de;
 }
 /* line 153, ../sass/style/_base_forms.scss */
 input[type="hidden"] {
@@ -629,12 +637,18 @@ input[type="image"] {
   border: none;
 }
 /* line 97, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked, input[type="checkbox"]:not(:checked), input[type="radio"]:checked, input[type="radio"]:not(:checked) {
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked),
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked) {
   position: absolute;
   left: -999em;
 }
 /* line 102, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label, input[type="checkbox"]:not(:checked) + label, input[type="radio"]:checked + label, input[type="radio"]:not(:checked) + label {
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:not(:checked) + label,
+input[type="radio"]:checked + label,
+input[type="radio"]:not(:checked) + label {
   z-index: 1;
   position: relative;
   float: left;
@@ -644,7 +658,14 @@ input[type="checkbox"]:checked + label, input[type="checkbox"]:not(:checked) + l
   text-indent: 2.16em;
 }
 /* line 111, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label:before, input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checked) + label:before, input[type="checkbox"]:not(:checked) + label:after, input[type="radio"]:checked + label:before, input[type="radio"]:checked + label:after, input[type="radio"]:not(:checked) + label:before, input[type="radio"]:not(:checked) + label:after {
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:before,
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:before,
+input[type="radio"]:not(:checked) + label:after {
   content: '';
   position: absolute;
   left: 0;
@@ -654,13 +675,19 @@ input[type="checkbox"]:checked + label:before, input[type="checkbox"]:checked + 
   vertical-align: middle;
 }
 /* line 122, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label:before, input[type="checkbox"]:not(:checked) + label:before, input[type="radio"]:checked + label:before, input[type="radio"]:not(:checked) + label:before {
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="radio"]:checked + label:before,
+input[type="radio"]:not(:checked) + label:before {
   background: #f9f9f9;
   border: #bbbab7 thin solid;
   box-shadow: inset 0 0 0.0625rem 0.0625rem #f1f1f1;
 }
 /* line 127, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checked) + label:after, input[type="radio"]:checked + label:after, input[type="radio"]:not(:checked) + label:after {
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:after {
   background-image: url("../assets/icons/png/input_sprite.png");
   background-image: url("../assets/icons/svg/input_sprite.svg");
   background-size: 6em;
@@ -668,13 +695,19 @@ input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checke
   background-position: -999em;
 }
 /* line 143, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked:disabled + label, input[type="checkbox"]:not(:checked):disabled + label, input[type="radio"]:checked:disabled + label, input[type="radio"]:not(:checked):disabled + label {
+input[type="checkbox"]:checked:disabled + label,
+input[type="checkbox"]:not(:checked):disabled + label,
+input[type="radio"]:checked:disabled + label,
+input[type="radio"]:not(:checked):disabled + label {
   color: #f1f1f1;
 }
 /* line 145, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked:disabled + label:before, input[type="checkbox"]:not(:checked):disabled + label:before, input[type="radio"]:checked:disabled + label:before, input[type="radio"]:not(:checked):disabled + label:before {
+input[type="checkbox"]:checked:disabled + label:before,
+input[type="checkbox"]:not(:checked):disabled + label:before,
+input[type="radio"]:checked:disabled + label:before,
+input[type="radio"]:not(:checked):disabled + label:before {
   background: #f1f1f1;
-  color: #444444;
+  color: #444;
 }
 /* line 186, ../sass/style/_base_forms.scss */
 input[type="checkbox"] + label:before {
@@ -736,9 +769,9 @@ input[type="submit"] {
   font-family: "Quicksand";
   font-weight: bold;
   line-height: normal;
-  border: #444444 2px solid;
-  color: #444444;
-  background-color: #FEFEFE;
+  border: #444 2px solid;
+  color: #444;
+  background-color: #fefefe;
   border-radius: 0.1em;
   box-shadow: #cbcbcb 0 0.1em 0.75em;
 }
@@ -747,11 +780,12 @@ button:visited,
 .button:visited,
 input[type="button"]:visited,
 input[type="submit"]:visited {
-  color: #444444;
-  background-color: #FEFEFE;
+  color: #444;
+  background-color: #fefefe;
 }
 /* line 197, ../sass/_mixins/_cellularmixins.scss */
-button.active, button:active,
+button.active,
+button:active,
 .button.active,
 .button:active,
 input[type="button"].active,
@@ -761,7 +795,9 @@ input[type="submit"]:active {
   cursor: default;
 }
 /* line 201, ../sass/_mixins/_cellularmixins.scss */
-button.active, button:active, button:hover,
+button.active,
+button:active,
+button:hover,
 .button.active,
 .button:active,
 .button:hover,
@@ -774,7 +810,7 @@ input[type="submit"]:hover {
   outline: none;
   text-decoration: none;
   border-color: #5e5e5e;
-  border-color: #29B4DE;
+  border-color: #29b4de;
   box-shadow: #cbcbcb 0 0.1em 0.4em;
 }
 
@@ -790,29 +826,29 @@ input[type="submit"] {
 .warning,
 .error {
   font-weight: bold;
-  border: .2em solid;
+  border: 0.2em solid;
   border-radius: 0.4em;
 }
 
 /* line 258, ../sass/style/_base_forms.scss */
 .ok {
-  color: #61D43F;
+  color: #61d43f;
   background-color: white;
-  border-color: #61D43F;
+  border-color: #61d43f;
 }
 
 /* line 264, ../sass/style/_base_forms.scss */
 .warning {
-  color: #EC2;
+  color: #ec2;
   background-color: white;
-  border-color: #EC2;
+  border-color: #ec2;
 }
 
 /* line 270, ../sass/style/_base_forms.scss */
 .error {
-  color: #8C0D00;
+  color: #8c0d00;
   background-color: #ffdcd9;
-  border-color: #8C0D00;
+  border-color: #8c0d00;
 }
 
 /**
@@ -867,24 +903,46 @@ a img {
 */
 /* line 9, ../sass/style/_base_grid.scss */
 .cell,
-.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10,
+.cell-100,
+.cell-90,
+.cell-80,
+.cell-75,
+.cell-70,
+.cell-60,
+.cell-50,
+.cell-40,
+.cell-30,
+.cell-25,
+.cell-20,
+.cell-10,
 .cell-33,
 .cell-66 {
   z-index: 1;
   position: relative;
   float: left;
   display: block;
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 21, ../sass/style/_base_grid.scss */
 .cell.center,
-.cell-100.center, .cell-90.center, .cell-80.center, .cell-75.center, .cell-70.center, .cell-60.center, .cell-50.center, .cell-40.center, .cell-30.center, .cell-25.center, .cell-20.center, .cell-10.center,
+.cell-100.center,
+.cell-90.center,
+.cell-80.center,
+.cell-75.center,
+.cell-70.center,
+.cell-60.center,
+.cell-50.center,
+.cell-40.center,
+.cell-30.center,
+.cell-25.center,
+.cell-20.center,
+.cell-10.center,
 .cell-33.center,
 .cell-66.center {
-  margin: 0% auto;
+  margin: 0 auto;
 }
 
 /* line 26, ../sass/style/_base_grid.scss */
@@ -894,7 +952,8 @@ a img {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.cell:after, .cell:before {
+.cell:after,
+.cell:before {
   content: "";
   display: block;
   width: 100%;
@@ -1052,17 +1111,39 @@ a img {
 
 @media screen and (max-width: 650px) and (min-width: 0) {
   /* line 116, ../sass/style/_base_grid.scss */
-  .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10,
+  .cell-100,
+  .cell-90,
+  .cell-80,
+  .cell-75,
+  .cell-70,
+  .cell-60,
+  .cell-50,
+  .cell-40,
+  .cell-30,
+  .cell-25,
+  .cell-20,
+  .cell-10,
   .cell-33,
   .cell-66 {
     width: 100%;
   }
 
   /* line 126, ../sass/style/_base_grid.scss */
-  .offset-100, .offset-90, .offset-80, .offset-75, .offset-70, .offset-60, .offset-50, .offset-40, .offset-30, .offset-25, .offset-20, .offset-10,
+  .offset-100,
+  .offset-90,
+  .offset-80,
+  .offset-75,
+  .offset-70,
+  .offset-60,
+  .offset-50,
+  .offset-40,
+  .offset-30,
+  .offset-25,
+  .offset-20,
+  .offset-10,
   .offset-33,
   .offset-66 {
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 /* line 136, ../sass/style/_base_grid.scss */
@@ -1077,7 +1158,8 @@ a img {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.clearfix:after, .clearfix:before {
+.clearfix:after,
+.clearfix:before {
   content: "";
   display: block;
   width: 100%;
@@ -1111,12 +1193,13 @@ hr.clearfix {
 /* line 165, ../sass/style/_base_grid.scss */
 .center {
   float: none;
-  margin: 0% auto;
+  margin: 0 auto;
   clear: both;
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.center:after, .center:before {
+.center:after,
+.center:before {
   content: "";
   display: block;
   width: 100%;
@@ -1168,9 +1251,9 @@ hr.clearfix {
   top: 0;
   left: 0;
   height: 96px;
-  background: #FEFEFE;
+  background: #fefefe;
   z-index: 10;
-  box-shadow: 0 0 1em 0.1em #444444;
+  box-shadow: 0 0 1em 0.1em #444;
   will-change: height;
 }
 
@@ -1178,7 +1261,7 @@ hr.clearfix {
 #header-top {
   z-index: 4;
   background: #111;
-  color: #FEFEFE;
+  color: #fefefe;
   border-bottom: #111 thin solid;
   text-align: right;
 }
@@ -1190,15 +1273,15 @@ hr.clearfix {
 #header-top h2,
 #header-top h3,
 #header-top h4 {
-  color: #FEFEFE;
+  color: #fefefe;
   font-size: 1em;
   display: inline;
 }
 
 /* line 39, ../sass/style/_region_header.scss */
 #header-bottom {
-  background-color: #444444;
-  color: #FEFEFE;
+  background-color: #444;
+  color: #fefefe;
 }
 
 /**
@@ -1216,11 +1299,12 @@ hr.clearfix {
   transition: all 500ms ease-out;
 }
 /* line 20, ../sass/style/_region_navigation.scss */
-#main-menu a, #main-menu a:visited {
+#main-menu a,
+#main-menu a:visited {
   z-index: 2;
   display: block;
   margin: 0;
-  padding: .4em .8em;
+  padding: 0.4em 0.8em;
   font-family: "Quicksand";
   font-size: 1em;
   text-align: left;
@@ -1228,16 +1312,23 @@ hr.clearfix {
   white-space: nowrap;
   text-decoration: none;
   color: #bbbab7;
-  background: #FEFEFE;
+  background: #fefefe;
   box-shadow: #bbbab7 0 0.1em 0.25em;
   border: none;
   border-radius: unset;
 }
 /* line 39, ../sass/style/_region_navigation.scss */
-#main-menu a:hover, #main-menu a:focus, #main-menu a:active, #main-menu a.active, #main-menu a:visited:hover, #main-menu a:visited:focus, #main-menu a:visited:active, #main-menu a:visited.active {
+#main-menu a:hover,
+#main-menu a:focus,
+#main-menu a:active,
+#main-menu a.active,
+#main-menu a:visited:hover,
+#main-menu a:visited:focus,
+#main-menu a:visited:active,
+#main-menu a:visited.active {
   text-decoration: none;
-  background: #29B4DE;
-  color: #FEFEFE;
+  background: #29b4de;
+  color: #fefefe;
 }
 /* line 53, ../sass/style/_region_navigation.scss */
 #main-menu > li:first-child {
@@ -1268,7 +1359,7 @@ hr.clearfix {
   height: 0;
   border-left: 0.4em solid transparent;
   border-right: 0.4em solid transparent;
-  border-top: 0.6em solid #29B4DE;
+  border-top: 0.6em solid #29b4de;
 }
 /* line 73, ../sass/style/_region_navigation.scss */
 #main-menu li {
@@ -1277,7 +1368,7 @@ hr.clearfix {
   width: auto;
   max-width: none;
   list-style: none;
-  margin: 0 .5em;
+  margin: 0 0.5em;
   padding: 0;
 }
 /* line 83, ../sass/style/_region_navigation.scss */
@@ -1303,7 +1394,9 @@ hr.clearfix {
   overflow: visible;
 }
 /* line 118, ../sass/style/_region_navigation.scss */
-#main-menu li:focus > ul, #main-menu li:hover > ul, #main-menu li.active > ul {
+#main-menu li:focus > ul,
+#main-menu li:hover > ul,
+#main-menu li.active > ul {
   max-height: 20em;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
@@ -1325,7 +1418,9 @@ hr.clearfix {
   right: 100%;
 }
 /* line 148, ../sass/style/_region_navigation.scss */
-#main-menu li li.active > ul, #main-menu li li:focus > ul, #main-menu li li:hover > ul {
+#main-menu li li.active > ul,
+#main-menu li li:focus > ul,
+#main-menu li li:hover > ul {
   width: 100%;
 }
 /* line 155, ../sass/style/_region_navigation.scss */
@@ -1352,7 +1447,7 @@ hr.clearfix {
 /* line 6, ../sass/style/_region_content.scss */
 #content {
   z-index: 1;
-  background: #FEFEFE;
+  background: #fefefe;
 }
 
 /* line 19, ../sass/style/_region_content.scss */
@@ -1368,25 +1463,25 @@ hr.clearfix {
 #footer {
   z-index: 1;
   margin: 5em 0 0 0;
-  background: #444444;
-  color: #FEFEFE;
+  background: #444;
+  color: #fefefe;
 }
 /* line 12, ../sass/style/_region_footer.scss */
 #footer p {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /* line 17, ../sass/style/_region_footer.scss */
 #footer-top {
   font-size: 0.75em;
-  background: #444444;
+  background: #444;
   color: #f1f1f1;
 }
 
 /* line 24, ../sass/style/_region_footer.scss */
 #footer-bottom {
   font-size: 0.75em;
-  background: #444444;
+  background: #444;
   color: #f1f1f1;
   border-top: thin solid;
 }
@@ -1417,7 +1512,7 @@ hr.clearfix {
 }
 /* line 18, ../sass/style/_style_icons.scss */
 .icon:hover {
-  border-color: #29B4DE;
+  border-color: #29b4de;
 }
 /* line 22, ../sass/style/_style_icons.scss */
 .icon.search {
@@ -2015,26 +2110,28 @@ hr.clearfix {
   display: block;
   margin: 0;
   max-width: 100%;
-  padding: .6em 1em;
-  background-color: #444444;
-  color: #FEFEFE;
+  padding: 0.6em 1em;
+  background-color: #444;
+  color: #fefefe;
   z-index: 2;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 47, ../sass/cellular-ui/_Cellular.scss */
-.cellular .jAccordion .title:focus, .cellular .jAccordion .title:hover,
+.cellular .jAccordion .title:focus,
+.cellular .jAccordion .title:hover,
 .cellular .jBlocklink .title:focus,
 .cellular .jBlocklink .title:hover,
 .cellular .jMmenu .title:focus,
 .cellular .jMmenu .title:hover,
 .cellular .jTabs .title:focus,
 .cellular .jTabs .title:hover {
-  color: #FEFEFE;
+  color: #fefefe;
   background-color: #1c94b8;
 }
 /* line 54, ../sass/cellular-ui/_Cellular.scss */
-.cellular .jAccordion .title a, .cellular .jAccordion .title a:visited,
+.cellular .jAccordion .title a,
+.cellular .jAccordion .title a:visited,
 .cellular .jBlocklink .title a,
 .cellular .jBlocklink .title a:visited,
 .cellular .jMmenu .title a,
@@ -2044,11 +2141,18 @@ hr.clearfix {
   font-weight: bold;
   line-height: 1.4em;
   text-decoration: none;
-  color: #FEFEFE;
+  color: #fefefe;
   border: none;
 }
 /* line 62, ../sass/cellular-ui/_Cellular.scss */
-.cellular .jAccordion .title a.active, .cellular .jAccordion .title a:active, .cellular .jAccordion .title a:focus, .cellular .jAccordion .title a:hover, .cellular .jAccordion .title a:visited.active, .cellular .jAccordion .title a:visited:active, .cellular .jAccordion .title a:visited:focus, .cellular .jAccordion .title a:visited:hover,
+.cellular .jAccordion .title a.active,
+.cellular .jAccordion .title a:active,
+.cellular .jAccordion .title a:focus,
+.cellular .jAccordion .title a:hover,
+.cellular .jAccordion .title a:visited.active,
+.cellular .jAccordion .title a:visited:active,
+.cellular .jAccordion .title a:visited:focus,
+.cellular .jAccordion .title a:visited:hover,
 .cellular .jBlocklink .title a.active,
 .cellular .jBlocklink .title a:active,
 .cellular .jBlocklink .title a:focus,
@@ -2082,8 +2186,8 @@ hr.clearfix {
 .cellular .jMmenu .panel,
 .cellular .jTabs .panel {
   display: block;
-  background: #FEFEFE;
-  color: #444444;
+  background: #fefefe;
+  color: #444;
   border: #bbbab7 1px solid;
   z-index: 1;
   padding-top: 1em;
@@ -2151,8 +2255,8 @@ hr.clearfix {
   vertical-align: top;
   margin: 0.2em auto;
   padding: 0.2em;
-  color: #444444;
-  background: #FEFEFE;
+  color: #444;
+  background: #fefefe;
   border: 1px solid #f1f1f1;
   box-shadow: 0 0 0.1em 0.1em #f1f1f1;
   -webkit-transition: all 500ms ease-out;
@@ -2163,20 +2267,20 @@ hr.clearfix {
   margin: 0;
   padding: 0.3em;
   font-size: 0.9em;
-  background-color: #444444;
+  background-color: #444;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 31, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap .title a,
 .jCard-wrap .title a:visited {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 37, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap a,
 .jCard-wrap p,
 .jCard-wrap li {
-  color: #777777;
+  color: #777;
   text-decoration: none;
 }
 /* line 43, ../sass/cellular-ui/_jCard.scss */
@@ -2184,36 +2288,51 @@ hr.clearfix {
   padding: 0.2em 0.8em;
 }
 /* line 46, ../sass/cellular-ui/_jCard.scss */
-.jCard-wrap.active, .jCard-wrap:active, .jCard-wrap:focus, .jCard-wrap:hover {
+.jCard-wrap.active,
+.jCard-wrap:active,
+.jCard-wrap:focus,
+.jCard-wrap:hover {
   color: #1c94b8;
   text-decoration: none;
   border: 1px solid #f1f1f1;
   box-shadow: 0 0.4em 1em 0.3em #bbbab7;
 }
 /* line 55, ../sass/cellular-ui/_jCard.scss */
-.jCard-wrap.active .jCard, .jCard-wrap:active .jCard, .jCard-wrap:focus .jCard, .jCard-wrap:hover .jCard {
-  border: 2px solid #444444;
+.jCard-wrap.active .jCard,
+.jCard-wrap:active .jCard,
+.jCard-wrap:focus .jCard,
+.jCard-wrap:hover .jCard {
+  border: 2px solid #444;
 }
 /* line 58, ../sass/cellular-ui/_jCard.scss */
-.jCard-wrap.active .title, .jCard-wrap:active .title, .jCard-wrap:focus .title, .jCard-wrap:hover .title {
+.jCard-wrap.active .title,
+.jCard-wrap:active .title,
+.jCard-wrap:focus .title,
+.jCard-wrap:hover .title {
   background-color: #1c94b8;
 }
 /* line 61, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap.active .title a,
-.jCard-wrap.active .title a:visited, .jCard-wrap:active .title a,
-.jCard-wrap:active .title a:visited, .jCard-wrap:focus .title a,
-.jCard-wrap:focus .title a:visited, .jCard-wrap:hover .title a,
+.jCard-wrap.active .title a:visited,
+.jCard-wrap:active .title a,
+.jCard-wrap:active .title a:visited,
+.jCard-wrap:focus .title a,
+.jCard-wrap:focus .title a:visited,
+.jCard-wrap:hover .title a,
 .jCard-wrap:hover .title a:visited {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 66, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap.active a,
 .jCard-wrap.active p,
-.jCard-wrap.active li, .jCard-wrap:active a,
+.jCard-wrap.active li,
+.jCard-wrap:active a,
 .jCard-wrap:active p,
-.jCard-wrap:active li, .jCard-wrap:focus a,
+.jCard-wrap:active li,
+.jCard-wrap:focus a,
 .jCard-wrap:focus p,
-.jCard-wrap:focus li, .jCard-wrap:hover a,
+.jCard-wrap:focus li,
+.jCard-wrap:hover a,
 .jCard-wrap:hover p,
 .jCard-wrap:hover li {
   color: #1c94b8;
@@ -2254,25 +2373,26 @@ hr.clearfix {
 /* line 30, ../sass/cellular-ui/_jModal.scss */
 .jModal-content {
   /*
-  position: absolute;
-  top:1em;
-  right:1em;
-  bottom:  1em;
-  left: 1em;
+    position: absolute;
+    top:1em;
+    right:1em;
+    bottom:  1em;
+    left: 1em;
   */
   position: relative;
   display: block;
   padding: 1em;
   border: #bbbab7 1px solid;
   border-radius: 50%;
-  background: #FEFEFE;
+  background: #fefefe;
   clear: both;
   zoom: 1;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.jModal-content:after, .jModal-content:before {
+.jModal-content:after,
+.jModal-content:before {
   content: "";
   display: block;
   width: 100%;
@@ -2286,8 +2406,8 @@ hr.clearfix {
 .jModal-content.active .jModal-close {
   width: 1em;
   height: 1em;
-  background: #8C0D00;
-  border: 0.1em solid #FEFEFE;
+  background: #8c0d00;
+  border: 0.1em solid #fefefe;
 }
 
 /* line 57, ../sass/cellular-ui/_jModal.scss */
@@ -2302,7 +2422,8 @@ hr.clearfix {
   transition: all 500ms ease-out;
 }
 /* line 65, ../sass/cellular-ui/_jModal.scss */
-.jModal-close:hover, .jModal-close:focus {
+.jModal-close:hover,
+.jModal-close:focus {
   background: #bf1200;
 }
 
@@ -2325,30 +2446,32 @@ hr.clearfix {
   width: 3em;
   height: 3em;
   padding: 0;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   background-size: 9em;
   background-repeat: no-repeat;
   background-position: left center;
   background-image: url("../assets/icons/png/menu.png");
   background-image: url("../assets/icons/svg/menu.svg");
   border: 2px solid #bbbab7;
-  box-shadow: 0 0 0 0 #FEFEFE;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: background-position, box-shadow;
   border-radius: 0.4em;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 37, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-trigger:focus, .cellular .jMmenu-trigger:hover {
-  box-shadow: 0 0 0.2em 0.1em #29B4DE;
+.cellular .jMmenu-trigger:focus,
+.cellular .jMmenu-trigger:hover {
+  box-shadow: 0 0 0.2em 0.1em #29b4de;
 }
 /* line 41, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-trigger.active {
   background-position: right center;
 }
 /* line 44, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-trigger.active:focus, .cellular .jMmenu-trigger.active:hover {
-  box-shadow: 0 0 0.2em 0.1em #8C0D00;
+.cellular .jMmenu-trigger.active:focus,
+.cellular .jMmenu-trigger.active:hover {
+  box-shadow: 0 0 0.2em 0.1em #8c0d00;
 }
 /* line 50, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-triggertext {
@@ -2397,19 +2520,21 @@ hr.clearfix {
   height: 0;
   border-left: 0.4em solid transparent;
   border-right: 0.4em solid transparent;
-  border-top: 0.6em solid #444444;
+  border-top: 0.6em solid #444;
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 92, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-menu li.parent.active:after, .cellular .jMmenu-menu li.parent:focus:after, .cellular .jMmenu-menu li.parent:hover:after {
+.cellular .jMmenu-menu li.parent.active:after,
+.cellular .jMmenu-menu li.parent:focus:after,
+.cellular .jMmenu-menu li.parent:hover:after {
   content: "";
   position: absolute;
   width: 0;
   height: 0;
   border-left: 0.4em solid transparent;
   border-right: 0.4em solid transparent;
-  border-top: 0.6em solid #29B4DE;
+  border-top: 0.6em solid #29b4de;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
@@ -2434,7 +2559,8 @@ hr.clearfix {
   transition: max-height 0.5s ease-in;
 }
 /* line 121, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-menu a, .cellular .jMmenu-menu a:visited {
+.cellular .jMmenu-menu a,
+.cellular .jMmenu-menu a:visited {
   display: block;
   height: 1em;
   padding: 0.6em 1em 0.8em;
@@ -2444,19 +2570,21 @@ hr.clearfix {
   font-weight: bold;
   background-image: none;
   border-bottom: 1px solid;
-  color: #444444;
-  background-color: #FEFEFE;
+  color: #444;
+  background-color: #fefefe;
   box-shadow: 0 0 0.3em #bbbab7;
 }
 /* line 136, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-menu a:active, .cellular .jMmenu-menu a:focus, .cellular .jMmenu-menu a:hover {
-  color: #29B4DE;
-  background-color: #FEFEFE;
+.cellular .jMmenu-menu a:active,
+.cellular .jMmenu-menu a:focus,
+.cellular .jMmenu-menu a:hover {
+  color: #29b4de;
+  background-color: #fefefe;
 }
 /* line 143, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-menu .active > a {
-  color: #29B4DE;
-  background-color: #FEFEFE;
+  color: #29b4de;
+  background-color: #fefefe;
 }
 /* line 147, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-menu ul {
@@ -2476,26 +2604,35 @@ hr.clearfix {
   height: 100%;
 }
 /* line 176, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-left .jMmenu-menu, .cellular.push-right .jMmenu-menu, .cellular.slide-left .jMmenu-menu, .cellular.slide-right .jMmenu-menu {
+.cellular.push-left .jMmenu-menu,
+.cellular.push-right .jMmenu-menu,
+.cellular.slide-left .jMmenu-menu,
+.cellular.slide-right .jMmenu-menu {
   bottom: 0;
   width: 0;
   max-width: 0;
 }
 /* line 180, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-left .jMmenu-menu.active, .cellular.push-right .jMmenu-menu.active, .cellular.slide-left .jMmenu-menu.active, .cellular.slide-right .jMmenu-menu.active {
+.cellular.push-left .jMmenu-menu.active,
+.cellular.push-right .jMmenu-menu.active,
+.cellular.slide-left .jMmenu-menu.active,
+.cellular.slide-right .jMmenu-menu.active {
   width: 100%;
   max-width: 50%;
 }
 /* line 189, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-left .jMmenu-menu, .cellular.slide-left .jMmenu-menu {
+.cellular.push-left .jMmenu-menu,
+.cellular.slide-left .jMmenu-menu {
   left: 0;
 }
 /* line 196, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-right .jMmenu-menu, .cellular.slide-right .jMmenu-menu {
+.cellular.push-right .jMmenu-menu,
+.cellular.slide-right .jMmenu-menu {
   right: 0;
 }
 /* line 205, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.jMmenu-active.push-left #content, .cellular.jMmenu-active.push-right #content {
+.cellular.jMmenu-active.push-left #content,
+.cellular.jMmenu-active.push-right #content {
   width: 50%;
 }
 /* line 210, ../sass/cellular-ui/_jMmenu.scss */
@@ -2523,7 +2660,7 @@ hr.clearfix {
 /* line 24, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap {
   overflow: hidden;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   border: #bbbab7 1px solid;
   /* Styles applied while .slide is transitioning */
 }
@@ -2595,15 +2732,15 @@ hr.clearfix {
 .jScrolli-slide .title a,
 .jScrolli-slide .title a:visited {
   font-weight: bold;
-  color: #444444;
-  text-shadow: -0.125rem 0 #FEFEFE, 0 0 #FEFEFE, -0.0625rem 0.0625rem 0 #FEFEFE, 0.0625rem 0.0625rem 0 #FEFEFE;
+  color: #444;
+  text-shadow: -0.125rem 0 #fefefe, 0 0 #fefefe, -0.0625rem 0.0625rem 0 #fefefe, 0.0625rem 0.0625rem 0 #fefefe;
 }
 /* line 112, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-slide .title a:active,
 .jScrolli-slide .title a:hover,
 .jScrolli-slide .title a:focus {
-  color: #444444;
-  text-shadow: -0.25rem 0 #29B4DE, 0 0 #29B4DE, -0.125rem 0.125rem 0 #29B4DE, 0.125rem 0.125rem 0 #29B4DE;
+  color: #444;
+  text-shadow: -0.25rem 0 #29b4de, 0 0 #29b4de, -0.125rem 0.125rem 0 #29b4de, 0.125rem 0.125rem 0 #29b4de;
 }
 /* line 120, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-slide p {
@@ -2636,7 +2773,7 @@ hr.clearfix {
   max-width: none;
   margin: 0;
   padding: 0.8em;
-  color: #FEFEFE;
+  color: #fefefe;
   opacity: 1;
   -webkit-transition: all 1s linear;
   transition: all 1s linear;
@@ -2651,7 +2788,7 @@ hr.clearfix {
   text-indent: -999em;
   width: 2em;
   height: 2em;
-  color: #FEFEFE;
+  color: #fefefe;
   background-repeat: no-repeat;
   background-image: url(../assets/icons/png/controls.png);
   background-image: url(../assets/icons/svg/controls.svg);
@@ -2660,13 +2797,17 @@ hr.clearfix {
   transition: all 500ms ease-out;
 }
 /* line 170, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-control.prev, .jScrolli-control.next {
+.jScrolli-control.prev,
+.jScrolli-control.next {
   top: 50%;
-  background-color: #444444;
+  background-color: #444;
 }
 /* line 175, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-control.prev:hover, .jScrolli-control.prev:focus, .jScrolli-control.next:hover, .jScrolli-control.next:focus {
-  background-color: #29B4DE;
+.jScrolli-control.prev:hover,
+.jScrolli-control.prev:focus,
+.jScrolli-control.next:hover,
+.jScrolli-control.next:focus {
+  background-color: #29b4de;
 }
 /* line 181, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-control.prev {
@@ -2679,11 +2820,12 @@ hr.clearfix {
   background-position: -5.5rem 0.5rem;
 }
 /* line 191, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-control.play, .jScrolli-control.pause {
+.jScrolli-control.play,
+.jScrolli-control.pause {
   top: 0;
   left: 0;
   background-color: #111;
-  border: #FEFEFE 2px solid;
+  border: #fefefe 2px solid;
   border-radius: 50%;
   opacity: 0;
   -webkit-transition: none;
@@ -2726,7 +2868,7 @@ hr.clearfix {
   text-indent: -999em;
   width: 0.5em;
   height: 0.5em;
-  border: #444444 1px solid;
+  border: #444 1px solid;
   border-radius: 50%;
   background-color: #bbbab7;
   -webkit-transition: all 500ms ease-out;
@@ -2735,12 +2877,13 @@ hr.clearfix {
 /* line 243, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-marker.active {
   border-color: #16708b;
-  background-color: #29B4DE;
-  box-shadow: 0 0 0.5em 0 #29B4DE;
+  background-color: #29b4de;
+  box-shadow: 0 0 0.5em 0 #29b4de;
 }
 /* line 249, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-marker:hover, .jScrolli-marker:focus {
-  border-color: #29B4DE;
+.jScrolli-marker:hover,
+.jScrolli-marker:focus {
+  border-color: #29b4de;
 }
 /* line 254, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-marker a {
@@ -2757,7 +2900,7 @@ hr.clearfix {
   display: block;
   margin: 1em 0 0 0;
   padding: 1em;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   border-radius: 0.4em;
   box-shadow: 0 0 0.3em #bbbab7;
 }
@@ -2782,7 +2925,7 @@ hr.clearfix {
 }
 /* line 34, ../sass/cellular-ui/_jSocial.scss */
 .jSocial .icon:hover {
-  background-color: #FEFEFE;
+  background-color: #fefefe;
 }
 /* line 40, ../sass/cellular-ui/_jSocial.scss */
 .jSocial .icon.behance {
@@ -2920,13 +3063,15 @@ hr.clearfix {
   background-image: url("../assets/icons/svg/youtube.svg");
 }
 /* line 48, ../sass/cellular-ui/_jSocial.scss */
-.jSocial.horizontal, .jSocial.vertical {
+.jSocial.horizontal,
+.jSocial.vertical {
   z-index: 10;
   position: fixed;
   margin: 0;
 }
 /* line 54, ../sass/cellular-ui/_jSocial.scss */
-.jSocial.horizontal .icon, .jSocial.vertical .icon {
+.jSocial.horizontal .icon,
+.jSocial.vertical .icon {
   border-radius: 0;
 }
 
@@ -2976,8 +3121,8 @@ hr.clearfix {
   z-index: 1;
   padding: 1.4em 1em 1em;
   bottom: 0.0625rem;
-  background: #FEFEFE;
-  color: #444444;
+  background: #fefefe;
+  color: #444;
   border: #bbbab7 1px solid;
 }
 /* line 23, ../sass/cellular-ui/_jTabs.scss */
@@ -2997,23 +3142,23 @@ hr.clearfix {
 }
 /* line 37, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab .title {
-  padding: .4em .6em;
+  padding: 0.4em 0.6em;
   border: #bbbab7 1px solid;
 }
 /* line 42, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab.active {
-  background-color: #FEFEFE;
-  color: #444444;
+  background-color: #fefefe;
+  color: #444;
 }
 /* line 46, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab.active .title {
-  color: #444444;
-  background: #FEFEFE;
-  border-bottom-color: #FEFEFE;
+  color: #444;
+  background: #fefefe;
+  border-bottom-color: #fefefe;
 }
 /* line 51, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab.active .title a {
-  color: #444444;
+  color: #444;
 }
 /* line 61, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap.vertical > ul {
@@ -3032,7 +3177,7 @@ hr.clearfix {
 .jTabs-wrap.vertical .tab {
   display: block;
   float: none;
-  margin: .1em 0;
+  margin: 0.1em 0;
 }
 /* line 80, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap.vertical .tab:first-child {
@@ -3040,7 +3185,7 @@ hr.clearfix {
 }
 /* line 84, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap.vertical .tab .title {
-  padding: .4em 1%;
+  padding: 0.4em 1%;
 }
 /* line 87, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap.vertical .tab .title a {
@@ -3048,8 +3193,8 @@ hr.clearfix {
 }
 /* line 95, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap.vertical .tab.active .title {
-  border-right-color: #FEFEFE;
-  border-bottom-color: #444444;
+  border-right-color: #fefefe;
+  border-bottom-color: #444;
 }
 
 /**
@@ -3072,7 +3217,7 @@ hr.clearfix {
   border: 1px solid #bbbab7;
   border-radius: 50%;
   background-color: #f1f1f1;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /* line 21, ../sass/cellular-ui/_jTooltip.scss */
@@ -3081,7 +3226,7 @@ hr.clearfix {
   position: fixed;
   display: block;
   background-color: rgba(17, 17, 17, 0.9);
-  color: #FEFEFE;
+  color: #fefefe;
   height: 0;
   max-height: 0;
   margin: 0;
@@ -3134,7 +3279,7 @@ hr.clearfix {
   width: 1em;
   height: 1em;
   text-indent: -999em;
-  background: #8C0D00;
+  background: #8c0d00;
 }
 
 /* line 18, ../sass/cellular-ui/_jZoom.scss */
@@ -3179,7 +3324,8 @@ hr.clearfix {
   border: 1px solid #bbbab7;
 }
 /* line 36, ../sass/cellular-ui/_scrolled.scss */
-.scrolled.jMmenu-active .jMmenu-menu, .scrolled.jMmenu-inactive .jMmenu-menu {
+.scrolled.jMmenu-active .jMmenu-menu,
+.scrolled.jMmenu-inactive .jMmenu-menu {
   top: 3rem;
 }
 
@@ -3229,24 +3375,25 @@ hr.clearfix {
 
 /* line 11, ../sass/style/_style_decor.scss */
 .textShadow {
-  text-shadow: 0.0625rem 0.0625rem 0.1875rem #444444;
+  text-shadow: 0.0625rem 0.0625rem 0.1875rem #444;
 }
 
 /* line 16, ../sass/style/_style_decor.scss */
 .box-shadow {
   margin: 0 auto;
   padding: 3em 1.4em;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   box-shadow: inset 0 0 0.3em 0 #f1f1f1;
 }
 /* line 23, ../sass/style/_style_decor.scss */
-.box-shadow:before, .box-shadow:after {
+.box-shadow:before,
+.box-shadow:after {
   position: absolute;
   width: 40%;
   height: 1em;
   content: ' ';
   left: 1.2em;
-  bottom: .8em;
+  bottom: 0.8em;
   background: transparent;
   -webkit-transform: skew(-5deg) rotate(-5deg);
   transform: skew(-5deg) rotate(-5deg);
@@ -3268,10 +3415,11 @@ hr.clearfix {
   padding: 0 1.2em;
   border-bottom: black 1px solid;
   background-color: #111;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 335, ../sass/_mixins/_cellularmixins.scss */
-.ribbon:after, .ribbon:before {
+.ribbon:after,
+.ribbon:before {
   content: " ";
   position: absolute;
   bottom: -1em;
@@ -3295,7 +3443,7 @@ hr.clearfix {
   padding: 0 1.2em;
   background: #111;
   border-bottom: black 1px solid;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 357, ../sass/_mixins/_cellularmixins.scss */
 .popout:after {
@@ -3332,14 +3480,15 @@ hr.clearfix {
   background-repeat: no-repeat;
   border: none;
   text-decoration: none;
-  box-shadow: 0 0 0 0 #FEFEFE;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: width,height,transform;
   -webkit-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
 }
 /* line 31, ../sass/style/_style_logo.scss */
-.logo a:focus, .logo a:hover {
-  box-shadow: 0 0 0.4em 0 #29B4DE;
+.logo a:focus,
+.logo a:hover {
+  box-shadow: 0 0 0.4em 0 #29b4de;
 }
 
 /**

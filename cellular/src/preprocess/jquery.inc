@@ -34,7 +34,6 @@ function cellular_jquery_info() {
  *   CDN URLs used to update jQuery & jQuery.ui
  */
 function cellular_cdn() {
-
   $jq = cellular_jquery_info();
   $ui = $jq['ui'];
   /* Available cdns:
@@ -44,25 +43,25 @@ function cellular_cdn() {
    */
   $networks = array(
     'jquery' => array(
-      'base_url' => '//code.jquery.com/',
+      'base_url' => 'code.jquery.com',
       'jquery' => 'jquery-' . $jq['version'] . CELLULAR_JS_EXT,
       'jqueryui' => 'ui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
       'theme' => 'ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'google' => array(
-      'base_url' => '//ajax.googleapis.com/ajax/libs/',
+      'base_url' => 'ajax.googleapis.com/ajax/libs',
       'jquery' => 'jquery/' . $jq['version'] . '/jquery' . CELLULAR_JS_EXT,
       'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
       'theme' => 'jqueryui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'microsoft' => array(
-      'base_url' => '//ajax.aspnetcdn.com/ajax/',
+      'base_url' => 'ajax.aspnetcdn.com/ajax',
       'jquery' => 'jquery/jquery-' . $jq['version'] . CELLULAR_JS_EXT,
       'jqueryui' => 'jquery.ui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
       'theme' => 'jquery.ui/' . $ui['version'] . '/themes/' . $ui['theme'] . '/jquery-ui' . CELLULAR_CSS_EXT,
     ),
     'cloudflare' => array(
-      'base_url' => '//cdnjs.cloudflare.com/ajax/libs/',
+      'base_url' => 'cdnjs.cloudflare.com/ajax/libs',
       'jquery' => 'jquery/' . $jq['version'] . '/jquery' . CELLULAR_JS_EXT,
       'jqueryui' => 'jqueryui/' . $ui['version'] . '/jquery-ui' . CELLULAR_JS_EXT,
       // Themes aren't provided by cdnjs.
@@ -92,10 +91,10 @@ function cellular_jquery_update(&$javascript) {
     'weight' => -100,
   );
   // Set CDN or local source.
-  if ($jq['use_cdn'] == 1) {
+  if ($jq['use_cdn'] == TRUE) {
     $cdn = cellular_cdn();
     $jquery['object'] = 'jQuery';
-    $jquery['cdn'] = $cdn['base_url'] . $cdn['jquery'];
+    $jquery['cdn'] = 'https://' . $cdn['base_url'] . '/' . $cdn['jquery'];
   }
   // Override jQuery.
   cellular_js_override($javascript, $jquery, TRUE);
@@ -169,7 +168,7 @@ function cellular_jqueryui_update_js(&$javascript) {
         // If updating from cdn unset each widget so a single call is made for all widgets.
         unset($javascript[$default]);
         // Set cdn source.
-        $script['jqueryui']['cdn'] = $cdn['base_url'] . $cdn['jqueryui'];
+        $script['jqueryui']['cdn'] = 'https://' . $cdn['base_url'] . '/' . $cdn['jqueryui'];
         // Set lower weight so cdn is delivered before fallbacks.
         $script['jqueryui']['weight'] = -10;
         // Add single link to cdn, with local fallback to each file.
@@ -235,11 +234,6 @@ function cellular_jqueryui_update_css(&$css) {
         cellular_add_css($style);
       }
       else {
-        if (theme_get_setting('jquery_cdn') == 1) {
-          $cdn = cellular_cdn();
-          // Set cdn source.
-          $style['ui']['cdn'] = $cdn['base_url'] . $cdn['theme'];
-        }
         $ui_path = $ui['path'] . $ui['version'] . '/' . $ui['theme'] . '/';
         $style['ui']['file'] = $ui_path . 'jquery-ui' . CELLULAR_CSS_EXT;
 

@@ -1,8 +1,7 @@
-.jModal-trigger {
-  
-}
-.jModal-overlay {
-  z-index: 99;
+.jModal-trigger {}
+
+#jModal-overlay {
+  z-index: 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -11,17 +10,60 @@
   background: $black;
   background: rgba($black, 0.7);
   opacity: 0;
+  @include transition();
+  &.active {
+    z-index: 99;
+    opacity: 1;
+  }
 }
+
 .jModal-window {
   position: fixed;
   top: 50%;
-  right: 50%;
-  padding: 1em;
+  left: 50%;
   border-radius: $tiny;
-  background: $white;
+  overflow: hidden;
   @include transition();
+  &.active {}
+}
 
+.jModal-content {
+  /*
+    position: absolute;
+    top:1em;
+    right:1em;
+    bottom:  1em;
+    left: 1em;
+  */
+  position: relative;
+  display: block;
+  padding: 1em;
+  border: $grey 1px solid;
+  border-radius: 50%;
+  background: $white;
+  @include clear();
+  @include transition();
   &.active {
+    border-radius: $tiny;
+    .jModal-close {
+      width: 1em;
+      height: 1em;
+      background: $red;
+      border: 0.1em solid $white;
+    }
+  }
+}
 
+.jModal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  @include transition();
+  &:hover,
+  &:focus {
+    background: lighten($red, 10%);
   }
 }

@@ -9,13 +9,18 @@
  */
 function cellular_preprocess_html(&$vars) {
 
+  if (theme_get_setting('cookie_time') == TRUE) {
+    $cookies = cellular_cookies();
+    $cookies == FALSE ? NULL : cellular_cookies('set');
+  }
+
   cellular_http_headers();
-  $cookies = cellular_cookies();
   cellular_html_attributes($vars);
   cellular_rdf($vars);
   cellular_metatags($vars);
   cellular_favicons();
-  cellular_body_attributes($vars, $cookies);
+
+  cellular_body_attributes($vars);
 
   $cellular_theme_path = drupal_get_path('theme', 'cellular');
 
@@ -33,7 +38,7 @@ function cellular_preprocess_html(&$vars) {
       'weight' => 99,
     ),
   );
-  // Add to plugin settings to Drupal.settings.
+  // Add plugin settings to Drupal.settings.
   $cellular_settings = array(
     'first_visit' => !$cookies,
     'plugins' => cellular_js_plugin_settings(),
@@ -117,31 +122,63 @@ function cellular_preprocess_html(&$vars) {
     );
     drupal_add_css($cellular_theme_path . '/css/user.css', $user_style);
   }
+}
 
-  //dpm($vars);
+/**
+ * Set cookie for site, used to load additional resources if needed.
+ */
+function cellular_cookies($getset = 'get') {
+
+  $cookie = variable_get('site_name');
+  $cookie = preg_replace("/[ \d]+/", '_', strtolower($cookie)) . '_visited';
+
+  switch ($getset) {
+    case 'set':
+      if (empty($_COOKIE[$cookie])) {
+        setcookie($cookie, TRUE, time() + (86400 * theme_get_setting('cookie_time')), '/', $_SERVER['SERVER_NAME'], FALSE, TRUE);
+      }
+      break;
+
+    case 'get':
+    default:
+      // $first-visit ?
+      return empty($_COOKIE[$cookie]) ? TRUE : FALSE;
+  }
 }
 
 /**
  * Add HTTP Response Headers.
  */
 function cellular_http_headers() {
-  // Try to prevent clickjacking.
-  drupal_add_http_header('X-Frame-Options', 'DENY');
   // Set IE compatibility mode.
   drupal_add_http_header('X-UA-Compatible', 'IE=Edge');
-}
+  /**
+   * Security headers
+   */
+  drupal_add_http_header('X-Content-Type-Options', 'nosniff');
+  // Try to prevent clickjacking.
+  drupal_add_http_header('X-Frame-Options', 'DENY');
+  // Set IE xss policy.
+  drupal_add_http_header('X-XSS-Protection', '1');
+  // Limit site sources.
+  if (theme_get_setting('secure_sources') == TRUE) {
+    $params = array(
+      theme_get_setting('secure_unsafeinline') ? "'unsafe-inline'" : NULL,
+      theme_get_setting('secure_unsafeeval') ? "'unsafe-eval'" : NULL,
+      "'self'",
+    );
+    // Add whitelisted sites from theme settings.
+    $sources = preg_split('/[,\s]/', theme_get_setting('site_source_whitelist'));
+    // Whitelist CDN provider if necessary.
+    if (theme_get_setting('jquery_cdn') == TRUE) {
+      $cdn = cellular_cdn();
+      $cdn = preg_match('/\w+(?:\.com)/', $cdn['base_url'], $cdn_base);
+      $sources[] = '*.' . $cdn_base[0];
+    }
+    $params = implode(' ', array_merge($params, $sources));
 
-/**
- * Set cookie for site, used to load additional resources if needed.
- */
-function cellular_cookies() {
-  if (theme_get_setting('cookie_time') == TRUE) {
-    $cookie = variable_get('site_name', "Just another Drupal Site");
-    $cookie = preg_replace("/[ \d]+/", '', strtolower($cookie)) . '98';
-
-    setcookie($cookie, TRUE, time() + (86400 * theme_get_setting('cookie_time')));
-
-    return !empty($_COOKIE[$cookie]) ? TRUE : FALSE;
+    // Set security policy header
+    drupal_add_http_header('Content-Security-Policy', "default-src $params");
   }
 }
 
@@ -210,22 +247,30 @@ function cellular_rdf(&$vars) {
  * @param array $vars
  *   Associative array of variables to merge with defaults from the theme registry.
  */
-function cellular_body_attributes(&$vars, $visited) {
+function cellular_body_attributes(&$vars) {
   $body_attributes = array();
   $path = drupal_get_path_alias();
   // Page URL is used to set id & classes of body.
   $aliases = explode('/', $path);
   // Set current page as body id.
   $body_attributes['id'] = array_pop($aliases);
-  // Add class for 1st-time visitors.
-  $visited ? NULL : $body_attributes['class'][] = 'first-visit';
+
   // Add path-based classes.
   foreach ($aliases as $alias) {
     $body_attributes['class'][] = 'page--' . $alias;
   }
-
+  // Add class for 1st-time visitors.
+  if (theme_get_setting('cookie_time') == TRUE) {
+    $body_attributes['class'][] = cellular_cookies() ? 'first-visit' : NULL;
+  }
+  // Add frontpage class
   drupal_is_front_page() ? $body_attributes['class'][] = 'frontpage' : NULL;
-  user_is_logged_in() ? $body_attributes['class'][] = 'user' : NULL;
+  // Add user classes
+  if (user_is_logged_in()) {
+    foreach ($GLOBALS['user']->roles as $roles => $role) {
+      $body_attributes['class'][] = $role;
+    }
+  }
 
   $vars['body_attributes'] = drupal_attributes($body_attributes);
 }

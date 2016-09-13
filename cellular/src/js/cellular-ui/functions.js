@@ -7,39 +7,34 @@
  */
 cellular.breakpoint = function () {
   var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
-    obj;
-
+    win = {};
+/*
   if (content) {
-    obj = {
-      size: content.match(/\d/g).join(""),
-      type: content.match(/\w*[^\"\'](?=-)/g).join("")
-    };
-  } else {
+    win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");    
+  } else {*/
     // Provide default breakpoints if they aren't set by css.
-    var ww = jQuery(window).width(),
-      ssize = [
-        ''
-      ];
+    var ww = jQuery(window).width();
     switch (ww) {
-      case ww > 650 && ww < 800:
-        //console.log(ww);
-
-        obj = {
-          size: '',
-          type: ''
-        };
+      case ww < 650:
+        win.type = 'window_mobile';
         break;
+      case ww > 650 && ww < 800:
+        win.type = 'window_narrow';
+        break;
+      case ww > 1200:
+       win.type = 'window_large';
+        break;
+      case ww > 800 && ww < 1200:
       default:
-
-        obj = {
-          size: '',
-          type: ''
-        };
+        win.type = 'window_default';
         break;
     }
-  }
+ // }
+  jQuery('body').addClass(win.type);
 
-  return obj;
+    win.size = ww;
+
+  return win;
 };
 
 /**

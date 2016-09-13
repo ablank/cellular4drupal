@@ -6,7 +6,7 @@ $scroll_header: $header_height / 2;
 .scrolled {
   #header {
     height: $scroll_header;
-    overflow: hidden;
+    //overflow: hidden;
     transition: all 300ms ease;
 
     .logo {
@@ -14,7 +14,7 @@ $scroll_header: $header_height / 2;
       a {
         width: $scroll_header; // You may need to weak width to fit your image.
         height: $scroll_header;
-        background-size: $scroll_header;
+        background-size: $scroll_header $scroll_header;
         //transform: scale(0.5, 0.5);
         transition: all 500ms ease-out;
       }

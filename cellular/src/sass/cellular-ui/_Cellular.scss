@@ -15,7 +15,7 @@ $border_width: 1px;
 $border_radius: .5em;
 
 /* Styling common to all UI components */
-.cellular {// Only applies styling if javascript is enabled.
+.cellular {// Only applies styling if javascript is enabled/DOM ready.
   .jAccordion,
   .jBlocklink,
   .jMmenu,
