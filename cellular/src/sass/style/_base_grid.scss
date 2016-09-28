@@ -3,29 +3,55 @@
   * Cellular Grid
 */
 
+.container {
+  float: none;
+  max-width: $container_width;
+  margin: auto;
+}
+
 //////
 // Grid Cells
 /////
+// Set common attributes.
 .cell,
-#{$cells},
-.cell-33,
-.cell-66 {
+#{$cells} {
   z-index: 1;
   position: relative;
   float: left;
   display: block;
-  @if($cell_margin) {margin: $cell_margin + unquote('%');}
-  @if($cell_padding) {padding: $cell_padding + unquote('%');}
+  @if($cell_margin) {
+    margin: $cell_margin + unquote('%');
+  }
+  @if($cell_padding) {
+    padding: $cell_padding + unquote('%');
+  }
   @include transition();
-
+  
   &.center {
     margin: $cell_margin + unquote('%') auto;
   }
 }
-
+// .cell is functionally a row
 .cell {
   width: 100%;
   @include clear();
+}
+// Size individual cells & offsets.
+@each $name, $size in $grid {
+  .cell-#{$name} {
+    @if($flexbox) {
+      width: auto;
+      margin: auto;
+      flex-basis: $size + unquote('%');
+      max-width: $size + unquote('%');
+    }
+    @else {
+      width: $size - $cell_space + unquote('%');
+    }
+  }
+  .offset-#{$name} {
+    margin-left: $size + ($cell_space /2) + unquote('%');
+  }
 }
 
 @if($flexbox) {
@@ -36,96 +62,24 @@
     justify-content: space-around;
     align-items: stretch;
     align-content: flex-start;
-
-    &.col {flex-direction: column;}
-
-    & > [class^="cell"] {
-      width: auto;
-      margin: auto;
+    &.col {
+      flex-direction: column;
     }
+    //&>#{$cells} {margin: auto;}
   }
 }
 
-@each $cell in $grid {
-  .cell-#{$cell} {
-    width: $cell - $cell_space + unquote('%');
-  }
 
-  .offset-#{$cell} {
-    margin-left: $cell + ($cell_space /2) + unquote('%');
-  }
-
-  @if($flexbox){
-    .flex {
-      & > .cell-#{$cell} {
-        flex-basis: $cell + unquote('%');
-        max-width: $cell + unquote('%');
-      }
-    }
-  }
-}
-
-/* Add in any quirky widths that can't be looped */
-.cell-33 {width: 33.333333 - $cell_space + unquote('%');}
-.cell-66 {width: 66.666666 - $cell_space + unquote('%');}
-.offset-33 {margin-left: 33.333333 + ($cell_space /2) + unquote('%');}
-.offset-66 {margin-left: 66.666666 + ($cell_space /2) + unquote('%');}
-
-@if($flexbox){
-  .flex{
-    .cell-33 {
-      flex-basis: 33.33333%;
-      max-width: 33.33333%;
-    }
-    .cell-66 {
-      flex-basis: 66.666666%;
-      max-width: 66.666666%;
-    }
-
-    & > #{$cells}
-    & > .cell-33,
-    & > .cell-66 {
-      width: auto;
-      margin: auto;
-      /*
-        &.left {
-        align-self: flex-start;
-        }
-
-        &.right {
-        align-self: flex-end;
-        }
-
-        &.center {
-        align-self: center;
-        }
-      */
-    }
-  }
-}
-
-.container {
-  float: none;
-  width: 96%;
-  max-width: $container_width;
-  margin: auto;
-}
-
-@media screen and (max-width: $res_mobile) and (min-width: 0) {
+@media screen and (min-width: 0) and (max-width: $res_mobile) {
   // Set all cells to single-column
-  #{$cells}
-  .cell-33,
-  .cell-66 {
+  #{$cells} {
     width: 100% - $cell_space;
     @if($flexbox) {
       flex-basis: 100% - $cell_space;
       max-width: 100% - $cell_space;
     }
   }
-
-  #{$offsets}
-  .offset-33,
-  .offset-66 {
+  #{$offsets} {
     margin-left: $cell_margin + unquote('%');
   }
 }
@@ -140,12 +94,6 @@
 
 .clearfix {
   @include clear();
-}
-
-hr.clearfix {
-  visibility: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 .left,
@@ -165,6 +113,5 @@ hr.clearfix {
 .center {
   float: none;
   margin: $cell_margin + unquote('%') auto;
-
   @include clear();
 }

@@ -636,7 +636,7 @@ input[type="image"] {
   width: auto;
   border: none;
 }
-/* line 97, ../sass/_mixins/_cellularmixins.scss */
+/* line 98, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked,
 input[type="checkbox"]:not(:checked),
 input[type="radio"]:checked,
@@ -644,7 +644,7 @@ input[type="radio"]:not(:checked) {
   position: absolute;
   left: -999em;
 }
-/* line 102, ../sass/_mixins/_cellularmixins.scss */
+/* line 103, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked + label,
 input[type="checkbox"]:not(:checked) + label,
 input[type="radio"]:checked + label,
@@ -657,7 +657,7 @@ input[type="radio"]:not(:checked) + label {
   vertical-align: middle;
   text-indent: 2.16em;
 }
-/* line 111, ../sass/_mixins/_cellularmixins.scss */
+/* line 112, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked + label:before,
 input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:before,
@@ -674,7 +674,7 @@ input[type="radio"]:not(:checked) + label:after {
   height: 1.2em;
   vertical-align: middle;
 }
-/* line 122, ../sass/_mixins/_cellularmixins.scss */
+/* line 123, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked + label:before,
 input[type="checkbox"]:not(:checked) + label:before,
 input[type="radio"]:checked + label:before,
@@ -683,7 +683,7 @@ input[type="radio"]:not(:checked) + label:before {
   border: #bbbab7 thin solid;
   box-shadow: inset 0 0 0.0625rem 0.0625rem #f1f1f1;
 }
-/* line 127, ../sass/_mixins/_cellularmixins.scss */
+/* line 128, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:after,
 input[type="radio"]:checked + label:after,
@@ -694,14 +694,14 @@ input[type="radio"]:not(:checked) + label:after {
   background-repeat: no-repeat;
   background-position: -999em;
 }
-/* line 143, ../sass/_mixins/_cellularmixins.scss */
+/* line 144, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked:disabled + label,
 input[type="checkbox"]:not(:checked):disabled + label,
 input[type="radio"]:checked:disabled + label,
 input[type="radio"]:not(:checked):disabled + label {
   color: #f1f1f1;
 }
-/* line 145, ../sass/_mixins/_cellularmixins.scss */
+/* line 146, ../sass/_mixins/_cellularmixins.scss */
 input[type="checkbox"]:checked:disabled + label:before,
 input[type="checkbox"]:not(:checked):disabled + label:before,
 input[type="radio"]:checked:disabled + label:before,
@@ -756,7 +756,7 @@ input[type="button"],
 input[type="submit"] {
   display: block;
 }
-/* line 172, ../sass/_mixins/_cellularmixins.scss */
+/* line 173, ../sass/_mixins/_cellularmixins.scss */
 button,
 .button,
 input[type="button"],
@@ -775,7 +775,7 @@ input[type="submit"] {
   border-radius: 0.1em;
   box-shadow: #cbcbcb 0 0.1em 0.75em;
 }
-/* line 193, ../sass/_mixins/_cellularmixins.scss */
+/* line 194, ../sass/_mixins/_cellularmixins.scss */
 button:visited,
 .button:visited,
 input[type="button"]:visited,
@@ -783,7 +783,7 @@ input[type="submit"]:visited {
   color: #444;
   background-color: #fefefe;
 }
-/* line 197, ../sass/_mixins/_cellularmixins.scss */
+/* line 198, ../sass/_mixins/_cellularmixins.scss */
 button.active,
 button:active,
 .button.active,
@@ -794,7 +794,7 @@ input[type="submit"].active,
 input[type="submit"]:active {
   cursor: default;
 }
-/* line 201, ../sass/_mixins/_cellularmixins.scss */
+/* line 202, ../sass/_mixins/_cellularmixins.scss */
 button.active,
 button:active,
 button:hover,
@@ -901,22 +901,29 @@ a img {
   * @file
   * Cellular Grid
 */
-/* line 9, ../sass/style/_base_grid.scss */
+/* line 6, ../sass/style/_base_grid.scss */
+.container {
+  float: none;
+  max-width: 72em;
+  margin: auto;
+}
+
+/* line 16, ../sass/style/_base_grid.scss */
 .cell,
 .cell-100,
 .cell-90,
 .cell-80,
 .cell-75,
 .cell-70,
+.cell-66,
 .cell-60,
 .cell-50,
 .cell-40,
+.cell-33,
 .cell-30,
 .cell-25,
 .cell-20,
-.cell-10,
-.cell-33,
-.cell-66 {
+.cell-10 {
   z-index: 1;
   position: relative;
   float: left;
@@ -926,26 +933,26 @@ a img {
   -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
-/* line 21, ../sass/style/_base_grid.scss */
+/* line 30, ../sass/style/_base_grid.scss */
 .cell.center,
 .cell-100.center,
 .cell-90.center,
 .cell-80.center,
 .cell-75.center,
 .cell-70.center,
+.cell-66.center,
 .cell-60.center,
 .cell-50.center,
 .cell-40.center,
+.cell-33.center,
 .cell-30.center,
 .cell-25.center,
 .cell-20.center,
-.cell-10.center,
-.cell-33.center,
-.cell-66.center {
+.cell-10.center {
   margin: 0 auto;
 }
 
-/* line 26, ../sass/style/_base_grid.scss */
+/* line 35, ../sass/style/_base_grid.scss */
 .cell {
   width: 100%;
   clear: both;
@@ -960,199 +967,190 @@ a img {
   clear: both;
 }
 
-/* line 50, ../sass/style/_base_grid.scss */
+/* line 41, ../sass/style/_base_grid.scss */
 .cell-100 {
   width: 100%;
 }
 
-/* line 54, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
 .offset-100 {
   margin-left: 100%;
 }
 
-/* line 50, ../sass/style/_base_grid.scss */
+/* line 41, ../sass/style/_base_grid.scss */
 .cell-90 {
   width: 90%;
 }
 
-/* line 54, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
 .offset-90 {
   margin-left: 90%;
 }
 
-/* line 50, ../sass/style/_base_grid.scss */
+/* line 41, ../sass/style/_base_grid.scss */
 .cell-80 {
   width: 80%;
 }
 
-/* line 54, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
 .offset-80 {
   margin-left: 80%;
 }
 
-/* line 50, ../sass/style/_base_grid.scss */
+/* line 41, ../sass/style/_base_grid.scss */
 .cell-75 {
   width: 75%;
 }
 
-/* line 54, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
 .offset-75 {
   margin-left: 75%;
 }
 
-/* line 50, ../sass/style/_base_grid.scss */
+/* line 41, ../sass/style/_base_grid.scss */
 .cell-70 {
   width: 70%;
 }
 
-/* line 54, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
 .offset-70 {
   margin-left: 70%;
 }
 
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-60 {
-  width: 60%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-60 {
-  margin-left: 60%;
-}
-
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-50 {
-  width: 50%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-50 {
-  margin-left: 50%;
-}
-
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-40 {
-  width: 40%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-40 {
-  margin-left: 40%;
-}
-
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-30 {
-  width: 30%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-30 {
-  margin-left: 30%;
-}
-
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-25 {
-  width: 25%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-25 {
-  margin-left: 25%;
-}
-
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-20 {
-  width: 20%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-20 {
-  margin-left: 20%;
-}
-
-/* line 50, ../sass/style/_base_grid.scss */
-.cell-10 {
-  width: 10%;
-}
-
-/* line 54, ../sass/style/_base_grid.scss */
-.offset-10 {
-  margin-left: 10%;
-}
-
-/* Add in any quirky widths that can't be looped */
-/* line 69, ../sass/style/_base_grid.scss */
-.cell-33 {
-  width: 33.33333%;
-}
-
-/* line 70, ../sass/style/_base_grid.scss */
+/* line 41, ../sass/style/_base_grid.scss */
 .cell-66 {
   width: 66.66667%;
 }
 
-/* line 71, ../sass/style/_base_grid.scss */
-.offset-33 {
-  margin-left: 33.33333%;
-}
-
-/* line 72, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
 .offset-66 {
   margin-left: 66.66667%;
 }
 
-/* line 107, ../sass/style/_base_grid.scss */
-.container {
-  float: none;
-  width: 96%;
-  max-width: 72em;
-  margin: auto;
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-60 {
+  width: 60%;
 }
 
-@media screen and (max-width: 650px) and (min-width: 0) {
-  /* line 116, ../sass/style/_base_grid.scss */
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-60 {
+  margin-left: 60%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-50 {
+  width: 50%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-50 {
+  margin-left: 50%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-40 {
+  width: 40%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-40 {
+  margin-left: 40%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-33 {
+  width: 33.33333%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-33 {
+  margin-left: 33.33333%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-30 {
+  width: 30%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-30 {
+  margin-left: 30%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-25 {
+  width: 25%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-25 {
+  margin-left: 25%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-20 {
+  width: 20%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-20 {
+  margin-left: 20%;
+}
+
+/* line 41, ../sass/style/_base_grid.scss */
+.cell-10 {
+  width: 10%;
+}
+
+/* line 52, ../sass/style/_base_grid.scss */
+.offset-10 {
+  margin-left: 10%;
+}
+
+@media screen and (min-width: 0) and (max-width: 650px) {
+  /* line 75, ../sass/style/_base_grid.scss */
   .cell-100,
   .cell-90,
   .cell-80,
   .cell-75,
   .cell-70,
+  .cell-66,
   .cell-60,
   .cell-50,
   .cell-40,
+  .cell-33,
   .cell-30,
   .cell-25,
   .cell-20,
-  .cell-10,
-  .cell-33,
-  .cell-66 {
+  .cell-10 {
     width: 100%;
   }
 
-  /* line 126, ../sass/style/_base_grid.scss */
+  /* line 82, ../sass/style/_base_grid.scss */
   .offset-100,
   .offset-90,
   .offset-80,
   .offset-75,
   .offset-70,
+  .offset-66,
   .offset-60,
   .offset-50,
   .offset-40,
+  .offset-33,
   .offset-30,
   .offset-25,
   .offset-20,
-  .offset-10,
-  .offset-33,
-  .offset-66 {
+  .offset-10 {
     margin-left: 0;
   }
 }
-/* line 136, ../sass/style/_base_grid.scss */
+/* line 90, ../sass/style/_base_grid.scss */
 .hidden {
   position: absolute;
   left: -624.9375rem;
 }
 
-/* line 141, ../sass/style/_base_grid.scss */
+/* line 95, ../sass/style/_base_grid.scss */
 .clearfix {
   clear: both;
   zoom: 1;
@@ -1166,31 +1164,24 @@ a img {
   clear: both;
 }
 
-/* line 145, ../sass/style/_base_grid.scss */
-hr.clearfix {
-  visibility: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* line 151, ../sass/style/_base_grid.scss */
+/* line 99, ../sass/style/_base_grid.scss */
 .left,
 .right,
 .center {
   display: block;
 }
 
-/* line 157, ../sass/style/_base_grid.scss */
+/* line 105, ../sass/style/_base_grid.scss */
 .left {
   float: left;
 }
 
-/* line 161, ../sass/style/_base_grid.scss */
+/* line 109, ../sass/style/_base_grid.scss */
 .right {
   float: right;
 }
 
-/* line 165, ../sass/style/_base_grid.scss */
+/* line 113, ../sass/style/_base_grid.scss */
 .center {
   float: none;
   margin: 0 auto;
@@ -3074,31 +3065,29 @@ hr.clearfix {
 .jSocial.vertical .icon {
   border-radius: 0;
 }
-
-/* line 61, ../sass/cellular-ui/_jSocial.scss */
+/* line 59, ../sass/cellular-ui/_jSocial.scss */
 .jSocial.horizontal {
   bottom: 0;
   left: 0;
   padding: 0 1em;
 }
-/* line 66, ../sass/cellular-ui/_jSocial.scss */
+/* line 64, ../sass/cellular-ui/_jSocial.scss */
 .jSocial.horizontal h3 {
   display: inline;
 }
-
-/* line 72, ../sass/cellular-ui/_jSocial.scss */
+/* line 70, ../sass/cellular-ui/_jSocial.scss */
 .jSocial.vertical {
   top: 6rem;
   right: 0;
   width: 2.1em;
   padding: 1.4em 0.28em;
 }
-/* line 78, ../sass/cellular-ui/_jSocial.scss */
+/* line 76, ../sass/cellular-ui/_jSocial.scss */
 .jSocial.vertical .title {
   position: absolute;
   left: -999em;
 }
-/* line 82, ../sass/cellular-ui/_jSocial.scss */
+/* line 80, ../sass/cellular-ui/_jSocial.scss */
 .jSocial.vertical .icon {
   margin: auto;
 }
@@ -3417,7 +3406,7 @@ hr.clearfix {
   background-color: #111;
   color: #fefefe;
 }
-/* line 335, ../sass/_mixins/_cellularmixins.scss */
+/* line 336, ../sass/_mixins/_cellularmixins.scss */
 .ribbon:after,
 .ribbon:before {
   content: " ";
@@ -3425,12 +3414,12 @@ hr.clearfix {
   bottom: -1em;
   border-top: black 1em solid;
 }
-/* line 342, ../sass/_mixins/_cellularmixins.scss */
+/* line 343, ../sass/_mixins/_cellularmixins.scss */
 .ribbon:before {
   left: 0;
   border-left: 1.2em solid transparent;
 }
-/* line 346, ../sass/_mixins/_cellularmixins.scss */
+/* line 347, ../sass/_mixins/_cellularmixins.scss */
 .ribbon:after {
   right: 0;
   border-right: 1.2em solid transparent;
@@ -3445,7 +3434,7 @@ hr.clearfix {
   border-bottom: black 1px solid;
   color: #fefefe;
 }
-/* line 357, ../sass/_mixins/_cellularmixins.scss */
+/* line 358, ../sass/_mixins/_cellularmixins.scss */
 .popout:after {
   content: " ";
   position: absolute;
