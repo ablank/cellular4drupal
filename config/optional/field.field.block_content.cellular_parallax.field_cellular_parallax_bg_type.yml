@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cellular_parallax
+    - field.storage.block_content.field_cellular_parallax_bg_type
+  module:
+    - options
+id: block_content.cellular_parallax.field_cellular_parallax_bg_type
+field_name: field_cellular_parallax_bg_type
+entity_type: block_content
+bundle: cellular_parallax
+label: 'Background Type'
+description: 'If you''re uploading an image that you want to spread across the whole asset, then choose cover. Else choose pattern for an image you want to repeat.'
+required: false
+translatable: false
+default_value:
+  -
+    value: Cover
+default_value_callback: ''
+settings: {  }
+field_type: list_string

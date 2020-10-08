@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cellular_parallax
+    - field.storage.block_content.field_cellular_color_type
+  module:
+    - options
+id: block_content.cellular_parallax.field_cellular_color_type
+field_name: field_cellular_color_type
+entity_type: block_content
+bundle: cellular_parallax
+label: 'Gradient Style'
+description: 'Choose gradeint color schema for background (Only works if Parallax type is : Gradient Color)'
+required: false
+translatable: false
+default_value:
+  -
+    value: Material
+default_value_callback: ''
+settings: {  }
+field_type: list_string

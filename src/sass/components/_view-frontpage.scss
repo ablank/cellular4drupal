@@ -1,0 +1,46 @@
+.view-frontpage,
+.view-taxonomy-term {
+  article {
+    .article-inner-wrapper {
+      display: flex;
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+    }
+
+    footer {
+      margin-bottom: rem(8px);
+    }
+
+    h2 {
+      font-size: rem(24px);
+    }
+
+    .article-media {
+      flex: 1;
+      margin-right: rem(20px);
+
+      @include media-breakpoint-down(md) {
+        margin-right: 0;
+      }
+    }
+
+    .article-info {
+      flex: 2;
+    }
+  }
+
+  .views-view-grid {
+    .article-inner-wrapper {
+      flex-direction: column;
+    }
+
+    .article-media {
+      margin-right: 0;
+    }
+
+    .views-col {
+      padding: rem(10px);
+    }
+  }
+}

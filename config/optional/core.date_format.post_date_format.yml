@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: post_date_format
+label: 'Post Date Format'
+locked: false
+pattern: 'd M, Y'

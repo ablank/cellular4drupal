@@ -1,0 +1,9 @@
+.field {
+  &.field--label-inline {
+    .field--label {
+      display: inline-block;
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+  margin: 1rem 0;
+
+  th,
+  td {
+    padding: 8px 10px;
+    line-height: 1.5;
+  }
+
+  thead,
+  tbody {
+    th {
+      font-weight: 500;
+    }
+  }
+
+  thead {
+    th {
+      white-space: nowrap;
+    }
+  }
+}
+
+.table-responsive {
+  position: relative;
+}

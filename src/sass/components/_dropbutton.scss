@@ -1,0 +1,15 @@
+.dropbutton-widget {
+  padding: 5px 32px 5px 5px;
+  border: 1px solid $light-grey;
+  background-color: $white;
+}
+
+.dropbutton {
+  .dropbutton-toggle {
+    background-color: $light-grey;
+  }
+
+  .dropbutton-action {
+    padding-right: 32px;
+  }
+}

@@ -1,0 +1,53 @@
+.sidebar {
+  .block {
+    padding-bottom: rem(30px);
+    margin-bottom: rem(30px);
+    border-bottom: rem(1px) solid #f1eaea;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: ' ';
+      height: rem(1px);
+      width: 30%;
+      bottom: 0;
+      left: 0;
+      display: block;
+      background-color: $black;
+    }
+
+    .title,
+    h2 {
+      font-size: rem(16px);
+      font-weight: 800;
+      margin: rem(0 0 15px);
+      padding: 0;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        padding: rem(10px 0);
+        border-bottom: 1px dashed #f1f0f0;
+      }
+    }
+  }
+}
+
+.main-content-wrapper {
+  .content-right {
+
+    .col-md-9 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .col-md-3 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}

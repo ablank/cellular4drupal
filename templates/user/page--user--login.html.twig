@@ -1,0 +1,32 @@
+<div class="d-md-flex flex-row-reverse cellular-signin">
+    <!-- section-right -->
+    <div class="section-right">
+        <div class="c-box">
+            <h2 class="title">Welcome back!</h2>
+            <h3 class="sub-title">Sign in to continue.</h3>
+
+            {{ messages }}
+
+            {{ page.content }}
+
+            <p class="mt-3 mb-0">Forgot Password?
+                <a href="/user/password">Reset Now</a>
+            </p>
+            <p class="mt-3 mb-0">Don't have an account?
+                <a href="/user/register">Create account</a>
+            </p>
+        </div>
+    </div>
+    <!-- section-left -->
+    <div class="section-left">
+        <div class="c-box">
+            <h2 class="slim-logo">
+                <a href="/">{{ sitename }}
+                    <span>.</span></a>
+            </h2>
+            {{ cellular.user_page_intro }}
+            <p class="mt-4">
+                {{ cellular.copyright_text }}</p>
+        </div>
+    </div>
+</div>

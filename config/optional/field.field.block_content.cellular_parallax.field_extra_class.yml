@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cellular_parallax
+    - field.storage.block_content.field_extra_class
+id: block_content.cellular_parallax.field_extra_class
+field_name: field_extra_class
+entity_type: block_content
+bundle: cellular_parallax
+label: 'Extra Class'
+description: 'If you wish to style this particular content element differently, then use this field to add a class name and then refer to it in your css file.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for views to display rows in a grid.
+ * Default theme implementation for views to display rows in a grid.
  *
  * Available variables:
  * - attributes: HTML attributes for the wrapping element.
@@ -22,6 +22,8 @@
  *     - content: The row or column contents.
  *
  * @see template_preprocess_views_view_grid()
+ *
+ * @ingroup themeable
  */
 #}
 {%
@@ -56,18 +58,18 @@
     {% for row in items %}
       <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
-          <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
-            {{ column.content }}
+          <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'c-' ~ loop.index) }}>
+            {{- column.content -}}
           </div>
         {% endfor %}
       </div>
     {% endfor %}
   {% else %}
     {% for column in items %}
-      <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+      <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'c-' ~ loop.index) }}>
         {% for row in column.content %}
           <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
-            {{ row.content }}
+            {{- row.content -}}
           </div>
         {% endfor %}
       </div>

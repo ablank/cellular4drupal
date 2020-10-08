@@ -1,33 +1,12 @@
-base:
-  version: VERSION
+global-styling:
+  version: 1.0
   css:
-    component:
-      css/drupal.css: { weight: -10 }
-      css/style.css: { weight: -10 }
-      #css/form.css: { weight: -10 }
-      #css/components/icons.css:  { weight: -10 }
-      #css/components/pager.css: { weight: -10 }
+    theme:
+      dist/css/styles.css: {}
+      dist/vendors/css/fontawesome.css: {}
   js:
-    component:
-      js/plugins.js: { weight: -10 }
-      js/script.js: { weight: -9 }
-
-user:
-  version: VERSION
-  css:
-    component:
-      css/user.css: { weight: -10 }
-
-search:
-  version: VERSION
-  css:
-    component:
-      css/components/search-results.css: {}
-
-forum:
-  version: VERSION
-  css:
-    component:
-      css/forum.css: { weight: -10 }
-
-
+    dist/vendors/js/bootstrap.bundle.js: {}
+    dist/js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,280 @@
+.navbar-nav {
+  width: 100%;
+
+  .dropdown {
+    > a {
+      @include media-breakpoint-down(md) {
+        margin-right: rem(30px);
+      }
+    }
+
+    .fa {
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        padding: rem(10px);
+
+        &:before {
+          color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    &:after {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    + .fa {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    border: none;
+    padding-left: rem(10px);
+
+    @include media-breakpoint-down(md) {
+      box-shadow: none;
+      padding-right: 0;
+      padding-left: $nav-link-padding-y;
+
+      a {
+        padding: $nav-link-padding-y;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      &.open {
+        display: block;
+      }
+    }
+  }
+
+  .nav-link {
+    font-size: rem(13px);
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s ease-in;
+
+    @include media-breakpoint-down(md) {
+      padding: $nav-link-padding-y $nav-link-padding-x;
+    }
+  }
+}
+
+.dropdown-submenu {
+  position: relative;
+
+  > a {
+    @include caret;
+    @include caret-submenu;
+  }
+}
+
+.dropdown-toggle {
+  &:after {
+    float: right;
+    margin-top: rem(6px);
+  }
+}
+
+.dropdown-list {
+  a {
+    padding: rem(4px 0);
+    font-size: rem(13px);
+  }
+}
+
+.dropdown {
+  &.show {
+    > a {
+      @include caret(up);
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar {
+    padding: 0;
+
+    .nav-item {
+      .nav-link {
+        padding: rem(25px 10px);
+      }
+    }
+
+    .dropdown-menu {
+      padding-left: rem(0px);
+    }
+  }
+
+  .dropdown-list {
+    display: block;
+    flex-wrap: wrap;
+    position: absolute;
+    visibility: hidden;
+    // hides sub-menu
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.4s ease-in-out 0s, visibility 0s linear 0.4s, z-index 0s linear 0.01s;
+    margin-top: rem(0px);
+    border: none;
+
+    a {
+      padding: rem(5px 15px);
+      font-size: rem(13px);
+      color: $gray-600;
+      font-family: 'Open Sans', sans-serif;
+      display: block;
+      flex-basis: 50%;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      font-weight: 400;
+      opacity: 1;
+      text-transform: capitalize;
+    }
+  }
+
+  .dropdown {
+
+    &:hover {
+
+      > a {
+        @include caret(up);
+      }
+
+      > .dropdown-list {
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+      }
+    }
+  }
+
+  .dropdown-submenu {
+    position: relative;
+
+    > a {
+      @include caret(right);
+    }
+
+    .dropdown-list {
+      top: 0px;
+      left: 100%;
+    }
+
+    &:hover {
+
+      > a {
+        @include caret(right);
+      }
+
+      > .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    &:after {
+      float: none;
+      margin-top: rem(0px);
+    }
+  }
+
+  .main-content-wrapper {
+    .container {
+      width: 100%;
+    }
+
+    .navbar {
+      .nav-item {
+        .nav-link {
+          padding: rem(16px 10px);
+        }
+      }
+    }
+
+    .block-system-branding-block {
+      padding-bottom: rem(48px);
+    }
+
+    .navbar-expand-lg {
+      .navbar-nav {
+        .dropdown-menu {
+          position: static;
+          display: none;
+          visibility: visible;
+          opacity: 1;
+          transform: none;
+          box-shadow: none;
+
+          &.show {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .dropdown-item {
+      &:focus,
+      &:hover, {
+        background: transparent;
+      }
+    }
+
+    .dropdown {
+      &:hover {
+        &>a {
+          &:after {
+            content: '+';
+          }
+        }
+      }
+
+      &.show {
+        > a {
+          &:after {
+            content: '-';
+          }
+        }
+      }
+
+      .dropdown-toggle {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          margin-top: rem(3px);
+          content: '+';
+          border: none;
+          top: 0;
+          right: 0;
+          font-size: rem(22px);
+        }
+      }
+    }
+  }
+}
+
+// Drupal Admin toolbar
+#toolbar-administration * {
+  z-index: 1090;
+}

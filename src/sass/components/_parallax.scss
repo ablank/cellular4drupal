@@ -1,0 +1,51 @@
+.parallax-block {
+  height: rem(100%);
+
+  .parallax-inner {
+    align-items: center;
+    justify-content: center;
+    padding: rem(96px 0);
+    height: auto;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0;
+      height: rem(750px);
+    }
+  }
+
+  &.parallax-gradient-color {
+    .parallax-inner {
+      width: rem(100%);
+      @include parallax-linear-gradient;
+      @include parallax-color-animation;
+    }
+
+    .material {
+      @include parallax-linear-gradient;
+    }
+
+    .flat {
+      @include parallax-linear-gradient(45deg, #e74c3c, #34495e, #7f8c8d, #16a085);
+    }
+
+    .metro {
+      @include parallax-linear-gradient(-45deg, #e3c800, #76608a, #6d8764, #fa6800);
+    }
+  }
+
+  .parallax-content {
+    h2 {
+      color: $white;
+
+      span {
+        font-weight: 300;
+      }
+    }
+
+    h4 {
+      color: $white;
+      padding: rem(10px 0 20px);
+      font-weight: 300;
+    }
+  }
+}

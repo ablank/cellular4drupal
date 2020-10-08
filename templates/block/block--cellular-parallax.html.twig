@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Default theme for parallax block type.
+ *
+ */
+#}
+{% set type = content['#block_content'].field_cellular_parallax_type.value %}
+{% set gradient_style = content['#block_content'].field_cellular_color_type.value %}
+{% set bg_image_url = file_url(content['#block_content'].field_cellular_parallax_bg_image.entity.uri.value) %}
+{% set bg_image_type = content['#block_content'].field_cellular_parallax_bg_type.value %}
+{% set extra_class = content['#block_content'].field_extra_class.value %}
+
+{%
+  set classes = [
+    'parallax-block',
+    'parallax-' ~ type|clean_class,
+    extra_class|clean_class,
+  ]
+%}
+
+{% set inner_attribute = create_attribute() %}
+{%
+  set inner_classes = [
+    'parallax-inner',
+    'd-flex',
+    'd-height', 
+     type == 'Image' ? 'image' : gradient_style|clean_class,
+  ]
+%}
+
+{% set wrapper_attribute = create_attribute() %}
+{%
+  set wrapper_classes = [
+    'inner-wrapper',
+    'text-left',
+  ]
+%}
+
+{%
+  set image_styles = [
+    type == 'Image' ? 'background: linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(' ~ file_url(bg_image_url) ~ ');',
+    'background-attachment: fixed;',
+    bg_image_type == 'Cover' ? 'background-repeat: no-repeat;' : 'background-repeat:repeat;',
+    bg_image_type == 'Cover' ? 'background-position: center center; background-size: cover;',
+  ]
+%}
+
+<div {{ attributes.addClass(classes) }}>
+{% if type == 'Image' %}
+<div {{ inner_attribute.addClass(inner_classes) }} {{ inner_attribute.setAttribute('style', image_styles) }}>
+{% else %}
+<div {{ inner_attribute.addClass(inner_classes) }} >
+{% endif %}
+  <div {{ wrapper_attribute.addClass(wrapper_classes) }} >
+    <div class="container">
+      <div class="row">
+              <div class="col-md-12">
+                    <div class="parallax-content text-center">
+                        {{content['#block_content'].body.value|raw }}
+                    </div>
+              </div>   
+      </div>
+    </div>
+  </div>
+</div>
+</div>

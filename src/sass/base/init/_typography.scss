@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Quicksand:300,400,500,700'); // sass-lint:disable-line no-url-protocols
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i'); // sass-lint:disable-line no-url-protocols
+$font-family-sans-serif: 'Quicksand', sans-serif;
+$font-family-open-sans: 'Open Sans', sans-serif;
+$font-family-merriweather: 'merriweather-regular', serif;
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../vendors/fonts/fa-brands-400.eot');
+  src: url('../vendors/fonts/fa-brands-400.eot?#iefix') format('embedded-opentype'), url('../vendors/fonts/fa-brands-400.woff2') format('woff2'), url('../vendors/fonts/fa-brands-400.woff') format('woff'), url('../vendors/fonts/fa-brands-400.ttf') format('truetype'), url('../vendors/fonts/fa-brands-400.svg#fontawesome') format('svg'); // sass-lint:disable-line no-duplicate-properties
+}
+
+.fab {
+  font-family: 'Font Awesome 5 Brands';
+}
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../vendors/fonts/fa-regular-400.eot');
+  src: url('../vendors/fonts/fa-regular-400.eot?#iefix') format('embedded-opentype'), url('../vendors/fonts/fa-regular-400.woff2') format('woff2'), url('../vendors/fonts/fa-regular-400.woff') format('woff'), url('../vendors/fonts/fa-regular-400.ttf') format('truetype'), url('../vendors/fonts/fa-regular-400.svg#fontawesome') format('svg'); // sass-lint:disable-line no-duplicate-properties
+}
+
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../vendors/fonts/fa-solid-900.eot');
+  src: url('../vendors/fonts/fa-solid-900.eot?#iefix') format('embedded-opentype'), url('../vendors/fonts/fa-solid-900.woff2') format('woff2'), url('../vendors/fonts/fa-solid-900.woff') format('woff'), url('../vendors/fonts/fa-solid-900.ttf') format('truetype'), url('../vendors/fonts/fa-solid-900.svg#fontawesome') format('svg'); // sass-lint:disable-line no-duplicate-properties
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}

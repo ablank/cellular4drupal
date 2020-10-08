@@ -1,0 +1,20 @@
+@mixin parallax-color-animation {
+  animation: Gradient 15s ease infinite;
+}
+@mixin parallax-linear-gradient($degrees: -45deg, $color1: #ee7752, $color2: #e73c7e, $color3: #23a6d5, $color4: #23d5ab) {
+  background: linear-gradient($degrees, $color1, $color2, $color3, $color4);
+  background-size: 400% 400%;
+}
+@include keyframes(Gradient) {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}

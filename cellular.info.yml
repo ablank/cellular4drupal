@@ -1,24 +1,24 @@
 name: Cellular
-description: 'Badass base theme.'
-core: 8.x
 type: theme
-package: Cellular
-version: 8.x-1.0
+base theme: false
+description: A Blog & multipurpose bootstrap 4 based theme
+package: 'Cellular'
+core: 8.x
+core_version_requirement: ^8 || ^9
 
 libraries:
-  - cellular/base
-
-libraries-extend:
-  user/drupal.user:
-    - cellular/user
-  core/drupal.dropbutton:
-    - cellular/dropbutton
-  core/drupal.dialog:
-    - cellular/dialog
+  - cellular/global-styling
 
 regions:
-  header: Header
-  content: Content # required!
-  sidebar_left: 'Left Sidebar'
+  header_left: 'Header Left'
+  navigation: 'Main Navigation'
+  header_right: 'Header Right'
+  content_header: 'Page Header'
+  content_top_fluid: 'Page top Full Width'
+  content_top: 'Content top'
+  content: 'Content' #required!
+  content_bottom: 'Content bottom'
+  content_bottom_fluid: 'Page bottom Full Width'
   sidebar_right: 'Right Sidebar'
-  footer: Footer
+  footer_top: 'Footer Top'
+  footer_middle: 'Footer Middle'

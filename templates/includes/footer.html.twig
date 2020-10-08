@@ -1,0 +1,58 @@
+<!-- =============================== footer ===============================-->
+
+{% set social_attribute = create_attribute() %}
+{%
+  set social_classes = [
+    'social-icons',
+    'brand-bg-icons',
+    'icon-sm',
+    cellular.display_social_round_icons ? 'round-icons',
+  ]
+%}
+
+{% if cellular.header_position == 'header-left' %}
+  <footer class="page-footer bg-light container">
+{% else %}
+  <footer class="page-footer bg-light">
+{% endif %}
+
+  {% if page.footer_top %}
+    {{ page.footer_top }}
+  {% endif %}
+
+  {% if page.footer_middle %}
+    {{ page.footer_middle }}
+  {% endif %}
+
+  <div class="footer-bottom mt-3">
+    <div class="container">
+      <div class="row">
+
+        <!-- end of col-md-7 -->
+        <div class="col-md-7 d-flex">
+          <div class="copyright">
+            <p>{{ cellular.copyright_text }}
+              {{cellular.theme_credits }}</p>
+          </div>
+          <!-- end of copyright -->
+        </div>
+        <!-- end of col-md-7 -->
+        <div class="col-md-5 d-flex justify-content-end">
+
+          {% if cellular.social_profiles | length > 0 %}
+            {% include '@cellular/includes/social-icons.html.twig' %}
+          {% else %}
+            {% include '@cellular/includes/social-icons-empty.html.twig' %}
+          {% endif %}
+
+          <!-- end of social-icons -->
+        </div>
+        <!-- end of col-md-3 -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of footer Bottom -->
+</footer>
+<!-- end of page-footer -->

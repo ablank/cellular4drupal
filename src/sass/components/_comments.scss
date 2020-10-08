@@ -1,0 +1,94 @@
+.comments-wrapper,
+.js-comment {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: $light-grey2;
+
+  @include media-breakpoint-up(md) {
+    padding: 20px;
+  }
+
+  .comments-title {
+    text-align: center;
+    border-bottom: 1px solid $dark-grey;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+
+    span {
+      background: $light-grey2;
+      padding: 0 10px;
+    }
+  }
+
+  .comment-form-title {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .indented {
+    margin-left: 20px;
+  }
+
+  article {
+    footer {
+      margin-bottom: 0.5rem;
+      font-size: 10px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  .comment-content {
+    @include media-breakpoint-down(sm) {
+      clear: both;
+    }
+
+    .links {
+      @include media-breakpoint-up(md) {
+        justify-content: flex-end;
+        margin: 8px 0;
+      }
+    }
+  }
+
+  .author-pic {
+    > article {
+      float: left;
+      margin-right: 20px;
+    }
+
+    div {
+      display: inline-block;
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+}
+
+.article-author-info {
+  display: flex;
+  align-items: center;
+
+  > article {
+    float: left;
+  }
+
+  .field--name-user-picture {
+    display: inline-block;
+
+    img {
+      width: 40px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+}

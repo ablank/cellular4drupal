@@ -1,0 +1,18 @@
+.nav {
+  &.secondary {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .nav-item {
+      &.active {
+        border-bottom: 1px solid $grey;
+
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

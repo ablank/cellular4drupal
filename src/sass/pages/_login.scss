@@ -1,0 +1,31 @@
+%section-signin {
+  position: relative;
+  min-height: rem(100vh);
+  width: rem(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(30px);
+}
+
+.cellular-signin {
+  background-color: $gray-100;
+
+  .section-left,
+  .section-right {
+    @extend %section-signin;
+    @include media-breakpoint-up(md) {
+      width: rem(50%);
+    }
+
+    .c-box {
+      border: none;
+      padding: 0;
+      width: rem(400px);
+    }
+  }
+
+  .section-right {
+    background-color: $white;
+  }
+}

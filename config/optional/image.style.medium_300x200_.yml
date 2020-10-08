@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: medium_300x200_
+label: 'Medium (300x200)'
+effects:
+  bb23c9b1-2a25-47e9-a822-280e7266ed73:
+    uuid: bb23c9b1-2a25-47e9-a822-280e7266ed73
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 200

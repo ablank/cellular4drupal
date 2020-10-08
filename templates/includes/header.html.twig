@@ -1,0 +1,46 @@
+<!-- =============================== header ===============================-->
+{% set header_attribute = create_attribute() %}
+{%
+  set header_classes = [
+    'top-header',
+    'navbar',
+    'navbar-expand-lg',
+    cellular.header_link_style,
+    'header-menu',
+    cellular.header_type,
+    cellular.header_position,
+  ]
+%}
+
+<nav {{ header_attribute.addClass(header_classes) }} {{ header_attribute.setAttribute('data-fixed', cellular.header_type_sticky ).setAttribute('data-resize', cellular.header_type_sticky_resize ).setAttribute('data-bgcolor', cellular.header_color ) }}>
+  <div class="container">
+    {% if page.header_left %}
+      {{ page.header_left }}
+    {% endif %}
+    <!-- end of navbar-brand -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-group" aria-controls="navigation-group" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- end of navbar-toggler -->
+    <div class="collapse navbar-collapse" id="navigation-group">
+
+      <div class="navbar-right m-nav">
+        {% if page.navigation %}
+          {{ page.navigation }}
+        {% endif %}
+      </div>
+
+      <div class="navbar-right m-account">
+
+        {% if page.header_right %}
+          {{ page.header_right }}
+        {% endif %}
+
+      </div>
+      <!-- end of navbar-right -->
+    </div>
+    <!-- end of collapse -->
+  </div>
+  <!-- end of container -->
+</nav>
+<!-- end of nav -->

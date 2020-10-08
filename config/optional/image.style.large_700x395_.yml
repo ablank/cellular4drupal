@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: large_700x395_
+label: 'Large (700x395)'
+effects:
+  28ad5019-1924-4e4a-b0cd-186a2dc985b1:
+    uuid: 28ad5019-1924-4e4a-b0cd-186a2dc985b1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 395

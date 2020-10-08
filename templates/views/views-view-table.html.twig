@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for displaying a view as a table.
+ * Default theme implementation for displaying a view as a table.
  *
  * Available variables:
  * - attributes: Remaining HTML attributes for the element.
@@ -28,17 +28,22 @@
  * - sticky: A flag indicating whether table header is sticky.
  *
  * @see template_preprocess_views_view_table()
+ *
+ * @ingroup themeable
  */
 #}
 {%
   set classes = [
-    'views-table',
-    'views-view-table',
+    'table',
+    'table-striped',
     'cols-' ~ header|length,
     responsive ? 'responsive-enabled',
     sticky ? 'sticky-enabled',
   ]
 %}
+{% if responsive %}
+  <div class="table-responsive">
+{% endif %}
 <table{{ attributes.addClass(classes) }}>
   {% if caption_needed %}
     <caption>
@@ -124,3 +129,6 @@
     {% endfor %}
   </tbody>
 </table>
+{% if responsive %}
+  </div>
+{% endif %}

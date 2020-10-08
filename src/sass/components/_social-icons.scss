@@ -1,0 +1,97 @@
+.social-icons {
+  padding: rem(0px);
+  margin-bottom: rem(0px);
+
+  li {
+    display: inline-block;
+
+    a {
+      font-size: rem(18px);
+      padding: rem(10px);
+      color: $gray-500;
+      display: block;
+      transition: ease-in 0.2s;
+    }
+  }
+
+  &.round-icons {
+    li {
+      a {
+        @include border-radius(50%);
+      }
+    }
+  }
+
+  &.icon-sm {
+    li {
+      a {
+        font-size: rem(14px);
+      }
+    }
+  }
+
+  &.icon-md {
+    li {
+      a {
+        font-size: rem(20px);
+      }
+    }
+  }
+
+  &.icon-lg {
+    li {
+      a {
+        font-size: rem(23px);
+      }
+    }
+  }
+}
+
+.brand-bg-icons a {
+  color: #fff !important;
+  line-height: rem(0px);
+
+  &.facebook {
+    background: $facebook;
+  }
+
+  &.flickr {
+    background: $flickr;
+  }
+
+  &.git {
+    background: $git;
+  }
+
+  &.google {
+    background: $googleplus;
+  }
+
+  &.instagram {
+    background: $instagram;
+  }
+
+  &.linkedin {
+    background: $linkedin;
+  }
+
+  &.pinterest {
+    background: $pinterest;
+  }
+
+  &.skype {
+    background: $skype;
+  }
+
+  &.twitter {
+    background: $twitter;
+  }
+
+  &.vimeo {
+    background: $vimeo;
+  }
+
+  &.youtube {
+    background: $youtube;
+  }
+}

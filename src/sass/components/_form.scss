@@ -1,0 +1,69 @@
+textarea {
+  width: 100%;
+  border: 1px solid $gray-400;
+}
+
+form {
+  .form-check-input {
+    margin-left: 0;
+    position: inherit;
+  }
+
+  .link-edit-summary {
+    font-size: 10px;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+  }
+
+  .form-control-file {
+    input[type='file']::-webkit-file-upload-button { // sass-lint:disable-line force-attribute-nesting
+      font-size: 12px;
+    }
+  }
+
+  label {
+    font-weight: 700;
+  }
+
+  .filter-wrapper {
+    margin-bottom: 1rem;
+  }
+}
+
+select {
+  width: 100%;
+  height: 38px;
+  border: 1px solid $ghost;
+
+  &.filter-list {
+    width: auto;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid $grey;
+}
+
+fieldset,
+details {
+  border: 1px solid $gray-400;
+  padding: rem(20px);
+  margin: rem(8px 0);
+  border-radius: rem(4px);
+
+  legend {
+    border: none;
+    width: auto;
+    color: $black;
+    font-size: rem(14px);
+    padding: rem(0 10px);
+  }
+
+  .fieldgroup {
+    legend {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+// headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-open-sans !important;
+  font-weight: 700 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h2 {
+  font-size: rem(26px);
+}
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  position: relative;
+  background: $light-grey;
+  padding: rem(35px 30px 35px 45px);
+  color: $light-grey-text;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  border-left: rem(2px) solid $dark-grey;
+  quotes: '“' '”' '‘' '’';
+
+  p,
+  span {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  p {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &:before {
+    content: open-quote;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Font Awesome\ 5 Free';
+    font-size: 5rem;
+    line-height: 1;
+    color: $grey;
+  }
+}

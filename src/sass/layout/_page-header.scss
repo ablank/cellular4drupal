@@ -1,0 +1,44 @@
+.page-header {
+  background: linear-gradient(to right, rgba(27, 216, 220, .2), rgba(253, 0, 58, .2));
+  height: rem(350px);
+  width: rem(100%);
+  text-align: center;
+  position: relative;
+
+  .container {
+    display: flex;
+    height: rem(100%);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-title,
+  h1 {
+    max-width: 85%;
+    margin: 0 auto;
+
+    @include media-breakpoint-down(sm) {
+      max-width: 95%;
+      font-size: rem(24px);
+      line-height: rem(30px);
+    }
+  }
+
+  .block-local-tasks-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: rem(100%);
+
+    .nav-tabs {
+      justify-content: center;
+      align-items: center;
+
+      li {
+        &.active {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}

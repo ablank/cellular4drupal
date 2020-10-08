@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cellular_parallax
+    - field.storage.block_content.field_cellular_parallax_type
+  module:
+    - options
+id: block_content.cellular_parallax.field_cellular_parallax_type
+field_name: field_cellular_parallax_type
+entity_type: block_content
+bundle: cellular_parallax
+label: 'Parallax type'
+description: 'Choose whether you want to use an gradient color or image for the background of the parallax.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Gradient Color'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

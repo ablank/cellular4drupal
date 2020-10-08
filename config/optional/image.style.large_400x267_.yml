@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: large_400x267_
+label: 'Large (400x267)'
+effects:
+  8c83854f-1921-4693-a16d-e4dfd4996561:
+    uuid: 8c83854f-1921-4693-a16d-e4dfd4996561
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 267

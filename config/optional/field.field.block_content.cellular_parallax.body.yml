@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cellular_parallax
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.cellular_parallax.body
+field_name: body
+entity_type: block_content
+bundle: cellular_parallax
+label: 'Parallax Content'
+description: 'Enter your content'
+required: true
+translatable: true
+default_value:
+  -
+    summary: ''
+    value: "<h2><span>Gradient</span> Parallax Block</h2>\r\n\r\n<h4>Three color variations with Material, Flat, Metro</h4>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary
