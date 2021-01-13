@@ -7,11 +7,18 @@
  */
 
 module.exports = {
+  theme_info: {
+    src: [
+      'src/info/info.txt',
+      'src/info/opts.txt'
+    ],
+    dest: 'cellular.info'
+  },
   templatephp: {
     options: {
       banner: '/**\n\
     * @file\n\
-    * Subcellular Starter Theme for Drupal 7.\n\
+    * Cellular Base Theme for Drupal 7.\n\
     *\n\
     * @author Adam Blankenship\n\
     * \n\
@@ -23,13 +30,12 @@ module.exports = {
       }
     },
     src: [
-      // 'src/preprocess/*.inc',
       'src/preprocess/_init.inc',
       'src/preprocess/alter.inc',
       'src/preprocess/alter_css.inc',
       'src/preprocess/alter_js.inc',
       'src/preprocess/preprocess_html.inc',
-      'src/preprocess/preprocess.inc'
+      'src/preprocess/preprocess_hooks.inc',
     ],
     dest: 'template.php'
   },
@@ -70,14 +76,14 @@ module.exports = {
        * Under Development...
        */
       //'src/js/cellular-ui/dev/cellular.jAV.js',
-      //'src/js/cellular-ui/dev/cellular.jEqualheight.js',
       //'src/js/cellular-ui/dev/cellular.jModal.js',
       //'src/js/cellular-ui/dev/cellular.jZoom.js',
       //'src/js/cellular-ui/dev/cellular.jParallax.js',
       //'src/js/cellular-ui/dev/cellular.jScrollindicator.js',
       //'src/js/cellular-ui/dev/cellular.jScrolltrigger.js',
       //'src/js/cellular-ui/dev/cellular.jSticky.js',
-      //'src/js/cellular-ui/cellular.jTooltip.js',
+      //'src/js/cellular-ui/dev/cellular.jTooltip.js',
+
       /**
        * Close objects
        */
@@ -86,22 +92,5 @@ module.exports = {
       'src/js/cellular-ui/init/jquery.end.js'
     ],
     dest: 'src/js/jquery.cellular-ui.js'
-  }
-  /*
-   lib: {
-   src: [
-   //'src/js/lib/jquery-1.11.1.js',
-   //'src/js/lib/jquery.once.js',
-   //'src/js/lib/jquery.migrate.js',
-   //'src/js/lib/plugins/jquery.backstretch.js',
-   //'src/js/lib/plugins/jquery.flowtype.js',
-   //'src/js/lib/plugins/jquery.freetile.js',
-   //'src/js/lib/plugins/jquery.parallax.js',
-   //'src/js/lib/plugins/jquery.smoove.js',
-   //'src/js/lib/plugins/prism.js',
-   //'src/js/lib/plugins/snap.svg.js',
-   ],
-   dest: 'js/lib.js'
-   },
-   */
+  },
 };

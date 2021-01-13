@@ -32,6 +32,7 @@
     clear: both;
   }
 }
+
 @mixin overlay($color) {
   $opacity: 0.8;
   background-color: adjust-saturation($color, -($opacity * 10));

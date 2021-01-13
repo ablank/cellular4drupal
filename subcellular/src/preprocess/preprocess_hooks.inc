@@ -12,32 +12,25 @@ function subcellular_preprocess_page(&$vars) {
  */ 
 
 /**
- * Implements template_preprocess_html().
-function subcellular_preprocess_html(&$vars) {
-  
-}
- */ 
-
-/**
  * Implements template_preprocess_node().
 function subcellular_preprocess_node(&$vars) {
   
 }
- */
+ */ 
 
 /**
  * Implements template_preprocess_region().
 function subcellular_preprocess_region(&$vars) {
   
 }
- */
+ */ 
 
 /**
  * Implements template_preprocess_block().
 function subcellular_preprocess_block(&$vars) {
   
 }
- */
+ */ 
 
 /**
  * Implements template_preprocess_comment().

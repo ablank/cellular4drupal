@@ -3,7 +3,7 @@ var cellular = {};
 cellular.opts = {
   cclass: "cellular",
   activeclass: "active",
-  breakpoint: "window_mobile"
+  breakpoint: "window_small"
 };
 
 cellular.state = {

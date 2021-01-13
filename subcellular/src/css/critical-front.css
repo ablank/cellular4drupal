@@ -47,7 +47,3 @@
   - CSS class will be generated from the base filename.
   - Comment-out icons to remove them individually from the stylesheet.
 */
-/* line 8, ../sass/critical-front.scss */
-body {
-  background: #8C0D00;
-}

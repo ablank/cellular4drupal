@@ -4,7 +4,7 @@
 
 cellular.jMmenu = function (opts) {
   var o = jQuery.extend({
-    breakpoint: cellular.opts.breakpoint, // 'window_mobile'|| 'window_narrow' || 'window_default'
+    breakpoint: cellular.opts.breakpoint, // 'window_small'|| 'window_narrow' || 'window_default'
     parent: jQuery('body'), // Parent element used to attach menu
     cclass: "jMmenu", // Menu class to test
     triggertext: "Menu",

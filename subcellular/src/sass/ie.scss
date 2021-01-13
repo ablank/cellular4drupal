@@ -41,8 +41,6 @@ input {
 }
 
 .cell,
-#{$cells},
-.cell-33,
-.cell-66 {
+#{$cells}{
   zoom: 1;
 }

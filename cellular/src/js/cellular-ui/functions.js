@@ -16,7 +16,7 @@ cellular.breakpoint = function () {
     var ww = jQuery(window).width();
     switch (ww) {
       case ww < 650:
-        win.type = 'window_mobile';
+        win.type = 'window_small';
         break;
       case ww > 650 && ww < 800:
         win.type = 'window_narrow';

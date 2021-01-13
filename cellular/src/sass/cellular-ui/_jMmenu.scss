@@ -3,7 +3,7 @@
   * CellularUI : jMMenu
 */
 
-@media screen and (max-width: $res_mobile) {
+@media screen and (max-width: $res_small) {
   #main-menu {
     ul.menu {
       // Hides navigation prior to js loading & acting on DOM to prevent

@@ -13,7 +13,7 @@ var cellular = {};
 cellular.opts = {
 cclass: "cellular",
 activeclass: "active",
-breakpoint: "window_mobile"
+breakpoint: "window_small"
 };
 cellular.state = {
 breakpoint: 0,
@@ -37,7 +37,7 @@ win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");
 var ww = jQuery(window).width();
 switch (ww) {
 case ww < 650:
-win.type = 'window_mobile';
+win.type = 'window_small';
 break;
 case ww > 650 && ww < 800:
 win.type = 'window_narrow';
@@ -360,7 +360,7 @@ this.value = this.defaultValue;
 */
 cellular.jMmenu = function (opts) {
 var o = jQuery.extend({
-breakpoint: cellular.opts.breakpoint, // 'window_mobile'|| 'window_narrow' || 'window_default'
+breakpoint: cellular.opts.breakpoint, // 'window_small'|| 'window_narrow' || 'window_default'
 parent: jQuery('body'), // Parent element used to attach menu
 cclass: "jMmenu", // Menu class to test
 triggertext: "Menu",
