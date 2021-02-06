@@ -1,0 +1,265 @@
+/**
+  * @file
+  * CellularUI : jScrolli
+*/
+
+$controlsize: 2em;
+$setwidth: false;
+$width: 800px;
+
+@mixin scrolli_transit($time: 1s, $ease: linear) {
+  transition: all $time $ease;
+}
+
+.jScrolli {
+  @include transition();
+
+  height: 240px;
+  opacity: 0;
+}
+// Fade in after js applies structure
+.cellular.jScrolli {
+  opacity: 1;
+}
+
+.jScrolli-wrap {
+  overflow: hidden;
+  border: $border_color 1px solid;
+  background-color: $panel_background;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  li {
+    //display: inline;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  &.active {
+    .jScrolli-control {
+      opacity: 1;
+    }
+
+    .jScrolli-caption {
+
+    }
+  }
+
+  /* Styles applied while .slide is transitioning */
+  &.transition {
+
+    .jScrolli-caption {
+
+      p {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.jScrolli-slide {
+  @include scrolli_transit(0.6s);
+
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+  opacity: 0;
+
+  &.previous {
+    right: -100%;
+    left: -100%;
+  }
+
+  &.next {
+    right: 100%;
+    left: 100%;
+  }
+
+  &.active {
+    right: 0;
+    left: 0;
+    opacity: 1;
+
+    .jScrolli-slide-content {
+      opacity: 1;
+    }
+  }
+
+  /* Slide content */
+  .jScrolli-slide-content {
+    @include scrolli_transit();
+
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .title {
+    a,
+    a:visited {
+      @include textstroke($panel_background, 1px);
+
+      color: $dark_grey;
+      font-weight: bold;
+    }
+    a:active,
+    a:hover,
+    a:focus {
+      @include textstroke($hilight, 2px);
+
+      color: $dark_grey;
+    }
+  }
+
+  p {
+    padding: 0.8em;
+    background: rgba($panel_background, 0.9);
+  }
+}
+
+.jScrolli-background {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% auto;
+}
+
+.jScrolli-caption {
+  //max-height: 0;
+  @include scrolli_transit();
+
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 1em;
+  left: 0;
+  padding: 0 2em;
+  background-color: $black;
+  background-color: rgba($black, 0.8);
+
+  p {
+    @include scrolli_transit();
+
+    max-width: none;
+    margin: 0;
+    padding: 0.8em;
+    opacity: 1;
+    color: $white;
+  }
+}
+
+.jScrolli-control {
+  @include transition();
+
+  position: absolute;
+  z-index: 3;
+  width: $controlsize;
+  height: $controlsize;
+  cursor: pointer;
+  text-indent: -999em;
+  opacity: 0.2;
+  color: $white;
+  //background-size: $controlsize;
+  background-color: $grey;
+  background-image: url(../assets/icons/png/controls.png);
+  background-image: url(../assets/icons/svg/controls.svg);
+  background-repeat: no-repeat;
+
+  &.prev,
+  &.next {
+    top: 50%;
+    background-color: $panel_color;
+
+    &:hover,
+    &:focus {
+      background-color: $hilight;
+    }
+  }
+
+  &.prev {
+    left: 0;
+    background-position: -24px 8px;
+  }
+
+  &.next {
+    right: 0;
+    background-position: -88px 8px;
+  }
+
+  &.play,
+  &.pause {
+    top: 0;
+    left: 0;
+    transition: none;
+    opacity: 0;
+    border: $white 2px solid;
+    border-radius: 50%;
+    background-color: $black;
+  }
+
+  &.play {
+    background-position: 8px 8px;
+  }
+  &.pause {
+    background-position: -54px 8px;
+  }
+}
+
+.jScrolli-markers {
+  position: relative;
+  z-index: 1;
+  left: 50%;
+  float: left;
+  /*
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
+  */
+
+  li {
+    position: relative;
+    left: -50%;
+    float: left;
+    margin: 0.25em 0.5em;
+  }
+}
+
+.jScrolli-marker {
+  @include transition();
+
+  width: 0.5em;
+  height: 0.5em;
+  //display: block;
+  //float: left;
+  cursor: pointer;
+  text-indent: -999em;
+  border: $dark_grey 1px solid;
+  border-radius: 50%;
+  background-color: $grey;
+
+  &.active {
+    border-color: darken($hilight, 20%);
+    background-color: $hilight;
+    box-shadow: 0 0 0.5em 0 $hilight;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $hilight;
+  }
+
+  a {
+    text-indent: -999em;
+  }
+}

@@ -1,0 +1,102 @@
+/**
+  * @file
+  * CellularUI : jTabs
+*/
+
+.jTabs-wrap {
+  display: block;
+  clear: both;
+  width: 90%;
+  margin: auto;
+  padding: 0;
+
+  .panel {
+    z-index: 1;
+    bottom: $border_width;
+    clear: both;
+    padding: 1.4em 1em 1em;
+    color: $panel_color;
+    border: $border_color 1px solid;
+    background: $panel_background;
+  }
+
+  & > ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab {
+    z-index: 2;
+    float: left;
+    margin: 0 0 0 0.1em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    .title {
+      padding: 0.4em 0.6em;
+      border: $border_color 1px solid;
+    }
+
+    &.active {
+      color: $panel_color;
+      background-color: $panel_background;
+
+      .title {
+        color: $panel_color;
+        border-bottom-color: $panel_background;
+        background: $panel_background;
+
+        a {
+          color: $panel_color;
+        }
+      }
+    }
+  }
+
+  // Vertical Tab Styling
+  &.vertical {
+
+    & > ul {
+      float: left;
+      width: 25%;
+      //margin: 0;
+    }
+
+    .panel {
+      right: 1px;
+      bottom: 0;
+      display: inline;
+      display: inline-block;
+      clear: none;
+    }
+
+    .tab {
+      display: block;
+      float: none;
+      margin: 0.1em 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .title {
+        padding: 0.4em 1%;
+
+        a {
+          padding: 0 1em;
+        }
+      }
+
+      &.active {
+        // border-color: $panel_background;
+
+        .title {
+          border-right-color: $panel_background;
+          border-bottom-color: $panel_color;
+        }
+      }
+    }
+  }
+}

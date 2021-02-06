@@ -1,0 +1,87 @@
+/////
+// Cellular :: SASS Configuration Variables
+// Variables should be separated from style partials to allow styles to access
+// the same configuration data without including the style rules.
+//////
+@import "_mixins/cellularmixins";
+@import "_mixins/animations";
+@import "_mixins/loaders";
+/////
+@import "variables/_vars_swatches";
+@import "variables/_vars_grid";
+@import "variables/_vars_icons";
+//////
+@import "compass";
+@import "variables/compass_defaults";
+
+// Stylesheet breakpoints
+$res_small: 650px;
+$res_narrow: 800px;
+$res_default: 960px;
+$res_large: 1280px;
+
+// Sizing vars
+$size: 1em;
+$tiny: $size * 0.3;
+$small: $size * 0.75;
+$big: $size * 1.4;
+$normal: $size;
+$border: thin solid;
+
+// Shadows: $h-off $v-off $blur $spread
+$shadow_big: 0 0 $normal $normal;
+$shadow_med: 0 0 $small $small;
+$shadow_small: 0 0 $tiny $tiny;
+
+// Branding
+$logo_width: 72px;
+$logo_height: 72px;
+$logo_pad: 12px;
+$logo_png: url("../assets/images/png/logo.png");
+$logo_svg: url("../assets/images/svg/logo.svg");
+
+// Header region
+$header_position: fixed;
+$header_height: $logo_height + ($logo_pad * 2);
+
+// Images
+$body_img: url("../assets/images/honeycomb_light.png");
+
+// Typography
+$p_font: segoeui, "Helvetica Neue", helvetica, arial, roboto;
+$p_size: $normal;
+$p_line_height: $big;
+$p_max_width: 32em;
+$p_color: $c1;
+
+$h_font: "Quicksand";
+$h_size: 2.4em;
+$h_weight: normal;
+$h_color: $grey;
+
+// Content Region spacing
+$region_margin: 0;
+$region_padding: 0;
+$region_border: 0;
+$region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 2);
+
+// Content Regions
+$regions_list : (
+  console
+  header
+  header-top
+  header-bottom
+  content
+  content-top
+  content-bottom
+  footer
+  footer-top
+  footer-bottom
+);
+
+// Define all regions using list.
+$regions: ();
+
+@each $region in $regions_list {
+  $regions : append($regions, unquote("##{$region},"));
+}

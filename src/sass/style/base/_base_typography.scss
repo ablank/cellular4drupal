@@ -1,0 +1,143 @@
+/**
+  * @file
+  * Typography
+*/
+
+body {
+  color: $p_color;
+  font-family: sans-serif;
+  font-family: $p_font;
+  font-size: 100%;
+  line-height: $p_line_height;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+p {
+  display: block;
+  max-width: $p_max_width;
+  margin: 0 auto;
+  padding: 0 $normal ($p_line_height * 0.5);
+  color: $p_color;
+}
+
+small {
+  font-size: $small;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  clear: both;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  line-height: 1.1em;
+}
+
+h1 {
+  margin: 0;
+  padding: 1.4em 1em 0.8em;
+  text-align: center;
+  color: $black;
+  border: none;
+  font-size: $h_size;
+}
+
+h2 {
+  color: $h_color;
+  font-size: $h_size * 0.8;
+}
+
+h3 {
+  color: darken($h_color, $adjust);
+  font-size: $h_size * 0.7;
+}
+
+h4 {
+  color: darken($h_color, $adjust * 2);
+  font-size: $h_size * 0.6;
+}
+
+h5 {
+  color: darken($h_color, $adjust * 3);
+  font-size: $h_size * 0.5;
+}
+
+h6 {
+  color: darken($h_color, $adjust * 4);
+  font-size: $h_size * 0.4;
+}
+
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: $p_size * 0.75;
+  line-height: 0;
+}
+
+sup {
+  top: -($p_size * 0.5);
+}
+
+sub {
+  bottom: -($p_size * 0.25);
+}
+
+blockquote,
+q {
+  color: $dark_grey;
+  background-color: darken($white, 10%);
+  font-style: italic;
+
+  &:before {
+    content: "\201C";
+  }
+  &:after {
+    content: "\201D";
+  }
+}
+
+q {
+  font-size: $p_size * 1.4;
+}
+
+blockquote {
+  display: block;
+  margin: $tiny $big;
+  padding: $normal;
+  border-left: $tiny solid;
+  font-size: $p_size * 1.8;
+}
+
+caption {
+  text-align: left;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+}
+
+pre {
+  display: block;
+  overflow: scroll;
+  margin: 1em auto;
+  padding: 1em;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-weight: bold;
+  font-variant: small-caps;
+}

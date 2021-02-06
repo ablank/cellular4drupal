@@ -1,0 +1,155 @@
+/**
+  * @file
+  * CSS Animations.
+*/
+
+@mixin ani_fadein ($opacity1: 0, $opacity2: 1) {
+  @keyframes fadein {
+    0% {
+      opacity: $opacity1;
+    }
+    50% {
+      opacity: $opacity1;
+    }
+    100% {
+      opacity: $opacity2;
+    }
+  }
+}
+
+$opacity: 0.3;
+$offset: 30%;
+$height: 100%;
+/* -------------------------------------------- */
+
+@mixin ani_alpha ($opacity1: 0, $opacity2: 0.8) {
+  @keyframes alpha {
+    0%,
+    100% {
+      opacity: $opacity;
+    }
+    50% {
+      opacity: $opacity2;
+    }
+  }
+}
+
+@mixin ani_bounce ($distance: 1em) {
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY($distance);
+    }
+  }
+}
+
+@mixin ani_flip($distance: 1em) {
+  @keyframes flip {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@mixin ani_spin() {
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+/* --------------------------------------------------------- */
+
+@mixin ani_bar () {
+  @keyframes bar {
+    0% {
+      width: 0;
+    }
+    70% {
+      width: 100%;
+      opacity: 1;
+    }
+    90% {
+      width: 100%;
+      opacity: 0;
+    }
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+}
+/* --------------------------------------------------------- */
+
+@mixin ani_converge ($opacity: 0) {
+  @keyframes convergeA {
+    0%,
+    100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    50% {
+      left: -150%;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes convergeB {
+    0%,
+    100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    50% {
+      left: 150%;
+      opacity: 0.8;
+    }
+  }
+}
+
+/* --------------------------------------------------------- */
+
+@mixin ani_orbit ($opacity: 0) {
+  @keyframes orbit {
+    0%,
+    100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    25% {
+      left: -150%;
+      opacity: 0.8;
+    }
+    50% {
+      left: 0;
+      opacity: $opacity;
+    }
+    75% {
+      left: 150%;
+      opacity: 0.8;
+    }
+  }
+}
+
+/* --------------------------------------------------------- */
+
+@mixin ani_scale ($scale1: 0, $scale2: 1) {
+  @keyframes scaled {
+    0%,
+    100% {
+      transform: scale($scale1);
+    }
+    50% {
+      transform: scale($scale2);
+    }
+  }
+}

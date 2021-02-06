@@ -1,0 +1,40 @@
+/**
+  * @file
+  * Styling DOM classes provided by drupal forum/advanced forum modules.
+*/
+
+/* Thread listing */
+.forum-posts {
+
+  table {
+    width: 100%;
+  }
+  th {
+
+  }
+  tr {
+    &:nth-child(odd) {
+
+    }
+    &:nth-child(even) {
+
+    }
+  }
+  td {
+    text-align: left;
+  }
+  .title {
+    font-family: $h_font;
+    font-weight: bold;
+  }
+  .forum-post-info {
+    font-size: $p_size * 0.9;
+    font-style: italic;
+  }
+  .author {
+
+  }
+  .posted-date {
+
+  }
+}

@@ -1,0 +1,20 @@
+/**
+  * @file
+  * Base body style.
+*/
+
+html {
+  overflow: auto;
+  // Force scrollbar display to prevent flicker
+  overflow-y: scroll;
+  background: $white;
+}
+
+body {
+  float: left;
+  width: 100%;
+  //@include gradient_rad($white, $white, $light_grey);
+  //background-image: $body_img;
+  //background-repeat: repeat;
+  //background-attachment: fixed;
+}

@@ -1,0 +1,76 @@
+/**
+  * @file
+  * CellularUI : jCard
+*/
+.jCard {
+  @include transition();
+
+  padding: 0.2em 0.6em;
+  border: 2px solid $grey;
+}
+.jCard-wrap {
+  @include transition();
+
+  display: inline-block;
+  margin: 0.2em auto;
+  padding: 0.2em;
+  vertical-align: top;
+  color: $panel_color;
+  border: 1px solid $light_grey;
+  background: $panel_background;
+  box-shadow: 0 0 0.1em 0.1em $light_grey;
+
+  img {
+    //@include transition();
+  }
+  .title {
+    @include transition();
+
+    margin: 0;
+    padding: 0.3em;
+    background-color: $dark_grey;
+    font-size: 0.9em;
+
+    a,
+    a:visited {
+      color: $white;
+    }
+  }
+
+  a,
+  p,
+  li {
+    text-decoration: none;
+    color: lighten($panel_color, 20%);
+  }
+  li {
+    padding: 0.2em 0.8em;
+  }
+  &.active,
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $active_color;
+    border: 1px solid $light_grey;
+    box-shadow: 0 0.4em 1em 0.3em $grey;
+
+    .jCard {
+      border: 2px solid $dark_grey;
+    }
+    .title {
+      background-color: $active_color;
+
+      a,
+      a:visited {
+        color: $white;
+      }
+    }
+    a,
+    p,
+    li {
+      text-decoration: none;
+      color: $active_color;
+    }
+  }
+}

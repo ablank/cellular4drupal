@@ -1,0 +1,173 @@
+/**
+  * @file
+  * Primary #main-menu styling
+*/
+
+// Display multi-level links using css dropdowns?
+$showDropdowns: true; // Enable dropdowns or not
+$direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
+
+// Primary Navigation
+#main-menu {
+  @include transition();
+
+  position: absolute;
+  top: 2em;
+  right: 0;
+  margin: 0 0 0 15%;
+  padding: 0;
+
+  a {
+    &,
+    &:visited {
+      // Common link styling
+      z-index: 2;
+      display: block;
+      margin: 0;
+      padding: 0.4em 0.8em;
+      text-align: left;
+      white-space: nowrap;
+      text-decoration: none;
+      color: $grey;
+      border: none;
+      border-radius: unset;
+      background: $white;
+      box-shadow: $grey 0 0.1em 0.25em;
+      font-family: $h_font;
+      font-size: $normal;
+      font-weight: normal;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        text-decoration: none;
+        color: $white;
+        background: $hilight;
+      }
+    }
+  }
+
+  // Top level list
+  > li {
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.parent:after {
+      @include triangle(0.8em, 0.6em, $grey, "down");
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      &:hover {
+        @include triangle(0.8em, 0.6em, $hilight, "down");
+      }
+    }
+  }
+
+  li {
+    display: block;
+    float: left;
+    width: auto;
+    max-width: none;
+    margin: 0 0.5em;
+    padding: 0;
+    list-style: none;
+
+    // Nested menus.
+    ul {
+      @include transition();
+
+      position: absolute;
+      z-index: 1;
+      top: 2.2em;
+      overflow: hidden;
+      max-height: 0;
+      margin: 0;
+      color: $grey;
+      border: none;
+      background: darken($white, 5%);
+      background: rgba(darken($white, 5%), 0.9);
+
+      &.active {
+        overflow: visible;
+      }
+
+      @if ($direction == "left") {
+        right: 0;
+        //border-right: 1px solid;
+        padding: 0 0.1em 0 0;
+        text-align: right;
+      }
+
+      @else {
+        left: 0;
+        //border-left: 1px solid;
+        padding: 0 0 0 0.1em;
+        text-align: left;
+      }
+    }
+    &.parent:after {
+      $direction: 0;
+
+      @include triangle(0.8em, 0.6em, $grey, $direction);
+
+      position: absolute;
+      bottom: 0;
+      &:hover {
+        @include triangle(0.8em, 0.6em, $hilight, $direction);
+      }
+    }
+
+    @if ($showDropdowns) == true {
+      // First lefel dropdown
+      &:focus,
+      &:hover,
+      &.active {
+        > ul {
+          @include transition();
+
+          max-height: 20em; // May need to adjust up/down depending on # of nested items
+        }
+      }
+
+      li {
+        float: none;
+        width: 100%;
+        margin: 0 0 0.1em 0;
+        padding: 0;
+        border: none;
+
+        ul {
+          top: 0;
+          width: 0;
+          max-height: unset;
+
+          @if ($direction == "left") {
+            right: 100%;
+            left: initial;
+          }
+
+          @else {
+            right: initial;
+            left: 100%;
+          }
+        }
+        // Secondary++ menu fly-out
+        &.active,
+        &:focus,
+        &:hover {
+          > ul {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

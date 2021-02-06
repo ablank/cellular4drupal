@@ -1,0 +1,123 @@
+/**
+  * @file
+  * Cellular Grid
+*/
+
+.container {
+  float: none;
+  max-width: $container_width;
+  margin: auto;
+}
+
+//////
+// Grid Cells
+/////
+// Set common attributes.
+.cell,
+#{$cells} {
+  @include transition();
+
+  position: relative;
+  z-index: 1;
+  display: block;
+  float: left;
+
+  &.center {
+    margin: $cell_margin + unquote("%") auto;
+  }
+
+  @if ($cell_margin) {
+    margin: $cell_margin + unquote("%");
+  }
+
+  @if ($cell_padding) {
+    padding: $cell_padding + unquote("%");
+  }
+}
+// .cell is functionally a row
+.cell {
+  @include clear();
+
+  width: 100%;
+}
+// Size individual cells & offsets.
+@each $name, $size in $grid {
+  .cell-#{$name} {
+    @if ($flexbox) {
+      flex-basis: $size + unquote("%");
+      width: auto;
+      max-width: $size + unquote("%");
+      margin: auto;
+    }
+
+    @else {
+      width: $size - $cell_space + unquote("%");
+    }
+  }
+  .offset-#{$name} {
+    margin-left: $size + ($cell_space /2) + unquote("%");
+  }
+}
+
+@if ($flexbox) {
+  .flex {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: stretch;
+    justify-content: space-around;
+    &.col {
+      flex-direction: column;
+    }
+    //&>#{$cells} {margin: auto;}
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: $res_small) {
+  // Set all cells to single-column
+  #{$cells} {
+    width: 100% - $cell_space;
+
+    @if ($flexbox) {
+      flex-basis: 100% - $cell_space;
+      max-width: 100% - $cell_space;
+    }
+  }
+  #{$offsets} {
+    margin-left: $cell_margin + unquote("%");
+  }
+}
+
+/////
+//Element positioning classes
+/////
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.clearfix {
+  @include clear();
+}
+
+.left,
+.right,
+.center {
+  display: block;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  @include clear();
+
+  float: none;
+  margin: $cell_margin + unquote("%") auto;
+}

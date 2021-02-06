@@ -1,0 +1,65 @@
+/**
+  * @file
+  * Parallax styling.
+*/
+// HTML:
+// .parallax
+// #group.parallax-group
+// .parallax-layer
+// &.parallax-base
+// &.parallax-front
+// &.parallax-back
+
+.parallax {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  perspective: 300px;
+}
+
+.parallax-group {
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax--top {
+  z-index: 10;
+  transform: translateZ(90px) scale(0.7);
+  background: rgba($green, 0.7);
+}
+
+.parallax--base {
+  z-index: 4;
+  transform: translateZ(0);
+  background: $red;
+}
+
+.parallax-back {
+  z-index: 3;
+  transform: translateZ(-300px) scale(2);
+}
+
+.parallax-deep {
+  z-index: 2;
+  transform: translateZ(-600px) scale(3);
+}
+
+
+/* centre the content in the parallax layers */
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

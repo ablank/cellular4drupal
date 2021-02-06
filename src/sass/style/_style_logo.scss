@@ -1,0 +1,36 @@
+/**
+  * @file
+  * Logo link style
+*/
+
+.logo {
+  // Container for logo
+  z-index: 9;
+  float: left;
+
+  a {
+    // Logo link to frontpage.
+    display: block;
+    width: $logo_width + $logo_pad;
+    height: $logo_height + $logo_pad;
+    transition: all 300ms ease-in;
+    text-decoration: none;
+    text-indent: -999em;
+    border: none;
+    background-image: $logo_png;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: $logo_width $logo_height;
+    box-shadow: 0 0 0 0 $white;
+    will-change: width, height, transform;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 0.4em 0 $hilight;
+    }
+  }
+
+  @if ($header_height > $logo_height + $logo_pad) {
+    padding-top: ($header_height - ($logo_height + $logo_pad)) * 0.5;
+  }
+}

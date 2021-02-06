@@ -1,0 +1,26 @@
+.date-clear {
+  text-indent: 1em;
+  > label {
+    text-indent: 1em;
+  }
+}
+label,
+input,
+textarea,
+select {
+  &.date-clear {
+    text-indent: unset;
+  }
+}
+
+.date-no-float {
+  @include clear();
+
+  display: block;
+}
+
+.date-float {
+  float: left;
+  clear: none;
+  width: auto;
+}

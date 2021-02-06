@@ -1,0 +1,12 @@
+/**
+  * @file
+  * Pseudo element to pass the media size to javascript.
+  * @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
+*/
+
+body:before {
+  display: none;
+  content: "window_default-#{$res_default}";
+}
+
+.window_default {}

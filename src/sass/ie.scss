@@ -1,0 +1,45 @@
+/**
+  * @file
+  * Old Internet Explorer is breakin internetz.
+*/
+
+@import "variables";
+
+body {
+  word-wrap: break-word;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+legend {
+  // because legend doesn't inherit in IE
+  color: $light_grey;
+}
+
+input,
+textarea,
+select {
+  // to enable resizing for IE
+  *font-size: 100%;
+}
+
+input {
+
+  &[type=checkbox],
+  &[type=radio] {
+    display: inline;
+    margin: $tiny;
+    vertical-align: middle;
+
+    &:focus {
+      border: $border;
+    }
+  }
+}
+
+.cell,
+#{$cells} {
+  zoom: 1;
+}

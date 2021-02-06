@@ -1,0 +1,117 @@
+/**
+  * @file
+  * CellularUI
+  * Set default UI styles common to all components.
+*/
+
+/* Variables specific to UI */
+$title_color: $white;
+$title_background: $dark_grey;
+$panel_color: $dark_grey;
+$panel_background: $white;
+$active_color: darken($hilight, 10%);
+$border_color: $grey;
+$border_width: 1px;
+$border_radius: 0.5em;
+
+/* Styling common to all Cellular UI components */
+.cellular {// Only applies styling if javascript is enabled/DOM ready.
+  .jAccordion,
+  .jBlocklink,
+  .jMmenu,
+  .jTabs {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    animation: fadein 1200ms;
+
+    li {
+      max-width: 90%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .title {
+      @include transition();
+
+      z-index: 2;
+      display: block;
+      max-width: 100%;
+      margin: 0;
+      padding: 0.6em 1em;
+      cursor: pointer;
+      color: $title_color;
+      background-color: $title_background;
+
+      &:focus,
+      &:hover {
+        color: $title_color;
+        background-color: $active_color;
+      }
+
+      a {
+        &,
+        &:visited {
+          text-decoration: none;
+          color: $title_color;
+          border: none;
+          font-weight: bold;
+          line-height: 1.4em;
+
+          &.active,
+          &:active,
+          &:focus,
+          &:hover {
+            text-decoration: none;
+            border: none;
+          }
+        }
+      }
+    }
+
+    .panel {
+      z-index: 1;
+      // Area content is displayed in accordions & tabs.
+      display: block;
+      padding-top: 1em;
+      text-align: center;
+      color: $panel_color;
+      border: $border_color 1px solid;
+      background: $panel_background;
+
+      p,
+      li {
+        text-align: left;
+      }
+    }
+
+    .panel-content {
+      animation: fadein 400ms;
+    }
+
+    // Set appearance of active UI elements
+    .active {
+
+      .title {
+        background-color: $active_color;
+      }
+    }
+  }
+}
+
+/* Import UI components */
+@import "jAccordion";
+@import "jMmenu";
+@import "jScrolled";
+@import "jScrolli";
+@import "jTabs";
+/* Under Development
+@import "jCard";
+@import "jModal";
+@import "jScrollindicator";
+@import "jSocial";
+@import "jTooltip";
+@import "jZoom";
+*/

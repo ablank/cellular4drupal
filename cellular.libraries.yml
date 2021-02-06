@@ -1,11 +1,12 @@
-global-styling:
-  version: 1.0
+cellular:
+  version: 0.1
   css:
     theme:
-      dist/css/styles.css: {}
-      dist/vendors/css/fontawesome.css: {}
+      dist/css/drupal.css: {}
+      dist/css/style.css: {}
+      dist/css/ie.css: {}
+      dist/css/print.css: {}
   js:
-    dist/vendors/js/bootstrap.bundle.js: {}
     dist/js/script.js: {}
   dependencies:
     - core/jquery

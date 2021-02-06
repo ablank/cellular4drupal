@@ -1,0 +1,64 @@
+.tabs {
+  @include clear();
+
+  margin: 2em 0 1em;
+  border-bottom: $grey 1px solid;
+  li {
+    display: block;
+    float: left;
+    margin: 0 0.1em;
+    list-style: none;
+  }
+  a {
+    &,
+    &:visited {
+      @include round($tiny, "top");
+
+      display: block;
+      padding: 0.4em 0.8em 0.2em;
+      color: $dark_grey;
+      border: 1px solid;
+      border-bottom: none;
+      background-color: $light_grey;
+    }
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      position: relative;
+      top: 1px;
+      text-decoration: underline;
+      color: $hilight;
+      border-bottom: darken($white, 10%) 1px solid;
+      background-color: darken($white, 4%);
+    }
+    &.active {
+      border-bottom-color: $white;
+      background-color: $white;
+    }
+  }
+  &.secondary {
+    margin: -1em 0 0 0;
+    padding: 1em;
+    border-bottom: 1px solid;
+    background-color: transparent;
+    a {
+      &,
+      &:visited {
+        @include round($tiny);
+
+        padding: 0.4em 0.8em;
+        color: $white;
+        border: 1px solid;
+        background-color: $dark_grey;
+      }
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $hilight;
+        background-color: $white;
+      }
+    }
+  }
+}

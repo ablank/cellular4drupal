@@ -1,0 +1,14 @@
+/**
+  * @file
+  * Base body style.
+*/
+
+@include ani_fadein();
+@include ani_alpha();
+@include ani_bounce();
+@include ani_flip();
+@include ani_spin();
+@include ani_bar();
+@include ani_converge();
+@include ani_orbit();
+@include ani_scale();

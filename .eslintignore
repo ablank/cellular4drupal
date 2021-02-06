@@ -1,7 +1,0 @@
-/dist/vendors/**/*.js
-dist/vendors/js/*.js
-dist/vendors/js/*.map
-gulpfile.js
-**/dist/**
-dist/**/*.css
-dist/**/*.map

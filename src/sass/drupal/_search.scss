@@ -1,0 +1,91 @@
+/**
+  * @file
+  * Styling DOM classes provided by drupal
+*/
+
+$br: 0.2em;
+
+form.site-search {
+  display: inline;
+  display: inline-block;
+  width: auto;
+  padding: $br;
+  text-align: right;
+  border: $grey 1px solid;
+  border-radius: $br;
+  background-color: $light_grey;
+  background-color: rgba($light_grey, 0.6);
+  font-size: 0.8em;
+
+  .container-inline {
+    text-indent: unset;
+  }
+
+  input {
+    display: inline;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-radius: $br;
+    line-height: 2em;
+
+    &[type="text"] {
+      width: 12em;
+      padding: 0.5em 0.2em 0.3em;
+      color: $grey;
+      border-bottom: $grey 0.1em solid;
+      border-radius: $br;
+      background: rgba($white, 0.4);
+      line-height: 1em;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $black;
+        border-color: $hilight;
+        outline: none;
+      }
+    }
+
+    &[type="submit"] {
+      float: none;
+      padding: 0 1.4em 0 0.2em;
+      border: $grey 1px solid;
+      background: $light_grey url("../assets/icons/png/search.png") center right no-repeat;
+      background-image: url("../assets/icons/svg/search.svg");
+      background-size: 1.4em;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: $hilight;
+        outline: none;
+        background-color: darken($light_grey, 8%);
+      }
+    }
+  }
+}
+
+form.search-form {
+  display: block;
+  margin: 3em auto;
+  padding: 1em;
+
+  label {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.search-result {
+
+  .title {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.search-snippet-info {
+  font-size: 0.8em;
+}

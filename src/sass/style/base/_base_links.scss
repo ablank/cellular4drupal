@@ -1,0 +1,34 @@
+/**
+  * @file
+  * Anchors / Links
+*/
+
+$c1: $hilight;//$hilight;
+$c2: lighten($c1, 15%);
+$c3: lighten($c1, 5%);
+
+@if (lightness($c1) > 50) {
+  $c2: darken($c1, 15%);
+  $c3: darken($c1, 5%);
+}
+
+a {
+  //display: inline-block;
+  @include transition();
+
+  text-decoration: none;
+  color: $c1;
+  outline: none;
+
+  &:visited {
+    color: $c3;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+    color: $c2;
+    outline: none;
+  }
+}

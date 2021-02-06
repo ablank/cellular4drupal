@@ -1,0 +1,34 @@
+/**
+  * @file
+  * CellularUI : jAccordion
+*/
+
+.jAccordion {
+
+  li {
+    margin: 0 auto 1px;
+  }
+
+  .title {
+    @include transition("background-color", 0.4s);
+    // padding-left: 2em;
+    // background-size: 1em;
+    // background-repeat: no-repeat;
+    // background-position: left center;
+    // background-image: url(../assets/icons/svg/plus.svg);
+    border: $border_color 0.1em solid;
+    border-bottom: none;
+  }
+
+  .panel {
+    // border-top: .4em solid;
+  }
+
+  .active {
+
+    .title {
+      // background-size: 1em;
+      // background-image: url(../assets/icons/svg/minus.svg);
+    }
+  }
+}

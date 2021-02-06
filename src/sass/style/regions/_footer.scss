@@ -1,0 +1,35 @@
+/**
+  * @file
+  * Content region styles
+*/
+
+#footer {
+  z-index: 1;
+  margin: 5em 0 0 0;
+  color: $white;
+  background: $dark_grey;
+
+  p {
+    color: $white;
+  }
+}
+
+#footer-top {
+  color: $light_grey;
+  background: $dark_grey;
+  font-size: $small;
+  // Custom type for region
+}
+
+#footer-bottom {
+  color: $light_grey;
+  border-top: $border;
+  background: $dark_grey;
+  font-size: $small;
+}
+
+#copyright {
+  display: block;
+  padding: $small $big $small;
+  text-align: right;
+}

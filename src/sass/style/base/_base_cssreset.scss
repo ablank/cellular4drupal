@@ -1,0 +1,39 @@
+/**
+  * @file
+  * CSS Reset
+*/
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+blockquote,
+th,
+td,
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}

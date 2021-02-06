@@ -1,24 +1,21 @@
 name: Cellular
 type: theme
 base theme: false
-description: A Blog & multipurpose bootstrap 4 based theme
+description: A lightweight starter theme
 package: 'Cellular'
-core: 8.x
 core_version_requirement: ^8 || ^9
 
 libraries:
-  - cellular/global-styling
+  - cellular/cellular
 
 regions:
-  header_left: 'Header Left'
+  header_top: 'Header Top'
   navigation: 'Main Navigation'
-  header_right: 'Header Right'
-  content_header: 'Page Header'
-  content_top_fluid: 'Page top Full Width'
-  content_top: 'Content top'
+  header_bottom: 'Header Bottom'
+  sidebar: 'Sidebar'
+  content_top: 'Content Top'
   content: 'Content' #required!
-  content_bottom: 'Content bottom'
-  content_bottom_fluid: 'Page bottom Full Width'
-  sidebar_right: 'Right Sidebar'
+  content_bottom: 'Content Bottom'
   footer_top: 'Footer Top'
-  footer_middle: 'Footer Middle'
+  footer: 'Footer'
+  footer_bottom: 'Footer Bottom'

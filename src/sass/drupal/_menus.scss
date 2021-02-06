@@ -1,0 +1,50 @@
+.menu,
+.inline.links {
+  display: block;
+  clear: both;
+  margin: 0.4em;
+
+  li {
+    display: inline;
+    display: inline-block;
+    margin: 0.2em;
+    padding: 0;
+  }
+
+  a {
+    @include button($white, $dark_grey, $hilight, "flat");
+
+    padding: 0.2em 0.4em;
+  }
+}
+
+.links {
+  @include clear();
+
+  padding: 1em;
+  list-style: none;
+  border-bottom: 1px solid;
+  background-color: transparent;
+  li {
+    display: block;
+    float: left;
+  }
+  a {
+    &,
+    &:visited {
+      @include round($tiny);
+
+      padding: 0.4em 0.8em;
+      color: $white;
+      border: 1px solid;
+      background-color: $dark_grey;
+    }
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: $hilight;
+      background-color: $white;
+    }
+  }
+}

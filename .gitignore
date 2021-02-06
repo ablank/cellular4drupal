@@ -1,4 +1,3 @@
-# Ignore paths that contain user-generated content.
-**/node_modules
-**/package-lock.json
-dist/vendors/js/*.map
+node_modules
+npm-debug.log
+.sass-cache

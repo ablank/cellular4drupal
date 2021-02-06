@@ -1,0 +1,92 @@
+/**
+  * @file
+  * CellularUI : jTabs
+*/
+$icon_size: 1.4em;
+
+.jSocial {
+  @include box-shadow();
+
+  z-index: 1;
+  display: block;
+  margin: 1em 0 0 0;
+  padding: 1em;
+  border-radius: 0.4em;
+  background-color: $white;
+
+  .title {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+  }
+
+  .icon {
+    width: $icon_size;
+    height: $icon_size;
+    margin: $icon_size * 0.2;
+    padding: $icon_size * 0.2;
+    text-indent: -999em;
+    border: 1px solid $grey;
+    border-radius: 50%;
+    background-color: $light_grey;
+    background-position: center center;
+    background-size: $icon_size;
+
+    &:hover {
+      background-color: $white;// $white;
+    }
+
+    @if ($use_social_icons) {
+      @each $icon in $social_icons {
+        &.#{$icon} {
+          background-image: url("#{$icon_source_png}#{$icon}.png");
+          background-image: url("#{$icon_source_svg}#{$icon}.svg");
+        }
+      }
+    }// $white;
+  }
+
+  &.horizontal,
+  &.vertical {
+    position: fixed;
+    z-index: 10;
+    margin: 0;
+
+    .icon {
+      border-radius: 0;
+    }
+  }
+
+  &.horizontal {
+    bottom: 0;
+    left: 0;
+    padding: 0 1em;
+
+    h3 {
+      display: inline;
+    }
+  }
+
+  &.vertical {
+    top: $header_height;
+    right: 0;
+    width: $icon_size * 1.5;
+    padding: $icon_size ($icon_size * 0.2);
+
+    .title {
+      position: absolute;
+      left: -999em;
+    }
+    .icon {
+      margin: auto;
+    }
+  }
+}
+
+.jSocial-share {
+
+}
+
+.jSocial-follow {
+
+}

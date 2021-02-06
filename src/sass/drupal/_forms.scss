@@ -1,0 +1,25 @@
+.container-inline {
+  text-indent: 1em;
+  div,
+  input {
+    display: inline;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+}
+
+label + div {
+}
+
+label + input {
+  @include clear();
+}
+
+.filter-wrapper {
+  overflow: hidden;
+  height: 6em;
+  &.active {
+    height: auto;
+  }
+}
