@@ -21,26 +21,38 @@
     }
   },
   "size": {
+    "adjust": {
+      "value": "0.25",
+      "category": "scale",
+      "scale": "0.25"
+    },
     "default": {
       "value": "1{unit.default.value}"
     },
     "tiny": {
-      "value": "0.4{unit.default.value}"
+      "value": "0.4{unit.default.value}",
+      "category": "scale",
+      "scale": "0.4"
     },
     "small": {
-      "value": "0.7{unit.default.value}"
+      "value": "0.7{unit.default.value}",
+      "category": "scale",
+      "scale": "0.4"
     },
     "big": {
-      "value": "1.4{unit.default.value}"
+      "value": "1.4{unit.default.value}",
+      "category": "scale",
+      "scale": "0.4"
     },
     "xl": {
-      "value": "2{unit.default.value}"
+      "value": "3{unit.default.value}",
+      "category": "scale",
+      "scale": "0.4"
     },
     "xxl": {
-      "value": "3{unit.default.value}"
-    },
-    "adjust": {
-      "value": "0.25"
+      "value": "15{unit.default.value}",
+      "category": "scale",
+      "scale": "0.4"
     }
   },
   "speed": {

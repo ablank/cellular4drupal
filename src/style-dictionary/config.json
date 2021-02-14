@@ -1,6 +1,6 @@
 {
   "source": [
-    "src/style-dictionary/properties/**/*.js",
+    
     "src/style-dictionary/properties/**/*.json"
   ],
   "platforms": {
