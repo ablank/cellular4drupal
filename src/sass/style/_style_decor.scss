@@ -9,7 +9,7 @@
 }
 
 .textShadow {
-  text-shadow: 1px 1px 3px $dark_grey;
+  text-shadow: 1px 1px 3px $color-secondary;
 }
 
 // Page curl effect
@@ -18,7 +18,7 @@
   // max-width: 720px; // constrain width to prevent pseudo elements from showing outside of box
   margin: 0 auto;
   padding: 3em 1.4em;
-  background-color: $white;
+  background-color: $color-primary-bg;
 
   &:before,
   &:after {
@@ -44,13 +44,13 @@
 // Pseudo 3-d elements
 
 .ribbon {
-  @include ribbon(1.2em, 1em, $black);
+  @include ribbon(1.2em, 1em, $color-primary);
 
-  color: $white;
+  color: $color-primary-bg;
 }
 
 .popout {
-  @include popout(1.2em, 1em, $black);
+  @include popout(1.2em, 1em, $color-primary);
 
-  color: $white;
+  color: $color-primary-bg;
 }

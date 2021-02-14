@@ -1,0 +1,12 @@
+// Sizing vars
+$size: 1em;
+$size-tiny: $size * 0.3;
+$size-small: $size * 0.75;
+$size-big: $size * 1.4;
+$size-default: $size;
+$border: thin solid;
+
+// Shadows: $h-off $v-off $blur $spread
+$shadow_big: 0 0 $size-default $size-default;
+$shadow_med: 0 0 $size-small $size-small;
+$shadow_small: 0 0 $size-tiny $size-tiny;

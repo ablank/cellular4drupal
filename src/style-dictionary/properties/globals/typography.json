@@ -1,0 +1,49 @@
+{
+  "typo": {
+    "default": {
+      "unit": {
+        "value": "em"
+      },
+      "font": {
+        "value": "\"Times New Roman\", serif"
+      },
+      "size": {
+        "value": "{size.default.value}"
+      }
+    },
+    "heading": {
+      "color": {
+        "value": "{color.primary.value}"
+      },
+      "font": {
+        "value": "Montserrat"
+      },
+      "size": {
+        "value": "{size.xxl.value}"
+      },     
+      "line-height": {
+        "value": "{size.xxl.value}"
+      },    
+      "weight": {
+        "value": "bold"
+      }
+    },
+    "text": {
+      "color": {
+        "value": "{color.primary.value}"
+      },
+      "font": {
+        "value": "\"Times New Roman\", serif"
+      },
+      "size": {
+        "value": "{size.default.value}"
+      },      
+      "line-height": {
+        "value": "{size.big.value}"
+      },
+      "max-width": {
+        "value": "32{typo.default.unit.value}"
+      }
+    }
+  }
+}

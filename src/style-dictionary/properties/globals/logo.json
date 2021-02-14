@@ -1,0 +1,19 @@
+{
+  "logo": {
+    "unit": {
+        "value": "px"
+    },
+    "width": {
+      "value": "96{logo.unit.value}"
+    },
+    "height": {
+      "value": "96{logo.unit.value}"
+    },
+    "margin": {
+        "value": "3{logo.unit.value}"
+    },
+    "padding": {
+        "value": "5{logo.unit.value}"
+    }
+  }
+}

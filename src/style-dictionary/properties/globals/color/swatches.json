@@ -1,0 +1,49 @@
+{
+  "swatch": {
+    "white": {
+      "value": "#fefefe"
+    },
+    "black": {
+      "value": "#101010"
+    },
+    "grey": {
+      "value": "#bbbab7"
+    },
+    "light-grey": {
+      "value": "#ababab"
+    },
+    "dark-grey": {
+      "value": "#666"
+    },
+    "red": {
+      "value": "#8c0d00"
+    },
+    "green": {
+      "value": "#61d43f"
+    },
+    "blue": {
+      "value": "#00598e"
+    },
+    "cyan": {
+      "value": "#29b4de"
+    },
+    "magenta": {
+      "value": "#dd2a99"
+    },
+    "yellow": {
+      "value": "#ec2"
+    },
+    "orange": {
+      "value": "#ff6200"
+    },
+    "purple": {
+      "value": "#bc00ff"
+    },
+    "sand": {
+      "value": "#eedeb8"
+    },
+    "sage": {
+      "value": "#86b082"
+    }
+  }
+}

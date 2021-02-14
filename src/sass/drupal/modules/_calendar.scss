@@ -30,19 +30,19 @@
     width: 100%;
     padding: 0.2em;
     border-spacing: 0.1em;
-    border: $grey 1px solid;
+    border: $color-neutral 1px solid;
     border-collapse: separate;
   }
 
   th {
-    color: $grey;
+    color: $color-neutral;
   }
   tr {
     background-color: transparent;
   }
   td {
     padding: 0.2em;
-    background-color: $white;
+    background-color: $color-primary-bg;
 
     &.date-box {
       margin: 0;
@@ -53,16 +53,16 @@
 .date-box {
 
   .month.day {
-    @include round($tiny, "top");
+    @include round($size-tiny, "top");
 
     padding: 0 0.5em;
-    color: $white;
-    background-color: $grey;
+    color: $color-primary-bg;
+    background-color: $color-neutral;
   }
 
   a,
   a:visited {
-    color: $white;
+    color: $color-primary-bg;
   }
 
   a {
@@ -70,7 +70,7 @@
     &:hover,
     &:focus,
     &:visited {
-      color: lighten($hilight, 33%);
+      color: lighten($color-hilight, 33%);
     }
   }
 }
@@ -78,29 +78,29 @@
 .single-day {
 
   td {
-    @include round($tiny, "bottom");
+    @include round($size-tiny, "bottom");
 
     width: 14%; // ~ 100% / 7 days
     vertical-align: top;
-    border-right: $grey 1px solid;
-    border-bottom: $grey 1px solid;
-    border-left: $grey 1px solid;
+    border-right: $color-neutral 1px solid;
+    border-bottom: $color-neutral 1px solid;
+    border-left: $color-neutral 1px solid;
     //min-width: 5em;
-    background-color: $white;
+    background-color: $color-primary-bg;
 
     &.today {
-      @include box-shadow($hilight);
+      @include box-shadow($color-hilight);
 
-      border-color: $hilight;
+      border-color: $color-hilight;
     }
 
     &.past {
-      background-color: darken($white, 10%);
+      background-color: darken($color-primary-bg, 10%);
 
       a {
         &,
         &:visited {
-          color: $grey;
+          color: $color-neutral;
         }
       }
     }
@@ -110,22 +110,22 @@
     &,
     &:visited {
       display: block;
-      padding: $tiny;
-      border: $grey 1px solid;
-      border-radius: $tiny;
-      background: darken($white, 5%);
+      padding: $size-tiny;
+      border: $color-neutral 1px solid;
+      border-radius: $size-tiny;
+      background: darken($color-primary-bg, 5%);
     }
 
     &:active,
     &:hover,
     &:focus,
     &:visited {
-      border-color: $hilight;
-      background: $white;
+      border-color: $color-hilight;
+      background: $color-primary-bg;
     }
   }
 
   .date-display-single {
-    color: $grey;
+    color: $color-neutral;
   }
 }

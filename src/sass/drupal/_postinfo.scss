@@ -5,8 +5,8 @@
 */
 .post-info {
   float: left;
-  margin: 0 $normal $normal 0;
-  padding: $normal;
+  margin: 0 $size-default $size-default 0;
+  padding: $size-default;
   text-align: center;
 }
 
@@ -18,8 +18,8 @@
   float: left;
   margin: 1em 1em 1em 0;
   text-align: center;
-  color: $dark_grey;
-  border: $dark_grey $border;
+  color: $color-secondary;
+  border: $color-secondary $border;
   background: lighten($light_grey, 10%);
 
   .day,
@@ -43,7 +43,7 @@
     padding: 0.2em 0.8em;
     color: $light_grey;
     border-top: $light_grey $border;
-    background-color: $dark_grey;
+    background-color: $color-secondary;
   }
 }
 

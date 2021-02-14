@@ -1,0 +1,18 @@
+{
+  "list": {
+    "margin": {
+      "value": "1em"
+    },
+    "padding": {
+      "value": "0.5em"
+    }
+  },
+  "table": {
+    "margin": {
+      "value": "1em"
+    },
+    "padding": {
+      "value": "0.5em"
+    }
+  }
+}

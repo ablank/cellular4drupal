@@ -3,6 +3,14 @@
   * Logo link style
 */
 
+// Branding 
+$logo_width: 72px;
+$logo_height: 72px;
+$logo_pad: 12px;
+$logo_png: url("../assets/images/png/logo.png");
+$logo_svg: url("../assets/images/svg/logo.svg");
+
+
 .logo {
   // Container for logo
   z-index: 9;
@@ -21,12 +29,12 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: $logo_width $logo_height;
-    box-shadow: 0 0 0 0 $white;
+    box-shadow: 0 0 0 0 $color-primary-bg;
     will-change: width, height, transform;
 
     &:focus,
     &:hover {
-      box-shadow: 0 0 0.4em 0 $hilight;
+      box-shadow: 0 0 0.4em 0 $color-hilight;
     }
   }
 

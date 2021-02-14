@@ -13,8 +13,8 @@ $btn_size: 2em; //
   height: $btn_size;
   cursor: cell;
   vertical-align: middle;
-  color: $white;
-  border: 1px solid $grey;
+  color: $color-primary-bg;
+  border: 1px solid $color-neutral;
   border-radius: 50%;
   background-color: $light_grey;
 }
@@ -29,12 +29,12 @@ $btn_size: 2em; //
   margin: 0;
   padding: 0;
   opacity: 0;
-  color: $white;
-  border-radius: $tiny;
+  color: $color-primary-bg;
+  border-radius: $size-tiny;
   border-top-left-radius: 0;
-  background-color: rgba($black, 0.9);
+  background-color: rgba($color-primary, 0.9);
   &:after {
-    @include triangle(1em, 1em, rgba($black, 0.9), "left");
+    @include triangle(1em, 1em, rgba($color-primary, 0.9), "left");
 
     z-index: -1;
     top: 0;

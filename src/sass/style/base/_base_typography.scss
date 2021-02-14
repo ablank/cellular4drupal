@@ -4,25 +4,25 @@
 */
 
 body {
-  color: $p_color;
+  color: $typo-text-color;
   font-family: sans-serif;
-  font-family: $p_font;
+  font-family: $typo-text-font;
   font-size: 100%;
-  line-height: $p_line_height;
+  line-height: $typo-text-line-height;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
 
 p {
   display: block;
-  max-width: $p_max_width;
+  max-width: $typo-text-max-width;
   margin: 0 auto;
-  padding: 0 $normal ($p_line_height * 0.5);
-  color: $p_color;
+  padding: 0 $size-default ($typo-text-line-height * 0.5);
+  color: $typo-text-color;
 }
 
 small {
-  font-size: $small;
+  font-size: $size-small;
 }
 
 h1,
@@ -35,8 +35,8 @@ h6 {
   clear: both;
   margin: 1em auto 0.2em auto;
   padding: 0.4em 0.4em 0 1em;
-  font-family: $h_font;
-  font-weight: $h_weight;
+  font-family: $typo-heading-font;
+  font-weight: $typo-heading-weight;
   line-height: 1.1em;
 }
 
@@ -44,56 +44,56 @@ h1 {
   margin: 0;
   padding: 1.4em 1em 0.8em;
   text-align: center;
-  color: $black;
+  color: $color-primary;
   border: none;
-  font-size: $h_size;
+  font-size: $typo-heading-size;
 }
 
 h2 {
-  color: $h_color;
-  font-size: $h_size * 0.8;
+  color: $typo-heading-color;
+  font-size: $typo-heading-size * 0.8;
 }
 
 h3 {
-  color: darken($h_color, $adjust);
-  font-size: $h_size * 0.7;
+  color: darken($typo-heading-color, $adjust-color);
+  font-size: $typo-heading-size * 0.7;
 }
 
 h4 {
-  color: darken($h_color, $adjust * 2);
-  font-size: $h_size * 0.6;
+  color: darken($typo-heading-color, $adjust-color * 2);
+  font-size: $typo-heading-size * 0.6;
 }
 
 h5 {
-  color: darken($h_color, $adjust * 3);
-  font-size: $h_size * 0.5;
+  color: darken($typo-heading-color, $adjust-color * 3);
+  font-size: $typo-heading-size * 0.5;
 }
 
 h6 {
-  color: darken($h_color, $adjust * 4);
-  font-size: $h_size * 0.4;
+  color: darken($typo-heading-color, $adjust-color * 4);
+  font-size: $typo-heading-size * 0.4;
 }
 
 sub,
 sup {
   position: relative;
   vertical-align: baseline;
-  font-size: $p_size * 0.75;
+  font-size: $typo-text-size * 0.75;
   line-height: 0;
 }
 
 sup {
-  top: -($p_size * 0.5);
+  top: -($typo-text-size * 0.5);
 }
 
 sub {
-  bottom: -($p_size * 0.25);
+  bottom: -($typo-text-size * 0.25);
 }
 
 blockquote,
 q {
-  color: $dark_grey;
-  background-color: darken($white, 10%);
+  color: $color-secondary;
+  background-color: darken($color-primary-bg, 10%);
   font-style: italic;
 
   &:before {
@@ -105,15 +105,15 @@ q {
 }
 
 q {
-  font-size: $p_size * 1.4;
+  font-size: $typo-text-size * 1.4;
 }
 
 blockquote {
   display: block;
-  margin: $tiny $big;
-  padding: $normal;
-  border-left: $tiny solid;
-  font-size: $p_size * 1.8;
+  margin: $size-tiny $size-big;
+  padding: $size-default;
+  border-left: $size-tiny solid;
+  font-size: $typo-text-size * 1.8;
 }
 
 caption {

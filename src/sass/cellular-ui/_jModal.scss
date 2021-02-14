@@ -10,8 +10,8 @@
   bottom: 0;
   left: 0;
   opacity: 0;
-  background: $black;
-  background: rgba($black, 0.7);
+  background: $color-primary;
+  background: rgba($color-primary, 0.7);
   &.active {
     z-index: 99;
     opacity: 1;
@@ -25,7 +25,7 @@
   top: 50%;
   left: 50%;
   overflow: hidden;
-  border-radius: $tiny;
+  border-radius: $size-tiny;
   &.active {}
 }
 
@@ -42,15 +42,15 @@
   position: relative;
   display: block;
   padding: 1em;
-  border: $grey 1px solid;
+  border: $color-neutral 1px solid;
   border-radius: 50%;
-  background: $white;
+  background: $color-primary-bg;
   &.active {
-    border-radius: $tiny;
+    border-radius: $size-tiny;
     .jModal-close {
       width: 1em;
       height: 1em;
-      border: 0.1em solid $white;
+      border: 0.1em solid $color-primary-bg;
       background: $red;
     }
   }

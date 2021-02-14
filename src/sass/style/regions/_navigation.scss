@@ -28,13 +28,13 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
       text-align: left;
       white-space: nowrap;
       text-decoration: none;
-      color: $grey;
+      color: $color-neutral;
       border: none;
       border-radius: unset;
-      background: $white;
-      box-shadow: $grey 0 0.1em 0.25em;
-      font-family: $h_font;
-      font-size: $normal;
+      background: $color-primary-bg;
+      box-shadow: $color-neutral 0 0.1em 0.25em;
+      font-family: $typo-heading-font;
+      font-size: $size-default;
       font-weight: normal;
 
       &:hover,
@@ -42,8 +42,8 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
       &:active,
       &.active {
         text-decoration: none;
-        color: $white;
-        background: $hilight;
+        color: $color-primary-bg;
+        background: $color-hilight;
       }
     }
   }
@@ -60,13 +60,13 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
     }
 
     &.parent:after {
-      @include triangle(0.8em, 0.6em, $grey, "down");
+      @include triangle(0.8em, 0.6em, $color-neutral, "down");
 
       position: absolute;
       right: 0;
       bottom: 0;
       &:hover {
-        @include triangle(0.8em, 0.6em, $hilight, "down");
+        @include triangle(0.8em, 0.6em, $color-hilight, "down");
       }
     }
   }
@@ -90,10 +90,10 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
       overflow: hidden;
       max-height: 0;
       margin: 0;
-      color: $grey;
+      color: $color-neutral;
       border: none;
-      background: darken($white, 5%);
-      background: rgba(darken($white, 5%), 0.9);
+      background: darken($color-primary-bg, 5%);
+      background: rgba(darken($color-primary-bg, 5%), 0.9);
 
       &.active {
         overflow: visible;
@@ -116,12 +116,12 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
     &.parent:after {
       $direction: 0;
 
-      @include triangle(0.8em, 0.6em, $grey, $direction);
+      @include triangle(0.8em, 0.6em, $color-neutral, $direction);
 
       position: absolute;
       bottom: 0;
       &:hover {
-        @include triangle(0.8em, 0.6em, $hilight, $direction);
+        @include triangle(0.8em, 0.6em, $color-hilight, $direction);
       }
     }
 

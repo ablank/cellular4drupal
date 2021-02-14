@@ -12,7 +12,7 @@ $icon_size: 1.4em;
   margin: 1em 0 0 0;
   padding: 1em;
   border-radius: 0.4em;
-  background-color: $white;
+  background-color: $color-primary-bg;
 
   .title {
     margin: 0;
@@ -26,14 +26,14 @@ $icon_size: 1.4em;
     margin: $icon_size * 0.2;
     padding: $icon_size * 0.2;
     text-indent: -999em;
-    border: 1px solid $grey;
+    border: 1px solid $color-neutral;
     border-radius: 50%;
     background-color: $light_grey;
     background-position: center center;
     background-size: $icon_size;
 
     &:hover {
-      background-color: $white;// $white;
+      background-color: $color-primary-bg;// $color-primary-bg;
     }
 
     @if ($use_social_icons) {
@@ -43,7 +43,7 @@ $icon_size: 1.4em;
           background-image: url("#{$icon_source_svg}#{$icon}.svg");
         }
       }
-    }// $white;
+    }// $color-primary-bg;
   }
 
   &.horizontal,

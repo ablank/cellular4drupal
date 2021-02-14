@@ -1,0 +1,19 @@
+{
+  "ui": {
+    "button": {
+      "border": {
+        "size": {
+          "value": "0.1rem"
+        },
+        "radius": {
+          "value": "0.5rem"
+        }
+      },
+      "text": {
+        "size": {
+          "value": "{size.default.value}"
+        }
+      }
+    }
+  }
+}

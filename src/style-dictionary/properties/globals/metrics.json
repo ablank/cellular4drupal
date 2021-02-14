@@ -1,0 +1,57 @@
+{
+  "unit": {
+    "default": {
+      "value": "rem"
+    }
+  },
+  "distance": {
+    "offset": {
+      "value": "30%"
+    },
+    "start": {
+      "value": "0"
+    },
+    "end": {
+      "value": "{size.default.value}"
+    }
+  },
+  "border": {
+    "default": {
+      "value": "1px solid {color.primary.value}"
+    }
+  },
+  "size": {
+    "default": {
+      "value": "1{unit.default.value}"
+    },
+    "tiny": {
+      "value": "0.4{unit.default.value}"
+    },
+    "small": {
+      "value": "0.7{unit.default.value}"
+    },
+    "big": {
+      "value": "1.4{unit.default.value}"
+    },
+    "xl": {
+      "value": "2{unit.default.value}"
+    },
+    "xxl": {
+      "value": "3{unit.default.value}"
+    },
+    "adjust": {
+      "value": "0.25"
+    }
+  },
+  "speed": {
+    "default": {
+      "value": "700ms"
+    },
+    "fast": {
+      "value": "400ms"
+    },
+    "slow": {
+      "value": "1400ms"
+    }
+  }
+}

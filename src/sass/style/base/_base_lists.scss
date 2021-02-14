@@ -5,9 +5,9 @@
 
 hr {
   height: 1px;
-  margin: $p_size 0;
+  margin: $typo-text-size 0;
   border: none;
-  background-image: linear-gradient(left, rgba($grey, 0), rgba($grey, 0.75), rgba($grey, 0));
+  background-image: linear-gradient(left, rgba($color-neutral, 0), rgba($color-neutral, 0.75), rgba($color-neutral, 0));
 }
 
 /////
@@ -37,10 +37,10 @@ ol {
       content: counter(olCount);
       counter-increment: olCount;
       text-align: center;
-      color: $dark_grey;
+      color: $color-secondary;
       border: thin solid;
       border-radius: 50%;
-      background: $white;
+      background: $color-primary-bg;
       line-height: 1.4em;
     }
   }
@@ -53,12 +53,12 @@ ul {
 
 li {
   width: auto;
-  max-width: $p_max_width * 0.9;
+  max-width: $typo-text-max-width * 0.9;
   margin: 0.3em auto 0.6em;
 }
 
 dt {
-  margin: $small 0 0;
+  margin: $size-small 0 0;
   font-weight: bold;
 }
 

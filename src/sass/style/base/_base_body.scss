@@ -7,13 +7,13 @@ html {
   overflow: auto;
   // Force scrollbar display to prevent flicker
   overflow-y: scroll;
-  background: $white;
+  background: $color-primary-bg;
 }
 
 body {
   float: left;
   width: 100%;
-  //@include gradient_rad($white, $white, $light_grey);
+  //@include gradient_rad($color-primary-bg, $color-primary-bg, $light_grey);
   //background-image: $body_img;
   //background-repeat: repeat;
   //background-attachment: fixed;

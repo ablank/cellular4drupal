@@ -8,9 +8,9 @@
   z-index: 10;
   top: 0;
   left: 0;
-  height: $header_height;
-  background: $white;
-  box-shadow: 0 0 1em 0.1em $dark_grey;
+  height: $header-height;
+  background: $color-primary-bg;
+  box-shadow: 0 0 1em 0.1em $color-secondary;
   will-change: height;
 }
 
@@ -18,9 +18,9 @@
   z-index: 4;
   // Position contents left or right
   text-align: right;
-  color: $white;
-  border-bottom: $black $border;
-  background: $black;
+  color: $color-primary-bg;
+  border-bottom: $color-primary $border;
+  background: $color-primary;
 
   // Custom type for region
   div {
@@ -31,12 +31,12 @@
   h3,
   h4 {
     display: inline;
-    color: $white;
+    color: $color-primary-bg;
     font-size: 1em;
   }
 }
 
 #header-bottom {
-  color: $white;
-  background-color: $dark_grey;
+  color: $color-primary-bg;
+  background-color: $color-secondary;
 }

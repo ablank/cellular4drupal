@@ -3,8 +3,8 @@
   h2 {
     margin: 0.4em 0;
     padding: 1em;
-    color: $white;
-    background: $hilight;
+    color: $color-primary-bg;
+    background: $color-hilight;
 
     &:after {
       position: absolute;
@@ -13,7 +13,7 @@
       width: 0;
       height: 0;
       content: " ";
-      border-top: 0.6em solid $hilight;
+      border-top: 0.6em solid $color-hilight;
       border-right: 0.6em solid transparent;
       border-left: 0.6em solid transparent;
     }
@@ -33,7 +33,7 @@ a[id^=comment-] {
   padding: 0 0 0 1em;
 
   .comment {
-    background-color: darken($white, 10%);
+    background-color: darken($color-primary-bg, 10%);
   }
 }
 
@@ -44,8 +44,8 @@ a[id^=comment-] {
   width: 90%;
   margin: 0.1em auto 0.4em;
   text-align: left;
-  border: 1px $grey solid;
-  background-color: darken($white, 3%);
+  border: 1px $color-neutral solid;
+  background-color: darken($color-primary-bg, 3%);
 
   &.new {
     border-color: $red;
@@ -65,15 +65,15 @@ a[id^=comment-] {
 .comment-date,
 .comment-author {
   display: block;
-  font-size: $small;
+  font-size: $size-small;
   //text-align: center;
 }
 
 .comment-title {
   margin: 0;
   color: $light_grey;
-  background-color: $dark_grey;
-  font-size: $big;
+  background-color: $color-secondary;
+  font-size: $size-big;
 
   &:after {
     content: "... ";

@@ -12,7 +12,7 @@
   }
 
   a {
-    @include button($white, $dark_grey, $hilight, "flat");
+    @include button($color-primary-bg, $color-secondary, $color-hilight, "flat");
 
     padding: 0.2em 0.4em;
   }
@@ -32,19 +32,19 @@
   a {
     &,
     &:visited {
-      @include round($tiny);
+      @include round($size-tiny);
 
       padding: 0.4em 0.8em;
-      color: $white;
+      color: $color-primary-bg;
       border: 1px solid;
-      background-color: $dark_grey;
+      background-color: $color-secondary;
     }
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: $hilight;
-      background-color: $white;
+      color: $color-hilight;
+      background-color: $color-primary-bg;
     }
   }
 }

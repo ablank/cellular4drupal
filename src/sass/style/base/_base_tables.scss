@@ -2,7 +2,7 @@
   * @file
   * Tables
 */
-$table_border: $grey 1px solid;
+$table_border: $color-neutral 1px solid;
 $cell_border: $light_grey 1px solid;
 
 table {
@@ -18,25 +18,25 @@ table {
 th,
 thead {
   text-align: center;
-  color: $dark_grey;
+  color: $color-secondary;
   border: $cell_border;
-  font-family: $h_font;
-  font-size: $normal;
-  font-weight: $h_weight;
+  font-family: $typo-heading-font;
+  font-size: $size-default;
+  font-weight: $typo-heading-weight;
 }
 
 tr:nth-child(even) {
-  background: darken($white, 5%);
+  background: darken($color-primary-bg, 5%);
 }
 
 tr:nth-child(odd) {
-  background: $white;
+  background: $color-primary-bg;
 }
 
 td {
-  @include round($tiny, "bottom");
+  @include round($size-tiny, "bottom");
 
-  padding: $tiny;
+  padding: $size-tiny;
   border: $cell_border;
 }
 

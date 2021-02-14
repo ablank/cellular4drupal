@@ -109,15 +109,15 @@ $width: 800px;
     a:visited {
       @include textstroke($panel_background, 1px);
 
-      color: $dark_grey;
+      color: $color-secondary;
       font-weight: bold;
     }
     a:active,
     a:hover,
     a:focus {
-      @include textstroke($hilight, 2px);
+      @include textstroke($color-hilight, 2px);
 
-      color: $dark_grey;
+      color: $color-secondary;
     }
   }
 
@@ -143,8 +143,8 @@ $width: 800px;
   bottom: 1em;
   left: 0;
   padding: 0 2em;
-  background-color: $black;
-  background-color: rgba($black, 0.8);
+  background-color: $color-primary;
+  background-color: rgba($color-primary, 0.8);
 
   p {
     @include scrolli_transit();
@@ -153,7 +153,7 @@ $width: 800px;
     margin: 0;
     padding: 0.8em;
     opacity: 1;
-    color: $white;
+    color: $color-primary-bg;
   }
 }
 
@@ -167,9 +167,9 @@ $width: 800px;
   cursor: pointer;
   text-indent: -999em;
   opacity: 0.2;
-  color: $white;
+  color: $color-primary-bg;
   //background-size: $controlsize;
-  background-color: $grey;
+  background-color: $color-neutral;
   background-image: url(../assets/icons/png/controls.png);
   background-image: url(../assets/icons/svg/controls.svg);
   background-repeat: no-repeat;
@@ -181,7 +181,7 @@ $width: 800px;
 
     &:hover,
     &:focus {
-      background-color: $hilight;
+      background-color: $color-hilight;
     }
   }
 
@@ -201,9 +201,9 @@ $width: 800px;
     left: 0;
     transition: none;
     opacity: 0;
-    border: $white 2px solid;
+    border: $color-primary-bg 2px solid;
     border-radius: 50%;
-    background-color: $black;
+    background-color: $color-primary;
   }
 
   &.play {
@@ -244,19 +244,19 @@ $width: 800px;
   //float: left;
   cursor: pointer;
   text-indent: -999em;
-  border: $dark_grey 1px solid;
+  border: $color-secondary 1px solid;
   border-radius: 50%;
-  background-color: $grey;
+  background-color: $color-neutral;
 
   &.active {
-    border-color: darken($hilight, 20%);
-    background-color: $hilight;
-    box-shadow: 0 0 0.5em 0 $hilight;
+    border-color: darken($color-hilight, 20%);
+    background-color: $color-hilight;
+    box-shadow: 0 0 0.5em 0 $color-hilight;
   }
 
   &:hover,
   &:focus {
-    border-color: $hilight;
+    border-color: $color-hilight;
   }
 
   a {

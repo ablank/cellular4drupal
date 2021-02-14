@@ -27,17 +27,17 @@
     padding: 0;
     cursor: pointer;
     border: 2px solid $border_color;
-    background-color: $white;
+    background-color: $color-primary-bg;
     background-image: url("../assets/icons/png/menu.png");
     background-image: url("../assets/icons/svg/menu.svg");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 9em;
-    box-shadow: 0 0 0 0 $white;
+    box-shadow: 0 0 0 0 $color-primary-bg;
     will-change: background-position, box-shadow;
     &:focus,
     &:hover {
-      box-shadow: 0 0 0.2em 0.1em $hilight;
+      box-shadow: 0 0 0.2em 0.1em $color-hilight;
     }
     &.active {
       // Shift background to indicate state.
@@ -54,8 +54,8 @@
     bottom: -1.4em;
     left: 0;
     text-align: center;
-    color: $grey;
-    font-family: $h_font;
+    color: $color-neutral;
+    font-family: $typo-heading-font;
     font-size: 0.8em;
     line-height: 1em;
   }
@@ -70,7 +70,7 @@
     overflow: hidden;
     margin: 0;
     transform: translate3d(0, 0, 0);
-    background-color: rgba($white, 0.7);
+    background-color: rgba($color-primary-bg, 0.7);
     li {
       display: block;
       max-width: none;
@@ -83,7 +83,7 @@
         &:after {
           @include triangle(0.8em,
           0.6em,
-          $dark_grey,
+          $color-secondary,
           "down");
           @include transition();
 
@@ -96,7 +96,7 @@
         &:hover:after {
           @include triangle(0.8em,
           0.6em,
-          $hilight,
+          $color-hilight,
           "down");
 
           transform: rotateY(180deg);
@@ -105,7 +105,7 @@
     }
     .child {
       z-index: 1;
-      border-left: $grey 1px solid;
+      border-left: $color-neutral 1px solid;
       li {
         overflow: hidden;
         max-height: 0;
@@ -129,24 +129,24 @@
         height: 1em;
         padding: 0.6em 1em 0.8em;
         text-decoration: none;
-        color: $dark_grey;
+        color: $color-secondary;
         border-bottom: 1px solid;
-        background-color: $white;
+        background-color: $color-primary-bg;
         background-image: none;
-        font-family: $h_font;
+        font-family: $typo-heading-font;
         font-size: 0.9em;
         font-weight: bold;
       }
       &:active,
       &:focus,
       &:hover {
-        color: $hilight;
-        background-color: $white;
+        color: $color-hilight;
+        background-color: $color-primary-bg;
       }
     }
     .active > a {
-      color: $hilight;
-      background-color: $white;
+      color: $color-hilight;
+      background-color: $color-primary-bg;
     }
     ul {
       // Styling for nested menus.

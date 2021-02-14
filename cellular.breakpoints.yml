@@ -1,0 +1,35 @@
+cellular.screen.default:
+  label: default
+  mediaQuery: '(max-width: 650px)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.small:
+  label: small
+  mediaQuery: '(max-width: 800px)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.narrow:
+  label: narrow
+  mediaQuery: '(min-width: 960px)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.large:
+  label: large
+  mediaQuery: '(max-width: 1280px)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x

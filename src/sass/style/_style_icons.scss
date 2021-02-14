@@ -3,6 +3,11 @@
   * General styling for icons.
 */
 
+/* Set true' or 'false' to include or exclude entire icon group. */
+$use_ui_icons: true;
+$use_tech_icons: true;
+$use_social_icons: true;
+
 .icon {
   display: inline;
   display: inline-block;
@@ -16,7 +21,7 @@
   line-height: $icon_size;
 
   &:hover {
-    border-color: $hilight;
+    border-color: $color-hilight;
   }
 
   &.search {

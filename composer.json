@@ -1,0 +1,38 @@
+{
+  "name": "drupal/cellular",
+  "description": "A base theme for Drupal",
+  "type": "project",
+  "license": "MIT",
+  "homepage": "https://www.github.com/ablank/cellular",
+  "repositories": [{
+    "type": "package",
+    "package": {
+      "name": "ablank/cellular",
+      "version": "1.0",
+      "type": "package",
+      "source": {
+        "type": "git",
+        "reference": "presentation",
+        "url": "git@github.com:ablank/Cellular.git"
+      }
+    }
+  }],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=7.4",
+    "node": ">=14",
+    "npm": ">=6"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "npm install"
+    ],
+    "post-install-cmd": [
+      "npm install"
+    ]
+  }
+}

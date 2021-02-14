@@ -1,0 +1,15 @@
+layout_twocol_section:
+  label: 'Two column'
+  path: layouts/twocol_section
+  template: layout--twocol-section
+  library: layout_builder/twocol_section
+  class: '\Drupal\layout_builder\Plugin\Layout\TwoColumnLayout'
+  category: 'Columns: 2'
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second

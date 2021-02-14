@@ -64,22 +64,22 @@
   }
 }
 
-@mixin uniquelinks($hilight: $hilight) {
+@mixin uniquelinks($color-hilight: $color-hilight) {
   // Unique link styling
   &:nth-child(1) a {
-    border-color: darken($hilight, 10%);
+    border-color: darken($color-hilight, 10%);
   }
   &:nth-child(2) a {
-    border-color: darken($hilight, 20%);
+    border-color: darken($color-hilight, 20%);
   }
   &:nth-child(3) a {
-    border-color: darken($hilight, 30%);
+    border-color: darken($color-hilight, 30%);
   }
   &:nth-child(4) a {
-    border-color: darken($hilight, 40%);
+    border-color: darken($color-hilight, 40%);
   }
   &:nth-child(5) a {
-    border-color: darken($hilight, 50%);
+    border-color: darken($color-hilight, 50%);
   }
 }
 
@@ -87,14 +87,14 @@
   @if lightness($color) < 50% {
     color: lighten($color, 70%);
     p {
-      color: lighten($color, $adjust_large);
+      color: lighten($color, $adjust-color-biglylarge);
     }
   }
 
   @else {
     color: darken($color, 70%);
     p {
-      color: darken($color, $adjust_large);
+      color: darken($color, $adjust-color-biglylarge);
     }
   }
 }
@@ -128,8 +128,8 @@
       }
 
       &:before {
-        border: $grey $border;
-        background: darken($white, 2%);
+        border: $color-neutral $border;
+        background: darken($color-primary-bg, 2%);
         box-shadow: inset 0 0 1px 1px $light_grey;
       }
       &:after {
@@ -143,7 +143,7 @@
     &:focus {
       + label {
         &:before {
-          //border: 1px dotted $hilight;
+          //border: 1px dotted $color-hilight;
         }
       }
     }
@@ -151,7 +151,7 @@
       + label {
         color: $light_grey;
         &:before {
-          color: $dark_grey;
+          color: $color-secondary;
           background: $light_grey;
         }
       }
@@ -159,24 +159,24 @@
   }
 }
 
-@mixin textstroke($color: $white, $size: 1px) {
+@mixin textstroke($color: $color-primary-bg, $size: 1px) {
   text-shadow: -$size -$size 0 $color, $size -$size 0 $color, -$size $size 0 $color, $size $size 0 $color;
 }
 
-@mixin button($color: $dark_grey, $background: $white, $hilight: $hilight, $style: "flat") {
+@mixin button($color: $color-secondary, $background: $color-primary-bg, $color-hilight: $color-hilight, $style: "flat") {
   // 'flat' || 'bevel'
   $color2: null;
   $background2: null;
   & {
     width: auto;
-    margin: $tiny auto;
-    padding: $small $normal;
+    margin: $size-tiny auto;
+    padding: $size-small $size-default;
     cursor: pointer;
     text-align: center;
     color: $color;
     border: $color 2px solid;
     background-color: $background;
-    font-family: $h_font;
+    font-family: $typo-heading-font;
     font-weight: bold;
     line-height: normal;
     &:visited {
@@ -201,7 +201,7 @@
       @else {
         @include box-shadow($background2 0 0.1em 0.4em);
 
-        border-color: $hilight;
+        border-color: $color-hilight;
       }
     }
     // transform: translate3d(0,0,0);
@@ -212,7 +212,7 @@
 
     @else {
       @include border-radius(0.1em);
-      @include box-shadow($background2 0 0.1em $small);
+      @include box-shadow($background2 0 0.1em $size-small);
     }
   }
 
@@ -247,8 +247,8 @@
 
 @mixin title {
   text-decoration: none;
-  color: $white;
-  background: $black;
+  color: $color-primary-bg;
+  background: $color-primary;
 }
 // Fullscreen background image
 @mixin cover($url) {
@@ -257,7 +257,7 @@
   background: url($url) no-repeat center center fixed;
 }
 // Horizontal Linear Gradient
-@mixin gradient_x($color_1: $white, $color_2: nil, $color_3: nil) {
+@mixin gradient_x($color_1: $color-primary-bg, $color_2: nil, $color_3: nil) {
   background-color: $color_1;
 
   @if ($color_3 != nil) {
@@ -281,7 +281,7 @@
   }
 }
 // Vertical Linear Gradient
-@mixin gradient_y($color_1: $white, $color_2: nil, $color_3: nil) {
+@mixin gradient_y($color_1: $color-primary-bg, $color_2: nil, $color_3: nil) {
   background-color: $color_1;
 
   @if ($color_3 != nil) {
@@ -305,7 +305,7 @@
   }
 }
 // Radial Gradient
-@mixin gradient_rad($color_1: $black, $color_2: $white) {
+@mixin gradient_rad($color_1: $color-primary, $color_2: $color-primary-bg) {
   background-color: $color_1;
   background-image: radial-gradient(ellipse farthest-side at center top, $color_1 0%, $color_2 100%);
 }
@@ -336,7 +336,7 @@
   }
 }
 
-@mixin triangle($width: $normal, $height: $normal, $color: $black, $direction: "left") {
+@mixin triangle($width: $size-default, $height: $size-default, $color: $color-primary, $direction: "left") {
   position: absolute;
   width: 0;
   height: 0;
@@ -367,7 +367,7 @@
   }
 }
 
-@mixin ribbon($width: $normal, $height: $normal, $color: $black) {
+@mixin ribbon($width: $size-default, $height: $size-default, $color: $color-primary) {
   position: relative;
   margin: 0 auto $height;
   padding: 0 $width;
@@ -390,7 +390,7 @@
   }
 }
 
-@mixin popout($width: $normal, $height: $normal, $color: $black) {
+@mixin popout($width: $size-default, $height: $size-default, $color: $color-primary) {
   position: relative;
   margin: 0 0 $height;
   padding: 0 $width;

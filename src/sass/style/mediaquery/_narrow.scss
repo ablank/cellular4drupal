@@ -4,7 +4,7 @@
 */
 
 // Styling
-@media screen and (min-width: ile) and (max-width: $res_narrow) {
+@media screen and (min-width: $res_narrow) and (max-width: $res_default) {
 
   body:before {
     // Pseudo element to pass the current media size to javascript.

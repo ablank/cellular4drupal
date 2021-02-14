@@ -1,0 +1,25 @@
+{
+  "breakpoint": {
+      "unit": {
+        "category": "unit",
+        "value": "px"
+      },
+    "default": {
+      "category": "breakpoint",
+      "value": "960{breakpoint.unit.value}",
+      "comment": ""
+    },
+    "small": {
+      "category": "breakpoint",
+      "value": "600{breakpoint.unit.value}"
+    },
+    "narrow": {
+      "category": "breakpoint",
+      "value": "800{breakpoint.unit.value}"
+    },
+    "large": {
+      "category": "breakpoint",
+      "value": "1280{breakpoint.unit.value}"
+    }
+  }
+}

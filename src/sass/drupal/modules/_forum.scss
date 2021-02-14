@@ -24,11 +24,11 @@
     text-align: left;
   }
   .title {
-    font-family: $h_font;
+    font-family: $typo-heading-font;
     font-weight: bold;
   }
   .forum-post-info {
-    font-size: $p_size * 0.9;
+    font-size: $typo-text-size * 0.9;
     font-style: italic;
   }
   .author {
