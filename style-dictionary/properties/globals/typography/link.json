@@ -1,0 +1,31 @@
+{
+  "link": {
+    "color": {
+      "default": {
+        "value": "{color.primary.value}"
+      },
+      "focus": {
+        "value": "{color.hilight.value}"
+      },
+      "active": {
+        "color": {
+          "value": "{color.primary.value}"
+        }
+      }
+    },
+    "font": {
+      "value": "{text.font.value}"
+    },
+    "size": {
+      "value": "{text.size.value}"
+    },
+    "line-height": {
+      "value": "{text.size.value}",
+      "category": "dynamic",
+      "scale": "1.4"
+    },
+    "max-width": {
+      "value": "32{text.unit.value}"
+    }
+  }
+}

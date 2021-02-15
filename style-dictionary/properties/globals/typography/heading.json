@@ -1,0 +1,44 @@
+{
+  "heading": {
+    "font": {
+      "value": "Montserrat"
+    },
+    "size": {
+      "value": "{size.xxl.value}"
+    },
+    "line-height": {
+      "value": "{size.xxl.value}",
+      "category": "dynamic"
+    },
+    "weight": {
+      "value": "bold"
+    },
+    "primary": {
+      "color": {
+        "value": "{color.primary.value}"
+      },
+      "size": {
+        "value": "3"
+      },
+      "scale": "3"
+    },
+    "secondary": {
+      "color": {
+        "value": "{color.primary.value}"
+      },
+      "size": {
+        "value": "2"
+      },
+      "scale": "2"
+    },
+    "tertiary": {
+      "color": {
+        "value": "{color.primary.value}"
+      },
+      "size": {
+        "value": "1.4"
+      },
+      "scale": "1.4"
+    }
+  }
+}

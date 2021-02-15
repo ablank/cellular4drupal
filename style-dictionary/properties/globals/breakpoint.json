@@ -1,9 +1,9 @@
 {
   "breakpoint": {
-      "unit": {
-        "category": "unit",
-        "value": "px"
-      },
+    "unit": {
+      "category": "unit",
+      "value": "px"
+    },
     "default": {
       "category": "breakpoint",
       "value": "960{breakpoint.unit.value}",

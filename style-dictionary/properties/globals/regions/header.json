@@ -1,0 +1,17 @@
+{
+  "region": {
+    "header": {
+      "bg": {
+        "value": "{color.primary.value}"
+      },
+      "font": {
+        "color": {
+          "value": "{color.primary-bg.value}"
+        }
+      },
+      "position": {
+        "value": "fixed"
+      }
+    }
+  }
+}

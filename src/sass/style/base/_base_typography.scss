@@ -44,7 +44,7 @@ h1 {
   margin: 0;
   padding: 1.4em 1em 0.8em;
   text-align: center;
-  color: $color-primary;
+  color: $typo-heading-color;
   border: none;
   font-size: $typo-heading-size;
 }
@@ -55,22 +55,22 @@ h2 {
 }
 
 h3 {
-  color: darken($typo-heading-color, $adjust-color);
+  color: $typo-heading-color;
   font-size: $typo-heading-size * 0.7;
 }
 
 h4 {
-  color: darken($typo-heading-color, $adjust-color * 2);
+  color: $typo-heading-color;
   font-size: $typo-heading-size * 0.6;
 }
 
 h5 {
-  color: darken($typo-heading-color, $adjust-color * 3);
+  color: $typo-heading-color;
   font-size: $typo-heading-size * 0.5;
 }
 
 h6 {
-  color: darken($typo-heading-color, $adjust-color * 4);
+  color: $typo-heading-color;
   font-size: $typo-heading-size * 0.4;
 }
 
@@ -93,7 +93,7 @@ sub {
 blockquote,
 q {
   color: $color-secondary;
-  background-color: darken($color-primary-bg, 10%);
+  background-color: $color-secondary-bg;
   font-style: italic;
 
   &:before {

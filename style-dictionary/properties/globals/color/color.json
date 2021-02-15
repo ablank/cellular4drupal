@@ -1,11 +1,14 @@
 {
   "color": {
+    "adjust": {
+      "value": "10%"
+    },
     "primary": {
       "value": "{swatch.black.value}",
       "category": "color"
     },
     "primary-bg": {
-      "value": "{swatch.white.value}",
+      "value": "{swatch.sand.value}",
       "category": "color"
     },
     "secondary": {
@@ -15,12 +18,12 @@
     "secondary-bg": {
       "value": "{swatch.light-grey.value}",
       "category": "color"
-    },    
+    },
     "neutral": {
       "value": "{swatch.grey.value}",
       "category": "color"
     },
-        "error": {
+    "error": {
       "value": "{swatch.red.value}",
       "category": "color"
     },

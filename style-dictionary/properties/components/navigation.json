@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "position": {
+        "value": "0.1rem"
+      },
+    "text": {
+      "font": {
+        "value": "{text.font.value}"
+      },
+      "size": {
+        "value": "{size.default.value}"
+      }
+    }
+  }
+}

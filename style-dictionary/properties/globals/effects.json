@@ -1,0 +1,37 @@
+{
+  "animation": {
+    "speed": {
+      "value": "{speed.default.value}"
+    }
+  },
+  "scale": {
+    "start": {
+      "value": "0"
+    },
+    "end": {
+      "value": "1"
+    }
+  },
+  "distance": {
+    "offset": {
+      "value": "30%"
+    },
+    "start": {
+      "value": "0"
+    },
+    "end": {
+      "value": "{size.default.value}"
+    }
+  },
+  "shadow": {
+    "default": {
+      "value": "0 0 {size.small.value} {size.small.value}"
+    },
+    "small": {
+      "value": "0 0 {size.tiny.value} {size.tiny.value}"
+    },
+    "large": {
+      "value": "0 0 {size.default.value} {size.default.value}"
+    }
+  }
+}

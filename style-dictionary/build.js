@@ -1,5 +1,24 @@
-const StyleDictionary = require('style-dictionary').extend('./src/style-dictionary/config.json');
+const StyleDictionary = require('style-dictionary').extend('./style-dictionary/config.json'),
+  fs = require('fs'),
+  Handlebars = require('handlebars');
 /*
+var templates = [
+  'breakpoints',
+  'info',
+  'layouts'
+];
+
+templates.map(function(template){
+  Handlebars.compile(fs.readFileSync("build/templates/${template}"));
+});
+*/
+// Log available pre-defined formats, transforms and transform groups
+//console.log(StyleDictionary);
+
+function isColor(prop) {
+  return prop.attributes.category === 'color';
+}
+
 function LightenDarkenColor(col, amt) {
   var usePound = false;
   if (col[0] == "#") {
@@ -18,22 +37,26 @@ function LightenDarkenColor(col, amt) {
   else if (g < 0) g = 0;
 
   return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
-}
-*/
-/*
-StyleDictionary.registerTransform({
-  name: 'size/scale',
-  type: 'value',
-  matcher: function (prop) {
-    return prop.attributes.category === 'breakpoint';
-  },
-  transformer: function (prop) {
-    var scale = prop.attributes.scale;
+};
 
-    return scale;
+StyleDictionary.registerFormat({
+  name: 'json',
+  formatter: function (dictionary) {
+    return JSON.stringify(dictionary.allProperties, null, 2);
   }
 });
-*/
+
+StyleDictionary.registerTransform({
+  name: 'adjust/scale',
+  type: 'value',
+  matcher: function (prop) {
+    return prop.attributes.scale == true;
+  },
+  transformer: function (prop) {
+    return (prop.attributes.scale * parseInt(prop.original.value)).toString();
+  }
+});
+
 /*
 StyleDictionary.registerTransform({
   name: 'color/lighten',
@@ -53,4 +76,4 @@ StyleDictionary.registerTransform({
   }
 });
 */
-module.exports = StyleDictionary;
+StyleDictionary.buildAllPlatforms();

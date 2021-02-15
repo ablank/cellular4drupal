@@ -1,0 +1,14 @@
+{
+  "region": {
+    "content": {
+      "bg": {
+        "value": "{color.primary-bg.value}"
+      },
+      "font": {
+        "color": {
+          "value": "{color.primary.value}"
+        }
+      }
+    }
+  }
+}

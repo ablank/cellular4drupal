@@ -1,0 +1,17 @@
+{
+  "button": {
+    "border": {
+      "size": {
+        "value": "0.1rem"
+      },
+      "radius": {
+        "value": "{size.tiny.value}"
+      }
+    },
+    "text": {
+      "size": {
+        "value": "{size.default.value}"
+      }
+    }
+  }
+}

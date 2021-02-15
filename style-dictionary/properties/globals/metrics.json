@@ -1,0 +1,73 @@
+{
+  "unit": {
+    "default": {
+      "value": "rem",
+      "category": "unit",
+      "type": "text"
+    }
+  },
+  "border": {
+    "default": {
+      "value": "1px solid {color.primary.value}",
+      "category": "decor"
+    }
+  },
+  "size": {
+    "adjust": {
+      "value": "0.25",
+      "scale": "0.25",
+      "category": "metric",
+      "type": "size"
+    },
+    "default": {
+      "value": "1{unit.default.value}",
+      "scale": "1",
+      "category": "metric",
+      "type": "size"
+    },
+    "tiny": {
+      "value": "0.4{unit.default.value}",
+      "scale": "0.4",
+      "category": "metric",
+      "type": "size"
+    },
+    "small": {
+      "value": "0.7{unit.default.value}",
+      "scale": "0.7",
+      "category": "metric",
+      "type": "size"
+    },
+    "big": {
+      "value": "1.4{unit.default.value}",
+      "scale": "1.4",
+      "category": "metric",
+      "type": "size"
+    },
+    "xl": {
+      "value": "3{unit.default.value}",
+      "scale": "3",
+      "category": "metric",
+      "type": "size"
+    },
+    "xxl": {
+      "value": "15{unit.default.value}",
+      "scale": "15",
+      "category": "metric",
+      "type": "size"
+    }
+  },
+  "speed": {
+    "default": {
+      "value": "700ms",
+      "category": "metric"
+    },
+    "fast": {
+      "value": "400ms",
+      "category": "metric"
+    },
+    "slow": {
+      "value": "1400ms",
+      "category": "metric"
+    }
+  }
+}

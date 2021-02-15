@@ -1,0 +1,23 @@
+{
+  "text": {
+    "unit": {
+      "value": "em"
+    },
+    "color": {
+      "value": "{color.primary.value}"
+    },
+    "font": {
+      "value": "\"Times New Roman\", serif"
+    },
+    "size": {
+      "value": "{size.default.value}"
+    },
+    "line-height": {
+      "value": "{size.big.value}",
+      "category": "dynamic"
+    },
+    "max-width": {
+      "value": "32{text.unit.value}"
+    }
+  }
+}

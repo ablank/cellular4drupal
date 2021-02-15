@@ -1,0 +1,14 @@
+{
+  "region": {
+    "footer": {
+      "bg": {
+        "value": "{color.primary.value}"
+      },
+      "font": {
+        "color": {
+          "value": "{color.primary-bg.value}"
+        }
+      }
+    }
+  }
+}
