@@ -6,12 +6,6 @@
       "type": "text"
     }
   },
-  "border": {
-    "default": {
-      "value": "1px solid {color.primary.value}",
-      "category": "decor"
-    }
-  },
   "size": {
     "adjust": {
       "value": "0.25",

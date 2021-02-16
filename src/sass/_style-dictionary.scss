@@ -1,6 +1,6 @@
 
 // Do not edit directly
-// Generated on Mon, 15 Feb 2021 22:00:33 GMT
+// Generated on Tue, 16 Feb 2021 06:44:05 GMT
 
 $button-border-size: 0.1rem;
 $button-border-radius: 0.4rem;
@@ -48,6 +48,7 @@ $swatch-purple: #bc00ff;
 $swatch-sand: #eedeb8;
 $swatch-sage: #86b082;
 $animation-speed: 700ms;
+$border-default: 1px solid #101010;
 $scale-start: 0;
 $scale-end: 1;
 $distance-offset: 30%;
@@ -66,7 +67,6 @@ $logo-height: 96px;
 $logo-margin: 3px;
 $logo-padding: 5px;
 $unit-default: rem;
-$border-default: 1px solid #101010;
 $size-adjust: 0.25rem;
 $size-default: 1rem;
 $size-tiny: 0.4rem;
@@ -93,13 +93,13 @@ $region-list: console,header,header-top,header-bottom,content,content-top,conten
 $region-sidebar-width: 200;
 $region-sidebar-font-color: #101010;
 $heading-font: Montserrat;
-$heading-size: 15rem;
+$heading-size: 3rem;
 $heading-line-height: 15rem;
 $heading-weight: bold;
 $heading-primary-color: #101010;
-$heading-primary-size: 3;
+$heading-primary-size: 3rem;
 $heading-secondary-color: #101010;
-$heading-secondary-size: 2;
+$heading-secondary-size: 1.4rem;
 $heading-tertiary-color: #101010;
 $heading-tertiary-size: 1.4;
 $link-color-default: #101010;

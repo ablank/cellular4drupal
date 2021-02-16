@@ -1,42 +1,43 @@
+{%
+  set social_classes = [
+    'social-icons'
+    cellular.display_social_round_icons ? 'round',
+  ];
+  set obj = cellular.social_profiles; 
+  set social_follow = [
+    social_facebook,
+    social_instagram,
+    social_linkedin,
+    social_youtube,
+    social_google,
+    social_twitter,
+    social_github
+  ];
+  set social_share = [
+    social_facebook,
+    social_google,
+    social_linkedin,
+    social_twitter,
+    social_reddit
+  ];
+%}
+
 <ul {{social_attribute.addClass(social_classes) }}>
-  {% if cellular.social_profiles.social_facebook is not empty %}
-  <li>
-    <a href="{{ cellular.social_profiles.social_facebook }}" class="facebook" target="_blank">
-      <i class="fab fa-facebook"></i>
-    </a>
-  </li>
-  {% endif %}
+	{% for link in obj.social_follow %}
+		{% if obj.link is not empty %}
+			<li>
+				<a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
 
-  {% if cellular.social_profiles.social_googleplus is not empty %}
-  <li>
-    <a href="{{ cellular.social_profiles.social_googleplus }}" class="google" target="_blank">
-      <i class="fab fa-google-plus-g"></i>
-    </a>
-  </li>
-  {% endif %}
-
-  {% if cellular.social_profiles.social_linkedin is not empty %}
-  <li>
-    <a href="{{ cellular.social_profiles.social_linkedin }}" class="linkedin" target="_blank">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-  </li>
-  {% endif %}
-
-  {% if cellular.social_profiles.social_twitter is not empty %}
-  <li>
-    <a href="https://twitter.com/{{ cellular.social_profiles.social_twitter }}" class="twitter" target="_blank">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </li>
-  {% endif %}
-
-  {% if cellular.social_profiles.social_youtube is not empty %}
-  <li>
-    <a href="{{ cellular.social_profiles.social_youtube }}" class="youtube" target="_blank">
-      <i class="fab fa-youtube"></i>
-    </a>
-  </li>
-  {% endif %}
-
+<ul {{social_attribute.addClass(social_classes) }}>
+	{% for link in obj.social_share %}
+		{% if obj.link is not empty %}
+			<li>
+				<a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
+			</li>
+		{% endif %}
+	{% endfor %}
 </ul>

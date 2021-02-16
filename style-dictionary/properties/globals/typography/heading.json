@@ -4,7 +4,7 @@
       "value": "Montserrat"
     },
     "size": {
-      "value": "{size.xxl.value}"
+      "value": "{size.xl.value}"
     },
     "line-height": {
       "value": "{size.xxl.value}",
@@ -18,7 +18,7 @@
         "value": "{color.primary.value}"
       },
       "size": {
-        "value": "3"
+        "value": "{size.xl.value}"
       },
       "scale": "3"
     },
@@ -27,7 +27,7 @@
         "value": "{color.primary.value}"
       },
       "size": {
-        "value": "2"
+        "value": "{size.big.value}"
       },
       "scale": "2"
     },

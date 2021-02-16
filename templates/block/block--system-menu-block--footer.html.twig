@@ -26,8 +26,7 @@
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 {%
   set classes = [
-    'navbar',
-    'navbar-expand-md',
+    'navbar'
   ]
 %}
 <nav {{ attributes.addClass(classes) }} role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.removeClass('clearfix')|without('role', 'aria-labelledby') }}>

@@ -1,6 +1,6 @@
 const StyleDictionary = require('style-dictionary').extend('./style-dictionary/config.json'),
   fs = require('fs'),
-  Handlebars = require('handlebars');
+  _ = require('lodash');
 /*
 var templates = [
   'breakpoints',
@@ -39,12 +39,20 @@ function LightenDarkenColor(col, amt) {
   return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
 };
 
+/**
+ * registerFormat
+ */
+
 StyleDictionary.registerFormat({
   name: 'json',
   formatter: function (dictionary) {
     return JSON.stringify(dictionary.allProperties, null, 2);
   }
 });
+
+/**
+ * registerTransform
+ */
 
 StyleDictionary.registerTransform({
   name: 'adjust/scale',
@@ -57,13 +65,10 @@ StyleDictionary.registerTransform({
   }
 });
 
-/*
 StyleDictionary.registerTransform({
   name: 'color/lighten',
   type: 'value',
-  matcher: function(prop) {
-    return prop.attributes.category === 'color';
-  },
+  matcher: isColor,
   transformer: function (prop) {
     var color = Color(prop.value);
     var o = color.toHsl()
@@ -75,5 +80,9 @@ StyleDictionary.registerTransform({
     }
   }
 });
-*/
+
+/**
+ * Register transformGroup
+ */
+
 StyleDictionary.buildAllPlatforms();

@@ -4,6 +4,12 @@
       "value": "{speed.default.value}"
     }
   },
+  "border": {
+    "default": {
+      "value": "1px solid {color.primary.value}",
+      "category": "decor"
+    }
+  },
   "scale": {
     "start": {
       "value": "0"

@@ -1,5 +1,5 @@
 # Under development
-***In its current state, this theme should only be used for referencing odd bits of code. I'll change this notice after a general theme skeleton is complete and split a dev branch for continued development, but until then Cellular 9.x is experimental.***
+***In its current state, this theme should only be used for referencing odd bits of code. I'll change this notice after a general theme skeleton is complete and split a dev branch for continued development, but until then Cellular 9.x is experimental and won't compile.***
 
 ## Cellular base theme 
 Install with 
@@ -14,15 +14,15 @@ After the project is installed, `npm build` to regenerate the theme (***all chan
   - compile/optimize sass
   - compile/optimize js
 - optimize & convert images
+- Yeoman generator
 
 ## Theme functions
-  - Make it play nice with layout builder
+  - Play nice with layout builder
+  - Inject critical css in <head> (frontpage & others)
   - Conditional ie stylesheet
-  - Inject critical css in <head>
-  - Pass theme settings as json to script.js
+  - Pass theme settings as json to plugins.js & script.js
 
 ## Templates
-  - Replace bootstrap classes w/ cellular
   - Update theme variables
 
 ## Sass

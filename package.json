@@ -14,10 +14,10 @@
     "url": "https://github.com/ablank/cellular"
   },
   "scripts": {
+    "concat": "",
     "clean": "rimraf dist/{css/*,js/*,images/*}",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
     "sass": "sass src/sass/style.scss dist/css/style.scss",
-    "lint": "run-s lint:*",
     "lint:js": "eslint src/js",
     "lint-sass": "stylelint src/sass/**/*.scss --config .stylelintrc.json --syntax scss --fix",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/app.js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
