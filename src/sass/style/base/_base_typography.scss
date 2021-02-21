@@ -1,93 +1,27 @@
 /**
   * @file
-  * Typography
+  * Typography styling for edge cases
+  * @see /sass/critical/critical_typography.scss for managing p & h tags
 */
-
-body {
-  color: $typo-text-color;
-  font-family: sans-serif;
-  font-family: $typo-text-font;
-  font-size: 100%;
-  line-height: $typo-text-line-height;
-  text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-}
-
-p {
-  display: block;
-  max-width: $typo-text-max-width;
-  margin: 0 auto;
-  padding: 0 $size-default ($typo-text-line-height * 0.5);
-  color: $typo-text-color;
-}
 
 small {
   font-size: $size-small;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  display: block;
-  clear: both;
-  margin: 1em auto 0.2em auto;
-  padding: 0.4em 0.4em 0 1em;
-  font-family: $typo-heading-font;
-  font-weight: $typo-heading-weight;
-  line-height: 1.1em;
-}
-
-h1 {
-  margin: 0;
-  padding: 1.4em 1em 0.8em;
-  text-align: center;
-  color: $typo-heading-color;
-  border: none;
-  font-size: $typo-heading-size;
-}
-
-h2 {
-  color: $typo-heading-color;
-  font-size: $typo-heading-size * 0.8;
-}
-
-h3 {
-  color: $typo-heading-color;
-  font-size: $typo-heading-size * 0.7;
-}
-
-h4 {
-  color: $typo-heading-color;
-  font-size: $typo-heading-size * 0.6;
-}
-
-h5 {
-  color: $typo-heading-color;
-  font-size: $typo-heading-size * 0.5;
-}
-
-h6 {
-  color: $typo-heading-color;
-  font-size: $typo-heading-size * 0.4;
 }
 
 sub,
 sup {
   position: relative;
   vertical-align: baseline;
-  font-size: $typo-text-size * 0.75;
+  font-size: $text-size * 0.75;
   line-height: 0;
 }
 
 sup {
-  top: -($typo-text-size * 0.5);
+  top: -($text-size * 0.5);
 }
 
 sub {
-  bottom: -($typo-text-size * 0.25);
+  bottom: -($text-size * 0.25);
 }
 
 blockquote,
@@ -105,7 +39,7 @@ q {
 }
 
 q {
-  font-size: $typo-text-size * 1.4;
+  font-size: $text-size * 1.4;
 }
 
 blockquote {
@@ -113,7 +47,7 @@ blockquote {
   margin: $size-tiny $size-big;
   padding: $size-default;
   border-left: $size-tiny solid;
-  font-size: $typo-text-size * 1.8;
+  font-size: $text-size * 1.8;
 }
 
 caption {

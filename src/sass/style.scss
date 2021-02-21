@@ -7,33 +7,12 @@
 */
 
 @import "variables";
-@import "style/base/base_cssreset";
-@import "style/base/base_body";
-@import "style/base/base_fonts";
-@import "style/base/base_typography";
-@import "style/base/base_links";
-@import "style/base/base_lists";
-@import "style/base/base_tables";
-@import "style/base/base_forms";
-@import "style/base/base_media";
-@import "style/base/base_grid";
-@import "style/base/base_animations";
-@import "cellular-ui/cellular";
-@import "style/regions/wrappers";
-@import "style/regions/header";
-@import "style/regions/navigation";
-@import "style/regions/content";
-@import "style/regions/footer";
-@import "style/style_icons";
-@import "style/style_typography";
-@import "style/style_decor";
-@import "style/style_logo";
-@import "style/mediaquery/default";
-@import "style/mediaquery/small";
-@import "style/mediaquery/narrow";
-@import "style/mediaquery/large";
 
-// Page/content specific stylesheets.
-@import "style/pages/frontpage";
-// @import "style/pages/parallax";
-// @import "style/pages/parallax_grouped";
+@import "style/base/_index";
+@import "style/drupal/_index";
+//@import "cellular-ui/cellular";
+@import "style/regions/_index";
+@import "style/components/_index";
+@import "style/style/_index";
+@import "style/pages/_index";
+@import "style/mediaquery/_index";

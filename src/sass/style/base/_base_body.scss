@@ -5,14 +5,18 @@
 
 html {
   overflow: auto;
-  // Force scrollbar display to prevent flicker
+  // Force scrollbar display to prevent flicker on short pages.
   overflow-y: scroll;
-  background: $color-primary-bg;
 }
 
 body {
-  float: left;
-  width: 100%;
+  background: $color-primary-bg;
+  color: $text-color;
+  font-family: $text-font;
+  font-size: 100%;
+  line-height: $text-line-height;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
   //@include gradient_rad($color-primary-bg, $color-primary-bg, $light_grey);
   //background-image: $body_img;
   //background-repeat: repeat;

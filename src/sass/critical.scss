@@ -3,10 +3,8 @@
   * Critical styles to be added inline.
 */
 
-/*
 @import "variables";
 
-body {
-  //background: $red;
-}
-*/
+@import "style/base/cssreset";
+@import "style/base/base_body";
+@import "style/critical/_index";

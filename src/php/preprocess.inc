@@ -5,6 +5,87 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\Xss;
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function cellular_preprocess_html(&$variables) {
+  // Apply a special class to the homepage, which often has no distinct content
+  // type but often needs special design treatment.
+  $variables['attributes']['class'][] = \Drupal::service('path.matcher')->isFrontPage() ? 'frontpage' : '';
+
+  // Apply a class at the page level based on content type if we're on a node
+  // page. Also helpful when you need to modify global elements that appear
+  // outside the node itself.
+  $variables['attributes']['class'][] = isset($variables['node_type']) ? 'page-node-type--' . $variables['node_type'] : '';
+
+  // Check whether the viewer is logged in.
+  $variables['attributes']['class'][] = $variables['logged_in'] ? 'logged-in' : 'logged-out';
+      /**
+       * Inject critical css inline
+       */
+      $criticalCss = file_get_contents('dist/css/critical.css');
+      $variables['page']['#attached']['html_head'][] = [
+      [
+          '#tag' => 'style',
+          '#value' => Markup::create($criticalCss),
+      ],
+      'critical-css',
+    ];
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function cellular_preprocess_node(&$variables) {
+  // Get the node's content type
+  $type = $variables['node']->getType();
+
+  // Get its view mode
+  $mode = $variables['view_mode'];
+
+  // Make sure we have a class array
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+
+  // Add our classes
+  $variables['attributes']['class'][] = 'node--type-' . $type; // ex: node--type-article
+  $variables['attributes']['class'][] = 'node--mode-' . $mode; // ex: node--mode-teaser
+  $variables['attributes']['class'][] = 'node--type-' . $type . '--mode-' . $mode; // ex: node--type-article--mode-teaser
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function cellular_preprocess_block(&$variables) {
+  // Custom block type helper classes.
+  if (!isset($variables['elements']['content']['#block_content'])) {
+    // This checks whether we actually have a custom, fielded block type, or if
+    // we're working with a generic out-of-the-box block.
+    return;
+  }
+
+  // Get the block type name
+  $bundle = $variables['elements']['content']['#block_content']->bundle();
+
+  // Make sure we have a class array
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+
+  // Add our class
+  $variables['attributes']['class'][] = 'block--bundle-' . $bundle;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-task templates.
+ */
+function cellular_preprocess_menu_local_task(&$variables) {
+  $variables['attributes']['class'][] = 'nav-item';
+  $variables['link']['#options']['attributes']['class'][] = 'nav-link';
+}
 
 /**
  * Implements hook_preprocess_input() for form submit button.
@@ -21,11 +102,31 @@ function cellular_preprocess_input(&$variables) {
     $variables['attributes']['class'][] = 'form-control form-control-' . $element['#type'];
   }
 }
+/**
+ * Implements hook_preprocess_media().
+ */
+function cellular_preprocess_media(&$variables) {
+  // Get the media entity's bundle (such as video, image, etc.)
+  $mediaType = $variables['media']->bundle();
+
+  // Make sure we have a class array, just like with the nodes
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+
+  // Add a class
+  $variables['attributes']['class'][] = 'media--type-' . $mediaType; // ex: media--type-video
+}
 
 /**
  * Implements hook_preprocess().
  */
 function cellular_preprocess(&$variables) {
+  $config = \Drupal::config('system.site');  
+  // Default variables.
+  $variables['sitename'] = $config->get('name');
+  $variables['siteslogan'] = $config->get('slogan');
+  // Theme variables
   $variables['cellular'] = [];
   $cellular_settings = [
     'display_sample_blocks',
@@ -96,20 +197,8 @@ function cellular_preprocess(&$variables) {
   $display_theme_credits = theme_get_setting('display_theme_credits');
   if (!empty($display_theme_credits)) {
     $variables['cellular']['theme_credits']['#markup'] = t(
-      '<small>Build with <i class="fas fa-heart"></i> by <a href="@url" target="_blank">Sreenivas Bttv</a></small>',
-      ['@url' => 'http://www.bttvs.com']
+      'Built with loving kindness by <a href="@url" target="_blank">ablank</a>',
+      ['@url' => 'https://github.com/ablank']
     );
   }
-
-  // Default variables.
-  $variables['sitename'] = \Drupal::config('system.site')->get('name');
-  $variables['siteslogan'] = \Drupal::config('system.site')->get('slogan');
-}
-
-/**
- * Implements hook_preprocess_HOOK() for menu-local-task templates.
- */
-function cellular_preprocess_menu_local_task(&$variables) {
-  $variables['attributes']['class'][] = 'nav-item';
-  $variables['link']['#options']['attributes']['class'][] = 'nav-link';
 }

@@ -1,13 +1,8 @@
-# Do not edit directly
-# @see ./style-dictionary /tokens/info.json, /globals/breakpoint.json, /config.json, /build/build.js, /build/templates/breakpoints.template
-# Generated on Sat Feb 20 2021 20:57:21 GMT-0800 (Pacific Standard Time)
-
 name: Cellular
-version: 1.0
 type: theme
 base theme: false
-description: A sweet starter theme for Drupal
-package: Cellular
+description: A lightweight starter theme
+package: 'Cellular'
 core_version_requirement: ^8 || ^9
 
 libraries:

@@ -24,9 +24,10 @@
     "imagemin": "imagemin src/images/* -o dist/images",
     "icons": "svgo -f src/images/icons -o dist/images/icons && svg-sprite-generate -d dist/images/icons -o dist/images/icons/sprite.svg",
     "serve": "browser-sync start --server --files \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html\"",
-    "build:style-dictionary": "node ./style-dictionary/build.js",
+    "build:style-dictionary": "node src/style-dictionary/build/build.js",
     "build:css": "run-s sass autoprefixer",
     "build:js": "run-s lint uglify",
+    "build:php": "node --trace-warnings src/php/build.js",
     "build:images": "run-s imagemin icons",
     "build": "run-s build:*",
     "watch:css": "onchange \"src/sass\" -- run-s build:css",
@@ -44,6 +45,7 @@
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.1.0",
+    "globby": "^11.0.2",
     "imagemin-cli": "^6.0.0",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
@@ -59,7 +61,8 @@
     "stylelint-prettier": "^1.1.2",
     "svg-sprite-generator": "0.0.7",
     "svgo": "^1.3.2",
-    "uglify-js": "^3.12.6"
+    "uglify-js": "^3.12.6",
+    "yaml": "^2.0.0-3"
   },
   "dependencies": {
     "@popperjs/core": "^2",

@@ -1,5 +1,41 @@
 <?
 use \Drupal\Component\Utility\Unicode;
+use \Drupal\Core\Asset\AttachedAssetsInterface;
+
+/**
+ * Implements hook_suggestions_block_alter() for block name suggestions.
+ */
+function cellular_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function cellular_form_search_block_form_alter(&$form, $form_state) {
+  // Adds placeholder text to the search field.
+  $form['keys']['#attributes']['placeholder'] = t('Search');
+}
+
+
+  /**
+   * Implements hook_theme_suggestions_HOOK_alter().
+   */
+  function cellular_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    switch ($route_name) {
+      case 'system.404':
+        // Page Not Found.
+        $error = 404;
+        break;
+    }
+    if (isset($error)) {
+      $suggestions[] = 'page__' . (string) $error;
+    }
+  }
 
 /**
  * Implements hook_css_alter().
@@ -30,29 +66,3 @@ function cellular_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $a
     }
   }
 }
-
-/**
- * Implements hook_suggestions_block_alter() for block name suggestions.
- */
-function cellular_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-    if (isset($variables['elements']['content']['#block_content'])) {
-      array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
-    }
-  }
-  
-  /**
-   * Implements hook_theme_suggestions_HOOK_alter().
-   */
-  function cellular_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  
-    $route_name = \Drupal::routeMatch()->getRouteName();
-    switch ($route_name) {
-      case 'system.404':
-        // Page Not Found.
-        $error = 404;
-        break;
-    }
-    if (isset($error)) {
-      $suggestions[] = 'page__' . (string) $error;
-    }
-  }

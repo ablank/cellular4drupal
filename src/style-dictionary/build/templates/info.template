@@ -1,0 +1,69 @@
+# Do not edit directly
+# @see ./style-dictionary /tokens/info.json, /globals/breakpoint.json, /config.json, /build/build.js, /build/templates/breakpoints.template
+# Generated on <% print(new Date().toString()) %>
+<%
+var theme = {
+  name: "",
+  version: "",
+  description: "",
+  libraries: "",
+  regions: "",
+},
+allProperties = _.each(allProperties, function(prop) {    
+    if(prop.attributes.category === 'theme') {
+      if(prop.name === "ThemeName"){
+      theme.name = prop.value;
+      }
+      if(prop.name === "ThemeDescription"){
+      theme.description = prop.value;
+      }
+      if(prop.name === "ThemeLibraries"){
+      theme.libraries = prop.value;
+      }
+      if(prop.name === "ThemeVersion"){
+     theme.version = prop.value;
+      }
+      if(prop.name === "ThemeRegions"){
+      theme.regions = prop.value;      
+      }
+    };
+}); 
+/*
+_.each(allProperties, function(prop) {
+    // Notice: this is an alternative way to use Lodash templating syntax,
+    // that uses string concatenation and the print() function to have
+    // more control over the indentation, whitespace, newlines, etc.
+    var output = "";
+    output += "\t<" + prop.tag + " name=\"" + prop.name + "\">";
+    output += prop.value;
+    output += "</" + prop.tag + ">";
+    if(prop.comment) {
+    output += "<!-- " + prop.comment + " -->";
+    }
+    output += "\n";
+    print(output);
+});
+*/
+%>
+name: <% print(theme.name) %>
+version: <% print(theme.version) %>
+type: theme
+base theme: false
+description: <% print(theme.description) %>
+package: <% print(theme.name) %>
+core_version_requirement: ^8 || ^9
+
+libraries:
+  - cellular/cellular
+
+regions:
+  header_top: 'Header Top'
+  navigation: 'Main Navigation'
+  header_bottom: 'Header Bottom'
+  sidebar: 'Sidebar'
+  content_top: 'Content Top'
+  content: 'Content' #required!
+  content_bottom: 'Content Bottom'
+  footer_top: 'Footer Top'
+  footer: 'Footer'
+  footer_bottom: 'Footer Bottom'

@@ -1,0 +1,37 @@
+{
+  "theme": {
+    "name": {
+      "value": "Cellular",
+      "category": "theme"
+    },
+    "version": {
+      "value": "1.0",
+      "category": "theme"
+    },
+    "description": {
+      "value": "A sweet starter theme for Drupal",
+      "category": "theme"
+    },
+    "libraries": {
+        "value": [
+            "cellular/cellular" 
+        ]
+    },
+    "regions": {
+      "value": [
+        "console",
+        "header-top",
+        "header",
+        "header-bottom",
+        "content-top",
+        "content",
+        "sidebar",
+        "content-bottom",
+        "footer-top",
+        "footer",
+        "footer-bottom"
+      ],
+      "category": "theme"
+    }
+  }
+}

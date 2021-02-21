@@ -5,7 +5,8 @@
  *   '
  *   src\sass\_mixins\_compass.scss 3:24        transition()
  *   src\sass\style\base\_base_links.scss 17:3  @import
- *   src\sass\style.scss 14:9                   root stylesheet */
+ *   src\sass\style\base\__index.scss 5:9       @import
+ *   src\sass\style.scss 11:9                   root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -15,5 +16,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 3 \2502      $default: (compact($default-transition-property $default-transition-duration $default-transition-function $default-transition-delay),);\d\a   \2502                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\sass\\_mixins\\_compass.scss 3:24        transition()\a   src\\sass\\style\\base\\_base_links.scss 17:3  @import\a   src\\sass\\style.scss 14:9                   root stylesheet";
+  content: "Error: Undefined variable.\a   \2577 \a 3 \2502      $default: (compact($default-transition-property $default-transition-duration $default-transition-function $default-transition-delay),);\d\a   \2502                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\sass\\_mixins\\_compass.scss 3:24        transition()\a   src\\sass\\style\\base\\_base_links.scss 17:3  @import\a   src\\sass\\style\\base\\__index.scss 5:9       @import\a   src\\sass\\style.scss 11:9                   root stylesheet";
 }

@@ -4,26 +4,6 @@
 // Imports default styles as defined in style-dictionary and
 // provides additional vars calculated from style-dictionary params. 
 //////
-@import "style-dictionary";
-
-@import "_mixins/animations.scss";
-@import "_mixins/compass.scss";
-@import "_mixins/cellularmixins.scss";
-@import "_mixins/loaders.scss";
-
-@import "_variables/compass_defaults.scss";
-@import "_variables/colors.scss";
-@import "_variables/grid.scss";
-@import "_variables/regions.scss";
+@import "_mixins/_index";
+@import "_variables/_index";
 /////
-
-// Define all regions using list.
-$regions: ();
-@each $region in $region-list {
-  $regions : append($regions, unquote("##{$region},"));
-}
-
-$region-space: ($region-margin * 2) + ($region-padding * 2) + ($region-border * 2);
-
-// Header region
-$header-height: $logo-height + ($logo-margin * 2) + ($logo-padding * 2);

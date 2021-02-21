@@ -1,6 +1,10 @@
+# Do not edit directly
+# @see ./style-dictionary /tokens/globals/breakpoint.json, /config.json, /build/build.js, /build/templates/breakpoints.template
+# Generated on Sat Feb 20 2021 20:57:21 GMT-0800 (Pacific Standard Time)
+
 cellular.screen.default:
   label: default
-  mediaQuery: '(max-width: 650px)'
+  mediaQuery: '(min-width: 800px && (max-width: 960px)'
   weight: 1
   group: screen
   multipliers:
@@ -9,7 +13,7 @@ cellular.screen.default:
 
 cellular.screen.small:
   label: small
-  mediaQuery: '(max-width: 800px)'
+  mediaQuery: '(max-width: 600px)'
   weight: 1
   group: screen
   multipliers:
@@ -18,7 +22,7 @@ cellular.screen.small:
 
 cellular.screen.narrow:
   label: narrow
-  mediaQuery: '(min-width: 960px)'
+  mediaQuery: '(min-width: 600px && max-width: 800px)'
   weight: 1
   group: screen
   multipliers:
@@ -27,7 +31,7 @@ cellular.screen.narrow:
 
 cellular.screen.large:
   label: large
-  mediaQuery: '(max-width: 1280px)'
+  mediaQuery: '(min-width: 960px && min-width: 1280px)'
   weight: 1
   group: screen
   multipliers:

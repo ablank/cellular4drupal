@@ -1,0 +1,84 @@
+# Do not edit directly
+# @see ./style-dictionary /tokens/globals/breakpoint.json, /config.json, /build/build.js, /build/templates/breakpoints.template
+# Generated on <% print(new Date().toString()) %>
+<%
+var breakpoint = {
+  default: "",
+  small: "",
+  narrow: "",
+  large: "",
+},
+allProperties = _.each(allProperties, function(prop) {
+    if(prop.attributes.category === 'breakpoint') {
+      if(prop.name === "BreakpointDefault"){
+      breakpoint.default = prop.value;
+      }
+      if(prop.name === "BreakpointSmall"){
+      breakpoint.small = prop.value;
+      }
+      if(prop.name === "BreakpointNarrow"){
+      breakpoint.narrow = prop.value;
+      }
+      if(prop.name === "BreakpointLarge"){
+      breakpoint.large = prop.value;
+      }
+    };
+}),
+less1 = function(mixedNum){
+  var num = parseInt(mixedNum),
+    unit = mixedNum.replace(/[0-9]/g, '');
+
+  return num + unit;
+}; 
+/*
+_.each(allProperties, function(prop) {
+    // Notice: this is an alternative way to use Lodash templating syntax,
+    // that uses string concatenation and the print() function to have
+    // more control over the indentation, whitespace, newlines, etc.
+    var output = "";
+    output += "\t<" + prop.tag + " name=\"" + prop.name + "\">";
+    output += prop.value;
+    output += "</" + prop.tag + ">";
+    if(prop.comment) {
+    output += "<!-- " + prop.comment + " -->";
+    }
+    output += "\n";
+    print(output);
+});
+*/
+%>
+cellular.screen.default:
+  label: default
+  mediaQuery: '(min-width: <% print(breakpoint.narrow) %> && (max-width: <% print(less1(breakpoint.default)) %>)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.small:
+  label: small
+  mediaQuery: '(max-width: <% print(less1(breakpoint.small)) %>)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.narrow:
+  label: narrow
+  mediaQuery: '(min-width: <% print(breakpoint.small) %> && max-width: <% print(less1(breakpoint.narrow)) %>)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.large:
+  label: large
+  mediaQuery: '(min-width: <% print(breakpoint.default) %> && min-width: <% print(less1(breakpoint.large)) %>)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x

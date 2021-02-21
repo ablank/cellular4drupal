@@ -1,6 +1,7 @@
 "use strict";
 const fs_1 = require("fs");
 const path_1 = require("path");
+const lang = require("language");
 const log = (err) => console.log(err);
 const isFile = (f) => fs_1.statSync(f).isFile();
 const write = (fName, str) => new Promise((res, rej) => {
@@ -25,19 +26,27 @@ const read = (fName) => new Promise((res, rej) => {
         res(str);
     });
 });
+const process = (files, options) => new Promise((res, rej) => {
+    return Promise.all(files.map(read))
+    .then(src => res(parselang(src, options))
+    .then(src => res(src.join('\n')))
+        .catch(rej);
+});
 const concat = (files) => new Promise((res, rej) => {
     return Promise.all(files.map(read))
         .then(src => res(src.join('\n')))
         .catch(rej);
 });
-module.exports = (folder, outFile) => new Promise((res, rej) => {
+module.exports = (folder, outFile, options) => new Promise((res, rej) => {
     let concatenated;
     if (typeof folder === 'string') {
         concatenated = readFolder(folder)
+        .then(process)
             .then(concat);
     }
     else {
-        concatenated = concat(folder);
+        concatenated = process(folder, options)
+        .then(concat(folder));
     }
     if (outFile) {
         concatenated.then((out) => write(outFile, out)
@@ -48,3 +57,4 @@ module.exports = (folder, outFile) => new Promise((res, rej) => {
         concatenated.then(res).catch(rej);
     }
 });
+ 
