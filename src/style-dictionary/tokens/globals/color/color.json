@@ -1,8 +1,5 @@
 {
   "color": {
-    "adjust": {
-      "value": "10%"
-    },
     "primary": {
       "value": "{swatch.black.value}",
       "category": "color"

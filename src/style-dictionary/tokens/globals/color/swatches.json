@@ -13,7 +13,7 @@
       "value": "#ababab"
     },
     "dark-grey": {
-      "value": "#666"
+      "value": "#555"
     },
     "red": {
       "value": "#8c0d00"
@@ -38,6 +38,9 @@
     },
     "purple": {
       "value": "#bc00ff"
+    },
+    "cream": {
+      "value": "#fffbf0"
     },
     "sand": {
       "value": "#eedeb8"
