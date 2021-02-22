@@ -7,13 +7,16 @@
       "value": "src/assets/icons/png"
     },
     "size": {
-      "value": "{size.default.value}"
+      "value": "{default.size.value}"
     },
     "bg": {
       "value": "{color.primary-bg.value}"
     },
     "border": {
-      "value": "{border.default.value}"
+      "value": "{default.border.value}"
+    },
+    "border-radius": {
+      "value": "50%"
     },
     "list": {
       "ui": {

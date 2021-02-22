@@ -1,7 +1,7 @@
 {
   "heading": {
     "font": {
-      "value": "Montserrat"
+      "value": "{font.stack.impact.value}"
     },
     "size": {
       "value": "{size.xl.value}"
@@ -12,6 +12,12 @@
     },
     "weight": {
       "value": "bold"
+    },
+    "color": {
+      "value": "{color.primary.value}"
+    },
+    "color-bg": {
+      "value": "{color.primary-bg.value}"
     },
     "primary": {
       "color": {

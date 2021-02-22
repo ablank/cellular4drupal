@@ -10,10 +10,10 @@
       "value": "96{logo.unit.value}"
     },
     "margin": {
-      "value": "3{logo.unit.value}"
+      "value": "0{logo.unit.value}"
     },
     "padding": {
-      "value": "5{logo.unit.value}"
+      "value": "0{logo.unit.value}"
     }
   }
 }

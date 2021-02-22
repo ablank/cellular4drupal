@@ -1,18 +1,15 @@
 // Standard box-model or flex-box model
 $flexbox: false;
-// Max width of .container
-$container_width: 72em;
 // Cell grid spacing- % will be appended
-$cell_margin: 0;
-$cell_padding: 0;
-$cell_space: ($cell_margin + $cell_padding) * 2;
+$cell_space: ($grid-cell-margin + $grid-cell-padding) * 2;
 // cells & offsets populated by looping through grid values.
 $cells: ();
 $offsets: ();
+$grid: ();
 // Grid names & size declarations, as percentage of window width.
 // cell-named-value: %value
-$grid: (
-  100: 100,
+$buffer: ($grid-cells
+/*  100: 100,
   90: 90,
   80: 80,
   75: 75,
@@ -25,8 +22,11 @@ $grid: (
   30: 30,
   25: 25,
   20: 20,
-  10: 10,
+  10: 10,*/
 );
+@each $size in $buffer {
+  $grid : append($grid, unquote($size));
+}
 //
 @each $cell, $size in $grid {
   $cells : append($cells, unquote(".cell-#{$cell},"));

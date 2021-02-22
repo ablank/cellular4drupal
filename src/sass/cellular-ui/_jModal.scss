@@ -51,7 +51,7 @@
       width: 1em;
       height: 1em;
       border: 0.1em solid $color-primary-bg;
-      background: $red;
+      background: $color-error;
     }
   }
 }
@@ -67,6 +67,6 @@
   border-radius: 50%;
   &:hover,
   &:focus {
-    background: lighten($red, 10%);
+    background: lighten($color-error, 10%);
   }
 }

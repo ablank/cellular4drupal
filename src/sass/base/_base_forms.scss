@@ -1,0 +1,276 @@
+/**
+  * @file
+  * Form styling
+*/
+
+$i_pad: 0.4em;
+
+form {
+  display: block;
+  max-width: 32em;
+  margin: auto;
+  padding: 0;
+
+  // Form Alignment Classes
+  &.horizontal {
+    display: inline;
+    max-width: none;
+    padding: 0;
+
+    label,
+    input {
+      display: inline;
+      clear: none;
+    }
+
+    input[type="submit"] {
+      display: inline;
+      float: none;
+      margin: 0 $size-tiny;
+    }
+  }
+
+  &.vertical {
+    text-align: center;
+
+    label,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+    }
+
+    input[type=submit] {
+      float: none;
+      margin: $size-tiny auto;
+    }
+  }
+}
+
+fieldset {
+  margin: 2em $size-tiny 1em;
+  padding: $size-tiny;
+  border: $default-border;
+  //@include clear();
+}
+
+legend {
+  @include clear();
+
+  position: absolute;
+  //display: inline-block;
+  top: -1em;
+  padding: 0 $size-small;
+  color: $color-neutral;
+  background: $color-primary-bg;
+  font-family: $heading-font;
+  font-size: $size-big;
+  font-weight: $heading-weight;
+}
+
+label {
+  display: block;
+  display: inline-block;
+  margin: $i_pad 0 0;
+  padding: 1em $i_pad 0;
+  text-align: left;
+  font-family: $heading-font;
+  font-weight: $heading-weight;
+}
+
+input,
+select,
+textarea {
+  @include border-radius();
+  @include transition();
+
+  display: inline;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  padding: $i_pad 0;
+  text-align: left;
+  vertical-align: top;
+  text-indent: $i_pad;
+  color: $text-color;
+  border: $color-neutral 1px solid;
+  background: darken($color-primary-bg, 1%);
+  font: 1em/1.6em $text-font;
+  font-size: 100%;
+
+  &:focus {
+    color: $text-color;
+    outline: none;
+    background: $color-primary-bg;
+    box-shadow: 0 0 0.2em 0 $color-hilight;
+  }
+
+  &.year,
+  &.month,
+  &.day,
+  &.hour,
+  &.minute {
+    width: auto;
+  }
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  //width: $i_width;
+}
+
+select {
+  margin: $i_pad auto;
+  padding: $i_pad;
+  cursor: pointer;
+  text-indent: unset;
+}
+
+optgroup {
+  background: darken($color-primary-bg, 5%);
+}
+
+option {
+  border-bottom: $color-neutral thin dotted;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+
+  &.required,
+  &[required] {
+    box-shadow: 0 0 0.1em 0 $color-hilight;
+
+    &:after {
+      //content: ' *';
+    }
+  }
+
+  &[type="hidden"] {
+    display: none;
+  }
+
+  &[type="file"] {
+    width: auto;
+
+    &:host(input) {
+      margin: 0.1em 1em;
+      text-indent: 1em;
+    }
+  }
+
+  &[type="image"] {
+    width: auto;
+    border: none;
+  }
+
+  &[type="text"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="search"],
+  &[type="email"],
+  &[type="password"] {
+
+  }
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    @include checkbox(1.2em);
+  }
+
+  &[type="checkbox"] {
+    + label:before {
+      border-radius: $size-tiny;
+    }
+
+    &:checked {
+      + label:after {
+        // x-position = size * 2
+        background-position: -2.4em 1px;
+      }
+    }
+  }
+
+  &[type=radio] {
+    + label:before {
+      border-radius: 50%;
+    }
+
+    &:checked {
+      + label:after {
+        background-position: 1px 1px;
+      }
+    }
+  }
+
+  &.switch {
+
+  }
+
+  &[type=range] {
+    width: 100%;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+    /* Hide default slider */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      color: transparent;
+      border-color: transparent;
+      background: transparent; /* Hides the slider so custom styles can be added */
+    }
+  }
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"] {
+  @include button();
+
+  display: block;
+}
+
+input[type="button"],
+input[type="submit"] {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+//Form Alert Classes
+.ok,
+.warning,
+.error {
+  @include border-radius();
+
+  border: 0.2em solid;
+  font-weight: bold;
+}
+
+.ok {
+  color: $color-success;
+  border-color: $color-success;
+  background-color: lighten($color-success, 75%);
+}
+
+.warning {
+  color: $color-warning;
+  border-color: $color-warning;
+  background-color: lighten($color-warning, 75%);
+}
+
+.error {
+  color: $color-error;
+  border-color: $color-error;
+  background-color: lighten($color-error, 75%);
+}

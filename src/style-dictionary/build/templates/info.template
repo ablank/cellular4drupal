@@ -10,20 +10,20 @@ var theme = {
   regions: "",
 },
 allProperties = _.each(allProperties, function(prop) {    
-    if(prop.attributes.category === 'theme') {
-      if(prop.name === "ThemeName"){
+    if(prop.attributes.category === 'info') {
+      if(prop.name === "InfoName"){
       theme.name = prop.value;
       }
-      if(prop.name === "ThemeDescription"){
+      if(prop.name === "InfoDescription"){
       theme.description = prop.value;
       }
-      if(prop.name === "ThemeLibraries"){
+      if(prop.name === "InfoLibraries"){
       theme.libraries = prop.value;
       }
-      if(prop.name === "ThemeVersion"){
+      if(prop.name === "InfoVersion"){
      theme.version = prop.value;
       }
-      if(prop.name === "ThemeRegions"){
+      if(prop.name === "InfoRegions"){
       theme.regions = prop.value;      
       }
     };

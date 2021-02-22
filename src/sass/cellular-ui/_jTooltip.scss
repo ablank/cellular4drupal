@@ -16,7 +16,7 @@ $btn_size: 2em; //
   color: $color-primary-bg;
   border: 1px solid $color-neutral;
   border-radius: 50%;
-  background-color: $light_grey;
+  background-color: $color-secondary;
 }
 .jTooltip-tooltip {
   @include transition();

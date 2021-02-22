@@ -1,0 +1,54 @@
+{
+  "default": {
+    "unit": {
+      "value": "rem",
+      "category": "default",
+      "type": "text"
+    },
+    "size": {
+      "value": "1{default.unit.value}",
+      "scale": "1",
+      "category": "default",
+      "type": "size"
+    },
+    "color": {
+      "value": "{}",
+      "category": "default",
+      "type": "default"
+    },
+    "border": {
+      "value": "{default.border-style.value} {color.primary-bg.value}",
+      "category": "default"
+    },
+    "border-style": {
+      "value": "1px solid",
+      "category": "default"
+    },
+    "border-radius": {
+      "value": "{size.tiny.value}",
+      "category": "default"
+    },
+    "offset": {
+      "value": "inset 0 0 0.3em 0 {swatch.dark-grey.value}",
+      "category": "default"
+    },
+    "transition": {
+      "property": {
+        "value": "all",
+        "category": "default"
+      },
+      "duration": {
+        "value": "1s",
+        "category": "default"
+      },
+      "timing": {
+        "value": "ease",
+        "category": "default"
+      },
+      "delay": {
+        "value": "false",
+        "category": "default"
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@
         "value": "{text.font.value}"
       },
       "size": {
-        "value": "{size.default.value}"
+        "value": "{default.size.value}"
       }
     }
   }

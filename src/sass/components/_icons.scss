@@ -1,0 +1,59 @@
+/**
+  * @file
+  * General styling for icons.
+*/
+
+/* Set true' or 'false' to include or exclude entire icon group. */
+$use_ui_icons: true;
+$use_social_icons: true;
+$use_tech_icons: false;
+
+.icon {
+  display: inline;
+  display: inline-block;
+  width: $icon_size;
+  height: $icon_size;
+  padding: 0 0 0 ($icon_size  * 1.1);
+  vertical-align: middle;
+  background-color: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: $icon_size;
+
+  &:hover {
+    border-color: $color-hilight;
+  }
+
+  &.search {
+    text-indent: 0;
+  }
+}
+
+/* Iterate over lists of icons to include. */
+
+@if ($use_social_icons) {
+  @each $icon in $icon-list-social {
+    .icon.#{$icon} {
+      background-image: url("#{$icon-src-png}#{$icon}.png");
+      background-image: url("#{$icon-src-svg}#{$icon}.svg");
+    }
+  }
+}
+
+@if ($use_ui_icons) {
+  @each $icon in $icon-list-ui {
+    .icon.#{$icon} {
+      background-image: url("#{$icon-src-png}#{$icon}.png");
+      background-image: url("#{$icon-src-svg}#{$icon}.svg");
+    }
+  }
+}
+
+@if ($use_tech_icons) {
+  @each $icon in $icon-list-tech {
+    .icon.#{$icon} {
+      background-image: url("#{$icon-src-png}#{$icon}.png");
+      background-image: url("#{$icon-src-svg}#{$icon}.svg");
+    }
+  }
+}

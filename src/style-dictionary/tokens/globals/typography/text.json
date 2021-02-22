@@ -1,16 +1,16 @@
 {
   "text": {
     "unit": {
-      "value": "em"
+      "value": "rem"
     },
     "color": {
       "value": "{color.primary.value}"
     },
     "font": {
-      "value": "\"Times New Roman\", serif"
+      "value": "{font.stack.garamond.value}"
     },
     "size": {
-      "value": "{size.default.value}"
+      "value": "{default.size.value}"
     },
     "line-height": {
       "value": "{size.big.value}",

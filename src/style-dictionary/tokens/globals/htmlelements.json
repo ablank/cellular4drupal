@@ -5,6 +5,12 @@
     },
     "padding": {
       "value": "0.5em"
+    },
+    "style-ul": {
+      "value": "disc"
+    },
+    "style-ol": {
+      "value": "none"
     }
   },
   "table": {

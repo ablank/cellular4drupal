@@ -8,11 +8,12 @@
 
 @import "variables";
 
-@import "style/base/_index";
-@import "style/drupal/_index";
-//@import "cellular-ui/cellular";
-@import "style/regions/_index";
-@import "style/components/_index";
-@import "style/style/_index";
-@import "style/pages/_index";
-@import "style/mediaquery/_index";
+@import "base/_index";
+@import "critical/_index";
+@import "drupal/_index";
+@import "cellular-ui/_index";
+@import "regions/_index";
+@import "components/_index";
+@import "pages/_index";
+@import "utility/_index";
+@import "breakpoint/_index";

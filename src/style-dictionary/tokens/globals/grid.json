@@ -1,0 +1,46 @@
+{
+  "grid": {
+    "flex": {
+      "value": "true",
+      "category": "grid",
+      "comment": "true for flex-box, false for standard box model"
+    },
+    "cells": {
+      "value": [
+        "'100: 100'",
+        "'90: 90'",
+        "'80: 80'",
+        "'75: 75'",
+        "'70: 70'",
+        "'66: 66.666666'",
+        "'60: 60'",
+        "'50: 50'",
+        "'40: 40'",
+        "'33: 33.333333'",
+        "'30: 30'",
+        "'25: 25'",
+        "'20: 20'",
+        "'10: 10'"
+      ],
+      "category": "grid",
+      "comment": "A key:value list of cell sizes to set grid scaling as % of parent element"
+    },
+    "cell": {
+      "margin": {
+        "value": "0",
+        "category": "grid",
+        "comment": "Single value margin size that will be applied to grid cells"
+      },
+      "padding": {
+        "value": "0",
+        "category": "grid",
+        "comment": "Single value padding size that will be applied to grid cells"
+      },
+      "max-width": {
+        "value": "72em",
+        "category": "grid",
+        "comment": "Single value padding size that will be applied to grid cells"
+      }
+    }
+  }
+}

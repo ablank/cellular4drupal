@@ -10,7 +10,7 @@
       "value": "0"
     },
     "list": {
-      "value": "{theme.regions.value}",
+      "value": "{info.regions.value}",
       "comment": "List of regions to generate an id/class list."
     }
   }

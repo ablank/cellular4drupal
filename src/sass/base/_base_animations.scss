@@ -1,0 +1,149 @@
+/**
+  * @file
+  * Cellular animation.
+*/
+
+
+/**
+  * @file
+  * CSS Animations.
+*/
+
+@keyframes fadein {
+  0% {
+    opacity: $alpha-start;
+  }
+  40% {
+    opacity: ($alpha-end - $alpha-start) * $alpha-offset;
+  }
+  100% {
+    opacity: $alpha-end;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: $alpha-end;
+  }
+  60% {
+    opacity: ($alpha-end - $alpha-start) * $alpha-offset;
+  }
+  100% {
+    opacity: $alpha-start;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY($distance_start);
+  }
+  50% {
+    transform: translateY($distance_end);
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------------------------------------------------- */
+
+@mixin ani_bar () {
+  @keyframes bar {
+    0% {
+      width: 0;
+    }
+    70% {
+      width: 70%;
+      opacity: 1;
+    }
+    90% {
+      width: 90%;
+      opacity: 0;
+    }
+    100% {
+      width: 100%;
+      opacity: $alpha-end;
+    }
+  }
+}
+/* --------------------------------------------------------- */
+
+@mixin ani_converge ($opacity: 0) {
+  @keyframes convergeA {
+    0%,
+    100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    50% {
+      left: -150%;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes convergeB {
+    0%,
+    100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    50% {
+      left: 150%;
+      opacity: 0.8;
+    }
+  }
+}
+
+/* --------------------------------------------------------- */
+
+@mixin ani_orbit ($opacity: 0) {
+  @keyframes orbit {
+    0%,
+    100% {
+      left: 0;
+      opacity: $opacity;
+    }
+    25% {
+      left: -150%;
+      opacity: 0.8;
+    }
+    50% {
+      left: 0;
+      opacity: $opacity;
+    }
+    75% {
+      left: 150%;
+      opacity: 0.8;
+    }
+  }
+}
+
+/* --------------------------------------------------------- */
+
+@mixin ani_scale ($scale1: 0, $scale2: 1) {
+  @keyframes scaled {
+    0%,
+    100% {
+      transform: scale($scale1);
+    }
+    50% {
+      transform: scale($scale2);
+    }
+  }
+}

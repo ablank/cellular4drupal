@@ -5,15 +5,35 @@
       "category": "color"
     },
     "primary-bg": {
+      "value": "{swatch.cream.value}",
+      "category": "color"
+    },
+    "primary-border": {
       "value": "{swatch.sand.value}",
       "category": "color"
     },
     "secondary": {
-      "value": "{swatch.dark-grey.value}",
+      "value": "{swatch.white.value}",
       "category": "color"
     },
     "secondary-bg": {
+      "value": "{swatch.dark-grey.value}",
+      "category": "color"
+    },
+    "secondary-border": {
       "value": "{swatch.light-grey.value}",
+      "category": "color"
+    },
+    "tertiary": {
+      "value": "{swatch.dark-grey.value}",
+      "category": "color"
+    },
+    "tertiary-bg": {
+      "value": "{swatch.sand.value}",
+      "category": "color"
+    },
+    "tertiary-border": {
+      "value": "{swatch.sage.value}",
       "category": "color"
     },
     "neutral": {

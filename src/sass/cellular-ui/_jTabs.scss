@@ -16,7 +16,7 @@
     clear: both;
     padding: 1.4em 1em 1em;
     color: $panel_color;
-    border: $border_color 1px solid;
+    border: $default-border;
     background: $panel_background;
   }
 
@@ -36,7 +36,7 @@
 
     .title {
       padding: 0.4em 0.6em;
-      border: $border_color 1px solid;
+      border: $default-border;
     }
 
     &.active {

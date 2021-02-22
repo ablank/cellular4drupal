@@ -21,6 +21,38 @@
   //
   /////
 */
+@mixin transition($transitions...) {
+  // Setting the default value
+  @if length($transitions) == 0 {
+    $transitions: $default-transition-property $default-transition-duration $default-transition-timing $default-transition-delay;
+  }
+  transition: $transitions;
+}
+
+@mixin box-shadow($shadow...){
+  // offset-x | offset-y | blur-radius | spread-radius | color
+  @if length($shadow) == 0 {
+    $shadow: $default-offset $default-offset $size-tiny 1px $color-primary;
+  }
+box-shadow: $shadow;
+}
+
+@mixin transition($transitions...) {
+    // Setting the default value
+    @if length($transitions) == 0 {
+      $transitions: $default-transition-property $default-transition-duration $default-transition-timing $default-transition-delay;
+    }
+    transition: $transitions;
+}
+
+@mixin border-radius($radius...){
+  // Setting the default value
+  @if length($radius) == 0 {
+    $radius: $default-border-radius;
+  }
+  border-radius: $radius;
+}
+
 @mixin clear() {
   clear: both;
   zoom: 1;
@@ -128,9 +160,9 @@
       }
 
       &:before {
-        border: $color-neutral $border;
+        border: $default-border;
         background: darken($color-primary-bg, 2%);
-        box-shadow: inset 0 0 1px 1px $light_grey;
+        box-shadow: inset 0 0 1px 1px $color-secondary;
       }
       &:after {
         background-image: url("../assets/icons/png/#{$img}.png");
@@ -149,10 +181,10 @@
     }
     &:disabled {
       + label {
-        color: $light_grey;
+        color: $color-secondary;
         &:before {
           color: $color-secondary;
-          background: $light_grey;
+          background: $color-secondary;
         }
       }
     }
@@ -170,13 +202,13 @@
   & {
     width: auto;
     margin: $size-tiny auto;
-    padding: $size-small $size-default;
+    padding: $size-small $default-size;
     cursor: pointer;
     text-align: center;
     color: $color;
     border: $color 2px solid;
     background-color: $background;
-    font-family: $typo-heading-font;
+    font-family: $heading-font;
     font-weight: bold;
     line-height: normal;
     &:visited {
@@ -336,7 +368,7 @@
   }
 }
 
-@mixin triangle($width: $size-default, $height: $size-default, $color: $color-primary, $direction: "left") {
+@mixin triangle($width: $default-size, $height: $default-size, $color: $color-primary, $direction: "left") {
   position: absolute;
   width: 0;
   height: 0;
@@ -367,7 +399,7 @@
   }
 }
 
-@mixin ribbon($width: $size-default, $height: $size-default, $color: $color-primary) {
+@mixin ribbon($width: $default-size, $height: $default-size, $color: $color-primary) {
   position: relative;
   margin: 0 auto $height;
   padding: 0 $width;
@@ -390,7 +422,7 @@
   }
 }
 
-@mixin popout($width: $size-default, $height: $size-default, $color: $color-primary) {
+@mixin popout($width: $default-size, $height: $default-size, $color: $color-primary) {
   position: relative;
   margin: 0 0 $height;
   padding: 0 $width;

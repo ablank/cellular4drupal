@@ -1,0 +1,62 @@
+/**
+  * @file
+  * Critical typographic classes
+*/
+
+p {
+  display: block;
+  max-width: $text-max-width;
+  margin: 0 auto;
+  padding: 0 $default-size ($text-line-height * 0.5);
+  color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+  display: block;
+  clear: both;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
+  font-family: $heading-font;
+  font-weight: $heading-weight;
+  line-height: 1.1em;
+}
+
+h1 {
+  margin: 0;
+  padding: 1.4em 1em 0.8em;
+  text-align: center;
+  color: $heading-color;
+  border: none;
+  font-size: $heading-size;
+}
+
+h2 {
+  color: $heading-color;
+  font-size: $heading-size * 0.8;
+}
+
+h3 {
+  color: $heading-color;
+  font-size: $heading-size * 0.7;
+}
+
+.big {
+  font-size: $size-big;
+}
+.small {
+  font-size: $size-small;
+}
+.tiny {
+  font-size: $size-tiny;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}

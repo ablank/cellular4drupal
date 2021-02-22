@@ -1,0 +1,64 @@
+.tabs {
+  @include clear();
+
+  margin: 2em 0 1em;
+  border-bottom: $color-neutral 1px solid;
+  li {
+    display: block;
+    float: left;
+    margin: 0 0.1em;
+    list-style: none;
+  }
+  a {
+    &,
+    &:visited {
+      @include round($size-tiny, "top");
+
+      display: block;
+      padding: 0.4em 0.8em 0.2em;
+      color: $color-secondary;
+      border: 1px solid;
+      border-bottom: none;
+      background-color: $color-secondary;
+    }
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      position: relative;
+      top: 1px;
+      text-decoration: underline;
+      color: $color-hilight;
+      border-bottom: darken($color-primary-bg, 10%) 1px solid;
+      background-color: darken($color-primary-bg, 4%);
+    }
+    &.active {
+      border-bottom-color: $color-primary-bg;
+      background-color: $color-primary-bg;
+    }
+  }
+  &.secondary {
+    margin: -1em 0 0 0;
+    padding: 1em;
+    border-bottom: 1px solid;
+    background-color: transparent;
+    a {
+      &,
+      &:visited {
+        @include round($size-tiny);
+
+        padding: 0.4em 0.8em;
+        color: $color-primary-bg;
+        border: 1px solid;
+        background-color: $color-secondary;
+      }
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $color-hilight;
+        background-color: $color-primary-bg;
+      }
+    }
+  }
+}

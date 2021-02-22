@@ -1,0 +1,56 @@
+/**
+  * @file
+  * Decorative class styles.
+*/
+
+.dropCap:first-letter {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.textShadow {
+  text-shadow: 1px 1px 3px $color-secondary;
+}
+
+// Page curl effect
+.box-shadow {
+  @include box-shadow(inset 0 0 0.3em 0 $color-secondary);
+  // max-width: 720px; // constrain width to prevent pseudo elements from showing outside of box
+  margin: 0 auto;
+  padding: 3em 1.4em;
+  background-color: $color-primary-bg;
+
+  &:before,
+  &:after {
+    position: absolute;
+    z-index: -1;
+    bottom: 0.8em;
+    left: 1.2em;
+    width: 40%;
+    height: 1em;
+    content: " ";
+    transform: skew(-5deg) rotate(-5deg);
+    background: transparent;
+    box-shadow: 0 6px 12px rgba($color-secondary, 0.3);
+  }
+
+  &:after {
+    right: 12px;
+    left: auto;
+    transform: skew(5deg) rotate(5deg);
+  }
+}
+
+// Pseudo 3-d elements
+
+.ribbon {
+  @include ribbon(1.2em, 1em, $color-primary);
+
+  color: $color-primary-bg;
+}
+
+.popout {
+  @include popout(1.2em, 1em, $color-primary);
+
+  color: $color-primary-bg;
+}

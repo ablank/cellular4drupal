@@ -24,7 +24,7 @@ $width: 800px;
 
 .jScrolli-wrap {
   overflow: hidden;
-  border: $border_color 1px solid;
+  border: $default-border;
   background-color: $panel_background;
 
   ul {
