@@ -199,8 +199,8 @@
 }
 
 @mixin button(
-  $color: $color-primary-bg,
-  $background: $color-hilight,
+  $color: $color-hilight,
+  $background: $color-primary-bg,
   $style: 'flat'
 ) {
   // 'flat' || 'bevel'

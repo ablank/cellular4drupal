@@ -1,0 +1,198 @@
+/**
+  * @file
+  * Critical styles to be added inline.
+*/
+/**
+  * @file
+  * CSS Animations.
+*/
+/* -------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+/**
+  * @file
+  * CSS loading indicators.
+  * http://codepen.io/TaniaLD/pen/oKxep
+  * http://projects.lukehaas.me/css-loaders/
+  * https://github.com/jh3y/whirl/
+*/
+/**
+  * @file
+  * CSS Reset
+*/
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+blockquote,
+th,
+td,
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/**
+  * @file
+  * Base body style.
+*/
+html {
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+body {
+  background: #fffbf0;
+  color: #101010;
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: 100%;
+  line-height: 1.4rem;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+/**
+  * @file
+  * Critical typographic classes
+*/
+p {
+  display: block;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 0 1rem 0.7rem;
+  color: #101010;
+}
+
+h1,
+h2,
+h3 {
+  display: block;
+  clear: both;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-weight: bold;
+  line-height: 1.1em;
+}
+
+h1 {
+  margin: 0;
+  padding: 1.4em 1em 0.8em;
+  text-align: center;
+  color: #101010;
+  border: none;
+  font-size: 3rem;
+}
+
+h2 {
+  color: #101010;
+  font-size: 2.4rem;
+}
+
+h3 {
+  color: #101010;
+  font-size: 2.1rem;
+}
+
+.big {
+  font-size: 1.4rem;
+}
+
+.small {
+  font-size: 0.7rem;
+}
+
+.tiny {
+  font-size: 0.4rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/**
+  * @file
+  * Logo link style
+*/
+.logo {
+  z-index: 9;
+  float: left;
+  padding-top: 6px;
+}
+.logo a {
+  display: block;
+  width: 84px;
+  height: 84px;
+  transition: all 300ms ease-in;
+  text-decoration: none;
+  text-indent: -999em;
+  border: none;
+  background-image: url("../assets/images/png/logo.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 72px 72px;
+  box-shadow: 0 0 0 0 #fffbf0;
+  will-change: width, height, transform;
+}
+.logo a:focus, .logo a:hover {
+  box-shadow: 0 0 0.4em 0 #29b4de;
+}

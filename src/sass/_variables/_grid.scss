@@ -1,35 +1,13 @@
-// Standard box-model or flex-box model
-$flexbox: false;
 // Cell grid spacing- % will be appended
 $cell_space: ($grid-cell-margin + $grid-cell-padding) * 2;
 // cells & offsets populated by looping through grid values.
-$cells: ();
+$cells: ('.cell');
 $offsets: ();
-$grid: ();
 // Grid names & size declarations, as percentage of window width.
 // cell-named-value: %value
-$buffer: (
-  $grid-cells
-    /*  100: 100,
-  90: 90,
-  80: 80,
-  75: 75,
-  70: 70,
-  66: 66.666666,
-  60: 60,
-  50: 50,
-  40: 40,
-  33: 33.333333,
-  30: 30,
-  25: 25,
-  20: 20,
-  10: 10,*/
-);
-@each $size in $buffer {
-  $grid: append($grid, unquote($size));
-}
 //
-@each $cell, $size in $grid {
-  $cells: append($cells, unquote('.cell-#{$cell},'));
-  $offsets: append($offsets, unquote('.offset-#{$cell},'));
+@each $cell in $grid-cells {
+  $cell: round($cell);
+  $cells: append($cells, unquote('.cell-#{$cell}'), comma);
+  $offsets: append($offsets, unquote('.offset-#{$cell}'), comma);
 }

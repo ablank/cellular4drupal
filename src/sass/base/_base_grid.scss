@@ -13,7 +13,6 @@
 // Grid Cells
 /////
 // Set common attributes.
-.cell,
 #{$cells} {
   @include transition();
 
@@ -41,9 +40,10 @@
   width: 100%;
 }
 // Size individual cells & offsets.
-@each $name, $size in $grid {
+@each $size in $grid-cells {
+  $name: round($size);
   .cell-#{$name} {
-    @if ($grid-flex) {
+    @if ($grid-flex == true) {
       flex-basis: $size + unquote('%');
       width: auto;
       max-width: $size + unquote('%');
@@ -52,12 +52,14 @@
       width: $size - $cell_space + unquote('%');
     }
   }
+  @if ($grid-flex == false){
   .offset-#{$name} {
     margin-left: $size + ($cell_space / 2) + unquote('%');
   }
+  }
 }
 
-@if ($grid-flex) {
+@if ($grid-flex == true) {
   .flex {
     display: flex;
     flex: 1 1 auto;
@@ -68,11 +70,13 @@
     &.col {
       flex-direction: column;
     }
-    //&>#{$cells} {margin: auto;}
+    &.row {
+      flex-direction: row;
+    }
   }
 }
 
-@media screen and (min-width: 0) and (max-width: $res_small) {
+@media screen and (min-width: 0) and (max-width: $breakpoint-small) {
   // Set all cells to single-column
   #{$cells} {
     width: 100% - $cell_space;

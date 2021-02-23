@@ -33,12 +33,11 @@ input {
     vertical-align: middle;
 
     &:focus {
-      border: $border;
+      border: $default-border;
     }
   }
 }
 
-.cell,
 #{$cells} {
   zoom: 1;
 }
