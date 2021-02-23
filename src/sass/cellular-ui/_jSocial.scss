@@ -33,17 +33,17 @@ $icon_size: 1.4em;
     background-size: $icon_size;
 
     &:hover {
-      background-color: $color-primary-bg;// $color-primary-bg;
+      background-color: $color-primary-bg; // $color-primary-bg;
     }
 
     @if ($use_social_icons) {
       @each $icon in $social_icons {
         &.#{$icon} {
-          background-image: url("#{$icon_source_png}#{$icon}.png");
-          background-image: url("#{$icon_source_svg}#{$icon}.svg");
+          background-image: url('#{$icon_source_png}#{$icon}.png');
+          background-image: url('#{$icon_source_svg}#{$icon}.svg');
         }
       }
-    }// $color-primary-bg;
+    } // $color-primary-bg;
   }
 
   &.horizontal,
@@ -84,9 +84,7 @@ $icon_size: 1.4em;
 }
 
 .jSocial-share {
-
 }
 
 .jSocial-follow {
-
 }

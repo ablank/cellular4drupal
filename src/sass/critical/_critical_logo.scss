@@ -3,13 +3,12 @@
   * Logo link style
 */
 
-// Branding 
+// Branding
 $logo_width: 72px;
 $logo_height: 72px;
 $logo_pad: 12px;
-$logo_png: url("../assets/images/png/logo.png");
-$logo_svg: url("../assets/images/svg/logo.svg");
-
+$logo_png: url('../assets/images/png/logo.png');
+$logo_svg: url('../assets/images/svg/logo.svg');
 
 .logo {
   // Container for logo

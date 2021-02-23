@@ -13,7 +13,13 @@ $i_speed: 2s;
 $i_ease: linear;
 //@import 'animations'
 
-@mixin loader($name: null, $url: null, $size: $i_size, $color: $i_color, $speed: $i_speed) {
+@mixin loader(
+  $name: null,
+  $url: null,
+  $size: $i_size,
+  $color: $i_color,
+  $speed: $i_speed
+) {
   /*  */
   position: relative;
   padding-right: $size;
@@ -26,56 +32,56 @@ $i_ease: linear;
     display: block;
     width: $size;
     height: $size;
-    content: "";
+    content: '';
     //margin: 0 ($size * .5);
 
-    @if $name == "img" {
+    @if $name == 'img' {
       background-image: url($url);
       background-repeat: no-repeat;
       background-position: 50% 50%;
     }
 
-    @if $name == "bar" {
+    @if $name == 'bar' {
       @include bar($size, $color, $speed);
     }
 
-    @if $name == "clock" {
+    @if $name == 'clock' {
       @include clock($size, $color, $speed);
     }
 
-    @if $name == "cdots" {
+    @if $name == 'cdots' {
       @include cdots($size, $color, $speed);
     }
 
-    @if $name == "dots" {
+    @if $name == 'dots' {
       @include dots($size, $color, $speed);
     }
 
-    @if $name == "hourglass" {
+    @if $name == 'hourglass' {
       @include hourglass($size, $color, $speed);
     }
 
-    @if $name == "prop" {
+    @if $name == 'prop' {
       @include prop($size, $color, $speed);
     }
 
-    @if $name == "ring" {
+    @if $name == 'ring' {
       @include ring($size, $color, $speed);
     }
 
-    @if $name == "ring1" {
+    @if $name == 'ring1' {
       @include ring1($size, $color, $speed);
     }
 
-    @if $name == "spin1" {
+    @if $name == 'spin1' {
       @include spin1($size, $color, $speed);
     }
 
-    @if $name == "spinna" {
+    @if $name == 'spinna' {
       @include spinna($size, $color, $speed);
     }
 
-    @if $name == "wave" {
+    @if $name == 'wave' {
       @include wave($size, $color, $speed);
     }
   }
@@ -103,7 +109,7 @@ $i_ease: linear;
     z-index: 0;
     width: 0;
     height: $height;
-    content: "";
+    content: '';
     transform-origin: 98% 0%;
     animation: bar $speed ease-in-out infinite;
     background-color: rgba($color, 0.1);
@@ -112,7 +118,7 @@ $i_ease: linear;
     z-index: 1;
     width: 100%;
     height: $height;
-    content: "Loading...";
+    content: 'Loading...';
     color: $color;
     font-size: $size * 0.2;
     line-height: $height;
@@ -134,20 +140,20 @@ $i_ease: linear;
   &:after {
     position: absolute;
     top: $size/2;
-    left: $size /2;
+    left: $size / 2;
     width: $border/2;
-    content: "";
+    content: '';
     transform-origin: 0 0 $size;
     background-color: $color;
   }
   &:before {
-    height: $size /2;
+    height: $size / 2;
     animation: spin $speed $ease infinite;
   }
   // 'minute' hand
   &:after {
-    top: ($size /2) - (($size /2)/8);
-    left: ($size /2) - (($size /2)/8);
+    top: ($size / 2) - (($size / 2)/8);
+    left: ($size / 2) - (($size / 2)/8);
     width: $size / 8;
     height: $size / 8;
     border-radius: 50%;
@@ -175,7 +181,7 @@ $i_ease: linear;
     left: 0;
     width: $size;
     height: $size;
-    content: "";
+    content: '';
     border: ($size * 0.1) darken($color, 10%) solid;
     border-radius: 50%;
   }
@@ -192,7 +198,7 @@ $i_ease: linear;
 
 @mixin dots($size, $color, $speed) {
   $size: $size / 3;
-  $delay: $speed /3;
+  $delay: $speed / 3;
   $ease: $i_ease;
 
   @include ani_alpha();
@@ -212,7 +218,7 @@ $i_ease: linear;
     top: 0;
     width: $size;
     height: $size;
-    content: "";
+    content: '';
     animation: alpha $speed $ease infinite;
     border-radius: 50%;
     background-color: $color;
@@ -227,7 +233,7 @@ $i_ease: linear;
   }
 }
 
-@mixin hourglass($size,$color,$speed) {
+@mixin hourglass($size, $color, $speed) {
   $border: ($size * 0.1);
   $ease: ease-in-out;
   /* Reset size for pseudo elements */
@@ -250,7 +256,7 @@ $i_ease: linear;
     left: $size * 0.5;
     width: 0;
     height: 0;
-    content: "";
+    content: '';
     border-style: solid;
   }
   &:before {
@@ -267,7 +273,7 @@ $i_ease: linear;
   }
 }
 
-@mixin prop($size,$color,$speed) {
+@mixin prop($size, $color, $speed) {
   $bsize: $size * 0.1;
   $border: $bsize solid $color;
   $ease: $i_ease;
@@ -284,7 +290,7 @@ $i_ease: linear;
     position: absolute;
     width: $size/2;
     height: $size/2;
-    content: "";
+    content: '';
     animation: spin $speed $ease infinite;
     border-color: $color;
     background-color: rgba($color, 0.2);
@@ -322,20 +328,22 @@ $i_ease: linear;
     border-radius: $size;
 
     &:before,
-    &:after {}
-    &:before {}
+    &:after {
+    }
+    &:before {
+    }
     &:after {
       position: absolute;
       width: $size / 3;
-      height: $size /3;
-      content: "";
+      height: $size / 3;
+      content: '';
       border-radius: $size / 3;
       background-color: $color;
     }
   }
 }
 
-@mixin ring1 ($size, $color, $speed) {
+@mixin ring1($size, $color, $speed) {
   $opacity: 0.2;
   $border: $size * 0.2;
   $c2: rgba($color, $opacity);
@@ -377,17 +385,20 @@ $i_ease: linear;
     background-color: rgba($color, 0.2);
 
     &:before,
-    &:after {}
-    &:before {}
-    &:after {}
+    &:after {
+    }
+    &:before {
+    }
+    &:after {
+    }
   }
 }
 
 @mixin wave($size, $color, $speed) {
   $height: $size * 0.66;
   $size: $size * 0.25;
-  $delay : $speed/3;
-  $ease : $i_ease;
+  $delay: $speed/3;
+  $ease: $i_ease;
 
   @include ani_bounce();
   /*  */
@@ -404,7 +415,7 @@ $i_ease: linear;
     position: absolute;
     width: $size;
     height: $height;
-    content: "";
+    content: '';
     transform-origin: 50% 0%;
     animation: bounce $speed $ease infinite;
     background-color: $color;

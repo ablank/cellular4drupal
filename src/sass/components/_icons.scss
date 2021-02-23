@@ -13,7 +13,7 @@ $use_tech_icons: false;
   display: inline-block;
   width: $icon_size;
   height: $icon_size;
-  padding: 0 0 0 ($icon_size  * 1.1);
+  padding: 0 0 0 ($icon_size * 1.1);
   vertical-align: middle;
   background-color: none;
   background-repeat: no-repeat;
@@ -34,8 +34,8 @@ $use_tech_icons: false;
 @if ($use_social_icons) {
   @each $icon in $icon-list-social {
     .icon.#{$icon} {
-      background-image: url("#{$icon-src-png}#{$icon}.png");
-      background-image: url("#{$icon-src-svg}#{$icon}.svg");
+      background-image: url('#{$icon-src-png}#{$icon}.png');
+      background-image: url('#{$icon-src-svg}#{$icon}.svg');
     }
   }
 }
@@ -43,8 +43,8 @@ $use_tech_icons: false;
 @if ($use_ui_icons) {
   @each $icon in $icon-list-ui {
     .icon.#{$icon} {
-      background-image: url("#{$icon-src-png}#{$icon}.png");
-      background-image: url("#{$icon-src-svg}#{$icon}.svg");
+      background-image: url('#{$icon-src-png}#{$icon}.png');
+      background-image: url('#{$icon-src-svg}#{$icon}.svg');
     }
   }
 }
@@ -52,8 +52,8 @@ $use_tech_icons: false;
 @if ($use_tech_icons) {
   @each $icon in $icon-list-tech {
     .icon.#{$icon} {
-      background-image: url("#{$icon-src-png}#{$icon}.png");
-      background-image: url("#{$icon-src-svg}#{$icon}.svg");
+      background-image: url('#{$icon-src-png}#{$icon}.png');
+      background-image: url('#{$icon-src-svg}#{$icon}.svg');
     }
   }
 }

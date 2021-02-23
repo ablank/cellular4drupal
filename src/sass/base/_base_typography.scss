@@ -31,10 +31,10 @@ q {
   font-style: italic;
 
   &:before {
-    content: "\201C";
+    content: '\201C';
   }
   &:after {
-    content: "\201D";
+    content: '\201D';
   }
 }
 
@@ -55,7 +55,7 @@ caption {
 }
 
 code {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 pre {

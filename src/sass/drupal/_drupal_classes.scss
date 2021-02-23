@@ -24,8 +24,8 @@
 }
 
 // Prevent transitions of jquery-ui elements- makes for jankiness....
-[class*="ui-"],
-[class^="ui-"] {
+[class*='ui-'],
+[class^='ui-'] {
   @include transition(none);
 }
 

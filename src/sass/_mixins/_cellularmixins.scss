@@ -24,28 +24,34 @@
 @mixin transition($transitions...) {
   // Setting the default value
   @if length($transitions) == 0 {
-    $transitions: $default-transition-property $default-transition-duration $default-transition-timing $default-transition-delay;
+    $transitions: $default-transition-property
+      $default-transition-duration
+      $default-transition-timing
+      $default-transition-delay;
   }
   transition: $transitions;
 }
 
-@mixin box-shadow($shadow...){
+@mixin box-shadow($shadow...) {
   // offset-x | offset-y | blur-radius | spread-radius | color
   @if length($shadow) == 0 {
     $shadow: $default-offset $default-offset $size-tiny 1px $color-primary;
   }
-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 @mixin transition($transitions...) {
-    // Setting the default value
-    @if length($transitions) == 0 {
-      $transitions: $default-transition-property $default-transition-duration $default-transition-timing $default-transition-delay;
-    }
-    transition: $transitions;
+  // Setting the default value
+  @if length($transitions) == 0 {
+    $transitions: $default-transition-property
+      $default-transition-duration
+      $default-transition-timing
+      $default-transition-delay;
+  }
+  transition: $transitions;
 }
 
-@mixin border-radius($radius...){
+@mixin border-radius($radius...) {
   // Setting the default value
   @if length($radius) == 0 {
     $radius: $default-border-radius;
@@ -61,7 +67,7 @@ box-shadow: $shadow;
     display: block;
     clear: both;
     width: 100%;
-    content: "";
+    content: '';
   }
 }
 
@@ -81,9 +87,7 @@ box-shadow: $shadow;
     p {
       color: darken($color, 70%);
     }
-  }
-
-  @else {
+  } @else {
     color: lighten($color, 70%);
     h2,
     h3,
@@ -121,9 +125,7 @@ box-shadow: $shadow;
     p {
       color: lighten($color, $adjust-color-biglylarge);
     }
-  }
-
-  @else {
+  } @else {
     color: darken($color, 70%);
     p {
       color: darken($color, $adjust-color-biglylarge);
@@ -155,7 +157,7 @@ box-shadow: $shadow;
         left: 0;
         width: $size;
         height: $size;
-        content: "";
+        content: '';
         vertical-align: middle;
       }
 
@@ -165,8 +167,8 @@ box-shadow: $shadow;
         box-shadow: inset 0 0 1px 1px $color-secondary;
       }
       &:after {
-        background-image: url("../assets/icons/png/#{$img}.png");
-        background-image: url("../assets/icons/svg/#{$img}.svg");
+        background-image: url('../assets/icons/png/#{$img}.png');
+        background-image: url('../assets/icons/svg/#{$img}.svg');
         background-repeat: no-repeat;
         background-position: -999em;
         background-size: $size * 5;
@@ -192,10 +194,15 @@ box-shadow: $shadow;
 }
 
 @mixin textstroke($color: $color-primary-bg, $size: 1px) {
-  text-shadow: -$size -$size 0 $color, $size -$size 0 $color, -$size $size 0 $color, $size $size 0 $color;
+  text-shadow: -$size -$size 0 $color, $size -$size 0 $color,
+    -$size $size 0 $color, $size $size 0 $color;
 }
 
-@mixin button($color: $color-secondary, $background: $color-primary-bg, $color-hilight: $color-hilight, $style: "flat") {
+@mixin button(
+  $color: $color-primary-bg,
+  $background: $color-hilight,
+  $style: 'flat'
+) {
   // 'flat' || 'bevel'
   $color2: null;
   $background2: null;
@@ -226,23 +233,19 @@ box-shadow: $shadow;
       border-color: $color2;
       outline: none;
       //transform: translate3d(0,0.1em,1em);
-      @if ($style == "bevel") {
+      @if ($style == 'bevel') {
         @include gradient_y($background, $background);
-      }
-
-      @else {
+      } @else {
         @include box-shadow($background2 0 0.1em 0.4em);
 
         border-color: $color-hilight;
       }
     }
     // transform: translate3d(0,0,0);
-    @if ($style == "bevel") {
+    @if ($style == 'bevel') {
       @include gradient_y($background, $background2, $background);
       @include border-radius();
-    }
-
-    @else {
+    } @else {
       @include border-radius(0.1em);
       @include box-shadow($background2 0 0.1em $size-small);
     }
@@ -293,21 +296,20 @@ box-shadow: $shadow;
   background-color: $color_1;
 
   @if ($color_3 != nil) {
-    background-image: linear-gradient(to right, $color_1 0%, $color_2 50%, $color_3 100%);
-  }
-
-  @else if($color_2 != nil) {
+    background-image: linear-gradient(
+      to right,
+      $color_1 0%,
+      $color_2 50%,
+      $color_3 100%
+    );
+  } @else if($color_2 != nil) {
     background-image: linear-gradient(to right, $color_1 0%, $color_2 100%);
-  }
-
-  @else {
+  } @else {
     background-image: linear-gradient(to right, $color_1 0%, $color_2 100%);
 
     @if (darkness($color_1) < 50%) {
       $color_2: darken($color_1, 50%);
-    }
-
-    @else {
+    } @else {
       $color_2: lighten($color_1, 50%);
     }
   }
@@ -317,21 +319,20 @@ box-shadow: $shadow;
   background-color: $color_1;
 
   @if ($color_3 != nil) {
-    background-image: linear-gradient(to bottom, $color_1 0%, $color_2 50%, $color_3 100%);
-  }
-
-  @else if($color_2 != nil) {
+    background-image: linear-gradient(
+      to bottom,
+      $color_1 0%,
+      $color_2 50%,
+      $color_3 100%
+    );
+  } @else if($color_2 != nil) {
     background-image: linear-gradient(to bottom, $color_1 0%, $color_2 100%);
-  }
-
-  @else {
+  } @else {
     background-image: linear-gradient(to bottom, $color_1 0%, $color_2 100%);
 
     @if (lightness($color_1) < 50%) {
       $color_2: darken($color_1, 50%);
-    }
-
-    @else {
+    } @else {
       $color_2: lighten($color_1, 50%);
     }
   }
@@ -339,67 +340,80 @@ box-shadow: $shadow;
 // Radial Gradient
 @mixin gradient_rad($color_1: $color-primary, $color_2: $color-primary-bg) {
   background-color: $color_1;
-  background-image: radial-gradient(ellipse farthest-side at center top, $color_1 0%, $color_2 100%);
+  background-image: radial-gradient(
+    ellipse farthest-side at center top,
+    $color_1 0%,
+    $color_2 100%
+  );
 }
 
-@mixin round($rad: $default-border-radius, $dir: "all") {
-  @if ($dir == "all") {
+@mixin round($rad: $default-border-radius, $dir: 'all') {
+  @if ($dir == 'all') {
     border-radius: $rad;
   }
 
-  @if ($dir == "top") {
+  @if ($dir == 'top') {
     border-top-left-radius: $rad;
     border-top-right-radius: $rad;
   }
 
-  @if ($dir == "right") {
+  @if ($dir == 'right') {
     border-top-right-radius: $rad;
     border-bottom-right-radius: $rad;
   }
 
-  @if ($dir == "bottom") {
+  @if ($dir == 'bottom') {
     border-bottom-right-radius: $rad;
     border-bottom-left-radius: $rad;
   }
 
-  @if ($dir == "left") {
+  @if ($dir == 'left') {
     border-top-left-radius: $rad;
     border-bottom-left-radius: $rad;
   }
 }
 
-@mixin triangle($width: $default-size, $height: $default-size, $color: $color-primary, $direction: "left") {
+@mixin triangle(
+  $width: $default-size,
+  $height: $default-size,
+  $color: $color-primary,
+  $direction: 'left'
+) {
   position: absolute;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
 
-  @if ($direction == "left") {
+  @if ($direction == 'left') {
     border-top: ($height/2) solid transparent;
     border-right: $width solid $color;
     border-bottom: ($height/2) solid transparent;
   }
 
-  @if ($direction == "right") {
+  @if ($direction == 'right') {
     border-top: ($height/2) solid transparent;
     border-bottom: ($height/2) solid transparent;
     border-left: $width solid $color;
   }
 
-  @if ($direction == "up") {
+  @if ($direction == 'up') {
     border-right: ($width/2) solid transparent;
     border-bottom: $height solid $color;
     border-left: ($width/2) solid transparent;
   }
 
-  @if ($direction == "down") {
+  @if ($direction == 'down') {
     border-top: $height solid $color;
     border-right: ($width/2) solid transparent;
     border-left: ($width/2) solid transparent;
   }
 }
 
-@mixin ribbon($width: $default-size, $height: $default-size, $color: $color-primary) {
+@mixin ribbon(
+  $width: $default-size,
+  $height: $default-size,
+  $color: $color-primary
+) {
   position: relative;
   margin: 0 auto $height;
   padding: 0 $width;
@@ -409,7 +423,7 @@ box-shadow: $shadow;
   &:before {
     position: absolute;
     bottom: -$height;
-    content: " ";
+    content: ' ';
     border-top: darken($color, 10%) $height solid;
   }
   &:before {
@@ -422,7 +436,11 @@ box-shadow: $shadow;
   }
 }
 
-@mixin popout($width: $default-size, $height: $default-size, $color: $color-primary) {
+@mixin popout(
+  $width: $default-size,
+  $height: $default-size,
+  $color: $color-primary
+) {
   position: relative;
   margin: 0 0 $height;
   padding: 0 $width;
@@ -434,7 +452,7 @@ box-shadow: $shadow;
     bottom: -$height;
     left: 0;
     height: 0;
-    content: " ";
+    content: ' ';
     border-top: $height solid darken($color, 30%);
     border-right: $width solid transparent;
     border-left: $width solid transparent;

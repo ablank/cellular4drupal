@@ -12,7 +12,7 @@
       "type": "size"
     },
     "color": {
-      "value": "{}",
+      "value": "{swatch.black.value}",
       "category": "default",
       "type": "default"
     },

@@ -4,13 +4,12 @@
 */
 
 .jAccordion {
-
   li {
     margin: 0 auto 1px;
   }
 
   .title {
-    @include transition("background-color", 0.4s);
+    @include transition('background-color', 0.4s);
     // padding-left: 2em;
     // background-size: 1em;
     // background-repeat: no-repeat;
@@ -25,7 +24,6 @@
   }
 
   .active {
-
     .title {
       // background-size: 1em;
       // background-image: url(../assets/icons/svg/minus.svg);

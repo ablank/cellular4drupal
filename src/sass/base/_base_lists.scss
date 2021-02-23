@@ -7,7 +7,12 @@ hr {
   height: 1px;
   margin: $text-size 0;
   border: none;
-  background-image: linear-gradient(left, rgba($color-neutral, 0), rgba($color-neutral, 0.75), rgba($color-neutral, 0));
+  background-image: linear-gradient(
+    left,
+    rgba($color-neutral, 0),
+    rgba($color-neutral, 0.75),
+    rgba($color-neutral, 0)
+  );
 }
 
 /////

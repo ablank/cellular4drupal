@@ -12,7 +12,7 @@
   }
 
   a {
-    @include button($color-primary-bg, $color-secondary, $color-hilight, "flat");
+    @include button();
 
     padding: 0.2em 0.4em;
   }

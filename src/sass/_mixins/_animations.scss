@@ -3,7 +3,7 @@
   * CSS Animations.
 */
 
-@mixin ani_fadein ($opacity1: 0, $opacity2: 1) {
+@mixin ani_fadein($opacity1: 0, $opacity2: 1) {
   @keyframes fadein {
     0% {
       opacity: $opacity1;
@@ -22,7 +22,7 @@ $offset: 30%;
 $height: 100%;
 /* -------------------------------------------- */
 
-@mixin ani_alpha ($opacity1: 0, $opacity2: 0.8) {
+@mixin ani_alpha($opacity1: $alpha-start, $opacity2: $alpha-end - $alpha-offset) {
   @keyframes alpha {
     0%,
     100% {
@@ -34,7 +34,7 @@ $height: 100%;
   }
 }
 
-@mixin ani_bounce ($distance: 1em) {
+@mixin ani_bounce($distance: 1em) {
   @keyframes bounce {
     0%,
     100% {
@@ -69,7 +69,7 @@ $height: 100%;
 }
 /* --------------------------------------------------------- */
 
-@mixin ani_bar () {
+@mixin ani_bar() {
   @keyframes bar {
     0% {
       width: 0;
@@ -90,7 +90,7 @@ $height: 100%;
 }
 /* --------------------------------------------------------- */
 
-@mixin ani_converge ($opacity: 0) {
+@mixin ani_converge($opacity: 0) {
   @keyframes convergeA {
     0%,
     100% {
@@ -118,7 +118,7 @@ $height: 100%;
 
 /* --------------------------------------------------------- */
 
-@mixin ani_orbit ($opacity: 0) {
+@mixin ani_orbit($opacity: 0) {
   @keyframes orbit {
     0%,
     100% {
@@ -142,7 +142,7 @@ $height: 100%;
 
 /* --------------------------------------------------------- */
 
-@mixin ani_scale ($scale1: 0, $scale2: 1) {
+@mixin ani_scale($scale1: 0, $scale2: 1) {
   @keyframes scaled {
     0%,
     100% {

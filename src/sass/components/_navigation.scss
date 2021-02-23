@@ -5,7 +5,7 @@
 
 // Display multi-level links using css dropdowns?
 $showDropdowns: true; // Enable dropdowns or not
-$direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
+$direction: 'left'; // "left" || "right" : Direction of secondary flyout lists.
 
 // Primary Navigation
 #main-menu {
@@ -50,7 +50,6 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
 
   // Top level list
   > li {
-
     &:first-child {
       margin-left: 0;
     }
@@ -60,13 +59,13 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
     }
 
     &.parent:after {
-      @include triangle(0.8em, 0.6em, $color-neutral, "down");
+      @include triangle(0.8em, 0.6em, $color-neutral, 'down');
 
       position: absolute;
       right: 0;
       bottom: 0;
       &:hover {
-        @include triangle(0.8em, 0.6em, $color-hilight, "down");
+        @include triangle(0.8em, 0.6em, $color-hilight, 'down');
       }
     }
   }
@@ -99,14 +98,12 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
         overflow: visible;
       }
 
-      @if ($direction == "left") {
+      @if ($direction == 'left') {
         right: 0;
         //border-right: 1px solid;
         padding: 0 0.1em 0 0;
         text-align: right;
-      }
-
-      @else {
+      } @else {
         left: 0;
         //border-left: 1px solid;
         padding: 0 0 0 0.1em;
@@ -149,12 +146,10 @@ $direction: "left"; // "left" || "right" : Direction of secondary flyout lists.
           width: 0;
           max-height: unset;
 
-          @if ($direction == "left") {
+          @if ($direction == 'left') {
             right: 100%;
             left: initial;
-          }
-
-          @else {
+          } @else {
             right: initial;
             left: 100%;
           }

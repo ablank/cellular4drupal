@@ -51,9 +51,8 @@
   }
 }
 .date-box {
-
   .month.day {
-    @include round($size-tiny, "top");
+    @include round($size-tiny, 'top');
 
     padding: 0 0.5em;
     color: $color-primary-bg;
@@ -76,9 +75,8 @@
 }
 
 .single-day {
-
   td {
-    @include round($size-tiny, "bottom");
+    @include round($size-tiny, 'bottom');
 
     width: 14%; // ~ 100% / 7 days
     vertical-align: top;

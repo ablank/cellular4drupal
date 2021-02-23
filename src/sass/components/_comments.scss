@@ -12,7 +12,7 @@
       left: 0;
       width: 0;
       height: 0;
-      content: " ";
+      content: ' ';
       border-top: 0.6em solid $color-hilight;
       border-right: 0.6em solid transparent;
       border-left: 0.6em solid transparent;
@@ -21,7 +21,7 @@
 }
 
 // Page anchors.
-a[id^=comment-] {
+a[id^='comment-'] {
   position: absolute;
   left: -999em;
   visibility: hidden;
@@ -76,7 +76,7 @@ a[id^=comment-] {
   font-size: $size-big;
 
   &:after {
-    content: "... ";
+    content: '... ';
   }
 }
 

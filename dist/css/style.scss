@@ -569,9 +569,9 @@ input[type=submit] {
   padding: 0.7rem 1rem;
   cursor: pointer;
   text-align: center;
-  color: #fefefe;
-  border: #fefefe 2px solid;
-  background-color: #fffbf0;
+  color: #fffbf0;
+  border: #fffbf0 2px solid;
+  background-color: #29b4de;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: normal;
@@ -582,8 +582,8 @@ button:visited,
 .button:visited,
 input[type=button]:visited,
 input[type=submit]:visited {
-  color: #fefefe;
-  background-color: #fffbf0;
+  color: #fffbf0;
+  background-color: #29b4de;
 }
 button.active, button:active,
 .button.active,
@@ -837,22 +837,17 @@ h3 {
   box-shadow: 0 0 0.4em 0 #29b4de;
 }
 
-/**
-  * @file
-  * Styling DOM classes provided by drupal forum/advanced forum modules.
-*/
-/* Thread listing */
-.forum-posts table {
+m .forum-posts table {
   width: 100%;
 }
-.forum-posts td {
+m .forum-posts td {
   text-align: left;
 }
-.forum-posts .title {
+m .forum-posts .title {
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
 }
-.forum-posts .forum-post-info {
+m .forum-posts .forum-post-info {
   font-size: 0.9rem;
   font-style: italic;
 }
@@ -967,7 +962,7 @@ html.js input.webform-calendar {
   text-align: center;
   color: #fffbf0;
   border: #fffbf0 2px solid;
-  background-color: #fefefe;
+  background-color: #29b4de;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: normal;
@@ -977,7 +972,7 @@ html.js input.webform-calendar {
 .menu a:visited,
 .inline.links a:visited {
   color: #fffbf0;
-  background-color: #fefefe;
+  background-color: #29b4de;
 }
 .menu a.active, .menu a:active,
 .inline.links a.active,
@@ -1893,9 +1888,9 @@ html.js input.webform-calendar {
   padding: 0.7rem 1rem;
   cursor: pointer;
   text-align: center;
-  color: #fefefe;
-  border: #fefefe 2px solid;
-  background-color: #fffbf0;
+  color: #fffbf0;
+  border: #fffbf0 2px solid;
+  background-color: #29b4de;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: normal;
@@ -1904,8 +1899,8 @@ html.js input.webform-calendar {
 }
 .date-nav-wrapper .date-prev a:visited,
 .date-nav-wrapper .date-next a:visited {
-  color: #fefefe;
-  background-color: #fffbf0;
+  color: #fffbf0;
+  background-color: #29b4de;
 }
 .date-nav-wrapper .date-prev a.active, .date-nav-wrapper .date-prev a:active,
 .date-nav-wrapper .date-next a.active,

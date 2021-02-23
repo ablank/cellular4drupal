@@ -28,8 +28,8 @@
     cursor: pointer;
     border: 2px solid $color-primary;
     background-color: $color-primary-bg;
-    background-image: url("../assets/icons/png/menu.png");
-    background-image: url("../assets/icons/svg/menu.svg");
+    background-image: url('../assets/icons/png/menu.png');
+    background-image: url('../assets/icons/svg/menu.svg');
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 9em;
@@ -81,10 +81,7 @@
           cursor: pointer;
         }
         &:after {
-          @include triangle(0.8em,
-          0.6em,
-          $color-secondary,
-          "down");
+          @include triangle(0.8em, 0.6em, $color-secondary, 'down');
           @include transition();
 
           position: absolute;
@@ -94,10 +91,7 @@
         &.active:after,
         &:focus:after,
         &:hover:after {
-          @include triangle(0.8em,
-          0.6em,
-          $color-hilight,
-          "down");
+          @include triangle(0.8em, 0.6em, $color-hilight, 'down');
 
           transform: rotateY(180deg);
         }

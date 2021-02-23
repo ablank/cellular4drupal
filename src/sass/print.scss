@@ -3,10 +3,9 @@
   * Styling for printed pages
 */
 
-@import "variables";
+@import 'variables';
 
 @media print {
-
   img,
   p {
     page-break-inside: avoid;
@@ -30,7 +29,7 @@
     color: $blue;
 
     &:after {
-      content: " (" attr(href) ")";
+      content: ' (' attr(href) ')';
     }
   }
   code a:after {

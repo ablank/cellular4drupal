@@ -1,31 +1,24 @@
 // Content Regions
-$regions_list : (
-  console
-  header
-  header-top
-  header-bottom
-  content
-  content-top
-  content-bottom
-  footer
-  footer-top
-  footer-bottom
+$regions_list: (
+  console header header-top header-bottom content content-top content-bottom
+    footer footer-top footer-bottom
 );
 // Content Region spacing
 $region_margin: 0;
 $region_padding: 0;
 $region_border: 0;
-$region_space: ($region_margin * 2) + ($region_padding * 2) + ($region_border * 2);
+$region_space: ($region_margin * 2) + ($region_padding * 2) +
+  ($region_border * 2);
 
 // Define all regions using list.
 $regions: ();
 
 @each $region in $regions_list {
-  $regions : append($regions, unquote("##{$region},"));
+  $regions: append($regions, unquote('##{$region},'));
 }
 
-$region-spacing: ($region-margin * 2) + ($region-padding * 2) + ($region-border * 2);
+$region-spacing: ($region-margin * 2) + ($region-padding * 2) +
+  ($region-border * 2);
 
 // Header region
 $header-height: $logo-height + ($logo-padding * 2) + ($logo-margin * 2);
-

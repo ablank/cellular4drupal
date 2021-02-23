@@ -1,4 +1,5 @@
-.jModal-trigger {}
+.jModal-trigger {
+}
 
 #jModal-overlay {
   @include transition();
@@ -26,7 +27,8 @@
   left: 50%;
   overflow: hidden;
   border-radius: $size-tiny;
-  &.active {}
+  &.active {
+  }
 }
 
 .jModal-content {

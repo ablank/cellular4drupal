@@ -4,19 +4,16 @@
 */
 
 @media screen and (max-width: $breakpoint-small) {
-
   body:before {
     // Pseudo element to pass the current media size to javascript.
     // @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
-    content: "window_small-#{$breakpoint-small}";
+    content: 'window_small-#{$breakpoint-small}';
   }
 }
 
 //////
 .window_small {
-
   p {
-
   }
 
   h1,
@@ -25,39 +22,32 @@
   h4,
   h5,
   h6 {
-
   }
 
   h1 {
-
   }
 
   h2 {
-
   }
 
   h3 {
-
   }
 
   h4 {
-
   }
 
   h5 {
-
   }
 
   h6 {
-
   }
 
   //////
 
-  #main-menu {}
+  #main-menu {
+  }
 
   #logo {
-
     &:hover {
     }
 
@@ -66,15 +56,12 @@
   }
 
   #page-wrap {
-
   }
 
   #content-wrap {
-
   }
 
   #header {
-
   }
 
   #app {

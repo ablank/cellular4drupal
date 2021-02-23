@@ -12,7 +12,7 @@
   a {
     &,
     &:visited {
-      @include round($size-tiny, "top");
+      @include round($size-tiny, 'top');
 
       display: block;
       padding: 0.4em 0.8em 0.2em;

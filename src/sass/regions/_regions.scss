@@ -1,11 +1,11 @@
-
 // Define all regions using list.
 $regions: ();
 @each $region in $region-list {
-  $regions : append($regions, unquote("##{$region},"));
+  $regions: append($regions, unquote('##{$region},'));
 }
 
-$region-space: ($region-margin * 2) + ($region-padding * 2) + ($region-border * 2);
+$region-space: ($region-margin * 2) + ($region-padding * 2) +
+  ($region-border * 2);
 
 // Header region
 $header-height: $logo-height + ($logo-margin * 2) + ($logo-padding * 2);

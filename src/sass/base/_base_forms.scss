@@ -23,7 +23,7 @@ form {
       clear: none;
     }
 
-    input[type="submit"] {
+    input[type='submit'] {
       display: inline;
       float: none;
       margin: 0 $size-tiny;
@@ -34,13 +34,13 @@ form {
     text-align: center;
 
     label,
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
+    input[type='text'],
+    input[type='email'],
+    input[type='password'] {
       display: block;
     }
 
-    input[type=submit] {
+    input[type='submit'] {
       float: none;
       margin: $size-tiny auto;
     }
@@ -141,7 +141,6 @@ option {
 }
 
 input {
-
   &.required,
   &[required] {
     box-shadow: 0 0 0.1em 0 $color-hilight;
@@ -151,11 +150,11 @@ input {
     }
   }
 
-  &[type="hidden"] {
+  &[type='hidden'] {
     display: none;
   }
 
-  &[type="file"] {
+  &[type='file'] {
     width: auto;
 
     &:host(input) {
@@ -164,26 +163,25 @@ input {
     }
   }
 
-  &[type="image"] {
+  &[type='image'] {
     width: auto;
     border: none;
   }
 
-  &[type="text"],
-  &[type="number"],
-  &[type="tel"],
-  &[type="search"],
-  &[type="email"],
-  &[type="password"] {
-
+  &[type='text'],
+  &[type='number'],
+  &[type='tel'],
+  &[type='search'],
+  &[type='email'],
+  &[type='password'] {
   }
 
-  &[type="checkbox"],
-  &[type="radio"] {
+  &[type='checkbox'],
+  &[type='radio'] {
     @include checkbox(1.2em);
   }
 
-  &[type="checkbox"] {
+  &[type='checkbox'] {
     + label:before {
       border-radius: $size-tiny;
     }
@@ -196,7 +194,7 @@ input {
     }
   }
 
-  &[type=radio] {
+  &[type='radio'] {
     + label:before {
       border-radius: 50%;
     }
@@ -209,10 +207,9 @@ input {
   }
 
   &.switch {
-
   }
 
-  &[type=range] {
+  &[type='range'] {
     width: 100%;
     -webkit-appearance: none;
 
@@ -235,15 +232,15 @@ input {
 
 button,
 .button,
-input[type="button"],
-input[type="submit"] {
+input[type='button'],
+input[type='submit'] {
   @include button();
 
   display: block;
 }
 
-input[type="button"],
-input[type="submit"] {
+input[type='button'],
+input[type='submit'] {
   display: inline-block;
   margin-bottom: 1em;
 }

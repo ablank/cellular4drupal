@@ -3,7 +3,6 @@
   * Cellular animation.
 */
 
-
 /**
   * @file
   * CSS Animations.
@@ -63,7 +62,7 @@
 
 /* --------------------------------------------------------- */
 
-@mixin ani_bar () {
+@mixin ani_bar() {
   @keyframes bar {
     0% {
       width: 0;
@@ -84,7 +83,7 @@
 }
 /* --------------------------------------------------------- */
 
-@mixin ani_converge ($opacity: 0) {
+@mixin ani_converge($opacity: 0) {
   @keyframes convergeA {
     0%,
     100% {
@@ -112,7 +111,7 @@
 
 /* --------------------------------------------------------- */
 
-@mixin ani_orbit ($opacity: 0) {
+@mixin ani_orbit($opacity: 0) {
   @keyframes orbit {
     0%,
     100% {
@@ -136,7 +135,7 @@
 
 /* --------------------------------------------------------- */
 
-@mixin ani_scale ($scale1: 0, $scale2: 1) {
+@mixin ani_scale($scale1: 0, $scale2: 1) {
   @keyframes scaled {
     0%,
     100% {

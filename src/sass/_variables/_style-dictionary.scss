@@ -1,4 +1,3 @@
-
 // Do not edit directly
 // Generated on Sun, 21 Feb 2021 23:39:41 GMT
 
@@ -11,11 +10,24 @@ $icon-size: 1rem;
 $icon-bg: #fffbf0;
 $icon-border: 1px solid #fffbf0;
 $icon-border-radius: 50%;
-$icon-list-ui: arrow-up,arrow-right,arrow-down,arrow-left,mail,mail2,menu,message-error,message-ok,message-warning,audio,camera,cart,chat,cloud,doc,email,eye,film,folder,gear,heart,home,key,lock,minus,pdf,phone,phone2,picture,plus,print,rss,search,spreadsheet,star,user,user-social,video,wrench,zip; // List of user interface icons/classes to include
-$icon-list-tech: android,angular,apple,creativecommons,chrome,css3,desktop,drupal,firefox,globe,html5,internetexplorer,jquery,js,laptop,linux,mac,mobile,opera,safari,stackoverflow,w3,windows,wordpress; // List of misc. tech icons/classes to include
-$icon-list-social: facebook,instagram,twitter,twitter-t,github-octo,google,youtube,linkedin,reddit,behance,blogger,delicious,deviantart,digg,flickr,grooveshark,hi5,myspace,pinterest,skype,slashdot,soundcloud,stumbleupon,technorati,tumblr,yelp; // List of social network icons/classes to include
+$icon-list-ui: arrow-up, arrow-right, arrow-down, arrow-left, mail, mail2, menu,
+  message-error, message-ok, message-warning, audio, camera, cart, chat, cloud,
+  doc, email, eye, film, folder, gear, heart, home, key, lock, minus, pdf, phone,
+  phone2, picture, plus, print, rss, search, spreadsheet, star, user,
+  user-social, video, wrench, zip; // List of user interface icons/classes to include
+$icon-list-tech: android, angular, apple, creativecommons, chrome, css3, desktop,
+  drupal, firefox, globe, html5, internetexplorer, jquery, js, laptop, linux,
+  mac, mobile, opera, safari, stackoverflow, w3, windows, wordpress; // List of misc. tech icons/classes to include
+$icon-list-social: facebook, instagram, twitter, twitter-t, github-octo, google,
+  youtube, linkedin, reddit, behance, blogger, delicious, deviantart, digg,
+  flickr, grooveshark, hi5, myspace, pinterest, skype, slashdot, soundcloud,
+  stumbleupon, technorati, tumblr, yelp; // List of social network icons/classes to include
 $nav-position: 0.1rem;
-$nav-text-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;;
+$nav-text-font: 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L',
+  'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter',
+  'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow',
+  'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L',
+  Georgia, serif;
 $nav-text-size: 1rem;
 $breakpoint-unit: px;
 $breakpoint-default: 960px;
@@ -65,7 +77,9 @@ $default-transition-duration: 1s;
 $default-transition-timing: ease;
 $default-transition-delay: false;
 $grid-flex: true; // true for flex-box, false for standard box model
-$grid-cells: '100: 100','90: 90','80: 80','75: 75','70: 70','66: 66.666666','60: 60','50: 50','40: 40','33: 33.333333','30: 30','25: 25','20: 20','10: 10'; // A key:value list of cell sizes to set grid scaling as % of parent element
+$grid-cells: '100: 100', '90: 90', '80: 80', '75: 75', '70: 70', '66: 66.666666',
+  '60: 60', '50: 50', '40: 40', '33: 33.333333', '30: 30', '25: 25', '20: 20',
+  '10: 10'; // A key:value list of cell sizes to set grid scaling as % of parent element
 $grid-cell-margin: 0; // Single value margin size that will be applied to grid cells
 $grid-cell-padding: 0; // Single value padding size that will be applied to grid cells
 $grid-cell-max-width: 72em; // Single value padding size that will be applied to grid cells
@@ -76,10 +90,11 @@ $list-style-ol: none;
 $table-margin: 1em;
 $table-padding: 0.5em;
 $info-name: Cellular;
-$info-version: 1.0;
+$info-version: 1;
 $info-description: A sweet starter theme for Drupal;
 $info-libraries: cellular/cellular;
-$info-regions: console,header-top,header,header-bottom,content-top,content,sidebar,content-bottom,footer-top,footer,footer-bottom;
+$info-regions: console, header-top, header, header-bottom, content-top, content,
+  sidebar, content-bottom, footer-top, footer, footer-bottom;
 $logo-unit: px;
 $logo-width: 96px;
 $logo-height: 96px;
@@ -118,20 +133,40 @@ $region-header-position: fixed;
 $region-margin: 0;
 $region-padding: 0;
 $region-border: 0;
-$region-list: console,header-top,header,header-bottom,content-top,content,sidebar,content-bottom,footer-top,footer,footer-bottom; // List of regions to generate an id/class list.
+$region-list: console, header-top, header, header-bottom, content-top, content,
+  sidebar, content-bottom, footer-top, footer, footer-bottom; // List of regions to generate an id/class list.
 $region-sidebar-width: 200;
 $region-sidebar-font-color: #101010;
-$font-stack-times: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
-$font-stack-garamond: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;;
-$font-stack-georgia: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-$font-stack-impact: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
-$font-stack-helvetica: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-stack-lucida: "Lucida Grande", "Lucida Sans Unicode", "Geneva", "Verdana", sans-serif;
-$font-stack-trebuchet: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-$font-stack-veranda: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-$font-stack-console: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-$font-stack-system: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-$heading-font: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+$font-stack-times: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif',
+  'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+$font-stack-garamond: 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L',
+  'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter',
+  'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow',
+  'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L',
+  Georgia, serif;
+$font-stack-georgia: Constantia, 'Lucida Bright', Lucidabright, 'Lucida Serif',
+  Lucida, 'DejaVu Serif', 'Bitstream Vera Serif', 'Liberation Serif', Georgia,
+  serif;
+$font-stack-impact: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal,
+  'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
+$font-stack-helvetica: Frutiger, 'Frutiger Linotype', Univers, Calibri,
+  'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed',
+  'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, 'Helvetica Neue',
+  Helvetica, Arial, sans-serif;
+$font-stack-lucida: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana',
+  sans-serif;
+$font-stack-trebuchet: 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans',
+  'Bitstream Vera Sans', 'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif;
+$font-stack-veranda: Corbel, 'Lucida Grande', 'Lucida Sans Unicode',
+  'Lucida Sans', 'DejaVu Sans', 'Bitstream Vera Sans', 'Liberation Sans',
+  Verdana, 'Verdana Ref', sans-serif;
+$font-stack-console: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+  'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+  'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+$font-stack-system: system, -apple-system, '.SFNSText-Regular', 'San Francisco',
+  'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
+$heading-font: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal,
+  'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
 $heading-size: 3rem;
 $heading-line-height: 15rem;
 $heading-weight: bold;
@@ -146,13 +181,21 @@ $heading-tertiary-size: 1.4;
 $link-color-default: #101010;
 $link-color-focus: #29b4de;
 $link-color-active-color: #101010;
-$link-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;;
+$link-font: 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L',
+  'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter',
+  'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow',
+  'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L',
+  Georgia, serif;
 $link-size: 1rem;
 $link-line-height: 1rem;
 $link-max-width: 32rem;
 $text-unit: rem;
 $text-color: #101010;
-$text-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;;
+$text-font: 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L',
+  'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter',
+  'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow',
+  'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L',
+  Georgia, serif;
 $text-size: 1rem;
 $text-line-height: 1.4rem;
 $text-max-width: 32rem;

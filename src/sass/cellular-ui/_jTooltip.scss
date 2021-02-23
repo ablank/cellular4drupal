@@ -34,7 +34,7 @@ $btn_size: 2em; //
   border-top-left-radius: 0;
   background-color: rgba($color-primary, 0.9);
   &:after {
-    @include triangle(1em, 1em, rgba($color-primary, 0.9), "left");
+    @include triangle(1em, 1em, rgba($color-primary, 0.9), 'left');
 
     z-index: -1;
     top: 0;

@@ -1,9 +1,7 @@
 /////
 // Cellular :: SASS Configuration Variables
-// 
-// Imports default styles as defined in style-dictionary and
-// provides additional vars calculated from style-dictionary params. 
+//
+// Imports variables as defined in style-dictionary and mixins/libraries (i.e. bourbon, compass, etc.)
 //////
-@import "_mixins/_index";
-@import "_variables/_index";
-/////
+@import '_mixins/_index';
+@import '_variables/_index';

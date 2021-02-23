@@ -23,15 +23,15 @@
   float: left;
 
   &.center {
-    margin: $grid-cell-margin + unquote("%") auto;
+    margin: $grid-cell-margin + unquote('%') auto;
   }
 
   @if ($grid-cell-margin) {
-    margin: $grid-cell-margin + unquote("%");
+    margin: $grid-cell-margin + unquote('%');
   }
 
   @if ($grid-cell-padding) {
-    padding: $grid-cell-padding + unquote("%");
+    padding: $grid-cell-padding + unquote('%');
   }
 }
 // .cell is functionally a row
@@ -44,18 +44,16 @@
 @each $name, $size in $grid {
   .cell-#{$name} {
     @if ($grid-flex) {
-      flex-basis: $size + unquote("%");
+      flex-basis: $size + unquote('%');
       width: auto;
-      max-width: $size + unquote("%");
+      max-width: $size + unquote('%');
       margin: auto;
-    }
-
-    @else {
-      width: $size - $cell_space + unquote("%");
+    } @else {
+      width: $size - $cell_space + unquote('%');
     }
   }
   .offset-#{$name} {
-    margin-left: $size + ($cell_space /2) + unquote("%");
+    margin-left: $size + ($cell_space / 2) + unquote('%');
   }
 }
 
@@ -85,7 +83,7 @@
     }
   }
   #{$offsets} {
-    margin-left: $grid-cell-margin + unquote("%");
+    margin-left: $grid-cell-margin + unquote('%');
   }
 }
 
@@ -119,5 +117,5 @@
   @include clear();
 
   float: none;
-  margin: $grid-cell-margin + unquote("%") auto;
+  margin: $grid-cell-margin + unquote('%') auto;
 }
