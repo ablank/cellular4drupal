@@ -1,30 +1,35 @@
-# Do not edit directly
-# @see ./style-dictionary /tokens/info.json, /globals/breakpoint.json, /config.json, /build/build.js, /build/templates/breakpoints.template
+# DO NOT EDIT DIRECTLY
+# @see ./style-dictionary /info.json, /build/templates/info.template, /build/build.js, /config.json
 # Generated on <% print(new Date().toString()) %>
 <%
 var theme = {
   name: "",
   version: "",
   description: "",
-  libraries: "",
-  regions: "",
+  dependencies: [],
+  libraries: [],
+  regions: []
 },
 allProperties = _.each(allProperties, function(prop) {    
     if(prop.attributes.category === 'info') {
-      if(prop.name === "InfoName"){
+      //console.log(prop);
+      if(prop.name === "info_name"){
       theme.name = prop.value;
       }
-      if(prop.name === "InfoDescription"){
+      if(prop.name === "info_description"){
       theme.description = prop.value;
       }
-      if(prop.name === "InfoLibraries"){
+      if(prop.name === "info_libraries"){
       theme.libraries = prop.value;
       }
-      if(prop.name === "InfoVersion"){
+      if(prop.name === "info_version"){
      theme.version = prop.value;
       }
-      if(prop.name === "InfoRegions"){
+      if(prop.name === "info_regions"){
       theme.regions = prop.value;      
+      }
+      if(prop.name === "info _ckeditor_stylesheets"){
+      theme.ckeditor = prop.value;      
       }
     };
 }); 
@@ -53,17 +58,28 @@ description: <% print(theme.description) %>
 package: <% print(theme.name) %>
 core_version_requirement: ^8 || ^9
 
-libraries:
-  - cellular/cellular
+libraries:<% 
+    _.each(theme.libraries, function(library){
+      output = '\n  - ' + library;
+      print(output);
+    });%>
 
-regions:
-  header_top: 'Header Top'
-  navigation: 'Main Navigation'
-  header_bottom: 'Header Bottom'
-  sidebar: 'Sidebar'
-  content_top: 'Content Top'
-  content: 'Content' #required!
-  content_bottom: 'Content Bottom'
-  footer_top: 'Footer Top'
-  footer: 'Footer'
-  footer_bottom: 'Footer Bottom'
+regions:<%    
+    _.each(theme.regions, function(region){
+      var name = region.replace(/_|-/g, ' ');
+      var splitStr = name.toLowerCase().split(' ');
+      for (var i = 0; i < splitStr.length; i++) {
+          splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+      }
+      name = splitStr.join(' '); 
+
+      output = '\n  - ' + region + ": '" + name + "'";
+
+      print(output);
+    });  %>
+<% if(theme.ckeditor){ %>
+ckeditor_stylesheets:<%    
+    _.each(theme.ckeditor, function(stylesheet){
+      print('\n  - ' + stylesheet);
+    });  %>
+<% } %>

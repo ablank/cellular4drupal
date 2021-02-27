@@ -2,12 +2,10 @@ cellular:
   version: 0.1
   css:
     theme:
-      dist/css/drupal.css: {}
       dist/css/style.css: {}
-      dist/css/ie.css: {}
       dist/css/print.css: {}
   js:
-    dist/js/script.js: {}
+    dist/js/app.js: {}
   dependencies:
     - core/jquery
-    - core/drupal
+    - core/jquery.once

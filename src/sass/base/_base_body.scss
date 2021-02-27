@@ -5,20 +5,21 @@
 
 html {
   overflow: auto;
-  // Force scrollbar display to prevent flicker on short pages.
+  /* Force scrollbar display to prevent flicker on short pages.*/
   overflow-y: scroll;
 }
 
 body {
-  background: $color-primary-bg;
   color: $text-color;
+  background: $color-primary-bg;
   font-family: $text-font;
   font-size: 100%;
   line-height: $text-line-height;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
-  //@include gradient_rad($color-primary-bg, $color-primary-bg, $color-secondary);
-  //background-image: $body_img;
-  //background-repeat: repeat;
-  //background-attachment: fixed;
+  /*@include gradient_rad($color-primary-bg, $color-primary-bg, $color-secondary);*/
+  /*background-image: $body_img;*/
+  /*background-repeat: repeat;*/
+  /*background-attachment: fixed;*/
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9iYXNlX2JvZHkuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0NBR0M7O0FBRUQ7RUFDRSxjQUFjO0VBQ2QsOERBQTREO0VBQzVELGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQiw2QkFBNkI7RUFDN0IsdUJBQXVCO0VBQ3ZCLGVBQWU7RUFDZiw4QkFBOEI7RUFDOUIsa0NBQWtDO0VBQ2xDLHNCQUFzQjtFQUN0QixpRkFBK0U7RUFDL0UsK0JBQTZCO0VBQzdCLDZCQUEyQjtFQUMzQixnQ0FBOEI7QUFDaEMiLCJmaWxlIjoiX2Jhc2VfYm9keS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXHJcbiAgKiBAZmlsZVxyXG4gICogQmFzZSBib2R5IHN0eWxlLlxyXG4qL1xyXG5cclxuaHRtbCB7XHJcbiAgb3ZlcmZsb3c6IGF1dG87XHJcbiAgLy8gRm9yY2Ugc2Nyb2xsYmFyIGRpc3BsYXkgdG8gcHJldmVudCBmbGlja2VyIG9uIHNob3J0IHBhZ2VzLlxyXG4gIG92ZXJmbG93LXk6IHNjcm9sbDtcclxufVxyXG5cclxuYm9keSB7XHJcbiAgY29sb3I6ICR0ZXh0LWNvbG9yO1xyXG4gIGJhY2tncm91bmQ6ICRjb2xvci1wcmltYXJ5LWJnO1xyXG4gIGZvbnQtZmFtaWx5OiAkdGV4dC1mb250O1xyXG4gIGZvbnQtc2l6ZTogMTAwJTtcclxuICBsaW5lLWhlaWdodDogJHRleHQtbGluZS1oZWlnaHQ7XHJcbiAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplTGVnaWJpbGl0eTtcclxuICB0ZXh0LXNpemUtYWRqdXN0OiAxMDAlO1xyXG4gIC8vQGluY2x1ZGUgZ3JhZGllbnRfcmFkKCRjb2xvci1wcmltYXJ5LWJnLCAkY29sb3ItcHJpbWFyeS1iZywgJGNvbG9yLXNlY29uZGFyeSk7XHJcbiAgLy9iYWNrZ3JvdW5kLWltYWdlOiAkYm9keV9pbWc7XHJcbiAgLy9iYWNrZ3JvdW5kLXJlcGVhdDogcmVwZWF0O1xyXG4gIC8vYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDtcclxufVxyXG4iXX0= */

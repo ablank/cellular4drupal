@@ -1,5 +1,7 @@
 {
-    "extends": [
-      "drupal"
-    ]
-  }
+  "root": true,  
+  "resolve-plugins-relative-to": "./",
+  "extends": [
+    "drupal"
+  ]
+}

@@ -1,11 +1,13 @@
-// Define all regions using list.
+/* Define all regions using list.*/
 $regions: ();
+
 @each $region in $region-list {
-  $regions: append($regions, unquote('##{$region},'));
+  $regions: append($regions, unquote("##{$region},"));
 }
 
 $region-space: ($region-margin * 2) + ($region-padding * 2) +
   ($region-border * 2);
 
-// Header region
+/* Header region*/
 $header-height: $logo-height + ($logo-margin * 2) + ($logo-padding * 2);
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9yZWdpb25zLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsa0NBQWdDO0FBQ2hDLFlBQVk7O0FBRVo7RUFDRSxtREFBbUQ7QUFDckQ7O0FBRUE7c0JBQ3NCOztBQUV0QixpQkFBZTtBQUNmLHVFQUF1RSIsImZpbGUiOiJfcmVnaW9ucy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gRGVmaW5lIGFsbCByZWdpb25zIHVzaW5nIGxpc3QuXHJcbiRyZWdpb25zOiAoKTtcclxuXHJcbkBlYWNoICRyZWdpb24gaW4gJHJlZ2lvbi1saXN0IHtcclxuICAkcmVnaW9uczogYXBwZW5kKCRyZWdpb25zLCB1bnF1b3RlKFwiIyN7JHJlZ2lvbn0sXCIpKTtcclxufVxyXG5cclxuJHJlZ2lvbi1zcGFjZTogKCRyZWdpb24tbWFyZ2luICogMikgKyAoJHJlZ2lvbi1wYWRkaW5nICogMikgK1xyXG4gICgkcmVnaW9uLWJvcmRlciAqIDIpO1xyXG5cclxuLy8gSGVhZGVyIHJlZ2lvblxyXG4kaGVhZGVyLWhlaWdodDogJGxvZ28taGVpZ2h0ICsgKCRsb2dvLW1hcmdpbiAqIDIpICsgKCRsb2dvLXBhZGRpbmcgKiAyKTtcclxuIl19 */

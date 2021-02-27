@@ -1,18 +1,10 @@
 /**
-  * @file
-  * Styling for mobile devices included in style.css
+* @file
+* Small/mobile media breakpoint tweaks.
 */
 
 @media screen and (max-width: $breakpoint-small) {
-  body:before {
-    // Pseudo element to pass the current media size to javascript.
-    // @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
-    content: 'window_small-#{$breakpoint-small}';
-  }
-}
-
-//////
-.window_small {
+  /*///*/
   p {
   }
 
@@ -42,7 +34,7 @@
   h6 {
   }
 
-  //////
+  /*////*/
 
   #main-menu {
   }
@@ -58,9 +50,6 @@
   #page-wrap {
   }
 
-  #content-wrap {
-  }
-
   #header {
   }
 
@@ -73,3 +62,4 @@
   #content {
   }
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9zbWFsbC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Q0FHQzs7QUFFRDtFQUNFLE1BQUk7RUFDSjtFQUNBOztFQUVBOzs7Ozs7RUFNQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQSxPQUFLOztFQUVMO0VBQ0E7O0VBRUE7SUFDRTtJQUNBOztJQUVBO0lBQ0E7RUFDRjs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7QUFDRiIsImZpbGUiOiJfc21hbGwuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxyXG4qIEBmaWxlXHJcbiogU21hbGwvbW9iaWxlIG1lZGlhIGJyZWFrcG9pbnQgdHdlYWtzLlxyXG4qL1xyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogJGJyZWFrcG9pbnQtc21hbGwpIHtcclxuICAvLy8vL1xyXG4gIHAge1xyXG4gIH1cclxuXHJcbiAgaDEsXHJcbiAgaDIsXHJcbiAgaDMsXHJcbiAgaDQsXHJcbiAgaDUsXHJcbiAgaDYge1xyXG4gIH1cclxuXHJcbiAgaDEge1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gIH1cclxuXHJcbiAgaDQge1xyXG4gIH1cclxuXHJcbiAgaDUge1xyXG4gIH1cclxuXHJcbiAgaDYge1xyXG4gIH1cclxuXHJcbiAgLy8vLy8vXHJcblxyXG4gICNtYWluLW1lbnUge1xyXG4gIH1cclxuXHJcbiAgI2xvZ28ge1xyXG4gICAgJjpob3ZlciB7XHJcbiAgICB9XHJcblxyXG4gICAgJiA+IGEge1xyXG4gICAgfVxyXG4gIH1cclxuXHJcbiAgI3BhZ2Utd3JhcCB7XHJcbiAgfVxyXG5cclxuICAjaGVhZGVyIHtcclxuICB9XHJcblxyXG4gICNhcHAge1xyXG4gIH1cclxuXHJcbiAgI2NvbnRlbnQtd3JhcCB7XHJcbiAgfVxyXG5cclxuICAjY29udGVudCB7XHJcbiAgfVxyXG59XHJcbiJdfQ== */

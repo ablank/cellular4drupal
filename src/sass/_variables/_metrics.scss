@@ -1,7 +1,0 @@
-$size-tiny: $default-size - ($default-size * $adjust-size-bigly);
-$size-small: $default-size- ($default-size * $adjust-size);
-$size-big: $default-size + ($default-size * $adjust-size);
-$size-xl: $default-size + ($default-size * $adjust-size-bigly);
-
-$speed-fast: $speed-default * 0.6;
-$speed-slow: $speed-default * 1.5;

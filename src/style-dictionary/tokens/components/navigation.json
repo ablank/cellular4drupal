@@ -1,14 +1,22 @@
 {
   "nav": {
     "position": {
-        "value": "0.1rem"
-      },
+      "value": "0.1rem"
+    },
     "text": {
       "font": {
         "value": "{text.font.value}"
       },
       "size": {
         "value": "{default.size.value}"
+      }
+    },
+    "dropdown": {
+      "show": {
+        "value": "true"
+      },
+      "direction": {
+        "value": "'left'"
       }
     }
   }

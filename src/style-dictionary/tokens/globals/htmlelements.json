@@ -9,9 +9,12 @@
     "style-ul": {
       "value": "disc"
     },
+    "style-ul-img": {
+      "value": "arrow-right"
+    },
     "style-ol": {
       "value": "none"
-    }
+    } 
   },
   "table": {
     "margin": {

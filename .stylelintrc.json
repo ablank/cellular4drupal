@@ -1,23 +1,18 @@
 {
   "extends": "stylelint-config-standard",
   "plugins": [
+    "stylelint-no-browser-hacks/lib",
     "stylelint-order"
   ],
+  "syntax": "css",
+  "output-file": "./dist/css/lint.txt",
   "rules": {
-    "at-rule-no-unknown": null,
-    "block-no-empty": null,
     "comment-empty-line-before": null,
     "function-linear-gradient-no-nonstandard-direction": null,
     "function-whitespace-after": null,
     "no-descending-specificity": null,
     "no-duplicate-selectors": null,
-    "no-unknown-animations": true,    
-    "property-no-unknown": null,
-    "rule-empty-line-before": null,
-    "selector-pseudo-element-colon-notation": null,
-    "shorthand-property-no-redundant-values": null,
-    "string-quotes": "double",
-    "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"],
+    "no-unknown-animations": true,
     "media-feature-name-no-unknown": [true, {
       "ignoreMediaFeatureNames": [
         "prefers-reduced-motion",
@@ -427,14 +422,25 @@
       "font-emphasize-style",
       "font-smooth",
       "line-height"
-    ]
+    ],
+    "plugin/no-browser-hacks": [true, {
+      "browsers": [
+        "ie >= 9",
+        "edge >= 13",
+        "firefox >= 5",
+        "opera >= 12",
+        "safari >= 5",
+        "chrome >= 56"
+      ]
+    }],
+    "property-no-unknown": null,
+    "rule-empty-line-before": null,
+    "selector-pseudo-element-colon-notation": null,
+    "shorthand-property-no-redundant-values": null,
+    "string-quotes": "double",
+    "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"]
   },
   "ignoreFiles": [
-    "assets/vendor/**/*.css",
-    "tests/Drupal/Tests/Core/Asset/css_test_files/**/*.css",
-    "modules/media/css/plugins/drupalmedia/ckeditor.drupalmedia.css",
-    "themes/stable/css/core/assets/vendor/**/*.css",
-    "themes/stable9/css/core/assets/vendor/**/*.css",
-    "themes/stable9/css/media/plugins/drupalmedia/ckeditor.drupalmedia.css"
+    "assets/vendor/**/*.css"
   ]
 }

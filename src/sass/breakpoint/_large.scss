@@ -1,17 +1,10 @@
 /**
-  * @file
-  * Styling for large-screen devices included in style.css
+* @file
+* Large/tv media breakpoint tweaks.
 */
 
 @media screen and (min-width: $breakpoint-large) {
-  body:before {
-    // Pseudo element to pass the current media size to javascript.
-    content: 'window_large-#{$breakpoint-large}';
-  }
-}
-
-//////
-.window_large {
+  /*///*/
   p {
   }
 
@@ -41,7 +34,7 @@
   h6 {
   }
 
-  //////
+  /*////*/
 
   #main-menu {
     ul.menu {
@@ -59,9 +52,6 @@
   #page-wrap {
   }
 
-  #content-wrap {
-  }
-
   #header {
   }
 
@@ -74,3 +64,4 @@
   #content {
   }
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9sYXJnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Q0FHQzs7QUFFRDtFQUNFLE1BQUk7RUFDSjtFQUNBOztFQUVBOzs7Ozs7RUFNQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQSxPQUFLOztFQUVMO0lBQ0U7SUFDQTtFQUNGOztFQUVBO0lBQ0U7SUFDQTs7SUFFQTtJQUNBO0VBQ0Y7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQTtFQUNBO0FBQ0YiLCJmaWxlIjoiX2xhcmdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcclxuKiBAZmlsZVxyXG4qIExhcmdlL3R2IG1lZGlhIGJyZWFrcG9pbnQgdHdlYWtzLlxyXG4qL1xyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogJGJyZWFrcG9pbnQtbGFyZ2UpIHtcclxuICAvLy8vL1xyXG4gIHAge1xyXG4gIH1cclxuXHJcbiAgaDEsXHJcbiAgaDIsXHJcbiAgaDMsXHJcbiAgaDQsXHJcbiAgaDUsXHJcbiAgaDYge1xyXG4gIH1cclxuXHJcbiAgaDEge1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gIH1cclxuXHJcbiAgaDQge1xyXG4gIH1cclxuXHJcbiAgaDUge1xyXG4gIH1cclxuXHJcbiAgaDYge1xyXG4gIH1cclxuXHJcbiAgLy8vLy8vXHJcblxyXG4gICNtYWluLW1lbnUge1xyXG4gICAgdWwubWVudSB7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAjbG9nbyB7XHJcbiAgICAmOmhvdmVyIHtcclxuICAgIH1cclxuXHJcbiAgICAmID4gYSB7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAjcGFnZS13cmFwIHtcclxuICB9XHJcblxyXG4gICNoZWFkZXIge1xyXG4gIH1cclxuXHJcbiAgI2FwcCB7XHJcbiAgfVxyXG5cclxuICAjY29udGVudC13cmFwIHtcclxuICB9XHJcblxyXG4gICNjb250ZW50IHtcclxuICB9XHJcbn1cclxuIl19 */

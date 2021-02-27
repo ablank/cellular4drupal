@@ -3,17 +3,17 @@
  * Custom javascript for use in your theme.
  */
 
-(function ($) {
-  Drupal.behaviors.theme = {
+(function ($, Drupal) {
+  Drupal.behaviors.cellular = {
     attach: function (context, settings) {
-
+      
+      /* Init cellular functions */
       $('a[href^=tel]').each(function () {
         var num = $(this).attr('href').match(/\d+/g);
-
         $(this).attr('href', 'tel:' + num.join(''));
       });
 
-      /* End Drupal.behaviors.theme */
+      /* End cellular functions */
     }
   };
-})(jQuery);
+})(jQuery, Drupal);

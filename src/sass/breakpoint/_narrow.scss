@@ -1,19 +1,10 @@
 /**
-  * @file
-  * Styling for tablets & other narrow devices included in style.css
+* @file
+* Narrow/tablet media breakpoint tweaks.
 */
 
-// Styling
 @media screen and (min-width: $breakpoint-narrow) and (max-width: $breakpoint-default) {
-  body:before {
-    // Pseudo element to pass the current media size to javascript.
-    // @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
-    content: 'window_narrow-#{$breakpoint-narrow}';
-  }
-}
-
-//////
-.window_narrow {
+  /*///*/
   p {
   }
 
@@ -43,7 +34,7 @@
   h6 {
   }
 
-  //////
+  /*////*/
 
   #main-menu {
     ul.menu {
@@ -61,9 +52,6 @@
   #page-wrap {
   }
 
-  #content-wrap {
-  }
-
   #header {
   }
 
@@ -76,3 +64,4 @@
   #content {
   }
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9uYXJyb3cuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0NBR0M7O0FBRUQ7RUFDRSxNQUFJO0VBQ0o7RUFDQTs7RUFFQTs7Ozs7O0VBTUE7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUEsT0FBSzs7RUFFTDtJQUNFO0lBQ0E7RUFDRjs7RUFFQTtJQUNFO0lBQ0E7O0lBRUE7SUFDQTtFQUNGOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTs7RUFFQTtFQUNBOztFQUVBO0VBQ0E7O0VBRUE7RUFDQTtBQUNGIiwiZmlsZSI6Il9uYXJyb3cuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxyXG4qIEBmaWxlXHJcbiogTmFycm93L3RhYmxldCBtZWRpYSBicmVha3BvaW50IHR3ZWFrcy5cclxuKi9cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6ICRicmVha3BvaW50LW5hcnJvdykgYW5kIChtYXgtd2lkdGg6ICRicmVha3BvaW50LWRlZmF1bHQpIHtcclxuICAvLy8vL1xyXG4gIHAge1xyXG4gIH1cclxuXHJcbiAgaDEsXHJcbiAgaDIsXHJcbiAgaDMsXHJcbiAgaDQsXHJcbiAgaDUsXHJcbiAgaDYge1xyXG4gIH1cclxuXHJcbiAgaDEge1xyXG4gIH1cclxuXHJcbiAgaDIge1xyXG4gIH1cclxuXHJcbiAgaDMge1xyXG4gIH1cclxuXHJcbiAgaDQge1xyXG4gIH1cclxuXHJcbiAgaDUge1xyXG4gIH1cclxuXHJcbiAgaDYge1xyXG4gIH1cclxuXHJcbiAgLy8vLy8vXHJcblxyXG4gICNtYWluLW1lbnUge1xyXG4gICAgdWwubWVudSB7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAjbG9nbyB7XHJcbiAgICAmOmhvdmVyIHtcclxuICAgIH1cclxuXHJcbiAgICAmID4gYSB7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICAjcGFnZS13cmFwIHtcclxuICB9XHJcblxyXG4gICNoZWFkZXIge1xyXG4gIH1cclxuXHJcbiAgI2FwcCB7XHJcbiAgfVxyXG5cclxuICAjY29udGVudC13cmFwIHtcclxuICB9XHJcblxyXG4gICNjb250ZW50IHtcclxuICB9XHJcbn1cclxuIl19 */

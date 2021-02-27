@@ -1,35 +1,33 @@
-# Do not edit directly
-# @see ./style-dictionary /tokens/globals/breakpoint.json, /config.json, /build/build.js, /build/templates/breakpoints.template
+# DO NOT EDIT DIRECTLY
+# @see ./style-dictionary /build/templates/breakpoints.template, /build/build.js, /tokens/globals/breakpoint.json, /config.json
 # Generated on <% print(new Date().toString()) %>
 <%
-var breakpoint = {
+var theme = "",
+breakpoint = {
   default: "",
   small: "",
   narrow: "",
-  large: "",
+  large: ""
 },
 allProperties = _.each(allProperties, function(prop) {
     if(prop.attributes.category === 'breakpoint') {
-      if(prop.name === "BreakpointDefault"){
+      if(prop.name === "breakpoint_default"){
       breakpoint.default = prop.value;
       }
-      if(prop.name === "BreakpointSmall"){
+      if(prop.name === "breakpoint_small"){
       breakpoint.small = prop.value;
       }
-      if(prop.name === "BreakpointNarrow"){
+      if(prop.name === "breakpoint_narrow"){
       breakpoint.narrow = prop.value;
       }
-      if(prop.name === "BreakpointLarge"){
+      if(prop.name === "breakpoint_large"){
       breakpoint.large = prop.value;
       }
     };
-}),
-less1 = function(mixedNum){
-  var num = parseInt(mixedNum),
-    unit = mixedNum.replace(/[0-9]/g, '');
-
-  return num + unit;
-}; 
+      if(prop.name === "info_name"){
+      theme = prop.value.toLowerCase();
+      }
+}); 
 /*
 _.each(allProperties, function(prop) {
     // Notice: this is an alternative way to use Lodash templating syntax,
@@ -47,36 +45,36 @@ _.each(allProperties, function(prop) {
 });
 */
 %>
-cellular.screen.default:
+<% print(theme) %>.screen.default:
   label: default
-  mediaQuery: '(min-width: <% print(breakpoint.narrow) %> && (max-width: <% print(less1(breakpoint.default)) %>)'
+  mediaQuery: '(min-width: <% print(breakpoint.default) %>) && (max-width: <% print(breakpoint.large) %>)'
   weight: 1
   group: screen
   multipliers:
     - 1x
     - 2x
 
-cellular.screen.small:
+<% print(theme) %>.screen.small:
   label: small
-  mediaQuery: '(max-width: <% print(less1(breakpoint.small)) %>)'
+  mediaQuery: '(max-width: <% print(breakpoint.small) %>)'
   weight: 1
   group: screen
   multipliers:
     - 1x
     - 2x
 
-cellular.screen.narrow:
+<% print(theme) %>.screen.narrow:
   label: narrow
-  mediaQuery: '(min-width: <% print(breakpoint.small) %> && max-width: <% print(less1(breakpoint.narrow)) %>)'
+  mediaQuery: '(min-width: <% print(breakpoint.small) %>) && (max-width: <% print(breakpoint.default) %>)'
   weight: 1
   group: screen
   multipliers:
     - 1x
     - 2x
 
-cellular.screen.large:
+<% print(theme) %>.screen.large:
   label: large
-  mediaQuery: '(min-width: <% print(breakpoint.default) %> && min-width: <% print(less1(breakpoint.large)) %>)'
+  mediaQuery: '(min-width: <% print(breakpoint.large) %>)'
   weight: 1
   group: screen
   multipliers:

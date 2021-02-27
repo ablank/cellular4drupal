@@ -1,13 +1,14 @@
 {
   "source": [
-    "src/style-dictionary/tokens/**/*.json"
+    "src/style-dictionary/tokens/**/*.json",
+    "src/style-dictionary/info.json"
   ],
   "platforms": {
     "scss": {
-      "transformGroup": "scss",
+      "transformGroup": "sass/cellular",
       "buildPath": "src/",
       "files": [{
-        "format": "scss/variables",
+        "format": "sass/cellular",
         "destination": "sass/_variables/_style-dictionary.scss"
       }]
     },
@@ -20,7 +21,7 @@
       }]
     },
     "info": {
-      "transformGroup": "js",
+      "transformGroup": "yaml",
       "buildPath": "./",
       "files": [{
         "format": "yaml/info",
@@ -28,7 +29,7 @@
       }]
     },
     "breakpoints": {
-      "transformGroup": "js",
+      "transformGroup": "yaml",
       "buildPath": "./",
       "files": [{
         "format": "yaml/breakpoints",

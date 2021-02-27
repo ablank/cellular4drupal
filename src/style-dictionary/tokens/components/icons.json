@@ -1,10 +1,12 @@
 {
   "icon": {
-    "src-svg": {
-      "value": "src/assets/icons/svg"
-    },
-    "src-png": {
-      "value": "src/assets/icons/png"
+    "src": {
+      "svg": {
+        "value": "'../assets/icons/svg/'"
+      },
+      "png": {
+        "value": "'../assets/icons/png/'"
+      }
     },
     "size": {
       "value": "{default.size.value}"
@@ -19,8 +21,34 @@
       "value": "50%"
     },
     "list": {
+      "comment": "List of icons/classes to actually include in style",
+      "value": [
+        "arrow-up",
+        "arrow-right",
+        "arrow-down",
+        "arrow-left",
+        "mail",
+        "menu",
+        "message-error",
+        "message-ok",
+        "message-warning",
+        "email",
+        "home",
+        "search",
+        "facebook",
+        "instagram",
+        "twitter",
+        "twitter-t",
+        "github-octo",
+        "google",
+        "youtube",
+        "linkedin",
+        "reddit"
+      ]
+    },
+    "options": {
       "ui": {
-        "comment": "List of user interface icons/classes to include",
+        "comment": "List of available user interface icons/classes",
         "value": [
           "arrow-up",
           "arrow-right",
@@ -66,7 +94,7 @@
         ]
       },
       "tech": {
-        "comment": "List of misc. tech icons/classes to include",
+        "comment": "List of tech icons/classes",
         "value": [
           "android",
           "angular",
@@ -95,7 +123,7 @@
         ]
       },
       "social": {
-        "comment": "List of social network icons/classes to include",
+        "comment": "List of social network icons/classes",
         "value": [
           "facebook",
           "instagram",

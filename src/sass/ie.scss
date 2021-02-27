@@ -3,7 +3,7 @@
   * Old Internet Explorer is breakin internetz.
 */
 
-@import 'variables';
+@import "variables";
 
 body {
   word-wrap: break-word;
@@ -14,20 +14,20 @@ img {
 }
 
 legend {
-  // because legend doesn't inherit in IE
+  /* because legend doesn't inherit in IE*/
   color: $color-secondary;
 }
 
 input,
 textarea,
 select {
-  // to enable resizing for IE
+  /* to enable resizing for IE*/
   *font-size: 100%;
 }
 
 input {
-  &[type='checkbox'],
-  &[type='radio'] {
+  &[type="checkbox"],
+  &[type="radio"] {
     display: inline;
     margin: $size-tiny;
     vertical-align: middle;
@@ -41,3 +41,4 @@ input {
 #{$cells} {
   zoom: 1;
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImllLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztDQUdDOztBQUVELG1CQUFtQjs7QUFFbkI7RUFDRSxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSwrQkFBK0I7QUFDakM7O0FBRUE7RUFDRSx3Q0FBc0M7RUFDdEMsdUJBQXVCO0FBQ3pCOztBQUVBOzs7RUFHRSw2QkFBMkI7R0FDM0IsZUFBZ0I7QUFDbEI7O0FBRUE7RUFDRTs7SUFFRSxlQUFlO0lBQ2Ysa0JBQWtCO0lBQ2xCLHNCQUFzQjs7SUFFdEI7TUFDRSx1QkFBdUI7SUFDekI7RUFDRjtBQUNGOztBQUVBO0VBQ0UsT0FBTztBQUNUIiwiZmlsZSI6ImllLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcclxuICAqIEBmaWxlXHJcbiAgKiBPbGQgSW50ZXJuZXQgRXhwbG9yZXIgaXMgYnJlYWtpbiBpbnRlcm5ldHouXHJcbiovXHJcblxyXG5AaW1wb3J0IFwidmFyaWFibGVzXCI7XHJcblxyXG5ib2R5IHtcclxuICB3b3JkLXdyYXA6IGJyZWFrLXdvcmQ7XHJcbn1cclxuXHJcbmltZyB7XHJcbiAgLW1zLWludGVycG9sYXRpb24tbW9kZTogYmljdWJpYztcclxufVxyXG5cclxubGVnZW5kIHtcclxuICAvLyBiZWNhdXNlIGxlZ2VuZCBkb2Vzbid0IGluaGVyaXQgaW4gSUVcclxuICBjb2xvcjogJGNvbG9yLXNlY29uZGFyeTtcclxufVxyXG5cclxuaW5wdXQsXHJcbnRleHRhcmVhLFxyXG5zZWxlY3Qge1xyXG4gIC8vIHRvIGVuYWJsZSByZXNpemluZyBmb3IgSUVcclxuICAqZm9udC1zaXplOiAxMDAlO1xyXG59XHJcblxyXG5pbnB1dCB7XHJcbiAgJlt0eXBlPVwiY2hlY2tib3hcIl0sXHJcbiAgJlt0eXBlPVwicmFkaW9cIl0ge1xyXG4gICAgZGlzcGxheTogaW5saW5lO1xyXG4gICAgbWFyZ2luOiAkc2l6ZS10aW55O1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxuXHJcbiAgICAmOmZvY3VzIHtcclxuICAgICAgYm9yZGVyOiAkZGVmYXVsdC1ib3JkZXI7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcblxyXG4jeyRjZWxsc30ge1xyXG4gIHpvb206IDE7XHJcbn1cclxuIl19 */

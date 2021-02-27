@@ -3,14 +3,7 @@ const path = require('path'),
   _ = require('lodash'),
   yaml = require('yaml');
 
-const StyleDictionary = require('style-dictionary').extend(path.join(__dirname,'..', 'config.json'));
-/*s,
-  Handlebars = require('handlebars'),
-  source = fs.readFileSync(`${cwd}/${file}`).toString(),
-  template = Handlebars.compile(source),
-  contents = template({ PROJECT_NAME: `${name}`, PROJECT_VERSION: `${version}`, DOCKER_IMAGE: `${image}` })
-  */
-
+const StyleDictionary = require('style-dictionary').extend(path.join(__dirname, '..', 'config.json'));
 // Log available pre-defined formats, transforms and transform groups
 //console.log(StyleDictionary);
 
@@ -41,7 +34,6 @@ function LightenDarkenColor(col, amt) {
 /**
  * registerFormat
  */
-
 StyleDictionary.registerFormat({
   name: 'json/raw',
   formatter: function (dictionary) {
@@ -50,10 +42,93 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: 'yaml',
-  formatter: function (dictionary) {
-    return yaml.stringify(dictionary.allProperties);
+  name: 'sass/cellular',
+  formatter: _.template(fs.readFileSync(__dirname + '/templates/sass.template'))  
+    /*function (dictionary, config) {
+    Set up an empty object to hold the final shape to pass
+    to the custom template.
+
+    After the allProperties.map(), props will look like this: {
+      'component-button': {
+        padding: '16px',
+        'font-size': '16px',
+        'text-align': 'center',
+        primary: {
+          'background-color': '#e63c19',
+          color: '#ffffff'
+        },
+        secondary: {
+          'background-color': '#fad8d1',
+          color: '#0000ff'
+        }
+      }
+    }
+    // allProperties is an array containing all the matched
+    // tokens based on the filter.
+    const {
+      allProperties
+    } = dictionary
+
+    const props = {}
+
+    // go through properties and structure final props object
+    allProperties.map(prop => {
+
+      //  Extract the attributes object created by the 'attribute/cti'
+      //  transform and the transformed token value.
+      const {
+        attributes,
+        value
+      } = prop
+
+      // extract attributes to build custom class and style rules
+      const {
+        category,
+        type,
+        item,
+        subitem
+      } = attributes
+
+      // build main classname for .scss file
+      const classname = `${category}-${type}`
+      //  Add to the props object if it doesn't already exist.
+      //  We run the check to see if the classname exists already as an
+      //  object property because in our case, `classname` will be the
+      //  same for each token object in allProperties because each token
+      //  is under the same category and type.
+      if (!props.hasOwnProperty(classname)) {
+        props[classname] = {}
+      }
+
+      //  If the token object has a subitem, use the item as the subclass.
+      //  Run the same check to see if this particular subclass (item) has
+      //  been added yet.
+      if (subitem) {
+        if (!props[classname].hasOwnProperty(item)) {
+          props[classname][item] = {}
+        }
+
+        // add the subitem and value as final CSS rule
+        props[classname][item][subitem] = value
+      } else {
+        // add the item as a CSS rule, not a subclass
+        props[classname][item] = value
+      }
+    })
+
+    //  Pass the final `props` object to our custom template to render
+    //  the contents for the final button.scss file.
+    return template({
+      props
+    })
+    
   }
+     */   
+});
+
+StyleDictionary.registerFormat({
+  name: 'yaml',
+  formatter: _.template(fs.readFileSync(__dirname + '/templates/yaml.template'))
 });
 
 StyleDictionary.registerFormat({
@@ -65,21 +140,60 @@ StyleDictionary.registerFormat({
   name: 'yaml/breakpoints',
   formatter: _.template(fs.readFileSync(__dirname + '/templates/breakpoints.template'))
 });
+
 /**
  * registerTransform
  */
-
 StyleDictionary.registerTransform({
   name: 'adjust/scale',
   type: 'value',
   matcher: function (prop) {
-    return prop.scale;
+    return prop.scale == true ||
+      prop.attributes.category === 'dynamic';
   },
   transformer: function (prop) {
-    console.log(prop.name);
+    //console.log(prop);
+    /*
     var num = parseInt(prop.original.value) * prop.attributes.scale;
     var unit = prop.original.value.replace(/[0-9]/g, '');
     return num.toString() + unit;
+    */
+  }
+});
+
+/**
+ * registerTransform
+ */
+StyleDictionary.registerTransform({
+  name: 'replace/empty',
+  type: 'value',
+  matcher: function (prop) {
+    return prop.value === 'undefined' || !prop.value.length
+  },
+  transformer: function (prop) {
+    console.log("Undefined Value:" + prop.name + "\n");
+    // prop.value = typeof(prop.value === Array) ? ["-"] : "-";
+
+    /*
+    var num = parseInt(prop.original.value) * prop.attributes.scale;
+    var unit = prop.original.value.replace(/[0-9]/g, '');
+    return num.toString() + unit;
+    */
+  }
+});
+StyleDictionary.registerTransform({
+  name: 'quote/strings',
+  type: 'value',
+  matcher: function (prop) {
+    return typeof (prop.value) === String;
+  },
+  transformer: function (prop) {
+    console.log(prop.value);
+    /*
+    var num = parseInt(prop.original.value) * prop.attributes.scale;
+    var unit = prop.original.value.replace(/[0-9]/g, '');
+    return num.toString() + unit;
+    */
   }
 });
 
@@ -102,10 +216,18 @@ StyleDictionary.registerTransform({
 /**
  * Register transformGroup
  */
+StyleDictionary.registerTransformGroup({
+  name: 'sass/cellular',
+  transforms: StyleDictionary.transformGroup['scss'].concat([
+    'replace/empty', 
+    //'quote/strings', 
+    //'adjust/scale'
+  ])
+});
 
 StyleDictionary.registerTransformGroup({
   name: 'yaml',
-  transforms: ['name/cti/kebab', 'attribute/cti']
+  transforms: ['name/cti/snake', 'attribute/cti']
 });
 
 StyleDictionary.registerTransformGroup({

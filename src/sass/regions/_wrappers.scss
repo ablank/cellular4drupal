@@ -4,7 +4,8 @@
 */
 
 #page-wrap {
-  @if ($region-header-position == 'absolute' OR 'fixed') {
+  @if ($region-header-position == "absolute" OR "fixed") {
     padding-top: $header_height;
   }
 }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl93cmFwcGVycy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7Q0FHQzs7QUFFRDtFQUNFO0lBQ0UsMkJBQTJCO0VBQzdCO0FBQ0YiLCJmaWxlIjoiX3dyYXBwZXJzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcclxuICAqIEBmaWxlXHJcbiAgKiBDb250ZW50IHJlZ2lvbiBzdHlsZXNcclxuKi9cclxuXHJcbiNwYWdlLXdyYXAge1xyXG4gIEBpZiAoJHJlZ2lvbi1oZWFkZXItcG9zaXRpb24gPT0gXCJhYnNvbHV0ZVwiIE9SIFwiZml4ZWRcIikge1xyXG4gICAgcGFkZGluZy10b3A6ICRoZWFkZXJfaGVpZ2h0O1xyXG4gIH1cclxufVxyXG4iXX0= */

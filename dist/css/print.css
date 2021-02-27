@@ -2,10 +2,6 @@
   * @file
   * Styling for printed pages
 */
-/**
-  * @file
-  * CSS Animations.
-*/
 /* -------------------------------------------- */
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
@@ -40,6 +36,16 @@
   * http://codepen.io/TaniaLD/pen/oKxep
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
+*/
+/*
+  DO NOT EDIT DIRECTLY
+  @see /src/style-dictionary/tokens/
+  Generated on Thu, 25 Feb 2021 21:11:56 GMT
+*/
+/**
+* @file
+* Transforms variables from style dictionary into
+* more useful variables.
 */
 @media print {
   img,

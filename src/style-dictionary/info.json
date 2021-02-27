@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": {
+      "value": "Cellular",
+      "category": "info"
+    },
+    "version": {
+      "value": "1.0",
+      "category": "info"
+    },
+    "description": {
+      "value": "A sweet starter theme for Drupal",
+      "category": "info",
+      "comment": "Theme description"
+    },
+    "libraries": {
+        "value": [
+            "cellular/cellular"
+        ],
+        "category": "info",
+        "comment": "List of namespaced libraries to include"
+    },
+    "regions": {
+      "value": [
+        "console",
+        "header_top",
+        "header",
+        "header_bottom",
+        "content_top",
+        "content",
+        "sidebar",
+        "content_bottom",
+        "footer_top",
+        "footer",
+        "footer_bottom"
+      ],
+      "category": "info",
+      "comment": "List of page regions"
+    },
+    "ckeditor_stylesheets": {
+      "value": [
+        "dist/css/style.css"
+        ],
+      "category": "info",
+      "comment": "List of ckeditor stylesheets"
+    }
+  }
+}

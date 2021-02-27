@@ -2,10 +2,6 @@
   * @file
   * Critical styles to be added inline.
 */
-/**
-  * @file
-  * CSS Animations.
-*/
 /* -------------------------------------------- */
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
@@ -40,6 +36,16 @@
   * http://codepen.io/TaniaLD/pen/oKxep
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
+*/
+/*
+  DO NOT EDIT DIRECTLY
+  @see /src/style-dictionary/tokens/
+  Generated on Thu, 25 Feb 2021 21:11:56 GMT
+*/
+/**
+* @file
+* Transforms variables from style dictionary into
+* more useful variables.
 */
 /**
   * @file
@@ -91,9 +97,9 @@ html {
 }
 
 body {
-  background: #fffbf0;
   color: #101010;
-  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  background: #fffbf0;
+  font-family: "Palatino Linotype", palatino, palladio, "URW Palladio L", "Book Antiqua", baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", georgia, serif;
   font-size: 100%;
   line-height: 1.4rem;
   text-rendering: optimizeLegibility;
@@ -121,7 +127,7 @@ h3 {
   clear: both;
   margin: 1em auto 0.2em auto;
   padding: 0.4em 0.4em 0 1em;
-  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: 1.1em;
 }
