@@ -7,7 +7,7 @@ cellular.jTooltip = function (opts) {
     offsetX: 10,
     offsetY: 5
   }, opts),
-    fn = {};
+          fn = {};
   /**
    * Generate markup for buttons.
    *
@@ -15,7 +15,7 @@ cellular.jTooltip = function (opts) {
    */
   fn.style = function ($obj) {
     var tooltip = jQuery('<div>' + $obj.attr(o.dataattr) + '</div>'),
-      tclass = o.cclass + '-trigger';
+            tclass = o.cclass + '-trigger';
 
     // $obj
 
@@ -23,12 +23,12 @@ cellular.jTooltip = function (opts) {
 
     if (o.triggerbtn === true) {
       var btn = jQuery('<span aria-label="' + o.triggerbtntext + '">?</span>'),
-        tindex = $obj.prop('tabindex') ? $obj.prop('tabindex') : "0";
+              tindex = $obj.prop('tabindex') ? $obj.prop('tabindex') : "0";
 
       btn.classify([tclass, o.cclass + '-btn'])
-        .prop("tabindex", tindex);
+              .prop("tabindex", tindex);
       $obj.wrap('<div class="' + o.cclass + '-wrap" />')
-        .parent().prepend(btn); //.before(btn)
+              .parent().prepend(btn); //.before(btn)
     } else {
       $obj.addClass(tclass);
     }
@@ -42,9 +42,9 @@ cellular.jTooltip = function (opts) {
 
     jQuery('.' + o.cclass + '-trigger').on('mouseenter focus', function (e) {
       var $t = jQuery(this),
-        tooltip = $t.nextAll('.' + o.cclass + ':first'),
-        btn = {},
-        position = {};
+              tooltip = $t.nextAll('.' + o.cclass + ':first'),
+              btn = {},
+              position = {};
 
       if (o.triggerbtn === true) {
         btn = this.getBoundingClientRect();
@@ -60,11 +60,11 @@ cellular.jTooltip = function (opts) {
       }
 
       tooltip.css(position)
-        .activate();
+              .activate();
     })
-      .on('mouseleave blur', function (e) {
-        jQuery(this).nextAll('.' + o.cclass + '-tooltip:first').deactivate();
-      });
+            .on('mouseleave blur', function (e) {
+              jQuery(this).nextAll('.' + o.cclass + '-tooltip:first').deactivate();
+            });
   };
   /**
    * Init jSocial
@@ -73,7 +73,7 @@ cellular.jTooltip = function (opts) {
     var $obj = jQuery(this);
 
     $obj.addClass(o.cclass)
-      .once(o.cclass, fn.style($obj));
+            .once(o.cclass, fn.style($obj));
 
     fn.listen();
   };

@@ -1,40 +1,40 @@
 {
   "source": [
     "src/style-dictionary/tokens/**/*.json",
-    "src/style-dictionary/info.json"
+    "src/style-dictionary/drupal/info.json"
   ],
   "platforms": {
     "scss": {
       "transformGroup": "sass/cellular",
       "buildPath": "src/",
       "files": [{
-        "format": "sass/cellular",
-        "destination": "sass/_variables/_style-dictionary.scss"
-      }]
+          "format": "sass/cellular",
+          "destination": "sass/_variables/_style-dictionary.scss"
+        }]
     },
     "js": {
       "transformGroup": "js",
       "buildPath": "src/",
       "files": [{
-        "format": "json/flat",
-        "destination": "js/style-dictionary.json"
-      }]
+          "format": "json/flat",
+          "destination": "js/style-dictionary.json"
+        }]
     },
     "info": {
       "transformGroup": "yaml",
       "buildPath": "./",
       "files": [{
-        "format": "yaml/info",
-        "destination": "cellular.info.yml"
-      }]
+          "format": "yaml/info",
+          "destination": "cellular.info.yml"
+        }]
     },
     "breakpoints": {
       "transformGroup": "yaml",
       "buildPath": "./",
       "files": [{
-        "format": "yaml/breakpoints",
-        "destination": "cellular.breakpoints.yml"
-      }]
+          "format": "yaml/breakpoints",
+          "destination": "cellular.breakpoints.yml"
+        }]
     }
   }
 }

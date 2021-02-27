@@ -18,13 +18,13 @@
 
 {% if cellular.header_position == 'header-left' %}
   <div class="main-content-wrapper">
-{% endif %}
-  {% include '@cellular/includes/header.html.twig' %}
+  {% endif %}
+  {% include '@cellular/region/header.html.twig' %}
 
   <!-- If header position is left then add wrapper div -->
   {% if cellular.header_position == 'header-left' %}
     <div class="content-right">
-  {% endif %}
+    {% endif %}
 
     <!-- If sample blocks enable -->
     {% if cellular.display_sample_blocks %}
@@ -33,17 +33,15 @@
       {% endif %}
     {% endif %}
     <!-- end sample blocks enable -->
-  {% if cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size' %}
-    <div
-      {{ page_header_attribute.addClass(page_header_classes) }}
-      {{ page_header_attribute.setAttribute('style', page_header_styles) }}>
-    {% endif %}
+    {% if cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size' %}
+      <div {{ page_header_attribute.addClass(page_header_classes) }} {{ page_header_attribute.setAttribute('style', page_header_styles) }}>
+      {% endif %}
       {% if not is_front %}
         {% if page.content_header %}
           {{page.content_header }}
         {% endif %}
       {% endif %}
-    {% if cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size' %}
+      {% if cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size' %}
       </div>
     {% endif %}
 
@@ -63,7 +61,8 @@
     <section class="content-wrapper">
       <div class="container">
         <div class="row">
-          <div {{ content_attributes.addClass(content_classes) }}>
+          <div
+            {{ content_attributes.addClass(content_classes) }}>
 
             <!-- page top section -->
             {% if page.content_top %}
@@ -71,11 +70,11 @@
             {% endif %}
             <!-- page top section -->
 
-    {% if node_has_image and (cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size') %}
-      {{ page.content|without('field_image') }}
-    {% else %}
-      {{ page.content }}
-    {% endif %}
+            {% if node_has_image and (cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size') %}
+              {{ page.content|without('field_image') }}
+            {% else %}
+              {{ page.content }}
+            {% endif %}
 
             <!-- page bottom section -->
             {% if page.content_bottom %}
@@ -105,12 +104,12 @@
     {% endif %}
     <!-- bottom top fluid section -->
 
-    {% include '@cellular/includes/footer.html.twig' %}
+    {% include '@cellular/region/footer.html.twig' %}
 
-  {% if cellular.header_position %}
+    {% if cellular.header_position %}
     </div>
   {% endif %}
 
-{% if cellular.header_position == 'header-left' %}
+  {% if cellular.header_position == 'header-left' %}
   </div>
 {% endif %}

@@ -1,0 +1,30 @@
+{
+  "library": {
+    "name": {
+      "value": "{info.name.value}",
+      "category": "drupal"
+    },
+    "css": {
+      {
+      "value": [
+              "dist/css/style.css",
+      "dist/css/print.css"
+      ],
+      "category": "drupal"
+    },
+    "js": {
+      {
+      "value": [
+              "dist/js/app.js"
+      ],
+      "category": "drupal"
+    },
+            "dependencies": {
+            "value": [
+                    "core/jquery",
+                    "core/jquery.once"
+            ],
+                    "category": "drupal"
+            }
+    }
+    }

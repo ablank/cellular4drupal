@@ -29,11 +29,13 @@
 %}
 
 {% if types is not empty %}
-  <ul{{ attributes.addClass(classes) }}>
+  <ul{{attributes.addClass(classes)}}>
     {% for type in types %}
-      <li{{ attributes.addClass(list_classes) }}>
-      {{ type.add_link }}
-      <p> {{ type.description }} </p>
+      <li{{attributes.addClass(list_classes)}}>
+        {{ type.add_link }}
+        <p>
+          {{ type.description }}
+        </p>
       </li>
     {% endfor %}
   </ul>
@@ -41,7 +43,9 @@
   <p>
     {% set create_content = path('node.type_add') %}
     {% trans %}
-      You have not created any content types yet. Go to the <a href="{{ create_content }}">content type creation page</a> to add a new content type.
+      You have not created any content types yet. Go to the
+      <a href="{{ create_content }}">content type creation page</a>
+      to add a new content type.
     {% endtrans %}
   </p>
 {% endif %}

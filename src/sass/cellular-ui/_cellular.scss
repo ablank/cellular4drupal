@@ -47,7 +47,7 @@ $border_radius: 0.5em;
       background-color: $title_background;
 
       &:focus,
-      &:hover {
+        &:hover {
         color: $title_color;
         background-color: $active_color;
       }
@@ -63,8 +63,8 @@ $border_radius: 0.5em;
 
           &.active,
           &:active,
-          &:focus,
-          &:hover {
+            &:focus,
+            &:hover {
             text-decoration: none;
             border: none;
           }

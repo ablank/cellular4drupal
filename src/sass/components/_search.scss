@@ -39,8 +39,8 @@ form.site-search {
       line-height: 1em;
 
       &:hover,
-      &:active,
-      &:focus {
+        &:active,
+        &:focus {
         color: $color-primary;
         border-color: $color-hilight;
         outline: none;
@@ -58,8 +58,8 @@ form.site-search {
       background-size: 1.4em;
 
       &:hover,
-      &:active,
-      &:focus {
+        &:active,
+        &:focus {
         border-color: $color-hilight;
         outline: none;
         background-color: darken($color-secondary, 8%);

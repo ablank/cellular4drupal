@@ -6,7 +6,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.cellular = {
     attach: function (context, settings) {
-      
+
       /* Init cellular functions */
       $('a[href^=tel]').each(function () {
         var num = $(this).attr('href').match(/\d+/g);

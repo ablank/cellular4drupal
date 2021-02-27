@@ -25,8 +25,8 @@ a {
   }
 
   &:hover,
-  &:active,
-  &:focus {
+    &:active,
+    &:focus {
     text-decoration: underline;
     color: $c2;
     outline: none;

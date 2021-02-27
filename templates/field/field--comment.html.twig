@@ -26,17 +26,19 @@
  * @see comment_preprocess_field()
  */
 #}
-<section{{ attributes }} {{ attributes.addClass('comments-wrapper') }}>
+<section{{attributes}} {{ attributes.addClass('comments-wrapper') }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes }} {{ title_attributes.addClass('comments-title') }}><span>{{ label }}</span></h2>
+    <h2{{title_attributes}} {{ title_attributes.addClass('comments-title') }}>
+      <span>{{ label }}</span>
+    </h2>
     {{ title_suffix }}
   {% endif %}
 
   {{ comments }}
 
   {% if comment_form %}
-    <h2{{ content_attributes }} {{ content_attributes.addClass('comment-form-title') }} >{{ 'Add new comment'|t }}</h2>
+    <h2{{content_attributes}} {{ content_attributes.addClass('comment-form-title') }}>{{ 'Add new comment'|t }}</h2>
     {{ comment_form }}
   {% endif %}
 

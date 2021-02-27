@@ -30,7 +30,7 @@
           transition: {
             background: 'img:first', // Selector for applying background image
             pause: 8 // Time (seconds) to pause between slides.
-              //speed: 500 // Animation speed (milliseconds).
+                    //speed: 500 // Animation speed (milliseconds).
           },
           autodim: true,
           delay: 1.4 // Time (seconds) to wait before dimming.
@@ -114,9 +114,9 @@
         $(document).on('ajaxStart', function () {
           NProgress.start();
         })
-          .on('ajaxComplete', function () {
-            NProgress.done().remove();
-          });
+                .on('ajaxComplete', function () {
+                  NProgress.done().remove();
+                });
       }
       /* End Drupal.behaviors.plugins */
     }

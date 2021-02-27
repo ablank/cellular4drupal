@@ -1,6 +1,6 @@
 # DO NOT EDIT DIRECTLY
 # @see ./style-dictionary /build/templates/breakpoints.template, /build/build.js, /tokens/globals/breakpoint.json, /config.json
-# Generated on Fri Feb 26 2021 13:15:50 GMT-0800 (Pacific Standard Time)
+# Generated on Sat Feb 27 2021 13:02:08 GMT-0800 (Pacific Standard Time)
 
 cellular.screen.default:
   label: default

@@ -66,9 +66,9 @@
 
   a {
     &:active,
-    &:hover,
-    &:focus,
-    &:visited {
+      &:hover,
+      &:focus,
+      &:visited {
       color: lighten($color-hilight, 33%);
     }
   }
@@ -115,9 +115,9 @@
     }
 
     &:active,
-    &:hover,
-    &:focus,
-    &:visited {
+      &:hover,
+      &:focus,
+      &:visited {
       border-color: $color-hilight;
       background: $color-primary-bg;
     }

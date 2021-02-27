@@ -1,7 +1,8 @@
 module.exports = {
-  plugins: [
-    require('autoprefixer'),
-    require('postcss-nested'),
-    require('cssnano')
-  ]
-}
+  plugins: {
+    autoprefixer: {},
+    autoprefixer: {
+      browsers: ['last 2 versions'],
+    },
+  },
+};

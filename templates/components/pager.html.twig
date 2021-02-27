@@ -33,13 +33,13 @@
 #}
 {% if items %}
   <nav class="pagination" role="navigation" aria-labelledby="pagination-heading">
-    <h4 class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <h4 class="hidden">{{ 'Pagination'|t }}</h4>
     <ul>
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
         <li class="page-item page-item--first">
-          <a class="page-link" href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}" rel="prev"{{ items.first.attributes }}>
-            <span class="visually-hidden">{{ 'First page'|t }}</span>
+          <a class="page-link" href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}" rel="prev" {{ items.first.attributes }}>
+            <span class="hidden">{{ 'First page'|t }}</span>
             <span aria-hidden="true">{{ items.first.text|default('first'|t) }}</span>
           </a>
         </li>
@@ -48,8 +48,8 @@
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
         <li class="page-item page-item--previous">
-          <a class="page-link" href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes }}>
-            <span class="visually-hidden">{{ 'Previous page'|t }}</span>
+          <a class="page-link" href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev" {{ items.previous.attributes }}>
+            <span class="hidden">{{ 'Previous page'|t }}</span>
             <span aria-hidden="true">{{ items.previous.text|default('previous'|t) }}</span>
           </a>
         </li>
@@ -63,8 +63,8 @@
           {% else %}
             {% set title = 'Go to page @key'|t({'@key': key}) %}
           {% endif %}
-          <a class="page-link" href="{{ item.href }}" title="{{ title }}"{{ item.attributes }}>
-            <span class="visually-hidden">
+          <a class="page-link" href="{{ item.href }}" title="{{ title }}" {{ item.attributes }}>
+            <span class="hidden">
               {{ current == key ? 'Current page'|t : 'Page'|t }}
             </span>
             {{- key -}}
@@ -75,8 +75,8 @@
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
         <li class="page-item page-item--next">
-          <a class="page-link" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes }}>
-            <span class="visually-hidden">{{ 'Next page'|t }}</span>
+          <a class="page-link" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next" {{ items.next.attributes }}>
+            <span class="hidden">{{ 'Next page'|t }}</span>
             <span aria-hidden="true">{{ items.next.text|default('next'|t) }}</span>
           </a>
         </li>
@@ -84,12 +84,12 @@
 
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
-      <li class="page-item page-item--last">
-        <a class="page-link" href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" rel="last"{{ items.last.attributes }}>
-          <span class="visually-hidden">{{ 'Last page'|t }}</span>
-          <span aria-hidden="true">{{ items.last.text|default('last'|t) }}</span>
-        </a>
-      </li>
+        <li class="page-item page-item--last">
+          <a class="page-link" href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" rel="last" {{ items.last.attributes }}>
+            <span class="hidden">{{ 'Last page'|t }}</span>
+            <span aria-hidden="true">{{ items.last.text|default('last'|t) }}</span>
+          </a>
+        </li>
       {% endif %}
 
     </ul>

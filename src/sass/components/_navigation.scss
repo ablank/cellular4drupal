@@ -34,9 +34,9 @@
       font-weight: normal;
 
       &:hover,
-      &:focus,
-      &:active,
-      &.active {
+        &:focus,
+        &:active,
+        &.active {
         text-decoration: none;
         color: $color-primary-bg;
         background: $color-hilight;
@@ -121,8 +121,8 @@
     @if ($nav-dropdown-show) == true {
       /* First lefel dropdown*/
       &:focus,
-      &:hover,
-      &.active {
+        &:hover,
+        &.active {
         > ul {
           @include transition();
 
@@ -155,7 +155,7 @@
         /* Secondary++ menu fly-out*/
         &.active,
         &:focus,
-        &:hover {
+          &:hover {
           > ul {
             width: 100%;
           }

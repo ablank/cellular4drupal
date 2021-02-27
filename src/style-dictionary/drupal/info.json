@@ -14,11 +14,11 @@
       "comment": "Theme description"
     },
     "libraries": {
-        "value": [
-            "cellular/cellular"
-        ],
-        "category": "info",
-        "comment": "List of namespaced libraries to include"
+      "value": [
+        "cellular/cellular"
+      ],
+      "category": "info",
+      "comment": "List of namespaced libraries to include"
     },
     "regions": {
       "value": [
@@ -39,8 +39,8 @@
     },
     "ckeditor_stylesheets": {
       "value": [
-        "dist/css/style.css"
-        ],
+        "'dist/css/style.css'"
+      ],
       "category": "info",
       "comment": "List of ckeditor stylesheets"
     }

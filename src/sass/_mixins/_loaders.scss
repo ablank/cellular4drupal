@@ -14,11 +14,11 @@ $i_ease: linear;
 /*@import 'animations'*/
 
 @mixin loader(
-  $name: null,
-  $url: null,
-  $size: $i_size,
-  $color: $i_color,
-  $speed: $i_speed
+$name: null,
+$url: null,
+$size: $i_size,
+$color: $i_color,
+$speed: $i_speed
 ) {
   /*  */
   position: relative;
@@ -98,7 +98,7 @@ $i_ease: linear;
   background-color: rgba($color, 0.1);
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     top: 0;
     left: 0;
@@ -139,7 +139,7 @@ $i_ease: linear;
   background-color: rgba($color, 0.2);
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     top: $size/2;
     left: $size / 2;
@@ -177,7 +177,7 @@ $i_ease: linear;
   /*animation: alpha $speed $ease infinite;*/
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -216,7 +216,7 @@ $i_ease: linear;
   background-color: $color;
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -257,7 +257,7 @@ $i_ease: linear;
   border-radius: 50%;
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     left: $size * 0.5;
     width: 0;
@@ -293,7 +293,7 @@ $i_ease: linear;
   /*border-radius: 50%;*/
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     width: $size/2;
     height: $size/2;
@@ -336,7 +336,7 @@ $i_ease: linear;
     border-radius: $size;
 
     &:before,
-    &:after {
+      &:after {
     }
     &:before {
     }
@@ -395,7 +395,7 @@ $i_ease: linear;
     background-color: rgba($color, 0.2);
 
     &:before,
-    &:after {
+      &:after {
     }
     &:before {
     }
@@ -422,7 +422,7 @@ $i_ease: linear;
   background-color: $color;
 
   &:before,
-  &:after {
+    &:after {
     position: absolute;
     width: $size;
     height: $height;

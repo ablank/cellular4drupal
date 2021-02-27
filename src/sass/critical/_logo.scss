@@ -32,7 +32,7 @@ $logo_svg: url("../assets/images/svg/logo.svg");
     will-change: width, height, transform;
 
     &:focus,
-    &:hover {
+      &:hover {
       box-shadow: 0 0 0.4em 0 $color-hilight;
     }
   }

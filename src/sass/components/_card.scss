@@ -51,12 +51,12 @@
     font-weight: bold;
   }
 
-  
+
   h2,
   h3 {
     color: $color-primary-bg;
     background-color: $color-primary;
-    
+
     &.big {
       margin: 0;
       padding: 0.15rem 0;
@@ -73,7 +73,7 @@
       padding: 1rem 1rem;
       border: 10px solid red;
     }
-    
+
     &:hover {
       color: #f90;
       border-color: #f90;

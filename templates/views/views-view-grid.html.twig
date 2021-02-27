@@ -53,12 +53,12 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<div{{ attributes.addClass(classes) }}>
+<div{{attributes.addClass(classes)}}>
   {% if options.alignment == 'horizontal' %}
     {% for row in items %}
-      <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+      <div{{row.attributes.addClass(row_classes,options.row_class_default?'row-'~loop.index)}}>
         {% for column in row.content %}
-          <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'c-' ~ loop.index) }}>
+          <div{{column.attributes.addClass(col_classes,options.col_class_default?'c-'~loop.index)}}>
             {{- column.content -}}
           </div>
         {% endfor %}
@@ -66,9 +66,9 @@
     {% endfor %}
   {% else %}
     {% for column in items %}
-      <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'c-' ~ loop.index) }}>
+      <div{{column.attributes.addClass(col_classes,options.col_class_default?'c-'~loop.index)}}>
         {% for row in column.content %}
-          <div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+          <div{{row.attributes.addClass(row_classes,options.row_class_default?'row-'~loop.index)}}>
             {{- row.content -}}
           </div>
         {% endfor %}

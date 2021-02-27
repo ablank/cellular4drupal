@@ -5,35 +5,35 @@ cellular.jScrollindicator = function (opts) {
     attach: "body",
     parent: null
   }, opts),
-    fn = {};
+          fn = {};
 
   fn.init = function () {
     var $obj = jQuery(this),
-    state = {scrolled: 0};
+            state = {scrolled: 0};
 
     $obj.once(o.cclass, function () {
       /*
-      var classes = [
-o.cclass,
-o.orient
-      ],
-      indicator = jQuery('<div class="'+cellular.classify(classes)+' " />');
-      jQuery(o.attach).prepend(indicator);
-*/
+       var classes = [
+       o.cclass,
+       o.orient
+       ],
+       indicator = jQuery('<div class="'+cellular.classify(classes)+' " />');
+       jQuery(o.attach).prepend(indicator);
+       */
     });
 
-  
-    $obj.on('scroll', cellular.debounce(function($obj, state) {
-      if(o.parent){
-        console.log(o.parent);
-      var ind = jQuery('.'+o.cclass),
-      parent = ind.parent(o.parent),
-      dst = jQuery(document).scrollTop();
 
-      state.scrolled = (dst/($obj.height()-parent.height())) * 100;
-      console.log('scrolled: '+ state.scrolled);
+    $obj.on('scroll', cellular.debounce(function ($obj, state) {
+      if (o.parent) {
+        console.log(o.parent);
+        var ind = jQuery('.' + o.cclass),
+                parent = ind.parent(o.parent),
+                dst = jQuery(document).scrollTop();
+
+        state.scrolled = (dst / ($obj.height() - parent.height())) * 100;
+        console.log('scrolled: ' + state.scrolled);
       }
-  }, 100));
+    }, 100));
   };
 
   return this.each(fn.init);

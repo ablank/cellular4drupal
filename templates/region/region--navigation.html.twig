@@ -14,13 +14,9 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-      'nav'
-  ]
-%}
+{% set classes = ['nav', 'primary'] %}
 {% if content %}
-	<div {{ attributes.addClass(classes) }}>
-		{{ content }}
-	</div>
+  <div {{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
 {% endif %}

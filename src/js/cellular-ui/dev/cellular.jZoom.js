@@ -5,7 +5,7 @@ cellular.jZoom = function (opts) {
     offsetX: "1em",
     offsetY: "1em",
   }, opts),
-    fn = {};
+          fn = {};
 
   fn.showZoom = function ($obj) {
 
@@ -24,8 +24,8 @@ cellular.jZoom = function (opts) {
   fn.style = function ($obj) {
     $obj.once(o.cclass, function () {
       jQuery(this).wrap('<span class="' + o.cclass + '-wrap" />')
-        .after('<span class="' + o.cclass + '-trigger">Zoom Image</span>')
-        .after('<span class="' + o.cclass + '-window">');
+              .after('<span class="' + o.cclass + '-trigger">Zoom Image</span>')
+              .after('<span class="' + o.cclass + '-window">');
     });
   };
   /**
@@ -50,9 +50,9 @@ cellular.jZoom = function (opts) {
    */
   fn.init = function () {
     var $obj = jQuery(this),
-      state = {
-        active: false
-      };
+            state = {
+              active: false
+            };
 
     fn.style($obj);
     //Set default content

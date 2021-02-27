@@ -7,32 +7,32 @@
  */
 cellular.breakpoint = function () {
   var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
-    win = {};
-/*
-  if (content) {
-    win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");    
-  } else {*/
-    // Provide default breakpoints if they aren't set by css.
-    var ww = jQuery(window).width();
-    switch (ww) {
-      case ww < 650:
-        win.type = 'window_small';
-        break;
-      case ww > 650 && ww < 800:
-        win.type = 'window_narrow';
-        break;
-      case ww > 1200:
-       win.type = 'window_large';
-        break;
-      case ww > 800 && ww < 1200:
-      default:
-        win.type = 'window_default';
-        break;
-    }
- // }
+          win = {};
+  /*
+   if (content) {
+   win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");
+   } else {*/
+  // Provide default breakpoints if they aren't set by css.
+  var ww = jQuery(window).width();
+  switch (ww) {
+    case ww < 650:
+      win.type = 'window_small';
+      break;
+    case ww > 650 && ww < 800:
+      win.type = 'window_narrow';
+      break;
+    case ww > 1200:
+      win.type = 'window_large';
+      break;
+    case ww > 800 && ww < 1200:
+    default:
+      win.type = 'window_default';
+      break;
+  }
+  // }
   jQuery('body').addClass(win.type);
 
-    win.size = ww;
+  win.size = ww;
 
   return win;
 };
@@ -48,7 +48,7 @@ cellular.activate = function (theclass) {
 
     if (!$t.hasClass(theclass)) {
       $t.addClass(theclass)
-        .siblings().removeClass(theclass);
+              .siblings().removeClass(theclass);
     }
   });
 };
@@ -96,14 +96,14 @@ cellular.debounce = function (func, wait, immediate) {
 
   return function () {
     var context = this,
-      args = arguments,
-      later = function () {
-        timeout = null;
-        if (!immediate) {
-          func.apply(context, args);
-        }
-      },
-      callNow = immediate && !timeout;
+            args = arguments,
+            later = function () {
+              timeout = null;
+              if (!immediate) {
+                func.apply(context, args);
+              }
+            },
+            callNow = immediate && !timeout;
 
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
@@ -119,13 +119,13 @@ cellular.debounce = function (func, wait, immediate) {
  */
 cellular.transitionend = function () {
   var t,
-    el = document.createElement("test"),
-    transitions = {
-      transition: "transitionend",
-      OTransition: "oTransitionEnd",
-      MozTransition: "transitionend",
-      WebkitTransition: "webkitTransitionEnd"
-    };
+          el = document.createElement("test"),
+          transitions = {
+            transition: "transitionend",
+            OTransition: "oTransitionEnd",
+            MozTransition: "transitionend",
+            WebkitTransition: "webkitTransitionEnd"
+          };
 
   for (t in transitions) {
     if (el.style[t] !== undefined) {
@@ -154,13 +154,13 @@ cellular.scrolltimer = function (el, uc, dc) {
  */
 cellular.buttonize = function (href, title, classes) {
   var btn = $('<a />')
-    .prop({
-      "href": href,
-      "title": title,
-      "tabindex": "0"
-    })
-    .text(title)
-    .classify(classes);
+          .prop({
+            "href": href,
+            "title": title,
+            "tabindex": "0"
+          })
+          .text(title)
+          .classify(classes);
 
   return $(this).append(btn);
 };

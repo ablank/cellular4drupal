@@ -22,7 +22,7 @@
     @include button($color-secondary, $color-secondary-bg);
 
     &:hover,
-    &:focus {
+      &:focus {
       color: $color-primary-bg;
       background: $color-primary;
     }

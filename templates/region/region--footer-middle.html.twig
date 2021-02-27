@@ -16,15 +16,14 @@
 #}
 {%
   set classes = [
-      region|clean_class,
-      'mt-3',
+      region|clean_class
   ]
 %}
 
 {% if content %}
-  <div{{ attributes }} {{ attributes.addClass(classes) }}>
-    <div class="container d-flex justify-content-center">
-    {{ content }}
-  </div>
+  <div{{attributes}} {{ attributes.addClass(classes) }}>
+    <div class="cell">
+      {{ content }}
+    </div>
   </div>
 {% endif %}

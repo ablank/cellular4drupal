@@ -21,7 +21,7 @@
         }
 
         var daterepeat = $('label[for="repeat-settings-fieldset"]'),
-          daterepeat_trigger = daterepeat.prev().find('label');
+                daterepeat_trigger = daterepeat.prev().find('label');
 
         daterepeat.prev().nextAll().wrapAll('<div class="daterepeat" />');
 

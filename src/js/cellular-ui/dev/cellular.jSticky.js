@@ -1,9 +1,9 @@
 cellular.jSticky = function (opts) {
   var fn = {},
-    o = jQuery.extend({
-      cclass = "jSticky",
-      offset: "20%" //Distance from top before activating sticky.
-    }, opts);
+          o = jQuery.extend({
+            cclass = "jSticky",
+            offset: "20%" //Distance from top before activating sticky.
+          }, opts);
 
   fn.style = function ($obj) {
     $obj.classify([o.cclass]);
@@ -11,15 +11,15 @@ cellular.jSticky = function (opts) {
 
   fn.update = function ($obj, ostyle) {
     var offsets = $obj.offset(),
-      scroll = jQuery(window).scrollTop();
+            scroll = jQuery(window).scrollTop();
 
     if (scroll >= offsets.top) {
       $obj.activate()
-        .css({
-          "position": "fixed",
-          "left": offsets.left,
-          "top": 0
-        });
+              .css({
+                "position": "fixed",
+                "left": offsets.left,
+                "top": 0
+              });
 
     } else {
       $obj.removeClass("mini");

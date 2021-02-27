@@ -84,9 +84,9 @@ cellular.jAV = function (opts) {
     },
     playlist: ''
   }, opts),
-    fn = {},
-    iframe = false,
-    uuid = new Date().getTime();
+          fn = {},
+          iframe = false,
+          uuid = new Date().getTime();
 
   /**
    * Play media.
@@ -137,18 +137,18 @@ cellular.jAV = function (opts) {
    */
   fn.getControls = function ($obj) {
     var block = $obj.find('.' + o.cclass + '-controls'),
-      controls = {
-        overlay: $obj.find('.' + o.cclass + '-overlay'),
-        seek: block.find('.seek-handle'),
-        vol: $obj.find('.volume'),
-        volHandle: block.find('.volume-handle'),
-        mute: block.find('.mute'),
-        play: block.find('.play'),
-        next: block.find('.next'),
-        prev: block.find('.prev'),
-        fullscreen: block.find('.fullscreen'),
-        loop: block.find('.loop')
-      };
+            controls = {
+              overlay: $obj.find('.' + o.cclass + '-overlay'),
+              seek: block.find('.seek-handle'),
+              vol: $obj.find('.volume'),
+              volHandle: block.find('.volume-handle'),
+              mute: block.find('.mute'),
+              play: block.find('.play'),
+              next: block.find('.next'),
+              prev: block.find('.prev'),
+              fullscreen: block.find('.fullscreen'),
+              loop: block.find('.loop')
+            };
 
     return controls;
   };
@@ -160,8 +160,8 @@ cellular.jAV = function (opts) {
    */
   fn.youtube = function ($obj, link) {
     var youtube,
-      controls = fn.getControls($obj),
-      vid;
+            controls = fn.getControls($obj),
+            vid;
     // match(\/youtu.be\/(.*))
 
     $obj.attr('id', o.cclass + '-' + uuid++);
@@ -172,12 +172,10 @@ cellular.jAV = function (opts) {
     if (link.indexOf('https://www.youtube.com/embed/')) {
       // Embed link: https://www.youtube.com/embed/Jy1O9PqvMD8
 
-    }
-    else if (link.indexOf('https://youtu.be/')) {
+    } else if (link.indexOf('https://youtu.be/')) {
       // Share link: https://youtu.be/Jy1O9PqvMD8
 
-    }
-    else if (link.indexOf('https://www.youtube.com/watch?v=')) {
+    } else if (link.indexOf('https://www.youtube.com/watch?v=')) {
       // Browser URL: https://www.youtube.com/watch?v=Jy1O9PqvMD8
 
     }
@@ -189,16 +187,16 @@ cellular.jAV = function (opts) {
 
     function onYouTubeIframeAPIReady() {
       var vid = link.match(/\/watch\?v=(.*)/),
-        uPlaylist = o.playlist,
-        youtube = new YT.Player($obj.find(o.type).attr('id'), {
-          height: o.attributes.height,
-          width: o.attributes.width,
-          videoId: vid,
-          events: {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange
-          }
-        });
+              uPlaylist = o.playlist,
+              youtube = new YT.Player($obj.find(o.type).attr('id'), {
+                height: o.attributes.height,
+                width: o.attributes.width,
+                videoId: vid,
+                events: {
+                  onReady: onPlayerReady,
+                  onStateChange: onPlayerStateChange
+                }
+              });
     }
     //console.log();
     jQuery(controls.play, controls.overlay).on('click', function (e) {
@@ -210,15 +208,14 @@ cellular.jAV = function (opts) {
           'aria-label': o.controls.pause,
           'title': o.controls.pause
         })
-          .text(o.controls.pause);
-      }
-      else {
+                .text(o.controls.pause);
+      } else {
         media.pause();
         $t.attr({
           'aria-label': o.controls.play,
           'title': o.controls.play
         })
-          .text(o.controls.pause);
+                .text(o.controls.pause);
       }
     });
   };
@@ -249,9 +246,9 @@ cellular.jAV = function (opts) {
     var media = jQuery('<' + o.type + '/>', {
       id: o.cclass + '-' + uuid++
     }),
-      overlay = jQuery('<div class="' + o.cclass + '-overlay" />'),
-      controls = '',
-      source = $obj.attr('data-src') || o.source;
+            overlay = jQuery('<div class="' + o.cclass + '-overlay" />'),
+            controls = '',
+            source = $obj.attr('data-src') || o.source;
 
     // Generate list of media sources.
     if (typeof (source !== 'undefined')) {
@@ -264,11 +261,9 @@ cellular.jAV = function (opts) {
         if (el.indexOf('https://www.youtube.com') !== -1 || el.indexOf('https://youtu.be') !== -1) {
           media = $obj;
           fn.youtube($obj, el);
-        }
-        else if (el.indexOf('https://vimeo.com') !== -1) {
+        } else if (el.indexOf('https://vimeo.com') !== -1) {
           fn.vimeo($obj, el);
-        }
-        else {
+        } else {
           media.append('<source src="' + el + '">');
         }
       });
@@ -281,11 +276,11 @@ cellular.jAV = function (opts) {
       for (var control in o.controls) {
         if (o.controls.hasOwnProperty(control)) {
           var btn = jQuery('<a>' + o.controls[control].text + '</a>')
-            .classify([control])
-            .attr({
-              "href": '#' + o.cclass + '-' + control,
-              "aria-label": o.controls[control].text
-            });
+                  .classify([control])
+                  .attr({
+                    "href": '#' + o.cclass + '-' + control,
+                    "aria-label": o.controls[control].text
+                  });
 
           controls.append(btn);
         }
@@ -293,7 +288,7 @@ cellular.jAV = function (opts) {
 
       if (typeof (o.controls.timeScrubber) !== 'undefined') {
         $obj.find('.timeScrubber').wrap('<div class="slider" />')
-          .append('<div class="seek-handle" />');
+                .append('<div class="seek-handle" />');
 
         //console.log($obj.find('.' + o.cclass + '-timeScrubber'));
       }
@@ -301,7 +296,7 @@ cellular.jAV = function (opts) {
 
       if (typeof (o.controls.volume) !== 'undefined') {
         $obj.find('.volume')
-          .append('<div class="volume-handle" />');
+                .append('<div class="volume-handle" />');
       }
 
     }
@@ -322,8 +317,8 @@ cellular.jAV = function (opts) {
    */
   fn.events = function ($obj, state) {
     var media = document.getElementById($obj.find(o.type).attr('id')),
-      controls = fn.getControls($obj),
-      $t;
+            controls = fn.getControls($obj),
+            $t;
 
     // console.log($obj.find(o.type));
     $obj.on('click', function () {
@@ -344,15 +339,14 @@ cellular.jAV = function (opts) {
           'aria-label': o.controls.pause.text,
           'title': o.controls.pause.text
         })
-          .text(o.controls.pause.text);
-      }
-      else {
+                .text(o.controls.pause.text);
+      } else {
         media.pause();
         $t.attr({
           'aria-label': o.controls.play.text,
           'title': o.controls.play.text
         })
-          .text(o.controls.play.text);
+                .text(o.controls.play.text);
       }
     });
 
@@ -398,16 +392,16 @@ cellular.jAV = function (opts) {
    */
   fn.init = function () {
     var $obj = jQuery(this),
-      state = {
-        active: false,
-        fullscreen: false,
-        buffering: false,
-        playing: o.attributes.autoplay = true ? true : false,
-        paused: o.attributes.autoplay = true ? false : true,
-        muted: false,
-        volume: o.opt.initVolume,
-        timer: 0
-      };
+            state = {
+              active: false,
+              fullscreen: false,
+              buffering: false,
+              playing: o.attributes.autoplay = true ? true : false,
+              paused: o.attributes.autoplay = true ? false : true,
+              muted: false,
+              volume: o.opt.initVolume,
+              timer: 0
+            };
 
     $obj.once(o.cclass, fn.style($obj));
     // Set default content

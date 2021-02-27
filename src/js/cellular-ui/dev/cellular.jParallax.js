@@ -1,16 +1,16 @@
-cellular.jParallax = function(opts) {
+cellular.jParallax = function (opts) {
   var o = jQuery.extend({
-      speed: 0.1,
-      direction: 'vertical' // 'vertical' || 'horizontal'
-    }, opts),
-    fn = {};
+    speed: 0.1,
+    direction: 'vertical' // 'vertical' || 'horizontal'
+  }, opts),
+          fn = {};
 
-  fn.update = function($obj) {
+  fn.update = function ($obj) {
     var win = jQuery(window),
-      bg = $obj.css('background-position').split(' '),
-      xPos = parseInt(bg[0]),
-      yPos = parseInt(bg[1]),
-      bgPos = '';
+            bg = $obj.css('background-position').split(' '),
+            xPos = parseInt(bg[0]),
+            yPos = parseInt(bg[1]),
+            bgPos = '';
 
     switch (o.direction) {
       case 'horizontal':
@@ -27,15 +27,15 @@ cellular.jParallax = function(opts) {
 
     $obj.css('background-position', bgPos);
     /*
-        function parallax() {
-          var yPos = $(window).scrollTop();
-          var bgPos = '-120px ' + ((yPos * (-0.1)) - 70) + 'px';
-          $('#app').css('background-position', bgPos);
-        }
-    */
+     function parallax() {
+     var yPos = $(window).scrollTop();
+     var bgPos = '-120px ' + ((yPos * (-0.1)) - 70) + 'px';
+     $('#app').css('background-position', bgPos);
+     }
+     */
   };
 
-  return this.each(function() {
+  return this.each(function () {
     var $obj = jQuery(this);
 
     $obj.addClass(cellular.opts.cclass);

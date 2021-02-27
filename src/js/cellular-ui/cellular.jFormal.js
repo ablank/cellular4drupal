@@ -17,7 +17,7 @@ cellular.jFormal = function (opts) {
     // get/set value of inputs
     jQuery(inputs).each(function () {
       var $t = jQuery(this),
-        hold = holder = $t.attr('placeholder');
+              hold = holder = $t.attr('placeholder');
       $t.on('focus', function () {
         holder = '';
         if (this.value === this.defaultValue) {

@@ -81,7 +81,7 @@
   clear: both;
   zoom: 1;
   &:after,
-  &:before {
+    &:before {
     display: block;
     clear: both;
     width: 100%;
@@ -159,7 +159,7 @@
   /* Apply pseudo-element selectors so old browsers still work*/
 
   &:checked,
-  &:not(:checked) {
+    &:not(:checked) {
     position: absolute;
     left: -999em;
 
@@ -173,7 +173,7 @@
       text-indent: $size * 1.8;
 
       &:before,
-      &:after {
+        &:after {
         position: absolute;
         top: 0;
         left: 0;
@@ -224,9 +224,9 @@
 }
 
 @mixin button(
-  $color: $color-hilight,
-  $background: $color-primary-bg,
-  $style: "flat"
+$color: $color-hilight,
+$background: $color-primary-bg,
+$style: "flat"
 ) {
   /* 'flat' || 'bevel'*/
   $color2: null;
@@ -253,7 +253,7 @@
     }
     &.active,
     &:active,
-    &:hover {
+      &:hover {
       text-decoration: none;
       border-color: $color2;
       outline: none;
@@ -303,8 +303,8 @@
     color: darken($color, 15%);
   }
   &:active,
-  &:focus,
-  &:hover {
+    &:focus,
+    &:hover {
     color: lighten($color, 15%);
   }
 }
@@ -327,10 +327,10 @@
   @if ($color_3 != nil) {
     background-image:
       linear-gradient(
-        to right,
-        $color_1 0%,
-        $color_2 50%,
-        $color_3 100%
+      to right,
+      $color_1 0%,
+      $color_2 50%,
+      $color_3 100%
       );
   }
 
@@ -357,10 +357,10 @@
   @if ($color_3 != nil) {
     background-image:
       linear-gradient(
-        to bottom,
-        $color_1 0%,
-        $color_2 50%,
-        $color_3 100%
+      to bottom,
+      $color_1 0%,
+      $color_2 50%,
+      $color_3 100%
       );
   }
 
@@ -385,9 +385,9 @@
   background-color: $color_1;
   background-image:
     radial-gradient(
-      ellipse farthest-side at center top,
-      $color_1 0%,
-      $color_2 100%
+    ellipse farthest-side at center top,
+    $color_1 0%,
+    $color_2 100%
     );
 }
 
@@ -418,10 +418,10 @@
 }
 
 @mixin triangle(
-  $width: $default-size,
-  $height: $default-size,
-  $color: $color-primary,
-  $direction: "left"
+$width: $default-size,
+$height: $default-size,
+$color: $color-primary,
+$direction: "left"
 ) {
   position: absolute;
   width: 0;
@@ -454,9 +454,9 @@
 }
 
 @mixin ribbon(
-  $width: $default-size,
-  $height: $default-size,
-  $color: $color-primary
+$width: $default-size,
+$height: $default-size,
+$color: $color-primary
 ) {
   position: relative;
   margin: 0 auto $height;
@@ -464,7 +464,7 @@
   border-bottom: darken($color, 10%) 1px solid;
   background-color: $color;
   &:after,
-  &:before {
+    &:before {
     position: absolute;
     bottom: -$height;
     content: " ";
@@ -481,9 +481,9 @@
 }
 
 @mixin popout(
-  $width: $default-size,
-  $height: $default-size,
-  $color: $color-primary
+$width: $default-size,
+$height: $default-size,
+$color: $color-primary
 ) {
   position: relative;
   margin: 0 0 $height;

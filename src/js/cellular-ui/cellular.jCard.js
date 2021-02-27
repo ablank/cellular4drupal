@@ -2,7 +2,7 @@ cellular.jCard = function (opts) {
   var o = jQuery.extend({
     cclass: "jCard"
   }, opts),
-    fn = {};
+          fn = {};
 
   fn.init = function () {
     var $obj = jQuery(this);
@@ -17,7 +17,7 @@ cellular.jCard = function (opts) {
           a1.attr('class') ? a1.attr('class') : null
         ]);
         $obj.wrap(wrapperlink)
-          .find('h2, h3').addClass('title');
+                .find('h2, h3').addClass('title');
       }
     });
 

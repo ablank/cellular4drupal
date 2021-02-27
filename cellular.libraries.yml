@@ -1,5 +1,4 @@
 cellular:
-  version: 0.1
   css:
     theme:
       dist/css/style.css: {}

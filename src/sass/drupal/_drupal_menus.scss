@@ -41,8 +41,8 @@
     }
     &.active,
     &:active,
-    &:focus,
-    &:hover {
+      &:focus,
+      &:hover {
       color: $color-hilight;
       background-color: $color-primary-bg;
     }

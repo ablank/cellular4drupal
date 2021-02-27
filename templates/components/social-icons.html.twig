@@ -23,21 +23,21 @@
 %}
 
 <ul {{social_attribute.addClass(social_classes) }}>
-	{% for link in obj.social_follow %}
-		{% if obj.link is not empty %}
-			<li>
-				<a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
-			</li>
-		{% endif %}
-	{% endfor %}
+  {% for link in obj.social_follow %}
+    {% if obj.link is not empty %}
+      <li>
+        <a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>
 
 <ul {{social_attribute.addClass(social_classes) }}>
-	{% for link in obj.social_share %}
-		{% if obj.link is not empty %}
-			<li>
-				<a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
-			</li>
-		{% endif %}
-	{% endfor %}
+  {% for link in obj.social_share %}
+    {% if obj.link is not empty %}
+      <li>
+        <a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>

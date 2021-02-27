@@ -110,8 +110,8 @@ $width: 800px;
       font-weight: bold;
     }
     a:active,
-    a:hover,
-    a:focus {
+      a:hover,
+      a:focus {
       @include textstroke($color-hilight, 2px);
 
       color: $color-secondary;
@@ -177,7 +177,7 @@ $width: 800px;
     background-color: $panel_color;
 
     &:hover,
-    &:focus {
+      &:focus {
       background-color: $color-hilight;
     }
   }
@@ -253,7 +253,7 @@ $width: 800px;
   }
 
   &:hover,
-  &:focus {
+    &:focus {
     border-color: $color-hilight;
   }
 
