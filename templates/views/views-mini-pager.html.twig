@@ -14,18 +14,18 @@
 {% if items.previous or items.next %}
   <nav role="navigation" aria-labelledby="Pager navigation">
     <h4 class="hidden">{{ 'Pagination'|t }}</h4>
-    <ul class="pagination js-pager__items">
+    <ul class="pager">
       {% if items.previous %}
-        <li class="page-item">
-          <a class="page-link" href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev" {{ items.previous.attributes|without('href', 'title', 'rel') }}>
+        <li class="pager-item">
+          <a class="pager-link" href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev" {{ items.previous.attributes|without('href', 'title', 'rel') }}>
             <span class="hidden">{{ 'Previous page'|t }}</span>
             <span aria-hidden="true">{{ items.previous.text|default('‹‹'|t) }}</span>
           </a>
         </li>
       {% endif %}
       {% if items.current %}
-        <li class="page-item active">
-          <a class="page-link">
+        <li class="pager-item active">
+          <a class="pager-link">
             {% trans %}
               Page
               {{ items.current }}
@@ -34,8 +34,8 @@
         </li>
       {% endif %}
       {% if items.next %}
-        <li class="page-item">
-          <a class="page-link" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next" {{ items.next.attributes|without('href', 'title', 'rel') }}>
+        <li class="pager-item">
+          <a class="pager-link" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next" {{ items.next.attributes|without('href', 'title', 'rel') }}>
             <span class="hidden">{{ 'Next page'|t }}</span>
             <span aria-hidden="true">{{ items.next.text|default('››'|t) }}</span>
           </a>

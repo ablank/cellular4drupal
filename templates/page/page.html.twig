@@ -1,9 +1,23 @@
+{#  Default page regions
+
+  - console: 'Console'
+  - header_top: 'Header Top'
+  - header: 'Header'
+  - header_bottom: 'Header Bottom'
+  - content_top: 'Content Top'
+  - content: 'Content'
+  - sidebar: 'Sidebar'
+  - content_bottom: 'Content Bottom'
+  - footer_top: 'Footer Top'
+  - footer: 'Footer'
+  - footer_bottom: 'Footer Bottom'
+  #}
+
 {% set page_header_attribute = create_attribute() %}
 {% set node_has_image = node.field_image.entity.uri.value %}
 
 {%
   set page_header_classes = [
-    'page-header-wrapper',
      cellular.page_header_style ? 'type-' ~ cellular.page_header_style|clean_class : 'empty',
      node.field_image.entity.uri.value  ? 'has-' ~ 'image' : 'no-image',
      cellular.page_header_style == 'box-size' ? 'container',
@@ -16,6 +30,28 @@
   ]
 %}
 
+{%
+  if page.sidebar
+  set content_classes = [
+    page.sidebar_right ? 'col-md-9',
+    page.sidebar_right is empty ? 'col-md-12'
+  ]
+  endif
+%}
+
+<a href="#main-content" class="hidden">{{ 'Skip to main content'|t }}</a>
+
+<div id="page-wrap" class="cell">
+
+  <div id="header" class="cell">
+
+  </div>
+
+</div>
+
+
+<!-- End new Dev-->
+<!-- start electra-->
 {% if cellular.header_position == 'header-left' %}
   <div class="main-content-wrapper">
   {% endif %}
@@ -51,12 +87,6 @@
     {% endif %}
     <!-- end top fluid section -->
 
-    {%
-            set content_classes = [
-              page.sidebar_right ? 'col-md-9',
-              page.sidebar_right is empty ? 'col-md-12'
-            ]
-    %}
 
     <section class="content-wrapper">
       <div class="container">
