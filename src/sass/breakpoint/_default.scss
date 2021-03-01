@@ -2,8 +2,7 @@
   * @file
   * Default breakpoint tweaks.
 */
-
-@media screen and (min-width: $breakpoint-default) and (max-width: $breakpoint-large) {
+@include mediaquery($mediaquery-default){
   /*///*/
 }
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9kZWZhdWx0LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztDQUdDOztBQUVEO0VBQ0UsTUFBSTtBQUNOIiwiZmlsZSI6Il9kZWZhdWx0LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcclxuICAqIEBmaWxlXHJcbiAgKiBEZWZhdWx0IGJyZWFrcG9pbnQgdHdlYWtzLlxyXG4qL1xyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogJGJyZWFrcG9pbnQtZGVmYXVsdCkgYW5kIChtYXgtd2lkdGg6ICRicmVha3BvaW50LWxhcmdlKSB7XHJcbiAgLy8vLy9cclxufVxyXG4iXX0= */

@@ -34,9 +34,9 @@ tr:nth-child(odd) {
 }
 
 td {
-  @include round($size-tiny, "bottom");
+  @include round($size-nano, "bottom");
 
-  padding: $size-tiny;
+  padding: $size-nano;
   border: $cell_border;
 }
 

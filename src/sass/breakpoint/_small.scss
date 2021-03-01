@@ -2,8 +2,7 @@
 * @file
 * Small/mobile media breakpoint tweaks.
 */
-
-@media screen and (max-width: $breakpoint-small) {
+@include mediaquery($mediaquery-small) {
   /*///*/
   p {
   }

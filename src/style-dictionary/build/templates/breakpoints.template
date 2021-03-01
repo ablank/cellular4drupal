@@ -10,20 +10,20 @@ breakpoint = {
   large: ""
 },
 allProperties = _.each(allProperties, function(prop) {
-    if(prop.attributes.category === 'breakpoint') {
-      if(prop.name === "breakpoint_default"){
-      breakpoint.default = prop.value;
-      }
-      if(prop.name === "breakpoint_small"){
+    
+      if(prop.name === "mediaquery_small"){
       breakpoint.small = prop.value;
       }
-      if(prop.name === "breakpoint_narrow"){
+      if(prop.name === "mediaquery_narrow"){
       breakpoint.narrow = prop.value;
       }
-      if(prop.name === "breakpoint_large"){
+      if(prop.name === "mediaquery_default"){
+      breakpoint.default = prop.value;
+      }
+      if(prop.name === "mediaquery_large"){
       breakpoint.large = prop.value;
       }
-    };
+      
       if(prop.name === "info_name"){
       theme = prop.value.toLowerCase();
       }
@@ -45,18 +45,9 @@ _.each(allProperties, function(prop) {
 });
 */
 %>
-<% print(theme) %>.screen.default:
-  label: default
-  mediaQuery: '(min-width: <% print(breakpoint.default) %>) && (max-width: <% print(breakpoint.large) %>)'
-  weight: 1
-  group: screen
-  multipliers:
-    - 1x
-    - 2x
-
 <% print(theme) %>.screen.small:
   label: small
-  mediaQuery: '(max-width: <% print(breakpoint.small) %>)'
+  mediaQuery: <% print(breakpoint.small) %>
   weight: 1
   group: screen
   multipliers:
@@ -65,7 +56,16 @@ _.each(allProperties, function(prop) {
 
 <% print(theme) %>.screen.narrow:
   label: narrow
-  mediaQuery: '(min-width: <% print(breakpoint.small) %>) && (max-width: <% print(breakpoint.default) %>)'
+  mediaQuery: <% print(breakpoint.narrow) %>
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+<% print(theme) %>.screen.default:
+  label: default
+  mediaQuery: <% print(breakpoint.default) %>
   weight: 1
   group: screen
   multipliers:
@@ -74,7 +74,7 @@ _.each(allProperties, function(prop) {
 
 <% print(theme) %>.screen.large:
   label: large
-  mediaQuery: '(min-width: <% print(breakpoint.large) %>)'
+  mediaQuery: <% print(breakpoint.large) %>
   weight: 1
   group: screen
   multipliers:

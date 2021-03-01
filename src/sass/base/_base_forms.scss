@@ -26,7 +26,7 @@ form {
     input[type="submit"] {
       display: inline;
       float: none;
-      margin: 0 $size-tiny;
+      margin: 0 $size-nano;
     }
   }
 
@@ -42,14 +42,14 @@ form {
 
     input[type="submit"] {
       float: none;
-      margin: $size-tiny auto;
+      margin: $size-nano auto;
     }
   }
 }
 
 fieldset {
-  margin: 2em $size-tiny 1em;
-  padding: $size-tiny;
+  margin: 2em $size-nano 1em;
+  padding: $size-nano;
   border: $default-border;
   /*@include clear();*/
 }
@@ -183,7 +183,7 @@ input {
 
   &[type="checkbox"] {
     + label:before {
-      border-radius: $size-tiny;
+      border-radius: $size-nano;
     }
 
     &:checked {
@@ -231,7 +231,6 @@ input {
   }
 }
 
-button,
 .button,
 input[type="button"],
 input[type="submit"] {

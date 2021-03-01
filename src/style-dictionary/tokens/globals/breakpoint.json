@@ -6,20 +6,34 @@
     },
     "default": {
       "category": "breakpoint",
-      "value": "960{breakpoint.unit.value}",
+      "value": "1600",
       "comment": ""
     },
     "small": {
       "category": "breakpoint",
-      "value": "600{breakpoint.unit.value}"
+      "value": "500"
     },
     "narrow": {
       "category": "breakpoint",
-      "value": "800{breakpoint.unit.value}"
+      "value": "960"
+    }
+  },
+  "mediaquery": {
+    "small": {
+      "category": "breakpoint",
+      "value": "'all and (max-width: {breakpoint.small.value}{breakpoint.unit.value})'"
+    },
+    "narrow": {
+      "category": "breakpoint",
+      "value": "'all and (min-width: {breakpoint.small.value}{breakpoint.unit.value}) and (max-width: {breakpoint.narrow.value}{breakpoint.unit.value})'"
+    },
+    "default": {
+      "category": "breakpoint",
+      "value": "'all and (min-width: {breakpoint.narrow.value}{breakpoint.unit.value}) and (max-width: {breakpoint.default.value}{breakpoint.unit.value})'"
     },
     "large": {
-      "category": "breakpoint",
-      "value": "1280{breakpoint.unit.value}"
+        "category": "breakpoint",
+        "value": "'all and (min-width: {breakpoint.default.value}{breakpoint.unit.value})'"
     }
   }
 }

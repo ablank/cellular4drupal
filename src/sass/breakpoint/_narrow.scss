@@ -3,7 +3,8 @@
 * Narrow/tablet media breakpoint tweaks.
 */
 
-@media screen and (min-width: $breakpoint-narrow) and (max-width: $breakpoint-default) {
+
+@include mediaquery($mediaquery-narrow) {
   /*///*/
   p {
   }

@@ -3,7 +3,7 @@
 * Large/tv media breakpoint tweaks.
 */
 
-@media screen and (min-width: $breakpoint-large) {
+@include mediaquery($mediaquery-large) {
   /*///*/
   p {
   }

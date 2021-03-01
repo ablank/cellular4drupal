@@ -3,9 +3,10 @@ use \Drupal\Component\Utility\Unicode;
 use \Drupal\Core\Asset\AttachedAssetsInterface;
 
 /**
-* Implements hook_suggestions_block_alter() for block name suggestions.
+* Implements hook_suggestions_block_alter()
 */
 function cellular_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+// Suggestions for block templates.
 if (isset($variables['elements']['content']['#block_content'])) {
 array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
 }
@@ -15,7 +16,7 @@ array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['
 * Implements hook_form_FORM_ID_alter().
 */
 function cellular_form_search_block_form_alter(&$form, $form_state) {
-// Adds placeholder text to the search field.
+// Add placeholder text to the search field.
 $form['keys']['#attributes']['placeholder'] = t('Search');
 }
 
@@ -24,7 +25,7 @@ $form['keys']['#attributes']['placeholder'] = t('Search');
 * Implements hook_theme_suggestions_HOOK_alter().
 */
 function cellular_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-
+// Suggestions for error page templates.
 $route_name = \Drupal::routeMatch()->getRouteName();
 switch ($route_name) {
 case 'system.404':
@@ -45,6 +46,7 @@ $theme_handler = \Drupal::service('theme_handler');
 $current_theme = $theme_handler->getDefault();
 $path = drupal_get_path('theme', $current_theme);
 $info = $theme_handler->getTheme($current_theme)->info;
+// Add conditional stylesheets
 if (!empty($info['conditional-stylesheets'])) {
 foreach ($info['conditional-stylesheets'] as $version => $media) {
 foreach ($media as $key => $file_path) {

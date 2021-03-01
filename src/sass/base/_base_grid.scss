@@ -79,7 +79,7 @@
   }
 }
 
-@media screen and (min-width: 0) and (max-width: $breakpoint-small) {
+@include mediaquery($mediaquery-small) {
   /* Set all cells to single-column*/
   #{$cells} {
     width: 100% - $cell_space;

@@ -1,5 +1,4 @@
-{#  Default page regions
-
+{#  Default page regions:
   - console: 'Console'
   - header_top: 'Header Top'
   - header: 'Header'
@@ -30,14 +29,18 @@
   ]
 %}
 
-{%
-  if page.sidebar
-  set content_classes = [
+{% for region in page %}
+{% if page.region %}
+  {{ page.region }}
+{% endif %}
+{% endfor %}
+
+{% if page.sidebar %}
+  {% set content_classes = [
     page.sidebar_right ? 'col-md-9',
     page.sidebar_right is empty ? 'col-md-12'
-  ]
-  endif
-%}
+  ] %}
+{% endif %}
 
 <a href="#main-content" class="hidden">{{ 'Skip to main content'|t }}</a>
 

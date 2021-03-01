@@ -6,9 +6,15 @@
       "category": "metric",
       "type": "size"
     },
+    "nano": {
+      "value": "0.25{default.unit.value}",
+      "scale": "0.25",
+      "category": "metric",
+      "type": "size"
+    },
     "tiny": {
-      "value": "0.4{default.unit.value}",
-      "scale": "0.4",
+      "value": "0.5{default.unit.value}",
+      "scale": "0.5",
       "category": "metric",
       "type": "size"
     },

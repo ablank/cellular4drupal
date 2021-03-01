@@ -21,10 +21,16 @@
   //
   /////
 */
+@mixin mediaquery($mediaquery: ""){
+  @media #{$mediaquery}{
+    @content; 
+  };
+}
+
 @mixin box-shadow($shadow...) {
   /* offset-x | offset-y | blur-radius | spread-radius | color*/
   @if length($shadow) == 0 {
-    $shadow: $default-offset $default-offset $size-tiny 1px $color-primary;
+    $shadow: $default-offset $default-offset $size-nano 1px $color-primary;
   }
 
   box-shadow: $shadow;
@@ -233,7 +239,7 @@ $style: "flat"
   $background2: null;
   & {
     width: auto;
-    margin: $size-tiny auto;
+    margin: $size-nano auto;
     padding: $size-small $default-size;
     cursor: pointer;
     text-align: center;

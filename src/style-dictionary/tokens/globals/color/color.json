@@ -1,5 +1,13 @@
 {
   "color": {
+    "hilight": {
+      "value": "#0057e0",
+      "category": "color"
+    },
+    "shadow": {
+      "value": "{swatch.dark-grey.value}",
+      "category": "color"
+    },
     "primary": {
       "value": "{swatch.black.value}",
       "category": "color"
@@ -50,14 +58,6 @@
     },
     "success": {
       "value": "{swatch.green.value}",
-      "category": "color"
-    },
-    "hilight": {
-      "value": "{swatch.cyan.value}",
-      "category": "color"
-    },
-    "shadow": {
-      "value": "{swatch.dark-grey.value}",
       "category": "color"
     }
   }
