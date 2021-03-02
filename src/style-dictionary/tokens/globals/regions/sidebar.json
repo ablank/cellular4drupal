@@ -4,10 +4,8 @@
       "width": {
         "value": "200"
       },
-      "font": {
-        "color": {
-          "value": "{color.primary.value}"
-        }
+      "color": {
+        "value": "{color.primary.value}"
       }
     }
   }

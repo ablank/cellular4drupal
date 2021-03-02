@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Mon, 01 Mar 2021 03:07:55 GMT
+  Generated on Mon, 01 Mar 2021 18:50:43 GMT
 */
 
 $button-border-size: 0.1rem;
@@ -27,13 +27,16 @@ $nav-text-size: 1rem;
 $nav-dropdown-show: true;
 $nav-dropdown-direction: 'left';
 $breakpoint-unit: px;
-$breakpoint-default: 1600;
+  // Styles for mobile devices.
 $breakpoint-small: 500;
+  // Styles for tablets.
 $breakpoint-narrow: 960;
-$mediaquery-small: 'all and (max-width: 500px)';
-$mediaquery-narrow: 'all and (min-width: 500px) and (max-width: 960px)';
-$mediaquery-default: 'all and (min-width: 960px) and (max-width: 1600px)';
-$mediaquery-large: 'all and (min-width: 1600px)';
+  // Styles for most laptop & desktop computers. Anything greater than this breakpoint is considered 'large'
+$breakpoint-default: 1600;
+$mediaquery-small: '(max-width: 500px)';
+$mediaquery-narrow: '(min-width: 500px) and (max-width: 960px)';
+$mediaquery-default: '(min-width: 960px) and (max-width: 1600px)';
+$mediaquery-large: '(min-width: 1600px)';
 $color-hilight: #0057e0;
 $color-shadow: #555;
 $color-primary: #101010;
@@ -137,15 +140,15 @@ $region-content-font-color: #101010;
 $region-footer-bg: #101010;
 $region-footer-font-color: #fffbf0;
 $region-header-bg: #101010;
-$region-header-font-color: #fffbf0;
+$region-header-color: #fffbf0;
 $region-header-position: fixed;
 $region-margin: 0;
 $region-padding: 0;
 $region-border: 0;
   // List of regions to generate an id/class list.
-$region-list: console,header_top,header,header_bottom,content_top,content,sidebar,content_bottom,footer_top,footer,footer_bottom;
+$region-list: navigation,console,header_top,header,header_bottom,content_top,content,sidebar,content_bottom,footer_top,footer,footer_bottom;
 $region-sidebar-width: 200;
-$region-sidebar-font-color: #101010;
+$region-sidebar-color: #101010;
 $font-stack-times: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 $font-stack-garamond: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;;
 $font-stack-georgia: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
@@ -188,6 +191,6 @@ $info-description: A sweet starter theme for Drupal;
   // List of namespaced libraries to include
 $info-libraries: cellular/cellular;
   // List of page regions
-$info-regions: console,header_top,header,header_bottom,content_top,content,sidebar,content_bottom,footer_top,footer,footer_bottom;
+$info-regions: navigation,console,header_top,header,header_bottom,content_top,content,sidebar,content_bottom,footer_top,footer,footer_bottom;
   // List of ckeditor stylesheets
 $info-ckeditor-stylesheets: 'dist/css/style.css'

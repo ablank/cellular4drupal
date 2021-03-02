@@ -1,0 +1,12 @@
+<!-- =============================== sidebar ===============================-->
+{%
+  set classes = [
+    cellular.sidebar_position,
+  ]
+%}
+
+{% if content %}
+  <aside id="sidebar" role="complementary" {{ attributes.addClass(classes) }}>
+    {{ content }}
+  </aside>
+{% endif %}

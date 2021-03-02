@@ -1,15 +1,8 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /info.json, /build/templates/info.template, /build/build.js, /config.json
+# @see ./style-dictionary /drupal/info.json, /build/templates/info.template
 # Generated on <% print(new Date().toString()) %>
 <%
-var theme = {
-  name: "",
-  version: "",
-  description: "",
-  dependencies: [],
-  libraries: [],
-  regions: []
-},
+var theme = {},
 allProperties = _.each(allProperties, function(prop) {    
     if(prop.attributes.category === 'info') {
       //console.log(prop);
@@ -23,7 +16,7 @@ allProperties = _.each(allProperties, function(prop) {
       theme.libraries = prop.value;
       }
       if(prop.name === "info_version"){
-     theme.version = prop.value;
+      theme.version = prop.value;
       }
       if(prop.name === "info_regions"){
       theme.regions = prop.value;      
@@ -60,8 +53,7 @@ core_version_requirement: ^8 || ^9
 
 libraries:<% 
     _.each(theme.libraries, function(library){
-      output = '\n  - ' + library;
-      print(output);
+      print(`\n  - ${library}`);
     });%>
 
 regions:<%    
@@ -71,15 +63,12 @@ regions:<%
       for (var i = 0; i < splitStr.length; i++) {
           splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
       }
-      name = splitStr.join(' '); 
-
-      output = '\n  - ' + region + ": '" + name + "'";
-
-      print(output);
-    });  %>
+      name = splitStr.join(' ');
+      print(`\n  - ${region}: '${name}'`);
+    });%>
 <% if(theme.ckeditor){ %>
 ckeditor_stylesheets:<%    
     _.each(theme.ckeditor, function(stylesheet){
-      print('\n  - ' + stylesheet);
+      print(`\n  - ${stylesheet}`);
     });  %>
 <% } %>

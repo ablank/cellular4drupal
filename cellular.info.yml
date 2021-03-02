@@ -1,6 +1,6 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /info.json, /build/templates/info.template, /build/build.js, /config.json
-# Generated on Sun Feb 28 2021 19:07:56 GMT-0800 (Pacific Standard Time)
+# @see ./style-dictionary /drupal/info.json, /build/templates/info.template
+# Generated on Mon Mar 01 2021 10:50:44 GMT-0800 (Pacific Standard Time)
 
 name: Cellular
 version: 1.0
@@ -14,6 +14,7 @@ libraries:
   - cellular/cellular
 
 regions:
+  - navigation: 'Navigation'
   - console: 'Console'
   - header_top: 'Header Top'
   - header: 'Header'

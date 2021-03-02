@@ -1,27 +1,22 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /build/templates/breakpoints.template, /build/build.js, /tokens/globals/breakpoint.json, /config.json
+# @see ./style-dictionary /build/templates/mediaquerys.template, /build/build.js, /tokens/globals/mediaquery.json, /config.json
 # Generated on <% print(new Date().toString()) %>
 <%
 var theme = "",
-breakpoint = {
-  default: "",
-  small: "",
-  narrow: "",
-  large: ""
-},
+mediaquery = {},
 allProperties = _.each(allProperties, function(prop) {
     
       if(prop.name === "mediaquery_small"){
-      breakpoint.small = prop.value;
+      mediaquery.small = prop.value;
       }
       if(prop.name === "mediaquery_narrow"){
-      breakpoint.narrow = prop.value;
+      mediaquery.narrow = prop.value;
       }
       if(prop.name === "mediaquery_default"){
-      breakpoint.default = prop.value;
+      mediaquery.default = prop.value;
       }
       if(prop.name === "mediaquery_large"){
-      breakpoint.large = prop.value;
+      mediaquery.large = prop.value;
       }
       
       if(prop.name === "info_name"){
@@ -47,7 +42,7 @@ _.each(allProperties, function(prop) {
 %>
 <% print(theme) %>.screen.small:
   label: small
-  mediaQuery: <% print(breakpoint.small) %>
+  mediaQuery: <% print(mediaquery.small) %>
   weight: 1
   group: screen
   multipliers:
@@ -56,7 +51,7 @@ _.each(allProperties, function(prop) {
 
 <% print(theme) %>.screen.narrow:
   label: narrow
-  mediaQuery: <% print(breakpoint.narrow) %>
+  mediaQuery: <% print(mediaquery.narrow) %>
   weight: 1
   group: screen
   multipliers:
@@ -65,7 +60,7 @@ _.each(allProperties, function(prop) {
 
 <% print(theme) %>.screen.default:
   label: default
-  mediaQuery: <% print(breakpoint.default) %>
+  mediaQuery: <% print(mediaquery.default) %>
   weight: 1
   group: screen
   multipliers:
@@ -74,7 +69,7 @@ _.each(allProperties, function(prop) {
 
 <% print(theme) %>.screen.large:
   label: large
-  mediaQuery: <% print(breakpoint.large) %>
+  mediaQuery: <% print(mediaquery.large) %>
   weight: 1
   group: screen
   multipliers:

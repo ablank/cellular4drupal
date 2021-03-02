@@ -4,36 +4,42 @@
       "category": "unit",
       "value": "px"
     },
-    "default": {
-      "category": "breakpoint",
-      "value": "1600",
-      "comment": ""
-    },
     "small": {
-      "category": "breakpoint",
-      "value": "500"
+      "category": "mediaquery",
+      "value": "500",
+      "comment": "Styles for mobile devices."
     },
     "narrow": {
-      "category": "breakpoint",
-      "value": "960"
+      "category": "mediaquery",
+      "value": "960",
+      "comment": "Styles for tablets."
+    },
+    "default": {
+      "category": "mediaquery",
+      "value": "1600",
+      "comment": "Styles for most laptop & desktop computers. Anything greater than this breakpoint is considered 'large'"
     }
   },
   "mediaquery": {
     "small": {
-      "category": "breakpoint",
-      "value": "'all and (max-width: {breakpoint.small.value}{breakpoint.unit.value})'"
+      "category": "mediaquery",
+      "value": "'(max-width: {breakpoint.small.value}{breakpoint.unit.value})'"
     },
     "narrow": {
-      "category": "breakpoint",
-      "value": "'all and (min-width: {breakpoint.small.value}{breakpoint.unit.value}) and (max-width: {breakpoint.narrow.value}{breakpoint.unit.value})'"
+      "category": "mediaquery",
+      "value": "'(min-width: {breakpoint.small.value}{breakpoint.unit.value}) and (max-width: {breakpoint.narrow.value}{breakpoint.unit.value})'"
     },
     "default": {
-      "category": "breakpoint",
-      "value": "'all and (min-width: {breakpoint.narrow.value}{breakpoint.unit.value}) and (max-width: {breakpoint.default.value}{breakpoint.unit.value})'"
+      "category": "mediaquery",
+      "value": "'(min-width: {breakpoint.narrow.value}{breakpoint.unit.value}) and (max-width: {breakpoint.default.value}{breakpoint.unit.value})'"
     },
     "large": {
-        "category": "breakpoint",
-        "value": "'all and (min-width: {breakpoint.default.value}{breakpoint.unit.value})'"
+        "category": "mediaquery",
+        "value": "'(min-width: {breakpoint.default.value}{breakpoint.unit.value})'"
+    },
+    "retina": {
+        "category": "mediaquery",
+        "value": "'screen and (min-resolution: 192dpi) and (min-resolution: 2dppx)'"
     }
   }
 }

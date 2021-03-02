@@ -16,16 +16,16 @@
 #}
 {%
   set classes = [
-    'region',
+    'container',
+    'header',
     'region-' ~ region|clean_class,
-    'page-header',
   ]
 %}
 
 {% if content %}
   <section {{ attributes }} {{ attributes.addClass(classes) }}>
-    <div class="container">
-      <div class="banner-content page-header-content">
+
+      <div class="banner">
         {{ content }}
       </div>
     </div>
