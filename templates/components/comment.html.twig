@@ -66,7 +66,6 @@
  * @ingroup themeable
  */
 #}
-
 <article>
   {#
       Hide the "new" indicator by default, let a piece of JavaScript ask the
@@ -74,7 +73,6 @@
       indicator here would break the render cache.
     #}
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-
   <footer>
     {% if user_picture %}
       <div class="author-pic">
@@ -82,7 +80,6 @@
       </div>
     {% endif %}
     <p>{{ submitted }}</p>
-
     {#
           Indicate the semantic relationship between parent and child comments for
           accessibility. The list is difficult to navigate in a screen reader
@@ -94,7 +91,6 @@
       {% endif %}
     </div>
   </footer>
-
   <div{{content_attributes}} {{ content_attributes.addClass('comment-content')}}>
     {% if title %}
       {{ title_prefix }}

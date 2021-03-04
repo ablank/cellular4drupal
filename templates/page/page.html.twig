@@ -11,40 +11,15 @@
   - footer: 'Footer'
   - footer_bottom: 'Footer Bottom'
   #}
-
 {% set node_has_image = node.field_image.entity.uri.value %}
-
-{% for region in page %}
-	{% if page.region %}
-		{{ page.region }}
-	{% endif %}
-{% endfor %}
-
 <a href="#main-content" class="hidden">{{ 'Skip to main content'|t }}</a>
-
 <div id="page-wrap" class="cell">
-	<!-- page header -->
 {% include '@cellular/region/header.html.twig' %}
-	<!-- page main section -->
-<div {{ content_attributes.addClass(content_classes) }}>
-	<!-- page top section -->
-	{% if page.content_top %}
-		{{ page.content_top }}
-	{% endif %}
-	
-	{% if node_has_image and (cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size') %}
-		{{ page.content|without('field_image') }}
-	{% else %}
-		{{ page.content }}
-	{% endif %}
-	
-	{% if page.content_bottom %}
-		{{ page.content_bottom }}
-	{% endif %}
-</div>
+{% include '@cellular/region/content.html.twig' %}
 {% if page.sidebar %}
-	{% include '@cellular/region/region--sidebar.html.twig' %}
+	{% include '@cellular/region/sidebar.html.twig' %}
 {% endif %}
-	{% include '@cellular/region/footer.html.twig' %}
-	<!-- /page footer -->
+{% include '@cellular/region/footer.html.twig' %}
 </div>
+
+{{ devel_dump(page) }}

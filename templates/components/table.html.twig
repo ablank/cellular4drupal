@@ -41,8 +41,12 @@
  * @ingroup themeable
  */
 #}
-<div class="table-responsive">
-  <table {{ attributes.addClass('table')}} {{ attributes }}>
+{% set classes = [
+
+]
+%}
+<div class="responsive">
+  <table {{ attributes.addClass(classes)}} {{ attributes }}>
     {% if caption %}
       <caption>{{ caption }}</caption>
     {% endif %}

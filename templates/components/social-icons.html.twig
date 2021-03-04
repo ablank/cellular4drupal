@@ -1,10 +1,6 @@
-{%
-  set social_classes = [
-    'social-icons'
-    cellular.display_social_round_icons ? 'round',
-  ];
-  set obj = cellular.social_profiles; 
-  set social_follow = [
+{% set social_attribute = create_attribute() %}
+{% set obj = cellular.social_profiles %}
+{% set social_follow = [
     social_facebook,
     social_instagram,
     social_linkedin,
@@ -12,8 +8,9 @@
     social_google,
     social_twitter,
     social_github
-  ];
-  set social_share = [
+  ]; 
+%}
+{% set social_share = [
     social_facebook,
     social_google,
     social_linkedin,
@@ -21,8 +18,12 @@
     social_reddit
   ];
 %}
-
-<ul {{social_attribute.addClass(social_classes) }}>
+{% set social_classes = [
+    'social-icons',
+    cellular.social_icon_style
+  ]
+%}
+<ul {{ social_attribute.addClass(social_classes) }}>
   {% for link in obj.social_follow %}
     {% if obj.link is not empty %}
       <li>
@@ -32,7 +33,7 @@
   {% endfor %}
 </ul>
 
-<ul {{social_attribute.addClass(social_classes) }}>
+<ul {{ social_attribute.addClass(social_classes) }}>
   {% for link in obj.social_share %}
     {% if obj.link is not empty %}
       <li>

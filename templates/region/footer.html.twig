@@ -1,21 +1,15 @@
+{% set classes = [
+
+]
+ %}
 <!-- =============================== footer ===============================-->
-
-{% set social_attribute = create_attribute() %}
-{%
-  set social_classes = [
-    'social-icons',
-    cellular.display_social_round_icons == true ? 'round' : null,
-  ]
-%}
     <footer id="footer">
-
     {% if page.footer_top or cellular.social_profiles %}
       {{ page.footer_top }}
       {% if cellular.social_profiles | length > 0 %}
         {% include '@cellular/components/social-icons.html.twig' %}
       {% endif %}
     {% endif %}
-
     {% if page.footer %}
       {{ page.footer }}
     {% endif %}

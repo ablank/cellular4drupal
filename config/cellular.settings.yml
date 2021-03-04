@@ -1,12 +1,17 @@
 display_sample_blocks: true
 user_page_intro: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Browse our site and see for yourself why you need Cellular.'
 header_color: '#ffffff'
-header_link_style: 'navbar-light'
-header_type: 'standard'
-header_type_sticky: true
-header_type_sticky_resize: true
+header_position: 'top'
+header_sticky: true
 page_header_style: 'default'
-display_social_round_icons: true
-copyright_text : '© Copyright @year. All Rights Reserved'
-display_theme_credits : true
-header_position : 'header-top'
+social_icon_style: 'rounded'
+social_profiles:
+  - facebook: '',
+  - instagram: '',
+  - googleplus: '',
+  - youtube: '',
+  - linkedin: '',
+  - twitter: '',
+  - github: '',
+copyright_text : '© Copyright @year.'
+theme_credits : true
