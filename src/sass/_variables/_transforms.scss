@@ -16,12 +16,13 @@ $offsets: ();
   $offsets: append($offsets, unquote(".offset-#{$cell}"), comma);
 }
 
-/* Generate list of region ids*/
+/* Generate list of region ids
 $regions: ();
 
 @each $region in $region-list {
   $regions: append($regions, unquote("##{$region},"));
 }
+*/
 
 /* Content Region spacing*/
 $region-space: ($region-margin * 2) + ($region-padding * 2) +

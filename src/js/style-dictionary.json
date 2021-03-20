@@ -129,7 +129,6 @@
   "RegionMargin": "0",
   "RegionPadding": "0",
   "RegionBorder": "0",
-  "RegionList": ["navigation","primary_menu","secondary_menu","breadcrumb","console","header_top","header","header_bottom","content_top","content","content_bottom","sidebar","footer_top","footer","footer_bottom"],
   "RegionSidebarWidth": "200",
   "RegionSidebarColor": "#101010",
   "FontStackTimes": "Cambria, \"Hoefler Text\", Utopia, \"Liberation Serif\", \"Nimbus Roman No9 L Regular\", Times, \"Times New Roman\", serif",
@@ -166,11 +165,5 @@
   "TextFont": "\"Palatino Linotype\", Palatino, Palladio, \"URW Palladio L\", \"Book Antiqua\", Baskerville, \"Bookman Old Style\", \"Bitstream Charter\", \"Nimbus Roman No9 L\", Garamond, \"Apple Garamond\", \"ITC Garamond Narrow\", \"New Century Schoolbook\", \"Century Schoolbook\", \"Century Schoolbook L\", Georgia, serif;",
   "TextSize": "1rem",
   "TextLineHeight": "1.4rem",
-  "TextMaxWidth": "32rem",
-  "InfoName": "Cellular",
-  "InfoVersion": "1.0",
-  "InfoDescription": "A sweet starter theme for Drupal",
-  "InfoLibraries": ["cellular/cellular"],
-  "InfoRegions": ["navigation","primary_menu","secondary_menu","breadcrumb","console","header_top","header","header_bottom","content_top","content","content_bottom","sidebar","footer_top","footer","footer_bottom"],
-  "InfoCkeditorStylesheets": ["'dist/css/style.css'"]
+  "TextMaxWidth": "32rem"
 }

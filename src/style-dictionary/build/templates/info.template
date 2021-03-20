@@ -12,6 +12,9 @@ allProperties = _.each(allProperties, function(prop) {
       if(prop.name === "info_description"){
       theme.description = prop.value;
       }
+      if(prop.name === "info_screenshot"){
+      theme.screenshot = prop.value;
+      }
       if(prop.name === "info_libraries"){
       theme.libraries = prop.value;
       }
@@ -20,6 +23,9 @@ allProperties = _.each(allProperties, function(prop) {
       }
       if(prop.name === "info_regions"){
       theme.regions = prop.value;      
+      }
+      if(prop.name === "info_features"){
+      theme.features = prop.value;      
       }
       if(prop.name === "info _ckeditor_stylesheets"){
       theme.ckeditor = prop.value;      
@@ -50,7 +56,9 @@ base theme: false
 description: <% print(theme.description) %>
 package: <% print(theme.name) %>
 core_version_requirement: ^8 || ^9
-
+<% if(theme.screenshot){ %>
+screenshot: <% print(theme.screenshot);%>
+<% } %>
 libraries:<% 
     _.each(theme.libraries, function(library){
       print(`\n  - ${library}`);
@@ -64,8 +72,14 @@ regions:<%
           splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
       }
       name = splitStr.join(' ');
-      print(`\n  - ${region}: '${name}'`);
+      print(`\n  ${region}: '${name}'`);
     });%>
+<% if(theme.features){ %>
+features:<%    
+    _.each(theme.features, function(feature){
+      print(`\n  - ${feature}`);
+    });  %>
+<% } %>
 <% if(theme.ckeditor){ %>
 ckeditor_stylesheets:<%    
     _.each(theme.ckeditor, function(stylesheet){

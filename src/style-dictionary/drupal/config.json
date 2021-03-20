@@ -4,22 +4,6 @@
     "src/style-dictionary/drupal/info.json"
   ],
   "platforms": {
-    "scss": {
-      "transformGroup": "sass/cellular",
-      "buildPath": "src/",
-      "files": [{
-          "format": "sass/cellular",
-          "destination": "sass/_variables/_style-dictionary.scss"
-        }]
-    },
-    "js": {
-      "transformGroup": "js",
-      "buildPath": "src/",
-      "files": [{
-          "format": "json/flat",
-          "destination": "js/style-dictionary.json"
-        }]
-    },
     "info": {
       "transformGroup": "yaml",
       "buildPath": "./",

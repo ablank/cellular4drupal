@@ -1,6 +1,6 @@
 # DO NOT EDIT DIRECTLY
 # @see ./style-dictionary /drupal/info.json, /build/templates/info.template
-# Generated on Wed Mar 17 2021 19:16:02 GMT-0700 (Pacific Daylight Time)
+# Generated on Sat Mar 20 2021 14:32:33 GMT-0700 (Pacific Daylight Time)
 
 name: Cellular
 version: 1.0
@@ -10,23 +10,31 @@ description: A sweet starter theme for Drupal
 package: Cellular
 core_version_requirement: ^8 || ^9
 
+screenshot: dist/assets/images/screenshot.png
+
 libraries:
   - cellular/cellular
 
 regions:
-  - navigation: 'Navigation'
-  - primary_menu: 'Primary Menu'
-  - secondary_menu: 'Secondary Menu'
-  - breadcrumb: 'Breadcrumb'
-  - console: 'Console'
-  - header_top: 'Header Top'
-  - header: 'Header'
-  - header_bottom: 'Header Bottom'
-  - content_top: 'Content Top'
-  - content: 'Content'
-  - content_bottom: 'Content Bottom'
-  - sidebar: 'Sidebar'
-  - footer_top: 'Footer Top'
-  - footer: 'Footer'
-  - footer_bottom: 'Footer Bottom'
+  primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
+  breadcrumb: 'Breadcrumb'
+  console: 'Console'
+  header_top: 'Header Top'
+  header: 'Header'
+  header_bottom: 'Header Bottom'
+  content_top: 'Content Top'
+  content: 'Content'
+  content_bottom: 'Content Bottom'
+  sidebar: 'Sidebar'
+  footer_top: 'Footer Top'
+  footer: 'Footer'
+  footer_bottom: 'Footer Bottom'
+
+features:
+  - favicon
+  - slogan
+  - comment_user_picture
+  - node_user_picture
+
 

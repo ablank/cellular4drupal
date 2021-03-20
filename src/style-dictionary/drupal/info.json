@@ -13,6 +13,11 @@
       "category": "info",
       "comment": "Theme description"
     },
+    "screenshot": {
+      "value": "dist/assets/images/screenshot.png",
+      "category": "info",
+      "comment": "Image displayed in Admin/Appearance"
+    },
     "libraries": {
       "value": [
         "cellular/cellular"
@@ -22,7 +27,6 @@
     },
     "regions": {
       "value": [
-        "navigation",
         "primary_menu",
         "secondary_menu",
         "breadcrumb",
@@ -40,6 +44,15 @@
       ],
       "category": "info",
       "comment": "List of page regions"
+    },
+    "features": {
+      "value": [
+        "favicon",
+        "slogan",
+        "comment_user_picture",
+        "node_user_picture"
+      ],
+      "category": "info"
     },
     "ckeditor_stylesheets": {
       "value": [

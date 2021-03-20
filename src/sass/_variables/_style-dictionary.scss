@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Thu, 18 Mar 2021 02:16:00 GMT
+  Generated on Sat, 20 Mar 2021 21:32:33 GMT
 */
 
 $button-border-size: 0.1rem;
@@ -146,8 +146,6 @@ $region-header-position: fixed;
 $region-margin: 0;
 $region-padding: 0;
 $region-border: 0;
-  // List of regions to generate an id/class list.
-$region-list: navigation,primary_menu,secondary_menu,breadcrumb,console,header_top,header,header_bottom,content_top,content,content_bottom,sidebar,footer_top,footer,footer_bottom;
 $region-sidebar-width: 200;
 $region-sidebar-color: #101010;
 $font-stack-times: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
@@ -184,14 +182,4 @@ $text-color: #101010;
 $text-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;;
 $text-size: 1rem;
 $text-line-height: 1.4rem;
-$text-max-width: 32rem;
-$info-name: Cellular;
-$info-version: 1.0;
-  // Theme description
-$info-description: A sweet starter theme for Drupal;
-  // List of namespaced libraries to include
-$info-libraries: cellular/cellular;
-  // List of page regions
-$info-regions: navigation,primary_menu,secondary_menu,breadcrumb,console,header_top,header,header_bottom,content_top,content,content_bottom,sidebar,footer_top,footer,footer_bottom;
-  // List of ckeditor stylesheets
-$info-ckeditor-stylesheets: 'dist/css/style.css'
+$text-max-width: 32rem

@@ -1,6 +1,6 @@
 # DO NOT EDIT DIRECTLY
 # @see ./style-dictionary /build/templates/mediaquerys.template, /build/build.js, /tokens/globals/mediaquery.json, /config.json
-# Generated on Wed Mar 17 2021 19:16:02 GMT-0700 (Pacific Daylight Time)
+# Generated on Sat Mar 20 2021 14:32:33 GMT-0700 (Pacific Daylight Time)
 
 cellular.screen.small:
   label: small

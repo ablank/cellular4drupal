@@ -1,9 +1,10 @@
-/* Define all regions using list.*/
+/* Define all regions using list.
 $regions: ();
 
 @each $region in $region-list {
   $regions: append($regions, unquote("##{$region},"));
 }
+*/
 
 $region-space: ($region-margin * 2) + ($region-padding * 2) +
 ($region-border * 2);
