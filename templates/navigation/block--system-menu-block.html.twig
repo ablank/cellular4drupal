@@ -35,7 +35,7 @@
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('sr-only') %}
   {% endif %}
-  <h2{{title_attributes.setAttribute('id',heading_id)}}>{{ configuration.label }}</h2>
+  <h2{{ title_attributes.setAttribute('id',heading_id) }}>{{ configuration.label }}</h2>
 
   {% block content %}
     {{ content }}

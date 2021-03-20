@@ -1,10 +1,10 @@
+<!-- =============================== footer ===============================-->
 {% set classes = [
 
 ]
  %}
-<!-- =============================== footer ===============================-->
-    <footer id="footer">
-    {% if page.footer_top or cellular.social_profiles %}
+ <footer id="footer">
+    {% if page.footer_top or cellular.social_follow %}
       {{ page.footer_top }}
       {% if cellular.social_profiles | length > 0 %}
         {% include '@cellular/components/social-icons.html.twig' %}
@@ -18,7 +18,7 @@
    <div id="footer-bottom" class="">
    {{ page.footer_bottom }}
     <p class="copyright">{{ cellular.copyright_text }}</p>
-    <p class="copyright">{{cellular.theme_credits }}</p>
+    <p class="copyright">{{ cellular.theme_credits }}</p>
    </div>
     {% endif %}
     

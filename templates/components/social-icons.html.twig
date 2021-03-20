@@ -1,43 +1,32 @@
 {% set social_attribute = create_attribute() %}
-{% set obj = cellular.social_profiles %}
-{% set social_follow = [
-    social_facebook,
-    social_instagram,
-    social_linkedin,
-    social_youtube,
-    social_google,
-    social_twitter,
-    social_github
-  ]; 
-%}
-{% set social_share = [
-    social_facebook,
-    social_google,
-    social_linkedin,
-    social_twitter,
-    social_reddit
-  ];
-%}
 {% set social_classes = [
-    'social-icons',
+    'social',
     cellular.social_icon_style
   ]
 %}
-<ul {{ social_attribute.addClass(social_classes) }}>
-  {% for link in obj.social_follow %}
-    {% if obj.link is not empty %}
+{% set social_follow_classes = social_classes|merge([
+    'follow',
+  ])
+%}
+{% set social_share_classes = social_classes|merge([
+    'share',
+  ])
+%}
+<ul{{ social_attribute.addClass(social_follow_classes) }}>
+  {% for title, link in cellular.social_follow %}
+    {% if link is not empty %}
       <li>
-        <a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
+        <a href="{{ link }}" class="{{ title }}" target="_blank"></a>
       </li>
     {% endif %}
   {% endfor %}
 </ul>
 
-<ul {{ social_attribute.addClass(social_classes) }}>
-  {% for link in obj.social_share %}
-    {% if obj.link is not empty %}
+<ul{{ social_attribute.addClass(social_share_classes) }}>
+  {% for title, link in cellular.social_share %}
+    {% if title is not empty %}
       <li>
-        <a href="{{ obj.link }}" class="{{link}}" target="_blank"></a>
+        <a href="{{ share.link }}" class="{{ link }}" target="_blank"></a>
       </li>
     {% endif %}
   {% endfor %}

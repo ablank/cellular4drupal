@@ -1,33 +1,21 @@
 <!-- =============================== header ===============================-->
-{% set page_header_attribute = create_attribute() %}
 {%
   set header_classes = [
     cell,
-    cellular.header_link_style,
+    cellular.header_style,
     cellular.header_type,
     cellular.header_position,
   ]
 %}
-{%
-  set page_header_classes = [
-     cellular.page_header_style ? 'type-' ~ cellular.page_header_style|clean_class : 'empty',
-     node.field_image.entity.uri.value  ? 'has-' ~ 'image' : 'no-image',
-     cellular.page_header_style == 'box-size' ? 'container',
-  ]
-%}
-{%
-  set page_header_styles = [
-    node.field_image.entity.uri.value ?: 'background-image: url(' ~ file_url(node.field_image.entity.uri.value) ~');'
-  ]
-%}
 {% if page.header_top %}
+{% set header_classes = header_classes|merge(['top-header']) %}
 <div id="header_top" class="cell">
   {{ page.header_top }}
 </div>
 {% endif %}
 <div id="header"{{ attributes.addClass(header_classes) }}
-{{ create_attribute({'data-fixed': cellular.header_type_sticky}) }}
-{{ create_attribute({'data-resize': cellular.header_type_sticky_resize}) }}
+{{ attributes }}
+{{ create_attribute({'data-fixed': cellular.header_sticky}) }}
 {{ create_attribute({'data-bgcolor': cellular.header_color}) }}>
   {% include '@cellular/components/logo.html.twig' %}
   {% if page.navigation %}

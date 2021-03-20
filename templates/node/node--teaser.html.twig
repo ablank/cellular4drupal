@@ -73,11 +73,11 @@
  */
 #}
 
-<article{{attributes}}>
+<article{{ attributes }}>
 
   {{ title_prefix }}
   {% if not page %}
-    <h2{{title_attributes}}>
+    <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
   {% endif %}
@@ -86,7 +86,7 @@
   {% if display_submitted and not page %}
     <footer class="author-info">
       {{ author_picture }}
-      <div{{author_attributes}}>
+      <div{{ author_attributes }}>
         {% trans %}
           by
           {{ author_name }}
@@ -97,7 +97,7 @@
       </footer>
     {% endif %}
 
-    <div{{content_attributes}}>
+    <div{{ content_attributes }}>
       {{ content }}
     </div>
 

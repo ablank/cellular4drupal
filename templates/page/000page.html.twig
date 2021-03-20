@@ -1,0 +1,25 @@
+{#  Default page regions:
+  - console: 'Console'
+  - header_top: 'Header Top'
+  - header: 'Header'
+  - header_bottom: 'Header Bottom'
+  - content_top: 'Content Top'
+  - content: 'Content'
+  - sidebar: 'Sidebar'
+  - content_bottom: 'Content Bottom'
+  - footer_top: 'Footer Top'
+  - footer: 'Footer'
+  - footer_bottom: 'Footer Bottom'
+  #}
+{% set node_has_image = node.field_image.entity.uri.value %}
+<a href="#main-content" class="visually-hidden">{{ 'Skip to main content'|t }}</a>
+<div id="page-wrap" class="cell">
+{% include '@cellular/region/header.html.twig' %}
+{% include '@cellular/region/content.html.twig' %}
+{% if page.sidebar %}
+	{% include '@cellular/region/sidebar.html.twig' %}
+{% endif %}
+{% include '@cellular/region/footer.html.twig' %}
+</div>
+
+{{ devel_dump(page) }}

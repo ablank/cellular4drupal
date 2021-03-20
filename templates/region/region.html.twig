@@ -20,7 +20,10 @@
   ]
 %}
 {% if content %}
-  <div{{attributes.addClass(classes)}}>
+  <div{{ attributes.addClass(classes) }}>
     {{ content }}
   </div>
 {% endif %}
+
+
+{{ dump() }}

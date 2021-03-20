@@ -57,19 +57,13 @@
     errors ? 'form-item--error',
   ]
 %}
-
-{% if type not in ['checkbox', 'radio'] %}
-  {% set classes = classes|merge(['form-group']) %}
-{% endif %}
-
 {%
   set description_classes = [
     'description',
-    'text-muted',
-    description_display == 'invisible' ? 'hidden sr-only',
+    description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
-<div{{attributes.addClass(classes)}}>
+<div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
   {% endif %}
@@ -77,7 +71,7 @@
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
   {% if description_display == 'before' and description.content %}
-    <div{{description.attributes}}>
+    <div{{ description.attributes }}>
       {{ description.content }}
     </div>
   {% endif %}
@@ -94,8 +88,8 @@
     </div>
   {% endif %}
   {% if description_display in ['after', 'invisible'] and description.content %}
-    <small{{description.attributes.addClass(description_classes)}}>
+    <div{{ description.attributes.addClass(description_classes) }}>
       {{ description.content }}
-    </small>
+    </div>
   {% endif %}
 </div>

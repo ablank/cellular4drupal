@@ -1,8 +1,8 @@
-const _ = require('lodash'),
-        fs = require("fs"),
-        svg2png = require("svg2png"),
-        directories = ['src/assets/icons/svg/'],
-        destination = 'dist/assets/icons/png/';
+const _ = require('lodash');
+const fs = require('fs');
+const svg2png = require("svg2png");
+const directories = ['src/assets/icons/svg/'];
+const destination = 'dist/assets/icons/png/';
 
 var files = _.each(directories, directory => {
   fs.readdir(directory, (err, files) => {
@@ -24,7 +24,6 @@ var files = _.each(directories, directory => {
       fs.readFile(file, value => svg2png)
               .then(fs.writeFile('${destination}${name}', buffer))
               .catch(e => console.error(e));
-
     });
   });
 });

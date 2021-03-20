@@ -53,13 +53,13 @@
 
     {% for colgroup in colgroups %}
       {% if colgroup.cols %}
-        <colgroup{{colgroup.attributes}}>
+        <colgroup{{ colgroup.attributes }}>
           {% for col in colgroup.cols %}
-            <col{{col.attributes}}/>
+            <col{{ col.attributes }}/>
           {% endfor %}
         </colgroup>
       {% else %}
-        <colgroup{{colgroup.attributes}}/>
+        <colgroup{{ colgroup.attributes }}/>
       {% endif %}
     {% endfor %}
 
@@ -67,9 +67,9 @@
       <thead>
         <tr>
           {% for cell in header %}
-            <{{cell.tag}}{{cell.attributes}}>
+            <{{ cell.tag }}{{ cell.attributes }}>
             {{- cell.content -}}
-            </{{cell.tag}}>
+            </{{ cell.tag }}>
           {% endfor %}
         </tr>
       </thead>
@@ -78,11 +78,11 @@
     {% if rows %}
       <tbody>
         {% for row in rows %}
-          <tr{{row.attributes}}>
+          <tr{{ row.attributes }}>
             {% for cell in row.cells %}
-              <{{cell.tag}}{{cell.attributes}}>
+              <{{ cell.tag }}{{ cell.attributes }}>
               {{- cell.content -}}
-              </{{cell.tag}}>
+              </{{ cell.tag }}>
             {% endfor %}
           </tr>
         {% endfor %}
@@ -97,11 +97,11 @@
     {% if footer %}
       <tfoot>
         {% for row in footer %}
-          <tr{{row.attributes}}>
+          <tr{{ row.attributes }}>
             {% for cell in row.cells %}
-              <{{cell.tag}}{{cell.attributes}}>
+              <{{ cell.tag }}{{ cell.attributes }}>
               {{- cell.content -}}
-              </{{cell.tag}}>
+              </{{ cell.tag }}>
             {% endfor %}
           </tr>
         {% endfor %}

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: cellular_parallax
-label: Parallax
-revision: 0
-description: 'Create custom parallax sections with background image or video'

@@ -50,13 +50,38 @@ function cellular_preprocess_html(&$variables)
 }
 
 /**
+ * Implements hook_preprocess_page().
+ */
+function cellular_preprocess_page(&$variables)
+{
+    $config = \Drupal::config('system.site');
+    $variables['site_name'] = $config->get('name');
+    $variables['site_slogan'] = $config->get('slogan');
+
+    // Apply a special class to the homepage, which often has no distinct content
+    // type but often needs special design treatment.
+    $variables['attributes']['class'][] = \Drupal::service('path.matcher')->isFrontPage() ? 'frontpage' : '';
+    // Apply a class at the page level based on content type if we're on a node
+    // page. Also helpful when you need to modify global elements that appear
+    // outside the node itself.
+    $variables['attributes']['class'][] = isset($variables['node_type']) ? 'node-' . $variables['node_type'] : '';
+    // Check whether the user is logged in.
+    $variables['attributes']['class'][] = $variables['logged_in'] ? 'logged-in' : 'anonymous';
+    
+    if(theme_get_setting('display_sample_content', 'cellular')){  
+    print('<h1>display_sample_content</h1>');
+    }
+    
+}
+
+/**
  * Implements hook_preprocess_node().
  */
 function cellular_preprocess_node(&$variables)
 {
     $type = $variables['node']->getType();
     $mode = $variables['view_mode'];
-    !isset($variables['attributes']['class']) ?:$variables['attributes']['class'] = [];
+    !isset($variables['attributes']['class']) ?: $variables['attributes']['class'] = [];
     $variables['attributes']['class'][] = 'node--type-' . $type; // ex: node--type-article
     $variables['attributes']['class'][] = 'node--mode-' . $mode; // ex: node--mode-teaser
 }
@@ -64,13 +89,14 @@ function cellular_preprocess_node(&$variables)
 /**
  * Implements template_preprocess_block().
  */
-function cellular_preprocess_block(&$variables){
-    // return if not a block   
-    if(!isset($variables['elements']['content']['#block_content'])) {
+function cellular_preprocess_block(&$variables)
+{
+    // return if not a block
+    if (!isset($variables['elements']['content']['#block_content'])) {
         return;
     }
     !isset($variables['attributes']['class']) ?: $variables['attributes']['class'] = [];
-    $bundle = $variables['elements']['content']['#block_content']->bundle();    
+    $bundle = $variables['elements']['content']['#block_content']->bundle();
     $variables['attributes']['class'][] = 'block--bundle-' . $bundle;
 }
 
@@ -126,7 +152,7 @@ function cellular_preprocess(&$variables)
         'header_color',
         'copyright_text',
         'display_theme_credits',
-        'social_profiles',
+        'social_follow',
         'social_links_follow',
         'social_links_round',
     ];
@@ -134,14 +160,14 @@ function cellular_preprocess(&$variables)
         'page_header_style',
     ];
 
-    $social_profiles = [
-        'social_profile_facebook',
-        'social_profile_instagram',
-        'social_profile_googleplus',
-        'social_profile_linkedin',
-        'social_profile_twitter',
-        'social_profile_youtube',
-        'social_profile_github',
+    $social_follow = [
+        'facebook',
+        'instagram',
+        'googleplus',
+        'linkedin',
+        'twitter',
+        'youtube',
+        'github',
     ];
 
     $textarea_settings = [
@@ -159,16 +185,16 @@ function cellular_preprocess(&$variables)
     // Get Page options.
     foreach ($page_settings as $page_setting) {
         $value = trim(theme_get_setting($page_setting, 'cellular'));
-        if(!empty($value)){
+        if (!empty($value)) {
             $variables['cellular'][$page_setting] = Xss::filter($value);
         }
     }
 
     // Get social profiles.
-    foreach ($social_profiles as $social_profile) {
+    foreach ($social_follow as $social_profile) {
         $value = trim(theme_get_setting($social_profile, 'cellular'));
         if (!empty($value)) {
-            $variables['cellular']['social_profiles'][$social_profile] = Xss::filter($value);
+            $variables['cellular']['social_follow'][$social_profile] = Xss::filter($value);
         }
     }
 
@@ -213,9 +239,10 @@ function cellular_theme_suggestions_block_alter(array &$suggestions, array $vari
 /**
  * Implements hook_theme_suggestions_menu_alter()
  */
-function cellular_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+function cellular_theme_suggestions_menu_alter(array &$suggestions, array $variables)
+{
     $suggestions[] = $variables['navigation'];
-  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -282,6 +309,8 @@ function cellular_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $a
  */
 function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
 {
+    
+  $form['cellular_settings']['#attributes']['enctype'] = 'multipart/form-data';
     // Footer copyrights settings.
     $form['cellular_settings'] = [
         '#type' => 'fieldset',
@@ -303,14 +332,14 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         '#group' => 'tabs',
     ];
 
-    $form['cellular_settings']['general']['options']['display_sample_blocks'] = [
+    $form['cellular_settings']['general']['options']['display_sample_content'] = [
         '#type' => 'checkbox',
-        '#title' => t('Show Sample Blocks'),
-        '#default_value' => theme_get_setting('display_sample_blocks', 'cellular'),
+        '#title' => t('Show Sample Content'),
+        '#default_value' => theme_get_setting('display_sample_content', 'cellular'),
         '#description' => t('Just shows sample blocks for your idea. On production disable this'),
     ];
 
-    $form['cellular_settings']['general']['options']['user_page_intro'] = [
+    $form['cellular_settings']['general']['options']['user_page_welcome'] = [
         '#type' => 'textarea',
         '#title' => t('User Page Intro'),
         '#default_value' => theme_get_setting('user_page_welcome', 'cellular'),
@@ -325,6 +354,13 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         '#group' => 'tabs',
     ];
 //////
+    $form['cellular_settings']['layout']['options']['header_sticky'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Sticky Header'),
+        '#default_value' => theme_get_setting('header_sticky', 'cellular'),
+        '#description' => t('Enable the sticky header when scrolling down the page'),
+    ];
+
     $form['cellular_settings']['layout']['options']['header_position'] = [
         '#type' => 'select',
         '#title' => t('Header Position'),
@@ -336,12 +372,17 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
             'right' => t('Right'),
         ],
     ];
-    
-    $form['cellular_settings']['header']['options']['header_sticky'] = [
-        '#type' => 'checkbox',
-        '#title' => t('Sticky Header'),
-        '#default_value' => theme_get_setting('header_sticky', 'cellular'),
-        '#description' => t('Enable the sticky header when scrolling down the page'),
+
+    $form['cellular_settings']['layout']['options']['header_style'] = [
+        '#type' => 'select',
+        '#title' => t('Page Header Style'),
+        '#default_value' => theme_get_setting('header_style', 'cellular'),
+        '#description' => t('If node has field_image then image will be shown as background.'),
+        '#options' => [
+            'default' => t('Default'),
+            'box-size' => t('Banner'),
+            'full-size' => t('Full Size'),
+        ],
     ];
 
     $form['cellular_settings']['layout']['options']['header_color'] = [
@@ -351,19 +392,14 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         '#description' => t('Choose color that applies to header as background color. If choose header type Overlay, then background color will apply only when sticky header'),
     ];
 
-    $form['cellular_settings']['layout']['options']['page_header_style'] = [
-        '#type' => 'select',
-        '#title' => t('Page Header Style'),
-        '#default_value' => theme_get_setting('page_header_style', 'cellular'),
-        '#description' => t('Choose page header style. If node has field_image field then image shown as background.'),
-        '#options' => [
-            'default' => t('Default'),
-            'box-size' => t('Banner'),
-            'full-size' => t('Full Size'),
-        ],
+    $form['cellular_settings']['layout']['options']['header_img'] = [
+        '#type' => 'file',
+        '#title' => t('Page Header Image'),
+        '#default_value' => theme_get_setting('header_img', 'cellular'),
+        '#description' => t('Default header image if no field_image is present.'),
     ];
 
-    $form['cellular_settings']['social']['social_profiles'] = [
+    $form['cellular_settings']['social']['social_follow'] = [
         '#type' => 'details',
         '#title' => t('Social Profiles'),
         '#collapsible' => true,
@@ -371,7 +407,7 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         '#group' => 'tabs',
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_icon_style'] = [
+    $form['cellular_settings']['social']['social_follow']['social_icon_style'] = [
         '#type' => 'select',
         '#title' => t('Icons style'),
         '#default_value' => theme_get_setting('social_icon_style', 'cellular'),
@@ -383,45 +419,45 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         ],
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_profile_facebook'] = [
+    $form['cellular_settings']['social']['social_follow']['facebook'] = [
         '#type' => 'textfield',
         '#title' => t('Facebook'),
-        '#default_value' => theme_get_setting('social_profile_facebook', 'cellular'),
+        '#default_value' => theme_get_setting('facebook', 'cellular'),
         '#description' => t('Your facebook page/profile url'),
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_profile_instagram'] = [
+    $form['cellular_settings']['social']['social_follow']['instagram'] = [
         '#type' => 'textfield',
         '#title' => t('Instagram'),
-        '#default_value' => theme_get_setting('social_profile_instagram', 'cellular'),
+        '#default_value' => theme_get_setting('instagram', 'cellular'),
         '#description' => t('Your instagram page/profile url'),
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_profile_twitter'] = [
+    $form['cellular_settings']['social']['social_follow']['twitter'] = [
         '#type' => 'textfield',
         '#title' => t('Twitter'),
-        '#default_value' => theme_get_setting('social_profile_twitter', 'cellular'),
+        '#default_value' => theme_get_setting('twitter', 'cellular'),
         '#description' => t('Your Twitter username (no @).'),
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_profile_youtube'] = [
+    $form['cellular_settings']['social']['social_follow']['youtube'] = [
         '#type' => 'textfield',
         '#title' => t('Youtube'),
-        '#default_value' => theme_get_setting('social_profile_youtube', 'cellular'),
+        '#default_value' => theme_get_setting('youtube', 'cellular'),
         '#description' => t('Your YouTube URL'),
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_profile_googleplus'] = [
+    $form['cellular_settings']['social']['social_follow']['googleplus'] = [
         '#type' => 'textfield',
         '#title' => t('Google+'),
-        '#default_value' => theme_get_setting('social_profile_googleplus', 'cellular'),
+        '#default_value' => theme_get_setting('googleplus', 'cellular'),
         '#description' => t('Your Google+ page/profile URL'),
     ];
 
-    $form['cellular_settings']['social']['social_profiles']['social_profile_linkedin'] = [
+    $form['cellular_settings']['social']['social_follow']['linkedin'] = [
         '#type' => 'textfield',
         '#title' => t('LinkedIn'),
-        '#default_value' => theme_get_setting('social_profile_linkedin', 'cellular'),
+        '#default_value' => theme_get_setting('linkedin', 'cellular'),
         '#description' => t('Your LinkedIn page/profile url'),
     ];
 
@@ -433,6 +469,17 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         '#group' => 'tabs',
     ];
 
+    $form['cellular_settings']['footer']['footer_options']['show_copyright_text'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Show copyright text'),
+        '#default_value' => theme_get_setting('show_copyright_text', 'cellular'),
+        '#states' => [
+            'enabled' => [
+                ':input[name="copyright_text"]' => ['value' => theme_get_setting('copyright_text', 'cellular')],
+            ],
+        ],
+    ];
+
     $form['cellular_settings']['footer']['footer_options']['copyright_text'] = [
         '#type' => 'textfield',
         '#title' => t('Enter copyright text'),
@@ -441,9 +488,33 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
     ];
 
     $form['cellular_settings']['footer']['footer_options']['theme_credits'] = [
-        '#type' => 'fieldset',
+        '#type' => 'checkbox',
         '#title' => t('Display Theme Credits'),
-        '#collapsible' => true,
-        '#collapsed' => true,
+        '#default_value' => theme_get_setting('theme_credits', 'cellular'),
+        '#description' => t('Display theme credits'),
     ];
+}
+/**
+ * 
+ */
+function cellular_form_system_theme_settings_submit(&$form, FormStateInterface $form_state) {
+  $validators = array();
+  $dest = 'sites/default/files/images';
+  $file = file_save_upload('header_img', $validators, $dest);
+  //$file will be 0 if the upload doesn't exist, or the $dest directory
+  //isn't writable
+  if ($file != 0) {
+    $dest_path = 'upload_directory/file';
+    $result = file_copy($file, $dest_path, FILE_EXISTS_RENAME);
+    if ($result == 1) {
+      //Success, $file object will contain a different (renamed)
+      //filename and filepath if the destination existed
+    }
+    else {
+      //Failure
+    }
+  }
+  else {
+    form_set_error('cellular_form_system_theme_settings', t("Failed to save the file."));
+  }
 }

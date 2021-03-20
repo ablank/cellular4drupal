@@ -23,14 +23,17 @@
     "regions": {
       "value": [
         "navigation",
+        "primary_menu",
+        "secondary_menu",
+        "breadcrumb",
         "console",
         "header_top",
         "header",
         "header_bottom",
         "content_top",
         "content",
-        "sidebar",
         "content_bottom",
+        "sidebar",
         "footer_top",
         "footer",
         "footer_bottom"

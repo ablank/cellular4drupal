@@ -17,15 +17,12 @@
 {%
   set classes = [
     'region-' ~ region|clean_class,
+    'banner',
   ]
 %}
 
 {% if content %}
-  <section {{ attributes }} {{ attributes.addClass(classes) }}>
-
-      <div class="banner">
+  <div{{ attributes }} {{ attributes.addClass(classes) }}>
         {{ content }}
-      </div>
-    </div>
-  </section>
+  </div>
 {% endif %}

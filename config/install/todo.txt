@@ -1,0 +1,17 @@
+1  Place block in regions
+2.  Go to configuration manager and export config files and remove from it uuid and core config hash
+for example breadcrumb block block.block.MY_THEME_breadcrumbs.yml file
+3. Place config files to MY_THEME/config/install directory
+4. Uninstall my theme and clear all cache
+5. Install theme to test
+
+block.block.breadcrumbs
+block.block.cellular_account_menu
+block.block.cellular_branding
+block.block.cellular_main_menu
+block.block.footer
+block.block.help
+block.block.messages
+block.block.pagetitle
+block.block.tabs
+block_list

@@ -25,6 +25,7 @@
   "MediaqueryNarrow": "'(min-width: 500px) and (max-width: 960px)'",
   "MediaqueryDefault": "'(min-width: 960px) and (max-width: 1600px)'",
   "MediaqueryLarge": "'(min-width: 1600px)'",
+  "MediaqueryRetina": "'screen and (min-resolution: 192dpi) and (min-resolution: 2dppx)'",
   "ColorHilight": "#0057e0",
   "ColorShadow": "#555",
   "ColorPrimary": "#101010",
@@ -128,7 +129,7 @@
   "RegionMargin": "0",
   "RegionPadding": "0",
   "RegionBorder": "0",
-  "RegionList": ["navigation","console","header_top","header","header_bottom","content_top","content","sidebar","content_bottom","footer_top","footer","footer_bottom"],
+  "RegionList": ["navigation","primary_menu","secondary_menu","breadcrumb","console","header_top","header","header_bottom","content_top","content","content_bottom","sidebar","footer_top","footer","footer_bottom"],
   "RegionSidebarWidth": "200",
   "RegionSidebarColor": "#101010",
   "FontStackTimes": "Cambria, \"Hoefler Text\", Utopia, \"Liberation Serif\", \"Nimbus Roman No9 L Regular\", Times, \"Times New Roman\", serif",
@@ -170,6 +171,6 @@
   "InfoVersion": "1.0",
   "InfoDescription": "A sweet starter theme for Drupal",
   "InfoLibraries": ["cellular/cellular"],
-  "InfoRegions": ["navigation","console","header_top","header","header_bottom","content_top","content","sidebar","content_bottom","footer_top","footer","footer_bottom"],
+  "InfoRegions": ["navigation","primary_menu","secondary_menu","breadcrumb","console","header_top","header","header_bottom","content_top","content","content_bottom","sidebar","footer_top","footer","footer_bottom"],
   "InfoCkeditorStylesheets": ["'dist/css/style.css'"]
 }

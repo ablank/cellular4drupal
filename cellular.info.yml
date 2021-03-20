@@ -1,6 +1,6 @@
 # DO NOT EDIT DIRECTLY
 # @see ./style-dictionary /drupal/info.json, /build/templates/info.template
-# Generated on Mon Mar 01 2021 10:50:44 GMT-0800 (Pacific Standard Time)
+# Generated on Wed Mar 17 2021 19:16:02 GMT-0700 (Pacific Daylight Time)
 
 name: Cellular
 version: 1.0
@@ -15,14 +15,17 @@ libraries:
 
 regions:
   - navigation: 'Navigation'
+  - primary_menu: 'Primary Menu'
+  - secondary_menu: 'Secondary Menu'
+  - breadcrumb: 'Breadcrumb'
   - console: 'Console'
   - header_top: 'Header Top'
   - header: 'Header'
   - header_bottom: 'Header Bottom'
   - content_top: 'Content Top'
   - content: 'Content'
-  - sidebar: 'Sidebar'
   - content_bottom: 'Content Bottom'
+  - sidebar: 'Sidebar'
   - footer_top: 'Footer Top'
   - footer: 'Footer'
   - footer_bottom: 'Footer Bottom'

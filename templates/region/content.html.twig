@@ -5,14 +5,23 @@
 %}
 <div id="content-wrap" {{ attributes.addClass(classes) }}>
 	{% if page.content_top %}
+	<div id="">
 		{{ page.content_top }}
+	</div>
 	{% endif %}	
+	<div id="content">
 	{% if node_has_image and (cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size') %}
 		{{ page.content|without('field_image') }}
 	{% else %}
 		{{ page.content }}
-	{% endif %}	
+	{% endif %}
+	{% if cellular.display_sample_blocks %}
+	{% include "@cellular/samples/sample-content.html.twig" %}
+	{% endif %}
+	</div>
 	{% if page.content_bottom %}
+	<div id="">
 		{{ page.content_bottom }}
+	</div>
 	{% endif %}
 </div>

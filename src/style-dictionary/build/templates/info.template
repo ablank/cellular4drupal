@@ -58,8 +58,8 @@ libraries:<%
 
 regions:<%    
     _.each(theme.regions, function(region){
-      var name = region.replace(/_|-/g, ' ');
-      var splitStr = name.toLowerCase().split(' ');
+      var name = region.replace(/_|-/g, ' '),
+        splitStr = name.toLowerCase().split(' ');
       for (var i = 0; i < splitStr.length; i++) {
           splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
       }

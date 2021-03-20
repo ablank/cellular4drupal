@@ -29,9 +29,9 @@
 %}
 
 {% if types is not empty %}
-  <ul{{attributes.addClass(classes)}}>
+  <ul{{ attributes.addClass(classes) }}>
     {% for type in types %}
-      <li{{attributes.addClass(list_classes)}}>
+      <li{{ attributes.addClass(list_classes) }}>
         {{ type.add_link }}
         <p>
           {{ type.description }}

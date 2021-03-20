@@ -73,7 +73,7 @@
  */
 #}
 {% set node_has_image = node.field_image.entity.uri.value %}
-<article{{attributes}}>
+<article{{ attributes }}>
   <div class="article-inner-wrapper">
     {% if node_has_image %}
       <div class="article-media">
@@ -83,7 +83,7 @@
     <div class="article-info">
       {{ title_prefix }}
       {% if not page %}
-        <h2{{title_attributes}}>
+        <h2{{ title_attributes }}>
           <a href="{{ url }}" rel="bookmark">{{ label }}</a>
         </h2>
       {% endif %}
@@ -91,7 +91,7 @@
       {% if display_submitted and not page %}
         <footer class="author-info">
           {{ author_picture }}
-          <div{{author_attributes}}>
+          <div{{ author_attributes }}>
             {% trans %}
               by
               {{ author_name }}
@@ -101,7 +101,7 @@
             </div>
           </footer>
         {% endif %}
-        <div{{content_attributes}}>
+        <div{{ content_attributes }}>
           {% if node_has_image %}
             {{ content|without('field_image') }}
           {% else %}

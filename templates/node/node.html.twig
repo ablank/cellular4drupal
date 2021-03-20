@@ -75,11 +75,11 @@
 
 {% set node_has_image = node.field_image.entity.uri.value %}
 
-<article{{attributes}}>
+<article{{ attributes }}>
 
   {{ title_prefix }}
   {% if not page %}
-    <h2{{title_attributes}}>
+    <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
   {% endif %}
@@ -88,7 +88,7 @@
   {% if display_submitted and not page %}
     <footer class="article-author-info">
       {{ author_picture }}
-      <div{{author_attributes}}>
+      <div{{ author_attributes }}>
         {% trans %}
           by
           {{ author_name }}
@@ -99,7 +99,7 @@
       </footer>
     {% endif %}
 
-    <div{{content_attributes}}>
+    <div{{ content_attributes }}>
       {% if node_has_image and (cellular.page_header_style == 'full-size' or cellular.page_header_style == 'box-size') %}
         {{ content|without('field_image') }}
       {% else %}
