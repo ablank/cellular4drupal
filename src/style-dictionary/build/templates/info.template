@@ -68,7 +68,7 @@ description: <% print(theme.description) %>
 version: <% print(theme.version) %>
 package: <% print(theme.name) %>
 type: theme
-core: 9.x
+base theme: false
 core_version_requirement: ^8 || ^9
 <% if (theme.screenshot) { print("\nscreenshot: " + theme.screenshot); } %>
 <% if(theme.libraries) {

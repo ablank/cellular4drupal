@@ -1,14 +1,14 @@
 # DO NOT EDIT DIRECTLY 
 # @see /style-dictionary/drupal/config.json
 # @see /style-dictionary/build/templates/info.template
-# Generated on Sat Mar 20 2021 21:22:49 GMT-0700 (Pacific Daylight Time)
+# Generated on Sat Mar 20 2021 23:49:40 GMT-0700 (Pacific Daylight Time)
 
 name: Cellular
 description: A sweet starter theme for Drupal
 version: 1.0
 package: Cellular
 type: theme
-core: 9.x
+base theme: false
 core_version_requirement: ^8 || ^9
 
 screenshot: dist/assets/images/screenshot.png
