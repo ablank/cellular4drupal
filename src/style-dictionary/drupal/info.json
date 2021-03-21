@@ -27,7 +27,7 @@
     },
     "regions": {
       "value": [
-        "primary_menu",
+        "main_menu",
         "secondary_menu",
         "breadcrumb",
         "console",
@@ -35,6 +35,7 @@
         "header",
         "header_bottom",
         "content_top",
+        "content_title",
         "content",
         "content_bottom",
         "sidebar",

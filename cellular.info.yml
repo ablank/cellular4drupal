@@ -1,22 +1,23 @@
-# DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /drupal/info.json, /build/templates/info.template
-# Generated on Sat Mar 20 2021 14:32:33 GMT-0700 (Pacific Daylight Time)
+# DO NOT EDIT DIRECTLY 
+# @see /style-dictionary/drupal/config.json
+# @see /style-dictionary/build/templates/info.template
+# Generated on Sat Mar 20 2021 21:22:49 GMT-0700 (Pacific Daylight Time)
 
 name: Cellular
-version: 1.0
-type: theme
-base theme: false
 description: A sweet starter theme for Drupal
+version: 1.0
 package: Cellular
+type: theme
+core: 9.x
 core_version_requirement: ^8 || ^9
 
 screenshot: dist/assets/images/screenshot.png
 
-libraries:
+libraries: 
   - cellular/cellular
 
-regions:
-  primary_menu: 'Primary Menu'
+regions: 
+  main_menu: 'Main Menu'
   secondary_menu: 'Secondary Menu'
   breadcrumb: 'Breadcrumb'
   console: 'Console'
@@ -24,6 +25,7 @@ regions:
   header: 'Header'
   header_bottom: 'Header Bottom'
   content_top: 'Content Top'
+  content_title: 'Content Title'
   content: 'Content'
   content_bottom: 'Content Bottom'
   sidebar: 'Sidebar'
@@ -31,7 +33,7 @@ regions:
   footer: 'Footer'
   footer_bottom: 'Footer Bottom'
 
-features:
+  features: 
   - favicon
   - slogan
   - comment_user_picture

@@ -4,11 +4,11 @@ dependencies:
   module:
     - system
   theme:
-    - cellular
-id: breadcrumbs
-theme: cellular
-region: content_header
-weight: -3
+    - claro
+id: claro_breadcrumbs
+theme: claro
+region: breadcrumb
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -16,9 +16,4 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
+visibility: {  }

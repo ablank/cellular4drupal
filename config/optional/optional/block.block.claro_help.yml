@@ -3,12 +3,11 @@ status: true
 dependencies:
   module:
     - help
-    - system
   theme:
-    - cellular
-id: help
-theme: cellular
-region: content_top
+    - claro
+id: claro_help
+theme: claro
+region: help
 weight: 0
 provider: null
 plugin: help_block
@@ -17,9 +16,4 @@ settings:
   label: Help
   provider: help
   label_display: '0'
-visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
-    negate: true
-    context_mapping: {  }
+visibility: {  }

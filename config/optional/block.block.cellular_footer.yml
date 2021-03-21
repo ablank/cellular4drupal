@@ -9,7 +9,7 @@ dependencies:
     - cellular
 id: footer
 theme: cellular
-region: footer_middle
+region: footer
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

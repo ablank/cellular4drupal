@@ -190,6 +190,7 @@ StyleDictionary.registerTransform({
      */
   },
 });
+
 StyleDictionary.registerTransform({
   name: 'quote/strings',
   type: 'value',

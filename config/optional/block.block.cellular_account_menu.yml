@@ -7,11 +7,10 @@ dependencies:
     - system
   theme:
     - cellular
-_core:
-  default_config_hash: R2K_qX0ZUMbUL6ie_-S9tZVjvqmlWKlscikgeRv9vhw
+    
 id: cellular_account_menu
 theme: cellular
-region: header_right
+region: header_bottom
 weight: -6
 provider: null
 plugin: 'system_menu_block:account'

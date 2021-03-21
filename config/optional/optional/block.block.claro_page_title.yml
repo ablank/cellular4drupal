@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - cellular
-id: pagetitle
-theme: cellular
-region: content_header
-weight: -4
+    - claro
+id: claro_page_title
+theme: claro
+region: header
+weight: -30
 provider: null
 plugin: page_title_block
 settings:

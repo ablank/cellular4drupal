@@ -1,37 +1,24 @@
-# DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /drupal/info.json, /build/templates/info.template
+# DO NOT EDIT DIRECTLY 
+# @see /style-dictionary/drupal/config.json
+# @see /style-dictionary/build/templates/info.template
 # Generated on <% print(new Date().toString()) %>
-<%
+<% 
 var theme = {},
-allProperties = _.each(allProperties, function(prop) {    
-    if(prop.attributes.category === 'info') {
-      //console.log(prop);
-      if(prop.name === "info_name"){
-      theme.name = prop.value;
-      }
-      if(prop.name === "info_description"){
-      theme.description = prop.value;
-      }
-      if(prop.name === "info_screenshot"){
-      theme.screenshot = prop.value;
-      }
-      if(prop.name === "info_libraries"){
-      theme.libraries = prop.value;
-      }
-      if(prop.name === "info_version"){
-      theme.version = prop.value;
-      }
-      if(prop.name === "info_regions"){
-      theme.regions = prop.value;      
-      }
-      if(prop.name === "info_features"){
-      theme.features = prop.value;      
-      }
-      if(prop.name === "info _ckeditor_stylesheets"){
-      theme.ckeditor = prop.value;      
-      }
-    };
-}); 
+    allProperties = _.each(allProperties, function (prop) {
+      if (prop.attributes.category === 'info') {
+     // console.log('prop: '+prop);{
+/*
+_.each(prop, function (property) {
+  
+  console.log('property: '+property);
+  var $name = Object.hasOwnPropertName(property).value;
+  console.log('name: '+$name);
+
+  if($name === "info_${name}"){
+    theme.$name = $name;
+    }
+});
+*/
 /*
 _.each(allProperties, function(prop) {
     // Notice: this is an alternative way to use Lodash templating syntax,
@@ -48,41 +35,68 @@ _.each(allProperties, function(prop) {
     print(output);
 });
 */
+        //console.log(prop);
+        if(prop.name === "info_name"){
+        theme.name = prop.value;
+        }
+        if(prop.name === "info_description"){
+        theme.description = prop.value;
+        }
+        if(prop.name === "info_screenshot"){
+        theme.screenshot = prop.value;
+        }
+        if(prop.name === "info_libraries"){
+        theme.libraries = prop.value;
+        }
+        if(prop.name === "info_version"){
+        theme.version = prop.value;
+        }
+        if(prop.name === "info_regions"){
+        theme.regions = prop.value;      
+        }
+        if(prop.name === "info_features"){
+        theme.features = prop.value;      
+        }
+        if(prop.name === "info _ckeditor_stylesheets"){
+        theme.ckeditor = prop.value;      
+        }
+      };
+    });
 %>
 name: <% print(theme.name) %>
-version: <% print(theme.version) %>
-type: theme
-base theme: false
 description: <% print(theme.description) %>
+version: <% print(theme.version) %>
 package: <% print(theme.name) %>
+type: theme
+core: 9.x
 core_version_requirement: ^8 || ^9
-<% if(theme.screenshot){ %>
-screenshot: <% print(theme.screenshot);%>
-<% } %>
-libraries:<% 
-    _.each(theme.libraries, function(library){
-      print(`\n  - ${library}`);
-    });%>
+<% if (theme.screenshot) { print("\nscreenshot: " + theme.screenshot); } %>
+<% if(theme.libraries) {
+print(`\nlibraries: `);
+  _.each(theme.libraries, function (library) {
+    print(`\n  - ${library}`);
+  }); 
+} %>
 
-regions:<%    
-    _.each(theme.regions, function(region){
-      var name = region.replace(/_|-/g, ' '),
-        splitStr = name.toLowerCase().split(' ');
-      for (var i = 0; i < splitStr.length; i++) {
-          splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
-      }
-      name = splitStr.join(' ');
-      print(`\n  ${region}: '${name}'`);
-    });%>
-<% if(theme.features){ %>
-features:<%    
-    _.each(theme.features, function(feature){
+regions: <%
+  _.each(theme.regions, function (region) {
+    var name = region.replace(/_|-/g, ' '),
+      splitStr = name.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    name = splitStr.join(' ');
+    print(`\n  ${region}: '${name}'`);
+  }); %>
+<% if (theme.features) { %>
+  features: <%
+    _.each(theme.features, function (feature) {
       print(`\n  - ${feature}`);
-    });  %>
+    }); %>
 <% } %>
-<% if(theme.ckeditor){ %>
-ckeditor_stylesheets:<%    
-    _.each(theme.ckeditor, function(stylesheet){
+<% if (theme.ckeditor) { %>
+  ckeditor_stylesheets: <%
+    _.each(theme.ckeditor, function (stylesheet) {
       print(`\n  - ${stylesheet}`);
-    });  %>
-<% } %>
+    }); %>
+  <% } %>
