@@ -6,5 +6,5 @@ header_style: 'default'
 header_position: 'top'
 header_sticky: true
 social_icon_style: 'rounded'
-copyright_text : '©Copyright @year '
+copyright_text : 'Copyright @year '
 theme_credits : true

@@ -110,10 +110,16 @@
 			{{ page.footer }}
 		{% endif %}
 
-		{% if page.footer_bottom %}
+		{% if page.footer_bottom or cellular.copyright or cellular.theme_credits %}
 			<aside{{ footer_bottom_attributes }} id="footer-bottom" class="{{ footer_bottom_classes }}" role="contentinfo">
 				{{ page.footer_bottom }}
 			</aside>
+		{% endif %}
+		{% if cellular.copyright %}
+		{{ cellular.copyright }}
+		{% endif %}
+		{% if cellular.theme_credits %}
+		{{ cellular.theme_credits }}
 		{% endif %}
 	</footer>
 

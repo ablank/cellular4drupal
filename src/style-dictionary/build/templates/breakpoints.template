@@ -52,7 +52,7 @@ _.each(allProperties, function(prop) {
 <% print(theme) %>.screen.narrow:
   label: narrow
   mediaQuery: <% print(mediaquery.narrow) %>
-  weight: 1
+  weight: 2
   group: screen
   multipliers:
     - 1x
@@ -61,7 +61,7 @@ _.each(allProperties, function(prop) {
 <% print(theme) %>.screen.default:
   label: default
   mediaQuery: <% print(mediaquery.default) %>
-  weight: 1
+  weight: 3
   group: screen
   multipliers:
     - 1x
@@ -70,7 +70,7 @@ _.each(allProperties, function(prop) {
 <% print(theme) %>.screen.large:
   label: large
   mediaQuery: <% print(mediaquery.large) %>
-  weight: 1
+  weight: 4
   group: screen
   multipliers:
     - 1x

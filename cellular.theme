@@ -20,6 +20,103 @@ use Drupal\Component\Utility\Xss;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Markup;
 
+
+/**
+ * Implements hook_preprocess().
+ */
+function cellular_preprocess(&$variables)
+{
+    $config = \Drupal::config('system.site');
+    // Default variables.
+    $variables['sitename'] = $config->get('name');
+    $variables['siteslogan'] = $config->get('slogan');
+    // Theme variables
+    $variables['cellular'] = [];
+    $cellular_settings = [
+        'display_sample_content',
+        'user_page_welcome',
+        'header_style',
+        'header_position',
+        'header_sticky',
+        'header_color',
+        'social_follow',
+        'social_share',
+        'social_icon_style',
+        'copyright_text',
+        'theme_credits',
+    ];
+
+    $social_follow = [
+        'facebook',
+        'instagram',
+        'googleplus',
+        'linkedin',
+        'twitter',
+        'youtube',
+        'github',
+    ];
+    
+    $social_share = [
+        'facebook',
+        'instagram',
+        'googleplus',
+        'linkedin',
+        'twitter',
+        'youtube',
+        'github',
+    ];
+
+    $textarea_settings = [
+        'user_page_welcome',
+    ];
+
+    // Get General theme options.
+    foreach ($cellular_settings as $cellular_setting) {
+        $value = trim(theme_get_setting($cellular_setting));
+        if (!empty($value)) {
+            $variables['cellular'][$cellular_setting] = Xss::filter($value);
+        }
+    }
+
+    // Generate "follow on" social links.
+    foreach ($social_follow as $social_profile) {
+        $value = trim(theme_get_setting($social_profile));
+        if (!empty($value)) {
+            $variables['cellular']['social_follow'][$social_profile] = Xss::filter($value);
+        }
+    }
+
+    // Generate "share with" social links.
+    foreach ($social_share as $social_profile) {
+        $value = trim(theme_get_setting($social_profile, 'cellular'));
+        if (!empty($value)) {
+            $variables['cellular']['social_share'][$social_profile] = Xss::filter($value);
+        }
+    }
+/*
+    // Get textarea and text format settings.
+    foreach ($textarea_settings as $textarea_setting) {
+        $value = check_markup(theme_get_setting($textarea_setting, 'cellular'), 'full_html');
+        if (!empty($value)) {
+            $variables['cellular'][$textarea_setting] = Xss::filter($value);
+        }
+    }
+*/
+
+    // Get Copyright text.
+    if (!empty(theme_get_setting('copyright_text'))) {
+        $copyright_text = str_replace('@year', date('Y'), theme_get_setting('copyright_text'));
+        $variables['cellular']['copyright_text'] = $copyright_text;
+    }
+    // Get theme credits.
+    if (!empty(theme_get_setting('theme_credits'))) {
+        $variables['cellular']['theme_credits'] = t(
+            'Built with loving kindness by <a href="@url" target="_blank">ablank</a>',
+            ['@url' => 'https://github.com/ablank']
+        );
+    }
+}
+
 /**
  * Implements hook_preprocess_html().
  */
@@ -66,12 +163,24 @@ function cellular_preprocess_page(&$variables)
     // outside the node itself.
     $variables['attributes']['class'][] = isset($variables['node_type']) ? 'node-' . $variables['node_type'] : '';
     // Check whether the user is logged in.
-    $variables['attributes']['class'][] = $variables['logged_in'] ? 'logged-in' : 'anonymous';
-    
-    if(theme_get_setting('display_sample_content', 'cellular')){  
-    print('<h1>display_sample_content</h1>');
+    $variables['attributes']['class'][] = $variables['logged_in'] ? 'logged-in' : 'anonymous';  
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function cellular_preprocess_region(&$variables)
+{
+    var_dump($variables);
+/*
+    $regions = $variables;
+    foreach($regions as $region){
+       // print($region);
+        if(!empty($region)){
+        $variables['attributes']['id'] = $region;
+        }
     }
-    
+    */
 }
 
 /**
@@ -82,8 +191,8 @@ function cellular_preprocess_node(&$variables)
     $type = $variables['node']->getType();
     $mode = $variables['view_mode'];
     !isset($variables['attributes']['class']) ?: $variables['attributes']['class'] = [];
-    $variables['attributes']['class'][] = 'node--type-' . $type; // ex: node--type-article
-    $variables['attributes']['class'][] = 'node--mode-' . $mode; // ex: node--mode-teaser
+    $variables['attributes']['class'][] = 'node-type-' . $type; // ex: node-type-article
+    $variables['attributes']['class'][] = 'node-mode-' . $mode; // ex: node-mode-teaser
 }
 
 /**
@@ -134,93 +243,6 @@ function cellular_preprocess_media(&$variables)
     $variables['attributes']['class'][] = 'media--type-' . $mediaType; // ex: media--type-video
 }
 
-/**
- * Implements hook_preprocess().
- */
-function cellular_preprocess(&$variables)
-{
-    $config = \Drupal::config('system.site');
-    // Default variables.
-    $variables['sitename'] = $config->get('name');
-    $variables['siteslogan'] = $config->get('slogan');
-    // Theme variables
-    $variables['cellular'] = [];
-    $cellular_settings = [
-        'display_sample_blocks',
-        'header_position',
-        'header_sticky',
-        'header_color',
-        'copyright_text',
-        'display_theme_credits',
-        'social_follow',
-        'social_links_follow',
-        'social_links_round',
-    ];
-    $page_settings = [
-        'page_header_style',
-    ];
-
-    $social_follow = [
-        'facebook',
-        'instagram',
-        'googleplus',
-        'linkedin',
-        'twitter',
-        'youtube',
-        'github',
-    ];
-
-    $textarea_settings = [
-        'user_page_welcome',
-    ];
-
-    // Get General theme options.
-    foreach ($cellular_settings as $cellular_setting) {
-        $value = trim(theme_get_setting($cellular_setting, 'cellular'));
-        if (!empty($value)) {
-            $variables['cellular'][$cellular_setting] = Xss::filter($value);
-        }
-    }
-
-    // Get Page options.
-    foreach ($page_settings as $page_setting) {
-        $value = trim(theme_get_setting($page_setting, 'cellular'));
-        if (!empty($value)) {
-            $variables['cellular'][$page_setting] = Xss::filter($value);
-        }
-    }
-
-    // Get social profiles.
-    foreach ($social_follow as $social_profile) {
-        $value = trim(theme_get_setting($social_profile, 'cellular'));
-        if (!empty($value)) {
-            $variables['cellular']['social_follow'][$social_profile] = Xss::filter($value);
-        }
-    }
-
-    // Get textarea and text format settings.
-    foreach ($textarea_settings as $textarea_setting) {
-        $value = check_markup(theme_get_setting($textarea_setting, 'cellular'), 'full_html');
-        if (!empty($value)) {
-            $variables['cellular'][$textarea_setting] = Xss::filter($value);
-        }
-    }
-
-    // Get Copyright text.
-    $copyright_text = theme_get_setting('copyright_text');
-    if (!empty($copyright_text)) {
-        $copyright_text = str_replace('@year', date('Y'), theme_get_setting('copyright_text'));
-        $variables['cellular']['copyright_text'] = $copyright_text;
-    }
-    // Get theme credits.
-    $display_theme_credits = theme_get_setting('display_theme_credits');
-    if (!empty($display_theme_credits)) {
-        $variables['cellular']['theme_credits']['#markup'] = t(
-            'Built with loving kindness by <a href="@url" target="_blank">ablank</a>',
-            ['@url' => 'https://github.com/ablank']
-        );
-    }
-}
 
 use \Drupal\Component\Utility\Unicode;
 use \Drupal\Core\Asset\AttachedAssetsInterface;
@@ -237,16 +259,9 @@ function cellular_theme_suggestions_block_alter(array &$suggestions, array $vari
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function cellular_form_search_block_form_alter(&$form, $form_state)
-{
-    // Add placeholder text to the search field.
-    $form['keys']['#attributes']['placeholder'] = t('Search');
-}
-
-/**
  * Implements hook_theme_suggestions_HOOK_alter().
+ * 
+ * Add suggestions to handle error pages.
  */
 function cellular_theme_suggestions_page_alter(array &$suggestions, array $variables)
 {
@@ -265,6 +280,8 @@ function cellular_theme_suggestions_page_alter(array &$suggestions, array $varia
 
 /**
  * Implements hook_css_alter().
+ * 
+ * Necessary for adding conditional UA styles.
  */
 function cellular_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $assets)
 {
@@ -296,8 +313,20 @@ function cellular_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $a
 }
 
 /**
- * Theme settings for Cellular theme.
+ * Implements hook_form_FORM_ID_alter().
+ * 
+ * Customize default forms.
+ */
+function cellular_form_search_block_form_alter(&$form, $form_state)
+{
+    // Add placeholder text to the search field.
+    $form['keys']['#attributes']['placeholder'] = t('Search');
+}
+
+/**
  * Implements hook_form_FORM_ID_alter()
+ * 
+ * Theme settings for Cellular theme.
  */
 function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
 {
