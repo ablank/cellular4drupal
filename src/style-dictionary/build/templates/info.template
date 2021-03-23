@@ -3,6 +3,22 @@
 # @see /style-dictionary/build/templates/info.template
 # Generated on <% print(new Date().toString()) %>
 <% 
+Object.prototype.addChild = function(property, child) {
+  child._parent = this;
+  this[property] = child;
+  return;
+};
+
+function listAssets(arr){  
+if(arr) {
+var name = arr//Object.keys(arr);
+print(`\n${name}: `);
+_.each(arr, function (listitem) {
+  print(`\n  - ${listitem}`);
+}); 
+}
+}
+
 var theme = {},
     allProperties = _.each(allProperties, function (prop) {
       if (prop.attributes.category === 'info') {
@@ -71,6 +87,7 @@ type: theme
 base theme: false
 core_version_requirement: ^8 || ^9
 <% if (theme.screenshot) { print("\nscreenshot: " + theme.screenshot); } %>
+<% // listAssets(theme.libraries) %>
 <% if(theme.libraries) {
 print(`\nlibraries: `);
   _.each(theme.libraries, function (library) {
@@ -89,14 +106,14 @@ regions: <%
     print(`\n  ${region}: '${name}'`);
   }); %>
 <% if (theme.features) { %>
-  features: <%
-    _.each(theme.features, function (feature) {
-      print(`\n  - ${feature}`);
-    }); %>
+features: <%
+  _.each(theme.features, function (feature) {
+    print(`\n  - ${feature}`);
+  }); %>
 <% } %>
 <% if (theme.ckeditor) { %>
-  ckeditor_stylesheets: <%
-    _.each(theme.ckeditor, function (stylesheet) {
-      print(`\n  - ${stylesheet}`);
-    }); %>
-  <% } %>
+ckeditor_stylesheets: <%
+  _.each(theme.ckeditor, function (stylesheet) {
+    print(`\n  - ${stylesheet}`);
+  }); %>
+<% } %>

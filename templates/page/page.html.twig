@@ -28,15 +28,19 @@
  *   comment/reply/12345).
  *
  * Regions:
+ * - page.header_top: Items for the header region.
  * - page.header: Items for the header region.
+ * - page.header_bottom: Items for the header region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
- * - page.highlighted: Items for the highlighted content region.
- * - page.help: Dynamic help text, mostly for admin pages.
+ * - page.console: Dynamic help text, mostly for admin pages.
+ * - page.content_top: The main content of the current page.
  * - page.content: The main content of the current page.
- * - page.sidebar_first: Items for the first sidebar.
- * - page.sidebar_second: Items for the second sidebar.
+ * - page.content_bottom: The main content of the current page.
+ * - page.sidebar: Items for the first sidebar.
+ * - page.footer_top: Items for the footer region.
  * - page.footer: Items for the footer region.
+ * - page.footer_bottom: Items for the footer region.
  * - page.breadcrumb: Items for the breadcrumb region.
  *
  * @see template_preprocess_page()
@@ -44,16 +48,17 @@
  *
  * @ingroup themeable
  */
+ {{ attributes }}
 #}
 <div id="page-wrap" class="cell">
 
 	{% if page.header_top %}
-		<aside{{ header_top_attributes }} id="header-top" class="" role="complementary">
+		<aside id="header-top" class="cell" role="complementary">
 			{{ page.header_top }}
 		</aside>
 	{% endif %}
 
-	<header {{ header_attributes }} role="banner">
+	<header id="header" class="cell" role="banner">
 		{{ page.header }}
 		{{ page.navigation }}
 		{{ page.primary_menu }}
@@ -61,7 +66,7 @@
 	</header>
 
 	{% if page.header_bottom %}
-		<aside{{ header_bottom_attributes }} id="header-bottom" class="" role="complementary">
+		<aside id="header-bottom" class="cell" role="complementary">
 			{{ page.header_bottom }}
 		</aside>
 	{% endif %}
@@ -69,29 +74,27 @@
 	{{ page.breadcrumb }}
 	{{ page.console }}
 	<div id="content-wrap">
-		<main
-			role="main">
+		<main role="main">
 			{# link is in html.html.twig #}
 			<a id="main-content" tabindex="-1"></a>
-			<h1>{{ site_name }}</h1>
 			{% if page.content_top %}
-				<aside{{ content_top_attributes }} id="content-top" class="{{ content_top_classes }}" role="complementary">
+				<aside id="content-top" class="cell" role="complementary">
 					{{ page.content_top }}
 				</aside>
 			{% endif %}
 
-			<div{{ content_attributes }} id="content" class="{{ content_classes }}">
+			<div id="content" class="cell">
 				{{ page.content }}
 			</div>
 
 			{% if page.content_bottom %}
-				<aside{{ content_bottom_attributes }} id="content-bottom" class="{{ content_bottom_classes }}" role="complementary">
+				<aside id="content-bottom" class="cell" role="complementary">
 					{{ page.content_bottom }}
 				</aside>
 			{% endif %}
 
 			{% if page.sidebar %}
-				<aside{{ sidebar_attributes }} id="sidebar" class="{{ sidebar_classes }}" role="complementary">
+				<aside id="sidebar" class="cell-30" role="complementary">
 					{{ page.sidebar }}
 				</aside>
 			{% endif %}
@@ -99,9 +102,9 @@
 		</main>
 	</div>
 
-	<footer{{ footer_attributes }} id="footer" role="contentinfo">
+	<footer id="footer" role="contentinfo">
 		{% if page.footer_top %}
-			<aside{{ footer_top_attributes }} id="footer-top" role="contentinfo">
+			<aside id="footer-top" class="cell" role="contentinfo">
 				{{ page.footer_top }}
 			</aside>
 		{% endif %}
@@ -111,12 +114,12 @@
 		{% endif %}
 
 		{% if page.footer_bottom or cellular.copyright or cellular.theme_credits %}
-			<aside{{ footer_bottom_attributes }} id="footer-bottom" class="{{ footer_bottom_classes }}" role="contentinfo">
+			<aside id="footer-bottom" class="cell" role="contentinfo">
 				{{ page.footer_bottom }}
 			</aside>
 		{% endif %}
 		{% if cellular.copyright %}
-		{{ cellular.copyright }}
+			{{ cellular.copyright }}
 		{% endif %}
 		{% if cellular.theme_credits %}
 		{{ cellular.theme_credits }}
@@ -125,4 +128,4 @@
 
 </div>
 
-{{ devel_dump(page) }}
+{# devel_dump(page) #}

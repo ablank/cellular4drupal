@@ -1,5 +1,5 @@
 display_sample_content: true
-user_page_welcome: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Browse our site and see for yourself why you need Cellular.'
+loremipsum: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel lorem non sem tempor facilisis. Sed lacinia ante a efficitur sollicitudin. Phasellus nec erat vitae sem placerat luctus non id velit. Sed est mi, molestie et urna quis, consectetur vestibulum massa. Morbi volutpat neque sed pharetra tincidunt. Proin vel odio tincidunt, feugiat lorem ac, accumsan nisl. Mauris ornare feugiat velit. Vestibulum mattis nisi vel tristique scelerisque. Nunc sollicitudin nunc sit amet justo viverra consequat. Fusce ut vulputate nibh. Vivamus in sem rhoncus, bibendum orci vel, mattis dolor. Aenean nec quam feugiat, fermentum quam malesuada, aliquam urna. Duis vestibulum vestibulum arcu, ac interdum metus rhoncus eu. Sed mi enim, viverra scelerisque eleifend in, tincidunt id nisl. Nam vulputate odio ut tristique volutpat. Cras pulvinar interdum efficitur.'
 header_color: '#ffffff'
 header_img: false
 header_style: 'default'

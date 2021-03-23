@@ -27,14 +27,11 @@ use Drupal\Core\Render\Markup;
 function cellular_preprocess(&$variables)
 {
     $config = \Drupal::config('system.site');
-    // Default variables.
-    $variables['sitename'] = $config->get('name');
-    $variables['siteslogan'] = $config->get('slogan');
     // Theme variables
     $variables['cellular'] = [];
     $cellular_settings = [
         'display_sample_content',
-        'user_page_welcome',
+        'loremipsum',
         'header_style',
         'header_position',
         'header_sticky',
@@ -67,7 +64,7 @@ function cellular_preprocess(&$variables)
     ];
 
     $textarea_settings = [
-        'user_page_welcome',
+        'loremipsum',
     ];
 
     // Get General theme options.
@@ -121,17 +118,23 @@ function cellular_preprocess(&$variables)
  * Implements hook_preprocess_html().
  */
 function cellular_preprocess_html(&$variables)
-{
-    // Apply a special class to the homepage, which often has no distinct content
-    // type but often needs special design treatment.
-    $variables['attributes']['class'][] = \Drupal::service('path.matcher')->isFrontPage() ? 'frontpage' : '';
-
-    // Apply a class at the page level based on content type if we're on a node
-    // page. Also helpful when you need to modify global elements that appear
-    // outside the node itself.
-    $variables['attributes']['class'][] = isset($variables['node_type']) ? 'node-' . $variables['node_type'] : '';
-
-    // Check whether the user is logged in.
+{/*
+    // Apply frontpage class.
+    if(\Drupal::service('path.matcher')->isFrontPage()){
+        $variables['attributes']['class'][] ='frontpage';
+    }
+    else {
+        $variables['attributes']['class'][] = 'path-'.$variables['root_path'];
+    }
+    */
+    /*
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    */
+// Apply frontpage or node-type class.
+ //   $variables['attributes']['class'][] = \Drupal::service('path.matcher')->isFrontPage() ? 'frontpage' : !empty($variables['node_type']) ?: 'node-' . $variables['node_type'];
+    // User is logged in?
     $variables['attributes']['class'][] = $variables['logged_in'] ? 'logged-in' : 'anonymous';
     /**
      * Inject critical css inline
@@ -150,20 +153,7 @@ function cellular_preprocess_html(&$variables)
  * Implements hook_preprocess_page().
  */
 function cellular_preprocess_page(&$variables)
-{
-    $config = \Drupal::config('system.site');
-    $variables['site_name'] = $config->get('name');
-    $variables['site_slogan'] = $config->get('slogan');
-
-    // Apply a special class to the homepage, which often has no distinct content
-    // type but often needs special design treatment.
-    $variables['attributes']['class'][] = \Drupal::service('path.matcher')->isFrontPage() ? 'frontpage' : '';
-    // Apply a class at the page level based on content type if we're on a node
-    // page. Also helpful when you need to modify global elements that appear
-    // outside the node itself.
-    $variables['attributes']['class'][] = isset($variables['node_type']) ? 'node-' . $variables['node_type'] : '';
-    // Check whether the user is logged in.
-    $variables['attributes']['class'][] = $variables['logged_in'] ? 'logged-in' : 'anonymous';  
+{    
 }
 
 /**
@@ -171,16 +161,6 @@ function cellular_preprocess_page(&$variables)
  */
 function cellular_preprocess_region(&$variables)
 {
-    var_dump($variables);
-/*
-    $regions = $variables;
-    foreach($regions as $region){
-       // print($region);
-        if(!empty($region)){
-        $variables['attributes']['id'] = $region;
-        }
-    }
-    */
 }
 
 /**
@@ -357,13 +337,13 @@ function cellular_form_system_theme_settings_alter(&$form, FormStateInterface $f
         '#type' => 'checkbox',
         '#title' => t('Show Sample Content'),
         '#default_value' => theme_get_setting('display_sample_content', 'cellular'),
-        '#description' => t('Just shows sample blocks for your idea. On production disable this'),
+        '#description' => t('Shows sample content in available theme regions.'),
     ];
 
-    $form['cellular_settings']['general']['options']['user_page_welcome'] = [
+    $form['cellular_settings']['general']['options']['loremipsum'] = [
         '#type' => 'textarea',
         '#title' => t('User Page Intro'),
-        '#default_value' => theme_get_setting('user_page_welcome', 'cellular'),
+        '#default_value' => theme_get_setting('loremipsum', 'cellular'),
         '#description' => t('Text will be shown on left side of login, registration, forgot password pages.'),
     ];
 
