@@ -1,7 +1,7 @@
 # DO NOT EDIT DIRECTLY 
 # @see /style-dictionary/drupal/config.json
 # @see /style-dictionary/build/templates/info.template
-# Generated on Tue Mar 23 2021 10:54:56 GMT-0700 (Pacific Daylight Time)
+# Generated on Wed Mar 24 2021 19:38:15 GMT-0700 (Pacific Daylight Time)
 
 name: Cellular
 description: A sweet starter theme for Drupal
@@ -13,8 +13,7 @@ core_version_requirement: ^8 || ^9
 
 screenshot: dist/assets/images/screenshot.png
 
-
-libraries: 
+libraries:
   - cellular/cellular
 
 regions: 
@@ -34,10 +33,11 @@ regions:
   footer: 'Footer'
   footer_bottom: 'Footer Bottom'
 
-features: 
+features:
   - favicon
   - slogan
   - comment_user_picture
   - node_user_picture
 
-
+ckeditor_stylesheets:
+  - 'dist/css/style.css'

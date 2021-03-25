@@ -6,5 +6,7 @@ cellular:
   js:
     dist/js/app.js: {}
   dependencies:
+    - core/drupal
+    - core/drupal.debounce
     - core/jquery
     - core/jquery.once

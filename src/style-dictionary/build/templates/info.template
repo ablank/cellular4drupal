@@ -1,83 +1,29 @@
 # DO NOT EDIT DIRECTLY 
-# @see /style-dictionary/drupal/config.json
+# @see /style-dictionary/drupal/info.json
 # @see /style-dictionary/build/templates/info.template
 # Generated on <% print(new Date().toString()) %>
 <% 
-Object.prototype.addChild = function(property, child) {
-  child._parent = this;
-  this[property] = child;
-  return;
-};
-
-function listAssets(arr){  
-if(arr) {
-var name = arr//Object.keys(arr);
-print(`\n${name}: `);
-_.each(arr, function (listitem) {
-  print(`\n  - ${listitem}`);
-}); 
-}
-}
-
-var theme = {},
-    allProperties = _.each(allProperties, function (prop) {
-      if (prop.attributes.category === 'info') {
-     // console.log('prop: '+prop);{
-/*
-_.each(prop, function (property) {
-  
-  console.log('property: '+property);
-  var $name = Object.hasOwnPropertName(property).value;
-  console.log('name: '+$name);
-
-  if($name === "info_${name}"){
-    theme.$name = $name;
-    }
+/**
+ * Push "info" properties to {theme} 
+ */
+var theme = {};
+var allProperties = _.each(allProperties, function (prop) {
+  if (prop.attributes.category === 'info') {    
+    var rename = prop.name.replace(/info_/, '');
+    theme[rename] = prop.value;
+  }
 });
-*/
-/*
-_.each(allProperties, function(prop) {
-    // Notice: this is an alternative way to use Lodash templating syntax,
-    // that uses string concatenation and the print() function to have
-    // more control over the indentation, whitespace, newlines, etc.
-    var output = "";
-    output += "\t<" + prop.tag + " name=\"" + prop.name + "\">";
-    output += prop.value;
-    output += "</" + prop.tag + ">";
-    if(prop.comment) {
-    output += "<!-- " + prop.comment + " -->";
-    }
-    output += "\n";
-    print(output);
-});
-*/
-        //console.log(prop);
-        if(prop.name === "info_name"){
-        theme.name = prop.value;
-        }
-        if(prop.name === "info_description"){
-        theme.description = prop.value;
-        }
-        if(prop.name === "info_screenshot"){
-        theme.screenshot = prop.value;
-        }
-        if(prop.name === "info_libraries"){
-        theme.libraries = prop.value;
-        }
-        if(prop.name === "info_version"){
-        theme.version = prop.value;
-        }
-        if(prop.name === "info_regions"){
-        theme.regions = prop.value;      
-        }
-        if(prop.name === "info_features"){
-        theme.features = prop.value;      
-        }
-        if(prop.name === "info _ckeditor_stylesheets"){
-        theme.ckeditor = prop.value;      
-        }
-      };
+/**
+ * Iterate over specified props
+ */
+ function iterate(key){
+  if (theme[key]) { 
+    print(`\n${key}:`);
+    _.each(theme[key], function (feature) {
+      print(`\n  - ${feature}`);
     });
+  } 
+}
 %>
 name: <% print(theme.name) %>
 description: <% print(theme.description) %>
@@ -87,33 +33,19 @@ type: theme
 base theme: false
 core_version_requirement: ^8 || ^9
 <% if (theme.screenshot) { print("\nscreenshot: " + theme.screenshot); } %>
-<% // listAssets(theme.libraries) %>
-<% if(theme.libraries) {
-print(`\nlibraries: `);
-  _.each(theme.libraries, function (library) {
-    print(`\n  - ${library}`);
-  }); 
-} %>
+<% iterate('libraries'); %>
 
 regions: <%
   _.each(theme.regions, function (region) {
+    // Convert region name from machine to human readable
     var name = region.replace(/_|-/g, ' '),
       splitStr = name.toLowerCase().split(' ');
     for (var i = 0; i < splitStr.length; i++) {
       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
     name = splitStr.join(' ');
+    // Print regions with human string names
     print(`\n  ${region}: '${name}'`);
   }); %>
-<% if (theme.features) { %>
-features: <%
-  _.each(theme.features, function (feature) {
-    print(`\n  - ${feature}`);
-  }); %>
-<% } %>
-<% if (theme.ckeditor) { %>
-ckeditor_stylesheets: <%
-  _.each(theme.ckeditor, function (stylesheet) {
-    print(`\n  - ${stylesheet}`);
-  }); %>
-<% } %>
+<% iterate('features'); %>
+<% iterate('ckeditor_stylesheets') %>
