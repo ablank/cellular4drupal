@@ -24,6 +24,17 @@
       ],
       "category": "info",
       "comment": "List of namespaced libraries to include"
+    },    
+    "dependencies": {
+      "value": [
+        "core/jquery",
+        "core/jquery.once",
+        "core/drupal",
+        "core/drupal.debounce",
+        "core/drupalSettings"
+      ],
+      "category": "info",
+      "comment": "List of dependencies"
     },
     "regions": {
       "value": [
@@ -55,14 +66,6 @@
       ],
       "category": "info"
     },
-    "ckeditor_stylesheets": {
-      "value": [
-        "'dist/css/style.css'"
-      ],
-      "category": "info",
-      "comment": "List of ckeditor stylesheets"
-    },
-    
     "ckeditor_stylesheets": {
       "value": [
         "'dist/css/style.css'"

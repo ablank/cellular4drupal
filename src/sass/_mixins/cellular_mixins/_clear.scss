@@ -1,0 +1,11 @@
+@mixin clear() {
+  clear: both;
+  zoom: 1;
+  &:after,
+  &:before {
+    display: block;
+    clear: both;
+    width: 100%;
+    content: '';
+  }
+}

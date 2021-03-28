@@ -8,9 +8,12 @@
         "value": "{size.tiny.value}"
       }
     },
-    "text": {
+    "font": {
       "size": {
-        "value": "{default.size.value}"
+        "value": "{default.font.size.value}"
+      },
+      "weight":{
+        "value": "{default.font.weight.value}"
       }
     }
   }

@@ -69,7 +69,7 @@
       &:hover,
       &:focus,
       &:visited {
-      color: lighten($color-hilight, 33%);
+      color: lighten($color-primary-hilight, 33%);
     }
   }
 }
@@ -87,9 +87,9 @@
     background-color: $color-primary-bg;
 
     &.today {
-      @include box-shadow($color-hilight);
+      @include box-shadow($color-primary-hilight);
 
-      border-color: $color-hilight;
+      border-color: $color-primary-hilight;
     }
 
     &.past {
@@ -118,7 +118,7 @@
       &:hover,
       &:focus,
       &:visited {
-      border-color: $color-hilight;
+      border-color: $color-primary-hilight;
       background: $color-primary-bg;
     }
   }

@@ -1,0 +1,22 @@
+@mixin popout(
+  $width: $default-size,
+  $height: $default-size,
+  $color: $color-primary
+) {
+  position: relative;
+  margin: 0 0 $height;
+  padding: 0 $width;
+  border-bottom: darken($color, 10%) 1px solid;
+  background: $color;
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: -$height;
+    left: 0;
+    height: 0;
+    content: ' ';
+    border-top: $height solid darken($color, 30%);
+    border-right: $width solid transparent;
+    border-left: $width solid transparent;
+  }
+}

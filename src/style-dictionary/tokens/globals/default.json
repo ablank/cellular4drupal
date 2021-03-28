@@ -27,6 +27,10 @@
         "value": "{font.stack.times.value}",
         "category": "default"
       },
+      "size": {
+        "value": "1{default.unit.value}",
+        "category": "default"
+      },
       "weight": {
         "value": "500",
         "category": "default"

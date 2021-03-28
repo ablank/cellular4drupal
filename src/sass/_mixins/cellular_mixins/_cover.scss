@@ -1,0 +1,6 @@
+/* Fullscreen background image*/
+@mixin cover($url) {
+  @include prefix(background-size, cover);
+
+  background: url($url) no-repeat center center fixed;
+}

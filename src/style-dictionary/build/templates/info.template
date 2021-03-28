@@ -34,7 +34,6 @@ base theme: false
 core_version_requirement: ^8 || ^9
 <% if (theme.screenshot) { print("\nscreenshot: " + theme.screenshot); } %>
 <% iterate('libraries'); %>
-
 regions: <%
   _.each(theme.regions, function (region) {
     // Convert region name from machine to human readable

@@ -1,0 +1,7 @@
+@mixin icon($icon: "") {
+    $png-path: unquote($icon-src-png);
+    $svg-path: unquote($icon-src-svg);
+  
+    background-image: url("#{$png-path}#{$icon}.png");
+    background-image: url("#{$svg-path}#{$icon}.svg");
+  }

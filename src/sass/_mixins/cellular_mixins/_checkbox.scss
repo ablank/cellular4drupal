@@ -1,0 +1,59 @@
+@mixin checkbox($size: 1em, $img: input_sprite) {
+    /* Apply pseudo-element selectors so old browsers still work*/
+  
+    &:checked,
+      &:not(:checked) {
+      position: absolute;
+      left: -999em;
+  
+      + label {
+        position: relative;
+        z-index: 1;
+        float: left;
+        padding: 0 ($size * 2) 0 0;
+        cursor: pointer;
+        vertical-align: middle;
+        text-indent: $size * 1.8;
+  
+        &:before,
+          &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: $size;
+          height: $size;
+          content: "";
+          vertical-align: middle;
+        }
+  
+        &:before {
+          border: $default-border;
+          background: darken($color-primary-bg, 2%);
+          box-shadow: inset 0 0 1px 1px $color-secondary;
+        }
+        &:after {
+          background-image: url("../assets/icons/png/#{$img}.png");
+          background-image: url("../assets/icons/svg/#{$img}.svg");
+          background-repeat: no-repeat;
+          background-position: -999em;
+          background-size: $size * 5;
+        }
+      }
+      &:focus {
+        + label {
+          &:before {
+            /*border: 1px dotted $color-primary-hilight;*/
+          }
+        }
+      }
+      &:disabled {
+        + label {
+          color: $color-secondary;
+          &:before {
+            color: $color-secondary;
+            background: $color-secondary;
+          }
+        }
+      }
+    }
+  }

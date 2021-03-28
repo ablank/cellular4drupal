@@ -112,7 +112,7 @@ $width: 800px;
     a:active,
       a:hover,
       a:focus {
-      @include textstroke($color-hilight, 2px);
+      @include textstroke($color-primary-hilight, 2px);
 
       color: $color-secondary;
     }
@@ -178,7 +178,7 @@ $width: 800px;
 
     &:hover,
       &:focus {
-      background-color: $color-hilight;
+      background-color: $color-primary-hilight;
     }
   }
 
@@ -247,14 +247,14 @@ $width: 800px;
   background-color: $color-neutral;
 
   &.active {
-    border-color: darken($color-hilight, 20%);
-    background-color: $color-hilight;
-    box-shadow: 0 0 0.5em 0 $color-hilight;
+    border-color: darken($color-primary-hilight, 20%);
+    background-color: $color-primary-hilight;
+    box-shadow: 0 0 0.5em 0 $color-primary-hilight;
   }
 
   &:hover,
     &:focus {
-    border-color: $color-hilight;
+    border-color: $color-primary-hilight;
   }
 
   a {

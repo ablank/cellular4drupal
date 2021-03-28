@@ -1,0 +1,30 @@
+@mixin overlay($color) {
+    $opacity: 0.8;
+  
+    background-color: adjust-saturation($color, -($opacity * 10));
+    background-color: rgba($color, $opacity);
+  
+    @if lightness($color) < 50% {
+      color: darken($color, 70%);
+      h2,
+      h3,
+      h4 {
+        color: darken($color, 50%);
+      }
+      p {
+        color: darken($color, 70%);
+      }
+    }
+  
+    @else {
+      color: lighten($color, 70%);
+      h2,
+      h3,
+      h4 {
+        color: lighten($color, 50%);
+      }
+      p {
+        color: lighten($color, 70%);
+      }
+    }
+  }

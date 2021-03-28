@@ -103,7 +103,7 @@ textarea {
     color: $text-color;
     outline: none;
     background: $color-primary-bg;
-    box-shadow: 0 0 0.2em 0 $color-hilight;
+    box-shadow: 0 0 0.2em 0 $color-primary-hilight;
   }
 
   &.year,
@@ -143,7 +143,7 @@ option {
 input {
   &.required,
   &[required] {
-    box-shadow: 0 0 0.1em 0 $color-hilight;
+    box-shadow: 0 0 0.1em 0 $color-primary-hilight;
 
     &:after {
       /*content: ' *';*/

@@ -8,6 +8,9 @@
     },
     "border": {
       "value": "0"
+    },
+    "min-height": {
+      "value": "3{default.unit.value}"
     }
   }
 }

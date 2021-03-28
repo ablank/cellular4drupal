@@ -39,7 +39,7 @@
         &.active {
         text-decoration: none;
         color: $color-primary-bg;
-        background: $color-hilight;
+        background: $color-primary-hilight;
       }
     }
   }
@@ -60,7 +60,7 @@
       right: 0;
       bottom: 0;
       &:hover {
-        @include triangle(0.8em, 0.6em, $color-hilight, "down");
+        @include triangle(0.8em, 0.6em, $color-primary-hilight, "down");
       }
     }
   }
@@ -114,7 +114,7 @@
 
       bottom: 0;
       &:hover {
-        @include triangle(0.8em, 0.6em, $color-hilight, $nav-dropdown-direction);
+        @include triangle(0.8em, 0.6em, $color-primary-hilight, $nav-dropdown-direction);
       }
     }
 

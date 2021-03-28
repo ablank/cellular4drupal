@@ -4,7 +4,7 @@
     margin: 0.4em 0;
     padding: 1em;
     color: $color-primary-bg;
-    background: $color-hilight;
+    background: $color-primary-hilight;
 
     &:after {
       position: absolute;
@@ -13,7 +13,7 @@
       width: 0;
       height: 0;
       content: " ";
-      border-top: 0.6em solid $color-hilight;
+      border-top: 0.6em solid $color-primary-hilight;
       border-right: 0.6em solid transparent;
       border-left: 0.6em solid transparent;
     }

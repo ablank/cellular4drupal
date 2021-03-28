@@ -37,7 +37,7 @@
     will-change: background-position, box-shadow;
     &:focus,
       &:hover {
-      box-shadow: 0 0 0.2em 0.1em $color-hilight;
+      box-shadow: 0 0 0.2em 0.1em $color-primary-hilight;
     }
     &.active {
       /* Shift background to indicate state.*/
@@ -90,7 +90,7 @@
         &.active:after,
           &:focus:after,
           &:hover:after {
-          @include triangle(0.8em, 0.6em, $color-hilight, "down");
+          @include triangle(0.8em, 0.6em, $color-primary-hilight, "down");
 
           transform: rotateY(180deg);
         }
@@ -133,12 +133,12 @@
       &:active,
         &:focus,
         &:hover {
-        color: $color-hilight;
+        color: $color-primary-hilight;
         background-color: $color-primary-bg;
       }
     }
     .active > a {
-      color: $color-hilight;
+      color: $color-primary-hilight;
       background-color: $color-primary-bg;
     }
     ul {

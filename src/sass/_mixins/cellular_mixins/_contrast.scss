@@ -1,0 +1,13 @@
+@mixin contrast($color) {
+  @if lightness($color) < 50% {
+    color: lighten($color, 70%);
+    p {
+      color: lighten($color, $adjust-color-biglylarge);
+    }
+  } @else {
+    color: darken($color, 70%);
+    p {
+      color: darken($color, $adjust-color-biglylarge);
+    }
+  }
+}

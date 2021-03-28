@@ -2,10 +2,10 @@
   "link": {
     "color": {
       "default": {
-        "value": "{color.primary.value}"
+        "value": "{color.primary-hilight.value}"
       },
       "focus": {
-        "value": "{color.hilight.value}"
+        "value": "{color.primary-hilight.value}"
       },
       "active": {
         "color": {

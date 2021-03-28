@@ -1,0 +1,26 @@
+@mixin ribbon(
+  $width: $default-size,
+  $height: $default-size,
+  $color: $color-primary
+) {
+  position: relative;
+  margin: 0 auto $height;
+  padding: 0 $width;
+  border-bottom: darken($color, 10%) 1px solid;
+  background-color: $color;
+  &:after,
+  &:before {
+    position: absolute;
+    bottom: -$height;
+    content: ' ';
+    border-top: darken($color, 10%) $height solid;
+  }
+  &:before {
+    left: 0;
+    border-left: $width solid transparent;
+  }
+  &:after {
+    right: 0;
+    border-right: $width solid transparent;
+  }
+}

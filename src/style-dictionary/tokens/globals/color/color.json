@@ -1,22 +1,22 @@
 {
   "color": {
-    "hilight": {
-      "value": "#0057e0",
-      "category": "color"
-    },
-    "shadow": {
-      "value": "{swatch.dark-grey.value}",
-      "category": "color"
-    },
     "primary": {
       "value": "{swatch.black.value}",
       "category": "color"
     },
     "primary-bg": {
-      "value": "{swatch.cream.value}",
+      "value": "{swatch.white.value}",
       "category": "color"
     },
     "primary-border": {
+      "value": "{swatch.sand.value}",
+      "category": "color"
+    },
+    "primary-hilight": {
+      "value": "{swatch.cyan.value}",
+      "category": "color"
+    },
+    "primary-shadow": {
       "value": "{swatch.sand.value}",
       "category": "color"
     },
@@ -32,6 +32,14 @@
       "value": "{swatch.light-grey.value}",
       "category": "color"
     },
+    "secondary-hilight": {
+      "value": "{swatch.cyan.value}",
+      "category": "color"
+    },
+    "secondary-shadow": {
+      "value": "{swatch.sand.value}",
+      "category": "color"
+    },
     "tertiary": {
       "value": "{swatch.dark-grey.value}",
       "category": "color"
@@ -42,6 +50,14 @@
     },
     "tertiary-border": {
       "value": "{swatch.sage.value}",
+      "category": "color"
+    },
+    "tertiary-hilight": {
+      "value": "{swatch.cyan.value}",
+      "category": "color"
+    },
+    "tertiary-shadow": {
+      "value": "{swatch.sand.value}",
       "category": "color"
     },
     "neutral": {
