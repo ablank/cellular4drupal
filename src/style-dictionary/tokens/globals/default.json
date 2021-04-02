@@ -12,16 +12,15 @@
       "type": "size"
     },
     "color": {
-      "value": "{swatch.black.value}",
+      "value": "{swatch.black}",
       "category": "default",
       "type": "default"
     },
     "background": {
-      "value": "{swatch.white.value}",
+      "value": "{swatch.white}",
       "category": "default",
       "type": "default"
     },
-
     "font": {
       "family": {
         "value": "{font.stack.times.value}",
@@ -48,7 +47,6 @@
         "category": "default"
       }
     },
-
     "line-height": {
       "value": "1.4em",
       "category": "default"
@@ -70,7 +68,7 @@
       "category": "default"
     },
     "offset": {
-      "value": "inset 0 0 0.3em 0 {swatch.dark-grey.value}",
+      "value": "inset 0 0 0.3em 0 {swatch.dark-grey}",
       "category": "default"
     },
     "transition": {
@@ -92,11 +90,11 @@
       }
     },
     "box-shadow": {
-      "value": "{size.tiny.value} {size.tiny.value} {size.tiny.value} 1px {swatch.black.value};",
+      "value": "{size.tiny.value} {size.tiny.value} {size.tiny.value} 1px {swatch.black};",
       "category": "default"
     },
     "drop-shadow": {
-      "value": "{size.tiny.value} {size.tiny.value} {size.tiny.value} {size.tiny.value} {swatch.black.value};",
+      "value": "{size.tiny.value} {size.tiny.value} {size.tiny.value} {size.tiny.value} {swatch.black};",
       "category": "default"
     }
   }

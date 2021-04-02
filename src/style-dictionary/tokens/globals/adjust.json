@@ -1,0 +1,13 @@
+{
+  "adjust": {
+    "default": {
+      "value": "25%"
+    },
+    "abit": {
+      "value": "10%"
+    },
+    "bigly": {
+      "value": "40%"
+    }
+  }
+}

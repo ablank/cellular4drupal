@@ -1,0 +1,28 @@
+// $direction='x' || 'y' || 'rad'
+@mixin gradient(
+  $direction: 'bottom',
+  $color_1: $color-primary-bg,
+  $color_2: $color-primary
+) {
+  background-color: $color_1;
+
+  @if (darkness($color_1) < 50%) {
+    $color_2: darken($color_1, 50%);
+  } @else {
+    $color_2: lighten($color_1, 50%);
+  }
+
+  @if ($direction != 'rad') {
+    background-image: linear-gradient(
+      to $direction,
+      $color_1 0%,
+      $color_2 100%
+    );
+  } @else {
+    background-image: radial-gradient(
+      ellipse farthest-side at center top,
+      $color_1 0%,
+      $color_2 100%
+    );
+  }
+}

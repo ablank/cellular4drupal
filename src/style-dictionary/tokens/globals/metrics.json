@@ -1,11 +1,5 @@
 {
   "size": {
-    "adjust": {
-      "value": "0.25",
-      "scale": "0.25",
-      "category": "metric",
-      "type": "size"
-    },
     "nano": {
       "value": "0.25{default.unit.value}",
       "scale": "0.25",

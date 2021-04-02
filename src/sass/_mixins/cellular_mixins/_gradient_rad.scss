@@ -1,9 +1,0 @@
-/* Radial Gradient*/
-@mixin gradient_rad($color_1: $color-primary, $color_2: $color-primary-bg) {
-  background-color: $color_1;
-  background-image: radial-gradient(
-    ellipse farthest-side at center top,
-    $color_1 0%,
-    $color_2 100%
-  );
-}

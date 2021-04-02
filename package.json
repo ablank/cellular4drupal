@@ -17,7 +17,7 @@
     "clean": "rimraf dist/{css/*,js/*,images/*}",
     "postcss": "postcss -r dist/css/ -u autoprefixer -u stylelint",
     "mincss": "postcss dist/css/ -u cssnano -d dist/css/ --ext .min.css",
-    "sass": "sass src/sass:dist/css --no-source-map",
+    "sass": "sass src/sass:dist/css",
     "lint": "run-s lint:*",
     "lint:js": "eslint -c .eslintrc.json src/js",
     "lint:css": "postcss -r dist/css/ -u stylelint --config .stylelintrc.json",

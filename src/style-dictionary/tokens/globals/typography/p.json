@@ -1,0 +1,20 @@
+{
+  "p": {
+    "font": {
+      "value": "{font.stack.helvetica.value}"
+    },
+    "size": {
+      "value": "{size.xl.value}"
+    },
+    "line-height": {
+      "value": "{size.xxl.value}",
+      "category": "dynamic"
+    },
+    "max-width": {
+      "value": "32em"
+    },
+    "weight": {
+      "value": "{default.font.weight.value}"
+    }
+  }
+}

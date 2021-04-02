@@ -130,6 +130,11 @@ StyleDictionary.registerFormat({
    */
 });
 
+StyleDictionary.registerFilter({
+  name: 'info',
+  matcher: (prop) => prop.attributes.category === 'info'
+});
+
 StyleDictionary.registerFormat({
   name: 'yaml',
   formatter: _.template(

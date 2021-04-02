@@ -1,0 +1,25 @@
+{
+    "logo":{
+        "unit": {
+            "value": "px"
+        },
+        "width": {
+            "value": "96{logo.unit.value}"
+        },
+        "height": {
+            "value": "96{logo.unit.value}"
+        },
+        "margin": {
+          "value": "0{logo.unit.value}"
+        },
+        "padding": {
+          "value": "0{logo.unit.value}"
+        },
+        "png": {
+            "value": "url('../assets/images/png/logo.png')"
+        },        
+        "svg": {
+            "value": "url('../assets/images/svg/logo.svg')"
+        }
+    }
+}

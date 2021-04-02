@@ -1,14 +1,11 @@
 {
   "region": {
     "sidebar": {
-      "bg": {
-        "value": "{color.primary.value}"        
-      },
-      "color": {
-        "value": "{color.primary.value}"
-      },
       "width": {
-        "value": "27"
+        "value": "27%"
+      },
+      "padding": {
+        "value": "0"
       }
     }
   }

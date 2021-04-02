@@ -35,7 +35,7 @@
           outline: none;
           /*transform: translate3d(0,0.1em,1em);*/
           @if ($style == "bevel") {
-            @include gradient_y($background, $background);
+            @include gradient('bottom', $background, $background);
           }
     
           @else {
@@ -46,7 +46,7 @@
         }
         /* transform: translate3d(0,0,0);*/
         @if ($style == "bevel") {
-          @include gradient_y($background, $background2, $background);
+          @include gradient('bottom', $background, $background2);
           @include border-radius();
         }
     

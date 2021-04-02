@@ -1,12 +1,6 @@
 {
   "region": {
     "content": {
-      "bg": {
-        "value": "{color.primary-bg.value}"
-      },
-      "color": {
-        "value": "{color.primary.value}"
-      }
     }
   }
 }

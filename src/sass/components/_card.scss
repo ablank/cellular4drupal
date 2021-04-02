@@ -107,7 +107,7 @@
     transition: 0.25s linear;
     text-decoration: line-through;
     color: $color-warning;
-    font-family: $link-font;
+    font-family: $heading-font;
     font-size: 1.15rem;
     font-weight: $default-font-weight-bold;
   }
@@ -127,7 +127,7 @@
     border: 1px dashed $color-primary-bg;
     border-radius: 5rem;
     background: $color-warning;
-    font-family: $link-font;
+    font-family: $heading-font;
     font-size: 1.1rem;
     font-weight: $default-font-weight-bold;
     line-height: 1.15;

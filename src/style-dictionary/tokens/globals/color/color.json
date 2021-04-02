@@ -1,80 +1,48 @@
 {
   "color": {
     "primary": {
-      "value": "{swatch.black.value}",
+      "value": "{swatch.black}",
       "category": "color"
     },
     "primary-bg": {
-      "value": "{swatch.white.value}",
-      "category": "color"
-    },
-    "primary-border": {
-      "value": "{swatch.sand.value}",
-      "category": "color"
-    },
-    "primary-hilight": {
-      "value": "{swatch.cyan.value}",
-      "category": "color"
-    },
-    "primary-shadow": {
-      "value": "{swatch.sand.value}",
+      "value": "{swatch.black}",
       "category": "color"
     },
     "secondary": {
-      "value": "{swatch.white.value}",
+      "value": "{swatch.white}",
       "category": "color"
     },
     "secondary-bg": {
-      "value": "{swatch.dark-grey.value}",
-      "category": "color"
-    },
-    "secondary-border": {
-      "value": "{swatch.light-grey.value}",
-      "category": "color"
-    },
-    "secondary-hilight": {
-      "value": "{swatch.cyan.value}",
-      "category": "color"
-    },
-    "secondary-shadow": {
-      "value": "{swatch.sand.value}",
+      "value": "{swatch.white}",
       "category": "color"
     },
     "tertiary": {
-      "value": "{swatch.dark-grey.value}",
+      "value": "{swatch.dark-grey}",
       "category": "color"
     },
     "tertiary-bg": {
-      "value": "{swatch.sand.value}",
+      "value": "{swatch.dark-grey}",
       "category": "color"
     },
-    "tertiary-border": {
-      "value": "{swatch.sage.value}",
-      "category": "color"
-    },
-    "tertiary-hilight": {
-      "value": "{swatch.cyan.value}",
-      "category": "color"
-    },
-    "tertiary-shadow": {
-      "value": "{swatch.sand.value}",
+    "hilight": {
+      "value": "{swatch.cyan}",
       "category": "color"
     },
     "neutral": {
-      "value": "{swatch.grey.value}",
+      "value": "{swatch.grey}",
       "category": "color"
     },
     "error": {
-      "value": "{swatch.red.value}",
+      "value": "{swatch.red}",
       "category": "color"
     },
     "warning": {
-      "value": "{swatch.yellow.value}",
+      "value": "{swatch.yellow}",
       "category": "color"
     },
     "success": {
-      "value": "{swatch.green.value}",
+      "value": "{swatch.green}",
       "category": "color"
-    }
+    }    
   }
 }
