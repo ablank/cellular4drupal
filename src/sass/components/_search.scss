@@ -42,7 +42,7 @@ form.site-search {
         &:active,
         &:focus {
         color: $color-primary;
-        border-color: $color-primary-hilight;
+        border-color: $color-hilight;
         outline: none;
       }
     }
@@ -60,7 +60,7 @@ form.site-search {
       &:hover,
         &:active,
         &:focus {
-        border-color: $color-primary-hilight;
+        border-color: $color-hilight;
         outline: none;
         background-color: darken($color-secondary, 8%);
       }

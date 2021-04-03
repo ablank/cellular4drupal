@@ -1,0 +1,47 @@
+# DO NOT EDIT DIRECTLY
+# @see ./style-dictionary/drupal/layout.json
+# Generated on <% print(new Date().toString()) %>
+<%
+var cells = {};
+var theme;
+var i = 0;
+/**
+ * Iterate over specified props
+ */
+ function iterate(key){
+  if (cells[key]) {
+    print(`\n\n${theme}.screen.${key}:`);
+    print(`\n  label: ${key}`);
+    print(`\n  cells: ${cells[key]}`);
+    print(`\n  group: screen`);
+    print(`\n  weight: ${i}`);
+    print(`\n  multipliers:`);
+    print(`\n    - 1x`);
+    print(`\n    - 2x`);
+
+    i += 1;
+    /*
+    _.each(cells[key], function (feature) {
+      print(`\n    - ${feature}`);
+    });
+    */
+  } 
+}
+
+var allProperties = _.each(allProperties, function (prop) {
+  
+  if(prop.name === "info_name"){
+    theme = prop.value.toLowerCase();
+  }
+
+  if (prop.attributes.category === 'cells') {    
+    var rename = prop.name.replace(/cells_/, '');
+    cells[rename] = prop.value;
+
+  }
+});
+
+_.each(Object.keys(cells), (key)=>{
+  iterate(key);
+});
+%>

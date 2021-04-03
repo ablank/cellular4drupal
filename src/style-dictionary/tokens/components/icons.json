@@ -49,7 +49,7 @@
     "options": {
       "ui": {
         "comment": "List of available user interface icons/classes",
-        "value": [
+        "values": [
           "arrow-up",
           "arrow-right",
           "arrow-down",
@@ -95,7 +95,7 @@
       },
       "tech": {
         "comment": "List of tech icons/classes",
-        "value": [
+        "values": [
           "android",
           "angular",
           "apple",
@@ -124,7 +124,7 @@
       },
       "social": {
         "comment": "List of social network icons/classes",
-        "value": [
+        "values": [
           "facebook",
           "instagram",
           "twitter",

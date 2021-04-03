@@ -4,7 +4,7 @@
 # Generated on <% print(new Date().toString()) %>
 <% 
 /**
- * Push "info" properties to {theme} 
+ * Push all "info" properties to {theme} 
  */
 var theme = {};
 var allProperties = _.each(allProperties, function (prop) {
@@ -14,7 +14,7 @@ var allProperties = _.each(allProperties, function (prop) {
   }
 });
 /**
- * Iterate over specified props
+ * Iterate over specified {theme} prop.
  */
  function iterate(key){
   if (theme[key]) { 
@@ -24,16 +24,20 @@ var allProperties = _.each(allProperties, function (prop) {
     });
   } 
 }
+console.log(theme);
 %>
 name: <% print(theme.name) %>
 description: <% print(theme.description) %>
 version: <% print(theme.version) %>
 package: <% print(theme.name) %>
 type: theme
-base theme: false
+base theme: <% print(theme.base_theme); %>
 core_version_requirement: ^8 || ^9
 <% if (theme.screenshot) { print("\nscreenshot: " + theme.screenshot); } %>
 <% iterate('libraries'); %>
+<% iterate('features'); %>
+<% iterate('ckeditor_stylesheets') %>
+
 regions: <%
   _.each(theme.regions, function (region) {
     // Convert region name from machine to human readable
@@ -46,5 +50,3 @@ regions: <%
     // Print regions with human string names
     print(`\n  ${region}: '${name}'`);
   }); %>
-<% iterate('features'); %>
-<% iterate('ckeditor_stylesheets') %>

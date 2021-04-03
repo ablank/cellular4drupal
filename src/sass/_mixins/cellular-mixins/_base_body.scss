@@ -17,7 +17,7 @@ body {
   line-height: $text-line-height;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
-  /*@include $color-primary-hilight('rad', $color-primary-bg, $color-primary-bg, $color-secondary);*/
+  /*@include $color-hilight('rad', $color-primary-bg, $color-primary-bg, $color-secondary);*/
   /*background-image: $body_img;*/
   /*background-repeat: repeat;*/
   /*background-attachment: fixed;*/

@@ -48,7 +48,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Thu, 01 Apr 2021 02:02:39 GMT
+  Generated on Sat, 03 Apr 2021 01:24:34 GMT
 */
 /**
 * @file
@@ -81,7 +81,7 @@ h3 {
   a,
 a:visited {
     text-decoration: underline;
-    color: #00598e;
+    color: #1d0303;
   }
   a:after,
 a:visited:after {

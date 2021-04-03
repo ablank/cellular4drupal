@@ -2,40 +2,40 @@
   "breakpoint": {
     "unit": {
       "category": "unit",
-      "value": "px"
+      "ivalue": "px"
     },
     "small": {
       "category": "mediaquery",
-      "value": "500",
+      "ivalue": "500",
       "comment": "Styles for mobile devices."
     },
     "narrow": {
       "category": "mediaquery",
-      "value": "960",
+      "ivalue": "960",
       "comment": "Styles for tablets."
     },
     "default": {
       "category": "mediaquery",
-      "value": "1600",
+      "ivalue": "1600",
       "comment": "Styles for most laptop & desktop computers. Anything greater than this breakpoint is considered 'large'"
     }
   },
   "mediaquery": {
     "small": {
       "category": "mediaquery",
-      "value": "'(max-width: {breakpoint.small.value}{breakpoint.unit.value})'"
+      "value": "'(max-width: {breakpoint.small.ivalue}{breakpoint.unit.ivalue})'"
     },
     "narrow": {
       "category": "mediaquery",
-      "value": "'(min-width: {breakpoint.small.value}{breakpoint.unit.value}) and (max-width: {breakpoint.narrow.value}{breakpoint.unit.value})'"
+      "value": "'(min-width: {breakpoint.small.ivalue}{breakpoint.unit.ivalue}) and (max-width: {breakpoint.narrow.ivalue}{breakpoint.unit.ivalue})'"
     },
     "default": {
       "category": "mediaquery",
-      "value": "'(min-width: {breakpoint.narrow.value}{breakpoint.unit.value}) and (max-width: {breakpoint.default.value}{breakpoint.unit.value})'"
+      "value": "'(min-width: {breakpoint.narrow.ivalue}{breakpoint.unit.ivalue}) and (max-width: {breakpoint.default.ivalue}{breakpoint.unit.ivalue})'"
     },
     "large": {
         "category": "mediaquery",
-        "value": "'(min-width: {breakpoint.default.value}{breakpoint.unit.value})'"
+        "value": "'(min-width: {breakpoint.default.ivalue}{breakpoint.unit.ivalue})'"
     },
     "retina": {
         "category": "mediaquery",

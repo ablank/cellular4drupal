@@ -1,7 +1,7 @@
 {
   "p": {
     "font": {
-      "value": "{font.stack.helvetica.value}"
+      "value": "{font.stack.helvetica.ivalue}"
     },
     "size": {
       "value": "{size.xl.value}"

@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Fri, 02 Apr 2021 22:05:16 GMT
+  Generated on Sat, 03 Apr 2021 18:15:31 GMT
 */
 
 $button-border-size: 0.1rem;
@@ -16,12 +16,6 @@ $icon-border: 1px solid #101010;
 $icon-border-radius: 50%;
   // List of icons/classes to actually include in style
 $icon-list: arrow-up,arrow-right,arrow-down,arrow-left,mail,menu,message-error,message-ok,message-warning,email,home,search,facebook,instagram,twitter,twitter-t,github-octo,google,youtube,linkedin,reddit;
-  // List of available user interface icons/classes
-$icon-options-ui: arrow-up,arrow-right,arrow-down,arrow-left,mail,mail2,menu,message-error,message-ok,message-warning,audio,camera,cart,chat,cloud,doc,email,eye,film,folder,gear,heart,home,key,lock,minus,pdf,phone,phone2,picture,plus,print,rss,search,spreadsheet,star,user,user-social,video,wrench,zip;
-  // List of tech icons/classes
-$icon-options-tech: android,angular,apple,creativecommons,chrome,css3,desktop,drupal,firefox,globe,html5,internetexplorer,jquery,js,laptop,linux,mac,mobile,opera,safari,stackoverflow,w3,windows,wordpress;
-  // List of social network icons/classes
-$icon-options-social: facebook,instagram,twitter,twitter-t,github-octo,google,youtube,linkedin,reddit,behance,blogger,delicious,deviantart,digg,flickr,grooveshark,hi5,myspace,pinterest,skype,slashdot,soundcloud,stumbleupon,technorati,tumblr,yelp;
 $logo-unit: px;
 $logo-width: 96px;
 $logo-height: 96px;
@@ -37,13 +31,6 @@ $nav-dropdown-direction: 'left';
 $adjust-default: 25%;
 $adjust-abit: 10%;
 $adjust-bigly: 40%;
-$breakpoint-unit: px;
-  // Styles for mobile devices.
-$breakpoint-small: 500;
-  // Styles for tablets.
-$breakpoint-narrow: 960;
-  // Styles for most laptop & desktop computers. Anything greater than this breakpoint is considered 'large'
-$breakpoint-default: 1600;
 $mediaquery-small: '(max-width: 500px)';
 $mediaquery-narrow: '(min-width: 500px) and (max-width: 960px)';
 $mediaquery-default: '(min-width: 960px) and (max-width: 1600px)';

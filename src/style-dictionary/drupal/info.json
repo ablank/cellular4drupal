@@ -18,6 +18,11 @@
       "category": "info",
       "comment": "Image displayed in Admin/Appearance"
     },
+    "base_theme": {
+      "value": false,
+      "category": "info",
+      "comment": "Base theme."
+    },
     "libraries": {
       "value": [
         "cellular/cellular"
@@ -35,6 +40,22 @@
       ],
       "category": "info",
       "comment": "List of dependencies"
+    },
+    "features": {
+      "value": [
+        "favicon",
+        "slogan",
+        "comment_user_picture",
+        "node_user_picture"
+      ],
+      "category": "info"
+    },
+    "ckeditor_stylesheets": {
+      "value": [
+        "'dist/css/style.css'"
+      ],
+      "category": "info",
+      "comment": "List of ckeditor stylesheets"
     },
     "regions": {
       "value": [
@@ -56,22 +77,6 @@
       ],
       "category": "info",
       "comment": "List of page regions"
-    },
-    "features": {
-      "value": [
-        "favicon",
-        "slogan",
-        "comment_user_picture",
-        "node_user_picture"
-      ],
-      "category": "info"
-    },
-    "ckeditor_stylesheets": {
-      "value": [
-        "'dist/css/style.css'"
-      ],
-      "category": "info",
-      "comment": "List of ckeditor stylesheets"
     }
   }
 }

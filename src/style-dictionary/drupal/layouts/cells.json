@@ -1,0 +1,18 @@
+{
+    "cells":{
+        "label": "Cells",
+        "category": "{info.name.value}",
+        "default_region": "",
+        "regions":[
+            "hero",
+            "content",
+            "sidebar",
+            "footer"
+        ],
+        "icon_map": {
+            ["hero"],            
+            ["content, sidebar"]  
+            ["footer"]      
+        }
+    }
+}
