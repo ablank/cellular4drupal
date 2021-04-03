@@ -1,77 +1,47 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /build/templates/mediaquerys.template, /build/build.js, /tokens/globals/mediaquery.json, /config.json
+# @see ./style-dictionary/tokens/globals/breakpoint.json
 # Generated on <% print(new Date().toString()) %>
 <%
-var theme = "",
-mediaquery = {},
-allProperties = _.each(allProperties, function(prop) {
-    
-      if(prop.name === "mediaquery_small"){
-      mediaquery.small = prop.value;
-      }
-      if(prop.name === "mediaquery_narrow"){
-      mediaquery.narrow = prop.value;
-      }
-      if(prop.name === "mediaquery_default"){
-      mediaquery.default = prop.value;
-      }
-      if(prop.name === "mediaquery_large"){
-      mediaquery.large = prop.value;
-      }
-      
-      if(prop.name === "info_name"){
-      theme = prop.value.toLowerCase();
-      }
-}); 
-/*
-_.each(allProperties, function(prop) {
-    // Notice: this is an alternative way to use Lodash templating syntax,
-    // that uses string concatenation and the print() function to have
-    // more control over the indentation, whitespace, newlines, etc.
-    var output = "";
-    output += "\t<" + prop.tag + " name=\"" + prop.name + "\">";
-    output += prop.value;
-    output += "</" + prop.tag + ">";
-    if(prop.comment) {
-    output += "<!-- " + prop.comment + " -->";
-    }
-    output += "\n";
-    print(output);
+var mediaquery = {};
+var theme;
+var i = 0;
+/**
+ * Iterate over specified props
+ */
+ function iterate(key){
+  if (mediaquery[key]) {
+    print(`\n\n${theme}.screen.${key}:`);
+    print(`\n  label: ${key}`);
+    print(`\n  mediaQuery: ${mediaquery[key]}`);
+    print(`\n  group: screen`);
+    print(`\n  weight: ${i}`);
+    print(`\n  multipliers:`);
+    print(`\n    - 1x`);
+    print(`\n    - 2x`);
+
+    i += 1;
+    /*
+    _.each(mediaquery[key], function (feature) {
+      print(`\n    - ${feature}`);
+    });
+    */
+  } 
+}
+
+var allProperties = _.each(allProperties, function (prop) {
+  
+  if(prop.name === "info_name"){
+    theme = prop.value.toLowerCase();
+  }
+
+  if (prop.attributes.category === 'mediaquery') {    
+    var rename = prop.name.replace(/mediaquery_/, '');
+    mediaquery[rename] = prop.value;
+
+  }
 });
-*/
+
+_.each(Object.keys(mediaquery), (key)=>{
+  iterate(key);
+});
 %>
-<% print(theme) %>.screen.small:
-  label: small
-  mediaQuery: <% print(mediaquery.small) %>
-  weight: 1
-  group: screen
-  multipliers:
-    - 1x
-    - 2x
-
-<% print(theme) %>.screen.narrow:
-  label: narrow
-  mediaQuery: <% print(mediaquery.narrow) %>
-  weight: 2
-  group: screen
-  multipliers:
-    - 1x
-    - 2x
-
-<% print(theme) %>.screen.default:
-  label: default
-  mediaQuery: <% print(mediaquery.default) %>
-  weight: 3
-  group: screen
-  multipliers:
-    - 1x
-    - 2x
-
-<% print(theme) %>.screen.large:
-  label: large
-  mediaQuery: <% print(mediaquery.large) %>
-  weight: 4
-  group: screen
-  multipliers:
-    - 1x
-    - 2x

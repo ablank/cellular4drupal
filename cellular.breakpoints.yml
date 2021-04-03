@@ -1,12 +1,13 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary /build/templates/mediaquerys.template, /build/build.js, /tokens/globals/mediaquery.json, /config.json
-# Generated on Thu Apr 01 2021 18:36:40 GMT-0700 (Pacific Daylight Time)
+# @see ./style-dictionary/tokens/globals/breakpoint.json
+# Generated on Fri Apr 02 2021 15:05:15 GMT-0700 (Pacific Daylight Time)
+
 
 cellular.screen.small:
   label: small
   mediaQuery: '(max-width: 500px)'
-  weight: 1
   group: screen
+  weight: 0
   multipliers:
     - 1x
     - 2x
@@ -14,8 +15,8 @@ cellular.screen.small:
 cellular.screen.narrow:
   label: narrow
   mediaQuery: '(min-width: 500px) and (max-width: 960px)'
-  weight: 2
   group: screen
+  weight: 1
   multipliers:
     - 1x
     - 2x
@@ -23,8 +24,8 @@ cellular.screen.narrow:
 cellular.screen.default:
   label: default
   mediaQuery: '(min-width: 960px) and (max-width: 1600px)'
-  weight: 3
   group: screen
+  weight: 2
   multipliers:
     - 1x
     - 2x
@@ -32,8 +33,17 @@ cellular.screen.default:
 cellular.screen.large:
   label: large
   mediaQuery: '(min-width: 1600px)'
-  weight: 4
   group: screen
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+
+cellular.screen.retina:
+  label: retina
+  mediaQuery: 'screen and (min-resolution: 192dpi) and (min-resolution: 2dppx)'
+  group: screen
+  weight: 4
   multipliers:
     - 1x
     - 2x

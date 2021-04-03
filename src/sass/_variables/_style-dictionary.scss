@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Fri, 02 Apr 2021 01:36:41 GMT
+  Generated on Fri, 02 Apr 2021 22:05:16 GMT
 */
 
 $button-border-size: 0.1rem;
@@ -34,7 +34,9 @@ $nav-text-font: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book
 $nav-text-size: 1rem;
 $nav-dropdown-show: true;
 $nav-dropdown-direction: 'left';
-$adjust: 0.25;
+$adjust-default: 25%;
+$adjust-abit: 10%;
+$adjust-bigly: 40%;
 $breakpoint-unit: px;
   // Styles for mobile devices.
 $breakpoint-small: 500;
@@ -60,8 +62,6 @@ $color-warning: #ec2;
 $color-success: #61d43f;
 $default-unit: rem;
 $default-size: 1rem;
-$default-adjust-abit: 10%;
-$default-adjust-bigly: 40%;
 $default-color: #101010;
 $default-background: #fefefe;
 $default-font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
