@@ -46,7 +46,7 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: 'sass/cellular',
   formatter: _.template(
-    fs.readFileSync(__dirname + '/templates/sass.template'),
+    fs.readFileSync(__dirname + '/templates/sass.js'),
   ),
   /*function (dictionary, config) {
    Set up an empty object to hold the final shape to pass
@@ -138,21 +138,28 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerFormat({
   name: 'yaml',
   formatter: _.template(
-    fs.readFileSync(__dirname + '/templates/yaml.template'),
+    fs.readFileSync(__dirname + '/templates/yaml.js'),
   ),
 });
 
 StyleDictionary.registerFormat({
   name: 'yaml/info',
   formatter: _.template(
-    fs.readFileSync(__dirname + '/templates/info.template'),
+    fs.readFileSync(__dirname + '/templates/info.js'),
   ),
 });
 
 StyleDictionary.registerFormat({
-  name: 'yaml/breakpoints',
+  name: 'yaml/breakpoint',
   formatter: _.template(
-    fs.readFileSync(__dirname + '/templates/breakpoints.template'),
+    fs.readFileSync(__dirname + '/templates/breakpoint.js'),
+  ),
+});
+
+StyleDictionary.registerFormat({
+  name: 'yaml/layout',
+  formatter: _.template(
+    fs.readFileSync(__dirname + '/templates/layout.js'),
   ),
 });
 

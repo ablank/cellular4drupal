@@ -23,7 +23,7 @@
     },
     "font": {
       "family": {
-        "value": "{font.stack.times.value}",
+        "value": "{font.stack.times}",
         "category": "default"
       },
       "size": {

@@ -1,0 +1,13 @@
+{    
+  "alpha": {
+    "start": {
+      "value": "0"
+    },
+    "end": {
+      "value": "1"
+    },
+    "offset": {
+      "value": "0.2"
+    }
+  }
+}

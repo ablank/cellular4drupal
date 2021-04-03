@@ -1,0 +1,13 @@
+{
+  "shadow": {
+    "default": {
+      "value": "0 0 {size.small.value} {size.small.value}"
+    },
+    "small": {
+      "value": "0 0 {size.tiny.value} {size.tiny.value}"
+    },
+    "large": {
+      "value": "0 0 {default.size.value} {default.size.value}"
+    }
+  }
+}

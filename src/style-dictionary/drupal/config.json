@@ -12,12 +12,20 @@
           "destination": "cellular.info.yml"
         }]
     },
-    "breakpoints": {
+    "breakpoint": {
       "transformGroup": "yaml",
       "buildPath": "./",
       "files": [{
-          "format": "yaml/breakpoints",
+          "format": "yaml/breakpoint",
           "destination": "cellular.breakpoints.yml"
+        }]
+    },
+    "layouts": {
+      "transformGroup": "yaml",
+      "buildPath": "./",
+      "files": [{
+          "format": "yaml/layout",
+          "destination": "cellular.layouts.yml"
         }]
     }
   }

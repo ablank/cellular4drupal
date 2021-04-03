@@ -1,13 +1,13 @@
 {
   "p": {
     "font": {
-      "value": "{font.stack.helvetica.ivalue}"
+      "value": "{font.stack.helvetica}"
     },
     "size": {
-      "value": "{size.xl.value}"
+      "value": "{size.default.value}"
     },
     "line-height": {
-      "value": "{size.xxl.value}",
+      "value": "{size.xl.value}",
       "category": "dynamic"
     },
     "max-width": {

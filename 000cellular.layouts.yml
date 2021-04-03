@@ -1,0 +1,21 @@
+cellular_layout_cells:
+  label: 'Cells'
+  category: 'Cellular'
+  path: templates/layouts/cells
+  template: layout--cellular-cells
+  #library: cellular_cells
+  #class: 'Plugin\Layout\CellularLayout'
+  default_region: content
+  icon_map:
+    - [hero]
+    - [content, sidebar]
+    - [footer]
+  regions:
+    hero:
+      label: Banner
+    content:
+      label: Content
+    sidebar:
+      label: Sidebar
+    footer:
+      label: Footer

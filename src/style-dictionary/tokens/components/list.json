@@ -14,14 +14,6 @@
     },
     "style-ol": {
       "value": "none"
-    } 
-  },
-  "table": {
-    "margin": {
-      "value": "1em"
-    },
-    "padding": {
-      "value": "0.5em"
     }
   }
 }

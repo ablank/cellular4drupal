@@ -2,24 +2,25 @@
 # @see ./style-dictionary/drupal/layout.json
 # Generated on <% print(new Date().toString()) %>
 <%
-var cells = {};
 var theme;
-var i = 0;
+var cells = {};
+
 /**
  * Iterate over specified props
  */
  function iterate(key){
   if (cells[key]) {
-    print(`\n\n${theme}.screen.${key}:`);
+    print(`\n\n${theme}_layout_${key}:`);
     print(`\n  label: ${key}`);
-    print(`\n  cells: ${cells[key]}`);
-    print(`\n  group: screen`);
-    print(`\n  weight: ${i}`);
-    print(`\n  multipliers:`);
-    print(`\n    - 1x`);
-    print(`\n    - 2x`);
+    print(`\n  category: ${theme}`);
+    print(`\n  path: templates/layout/${key}`);
+    print(`\n  template: layout--${theme}-${key}`);
+    print(`\n  default_region: ${cells[key]['default_region']}`);
+    print(`\n  icon_map:`);
 
-    i += 1;
+    print(`\n  regions:`);
+    
+
     /*
     _.each(cells[key], function (feature) {
       print(`\n    - ${feature}`);
@@ -34,8 +35,8 @@ var allProperties = _.each(allProperties, function (prop) {
     theme = prop.value.toLowerCase();
   }
 
-  if (prop.attributes.category === 'cells') {    
-    var rename = prop.name.replace(/cells_/, '');
+  if (prop.attributes.category === 'layout') {    
+    var rename = prop.name.replace(/layout_/, '');
     cells[rename] = prop.value;
 
   }

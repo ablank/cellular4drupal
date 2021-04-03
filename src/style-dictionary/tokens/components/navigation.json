@@ -3,21 +3,16 @@
     "position": {
       "value": "0.1rem"
     },
-    "text": {
-      "font": {
-        "value": "{text.font.value}"
-      },
-      "size": {
-        "value": "{default.size.value}"
-      }
+    "size": {
+      "value": "{default.size.value}"
+    }
+  },
+  "dropdown": {
+    "show": {
+      "value": "true"
     },
-    "dropdown": {
-      "show": {
-        "value": "true"
-      },
-      "direction": {
-        "value": "'left'"
-      }
+    "direction": {
+      "value": "'left'"
     }
   }
 }

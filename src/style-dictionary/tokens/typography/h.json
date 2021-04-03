@@ -1,7 +1,7 @@
 {
   "h": {
     "font": {
-      "value": "{font.stack.impact.ivalue}"
+      "value": "{font.stack.impact}"
     },
     "size": {
       "value": "{size.xl.value}"
