@@ -52,7 +52,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sat, 03 Apr 2021 01:24:34 GMT
+  Generated on Sun, 04 Apr 2021 06:28:39 GMT
 */
 /**
 * @file
@@ -117,10 +117,10 @@ html {
 
 body {
   color: #101010;
-  background: #101010;
-  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  background: #fefefe;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
-  line-height: 1.4rem;
+  line-height: 3rem;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   /*@include gradient('rad', $color-primary-bg, $color-primary-bg, $color-secondary);*/
@@ -175,7 +175,7 @@ sub {
 blockquote,
 q {
   color: #fefefe;
-  background-color: #fefefe;
+  background-color: #555;
   font-style: italic;
 }
 blockquote:before,
@@ -290,7 +290,7 @@ ol > li:before {
   color: #fefefe;
   border: thin solid;
   border-radius: 50%;
-  background: #101010;
+  background: #fefefe;
   line-height: 1.4em;
 }
 
@@ -301,7 +301,7 @@ ul {
 
 li {
   width: auto;
-  max-width: 28.8rem;
+  max-width: 28.8em;
   margin: 0.3em auto 0.6em;
 }
 
@@ -343,11 +343,11 @@ thead {
 }
 
 tr:nth-child(even) {
-  background: #030303;
+  background: #f1f1f1;
 }
 
 tr:nth-child(odd) {
-  background: #101010;
+  background: #fefefe;
 }
 
 td {
@@ -406,7 +406,7 @@ form.vertical input[type=submit] {
 fieldset {
   margin: 2em 0.25rem 1em;
   padding: 0.25rem;
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
   /*@include clear();*/
 }
 
@@ -418,7 +418,7 @@ legend {
   top: -1em;
   padding: 0 0.7rem;
   color: #bbbab7;
-  background: #101010;
+  background: #fefefe;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1.4rem;
   font-weight: bold;
@@ -458,8 +458,8 @@ textarea {
   text-indent: 0.4em;
   color: #101010;
   border: #bbbab7 1px solid;
-  background: #0d0d0d;
-  font: 1em/1.6em "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  background: #fbfbfb;
+  font: 1em/1.6em Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
 }
 input:focus,
@@ -467,7 +467,7 @@ select:focus,
 textarea:focus {
   color: #101010;
   outline: none;
-  background: #101010;
+  background: #fefefe;
   box-shadow: 0 0 0.2em 0 #1d0303;
 }
 input.year, input.month, input.day, input.hour, input.minute,
@@ -498,7 +498,7 @@ select {
 }
 
 optgroup {
-  background: #030303;
+  background: #f1f1f1;
 }
 
 option {
@@ -554,8 +554,8 @@ input[type=checkbox]:checked + label:before, input[type=checkbox]:checked + labe
   vertical-align: middle;
 }
 input[type=checkbox]:checked + label:before, input[type=checkbox]:not(:checked) + label:before, input[type=radio]:checked + label:before, input[type=radio]:not(:checked) + label:before {
-  border: 1px solid #101010;
-  background: #0b0b0b;
+  border: 1px solid #fefefe;
+  background: #f9f9f9;
   box-shadow: inset 0 0 1px 1px #fefefe;
 }
 input[type=checkbox]:checked + label:after, input[type=checkbox]:not(:checked) + label:after, input[type=radio]:checked + label:after, input[type=radio]:not(:checked) + label:after {
@@ -624,7 +624,7 @@ input[type=submit] {
   text-align: center;
   color: #1d0303;
   border: #1d0303 2px solid;
-  background-color: #101010;
+  background-color: #fefefe;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
@@ -638,7 +638,7 @@ input[type=submit] {
 input[type=button]:visited,
 input[type=submit]:visited {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .button.active, .button:active,
 input[type=button].active,
@@ -1021,9 +1021,9 @@ a img {
 */
 p {
   display: block;
-  max-width: 32rem;
+  max-width: 32em;
   margin: 0 auto;
-  padding: 0 1rem 0.7rem;
+  padding: 0 1rem 1.5rem;
   color: #101010;
 }
 
@@ -1107,7 +1107,7 @@ h3 {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 72px 72px;
-  box-shadow: 0 0 0 0 #101010;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: width, height, transform;
 }
 .logo a:focus, .logo a:hover {
@@ -1257,7 +1257,7 @@ html.js input.webform-calendar {
   text-align: center;
   color: #1d0303;
   border: #1d0303 2px solid;
-  background-color: #101010;
+  background-color: #fefefe;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
@@ -1270,7 +1270,7 @@ html.js input.webform-calendar {
 .menu a:visited,
 .inline.links a:visited {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .menu a.active, .menu a:active,
 .inline.links a.active,
@@ -1311,11 +1311,11 @@ html.js input.webform-calendar {
   padding: 0.4em 0.8em;
   color: #fefefe;
   border: 1px solid;
-  background-color: #fefefe;
+  background-color: #555;
 }
 .links a.active, .links a:active, .links a:focus, .links a:hover {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9kcnVwYWxfbWVudXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7RUFFRSxjQUFjO0VBQ2QsV0FBVztFQUNYLGFBQWE7O0VBRWI7SUFDRSxlQUFlO0lBQ2YscUJBQXFCO0lBQ3JCLGFBQWE7SUFDYixVQUFVO0VBQ1o7O0VBRUE7SUFDRSxpQkFBaUI7O0lBRWpCLG9CQUFvQjtFQUN0QjtBQUNGOztBQUVBO0VBQ0UsZ0JBQWdCOztFQUVoQixZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLHdCQUF3QjtFQUN4Qiw2QkFBNkI7RUFDN0I7SUFDRSxjQUFjO0lBQ2QsV0FBVztFQUNiO0VBQ0E7SUFDRTs7TUFFRSwwQkFBMEI7O01BRTFCLG9CQUFvQjtNQUNwQix3QkFBd0I7TUFDeEIsaUJBQWlCO01BQ2pCLGtDQUFrQztJQUNwQztJQUNBOzs7O01BSUUscUJBQXFCO01BQ3JCLG1DQUFtQztJQUNyQztFQUNGO0FBQ0YiLCJmaWxlIjoiX2RydXBhbF9tZW51cy5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1lbnUsXHJcbi5pbmxpbmUubGlua3Mge1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIGNsZWFyOiBib3RoO1xyXG4gIG1hcmdpbjogMC40ZW07XHJcblxyXG4gIGxpIHtcclxuICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbjogMC4yZW07XHJcbiAgICBwYWRkaW5nOiAwO1xyXG4gIH1cclxuXHJcbiAgYSB7XHJcbiAgICBAaW5jbHVkZSBidXR0b24oKTtcclxuXHJcbiAgICBwYWRkaW5nOiAwLjJlbSAwLjRlbTtcclxuICB9XHJcbn1cclxuXHJcbi5saW5rcyB7XHJcbiAgQGluY2x1ZGUgY2xlYXIoKTtcclxuXHJcbiAgcGFkZGluZzogMWVtO1xyXG4gIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkO1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG4gIGxpIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgfVxyXG4gIGEge1xyXG4gICAgJixcclxuICAgICY6dmlzaXRlZCB7XHJcbiAgICAgIEBpbmNsdWRlIHJvdW5kKCRzaXplLXRpbnkpO1xyXG5cclxuICAgICAgcGFkZGluZzogMC40ZW0gMC44ZW07XHJcbiAgICAgIGNvbG9yOiAkY29sb3ItcHJpbWFyeS1iZztcclxuICAgICAgYm9yZGVyOiAxcHggc29saWQ7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1zZWNvbmRhcnk7XHJcbiAgICB9XHJcbiAgICAmLmFjdGl2ZSxcclxuICAgICY6YWN0aXZlLFxyXG4gICAgJjpmb2N1cyxcclxuICAgICY6aG92ZXIge1xyXG4gICAgICBjb2xvcjogJGNvbG9yLWhpbGlnaHQ7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1wcmltYXJ5LWJnO1xyXG4gICAgfVxyXG4gIH1cclxufVxyXG4iXX0= */
@@ -1362,7 +1362,7 @@ html.js input.webform-calendar {
   margin: 0;
   padding: 0.6em 1em;
   cursor: pointer;
-  color: #101010;
+  color: #fefefe;
   background-color: #fefefe;
 }
 .cellular .jAccordion .title:focus, .cellular .jAccordion .title:hover,
@@ -1372,7 +1372,7 @@ html.js input.webform-calendar {
 .cellular .jMmenu .title:hover,
 .cellular .jTabs .title:focus,
 .cellular .jTabs .title:hover {
-  color: #101010;
+  color: #fefefe;
   background-color: black;
 }
 .cellular .jAccordion .title a, .cellular .jAccordion .title a:visited,
@@ -1383,7 +1383,7 @@ html.js input.webform-calendar {
 .cellular .jTabs .title a,
 .cellular .jTabs .title a:visited {
   text-decoration: none;
-  color: #101010;
+  color: #fefefe;
   border: none;
   font-weight: bold;
   line-height: 1.4em;
@@ -1427,7 +1427,7 @@ html.js input.webform-calendar {
   text-align: center;
   color: #fefefe;
   border: #bbbab7 1px solid;
-  background: #101010;
+  background: #fefefe;
 }
 .cellular .jAccordion .panel p,
 .cellular .jAccordion .panel li,
@@ -1468,7 +1468,7 @@ html.js input.webform-calendar {
   /* background-repeat: no-repeat;*/
   /* background-position: left center;*/
   /* background-image: url(../assets/icons/svg/plus.svg);*/
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
   border-bottom: none;
 }
 .jAccordion .panel {
@@ -1518,13 +1518,13 @@ html.js input.webform-calendar {
   padding: 0;
   cursor: pointer;
   border: 2px solid #101010;
-  background-color: #101010;
+  background-color: #fefefe;
   background-image: url("../assets/icons/png/menu.png");
   background-image: url("../assets/icons/svg/menu.svg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 9em;
-  box-shadow: 0 0 0 0 #101010;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: background-position, box-shadow;
 }
 .cellular .jMmenu-trigger:focus, .cellular .jMmenu-trigger:hover {
@@ -1559,7 +1559,7 @@ html.js input.webform-calendar {
   overflow: hidden;
   margin: 0;
   transform: translate3d(0, 0, 0);
-  background-color: rgba(16, 16, 16, 0.7);
+  background-color: rgba(254, 254, 254, 0.7);
 }
 .cellular .jMmenu-menu li {
   display: block;
@@ -1617,7 +1617,7 @@ html.js input.webform-calendar {
   text-decoration: none;
   color: #fefefe;
   border-bottom: 1px solid;
-  background-color: #101010;
+  background-color: #fefefe;
   background-image: none;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 0.9em;
@@ -1625,11 +1625,11 @@ html.js input.webform-calendar {
 }
 .cellular .jMmenu-menu a:active, .cellular .jMmenu-menu a:focus, .cellular .jMmenu-menu a:hover {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .cellular .jMmenu-menu .active > a {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .cellular .jMmenu-menu ul {
   /* Styling for nested menus.*/
@@ -1700,7 +1700,7 @@ html.js input.webform-calendar {
   top: 4.8px !important;
   width: 38.4px;
   height: 38.4px;
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
   background-size: 115.2px;
 }
 .scrolled.jMmenu-active .jMmenu-menu, .scrolled.jMmenu-inactive .jMmenu-menu {
@@ -1726,8 +1726,8 @@ html.js input.webform-calendar {
 
 .jScrolli-wrap {
   overflow: hidden;
-  border: 1px solid #101010;
-  background-color: #101010;
+  border: 1px solid #fefefe;
+  background-color: #fefefe;
   /* Styles applied while .slide is transitioning */
 }
 .jScrolli-wrap ul {
@@ -1785,7 +1785,7 @@ html.js input.webform-calendar {
 }
 .jScrolli-slide .title a,
 .jScrolli-slide .title a:visited {
-  text-shadow: -2px 0 #101010, 0px 0 #101010, -1px 1px 0 #101010, 1px 1px 0 #101010;
+  text-shadow: -2px 0 #fefefe, 0px 0 #fefefe, -1px 1px 0 #fefefe, 1px 1px 0 #fefefe;
   color: #fefefe;
   font-weight: bold;
 }
@@ -1797,7 +1797,7 @@ html.js input.webform-calendar {
 }
 .jScrolli-slide p {
   padding: 0.8em;
-  background: rgba(16, 16, 16, 0.9);
+  background: rgba(254, 254, 254, 0.9);
 }
 
 .jScrolli-background {
@@ -1824,7 +1824,7 @@ html.js input.webform-calendar {
   margin: 0;
   padding: 0.8em;
   opacity: 1;
-  color: #101010;
+  color: #fefefe;
 }
 
 .jScrolli-control {
@@ -1837,7 +1837,7 @@ html.js input.webform-calendar {
   cursor: pointer;
   text-indent: -999em;
   opacity: 0.2;
-  color: #101010;
+  color: #fefefe;
   /*background-size: $controlsize;*/
   background-color: #bbbab7;
   background-image: url(../assets/icons/png/controls.png);
@@ -1864,7 +1864,7 @@ html.js input.webform-calendar {
   left: 0;
   transition: none;
   opacity: 0;
-  border: #101010 2px solid;
+  border: #fefefe 2px solid;
   border-radius: 50%;
   background-color: #101010;
 }
@@ -1939,8 +1939,8 @@ html.js input.webform-calendar {
   clear: both;
   padding: 1.4em 1em 1em;
   color: #fefefe;
-  border: 1px solid #101010;
-  background: #101010;
+  border: 1px solid #fefefe;
+  background: #fefefe;
 }
 .jTabs-wrap > ul {
   margin: 0;
@@ -1956,16 +1956,16 @@ html.js input.webform-calendar {
 }
 .jTabs-wrap .tab .title {
   padding: 0.4em 0.6em;
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
 }
 .jTabs-wrap .tab.active {
   color: #fefefe;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .jTabs-wrap .tab.active .title {
   color: #fefefe;
-  border-bottom-color: #101010;
-  background: #101010;
+  border-bottom-color: #fefefe;
+  background: #fefefe;
 }
 .jTabs-wrap .tab.active .title a {
   color: #fefefe;
@@ -2000,7 +2000,7 @@ html.js input.webform-calendar {
   /* border-color: $panel_background;*/
 }
 .jTabs-wrap.vertical .tab.active .title {
-  border-right-color: #101010;
+  border-right-color: #fefefe;
   border-bottom-color: #fefefe;
 }
 
@@ -2033,7 +2033,7 @@ html.js input.webform-calendar {
   top: 0;
   left: 0;
   height: 96px;
-  background: #101010;
+  background: #fefefe;
   box-shadow: 0 0 1em 0.1em #fefefe;
   will-change: height;
 }
@@ -2042,8 +2042,8 @@ html.js input.webform-calendar {
   z-index: 4;
   /* Position contents left or right*/
   text-align: right;
-  color: #101010;
-  border-bottom: 1px solid #101010;
+  color: #fefefe;
+  border-bottom: 1px solid #fefefe;
   background: #101010;
   /* Custom type for region*/
 }
@@ -2054,12 +2054,12 @@ html.js input.webform-calendar {
 #header-top h3,
 #header-top h4 {
   display: inline;
-  color: #101010;
+  color: #fefefe;
   font-size: 1em;
 }
 
 #header-bottom {
-  color: #101010;
+  color: #fefefe;
   background-color: #fefefe;
 }
 
@@ -2070,7 +2070,7 @@ html.js input.webform-calendar {
 */
 #content {
   z-index: 1;
-  background: #101010;
+  background: #fefefe;
 }
 
 .messages {
@@ -2089,15 +2089,15 @@ html.js input.webform-calendar {
 #footer {
   z-index: 1;
   margin: 5em 0 0 0;
-  color: #101010;
-  background: #fefefe;
+  color: #fefefe;
+  background: #555;
 }
 
 #footer-top,
 #footer-bottom {
   color: #fefefe;
-  background: #fefefe;
-  border-bottom: 1px solid #101010;
+  background: #555;
+  border-bottom: 1px solid #fefefe;
   font-size: 0.7rem;
   /* Custom type for region*/
 }
@@ -2144,7 +2144,7 @@ html.js input.webform-calendar {
   color: #bbbab7;
   border: none;
   border-radius: unset;
-  background: #101010;
+  background: #fefefe;
   box-shadow: #bbbab7 0 0.1em 0.25em;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1rem;
@@ -2152,7 +2152,7 @@ html.js input.webform-calendar {
 }
 #main-menu a:hover, #main-menu a:focus, #main-menu a:active, #main-menu a.active, #main-menu a:visited:hover, #main-menu a:visited:focus, #main-menu a:visited:active, #main-menu a:visited.active {
   text-decoration: none;
-  color: #101010;
+  color: #fefefe;
   background: #1d0303;
 }
 #main-menu > li:first-child {
@@ -2203,8 +2203,8 @@ html.js input.webform-calendar {
   margin: 0;
   color: #bbbab7;
   border: none;
-  background: #030303;
-  background: rgba(3, 3, 3, 0.9);
+  background: #f1f1f1;
+  background: rgba(241, 241, 241, 0.9);
   right: 0;
   /*border-right: 1px solid;*/
   padding: 0 0.1em 0 0;
@@ -2277,7 +2277,7 @@ html.js input.webform-calendar {
   line-height: 2em;
 }
 #breadcrumb li a {
-  color: #fefefe;
+  color: #555;
 }
 #breadcrumb li.first {
   background-image: none;
@@ -2324,7 +2324,7 @@ html.js input.webform-calendar {
   text-align: center;
   color: #1d0303;
   border: #1d0303 2px solid;
-  background-color: #101010;
+  background-color: #fefefe;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
@@ -2337,7 +2337,7 @@ html.js input.webform-calendar {
 .date-nav-wrapper .date-prev a:visited,
 .date-nav-wrapper .date-next a:visited {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .date-nav-wrapper .date-prev a.active, .date-nav-wrapper .date-prev a:active,
 .date-nav-wrapper .date-next a.active,
@@ -2371,7 +2371,7 @@ html.js input.webform-calendar {
 }
 .month-view td {
   padding: 0.2em;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .month-view td.date-box {
   margin: 0;
@@ -2382,12 +2382,12 @@ html.js input.webform-calendar {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   padding: 0 0.5em;
-  color: #101010;
+  color: #fefefe;
   background-color: #bbbab7;
 }
 .date-box a,
 .date-box a:visited {
-  color: #101010;
+  color: #fefefe;
 }
 .date-box a:active, .date-box a:hover, .date-box a:focus, .date-box a:visited {
   color: #b41414;
@@ -2403,7 +2403,7 @@ html.js input.webform-calendar {
   border-bottom: #bbbab7 1px solid;
   border-left: #bbbab7 1px solid;
   /*min-width: 5em;*/
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .single-day td.today {
   /* offset-x | offset-y | blur-radius | spread-radius | color*/
@@ -2411,7 +2411,7 @@ html.js input.webform-calendar {
   border-color: #1d0303;
 }
 .single-day td.past {
-  background-color: black;
+  background-color: #e5e5e5;
 }
 .single-day td.past a, .single-day td.past a:visited {
   color: #bbbab7;
@@ -2421,11 +2421,11 @@ html.js input.webform-calendar {
   padding: 0.25rem;
   border: #bbbab7 1px solid;
   border-radius: 0.25rem;
-  background: #030303;
+  background: #f1f1f1;
 }
 .single-day a:active, .single-day a:hover, .single-day a:focus, .single-day a:visited {
   border-color: #1d0303;
-  background: #101010;
+  background: #fefefe;
 }
 .single-day .date-display-single {
   color: #bbbab7;
@@ -2438,9 +2438,9 @@ html.js input.webform-calendar {
 .card {
   transition: 0.5s ease;
   transform: perspective(3em) rotateX(0deg) rotateY(-1.175deg) rotateZ(-1deg);
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
   border-radius: 0;
-  background: #fefefe;
+  background: #555;
 }
 .card-header {
   border-radius: 0;
@@ -2485,7 +2485,7 @@ html.js input.webform-calendar {
 }
 .card h2,
 .card h3 {
-  color: #101010;
+  color: #fefefe;
   background-color: #101010;
 }
 .card h2.big,
@@ -2551,8 +2551,8 @@ html.js input.webform-calendar {
   transition: 0.25s linear;
   transform: translate(5px, 27.5px) rotate(-9deg);
   text-align: center;
-  color: #101010;
-  border: 1px dashed #101010;
+  color: #fefefe;
+  border: 1px dashed #fefefe;
   border-radius: 5rem;
   background: #ec2;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
@@ -2600,7 +2600,7 @@ html.js input.webform-calendar {
 #comments h2 {
   margin: 0.4em 0;
   padding: 1em;
-  color: #101010;
+  color: #fefefe;
   background: #1d0303;
 }
 #comments h2:after {
@@ -2628,7 +2628,7 @@ a[id^=comment-] {
   padding: 0 0 0 1em;
 }
 .indented .comment {
-  background-color: black;
+  background-color: #e5e5e5;
 }
 
 /* Wraps individual comments.*/
@@ -2639,7 +2639,7 @@ a[id^=comment-] {
   margin: 0.1em auto 0.4em;
   text-align: left;
   border: 1px #bbbab7 solid;
-  background-color: #080808;
+  background-color: #f6f6f6;
 }
 .comment.new {
   border-color: #8c0d00;
@@ -2900,7 +2900,7 @@ label + input:after, label + input:before {
   text-align: center;
   color: #fefefe;
   border: #fefefe 2px solid;
-  background-color: #fefefe;
+  background-color: #555;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
@@ -2912,7 +2912,7 @@ label + input:after, label + input:before {
 }
 .pager a:visited {
   color: #fefefe;
-  background-color: #fefefe;
+  background-color: #555;
 }
 .pager a.active, .pager a:active {
   cursor: default;
@@ -2926,7 +2926,7 @@ label + input:after, label + input:before {
   border-color: #1d0303;
 }
 .pager a:hover, .pager a:focus {
-  color: #101010;
+  color: #fefefe;
   background: #101010;
 }
 .pager .pager-item {
@@ -2937,9 +2937,9 @@ label + input:after, label + input:before {
   padding: 1rem;
   cursor: default;
   color: #fefefe;
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
   outline: 0;
-  background: #101010;
+  background: #fefefe;
   font-weight: bold;
 }
 
@@ -3000,7 +3000,7 @@ label + input:after, label + input:before {
   padding: 0.2em 0.8em;
   color: #fefefe;
   border-top: #101010 1px solid;
-  background-color: #fefefe;
+  background-color: #555;
 }
 
 .post-author {
@@ -3044,7 +3044,7 @@ form.site-search input[type=text] {
   color: #bbbab7;
   border-bottom: #bbbab7 0.1em solid;
   border-radius: 0.2em;
-  background: rgba(16, 16, 16, 0.4);
+  background: rgba(254, 254, 254, 0.4);
   line-height: 1em;
 }
 form.site-search input[type=text]:hover, form.site-search input[type=text]:active, form.site-search input[type=text]:focus {
@@ -3120,12 +3120,12 @@ form.search-form label {
   top: 1px;
   text-decoration: underline;
   color: #1d0303;
-  border-bottom: black 1px solid;
-  background-color: #060606;
+  border-bottom: #e5e5e5 1px solid;
+  background-color: #f4f4f4;
 }
 .tabs a.active {
-  border-bottom-color: #101010;
-  background-color: #101010;
+  border-bottom-color: #fefefe;
+  background-color: #fefefe;
 }
 .tabs.secondary {
   margin: -1em 0 0 0;
@@ -3136,13 +3136,13 @@ form.search-form label {
 .tabs.secondary a, .tabs.secondary a:visited {
   border-radius: 0.25rem;
   padding: 0.4em 0.8em;
-  color: #101010;
+  color: #fefefe;
   border: 1px solid;
   background-color: #fefefe;
 }
 .tabs.secondary a.active, .tabs.secondary a:active, .tabs.secondary a:focus, .tabs.secondary a:hover {
   color: #1d0303;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl90YWJzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7O0VBRWhCLGlCQUFpQjtFQUNqQix1Q0FBdUM7RUFDdkM7SUFDRSxjQUFjO0lBQ2QsV0FBVztJQUNYLGVBQWU7SUFDZixnQkFBZ0I7RUFDbEI7RUFDQTtJQUNFOztNQUVFLGlDQUFpQzs7TUFFakMsY0FBYztNQUNkLDBCQUEwQjtNQUMxQix1QkFBdUI7TUFDdkIsaUJBQWlCO01BQ2pCLG1CQUFtQjtNQUNuQixrQ0FBa0M7SUFDcEM7SUFDQTs7OztNQUlFLGtCQUFrQjtNQUNsQixRQUFRO01BQ1IsMEJBQTBCO01BQzFCLHFCQUFxQjtNQUNyQix1REFBdUQ7TUFDdkQsK0NBQStDO0lBQ2pEO0lBQ0E7TUFDRSxzQ0FBc0M7TUFDdEMsbUNBQW1DO0lBQ3JDO0VBQ0Y7RUFDQTtJQUNFLGtCQUFrQjtJQUNsQixZQUFZO0lBQ1osd0JBQXdCO0lBQ3hCLDZCQUE2QjtJQUM3QjtNQUNFOztRQUVFLDBCQUEwQjs7UUFFMUIsb0JBQW9CO1FBQ3BCLHdCQUF3QjtRQUN4QixpQkFBaUI7UUFDakIsa0NBQWtDO01BQ3BDO01BQ0E7Ozs7UUFJRSxxQkFBcUI7UUFDckIsbUNBQW1DO01BQ3JDO0lBQ0Y7RUFDRjtBQUNGIiwiZmlsZSI6Il90YWJzLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGFicyB7XHJcbiAgQGluY2x1ZGUgY2xlYXIoKTtcclxuXHJcbiAgbWFyZ2luOiAyZW0gMCAxZW07XHJcbiAgYm9yZGVyLWJvdHRvbTogJGNvbG9yLW5ldXRyYWwgMXB4IHNvbGlkO1xyXG4gIGxpIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICBtYXJnaW46IDAgMC4xZW07XHJcbiAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gIH1cclxuICBhIHtcclxuICAgICYsXHJcbiAgICAmOnZpc2l0ZWQge1xyXG4gICAgICBAaW5jbHVkZSByb3VuZCgkc2l6ZS10aW55LCBcInRvcFwiKTtcclxuXHJcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgICBwYWRkaW5nOiAwLjRlbSAwLjhlbSAwLjJlbTtcclxuICAgICAgY29sb3I6ICRjb2xvci1zZWNvbmRhcnk7XHJcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkO1xyXG4gICAgICBib3JkZXItYm90dG9tOiBub25lO1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3Itc2Vjb25kYXJ5O1xyXG4gICAgfVxyXG4gICAgJi5hY3RpdmUsXHJcbiAgICAmOmFjdGl2ZSxcclxuICAgICY6Zm9jdXMsXHJcbiAgICAmOmhvdmVyIHtcclxuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICB0b3A6IDFweDtcclxuICAgICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICAgIGNvbG9yOiAkY29sb3ItaGlsaWdodDtcclxuICAgICAgYm9yZGVyLWJvdHRvbTogZGFya2VuKCRjb2xvci1wcmltYXJ5LWJnLCAxMCUpIDFweCBzb2xpZDtcclxuICAgICAgYmFja2dyb3VuZC1jb2xvcjogZGFya2VuKCRjb2xvci1wcmltYXJ5LWJnLCA0JSk7XHJcbiAgICB9XHJcbiAgICAmLmFjdGl2ZSB7XHJcbiAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6ICRjb2xvci1wcmltYXJ5LWJnO1xyXG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkY29sb3ItcHJpbWFyeS1iZztcclxuICAgIH1cclxuICB9XHJcbiAgJi5zZWNvbmRhcnkge1xyXG4gICAgbWFyZ2luOiAtMWVtIDAgMCAwO1xyXG4gICAgcGFkZGluZzogMWVtO1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbiAgICBhIHtcclxuICAgICAgJixcclxuICAgICAgJjp2aXNpdGVkIHtcclxuICAgICAgICBAaW5jbHVkZSByb3VuZCgkc2l6ZS10aW55KTtcclxuXHJcbiAgICAgICAgcGFkZGluZzogMC40ZW0gMC44ZW07XHJcbiAgICAgICAgY29sb3I6ICRjb2xvci1wcmltYXJ5LWJnO1xyXG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICRjb2xvci1zZWNvbmRhcnk7XHJcbiAgICAgIH1cclxuICAgICAgJi5hY3RpdmUsXHJcbiAgICAgICY6YWN0aXZlLFxyXG4gICAgICAmOmZvY3VzLFxyXG4gICAgICAmOmhvdmVyIHtcclxuICAgICAgICBjb2xvcjogJGNvbG9yLWhpbGlnaHQ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogJGNvbG9yLXByaW1hcnktYmc7XHJcbiAgICAgIH1cclxuICAgIH1cclxuICB9XHJcbn1cclxuIl19 */
@@ -3160,13 +3160,13 @@ form.search-form label {
   margin: 0 0.2em;
   padding: 0.4em;
   text-decoration: none;
-  color: #101010;
+  color: #fefefe;
 }
 .user-links a:active,
 .user-links a:hover,
 .user-links a:focus {
   text-decoration: none;
-  color: #101010;
+  color: #fefefe;
 }
 
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl91c2VyLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7OztDQUdDOztBQUVEO0VBQ0UsWUFBWTtFQUNaLGNBQWM7RUFDZCxnQkFBZ0I7O0VBRWhCOztJQUVFLGVBQWU7SUFDZixjQUFjO0lBQ2QscUJBQXFCO0lBQ3JCLHdCQUF3QjtFQUMxQjtFQUNBOzs7SUFHRSxxQkFBcUI7SUFDckIsd0JBQXdCO0VBQzFCO0FBQ0YiLCJmaWxlIjoiX3VzZXIuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxyXG4gICogQGZpbGVcclxuICAqIFN0eWxpbmcgRE9NIGlkJ3MgcHJvdmlkZWQgYnkgZHJ1cGFsXHJcbiovXHJcblxyXG4udXNlci1saW5rcyB7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIHBhZGRpbmc6IDAuMmVtO1xyXG4gIGZvbnQtc2l6ZTogMC45ZW07XHJcblxyXG4gIGEsXHJcbiAgYTp2aXNpdGVkIHtcclxuICAgIG1hcmdpbjogMCAwLjJlbTtcclxuICAgIHBhZGRpbmc6IDAuNGVtO1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gICAgY29sb3I6ICRjb2xvci1wcmltYXJ5LWJnO1xyXG4gIH1cclxuICBhOmFjdGl2ZSxcclxuICBhOmhvdmVyLFxyXG4gIGE6Zm9jdXMge1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gICAgY29sb3I6ICRjb2xvci1wcmltYXJ5LWJnO1xyXG4gIH1cclxufVxyXG4iXX0= */
@@ -3203,7 +3203,7 @@ form.search-form label {
   /* max-width: 720px; // constrain width to prevent pseudo elements from showing outside of box*/
   margin: 0 auto;
   padding: 3em 1.4em;
-  background-color: #101010;
+  background-color: #fefefe;
 }
 .box-shadow:before, .box-shadow:after {
   position: absolute;
@@ -3230,7 +3230,7 @@ form.search-form label {
   padding: 0 1.2em;
   border-bottom: black 1px solid;
   background-color: #101010;
-  color: #101010;
+  color: #fefefe;
 }
 .ribbon:after, .ribbon:before {
   position: absolute;
@@ -3253,7 +3253,7 @@ form.search-form label {
   padding: 0 1.2em;
   border-bottom: black 1px solid;
   background: #101010;
-  color: #101010;
+  color: #fefefe;
 }
 .popout:after {
   position: absolute;

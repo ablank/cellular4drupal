@@ -48,7 +48,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sat, 03 Apr 2021 01:24:34 GMT
+  Generated on Sun, 04 Apr 2021 06:28:39 GMT
 */
 /**
 * @file
@@ -113,10 +113,10 @@ html {
 
 body {
   color: #101010;
-  background: #101010;
-  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  background: #fefefe;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
-  line-height: 1.4rem;
+  line-height: 3rem;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   /*@include gradient('rad', $color-primary-bg, $color-primary-bg, $color-secondary);*/
@@ -132,9 +132,9 @@ body {
 */
 p {
   display: block;
-  max-width: 32rem;
+  max-width: 32em;
   margin: 0 auto;
-  padding: 0 1rem 0.7rem;
+  padding: 0 1rem 1.5rem;
   color: #101010;
 }
 
@@ -218,7 +218,7 @@ h3 {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 72px 72px;
-  box-shadow: 0 0 0 0 #101010;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: width, height, transform;
 }
 .logo a:focus, .logo a:hover {

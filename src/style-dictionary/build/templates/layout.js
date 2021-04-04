@@ -1,16 +1,16 @@
 # DO NOT EDIT DIRECTLY
 # @see ./style-dictionary/drupal/layout.json
-# Generated on <% print(new Date().toString()) %>
+# Generated on <% print(new Date().toString()); %>
 <%
-var theme;
+var theme = '';
 var cells = {};
 
 /**
- * Iterate over specified props
+ * Iterate over each layout
  */
- function iterate(key){
+ function iterateLayout(key){
   if (cells[key]) {
-    print(`\n\n${theme}_layout_${key}:`);
+    print(`\n${theme}_layout_${key}:`);
     print(`\n  label: ${key}`);
     print(`\n  category: ${theme}`);
     print(`\n  path: templates/layout/${key}`);
@@ -19,30 +19,16 @@ var cells = {};
     print(`\n  icon_map:`);
 
     print(`\n  regions:`);
-    
-
-    /*
-    _.each(cells[key], function (feature) {
-      print(`\n    - ${feature}`);
-    });
-    */
   } 
 }
 
-var allProperties = _.each(allProperties, function (prop) {
-  
+var allProperties = _.each(allProperties, (prop) => {
   if(prop.name === "info_name"){
     theme = prop.value.toLowerCase();
-  }
-
-  if (prop.attributes.category === 'layout') {    
-    var rename = prop.name.replace(/layout_/, '');
-    cells[rename] = prop.value;
-
   }
 });
 
 _.each(Object.keys(cells), (key)=>{
-  iterate(key);
+  iterateLayout(key);
 });
 %>

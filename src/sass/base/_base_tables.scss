@@ -20,9 +20,9 @@ thead {
   text-align: center;
   color: $color-secondary;
   border: $cell_border;
-  font-family: $heading-font;
+  font-family: $h-font;
   font-size: $default-size;
-  font-weight: $heading-weight;
+  font-weight: $h-weight;
 }
 
 tr:nth-child(even) {

@@ -10,11 +10,11 @@ html {
 }
 
 body {
-  color: $text-color;
+  color: $p-color;
   background: $color-primary-bg;
-  font-family: $text-font;
+  font-family: $p-font;
   font-size: 100%;
-  line-height: $text-line-height;
+  line-height: $p-line-height;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   /*@include $color-hilight('rad', $color-primary-bg, $color-primary-bg, $color-secondary);*/

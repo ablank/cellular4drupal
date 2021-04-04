@@ -5,14 +5,14 @@
     },
     "size": {
       "value": "{default.size.value}"
-    }
-  },
-  "dropdown": {
-    "show": {
-      "value": "true"
     },
-    "direction": {
-      "value": "'left'"
+    "dropdown": {
+      "show": {
+        "value": "true"
+      },
+      "direction": {
+        "value": "'left'"
+      }
     }
   }
 }

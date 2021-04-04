@@ -24,7 +24,7 @@ var allProperties = _.each(allProperties, function (prop) {
     });
   } 
 }
-console.log(theme);
+
 %>
 name: <% print(theme.name) %>
 description: <% print(theme.description) %>

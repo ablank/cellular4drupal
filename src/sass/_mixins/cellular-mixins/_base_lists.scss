@@ -5,7 +5,7 @@
 
 hr {
   height: 1px;
-  margin: $text-size 0;
+  margin: $p-size 0;
   border: none;
   background-image:
     linear-$color-hilight(
@@ -59,7 +59,7 @@ ul {
 
 li {
   width: auto;
-  max-width: $text-max-width * 0.9;
+  max-width: $p-max-width * 0.9;
   margin: 0.3em auto 0.6em;
 }
 

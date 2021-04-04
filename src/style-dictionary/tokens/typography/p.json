@@ -15,6 +15,12 @@
     },
     "weight": {
       "value": "{default.font.weight.value}"
+    },
+    "color": {
+      "value": "{color.primary.value}"
+    },
+    "color-bg": {
+      "value": "{color.primary-bg.value}"
     }
   }
 }

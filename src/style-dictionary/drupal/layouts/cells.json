@@ -2,7 +2,7 @@
     "cells":{
         "label": "Cells",
         "category": "{info.name.value}",
-        "default_region": "",
+        "default_region": "content",
         "regions":[
             "hero",
             "content",

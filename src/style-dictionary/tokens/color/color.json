@@ -5,7 +5,7 @@
       "category": "color"
     },
     "primary-bg": {
-      "value": "{swatch.black}",
+      "value": "{swatch.white}",
       "category": "color"
     },
     "secondary": {
@@ -13,7 +13,7 @@
       "category": "color"
     },
     "secondary-bg": {
-      "value": "{swatch.white}",
+      "value": "{swatch.dark-grey}",
       "category": "color"
     },
     "tertiary": {
@@ -21,11 +21,15 @@
       "category": "color"
     },
     "tertiary-bg": {
-      "value": "{swatch.dark-grey}",
+      "value": "{swatch.cream}",
       "category": "color"
     },
     "hilight": {
       "value": "{swatch.cyan}",
+      "category": "color"
+    },
+    "shadow": {
+      "value": "{swatch.dark-grey}",
       "category": "color"
     },
     "neutral": {

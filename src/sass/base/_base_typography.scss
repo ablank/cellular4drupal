@@ -12,16 +12,16 @@ sub,
 sup {
   position: relative;
   vertical-align: baseline;
-  font-size: $text-size * 0.75;
+  font-size: $p-size * 0.75;
   line-height: 0;
 }
 
 sup {
-  top: -($text-size * 0.5);
+  top: -($p-size * 0.5);
 }
 
 sub {
-  bottom: -($text-size * 0.25);
+  bottom: -($p-size * 0.25);
 }
 
 blockquote,
@@ -39,7 +39,7 @@ q {
 }
 
 q {
-  font-size: $text-size * 1.4;
+  font-size: $p-size * 1.4;
 }
 
 blockquote {
@@ -47,7 +47,7 @@ blockquote {
   margin: $size-nano $size-big;
   padding: $default-size;
   border-left: $size-nano solid;
-  font-size: $text-size * 1.8;
+  font-size: $p-size * 1.8;
 }
 
 caption {

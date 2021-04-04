@@ -48,7 +48,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sat, 03 Apr 2021 01:24:34 GMT
+  Generated on Sun, 04 Apr 2021 06:28:39 GMT
 */
 /**
 * @file
@@ -86,7 +86,7 @@ input[type=checkbox], input[type=radio] {
   vertical-align: middle;
 }
 input[type=checkbox]:focus, input[type=radio]:focus {
-  border: 1px solid #101010;
+  border: 1px solid #fefefe;
 }
 
 .cell, .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-67, .cell-60, .cell-50, .cell-40, .cell-33, .cell-30, .cell-25, .cell-20, .cell-10 {

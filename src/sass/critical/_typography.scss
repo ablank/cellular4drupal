@@ -5,10 +5,10 @@
 
 p {
   display: block;
-  max-width: $text-max-width;
+  max-width: $p-max-width;
   margin: 0 auto;
-  padding: 0 $default-size ($text-line-height * 0.5);
-  color: $text-color;
+  padding: 0 $default-size ($p-line-height * 0.5);
+  color: $p-color;
 }
 
 h1,
@@ -18,8 +18,8 @@ h3 {
   clear: both;
   margin: 1em auto 0.2em auto;
   padding: 0.4em 0.4em 0 1em;
-  font-family: $heading-font;
-  font-weight: $heading-weight;
+  font-family: $h-font;
+  font-weight: $h-weight;
   line-height: 1.1em;
 }
 
@@ -27,19 +27,19 @@ h1 {
   margin: 0;
   padding: 1.4em 1em 0.8em;
   text-align: center;
-  color: $heading-color;
+  color: $h-color;
   border: none;
-  font-size: $heading-size;
+  font-size: $h-size;
 }
 
 h2 {
-  color: $heading-color;
-  font-size: $heading-size * 0.8;
+  color: $h-color;
+  font-size: $h-size * 0.8;
 }
 
 h3 {
-  color: $heading-color;
-  font-size: $heading-size * 0.7;
+  color: $h-color;
+  font-size: $h-size * 0.7;
 }
 .xxl {
   

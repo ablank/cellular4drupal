@@ -1,16 +1,17 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sat, 03 Apr 2021 23:37:54 GMT
+  Generated on Sun, 04 Apr 2021 06:28:39 GMT
 */
 
 $color-primary: #101010;
-$color-primary-bg: #101010;
+$color-primary-bg: #fefefe;
 $color-secondary: #fefefe;
-$color-secondary-bg: #fefefe;
+$color-secondary-bg: #555;
 $color-tertiary: #555;
-$color-tertiary-bg: #555;
+$color-tertiary-bg: #fffbf0;
 $color-hilight: #29b4de;
+$color-shadow: #555;
 $color-neutral: #bbbab7;
 $color-error: #8c0d00;
 $color-warning: #ec2;
@@ -22,8 +23,8 @@ $button-font-weight: 500;
 $icon-src-svg: '../assets/icons/svg/';
 $icon-src-png: '../assets/icons/png/';
 $icon-size: 1rem;
-$icon-bg: #101010;
-$icon-border: 1px solid #101010;
+$icon-bg: #fefefe;
+$icon-border: 1px solid #fefefe;
 $icon-border-radius: 50%;
   // List of icons/classes to actually include in style
 $icon-list: arrow-up,arrow-right,arrow-down,arrow-left,mail,menu,message-error,message-ok,message-warning,email,home,search,facebook,instagram,twitter,twitter-t,github-octo,google,youtube,linkedin,reddit;
@@ -41,8 +42,8 @@ $logo-png: url('../assets/images/png/logo.png');
 $logo-svg: url('../assets/images/svg/logo.svg');
 $nav-position: 0.1rem;
 $nav-size: 1rem;
-$dropdown-show: true;
-$dropdown-direction: 'left';
+$nav-dropdown-show: true;
+$nav-dropdown-direction: 'left';
 $table-margin: 1em;
 $table-padding: 0.5em;
 $default-unit: rem;
@@ -56,7 +57,7 @@ $default-font-weight-lighter: 500;
 $default-font-weight-bold: 700;
 $default-font-weight-bolder: 900;
 $default-line-height: 1.4em;
-$default-border: 1px solid #101010;
+$default-border: 1px solid #fefefe;
 $default-border-style: 1px solid;
 $default-border-radius: 0.5rem;
 $default-image: happy;
@@ -119,9 +120,11 @@ $h-size: 3rem;
 $h-line-height: 3rem;
 $h-weight: bold;
 $h-color: #101010;
-$h-color-bg: #101010;
+$h-color-bg: #fefefe;
 $p-font: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $p-size: 1rem;
 $p-line-height: 3rem;
 $p-max-width: 32em;
-$p-weight: 500
+$p-weight: 500;
+$p-color: #101010;
+$p-color-bg: #fefefe
