@@ -1,6 +1,7 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary/tokens/globals/breakpoint.json
-# Generated on Sat Apr 03 2021 23:28:39 GMT-0700 (Pacific Daylight Time)
+# @see /src/style-dictionary/tokens/globals/breakpoint.json
+# @see /src/build/templates/breakpoint.js
+# Generated on Sun Apr 04 2021 17:24:49 GMT-0700 (Pacific Daylight Time)
 
 
 cellular.screen.small:

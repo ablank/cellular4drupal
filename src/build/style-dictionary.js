@@ -80,9 +80,9 @@ StyleDictionary.registerTransformGroup({
  * Build
  */
 StyleDictionary.extend(
-  path.join(__dirname, '..', 'drupal', 'config.json'),
+  path.join(__dirname, '..', 'style-dictionary/drupal', 'config.json'),
 ).buildAllPlatforms();
 
 StyleDictionary.extend(
-  path.join(__dirname, '..', 'tokens', 'config.json'),
+  path.join(__dirname, '..', 'style-dictionary/tokens', 'config.json'),
 ).buildAllPlatforms();

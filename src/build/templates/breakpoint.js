@@ -1,5 +1,6 @@
 # DO NOT EDIT DIRECTLY
-# @see ./style-dictionary/tokens/globals/breakpoint.json
+# @see /src/style-dictionary/tokens/globals/breakpoint.json
+# @see /src/build/templates/breakpoint.js
 # Generated on <% print(new Date().toString()) %>
 <%
 var mediaquery = {};

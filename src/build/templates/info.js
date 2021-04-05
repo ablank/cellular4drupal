@@ -1,6 +1,6 @@
 # DO NOT EDIT DIRECTLY 
-# @see /style-dictionary/drupal/info.json
-# @see /style-dictionary/build/templates/info.template
+# @see /src/style-dictionary/drupal/info.json
+# @see /src/build/templates/info.js
 # Generated on <% print(new Date().toString()) %>
 <% 
 /**
