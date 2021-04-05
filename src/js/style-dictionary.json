@@ -37,7 +37,7 @@
   "NavPosition": "0.1rem",
   "NavSize": "1rem",
   "NavDropdownShow": "true",
-  "NavDropdownDirection": "'left'",
+  "NavDropdownDirection": "left",
   "TableMargin": "1em",
   "TablePadding": "0.5em",
   "DefaultUnit": "rem",
