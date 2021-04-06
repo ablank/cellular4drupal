@@ -1,33 +1,38 @@
-// PostCSS configuration
-module.exports = cfg => {
+const config = require("./postcss.config");
+const fs = require("fs");
+const path = require("path");
+const postcss = require("postcss");
 
-  // import tokens as Sass variables
-  const variables = require('./tokens.json');
+const autoprefixer = require("autoprefixer")({
+  /* your options */
+});
+const cssnano = require('cssnano')({
+  preset: 'default',
+});
+const stylelint = require("stylelint")({
 
-  const
-    dev = cfg.env === 'development',
-    scss = cfg.file.extname === '.scss';
+});
+const sorting = require("postcss-sorting")({
 
-  return {
+});
+const reporter = require("postcss-reporter")({
+  clearReportedMessages: true
+});
 
-    map: dev ? {
-      inline: false
-    } : false,
-    parser: scss ? 'postcss-scss' : false,
-    plugins: [
-      require('postcss-advanced-variables')({
-        variables
-      }),
-      require('postcss-map-get')(),
-      require('postcss-nested')(),
-      require('postcss-sort-media-queries')(),
-      require('postcss-assets')({
-        loadPaths: ['src/images/']
-      }),
-      require('autoprefixer')(),
-      dev ? null : require('cssnano')() // NEW
-    ]
+// Code to be processed
+const code = fs.readFileSync(path.join(__dirname, '..', '..', 'dist', 'css', 'style.css'), 'utf8');
 
-  };
+postcss([
+    autoprefixer,
+    sorting,
+    stylelint,
+    reporter,
+    cssnano,
+  ])
+  .process(code, {
+    from: undefined
+  })
+  .then(() => {
 
-};
+  })
+  .catch((err) => console.error(err.stack));

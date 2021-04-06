@@ -16,8 +16,8 @@ $i_ease: linear;
 
 @mixin loader(
   $name: null,
-$url: null,
-$size: $i_size,
+  $url: null,
+  $size: $i_size,
 $color: $i_color,
 $speed: $i_speed
 ) {
