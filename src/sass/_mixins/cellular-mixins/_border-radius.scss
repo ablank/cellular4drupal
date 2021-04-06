@@ -1,8 +1,8 @@
 @mixin border-radius($radius...) {
-    /* Setting the default value*/
-    @if length($radius) == 0 {
-      $radius: $default-border-radius;
-    }
-  
-    border-radius: $radius;
+  /* Setting the default value */
+  @if length($radius) == 0 {
+    $radius: $default-border-radius;
   }
+
+  border-radius: $radius;
+}

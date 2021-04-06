@@ -1,8 +1,9 @@
-@mixin png($image: '') {
+@mixin png($image: "") {
   @if length($radius) == 0 {
     $radius: $default-border-radius;
   }
 
   border-radius: $radius;
-  /* Setting the default value*/
+
+  /* Setting the default value */
 }

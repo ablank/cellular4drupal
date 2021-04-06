@@ -1,26 +1,28 @@
 /**
 * @file
-* Add derivative variables using sass functions based on style-dictionary. 
+* Add derivative variables using sass functions based on style-dictionary.
 */
 
 $color-hilight: saturate($color-primary, 80%);
+
 /* Define background-color based on primary color. */
 //$color-primary-bg: contrast($color-primary);
 
-/* Cell grid spacing- % will be appended*/
+/* Cell grid spacing- % will be appended */
 $cell_space: ($grid-cell-margin + $grid-cell-padding) * 2;
-/* cells & offsets populated by looping through grid values.*/
+
+/* cells & offsets populated by looping through grid values. */
 $cells: (".cell");
 $offsets: ();
-/* Generate list of grid class names based on % size*/
+
+/* Generate list of grid class names based on % size */
 @each $cell in $grid-cells {
   $cell: round($cell);
   $cells: append($cells, unquote(".cell-#{$cell}"), comma);
   $offsets: append($offsets, unquote(".offset-#{$cell}"), comma);
 }
 
-/* Header region*/
+/* Header region */
 $header-height: $logo-height + ($logo-padding * 2) + ($logo-margin * 2);
 
 $default-image: unquote($icon-src-png) + unquote($default-image);
-

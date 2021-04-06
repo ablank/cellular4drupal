@@ -12,7 +12,7 @@
   &:before {
     position: absolute;
     bottom: -$height;
-    content: ' ';
+    content: " ";
     border-top: darken($color, 10%) $height solid;
   }
   &:before {

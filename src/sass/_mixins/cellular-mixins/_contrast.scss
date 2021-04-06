@@ -4,7 +4,9 @@
     p {
       color: lighten($color, $adjust-color-biglylarge);
     }
-  } @else {
+  }
+
+  @else {
     color: darken($color, 70%);
     p {
       color: darken($color, $adjust-color-biglylarge);

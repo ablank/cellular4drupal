@@ -1,5 +1,5 @@
 @mixin uniquelinks($color-hilight: $color-hilight) {
-  /* Unique link styling*/
+  /* Unique link styling */
   &:nth-child(1) a {
     border-color: darken($color-hilight, 10%);
   }

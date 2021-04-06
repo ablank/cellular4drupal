@@ -1,11 +1,11 @@
 @mixin link($color) {
-    color: $color;
-    &:visited {
-      color: darken($color, 15%);
-    }
-    &:active,
-      &:focus,
-      &:hover {
-      color: lighten($color, 15%);
-    }
+  color: $color;
+  &:visited {
+    color: darken($color, 15%);
   }
+  &:active,
+  &:focus,
+  &:hover {
+    color: lighten($color, 15%);
+  }
+}

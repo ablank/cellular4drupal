@@ -1,74 +1,76 @@
 
 @mixin button(
-    $color: $color-hilight,
+  $color: $color-hilight,
     $background: $color-primary-bg,
     $style: "flat"
     ) {
-      /* 'flat' || 'bevel'*/
-      $color2: null;
-      $background2: null;
-      & {
-        width: auto;
-        margin: $size-nano auto;
-        padding: $size-small $default-size;
-        cursor: pointer;
-        text-align: center;
-        color: $color;
-        border: $color 2px solid;
-        background-color: $background;
-        font-family: $h-font;
-        font-weight: $button-font-weight;
-        line-height: normal;
-        &:visited {
-          color: $color;
-          background-color: $background;
-        }
-        &.active,
-        &:active {
-          cursor: default;
-        }
-        &.active,
-        &:active,
-          &:hover {
-          text-decoration: none;
-          border-color: $color2;
-          outline: none;
-          /*transform: translate3d(0,0.1em,1em);*/
-          @if ($style == "bevel") {
-            @include gradient('bottom', $background, $background);
-          }
-    
-          @else {
-            @include box-shadow($background2 0 0.1em 0.4em);
-    
-            border-color: $color-hilight;
-          }
-        }
-        /* transform: translate3d(0,0,0);*/
-        @if ($style == "bevel") {
-          @include gradient('bottom', $background, $background2);
-          @include border-radius();
-        }
-    
-        @else {
-          @include border-radius(0.1em);
-          @include box-shadow($background2 0 0.1em $size-small);
-        }
+  /* 'flat' || 'bevel' */
+  $color2: null;
+  $background2: null;
+  & {
+    width: auto;
+    margin: $size-nano auto;
+    padding: $size-small $default-size;
+    cursor: pointer;
+    text-align: center;
+    color: $color;
+    border: $color 2px solid;
+    background-color: $background;
+    font-family: $h-font;
+    font-weight: $button-font-weight;
+    line-height: normal;
+    &:visited {
+      color: $color;
+      background-color: $background;
+    }
+    &.active,
+    &:active {
+      cursor: default;
+    }
+    &.active,
+    &:active,
+    &:hover {
+      text-decoration: none;
+      border-color: $color2;
+      outline: none;
+
+      /* transform: translate3d(0,0.1em,1em); */
+      @if ($style == "bevel") {
+        @include gradient("bottom", $background, $background);
       }
-    
-      @if (lightness($color) < 50%) {
-        $color2: lighten($color, 10%);
-      }
-    
-      @if (lightness($color) > 50%) {
-        $color2: darken($color, 10%);
-      }
-    
-      @if (lightness($background) < 50%) {
-        $background2: lighten($background, 20%);
-      }
-    
-      @if (lightness($background) > 50%) {
-        $background2: darken($background, 20%);
+
+      @else {
+        @include box-shadow($background2 0 0.1em 0.4em);
+
+        border-color: $color-hilight;
       }
     }
+
+    /* transform: translate3d(0,0,0); */
+    @if ($style == "bevel") {
+      @include gradient("bottom", $background, $background2);
+      @include border-radius();
+    }
+
+    @else {
+      @include border-radius(0.1em);
+      @include box-shadow($background2 0 0.1em $size-small);
+    }
+  }
+
+  @if (lightness($color) < 50%) {
+    $color2: lighten($color, 10%);
+  }
+
+  @if (lightness($color) > 50%) {
+    $color2: darken($color, 10%);
+  }
+
+  @if (lightness($background) < 50%) {
+    $background2: lighten($background, 20%);
+  }
+
+  @if (lightness($background) > 50%) {
+    $background2: darken($background, 20%);
+  }
+}

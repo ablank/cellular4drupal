@@ -8,8 +8,8 @@ const precss = require('precss');
 fs.readFile('src/app.css', (err, css) => {
   postcss([precss, autoprefixer])
     .process(css, {
-      from: 'src/app.css',
-      to: 'dest/app.css'
+      from: 'dest/style.css',
+      to: 'dest/style.css'
     })
     .then(result => {
       fs.writeFile('dest/app.css', result.css, () => true)
