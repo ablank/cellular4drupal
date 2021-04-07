@@ -24,7 +24,7 @@
     "lint:sass": "stylelint src/sass/ --config .sasslintrc.json --fix",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/app.js",
     "imagemin": "imagemin src/assets/images/ -o dist/assets/images",
-    "icons": "svgo -f src/assets/icons/svg -o dist/assets/icons/svg && svg-sprite-generate -d dist/images/icons -o dist/assets/icons/_sprite.svg && node src/build/svg2png.js",
+    "icons": "svgo -f src/assets/icons/svg -o dist/assets/icons/svg && svg-sprite-generate -d dist/images/icons -o dist/assets/icons/_sprite.svg && node src/build/icons.js",
     "build:style-dictionary": "node src/build/style-dictionary.js",
     "build:css": "rimraf dist/css/* && run-s sass postcss",
     "build:js": "rimraf dist/js/* && run-s uglify",

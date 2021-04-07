@@ -9,10 +9,10 @@
             "sidebar",
             "footer"
         ],
-        "icon_map": {
+        "icon_map": [
             ["hero"],            
-            ["content, sidebar"]  
+            ["content, sidebar"],  
             ["footer"]      
-        }
+        ]
     }
 }
