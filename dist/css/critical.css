@@ -46,7 +46,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Tue, 06 Apr 2021 01:11:41 GMT
+  Generated on Wed, 07 Apr 2021 04:05:05 GMT
 */
 /**
 * @file
@@ -110,7 +110,7 @@ html {
 body {
   color: #101010;
   background: #fefefe;
-  font-family: frutiger, "Frutiger Linotype", univers, calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", tahoma, geneva, "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 3rem;
   text-rendering: optimizeLegibility;
@@ -140,7 +140,7 @@ h3 {
   clear: both;
   margin: 1em auto 0.2em auto;
   padding: 0.4em 0.4em 0 1em;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: 1.1em;
 }

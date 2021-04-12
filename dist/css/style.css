@@ -50,7 +50,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Tue, 06 Apr 2021 01:11:41 GMT
+  Generated on Wed, 07 Apr 2021 04:05:05 GMT
 */
 /**
 * @file
@@ -114,7 +114,7 @@ html {
 body {
   color: #101010;
   background: #fefefe;
-  font-family: frutiger, "Frutiger Linotype", univers, calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", tahoma, geneva, "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 3rem;
   text-rendering: optimizeLegibility;
@@ -328,7 +328,7 @@ thead {
   text-align: center;
   color: #fefefe;
   border: #fefefe 1px solid;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -409,7 +409,7 @@ legend {
   padding: 0 0.7rem;
   color: #bbbab7;
   background: #fefefe;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -426,7 +426,7 @@ label {
   margin: 0.4em 0 0;
   padding: 1em 0.4em 0;
   text-align: left;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
 }
 
@@ -449,7 +449,7 @@ textarea {
   color: #101010;
   border: #bbbab7 1px solid;
   background: #fbfbfb;
-  font: 1em/1.6em frutiger, "Frutiger Linotype", univers, calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", tahoma, geneva, "Helvetica Neue", helvetica, arial, sans-serif;
+  font: 1em/1.6em Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
 }
 input:focus,
@@ -615,7 +615,7 @@ input[type=submit] {
   color: #1d0303;
   border: #1d0303 2px solid;
   background-color: #fefefe;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
   /* transform: translate3d(0,0,0); */
@@ -1019,7 +1019,7 @@ h3 {
   clear: both;
   margin: 1em auto 0.2em auto;
   padding: 0.4em 0.4em 0 1em;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: 1.1em;
 }
@@ -1111,7 +1111,7 @@ h3 {
   text-align: left;
 }
 .forum-posts .title {
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
 }
 .forum-posts .forum-post-info {
@@ -1234,7 +1234,7 @@ html.js input.webform-calendar {
   color: #1d0303;
   border: #1d0303 2px solid;
   background-color: #fefefe;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
   /* transform: translate3d(0,0,0); */
@@ -1516,7 +1516,7 @@ html.js input.webform-calendar {
   left: 0;
   text-align: center;
   color: #bbbab7;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 0.8em;
   line-height: 1em;
 }
@@ -1591,7 +1591,7 @@ html.js input.webform-calendar {
   border-bottom: 1px solid;
   background-color: #fefefe;
   background-image: none;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 0.9em;
   font-weight: bold;
 }
@@ -2107,7 +2107,7 @@ html.js input.webform-calendar {
   border-radius: unset;
   background: #fefefe;
   box-shadow: #bbbab7 0 0.1em 0.25em;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1rem;
   font-weight: normal;
 }
@@ -2284,7 +2284,7 @@ html.js input.webform-calendar {
   color: #1d0303;
   border: #1d0303 2px solid;
   background-color: #fefefe;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
   /* transform: translate3d(0,0,0); */
@@ -2493,7 +2493,7 @@ html.js input.webform-calendar {
   transition: 0.25s linear;
   text-decoration: line-through;
   color: #ec2;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
 }
@@ -2513,7 +2513,7 @@ html.js input.webform-calendar {
   border: 1px dashed #fefefe;
   border-radius: 5rem;
   background: #ec2;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.15;
@@ -2854,7 +2854,7 @@ label + input:after, label + input:before {
   color: #fefefe;
   border: #fefefe 2px solid;
   background-color: #555;
-  font-family: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: 500;
   line-height: normal;
   /* transform: translate3d(0,0,0); */

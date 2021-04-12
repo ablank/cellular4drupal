@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Tue, 06 Apr 2021 01:11:41 GMT
+  Generated on Wed, 07 Apr 2021 04:05:05 GMT
 */
 
 $color-primary: #101010;
@@ -20,13 +20,13 @@ $button-border-size: 0.1rem;
 $button-border-radius: 0.5rem;
 $button-font-size: 1rem;
 $button-font-weight: 500;
-$icon-src-svg: "../assets/icons/svg/";
-$icon-src-png: "../assets/icons/png/";
+$icon-src-svg: '../assets/icons/svg/';
+$icon-src-png: '../assets/icons/png/';
 $icon-size: 1rem;
 $icon-bg: #fefefe;
 $icon-border: 1px solid #fefefe;
 $icon-border-radius: 50%;
-// List of icons/classes to actually include in style
+  // List of icons/classes to actually include in style
 $icon-list: arrow-up,arrow-right,arrow-down,arrow-left,mail,menu,message-error,message-ok,message-warning,email,home,search,facebook,instagram,twitter,twitter-t,github-octo,google,youtube,linkedin,reddit;
 $list-margin: 1em;
 $list-padding: 0.5em;
@@ -36,10 +36,10 @@ $list-style-ol: none;
 $logo-unit: px;
 $logo-width: 96px;
 $logo-height: 96px;
-$logo-margin: 0;
-$logo-padding: 0;
-$logo-png: url("../assets/images/png/logo.png");
-$logo-svg: url("../assets/images/svg/logo.svg");
+$logo-margin: 0px;
+$logo-padding: 0px;
+$logo-png: url('../assets/images/png/logo.png');
+$logo-svg: url('../assets/images/svg/logo.svg');
 $nav-position: 0.1rem;
 $nav-size: 1rem;
 $nav-dropdown-show: true;
@@ -50,7 +50,7 @@ $default-unit: rem;
 $default-size: 1rem;
 $default-color: #101010;
 $default-background: #fefefe;
-$default-font-family: cambria, "Hoefler Text", utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", times, "Times New Roman", serif;
+$default-font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 $default-font-size: 1rem;
 $default-font-weight: 500;
 $default-font-weight-lighter: 500;
@@ -66,13 +66,13 @@ $default-transition-property: all;
 $default-transition-duration: 1s;
 $default-transition-timing: ease;
 $default-transition-delay: false;
-$default-box-shadow: 0.5rem 0.5rem 0.5rem 1px #101010;
-$default-drop-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #101010;
-$mediaquery-small: "(max-width: 500px)";
-$mediaquery-narrow: "(min-width: 500px) and (max-width: 960px)";
-$mediaquery-default: "(min-width: 960px) and (max-width: 1600px)";
-$mediaquery-large: "(min-width: 1600px)";
-$mediaquery-retina: "screen and (min-resolution: 192dpi) and (min-resolution: 2dppx)";
+$default-box-shadow: 0.5rem 0.5rem 0.5rem 1px #101010;;
+$default-drop-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #101010;;
+$mediaquery-small: '(max-width: 500px)';
+$mediaquery-narrow: '(min-width: 500px) and (max-width: 960px)';
+$mediaquery-default: '(min-width: 960px) and (max-width: 1600px)';
+$mediaquery-large: '(min-width: 1600px)';
+$mediaquery-retina: 'screen and (min-resolution: 192dpi) and (min-resolution: 2dppx)';
 $adjust-default: 25%;
 $adjust-abit: 10%;
 $adjust-bigly: 40%;
@@ -83,15 +83,15 @@ $animation-speed: 700ms;
 $distance-offset: 10%;
 $distance-start: 0;
 $distance-end: 1rem;
-// true for flex-box, false for standard box model
+  // true for flex-box, false for standard box model
 $grid-flex: true;
-// A key:value list of cell sizes to set grid scaling as % of parent element
+  // A key:value list of cell sizes to set grid scaling as % of parent element
 $grid-cells: 100,90,80,75,70,66.666666,60,50,40,33.333333,30,25,20,10;
-// Single value margin size that will be applied to grid cells
+  // Single value margin size that will be applied to grid cells
 $grid-cell-margin: 0;
-// Single value padding size that will be applied to grid cells
+  // Single value padding size that will be applied to grid cells
 $grid-cell-padding: 0;
-// Single value padding size that will be applied to grid cells
+  // Single value padding size that will be applied to grid cells
 $grid-cell-max-width: 72em;
 $scale-start: 0;
 $scale-end: 1;
@@ -115,16 +115,16 @@ $region-border: 0;
 $region-min-height: 3rem;
 $region-sidebar-width: 27%;
 $region-sidebar-padding: 0;
-$h-font: impact, haettenschweiler, "Franklin Gothic Bold", charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+$h-font: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
 $h-size: 3rem;
 $h-line-height: 3rem;
 $h-weight: bold;
 $h-color: #101010;
 $h-color-bg: #fefefe;
-$p-font: frutiger, "Frutiger Linotype", univers, calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", tahoma, geneva, "Helvetica Neue", helvetica, arial, sans-serif;
+$p-font: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $p-size: 1rem;
 $p-line-height: 3rem;
 $p-max-width: 32em;
 $p-weight: 500;
 $p-color: #101010;
-$p-color-bg: #fefefe;
+$p-color-bg: #fefefe

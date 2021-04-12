@@ -12,27 +12,15 @@ const cssnano = require('cssnano')({
 const stylelint = require("stylelint")({
 
 });
-const sorting = require("postcss-sorting")({
-
-});
+const sorting = require('postcss-sorting')({});
 const reporter = require("postcss-reporter")({
   clearReportedMessages: true
 });
 
 // Code to be processed
-const code = fs.readFileSync(path.join(__dirname, '..', '..', 'dist', 'css', 'style.css'), 'utf8');
+const code = fs.readFileSync(
+  path.join(__dirname, '..', '..', 'dist', 'css', 'style.css')
+);
 
-postcss([
-    autoprefixer,
-    sorting,
-    stylelint,
-    reporter,
-    cssnano,
-  ])
-  .process(code, {
-    from: undefined
-  })
-  .then(() => {
-
-  })
+postcss([autoprefixer, sorting, stylelint, reporter, cssnano])
   .catch((err) => console.error(err.stack));

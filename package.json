@@ -28,7 +28,6 @@
     "build:style-dictionary": "node src/build/style-dictionary.js",
     "build:css": "rimraf dist/css/* && run-s sass postcss",
     "build:js": "rimraf dist/js/* && run-s uglify",
-    "build:php": "node --trace-warnings src/php/build.js",
     "build:assets": "rimraf dist/assets/* && run-s imagemin icons",
     "build": "run-s build:*",
     "serve": "browser-sync start --server --files \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*\"",

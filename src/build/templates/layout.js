@@ -28,7 +28,7 @@ var allProperties = _.each(allProperties, (prop) => {
   }
 });
 
-_.each(Object.keys(cells), (key)=>{
+Object.keys(cells).forEach((key)=>{
   iterateLayout(key);
 });
 %>
