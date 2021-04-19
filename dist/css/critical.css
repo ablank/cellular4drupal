@@ -87,9 +87,9 @@ dd,
 ul,
 ol,
 li {
-  position: relative;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 fieldset,
@@ -108,13 +108,15 @@ html {
 }
 
 body {
-  color: #101010;
   background: #fefefe;
+  color: #101010;
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 3rem;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
   /* @include gradient('rad', $color-primary-bg, $color-primary-bg, $color-secondary); */
   /* background-image: $body_img; */
   /* background-repeat: repeat; */
@@ -126,32 +128,32 @@ body {
   * Critical typographic classes
 */
 p {
-  display: block;
-  max-width: 32em;
-  margin: 0 auto;
-  padding: 0 1rem 1.5rem;
   color: #101010;
+  display: block;
+  margin: 0 auto;
+  max-width: 32em;
+  padding: 0 1rem 1.5rem;
 }
 
 h1,
 h2,
 h3 {
-  display: block;
   clear: both;
-  margin: 1em auto 0.2em auto;
-  padding: 0.4em 0.4em 0 1em;
+  display: block;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: 1.1em;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
 }
 
 h1 {
+  border: none;
+  color: #101010;
+  font-size: 3rem;
   margin: 0;
   padding: 1.4em 1em 0.8em;
   text-align: center;
-  color: #101010;
-  border: none;
-  font-size: 3rem;
 }
 
 h2 {
@@ -194,25 +196,25 @@ h3 {
 */
 /* Branding */
 .logo {
-  /* Container for logo */
-  z-index: 9;
   float: left;
   padding-top: 6px;
+  /* Container for logo */
+  z-index: 9;
 }
 .logo a {
+  background-image: url("../assets/images/png/logo.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 72px 72px;
+  border: none;
+  box-shadow: 0 0 0 0 #fefefe;
   /* Logo link to frontpage. */
   display: block;
-  width: 84px;
   height: 84px;
-  transition: all 300ms ease-in;
   text-decoration: none;
   text-indent: -999em;
-  border: none;
-  background-image: url("../assets/images/png/logo.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 72px 72px;
-  box-shadow: 0 0 0 0 #fefefe;
+  transition: all 300ms ease-in;
+  width: 84px;
   will-change: width, height, transform;
 }
 .logo a:focus, .logo a:hover {

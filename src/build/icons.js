@@ -8,7 +8,7 @@ const createDir = (pathname) => {
       if (e) {
         console.error(e)
       } else {
-        console.log(`\n Creating directory: ${pathname}`)
+        console.log(`\n Creating directory: ${pathname}\n`)
       }
     });
   } catch (e) {

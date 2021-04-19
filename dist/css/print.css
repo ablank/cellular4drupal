@@ -77,8 +77,8 @@ h3 {
 
   a,
 a:visited {
-    text-decoration: underline;
     color: #1d0303;
+    text-decoration: underline;
   }
   a:after,
 a:visited:after {
