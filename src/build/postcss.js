@@ -51,7 +51,7 @@ const mincss = async (asset) => {
 const processCss = async (asset) => {
   const srcFile = `${path.resolve(src, asset)}`;
   await fs.readFile(srcFile, (err, css) => {
-    postcss([stylelint, autoprefixer, sort, reporter])
+    postcss([autoprefixer, sort, reporter])
       .process(css, {
         from: srcFile
       })
@@ -61,6 +61,7 @@ const processCss = async (asset) => {
           fs.writeFile(`${srcFile}.map`, result.map.toString(), () => true)
         }
       })
+      .then(mincss(asset))
       .catch((e) => err(e))
   })
 }
