@@ -24,6 +24,7 @@
     "lint:sass": "stylelint src/sass/ --config .sasslintrc.json --fix",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/app.js",
     "imagemin": "imagemin src/assets/images/ -o dist/assets/images",
+    "images": "node src/build/images.js", 
     "icons": "rimraf dist/assets/icons/* && svgo -f src/assets/icons/svg -o dist/assets/icons/svg && svg-sprite-generate -d dist/images/icons -o dist/assets/icons/_sprite.svg && node src/build/icons.js",
     "build:style-dictionary": "node src/build/style-dictionary.js",
     "build:css": "rimraf dist/css/* && run-s sass postcss",
@@ -68,7 +69,6 @@
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "sass": "^1.32.8",
-    "sharp": "^0.28.1",
     "stylelint": "^13.11.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-no-browser-hacks": "^1.2.1",
@@ -84,6 +84,7 @@
     "@popperjs/core": "^2.8.6",
     "jquery": "^3.5.1",
     "lodash": "^4.17.21",
+    "sharp": "^0.28.1",
     "style-dictionary": "^2.10.2",
     "yaml": "^2.0.0-3"
   }
