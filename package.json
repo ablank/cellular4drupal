@@ -19,7 +19,7 @@
     "mincss": "postcss dist/css/ -u cssnano -d dist/css/ --ext .min.css",
     "sass": "sass src/sass:dist/css --no-source-map",
     "lint": "run-s lint:*",
-    "lint:js": "eslint -c .eslintrc.json src/js",
+    "lint:js": "eslint -c src/build/.eslintrc.json src/js",
     "lint:css": "stylelint dist/css/ --config .stylelintrc.json --fix",
     "lint:sass": "stylelint src/sass/ --config .sasslintrc.json --fix",
     "uglify": "mkdirp dist/js -p && uglifyjs src/js/*.js -m -o dist/js/app.js",
