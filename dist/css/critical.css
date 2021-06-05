@@ -1,0 +1,224 @@
+/**
+  * @file
+  * Critical styles to be added inline.
+*/
+/* /// */
+/* Cellular :: SASS Configuration Variables */
+/*  */
+/* Imports variables as defined in style-dictionary and mixins/libraries (i.e. bourbon, compass, etc.) */
+/* //// */
+/**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+/* -------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/**
+  * @file
+  * CSS loading indicators.
+  * http://codepen.io/TaniaLD/pen/oKxep
+  * http://projects.lukehaas.me/css-loaders/
+  * https://github.com/jh3y/whirl/
+*/
+/* @import 'animations' */
+/*
+  DO NOT EDIT DIRECTLY
+  @see src/style-dictionary/tokens/
+  Generated on Sun, 30 May 2021 02:55:31 GMT
+*/
+/**
+* @file
+* Add derivative variables using sass functions based on style-dictionary.
+*/
+/* Define background-color based on primary color. */
+/* Cell grid spacing- % will be appended */
+/* cells & offsets populated by looping through grid values. */
+/* Generate list of grid class names based on % size */
+/* Header region */
+/**
+  * @file
+  * CSS Reset
+*/
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+blockquote,
+th,
+td,
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/**
+  * @file
+  * Base body style.
+*/
+html {
+  overflow: auto;
+  /* Force scrollbar display to prevent flicker on short pages. */
+  overflow-y: scroll;
+}
+
+body {
+  background: #fefefe;
+  color: #101010;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 3rem;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  /* @include gradient('rad', $color-primary-bg, $color-primary-bg, $color-secondary); */
+  /* background-image: $body_img; */
+  /* background-repeat: repeat; */
+  /* background-attachment: fixed; */
+}
+
+/**
+  * @file
+  * Critical typographic classes
+*/
+p {
+  color: #101010;
+  display: block;
+  margin: 0 auto;
+  max-width: 32em;
+  padding: 0 1rem 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  clear: both;
+  display: block;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-weight: bold;
+  line-height: 1.1em;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
+}
+
+h1 {
+  border: none;
+  color: #101010;
+  font-size: 3rem;
+  margin: 0;
+  padding: 1.4em 1em 0.8em;
+  text-align: center;
+}
+
+h2 {
+  color: #101010;
+  font-size: 2.4rem;
+}
+
+h3 {
+  color: #101010;
+  font-size: 2.1rem;
+}
+
+.big {
+  font-size: 1.4rem;
+}
+
+.small {
+  font-size: 0.7rem;
+}
+
+.tiny {
+  font-size: 0.5rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/**
+  * @file
+  * Logo link style
+*/
+.logo {
+  float: left;
+  /* Container for logo */
+  z-index: 9;
+}
+.logo a {
+  background-color: aqua;
+  background-image: "../assets/images/logo.png";
+  background-image: "../assets/images/logo.svg";
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 96px 96px;
+  border: none;
+  box-shadow: 0 0 0 0 #fefefe;
+  /* Logo link to frontpage. */
+  display: block;
+  height: 96px;
+  text-decoration: none;
+  text-indent: -999em;
+  transition: all 1s ease-in;
+  width: 96px;
+  will-change: width, height, transform;
+}
+.logo a:focus, .logo a:hover {
+  box-shadow: 0 0 0.4em 0 #1d0303;
+}
+
+/* @import "layout"; */

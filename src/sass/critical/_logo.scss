@@ -3,13 +3,6 @@
   * Logo link style
 */
 
-/* Branding */
-$logo_width: 72px;
-$logo_height: 72px;
-$logo_pad: 12px;
-$logo_png: url("../assets/images/png/logo.png");
-$logo_svg: url("../assets/images/svg/logo.svg");
-
 .logo {
   /* Container for logo */
   z-index: 9;
@@ -18,16 +11,18 @@ $logo_svg: url("../assets/images/svg/logo.svg");
   a {
     /* Logo link to frontpage. */
     display: block;
-    width: $logo_width + $logo_pad;
-    height: $logo_height + $logo_pad;
-    transition: all 300ms ease-in;
+    width: $logo-width + $logo-padding;
+    height: $logo-height + $logo-padding;
+    transition: all $default-transition-duration ease-in;
     text-decoration: none;
     text-indent: -999em;
     border: none;
-    background-image: $logo_png;
+    background-color: aqua;
+    background-image: $logo-png;
+    background-image: $logo-svg;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: $logo_width $logo_height;
+    background-size: $logo-width $logo-height;
     box-shadow: 0 0 0 0 $color-primary-bg;
     will-change: width, height, transform;
 
@@ -37,7 +32,7 @@ $logo_svg: url("../assets/images/svg/logo.svg");
     }
   }
 
-  @if ($header_height > $logo_height + $logo_pad) {
-    padding-top: ($header_height - ($logo_height + $logo_pad)) * 0.5;
+  @if ($header_height > $logo-height + $logo-padding) {
+    padding-top: ($header_height - ($logo-height + $logo-padding)) * 0.5;
   }
 }

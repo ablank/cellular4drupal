@@ -34,6 +34,8 @@ const mincss = async (asset) => {
   const srcFile = `${path.resolve(src, asset)}`;
   const distFile = `${path.resolve(src, asset.replace(/.css/, '.min.css'))}`;
 
+  console.log(`Minifying ${asset}`);
+
   try {
     await fs.readFile(srcFile, (error, css) => {
       postcss([cssnano])
@@ -53,6 +55,9 @@ const mincss = async (asset) => {
 };
 
 const processCss = async (asset) => {
+
+  console.log(`Processing ${asset}`);
+
   const srcFile = `${path.resolve(src, asset)}`;
   await fs.readFile(srcFile, (err, css) => {
     postcss([autoprefixer, sort, reporter])
@@ -71,8 +76,7 @@ const processCss = async (asset) => {
 };
 
 glob(
-  '**/*.css',
-  {
+  '**/*.css', {
     cwd: src,
     noext: 'min.css',
   },

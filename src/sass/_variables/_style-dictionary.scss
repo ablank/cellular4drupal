@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Wed, 21 Apr 2021 03:38:45 GMT
+  Generated on Sun, 30 May 2021 02:55:31 GMT
 */
 
 $color-primary: #101010;
@@ -33,13 +33,6 @@ $list-padding: 0.5em;
 $list-style-ul: disc;
 $list-style-ul-img: arrow-right;
 $list-style-ol: none;
-$logo-unit: px;
-$logo-width: 96px;
-$logo-height: 96px;
-$logo-margin: 0px;
-$logo-padding: 0px;
-$logo-png: url('../assets/images/png/logo.png');
-$logo-svg: url('../assets/images/svg/logo.svg');
 $nav-position: 0.1rem;
 $nav-size: 1rem;
 $nav-dropdown-show: true;
@@ -73,6 +66,13 @@ $mediaquery-narrow: '(min-width: 500px) and (max-width: 960px)';
 $mediaquery-default: '(min-width: 960px) and (max-width: 1600px)';
 $mediaquery-large: '(min-width: 1600px)';
 $mediaquery-retina: 'screen and (min-resolution: 192dpi) and (min-resolution: 2dppx)';
+$logo-unit: px;
+$logo-width: 96px;
+$logo-height: 96px;
+$logo-margin: 0px;
+$logo-padding: 0px;
+$logo-png: '../assets/images/logo.png';
+$logo-svg: '../assets/images/logo.svg';
 $adjust-default: 25%;
 $adjust-abit: 10%;
 $adjust-bigly: 40%;
@@ -109,6 +109,7 @@ $speed-default: 700ms;
 $speed-fast: 400ms;
 $speed-slow: 1400ms;
 $region-header-position: fixed;
+$region-header-height: 96px;
 $region-margin: 0;
 $region-padding: 0;
 $region-border: 0;

@@ -1,0 +1,6 @@
+{
+  "path": {
+    "assets": "../assets",
+    "image": "{path.assets}/images"
+  }
+}

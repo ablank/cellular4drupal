@@ -73,12 +73,14 @@ StyleDictionary.registerTransformGroup({
 
 StyleDictionary.registerTransformGroup({
   name: 'sass/cellular',
-  transforms: StyleDictionary.transformGroup['scss'].concat([ ]),
+  transforms: StyleDictionary.transformGroup['scss'].concat([]),
 });
 
 /**
  * Build
  */
+console.log("path: " + path.join(__dirname, '..', 'style-dictionary/drupal', 'config.json'));
+
 StyleDictionary.extend(
   path.join(__dirname, '..', 'style-dictionary/drupal', 'config.json'),
 ).buildAllPlatforms();

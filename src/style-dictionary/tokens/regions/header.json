@@ -3,6 +3,9 @@
     "header": {
       "position": {
         "value": "fixed"
+      },
+      "height": {
+        "value": "{logo.height.value}"
       }
     }
   }
