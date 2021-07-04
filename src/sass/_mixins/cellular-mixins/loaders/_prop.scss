@@ -1,0 +1,44 @@
+
+@mixin prop($size, $color, $speed) {
+    $bsize: $size * 0.1;
+    $border: $bsize solid $color;
+    $ease: $i_ease;
+  
+    /* $p: ($size / 2) + ($bsize/2); */
+    $p: ($size / 2) + ($bsize);
+  
+    @include ani_spin();
+  
+    /*  */
+  
+    /* background: rgba(white, 0.5); */
+  
+    /* border-radius: 50%; */
+  
+    &:before,
+    &:after {
+      position: absolute;
+      width: $size/2;
+      height: $size/2;
+      content: "";
+      animation: spin $speed $ease infinite;
+      border-color: $color;
+      background-color: rgba($color, 0.2);
+    }
+    &:before {
+      bottom: -$bsize;
+      left: -$bsize;
+      transform-origin: 100% 0;
+      border-bottom: $border;
+      border-left: $border;
+      border-radius: 0 0 0 $size;
+    }
+    &:after {
+      top: -$bsize;
+      right: -$bsize;
+      transform-origin: 0 100%;
+      border-top: $border;
+      border-right: $border;
+      border-radius: 0 $size 0 0;
+    }
+  }

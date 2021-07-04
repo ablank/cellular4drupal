@@ -1,9 +1,7 @@
-@mixin svg($image: "") {
+@mixin svg($image...) {
   @if length($image) == 0 {
     $image: $default-img-png;
   }
 
   border-radius: $radius;
-
-  /* Setting the default value */
 }

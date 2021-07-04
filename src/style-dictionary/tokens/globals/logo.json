@@ -15,6 +15,9 @@
     "padding": {
       "value": "0{logo.unit.value}"
     },
+    "border-size": {
+      "value": "1{logo.unit.value}"
+    },
     "png": {
       "value": "'{path.image}/logo.png'"
     },

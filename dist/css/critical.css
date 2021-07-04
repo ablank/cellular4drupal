@@ -35,6 +35,20 @@
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
+/*
+  DO NOT EDIT DIRECTLY
+  @see src/style-dictionary/tokens/
+  Generated on Wed, 30 Jun 2021 02:35:34 GMT
+*/
+/**
+* @file
+* Add derivative variables using sass functions based on style-dictionary.
+*/
+/* Define background-color based on primary color. */
+/* Cell grid spacing- % will be appended */
+/* cells & offsets populated by looping through grid values. */
+/* Generate list of grid class names based on % size */
+/* Header region */
 /**
   * @file
   * CSS loading indicators.
@@ -42,11 +56,20 @@
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
 */
+/**
+  * @file
+   CSS loading indicators.
+
+   Inspired by:
+    * http://codepen.io/TaniaLD/pen/oKxep
+    * http://projects.lukehaas.me/css-loaders/
+    * https://github.com/jh3y/whirl/
+*/
 /* @import 'animations' */
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sun, 30 May 2021 02:55:31 GMT
+  Generated on Wed, 30 Jun 2021 02:35:34 GMT
 */
 /**
 * @file
@@ -87,9 +110,9 @@ dd,
 ul,
 ol,
 li {
+  position: relative;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 fieldset,
@@ -108,15 +131,15 @@ html {
 }
 
 body {
-  background: #fefefe;
   color: #101010;
+  background: #fefefe;
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 3rem;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   /* @include gradient('rad', $color-primary-bg, $color-primary-bg, $color-secondary); */
   /* background-image: $body_img; */
   /* background-repeat: repeat; */
@@ -128,32 +151,32 @@ body {
   * Critical typographic classes
 */
 p {
-  color: #101010;
   display: block;
-  margin: 0 auto;
   max-width: 32em;
+  margin: 0 auto;
   padding: 0 1rem 1.5rem;
+  color: #101010;
 }
 
 h1,
 h2,
 h3 {
-  clear: both;
   display: block;
+  clear: both;
+  margin: 1em auto 0.2em auto;
+  padding: 0.4em 0.4em 0 1em;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
   font-weight: bold;
   line-height: 1.1em;
-  margin: 1em auto 0.2em auto;
-  padding: 0.4em 0.4em 0 1em;
 }
 
 h1 {
-  border: none;
-  color: #101010;
-  font-size: 3rem;
   margin: 0;
   padding: 1.4em 1em 0.8em;
   text-align: center;
+  color: #101010;
+  border: none;
+  font-size: 3rem;
 }
 
 h2 {
@@ -195,30 +218,83 @@ h3 {
   * Logo link style
 */
 .logo {
-  float: left;
   /* Container for logo */
   z-index: 9;
+  float: left;
+  padding-top: 1px;
 }
 .logo a {
-  background-color: aqua;
-  background-image: "../assets/images/logo.png";
-  background-image: "../assets/images/logo.svg";
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 96px 96px;
-  border: none;
-  box-shadow: 0 0 0 0 #fefefe;
   /* Logo link to frontpage. */
   display: block;
+  width: 96px;
   height: 96px;
+  transition: all 500ms ease-in;
   text-decoration: none;
   text-indent: -999em;
-  transition: all 1s ease-in;
-  width: 96px;
+  border: none;
+  background-color: aqua;
+  background-image: url("../assets/images/logo.png");
+  background-image: url("../assets/images/logo.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 96px 96px;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: width, height, transform;
 }
-.logo a:focus, .logo a:hover {
+.logo a:focus,
+.logo a:hover {
   box-shadow: 0 0 0.4em 0 #1d0303;
 }
 
-/* @import "layout"; */
+/**
+  * @file
+  * Content region styles
+*/
+#header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 98px;
+  background: #101010;
+  box-shadow: 0 0 1em 0.1em #fefefe;
+  will-change: height;
+}
+
+#header-top {
+  z-index: 4;
+  /* Position contents left or right */
+  text-align: right;
+  color: #fefefe;
+  border-bottom: 1px solid #fefefe;
+  background: #101010;
+  /* Custom type for region */
+}
+#header-top div {
+  display: inline;
+}
+#header-top h2,
+#header-top h3,
+#header-top h4 {
+  display: inline;
+  color: #fefefe;
+  font-size: 1em;
+}
+
+#header-bottom {
+  color: #fefefe;
+  background-color: #fefefe;
+}
+
+/**
+  * @file
+  * Content region styles
+*/
+#content {
+  z-index: 1;
+  background: #fefefe;
+}
+
+.messages {
+  padding: 1em 1.4em;
+}

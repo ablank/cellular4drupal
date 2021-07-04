@@ -1,0 +1,36 @@
+
+@mixin cdots($size, $color, $speed) {
+    $size: $size / 3;
+    $ease: ease-in-out;
+    
+    left: $size;
+    width: $size;
+    height: $size;
+    border: ($size * 0.1) darken($color, 10%) solid;
+    border-radius: 50%;
+    background-color: rgba($color, 0.5);
+  
+    /* animation: alpha $speed $ease infinite; */
+  
+    &:before,
+    &:after {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: $size;
+      height: $size;
+      content: "";
+      border: ($size * 0.1) darken($color, 10%) solid;
+      border-radius: 50%;
+    }
+    &:before {
+      animation: orbit $speed $ease infinite;
+      background-color: rgba(adjust-hue($color, -120deg), 0.25);
+    }
+    &:after {
+      animation: orbit $speed $ease infinite;
+      animation-delay: $speed/2;
+      background-color: rgba(adjust-hue($color, 120deg), 0.25);
+    }
+  }

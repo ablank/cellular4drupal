@@ -1,0 +1,46 @@
+/**
+  * @file
+   CSS loading indicators.
+
+   Inspired by:
+    * http://codepen.io/TaniaLD/pen/oKxep
+    * http://projects.lukehaas.me/css-loaders/
+    * https://github.com/jh3y/whirl/
+*/
+
+@mixin wave($size, $color, $speed) {
+  $height: $size * 0.66;
+  $size: $size * 0.25;
+  $delay: $speed/3;
+  $ease: $i_ease;
+
+  @include ani_bounce();
+
+  /*  */
+  left: $size;
+  width: $size;
+  height: $height;
+  transform-origin: 50% 0%;
+  animation: bounce $speed $ease infinite;
+  animation-delay: $delay;
+  background-color: $color;
+
+  &:before,
+  &:after {
+    position: absolute;
+    width: $size;
+    height: $height;
+    content: "";
+    transform-origin: 50% 0%;
+    animation: bounce $speed $ease infinite;
+    background-color: $color;
+  }
+  &:before {
+    left: -120%;
+    animation-delay: 0;
+  }
+  &:after {
+    left: 120%;
+    animation-delay: $delay * 2;
+  }
+}

@@ -1,1 +1,64 @@
-blockquote,body,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0;position:relative}fieldset,img{border:0}html{overflow:auto;overflow-y:scroll}body{background:#fefefe;font-family:Frutiger,Frutiger Linotype,Univers,Calibri,Gill Sans,Gill Sans MT,Myriad Pro,Myriad,DejaVu Sans Condensed,Liberation Sans,Nimbus Sans L,Tahoma,Geneva,Helvetica Neue,Helvetica,Arial,sans-serif;font-size:100%;line-height:3rem;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}body,p{color:#101010}p{margin:0 auto;max-width:32em;padding:0 1rem 1.5rem}h1,h2,h3,p{display:block}h1,h2,h3{clear:both;font-family:Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans-serif;font-weight:700;line-height:1.1em;margin:1em auto .2em;padding:.4em .4em 0 1em}h1{border:none;font-size:3rem;margin:0;padding:1.4em 1em .8em;text-align:center}h1,h2{color:#101010}h2{font-size:2.4rem}h3{color:#101010;font-size:2.1rem}.big{font-size:1.4rem}.small{font-size:.7rem}.tiny{font-size:.5rem}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.logo{float:left;z-index:9}.logo a{background-color:#0ff;background-image:"../assets/images/logo.png";background-image:"../assets/images/logo.svg";background-position:50% 50%;background-repeat:no-repeat;background-size:96px 96px;border:none;box-shadow:0 0 0 0 #fefefe;display:block;height:96px;text-decoration:none;text-indent:-999em;transition:all 1s ease-in;width:96px;will-change:width,height,transform}.logo a:focus,.logo a:hover{box-shadow:0 0 .4em 0 #1d0303}
+blockquote,
+body,
+code,
+dd,
+div,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul { position: relative; margin: 0; padding: 0; }
+fieldset,
+img { border: 0; }
+html { overflow: auto; overflow-y: scroll; }
+body { background: #fefefe; font-family: Frutiger, Frutiger Linotype, Univers, Calibri, Gill Sans, Gill Sans MT, Myriad Pro, Myriad, DejaVu Sans Condensed, Liberation Sans, Nimbus Sans L, Tahoma, Geneva, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 100%; line-height: 3rem; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+body,
+p { color: #101010; }
+p { max-width: 32em; margin: 0 auto; padding: 0 1rem 1.5rem; }
+h1,
+h2,
+h3,
+p { display: block; }
+h1,
+h2,
+h3 { clear: both; margin: 1em auto 0.2em; padding: 0.4em 0.4em 0 1em; font-family: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal, Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans-serif; font-weight: 700; line-height: 1.1em; }
+h1 { margin: 0; padding: 1.4em 1em 0.8em; text-align: center; border: none; font-size: 3rem; }
+h1,
+h2 { color: #101010; }
+h2 { font-size: 2.4rem; }
+h3 { color: #101010; font-size: 2.1rem; }
+.big { font-size: 1.4rem; }
+.small { font-size: 0.7rem; }
+.tiny { font-size: 0.5rem; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.logo { z-index: 9; float: left; padding-top: 1px; }
+.logo a { display: block; width: 96px; height: 96px; transition: all 0.5s ease-in; text-decoration: none; text-indent: -999em; border: none; background-color: #0ff; background-image: url(../assets/images/logo.png); background-image: url(../assets/images/logo.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: 96px 96px; box-shadow: 0 0 0 0 #fefefe; will-change: width, height, transform; }
+.logo a:focus,
+.logo a:hover { box-shadow: 0 0 0.4em 0 #1d0303; }
+#header { position: fixed; z-index: 10; top: 0; left: 0; height: 98px; background: #101010; box-shadow: 0 0 1em 0.1em #fefefe; will-change: height; }
+#header-top { z-index: 4; text-align: right; color: #fefefe; border-bottom: 1px solid #fefefe; background: #101010; }
+#header-top div { display: inline; }
+#header-top h2,
+#header-top h3,
+#header-top h4 { display: inline; color: #fefefe; font-size: 1em; }
+#header-bottom { color: #fefefe; background-color: #fefefe; }
+#content { z-index: 1; background: #fefefe; }
+.messages { padding: 1em 1.4em; }

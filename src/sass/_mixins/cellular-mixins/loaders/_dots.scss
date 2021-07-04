@@ -1,0 +1,39 @@
+
+@mixin dots($size, $color, $speed) {
+    $size: $size / 3;
+    $delay: $speed / 3;
+    $ease: $i_ease;
+  
+    @include ani_alpha();
+  
+    /*  */
+    left: $size;
+    width: $size;
+    height: $size;
+    animation: alpha $speed $ease infinite;
+    animation-delay: none;
+    border-radius: 50%;
+    background-color: $color;
+  
+    &:before,
+    &:after {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      width: $size;
+      height: $size;
+      content: "";
+      animation: alpha $speed $ease infinite;
+      border-radius: 50%;
+      background-color: $color;
+    }
+    &:before {
+      left: -150%;
+      animation-delay: -$delay;
+    }
+    &:after {
+      left: 150%;
+      animation-delay: $delay;
+    }
+  }
+  

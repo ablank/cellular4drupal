@@ -1,4 +1,11 @@
 button,
 .button {
-  @include button();
+  @include button(/*
+  $color: $color-hilight, 
+  $background: $color-primary-bg,
+  $border: '',
+  $button-type: '', 
+  $border: '', 
+  $size: ''
+  */);
 }

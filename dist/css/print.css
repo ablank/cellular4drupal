@@ -35,6 +35,20 @@
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
 /* --------------------------------------------------------- */
+/*
+  DO NOT EDIT DIRECTLY
+  @see src/style-dictionary/tokens/
+  Generated on Wed, 30 Jun 2021 02:35:34 GMT
+*/
+/**
+* @file
+* Add derivative variables using sass functions based on style-dictionary.
+*/
+/* Define background-color based on primary color. */
+/* Cell grid spacing- % will be appended */
+/* cells & offsets populated by looping through grid values. */
+/* Generate list of grid class names based on % size */
+/* Header region */
 /**
   * @file
   * CSS loading indicators.
@@ -42,11 +56,20 @@
   * http://projects.lukehaas.me/css-loaders/
   * https://github.com/jh3y/whirl/
 */
+/**
+  * @file
+   CSS loading indicators.
+
+   Inspired by:
+    * http://codepen.io/TaniaLD/pen/oKxep
+    * http://projects.lukehaas.me/css-loaders/
+    * https://github.com/jh3y/whirl/
+*/
 /* @import 'animations' */
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sun, 30 May 2021 02:55:31 GMT
+  Generated on Wed, 30 Jun 2021 02:35:34 GMT
 */
 /**
 * @file
@@ -59,29 +82,29 @@
 /* Header region */
 @media print {
   img,
-p {
+  p {
     page-break-inside: avoid;
   }
 
   p,
-h2,
-h3 {
+  h2,
+  h3 {
     orphans: 3;
     widows: 3;
   }
 
   h2,
-h3 {
+  h3 {
     page-break-after: avoid;
   }
 
   a,
-a:visited {
-    color: #1d0303;
+  a:visited {
     text-decoration: underline;
+    color: #1d0303;
   }
   a:after,
-a:visited:after {
+  a:visited:after {
     content: " (" attr(href) ")";
   }
 
@@ -90,21 +113,21 @@ a:visited:after {
   }
 
   pre,
-code,
-blockquote {
+  code,
+  blockquote {
     border: 1px solid #fefefe;
     page-break-inside: avoid;
   }
 
   #app,
-#content-wrap,
-#content-main {
+  #content-wrap,
+  #content-main {
     width: 100%;
   }
 
   #header,
-#footer,
-.hidden {
+  #footer,
+  .hidden {
     display: none;
     visibility: hidden;
   }

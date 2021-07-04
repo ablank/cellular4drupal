@@ -1,0 +1,38 @@
+
+@mixin clock($size, $color, $speed) {
+    $border: ($size * 0.1);
+    $ease: $i_ease;
+  
+    @include ani_spin();
+  
+    border: $border solid rgba($color, 0.8);
+    border-radius: 50%;
+  
+    /*  */
+    background-color: rgba($color, 0.2);
+  
+    &:before,
+    &:after {
+      position: absolute;
+      top: $size/2;
+      left: $size / 2;
+      width: $border/2;
+      content: "";
+      transform-origin: 0 0 $size;
+      background-color: $color;
+    }
+    &:before {
+      height: $size / 2;
+      animation: spin $speed $ease infinite;
+    }
+  
+    /* 'minute' hand */
+    &:after {
+      top: ($size / 2) - (($size / 2)/8);
+      left: ($size / 2) - (($size / 2)/8);
+      width: $size / 8;
+      height: $size / 8;
+      border-radius: 50%;
+      background-color: $color;
+    }
+  }

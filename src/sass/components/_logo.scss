@@ -18,8 +18,8 @@
     text-indent: -999em;
     border: none;
     background-color: aqua;
-    background-image: $logo-png;
-    background-image: $logo-svg;
+    background-image: url($logo-png);
+    background-image: url($logo-svg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: $logo-width $logo-height;

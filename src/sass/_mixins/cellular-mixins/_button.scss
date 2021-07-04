@@ -1,20 +1,51 @@
+@import "../../_variables/_index";
 
 @mixin button(
-  $color: $color-hilight,
-  $background: $color-primary-bg,
-  $style: "flat"
-    ) {
-  /* 'flat' || 'bevel' */
-  $color2: null;
-  $background2: null;
+  $color: $color-hilight, 
+  $background: $default-background,
+  $border: '',
+  $button-type: '', 
+  $size: ''
+  ) {
+
+    
+    $color-2: '';
+    $background-2: '';
+
+  @if (lightness($color) < 50%) {
+    $color-2: lighten($color, 10%);
+  }
+
+  @if (lightness($color) > 50%) {
+    $color-2: darken($color, 10%);
+  }
+
+  @if (lightness($background) < 50%) {
+    $background2: lighten($background, 20%);
+  }
+
+  @if (lightness($background) > 50%) {
+    $background2: darken($background, 20%);
+  }
+  /*
+  @if length($opts) == 0 {
+    $color: $color-hilight;
+    $background: $color-primary-bg;
+    $color-2: null;
+    $background2: null;
+    $style: "flat"; //'flat' || 'bevel'
+  } 
+  @else {
+    $opts: $opts;
+  }
   & {
-    width: auto;
+    width: auto; 
     margin: $size-nano auto;
     padding: $size-small $default-size;
     cursor: pointer;
     text-align: center;
     color: $color;
-    border: $color 2px solid;
+    border: $color 2px solid; 
     background-color: $background;
     font-family: $h-font;
     font-weight: $button-font-weight;
@@ -31,10 +62,9 @@
     &:active,
     &:hover {
       text-decoration: none;
-      border-color: $color2;
+      border-color: $color-2;
       outline: none;
 
-      /* transform: translate3d(0,0.1em,1em); */
       @if ($style == "bevel") {
         @include gradient("bottom", $background, $background);
       }
@@ -46,7 +76,7 @@
       }
     }
 
-    /* transform: translate3d(0,0,0); */
+    // transform: translate3d(0,0,0); 
     @if ($style == "bevel") {
       @include gradient("bottom", $background, $background2);
       @include border-radius();
@@ -59,11 +89,11 @@
   }
 
   @if (lightness($color) < 50%) {
-    $color2: lighten($color, 10%);
+    $color-2: lighten($color, 10%);
   }
 
   @if (lightness($color) > 50%) {
-    $color2: darken($color, 10%);
+    $color-2: darken($color, 10%);
   }
 
   @if (lightness($background) < 50%) {
@@ -73,4 +103,5 @@
   @if (lightness($background) > 50%) {
     $background2: darken($background, 20%);
   }
+*/
 }

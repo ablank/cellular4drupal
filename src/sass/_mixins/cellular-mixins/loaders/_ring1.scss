@@ -1,0 +1,26 @@
+
+@mixin ring1($size, $color, $speed) {
+    $opacity: 0.2;
+    $border: $size * 0.2;
+    $c2: rgba($color, $opacity);
+    $ease: $i_ease;
+  
+    @include ani_spin();
+  
+    /*  */
+    width: $size;
+    height: $size;
+    animation: spin $speed $ease infinite;
+    border-top: $border solid $c2;
+    border-right: $border solid $c2;
+    border-bottom: $border solid $c2;
+    border-left: $border solid $color;
+    border-radius: 50%;
+  
+    &:after {
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+    }
+  }
+  

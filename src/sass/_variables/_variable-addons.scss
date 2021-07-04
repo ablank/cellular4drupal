@@ -23,6 +23,6 @@ $offsets: ();
 }
 
 /* Header region */
-$header-height: $logo-height + ($logo-padding * 2) + ($logo-margin * 2);
+$header-height: $logo-height + ($logo-padding * 2) + ($logo-margin * 2) + ($logo-border-size * 2);
 
 $default-image: unquote($icon-src-png) + unquote($default-image);

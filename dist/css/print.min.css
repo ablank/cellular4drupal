@@ -1,1 +1,23 @@
-@media print{img,p{page-break-inside:avoid}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}a,a:visited{color:#1d0303;text-decoration:underline}a:after,a:visited:after{content:" (" attr(href) ")"}code a:after{content:none}blockquote,code,pre{border:1px solid #fefefe;page-break-inside:avoid}#app,#content-main,#content-wrap{width:100%}#footer,#header,.hidden{display:none;visibility:hidden}}
+@media print {
+  img,
+  p { page-break-inside: avoid; }
+  h2,
+  h3,
+  p { orphans: 3; widows: 3; }
+  h2,
+  h3 { page-break-after: avoid; }
+  a,
+  a:visited { text-decoration: underline; color: #1d0303; }
+  a:after,
+  a:visited:after { content: " (" attr(href) ")"; }
+  code a:after { content: none; }
+  blockquote,
+  code,
+  pre { border: 1px solid #fefefe; page-break-inside: avoid; }
+  #app,
+  #content-main,
+  #content-wrap { width: 100%; }
+  #footer,
+  #header,
+  .hidden { display: none; visibility: hidden; }
+}

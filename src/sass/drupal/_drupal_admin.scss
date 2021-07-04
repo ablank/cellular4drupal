@@ -1,0 +1,23 @@
+.toolbar-tray {
+    float: left;
+    width: 0;
+    height: 0;
+    background-color: $color-primary-bg;
+    border: $color-shadow 1px solid;
+    @include drop-shadow();
+}
+.toolbar-tray-vertical {
+    height: 100%;
+
+    &.is-active {
+        width: auto;
+    }
+}
+
+.toolbar-tray-horizontal {
+    width: 100%;
+
+    &.is-active {
+        height: 2em;
+    }
+}

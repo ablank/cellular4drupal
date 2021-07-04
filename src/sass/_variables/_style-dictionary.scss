@@ -1,7 +1,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Sun, 30 May 2021 02:55:31 GMT
+  Generated on Wed, 30 Jun 2021 02:35:34 GMT
 */
 
 $color-primary: #101010;
@@ -56,7 +56,7 @@ $default-border-radius: 0.5rem;
 $default-image: happy;
 $default-offset: inset 0 0 0.3em 0 #555;
 $default-transition-property: all;
-$default-transition-duration: 1s;
+$default-transition-duration: 500ms;
 $default-transition-timing: ease;
 $default-transition-delay: false;
 $default-box-shadow: 0.5rem 0.5rem 0.5rem 1px #101010;;
@@ -71,6 +71,7 @@ $logo-width: 96px;
 $logo-height: 96px;
 $logo-margin: 0px;
 $logo-padding: 0px;
+$logo-border-size: 1px;
 $logo-png: '../assets/images/logo.png';
 $logo-svg: '../assets/images/logo.svg';
 $adjust-default: 25%;
@@ -79,7 +80,7 @@ $adjust-bigly: 40%;
 $alpha-start: 0;
 $alpha-end: 1;
 $alpha-offset: 0.2;
-$animation-speed: 700ms;
+$animation-speed: 500ms;
 $distance-offset: 10%;
 $distance-start: 0;
 $distance-end: 1rem;
@@ -105,9 +106,9 @@ $size-default: 1rem;
 $size-big: 1.4rem;
 $size-xl: 3rem;
 $size-xxl: 15rem;
-$speed-default: 700ms;
-$speed-fast: 400ms;
-$speed-slow: 1400ms;
+$speed-default: 500ms;
+$speed-fast: 250ms;
+$speed-slow: 1s;
 $region-header-position: fixed;
 $region-header-height: 96px;
 $region-margin: 0;

@@ -1,0 +1,39 @@
+
+@mixin bar($size, $color, $speed) {
+    $height: $size / 5;
+  
+    @include ani_bar();
+  
+    /*  */
+    height: $height;
+    padding: ($size * 0.1) 0;
+    background-color: rgba($color, 0.1);
+  
+    &:before,
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 98%;
+      height: $height;
+      padding: ($size * 0.1) 1%;
+    }
+    &:before {
+      z-index: 0;
+      width: 0;
+      height: $height;
+      content: "";
+      transform-origin: 98% 0%;
+      animation: bar $speed ease-in-out infinite;
+      background-color: rgba($color, 0.1);
+    }
+    &:after {
+      z-index: 1;
+      width: 100%;
+      height: $height;
+      content: "Loading...";
+      color: $color;
+      font-size: $size * 0.2;
+      line-height: $height;
+    }
+  }

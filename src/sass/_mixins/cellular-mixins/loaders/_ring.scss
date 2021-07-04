@@ -1,0 +1,32 @@
+
+@mixin ring($size, $color, $speed) {
+    $border: ($size * 0.1);
+    $ease: $i_ease;
+  
+    @include ani_spin();
+  
+    /*  */
+    & {
+      width: $size;
+      height: $size;
+      transform-origin: 50% 50%;
+      animation: spin $speed $ease infinite;
+      border: $border solid rgba($color, 0.5);
+      border-radius: $size;
+  
+      &:before,
+      &:after {
+      }
+      &:before {
+      }
+      &:after {
+        position: absolute;
+        width: $size / 3;
+        height: $size / 3;
+        content: "";
+        border-radius: $size / 3;
+        background-color: $color;
+      }
+    }
+  }
+  

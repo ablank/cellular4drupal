@@ -77,7 +77,7 @@
         "category": "default"
       },
       "duration": {
-        "value": "1s",
+        "value": "{speed.default.value}",
         "category": "default"
       },
       "timing": {

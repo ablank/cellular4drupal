@@ -1,10 +1,10 @@
 @mixin transition($transitions...) {
   /* Setting the default value */
   @if length($transitions) == 0 {
-    $transitions: $default-transition-property
-      $default-transition-duration
-      $default-transition-timing
-      $default-transition-delay;
+    $transitions: 
+      $default-transition-property 
+      $default-transition-duration 
+      $default-transition-timing;
   }
 
   transition: $transitions;

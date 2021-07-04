@@ -1,0 +1,29 @@
+
+@mixin spinna($size, $color, $speed) {
+    $ease: $i_ease;
+  
+    @include ani_spin();
+  
+    /*  */
+    & {
+      box-sizing: border-box;
+      width: $size;
+      height: $size;
+      transform-origin: 50% 50%;
+      animation: spin $speed $ease infinite;
+      border-width: $size;
+      border-style: double;
+      border-color: transparent $color;
+      border-radius: 50%;
+      background-color: rgba($color, 0.2);
+  
+      &:before,
+      &:after {
+      }
+      &:before {
+      }
+      &:after {
+      }
+    }
+  }
+  
