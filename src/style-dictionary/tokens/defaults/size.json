@@ -1,0 +1,44 @@
+{
+  "size": {
+    "value": "{default.size.value}",
+    "scale": "1.4",
+    "category": "metric",
+    "type": "size"
+  },
+  "nano": {
+    "value": "0.25{default.unit.value}",
+    "scale": "0.25",
+    "category": "metric",
+    "type": "size"
+  },
+  "tiny": {
+    "value": "0.5{default.unit.value}",
+    "scale": "0.5",
+    "category": "metric",
+    "type": "size"
+  },
+  "small": {
+    "value": "0.7{default.unit.value}",
+    "scale": "0.7",
+    "category": "metric",
+    "type": "size"
+  },
+  "big": {
+    "value": "1.4{default.unit.value}",
+    "scale": "1.4",
+    "category": "metric",
+    "type": "size"
+  },
+  "xl": {
+    "value": "3{default.unit.value}",
+    "scale": "3",
+    "category": "metric",
+    "type": "size"
+  },
+  "xxl": {
+    "value": "15{default.unit.value}",
+    "scale": "15",
+    "category": "metric",
+    "type": "size"
+  }
+}

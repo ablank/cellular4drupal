@@ -27,10 +27,17 @@ ul { position: relative; margin: 0; padding: 0; }
 fieldset,
 img { border: 0; }
 html { overflow: auto; overflow-y: scroll; }
-body { background: #fefefe; font-family: Frutiger, Frutiger Linotype, Univers, Calibri, Gill Sans, Gill Sans MT, Myriad Pro, Myriad, DejaVu Sans Condensed, Liberation Sans, Nimbus Sans L, Tahoma, Geneva, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 100%; line-height: 3rem; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
-body,
-p { color: #101010; }
-p { max-width: 32em; margin: 0 auto; padding: 0 1rem 1.5rem; }
+body { color: #101010; background: #fefefe; font-family: Frutiger, Frutiger Linotype, Univers, Calibri, Gill Sans, Gill Sans MT, Myriad Pro, Myriad, DejaVu Sans Condensed, Liberation Sans, Nimbus Sans L, Tahoma, Geneva, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 100%; line-height: 3rem; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+#header { position: fixed; z-index: 10; top: 0; left: 0; height: 98px; background: #101010; box-shadow: 0 0 1em 0.1em #fefefe; will-change: height; }
+#header-top { z-index: 4; text-align: right; color: #fefefe; border-bottom: 1px solid #fefefe; background: #101010; }
+#header-top div { display: inline; }
+#header-top h2,
+#header-top h3,
+#header-top h4 { display: inline; color: #fefefe; font-size: 1em; }
+#header-bottom { color: #fefefe; background-color: #fefefe; }
+#content { z-index: 1; background: #fefefe; }
+.messages { padding: 1em 1.4em; }
+p { max-width: 32em; margin: 0 auto; padding: 0 1rem 1.5rem; color: #101010; }
 h1,
 h2,
 h3,
@@ -50,15 +57,6 @@ h3 { color: #101010; font-size: 2.1rem; }
 .text-right { text-align: right; }
 .text-center { text-align: center; }
 .logo { z-index: 9; float: left; padding-top: 1px; }
-.logo a { display: block; width: 96px; height: 96px; transition: all 0.5s ease-in; text-decoration: none; text-indent: -999em; border: none; background-color: #0ff; background-image: url(../assets/images/logo.png); background-image: url(../assets/images/logo.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: 96px 96px; box-shadow: 0 0 0 0 #fefefe; will-change: width, height, transform; }
+.logo a { display: block; width: 96px; height: 96px; transition: all 0.5s ease; text-decoration: none; text-indent: -999em; border: none; background-image: url(../assets/images/logo.png); background-image: url(../assets/images/logo.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: 96px 96px; box-shadow: 0 0 0 0 #fefefe; will-change: box-shadow, width, height; }
 .logo a:focus,
-.logo a:hover { box-shadow: 0 0 0.4em 0 #1d0303; }
-#header { position: fixed; z-index: 10; top: 0; left: 0; height: 98px; background: #101010; box-shadow: 0 0 1em 0.1em #fefefe; will-change: height; }
-#header-top { z-index: 4; text-align: right; color: #fefefe; border-bottom: 1px solid #fefefe; background: #101010; }
-#header-top div { display: inline; }
-#header-top h2,
-#header-top h3,
-#header-top h4 { display: inline; color: #fefefe; font-size: 1em; }
-#header-bottom { color: #fefefe; background-color: #fefefe; }
-#content { z-index: 1; background: #fefefe; }
-.messages { padding: 1em 1.4em; }
+.logo a:hover { drop-shadow: 0 0 0.25rem #29b4de; box-shadow: 0 0 0.25rem 1px #29b4de; }

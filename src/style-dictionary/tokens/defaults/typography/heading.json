@@ -4,10 +4,10 @@
       "value": "{font.stack.impact}"
     },
     "size": {
-      "value": "{size.xl.value}"
+      "value": "{xl.value}"
     },
     "line-height": {
-      "value": "{size.xl.value}",
+      "value": "{xl.value}",
       "category": "dynamic"
     },
     "weight": {
@@ -16,7 +16,7 @@
     "color": {
       "value": "{color.primary.value}"
     },
-    "color-bg": {
+    "background": {
       "value": "{color.primary-bg.value}"
     },
     "primary": {

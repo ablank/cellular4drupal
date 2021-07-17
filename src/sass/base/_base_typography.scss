@@ -5,7 +5,7 @@
 */
 
 small {
-  font-size: $size-small;
+  font-size: $small;
 }
 
 sub,
@@ -44,9 +44,9 @@ q {
 
 blockquote {
   display: block;
-  margin: $size-nano $size-big;
+  margin: $nano $big;
   padding: $default-size;
-  border-left: $size-nano solid;
+  border-left: $nano solid;
   font-size: $p-size * 1.8;
 }
 

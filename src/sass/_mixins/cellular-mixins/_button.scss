@@ -1,14 +1,14 @@
 @import "../../_variables/_index";
 
 @mixin button(
+  $size: '',
   $color: $color-hilight, 
   $background: $default-background,
   $border: '',
-  $button-type: '', 
-  $size: ''
-  ) {
+  $button-type: ''
+  ) {    
 
-    
+    // Define vars based on params.
     $color-2: '';
     $background-2: '';
 
@@ -16,7 +16,7 @@
     $color-2: lighten($color, 10%);
   }
 
-  @if (lightness($color) > 50%) {
+  @else {
     $color-2: darken($color, 10%);
   }
 
@@ -24,84 +24,46 @@
     $background2: lighten($background, 20%);
   }
 
-  @if (lightness($background) > 50%) {
+  @else {
     $background2: darken($background, 20%);
   }
-  /*
-  @if length($opts) == 0 {
-    $color: $color-hilight;
-    $background: $color-primary-bg;
-    $color-2: null;
-    $background2: null;
-    $style: "flat"; //'flat' || 'bevel'
-  } 
-  @else {
-    $opts: $opts;
-  }
+
+  // Define Base button styles
+
   & {
-    width: auto; 
-    margin: $size-nano auto;
-    padding: $size-small $default-size;
-    cursor: pointer;
-    text-align: center;
     color: $color;
     border: $color 2px solid; 
     background-color: $background;
     font-family: $h-font;
     font-weight: $button-font-weight;
     line-height: normal;
+    width: auto; 
+    margin: $nano auto;
+    padding: $small $default-size;
+    cursor: pointer;
+    text-align: center;
+    @include drop-shadow();
+    
     &:visited {
       color: $color;
       background-color: $background;
     }
+
     &.active,
     &:active {
       cursor: default;
     }
+
     &.active,
     &:active,
     &:hover {
+      cursor: pointer;
       text-decoration: none;
-      border-color: $color-2;
       outline: none;
-
-      @if ($style == "bevel") {
-        @include gradient("bottom", $background, $background);
-      }
-
-      @else {
-        @include box-shadow($background2 0 0.1em 0.4em);
-
-        border-color: $color-hilight;
-      }
-    }
-
-    // transform: translate3d(0,0,0); 
-    @if ($style == "bevel") {
-      @include gradient("bottom", $background, $background2);
-      @include border-radius();
-    }
-
-    @else {
+      border-color: $color-hilight;
       @include border-radius(0.1em);
-      @include box-shadow($background2 0 0.1em $size-small);
+      @include box-shadow($color-hilight);
+      @include drop-shadow($color-hilight);
     }
   }
-
-  @if (lightness($color) < 50%) {
-    $color-2: lighten($color, 10%);
-  }
-
-  @if (lightness($color) > 50%) {
-    $color-2: darken($color, 10%);
-  }
-
-  @if (lightness($background) < 50%) {
-    $background2: lighten($background, 20%);
-  }
-
-  @if (lightness($background) > 50%) {
-    $background2: darken($background, 20%);
-  }
-*/
 }

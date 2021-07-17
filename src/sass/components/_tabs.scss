@@ -12,7 +12,7 @@
   a {
     &,
     &:visited {
-      @include round($size-nano, "top");
+      @include round($nano, "top");
 
       display: block;
       padding: 0.4em 0.8em 0.2em;
@@ -45,7 +45,7 @@
     a {
       &,
       &:visited {
-        @include round($size-nano);
+        @include round($nano);
 
         padding: 0.4em 0.8em;
         color: $color-primary-bg;

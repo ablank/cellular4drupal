@@ -26,7 +26,7 @@ form {
     input[type="submit"] {
       display: inline;
       float: none;
-      margin: 0 $size-nano;
+      margin: 0 $nano;
     }
   }
 
@@ -42,14 +42,14 @@ form {
 
     input[type="submit"] {
       float: none;
-      margin: $size-nano auto;
+      margin: $nano auto;
     }
   }
 }
 
 fieldset {
-  margin: 2em $size-nano 1em;
-  padding: $size-nano;
+  margin: 2em $nano 1em;
+  padding: $nano;
   border: $default-border;
 
   /* @include clear(); */
@@ -62,11 +62,11 @@ legend {
 
   /* display: inline-block; */
   top: -1em;
-  padding: 0 $size-small;
+  padding: 0 $small;
   color: $color-neutral;
   background: $color-primary-bg;
   font-family: $h-font;
-  font-size: $size-big;
+  font-size: $big;
   font-weight: $h-weight;
 }
 
@@ -186,7 +186,7 @@ input {
 
   &[type="checkbox"] {
     + label:before {
-      border-radius: $size-nano;
+      border-radius: $nano;
     }
 
     &:checked {

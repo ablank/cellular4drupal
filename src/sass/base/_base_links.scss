@@ -3,7 +3,7 @@
   * Anchors / Links
 */
 
-$c1: $color-hilight; /* $color-hilight; */
+$c1: $color-hilight;
 $c2: lighten($c1, 15%);
 $c3: lighten($c1, 5%);
 
@@ -11,13 +11,16 @@ $c3: lighten($c1, 5%);
   $c2: darken($c1, 15%);
   $c3: darken($c1, 5%);
 }
+@else {
+  $c2: lighten($c1, 15%);
+  $c3: lighten($c1, 5%);
+}
 
 a {
-  /* display: inline-block; */
   @include transition();
-
-  text-decoration: none;
   color: $c1;
+  border-bottom: 1px solid $c1;
+  text-decoration: none;
   outline: none;
 
   &:visited {
@@ -27,7 +30,8 @@ a {
   &:hover,
   &:active,
   &:focus {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom-color: $c2;
     color: $c2;
     outline: none;
   }

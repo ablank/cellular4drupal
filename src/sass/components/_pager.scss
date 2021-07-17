@@ -19,7 +19,7 @@
   }
 
   a {
-    @include button($color-secondary, $color-secondary-bg);
+    @include button();
 
     &:hover,
     &:focus {

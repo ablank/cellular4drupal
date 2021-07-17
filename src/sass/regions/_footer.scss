@@ -15,13 +15,13 @@
   color: $color-secondary;
   border-bottom: $default-border;
   background: $color-secondary-bg;
-  font-size: $size-small;
+  font-size: $small;
 
   /* Custom type for region */
 }
 
 .copyright {
   display: block;
-  padding: $size-small $size-big $size-small;
+  padding: $small $big $small;
   text-align: right;
 }

@@ -1,12 +1,18 @@
+/*
 .toolbar-tray {
-    float: left;
+    position:absolute;
+    display: table;
     width: 0;
     height: 0;
-    background-color: $color-primary-bg;
+    background: $color-primary-bg;
     border: $color-shadow 1px solid;
     @include drop-shadow();
 }
+*/
+/*
 .toolbar-tray-vertical {
+    width: 15vw;
+    min-width: 5em;
     height: 100%;
 
     &.is-active {
@@ -15,9 +21,16 @@
 }
 
 .toolbar-tray-horizontal {
-    width: 100%;
+   // width: 100vw;
+    height: 3em;
+
+    .menu-item {
+        clear: none;
+        position: relative;
+    }
 
     &.is-active {
         height: 2em;
     }
 }
+*/

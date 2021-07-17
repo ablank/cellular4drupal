@@ -5,7 +5,7 @@
         "value": "0.1rem"
       },
       "radius": {
-        "value": "{size.tiny.value}"
+        "value": "{tiny.value}"
       }
     },
     "font": {

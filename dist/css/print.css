@@ -38,7 +38,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Wed, 30 Jun 2021 02:35:34 GMT
+  Generated on Tue, 13 Jul 2021 03:23:42 GMT
 */
 /**
 * @file
@@ -69,7 +69,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Wed, 30 Jun 2021 02:35:34 GMT
+  Generated on Tue, 13 Jul 2021 03:23:42 GMT
 */
 /**
 * @file
@@ -101,7 +101,7 @@
   a,
   a:visited {
     text-decoration: underline;
-    color: #1d0303;
+    color: #29b4de;
   }
   a:after,
   a:visited:after {

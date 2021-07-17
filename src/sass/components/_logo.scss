@@ -7,32 +7,31 @@
   /* Container for logo */
   z-index: 9;
   float: left;
+  @if ($header_height > $logo-height + $logo-padding) {
+    padding-top: ($header_height - ($logo-height + $logo-padding)) * 0.5;
+  }
 
   a {
     /* Logo link to frontpage. */
     display: block;
     width: $logo-width + $logo-padding;
     height: $logo-height + $logo-padding;
-    transition: all $default-transition-duration ease-in;
     text-decoration: none;
     text-indent: -999em;
     border: none;
-    background-color: aqua;
     background-image: url($logo-png);
     background-image: url($logo-svg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: $logo-width $logo-height;
     box-shadow: 0 0 0 0 $color-primary-bg;
-    will-change: width, height, transform;
+    will-change: box-shadow, width, height;
+    @include transition();
 
     &:focus,
     &:hover {
-      box-shadow: 0 0 0.4em 0 $color-hilight;
+      @include box-shadow($color-hilight, $nano);
+      @include drop-shadow($color-hilight, $nano);
     }
-  }
-
-  @if ($header_height > $logo-height + $logo-padding) {
-    padding-top: ($header_height - ($logo-height + $logo-padding)) * 0.5;
   }
 }

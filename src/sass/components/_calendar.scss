@@ -52,7 +52,7 @@
 }
 .date-box {
   .month.day {
-    @include round($size-nano, "top");
+    @include round($nano, "top");
 
     padding: 0 0.5em;
     color: $color-primary-bg;
@@ -76,7 +76,7 @@
 
 .single-day {
   td {
-    @include round($size-nano, "bottom");
+    @include round($nano, "bottom");
 
     width: 14%; /* ~ 100% / 7 days */
     vertical-align: top;
@@ -109,9 +109,9 @@
     &,
     &:visited {
       display: block;
-      padding: $size-nano;
+      padding: $nano;
       border: $color-neutral 1px solid;
-      border-radius: $size-nano;
+      border-radius: $nano;
       background: darken($color-primary-bg, 5%);
     }
 

@@ -65,7 +65,7 @@ a[id^="comment-"] {
 .comment-date,
 .comment-author {
   display: block;
-  font-size: $size-small;
+  font-size: $small;
 
   /* text-align: center; */
 }
@@ -74,7 +74,7 @@ a[id^="comment-"] {
   margin: 0;
   color: $color-secondary;
   background-color: $color-secondary;
-  font-size: $size-big;
+  font-size: $big;
 
   &:after {
     content: "... ";

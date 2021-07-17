@@ -38,7 +38,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Wed, 30 Jun 2021 02:35:34 GMT
+  Generated on Tue, 13 Jul 2021 03:23:42 GMT
 */
 /**
 * @file
@@ -69,7 +69,7 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Wed, 30 Jun 2021 02:35:34 GMT
+  Generated on Tue, 13 Jul 2021 03:23:42 GMT
 */
 /**
 * @file
@@ -144,6 +144,59 @@ body {
   /* background-image: $body_img; */
   /* background-repeat: repeat; */
   /* background-attachment: fixed; */
+}
+
+/**
+  * @file
+  * Content region styles
+*/
+#header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 98px;
+  background: #101010;
+  box-shadow: 0 0 1em 0.1em #fefefe;
+  will-change: height;
+}
+
+#header-top {
+  z-index: 4;
+  /* Position contents left or right */
+  text-align: right;
+  color: #fefefe;
+  border-bottom: 1px solid #fefefe;
+  background: #101010;
+  /* Custom type for region */
+}
+#header-top div {
+  display: inline;
+}
+#header-top h2,
+#header-top h3,
+#header-top h4 {
+  display: inline;
+  color: #fefefe;
+  font-size: 1em;
+}
+
+#header-bottom {
+  color: #fefefe;
+  background-color: #fefefe;
+}
+
+/**
+  * @file
+  * Content region styles
+*/
+#content {
+  z-index: 1;
+  background: #fefefe;
+}
+
+.messages {
+  padding: 1em 1.4em;
 }
 
 /**
@@ -228,73 +281,22 @@ h3 {
   display: block;
   width: 96px;
   height: 96px;
-  transition: all 500ms ease-in;
+  /* Setting the default value */
+  transition: all 500ms ease;
   text-decoration: none;
   text-indent: -999em;
   border: none;
-  background-color: aqua;
   background-image: url("../assets/images/logo.png");
   background-image: url("../assets/images/logo.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 96px 96px;
   box-shadow: 0 0 0 0 #fefefe;
-  will-change: width, height, transform;
+  will-change: box-shadow, width, height;
 }
 .logo a:focus,
 .logo a:hover {
-  box-shadow: 0 0 0.4em 0 #1d0303;
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-#header {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  height: 98px;
-  background: #101010;
-  box-shadow: 0 0 1em 0.1em #fefefe;
-  will-change: height;
-}
-
-#header-top {
-  z-index: 4;
-  /* Position contents left or right */
-  text-align: right;
-  color: #fefefe;
-  border-bottom: 1px solid #fefefe;
-  background: #101010;
-  /* Custom type for region */
-}
-#header-top div {
-  display: inline;
-}
-#header-top h2,
-#header-top h3,
-#header-top h4 {
-  display: inline;
-  color: #fefefe;
-  font-size: 1em;
-}
-
-#header-bottom {
-  color: #fefefe;
-  background-color: #fefefe;
-}
-
-/**
-  * @file
-  * Content region styles
-*/
-#content {
-  z-index: 1;
-  background: #fefefe;
-}
-
-.messages {
-  padding: 1em 1.4em;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 0 0.25rem 1px #29b4de;
+  drop-shadow: 0 0 0.25rem #29b4de;
 }

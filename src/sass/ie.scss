@@ -29,7 +29,7 @@ input {
   &[type="checkbox"],
   &[type="radio"] {
     display: inline;
-    margin: $size-nano;
+    margin: $nano;
     vertical-align: middle;
 
     &:focus {

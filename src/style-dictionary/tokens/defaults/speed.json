@@ -1,0 +1,14 @@
+{
+  "speed": {
+    "value": "500ms",
+    "category": "metric"
+  },
+  "fast": {
+    "value": "250ms",
+    "category": "metric"
+  },
+  "slow": {
+    "value": "1s",
+    "category": "metric"
+  }
+}

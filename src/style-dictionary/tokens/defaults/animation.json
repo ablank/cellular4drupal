@@ -1,6 +1,6 @@
 {
     "animation": {
       "speed": {
-        "value": "{speed.default.value}"
+        "value": "{speed.value}"
       }
     }}

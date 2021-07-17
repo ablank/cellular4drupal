@@ -1,4 +1,4 @@
-@mixin link($color) {
+@mixin link($color: $color-hilight) {
   color: $color;
   &:visited {
     color: darken($color, 15%);

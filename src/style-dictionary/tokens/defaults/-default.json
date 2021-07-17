@@ -60,7 +60,7 @@
       "category": "default"
     },
     "border-radius": {
-      "value": "{size.tiny.value}",
+      "value": "{tiny.value}",
       "category": "default"
     },
     "image": {
@@ -77,7 +77,7 @@
         "category": "default"
       },
       "duration": {
-        "value": "{speed.default.value}",
+        "value": "{speed.value}",
         "category": "default"
       },
       "timing": {
@@ -90,11 +90,11 @@
       }
     },
     "box-shadow": {
-      "value": "{size.tiny.value} {size.tiny.value} {size.tiny.value} 1px {swatch.black};",
+      "value": "{tiny.value} {tiny.value} {tiny.value} 1px {swatch.black};",
       "category": "default"
     },
     "drop-shadow": {
-      "value": "{size.tiny.value} {size.tiny.value} {size.tiny.value} {size.tiny.value} {swatch.black};",
+      "value": "{tiny.value} {tiny.value} {tiny.value} {tiny.value} {swatch.black};",
       "category": "default"
     }
   }

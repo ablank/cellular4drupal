@@ -3,6 +3,9 @@
       "start": {
         "value": "0"
       },
+      "mid": {
+        "value": "0.6"
+      },
       "end": {
         "value": "1"
       }

@@ -7,7 +7,7 @@
   h2,
   h3 { page-break-after: avoid; }
   a,
-  a:visited { text-decoration: underline; color: #1d0303; }
+  a:visited { text-decoration: underline; color: #29b4de; }
   a:after,
   a:visited:after { content: " (" attr(href) ")"; }
   code a:after { content: none; }

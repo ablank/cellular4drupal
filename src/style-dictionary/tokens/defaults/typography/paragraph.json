@@ -4,10 +4,10 @@
       "value": "{font.stack.helvetica}"
     },
     "size": {
-      "value": "{size.default.value}"
+      "value": "{default.size.value}"
     },
     "line-height": {
-      "value": "{size.xl.value}",
+      "value": "{xl.value}",
       "category": "dynamic"
     },
     "max-width": {
