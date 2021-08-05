@@ -12,6 +12,9 @@
       "size": {
         "value": "{default.font.size.value}"
       },
+      "family":{
+        "value": "{h.font.value}"
+      },
       "weight":{
         "value": "{default.font.weight.value}"
       }

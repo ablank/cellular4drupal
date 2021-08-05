@@ -1,69 +1,74 @@
-@import "../../_variables/_index";
+@mixin button($type: "primary", $size: $p-size ) {
+ 
+  // Set default component vars
+  $colour: $color-hilight;
+  $colour-1: darken($colour, 10%);
+  $background-colour: "";
+  $background-colour-1: "";
+  $inset-depth: -2em;
 
-@mixin button(
-  $size: '',
-  $color: $color-hilight, 
-  $background: $default-background,
-  $border: '',
-  $button-type: ''
-  ) {    
-
-    // Define vars based on params.
-    $color-2: '';
-    $background-2: '';
-
-  @if (lightness($color) < 50%) {
-    $color-2: lighten($color, 10%);
+  $insit: inset 0 $inset-depth;
+  $insit-1: "";
+  /*
+  @if (blackness(($color-primary-bg) < 50%)) {
   }
-
   @else {
-    $color-2: darken($color, 10%);
+  }
+  */
+  // Set component props based on type.
+  @if($type=="primary") {
+    $background-colour: $color-hilight;
+    $background-colour-1: "";
+    $colour: $color-primary-bg;
+    $colour-1: "";
+    $insit: rgba(0, 0, 0, 0.25) 0px 25px 50px $inset-depth;
+    $insit-1: rgba(0, 0, 0, 0.25) 0px 1px 1px $inset-depth;
+  }
+  @else if ($type == "secondary") {
+    $background-colour: $color-primary;
+    $background-colour-1: "";$colour: $color-primary-bg;
+    $colour: $color-primary-bg;
+    $colour-1: "";
+    $insit: rgba(0, 0, 0, 0.25) 0px 25px 50px $inset-depth;
+    $insit-1: rgba(0, 0, 0, 0.25) 0px 25px 50px $inset-depth;
+  }
+  @else if ($type == "tertiary") {
+    $background-colour: $color-tertiary-bg;
+    $background-colour-1: "";
+    $colour: $color-tertiary;
+    $colour-1: "";
+    $insit: rgba(0, 0, 0, 0.25) 0px 25px 50px $inset-depth;
+    $insit-1: rgba(0, 0, 0, 0.25) 0px 25px 50px $inset-depth;
   }
 
-  @if (lightness($background) < 50%) {
-    $background2: lighten($background, 20%);
+  // Set button defaults.
+  color: $colour;
+  background: $background-colour;
+  cursor: pointer;
+  font-family: $button-font-family;
+  font-weight: $button-font-weight;
+  font-size: $button-font-size;
+  text-align: center;
+  line-height: normal;
+  margin: $nano auto;
+  padding: $small $default-size;
+  width: auto; 
+  border: 1px solid $colour;
+  box-shadow: $insit-1 $colour, $insit $colour, $insit-1 $colour;
+  @include round($nano);
+
+  // Set Default/Visited states
+  &,
+  &:visited {
+    color: $colour;
+    background-color: $background-colour;
   }
-
-  @else {
-    $background2: darken($background, 20%);
-  }
-
-  // Define Base button styles
-
-  & {
-    color: $color;
-    border: $color 2px solid; 
-    background-color: $background;
-    font-family: $h-font;
-    font-weight: $button-font-weight;
-    line-height: normal;
-    width: auto; 
-    margin: $nano auto;
-    padding: $small $default-size;
-    cursor: pointer;
-    text-align: center;
-    @include drop-shadow();
-    
-    &:visited {
-      color: $color;
-      background-color: $background;
-    }
-
-    &.active,
-    &:active {
-      cursor: default;
-    }
-
-    &.active,
-    &:active,
-    &:hover {
-      cursor: pointer;
-      text-decoration: none;
-      outline: none;
-      border-color: $color-hilight;
-      @include border-radius(0.1em);
-      @include box-shadow($color-hilight);
-      @include drop-shadow($color-hilight);
-    }
+  // Set Active/Hover/Focus states.
+  &:active,
+  &.active,
+  &:hover,
+  &:focus {
+    background-color: $colour-1;
+    box-shadow: $insit-1 $colour-1;
   }
 }

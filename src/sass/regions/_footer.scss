@@ -4,24 +4,10 @@
 */
 
 #footer {
-  z-index: 1;
-  margin: 5em 0 0 0;
-  color: $color-primary-bg;
-  background: $color-secondary-bg;
+  @include region($type: "secondary");
 }
 
 #footer-top,
-#footer-bottom {
-  color: $color-secondary;
-  border-bottom: $default-border;
-  background: $color-secondary-bg;
-  font-size: $small;
-
-  /* Custom type for region */
-}
-
-.copyright {
-  display: block;
-  padding: $small $big $small;
-  text-align: right;
+#footer-bottom {  
+  @include region($type: "tertiary");
 }

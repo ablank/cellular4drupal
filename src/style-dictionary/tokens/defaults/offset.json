@@ -1,10 +1,13 @@
 {
   "offset": {
-    "x": {
+    "h": {
       "value": "0"
     },
-    "y": {
+    "v": {
       "value": "0"
+    },
+    "spread": {
+      "value": "1px"
     }
   }
 }

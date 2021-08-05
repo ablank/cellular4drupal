@@ -7,6 +7,7 @@
     cellular.header_position,
   ]
 %}
+<div id="header-wrap">
 {% if page.header_top %}
 {% set header_classes = header_classes|merge(['top-header']) %}
 <div id="header_top" class="cell">
@@ -30,3 +31,4 @@
   {{ page.header_bottom }}
 </div>
   {% endif %}
+</div>

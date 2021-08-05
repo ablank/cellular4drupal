@@ -2,11 +2,13 @@
   * @file
   * Styling for printed pages
 */
-/* /// */
-/* Cellular :: SASS Configuration Variables */
-/*  */
+/*
+* Cellular :: SASS Configuration Variables
+*/
+/*
+ * Use/import sass modules.
+*/
 /* Imports variables as defined in style-dictionary and mixins/libraries (i.e. bourbon, compass, etc.) */
-/* //// */
 /**
   * @file
   // Cellular SASS mixins
@@ -30,25 +32,6 @@
   //
   /////
 */
-/* -------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/*
-  DO NOT EDIT DIRECTLY
-  @see src/style-dictionary/tokens/
-  Generated on Tue, 13 Jul 2021 03:23:42 GMT
-*/
-/**
-* @file
-* Add derivative variables using sass functions based on style-dictionary.
-*/
-/* Define background-color based on primary color. */
-/* Cell grid spacing- % will be appended */
-/* cells & offsets populated by looping through grid values. */
-/* Generate list of grid class names based on % size */
-/* Header region */
 /**
   * @file
   * CSS loading indicators.
@@ -69,13 +52,13 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Tue, 13 Jul 2021 03:23:42 GMT
+  Generated on Thu, 05 Aug 2021 00:47:48 GMT
 */
 /**
 * @file
 * Add derivative variables using sass functions based on style-dictionary.
 */
-/* Define background-color based on primary color. */
+/* Define background-colors derivative from primary colors. */
 /* Cell grid spacing- % will be appended */
 /* cells & offsets populated by looping through grid values. */
 /* Generate list of grid class names based on % size */
@@ -125,7 +108,9 @@
     width: 100%;
   }
 
+  header,
   #header,
+  footer,
   #footer,
   .hidden {
     display: none;

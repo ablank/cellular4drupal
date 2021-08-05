@@ -19,5 +19,7 @@
   #content-wrap { width: 100%; }
   #footer,
   #header,
-  .hidden { display: none; visibility: hidden; }
+  .hidden,
+  footer,
+  header { display: none; visibility: hidden; }
 }

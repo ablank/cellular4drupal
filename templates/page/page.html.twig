@@ -52,18 +52,17 @@
 #}
 <div id="page-wrap" class="cell">
 
+	<header id="header" class="cell" role="banner">
 	{% if page.header_top %}
 		<aside id="header-top" class="cell" role="complementary">
 			{{ page.header_top }}
 		</aside>
 	{% endif %}
 
-	<header id="header" class="cell" role="banner">
 		{{ page.header }}
 		{{ page.navigation }}
 		{{ page.primary_menu }}
 		{{ page.secondary_menu }}
-	</header>
 
 	{% if page.header_bottom %}
 		<aside id="header-bottom" class="cell" role="complementary">
@@ -71,8 +70,11 @@
 		</aside>
 	{% endif %}
 
+	</header>
+
 	{{ page.breadcrumb }}
 	{{ page.console }}
+	
 	<div id="content-wrap">
 		<main role="main">
 			{# link is in html.html.twig #}

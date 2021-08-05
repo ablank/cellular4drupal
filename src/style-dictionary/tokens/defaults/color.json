@@ -1,5 +1,24 @@
 {
+  "swatch": {
+    "white": "#fefefe",
+    "black": "#101010",
+    "grey": "#bbbab7",
+    "light-grey": "#ababab",
+    "dark-grey": "#555",
+    "red": "#8c0d00",
+    "green": "#61d43f",
+    "blue": "#00598e",
+    "cyan": "#29b4de",
+    "magenta": "#dd2a99",
+    "yellow": "#ec2",
+    "orange": "#ff6200",
+    "purple": "#bc00ff",
+    "cream": "#fffbf0",
+    "sand": "#eedeb8",
+    "sage": "#86b082"
+  },
   "color": {
+    "comment": "Base colors used to set derivatives in `sass/_variables/_variable-addons`.",
     "primary": {
       "value": "{swatch.black}",
       "category": "color"
@@ -10,43 +29,53 @@
     },
     "secondary": {
       "value": "{swatch.white}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "secondary-bg": {
-      "value": "{swatch.dark-grey}",
-      "category": "color"
+      "value": "{swatch.black}",
+      "category": "color",
+      "comment": ""
     },
     "tertiary": {
       "value": "{swatch.dark-grey}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "tertiary-bg": {
-      "value": "{swatch.cream}",
-      "category": "color"
+      "value": "{swatch.light-grey}",
+      "category": "color",
+      "comment": ""
     },
     "hilight": {
       "value": "{swatch.cyan}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "shadow": {
       "value": "{swatch.dark-grey}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "neutral": {
       "value": "{swatch.grey}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "error": {
       "value": "{swatch.red}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "warning": {
       "value": "{swatch.yellow}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     },
     "success": {
       "value": "{swatch.green}",
-      "category": "color"
+      "category": "color",
+      "comment": ""
     }    
   }
 }

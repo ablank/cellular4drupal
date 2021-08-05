@@ -1,0 +1,22 @@
+
+@mixin ani_orbit($opacity: 0) {
+    @keyframes orbit {
+      0%,
+      100% {
+        left: 0;
+        opacity: $opacity;
+      }
+      25% {
+        left: -150%;
+        opacity: 0.8;
+      }
+      50% {
+        left: 0;
+        opacity: $opacity;
+      }
+      75% {
+        left: 150%;
+        opacity: 0.8;
+      }
+    }
+  }

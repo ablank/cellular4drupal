@@ -441,6 +441,7 @@
     "unit-allowed-list": ["deg", "em", "ex", "ms", "rem", "%", "s", "px", "vw", "vh"]
   },
   "ignoreFiles": [
-    "assets/vendor/**/*.css"
+    "assets/vendor/**/*.css",
+    "**/*min.css"
   ]
 }

@@ -1,0 +1,20 @@
+
+@mixin ani_bar() {
+    @keyframes bar {
+      0% {
+        width: 0;
+      }
+      70% {
+        width: 100%;
+        opacity: 1;
+      }
+      90% {
+        width: 100%;
+        opacity: 0;
+      }
+      100% {
+        width: 0;
+        opacity: 0;
+      }
+    }
+  }

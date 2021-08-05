@@ -4,40 +4,22 @@
 */
 
 #header {
+  @include region($type: "secondary");
   position: $region-header-position;
-  z-index: 10;
   top: 0;
   left: 0;
   height: $header-height;
-  background: $color-primary;
-  box-shadow: 0 0 1em 0.1em $color-secondary;
-  will-change: height;
+}
+
+#header-top,
+#header-bottom {
+  @include region($type: "tertiary");
+  text-align: right;
+  border-bottom: $default-border;
 }
 
 #header-top {
-  z-index: 4;
-
-  /* Position contents left or right */
-  text-align: right;
-  color: $color-primary-bg;
-  border-bottom: $default-border;
-  background: $color-primary;
-
-  /* Custom type for region */
-  div {
-    display: inline;
-  }
-
-  h2,
-  h3,
-  h4 {
-    display: inline;
-    color: $color-primary-bg;
-    font-size: 1em;
-  }
 }
 
 #header-bottom {
-  color: $color-primary-bg;
-  background-color: $color-secondary;
 }

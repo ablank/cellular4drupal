@@ -12,7 +12,7 @@
       "value": "{default.size.value}"
     },
     "bg": {
-      "value": "{color.primary-bg.value}"
+      "value": "{color.secondary.value}"
     },
     "border": {
       "value": "{default.border.value}"

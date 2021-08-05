@@ -4,18 +4,10 @@
 */
 
 #content {
-  z-index: 1;
-  background: $color-primary-bg;
+  @include region($type: "primary");
 }
 
-#content-top {
-}
-
+#content-top,
 #content-bottom {
-}
-
-#console {
-}
-.messages {
-  padding: 1em 1.4em;
+  @include region($type: "tertiary");
 }

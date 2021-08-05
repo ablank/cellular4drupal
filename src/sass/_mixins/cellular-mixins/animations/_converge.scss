@@ -1,0 +1,27 @@
+
+@mixin ani_converge($opacity: 0) {
+    @keyframes convergeA {
+      0%,
+      100% {
+        left: 0;
+        opacity: $opacity;
+      }
+      50% {
+        left: -150%;
+        opacity: 0.8;
+      }
+    }
+  
+    @keyframes convergeB {
+      0%,
+      100% {
+        left: 0;
+        opacity: $opacity;
+      }
+      50% {
+        left: 150%;
+        opacity: 0.8;
+      }
+    }
+  }
+  

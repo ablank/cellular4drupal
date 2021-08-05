@@ -1,0 +1,13 @@
+@mixin ani_fadein($opacity1: 0, $opacity2: 1) {
+    @keyframes fadein {
+      0% {
+        opacity: $opacity1;
+      }
+      50% {
+        opacity: $opacity1;
+      }
+      100% {
+        opacity: $opacity2;
+      }
+    }
+  }

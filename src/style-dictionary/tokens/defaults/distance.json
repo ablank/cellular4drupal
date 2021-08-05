@@ -1,13 +1,13 @@
 {
   "distance": {
-    "offset": {
-      "value": "10%"
-    },
     "start": {
       "value": "0"
     },
     "end": {
       "value": "{default.size.value}"
+    },
+    "offset": {
+      "value": "10%"
     }
   }
 }

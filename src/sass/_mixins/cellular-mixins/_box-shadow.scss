@@ -1,5 +1,5 @@
-@mixin box-shadow( $color: $color-primary, $size: $nano) {
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
+@mixin box-shadow( $color: $color-shadow, $size: $nano) {
+  // offset-h offset-v blur-radius color;
 
-  box-shadow:  $offset-x $offset-y $size 1px $color;
+  box-shadow: inset $offset-h $offset-v $size $color;
 }

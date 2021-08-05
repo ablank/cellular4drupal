@@ -12,7 +12,7 @@
   }
 
   a {
-    @include button();
+    @include button($type: "primary");
 
     padding: 0.2em 0.4em;
   }
@@ -23,7 +23,6 @@
 
   padding: 1em;
   list-style: none;
-  background-color: transparent;
 
   li {
     display: block;
@@ -34,20 +33,16 @@
     
     &,
     &:visited {
-      @include round($nano);
 
       padding: 0.4em 0.8em;
-      color: $color-secondary;
       border: 1px solid;
-      background-color: $color-secondary-bg;
     }
 
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: $color-hilight;
-      background-color: $color-primary-bg;
+      
     }
   }
 }

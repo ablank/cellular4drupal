@@ -9,5 +9,8 @@
     "bigly": {
       "value": "40%"
     }
+  },
+  "opacity": {
+    "value": "0.3"
   }
 }

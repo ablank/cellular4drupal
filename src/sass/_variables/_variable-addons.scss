@@ -3,8 +3,10 @@
 * Add derivative variables using sass functions based on style-dictionary.
 */
 
-/* Define background-color based on primary color. */
-//$color-primary-bg: contrast($color-primary);
+/* Define background-colors derivative from primary colors. */
+$color-primary-bg: desaturate($color-primary, 80%);
+$color-secondary-bg: desaturate($color-secondary, 80%);
+$color-tertiary-bg: desaturate($color-tertiary, 80%);
 
 /* Cell grid spacing- % will be appended */
 $cell_space: ($grid-cell-margin + $grid-cell-padding) * 2;

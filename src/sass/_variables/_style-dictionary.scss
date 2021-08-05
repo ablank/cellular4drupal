@@ -1,12 +1,13 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Tue, 13 Jul 2021 03:23:42 GMT
+  Generated on Thu, 05 Aug 2021 00:47:48 GMT
 */
 
 $button-border-size: 0.1rem;
 $button-border-radius: 0.5rem;
 $button-font-size: 1rem;
+$button-font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
 $button-font-weight: 500;
 $icon-src-svg: '../assets/icons/svg/';
 $icon-src-png: '../assets/icons/png/';
@@ -55,11 +56,13 @@ $default-transition-property: all;
 $default-transition-duration: 500ms;
 $default-transition-timing: ease;
 $default-transition-delay: false;
+$default-transition-height: 100%;
 $default-box-shadow: 0.5rem 0.5rem 0.5rem 1px #101010;;
 $default-drop-shadow: 0.5rem 0.5rem 0.5rem 0.5rem #101010;;
 $adjust-default: 25%;
 $adjust-abit: 10%;
 $adjust-bigly: 40%;
+$opacity: 0.3;
 $alpha-start: 0;
 $alpha-end: 1;
 $alpha-offset: 0.2;
@@ -72,18 +75,18 @@ $mediaquery-retina: 'screen and (min-resolution: 192dpi) and (min-resolution: 2d
 $color-primary: #101010;
 $color-primary-bg: #fefefe;
 $color-secondary: #fefefe;
-$color-secondary-bg: #555;
+$color-secondary-bg: #101010;
 $color-tertiary: #555;
-$color-tertiary-bg: #fffbf0;
+$color-tertiary-bg: #ababab;
 $color-hilight: #29b4de;
 $color-shadow: #555;
 $color-neutral: #bbbab7;
 $color-error: #8c0d00;
 $color-warning: #ec2;
 $color-success: #61d43f;
-$distance-offset: 10%;
 $distance-start: 0;
 $distance-end: 1rem;
+$distance-offset: 10%;
   // true for flex-box, false for standard box model
 $grid-flex: true;
   // A key:value list of cell sizes to set grid scaling as % of parent element
@@ -94,8 +97,9 @@ $grid-cell-margin: 0;
 $grid-cell-padding: 0;
   // Single value padding size that will be applied to grid cells
 $grid-cell-max-width: 72em;
-$offset-x: 0;
-$offset-y: 0;
+$offset-h: 0;
+$offset-v: 0;
+$offset-spread: 1px;
 $scale-start: 0;
 $scale-mid: 0.6;
 $scale-end: 1;

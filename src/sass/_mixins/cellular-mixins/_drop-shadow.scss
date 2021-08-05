@@ -1,5 +1,5 @@
 @mixin drop-shadow( $color: $color-shadow, $size: $nano) {
-  // offset-x offset-y blur-radius color;
+  // offset-h offset-v blur-radius color;
 
-  drop-shadow: $offset-x $offset-y $size $color;
+  box-shadow: $offset-h $offset-v $size $color;
 }

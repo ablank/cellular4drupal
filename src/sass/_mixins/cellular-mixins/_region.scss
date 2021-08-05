@@ -1,0 +1,44 @@
+@mixin region($type: "primary") {
+    $colour: '';
+    $background-colour: '';
+    $z: '';
+
+    @if ($type== "primary") {
+        $colour: $color-primary;
+        $background-colour: $color-primary-bg;
+        $z: 0;
+
+    } @else if ($type: "secondary") {
+        $colour: $color-secondary;
+        $background-colour: $color-secondary-bg;
+        $z: 1;
+
+    } @else if ($type: "tertiary") {
+        $colour: $color-tertiary;
+        $background-colour: $color-tertiary-bg;
+        $z: 2;
+    }
+
+    color: $colour;
+    background-color: $background-colour;
+    z-index: $z;
+
+    
+    h2,
+    h3,
+    h4,
+    ul,
+    ol {
+        font-size: 1em;
+        display: inline;
+    }
+
+    p{
+        color: $colour;
+    }
+    
+    button,
+    .button {
+        @include button($type);
+    }
+}

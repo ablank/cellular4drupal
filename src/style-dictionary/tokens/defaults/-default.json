@@ -52,7 +52,7 @@
       "category": "default"
     },
     "border": {
-      "value": "{default.border-style.value} {color.primary-bg.value}",
+      "value": "{default.border-style.value} {color.secondary.value}",
       "category": "default"
     },
     "border-style": {
@@ -79,13 +79,17 @@
       "duration": {
         "value": "{speed.value}",
         "category": "default"
-      },
+      },     
       "timing": {
         "value": "ease",
         "category": "default"
       },
       "delay": {
         "value": "false",
+        "category": "default"
+      },
+      "height": {
+        "value": "100%",
         "category": "default"
       }
     },

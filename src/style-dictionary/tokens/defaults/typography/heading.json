@@ -17,7 +17,7 @@
       "value": "{color.primary.value}"
     },
     "background": {
-      "value": "{color.primary-bg.value}"
+      "value": "{color.secondary.value}"
     },
     "primary": {
       "scale": "3"

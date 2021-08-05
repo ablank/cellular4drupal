@@ -1,0 +1,12 @@
+
+@mixin ani_alpha($opacity1: $alpha-start, $opacity2: $alpha-end - $alpha-offset) {
+    @keyframes alpha {
+      0%,
+      100% {
+        opacity: $opacity;
+      }
+      50% {
+        opacity: $opacity2;
+      }
+    }
+  }

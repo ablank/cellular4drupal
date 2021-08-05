@@ -2,11 +2,13 @@
   * @file
   * Critical styles to be added inline.
 */
-/* /// */
-/* Cellular :: SASS Configuration Variables */
-/*  */
+/*
+* Cellular :: SASS Configuration Variables
+*/
+/*
+ * Use/import sass modules.
+*/
 /* Imports variables as defined in style-dictionary and mixins/libraries (i.e. bourbon, compass, etc.) */
-/* //// */
 /**
   * @file
   // Cellular SASS mixins
@@ -30,25 +32,6 @@
   //
   /////
 */
-/* -------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/*
-  DO NOT EDIT DIRECTLY
-  @see src/style-dictionary/tokens/
-  Generated on Tue, 13 Jul 2021 03:23:42 GMT
-*/
-/**
-* @file
-* Add derivative variables using sass functions based on style-dictionary.
-*/
-/* Define background-color based on primary color. */
-/* Cell grid spacing- % will be appended */
-/* cells & offsets populated by looping through grid values. */
-/* Generate list of grid class names based on % size */
-/* Header region */
 /**
   * @file
   * CSS loading indicators.
@@ -69,13 +52,13 @@
 /*
   DO NOT EDIT DIRECTLY
   @see src/style-dictionary/tokens/
-  Generated on Tue, 13 Jul 2021 03:23:42 GMT
+  Generated on Thu, 05 Aug 2021 00:47:48 GMT
 */
 /**
 * @file
 * Add derivative variables using sass functions based on style-dictionary.
 */
-/* Define background-color based on primary color. */
+/* Define background-colors derivative from primary colors. */
 /* Cell grid spacing- % will be appended */
 /* cells & offsets populated by looping through grid values. */
 /* Generate list of grid class names based on % size */
@@ -132,7 +115,7 @@ html {
 
 body {
   color: #101010;
-  background: #fefefe;
+  background: #101010;
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 3rem;
@@ -152,38 +135,145 @@ body {
 */
 #header {
   position: fixed;
-  z-index: 10;
+  z-index: 1;
   top: 0;
   left: 0;
   height: 98px;
+  color: #fefefe;
+  background-color: #fefefe;
+}
+#header h2,
+#header h3,
+#header h4,
+#header ul,
+#header ol {
+  display: inline;
+  font-size: 1em;
+}
+#header p {
+  color: #fefefe;
+}
+#header button,
+#header .button {
+  width: auto;
+  margin: 0.25rem auto;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  /*
+  @if (blackness(($color-primary-bg) < 50%)) {
+  }
+  @else {
+  }
+  */
+  color: #101010;
+  border: 1px solid #101010;
+  border-radius: 0.25rem;
   background: #101010;
-  box-shadow: 0 0 1em 0.1em #fefefe;
-  will-change: height;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -2em #101010, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #101010, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #101010;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+}
+#header button,
+#header button:visited,
+#header .button,
+#header .button:visited {
+  color: #101010;
+  background-color: #101010;
+}
+#header button:active,
+#header button.active,
+#header button:hover,
+#header button:focus,
+#header .button:active,
+#header .button.active,
+#header .button:hover,
+#header .button:focus {
+  background-color: "";
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -2em "";
 }
 
-#header-top {
-  z-index: 4;
-  /* Position contents left or right */
+#header-top,
+#header-bottom {
+  z-index: 1;
   text-align: right;
   color: #fefefe;
   border-bottom: 1px solid #fefefe;
-  background: #101010;
-  /* Custom type for region */
-}
-#header-top div {
-  display: inline;
+  background-color: #fefefe;
 }
 #header-top h2,
 #header-top h3,
-#header-top h4 {
+#header-top h4,
+#header-top ul,
+#header-top ol,
+#header-bottom h2,
+#header-bottom h3,
+#header-bottom h4,
+#header-bottom ul,
+#header-bottom ol {
   display: inline;
-  color: #fefefe;
   font-size: 1em;
 }
-
-#header-bottom {
+#header-top p,
+#header-bottom p {
   color: #fefefe;
-  background-color: #fefefe;
+}
+#header-top button,
+#header-top .button,
+#header-bottom button,
+#header-bottom .button {
+  width: auto;
+  margin: 0.25rem auto;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  /*
+  @if (blackness(($color-primary-bg) < 50%)) {
+  }
+  @else {
+  }
+  */
+  color: #555;
+  border: 1px solid #555;
+  border-radius: 0.25rem;
+  background: #555;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -2em #555, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #555, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #555;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+}
+#header-top button,
+#header-top button:visited,
+#header-top .button,
+#header-top .button:visited,
+#header-bottom button,
+#header-bottom button:visited,
+#header-bottom .button,
+#header-bottom .button:visited {
+  color: #555;
+  background-color: #555;
+}
+#header-top button:active,
+#header-top button.active,
+#header-top button:hover,
+#header-top button:focus,
+#header-top .button:active,
+#header-top .button.active,
+#header-top .button:hover,
+#header-top .button:focus,
+#header-bottom button:active,
+#header-bottom button.active,
+#header-bottom button:hover,
+#header-bottom button:focus,
+#header-bottom .button:active,
+#header-bottom .button.active,
+#header-bottom .button:hover,
+#header-bottom .button:focus {
+  background-color: "";
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -2em "";
 }
 
 /**
@@ -191,12 +281,140 @@ body {
   * Content region styles
 */
 #content {
-  z-index: 1;
-  background: #fefefe;
+  z-index: 0;
+  color: #101010;
+  background-color: #101010;
+}
+#content h2,
+#content h3,
+#content h4,
+#content ul,
+#content ol {
+  display: inline;
+  font-size: 1em;
+}
+#content p {
+  color: #101010;
+}
+#content button,
+#content .button {
+  width: auto;
+  margin: 0.25rem auto;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  /*
+  @if (blackness(($color-primary-bg) < 50%)) {
+  }
+  @else {
+  }
+  */
+  color: #101010;
+  border: 1px solid #101010;
+  border-radius: 0.25rem;
+  background: #29b4de;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 1px -2em #101010, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #101010, rgba(0, 0, 0, 0.25) 0 1px 1px -2em #101010;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+}
+#content button,
+#content button:visited,
+#content .button,
+#content .button:visited {
+  color: #101010;
+  background-color: #29b4de;
+}
+#content button:active,
+#content button.active,
+#content button:hover,
+#content button:focus,
+#content .button:active,
+#content .button.active,
+#content .button:hover,
+#content .button:focus {
+  background-color: "";
+  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 1px -2em "";
 }
 
-.messages {
-  padding: 1em 1.4em;
+#content-top,
+#content-bottom {
+  z-index: 1;
+  color: #fefefe;
+  background-color: #fefefe;
+}
+#content-top h2,
+#content-top h3,
+#content-top h4,
+#content-top ul,
+#content-top ol,
+#content-bottom h2,
+#content-bottom h3,
+#content-bottom h4,
+#content-bottom ul,
+#content-bottom ol {
+  display: inline;
+  font-size: 1em;
+}
+#content-top p,
+#content-bottom p {
+  color: #fefefe;
+}
+#content-top button,
+#content-top .button,
+#content-bottom button,
+#content-bottom .button {
+  width: auto;
+  margin: 0.25rem auto;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  /*
+  @if (blackness(($color-primary-bg) < 50%)) {
+  }
+  @else {
+  }
+  */
+  color: #555;
+  border: 1px solid #555;
+  border-radius: 0.25rem;
+  background: #555;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -2em #555, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #555, rgba(0, 0, 0, 0.25) 0 25px 50px -2em #555;
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
+}
+#content-top button,
+#content-top button:visited,
+#content-top .button,
+#content-top .button:visited,
+#content-bottom button,
+#content-bottom button:visited,
+#content-bottom .button,
+#content-bottom .button:visited {
+  color: #555;
+  background-color: #555;
+}
+#content-top button:active,
+#content-top button.active,
+#content-top button:hover,
+#content-top button:focus,
+#content-top .button:active,
+#content-top .button.active,
+#content-top .button:hover,
+#content-top .button:focus,
+#content-bottom button:active,
+#content-bottom button.active,
+#content-bottom button:hover,
+#content-bottom button:focus,
+#content-bottom .button:active,
+#content-bottom .button.active,
+#content-bottom .button:hover,
+#content-bottom .button:focus {
+  background-color: "";
+  box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -2em "";
 }
 
 /**
@@ -291,12 +509,11 @@ h3 {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 96px 96px;
-  box-shadow: 0 0 0 0 #fefefe;
+  box-shadow: 0 0 0 0 #101010;
   will-change: box-shadow, width, height;
 }
 .logo a:focus,
 .logo a:hover {
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 0 0 0.25rem 1px #29b4de;
-  drop-shadow: 0 0 0.25rem #29b4de;
+  box-shadow: inset 0 0 0.25rem #29b4de;
+  box-shadow: 0 0 0.25rem #29b4de;
 }
