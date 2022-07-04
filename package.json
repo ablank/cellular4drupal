@@ -84,7 +84,7 @@
     "@popperjs/core": "^2.9.2",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
-    "sharp": "^0.28.1",
+    "sharp": "^0.30.5",
     "style-dictionary": "^2.10.3",
     "yaml": "^2.0.0-3"
   }
