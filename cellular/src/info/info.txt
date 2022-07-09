@@ -1,7 +1,0 @@
-;----------// Theme Information
-name        = Cellular
-description = Tame the Drupal for easier front end development.
-
-core        = 7.x
-engine      = phptemplate
-screenshot  = screenshot.png

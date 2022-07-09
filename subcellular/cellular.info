@@ -1,9 +1,0 @@
-;----------// Theme Information
-
-name        = Subcellular
-description = Cellular starter theme.
-
-base theme  = cellular
-core        = 7.x
-engine      = phptemplate
-screenshot  = screenshot.png

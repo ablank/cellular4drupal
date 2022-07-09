@@ -10,7 +10,6 @@
 
 @import "style/base/base_cssreset";
 @import "style/base/base_body";
-@import "style/base/base_fonts";
 @import "style/base/base_typography";
 @import "style/base/base_links";
 @import "style/base/base_lists";
@@ -22,11 +21,11 @@
 
 @import "cellular-ui/cellular";
 
-@import "style/region_wrappers";
-@import "style/region_header";
-@import "style/region_navigation";
-@import "style/region_content";
-@import "style/region_footer";
+@import "style/regions/wrappers";
+@import "style/regions/header";
+@import "style/regions/navigation";
+@import "style/regions/content";
+@import "style/regions/footer";
 
 @import "style/style_icons";
 @import "style/style_typography";

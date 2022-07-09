@@ -153,6 +153,7 @@ function cellular_form_format_opt(&$form, $form_state) {
   }
   }
  */
+
 function cellular_proccess_asset(&$asset, $cellular = NULL) {
   // Set data source as CDN or local host.
   if (isset($asset['data'])) {
@@ -174,7 +175,6 @@ function cellular_proccess_asset(&$asset, $cellular = NULL) {
     $asset['type'] = isset($asset['cdn']) ? 'external' : 'file';
   }
 }
-
 
 /*
  * @see file: src/preprocess/fn.css.inc
@@ -198,7 +198,7 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (isset($style['file'])) {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/dist/css/';
       $data .= $style['file'];
     }
     if (!empty($data)) {
@@ -226,7 +226,7 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  *   Associative array of stylesheet data to add.
  * @param boolean $cellular
  *   Reference cellular library if TRUE.
- *///&$css
+ */
 function cellular_add_css($array, $cellular = FALSE) {
   $type = 'file';
   foreach ($array as $style) {
@@ -235,7 +235,7 @@ function cellular_add_css($array, $cellular = FALSE) {
       $data = $style['cdn'];
     }
     elseif (!empty($style['file'])) {
-      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/css/';
+      $data = $cellular === TRUE ? CELLULAR_LIB : CURRENT_THEME_PATH . '/dist/css/';
       $data .= $style['file'];
     }
     else {
@@ -439,7 +439,7 @@ function cellular_critical_css($vars) {
     }
 
     // Add the stylesheet inline.
-    drupal_add_css(file_get_contents(CURRENT_THEME_PATH . '/css/' . $critical_file), $critical_opts);
+    drupal_add_css(file_get_contents(CURRENT_THEME_PATH . '/dist/css/' . $critical_file), $critical_opts);
   }
 }
 
@@ -594,7 +594,7 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
     }
     elseif (!empty($script['file'])) {
       $script['type'] = 'file';
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/dist/js/';
       $data .= $script['file'];
     }
     else {
@@ -638,7 +638,7 @@ function cellular_add_js($array, $cellular = FALSE) {
       cellular_js_fallback($script, $cellular);
     }
     elseif (!empty($script['file'])) {
-      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+      $data = $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/dist/js/';
       $data .= $script['file'];
     }
     else {
@@ -692,7 +692,7 @@ function cellular_js_fallback($script, $cellular = FALSE) {
     );
     // Construct the fallback script.
     $fallback = 'window.' . $script['object'] . ' || document.write("<script src=\"';
-    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/js/';
+    $fallback .= $cellular ? CELLULAR_LIB : CURRENT_THEME_PATH . '/dist/js/';
     $fallback .= $script['file'];
     $fallback .= '\">\x3C/script>")';
 
@@ -1720,7 +1720,7 @@ function cellular_preprocess_html(&$vars) {
   /* Additional assets for logged-in users */
   if (user_is_logged_in()) {
     // Add JS.
-    drupal_add_js($cellular_theme_path . '/js/user.js', array());
+    drupal_add_js($cellular_theme_path . '/dist/js/user.js', array());
     // Add CSS
     $user_style = array(
       'weight' => 999,
@@ -1730,7 +1730,7 @@ function cellular_preprocess_html(&$vars) {
       'every_page' => TRUE,
       'browsers' => array('IE' => TRUE, '!IE' => TRUE)
     );
-    drupal_add_css($cellular_theme_path . '/css/user.css', $user_style);
+    drupal_add_css($cellular_theme_path . '/dist/css/user.css', $user_style);
   }
 }
 
@@ -1946,8 +1946,8 @@ function cellular_favicons() {
     if (isset($favicon)) {
       // Set tag type to <link>
       $favicon['tag'] = 'link';
-      // Set href relative to /assets/favicons/
-      $favicon['href'] = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH . '/assets/favicons/' . $favicon['href'];
+      // Set href relative to /dist/assets/favicons/
+      $favicon['href'] = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH . '/dist/assets/favicons/' . $favicon['href'];
     }
   }
 
@@ -2556,91 +2556,6 @@ function cellular_textarea(&$vars) {
 
   return '<textarea' . drupal_attributes($attributes) . '></textarea>';
 }
-/**
- * Implements theme_webform_element().
-function cellular_webform_element($vars) {
-  // Ensure defaults.
-  $vars['element'] += array(
-    '#title_display' => 'before',
-  );
-
-  $element = $vars['element'];
-
-  // All elements using this for display only are given the "display" type.
-  if (isset($element['#format']) && $element['#format'] == 'html') {
-    $type = 'display';
-  }
-  else {
-    $type = (isset($element['#type']) && !in_array($element['#type'], array('markup', 'textfield', 'webform_email', 'webform_number')))
-      ? $element['#type'] : $element['#webform_component']['type'];
-  }
-
-  // Convert the parents array into a string, excluding the "submitted" wrapper.
-  $nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
-  $parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
-
-  // Get description
-  $description = $element['#description'];
-  if (!empty($description)) {
-    if (theme_get_setting('ui_tooltips') == 1) {
-      $element ['#attributes']['data-tooltip'] = $description;
-      //$element['#description'] = NULL;
-      //unset($element['#description']);
-    }
-    else {
-      $description = "<div class=\"description\">$description</div>\n";
-    }
-  }
-
-  $wrapper_classes = array();
-  if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
-    $wrapper_classes[] = 'container-inline';
-  }
-  $output = '<div class="' . implode(' ', $wrapper_classes) . '" id="webform-component-' . $parents . '">' . "\n";
-
-  // If #title_display is none, set it to invisible instead - none only used if
-  // we have no title at all to use.
-  if ($element['#title_display'] == 'none') {
-    $vars['element']['#title_display'] = 'invisible';
-    $element['#title_display'] = 'invisible';
-  }
-  // If #title is not set, we don't display any label or required marker.
-  if (!isset($element['#title'])) {
-    $element['#title_display'] = 'none';
-  }
-  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . _webform_filter_xss($element['#field_prefix']) . '</span> '
-    : '';
-  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . _webform_filter_xss($element['#field_suffix']) . '</span>'
-    : '';
-
-  switch ($element['#title_display']) {
-    case 'inline':
-    case 'before':
-    case 'invisible':
-      $output .= ' ' . theme('form_element_label', $vars);
-      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-      break;
-
-    case 'after':
-      $output .= ' ' . $prefix . $element['#children'] . $suffix;
-      $output .= ' ' . theme('form_element_label', $vars) . "\n";
-      break;
-
-    case 'none':
-    case 'attribute':
-      // Output no label and no required marker, only the children.
-      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
-      break;
-  }
-
-  $output .= $description;
-  $output .= "</div>\n";
-  //dpm($element);
-  return $output;
-}
-
- */
-
 /*
  * @see file: src/preprocess/theme_pager.inc
  * Generate & theme drupal pager.
@@ -2805,114 +2720,6 @@ function cellular_panels_default_style_render_region($vars) {
   // Remove the panel separator.
   return implode('', $vars['panes']);
 }
-/**
- * Implements template_preprocess_panels_pane().
- *
- * @param array $vars
-function cellular_preprocess_panels_pane(&$vars) {
-  $content = &$vars['content'];
-
-  $vars['contextual_links'] = array();
-  $vars['classes_array'] = array();
-  $vars['admin_links'] = '';
-
-  if (module_exists('contextual') && user_access('access contextual links')) {
-    $links = array();
-    // These are specified by the content.
-    if (!empty($content->admin_links)) {
-      $links += $content->admin_links;
-    }
-
-    // Take any that may have been in the render array we were given and
-    // move them up so they appear outside the pane properly.
-    if (is_array($content->content) && isset($content->content['#contextual_links'])) {
-      $element = array(
-        '#type' => 'contextual_links',
-        '#contextual_links' => $content->content['#contextual_links'],
-      );
-      unset($content->content['#contextual_links']);
-
-      // Add content to $element array
-      if (is_array($content->content)) {
-        $element['#element'] = $content->content;
-      }
-
-      $element = contextual_pre_render_links($element);
-      if(!empty($element['#links'])) {
-        $links += $element['#links'];
-      }
-    }
-
-    if ($links) {
-      $build = array(
-        '#prefix' => '<div class="contextual-links-wrapper">',
-        '#suffix' => '</div>',
-        '#theme' => 'links__contextual',
-        '#links' => $links,
-        '#attributes' => array('class' => array('contextual-links')),
-        '#attached' => array(
-          'library' => array(array('contextual', 'contextual-links')),
-        ),
-      );
-      $vars['classes_array'][] = 'contextual-links-region';
-      $vars['admin_links'] = drupal_render($build);
-    }
-  }
-
-  // basic classes
-  $vars['classes_array'][] = 'panel-pane';
-  $vars['id'] = '';
-
-  // Add some usable classes based on type/subtype
-  ctools_include('cleanstring');
-  $type_class = $content->type ? 'pane-'. ctools_cleanstring($content->type, array('lower case' => TRUE)) : '';
-  $subtype_class = $content->subtype ? 'pane-'. ctools_cleanstring($content->subtype, array('lower case' => TRUE)) : '';
-
-  // Sometimes type and subtype are the same. Avoid redundant classes.
-  $vars['classes_array'][] = $type_class;
-  if ($type_class != $subtype_class) {
-    $vars['classes_array'][] = $subtype_class;
-  }
-
-  // Add id and custom class if sent in.
-  if (!empty($content->content)) {
-    if (!empty($content->css_id)) {
-      $vars['id'] = ' id="' . $content->css_id . '"';
-    }
-    if (!empty($content->css_class)) {
-      $vars['classes_array'][] = $content->css_class;
-    }
-  }
-
-  // Set up some placeholders for constructing template file names.
-  $base = 'panels_pane';
-  $delimiter = '__';
-
-  // Add template file suggestion for content type and sub-type.
-  $vars['theme_hook_suggestions'][] = $base . $delimiter . $content->type;
-  $vars['theme_hook_suggestions'][] = $base . $delimiter . strtr(ctools_cleanstring($content->type, array('lower case' => TRUE)), '-', '_') . $delimiter . strtr(ctools_cleanstring($content->subtype, array('lower case' => TRUE)), '-', '_');
-
-  $vars['pane_prefix'] = !empty($content->pane_prefix) ? $content->pane_prefix : '';
-  $vars['pane_suffix'] = !empty($content->pane_suffix) ? $content->pane_suffix : '';
-
-  $vars['title'] = !empty($content->title) ? $content->title : '';
-  $vars['title_heading'] = !empty($content->title_heading) ? $content->title_heading : 'h2';
-  $vars['title_attributes_array']['class'][] = 'pane-title';
-
-  $vars['feeds'] = !empty($content->feeds) ? implode(' ', $content->feeds) : '';
-
-  $vars['links'] = !empty($content->links) ? theme('links', array('links' => $content->links)) : '';
-  $vars['more'] = '';
-  if (!empty($content->more)) {
-    if (empty($content->more['title'])) {
-      $content->more['title'] = t('More');
-    }
-    $vars['more'] = l($content->more['title'], $content->more['href'], $content->more);
-  }
-
-  $vars['content'] = !empty($content->content) ? $content->content : '';
-}
- */
 
 /*
  * @see file: src/preprocess/social.inc

@@ -2,7 +2,7 @@
   * @file
   * CellularUI : window scrolled styling
 */
-$scroll_header: $header_height / 2;
+$scroll_header: calc($header_height / 2);
 .scrolled {
   #header {
     height: $scroll_header;

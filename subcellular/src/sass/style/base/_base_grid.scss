@@ -50,7 +50,7 @@
     }
   }
   .offset-#{$name} {
-    margin-left: $size + ($cell_space /2) + unquote('%');
+    margin-left: $size + calc(($cell_space /2)) + unquote('%');
   }
 }
 

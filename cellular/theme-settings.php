@@ -20,7 +20,7 @@ $form[0] = array(
 '#attached' => array(),
 );
 /*
-* @see file: src/preprocess/theme-settings/_config.inc
+* @see file: src/preprocess/theme-settings/_build.inc
 * jQuery CDN & version settings
 */
 /*

@@ -1,6 +1,38 @@
 /**
   * @file
   // Cellular SASS mixins
+*/
+
+
+/**
+* Compass functions
+*/
+
+
+@mixin transition(
+  $property: $default-transition-property,
+  $duration: $default-transition-duration,
+  $function: $default-transition-function,
+  $delay: $default-transition-delay
+) {
+  transition: $property $duration $function $delay;
+}
+
+@mixin border-radius($radius: $default-border-radius) {
+border-radius: $radius;
+}
+
+@mixin box-shadow(
+  $x: $default-box-shadow-h-offset, 
+  $y: $default-box-shadow-v-offset,
+  $blur: $default-box-shadow-blur,
+  $spread: $default-box-shadow-spread,
+  $color: $default-box-shadow-color,
+  $inset: $default-box-shadow-inset
+  ){
+box-shadow: $inset $x $y $blur $spread $color;
+}
+/*
   //    tread with caution
   //                      ^    ^
   //                     / \  //\
@@ -21,6 +53,7 @@
   //
   /////
 */
+
 @mixin clear() {
   clear: both;
   zoom: 1;
@@ -302,28 +335,31 @@
   }
 }
 @mixin triangle($width: $normal, $height: $normal, $color: $black, $direction: 'left') {
+  $width2: calc($width / 2);
+  $height2: calc($height / 2);
+
   content: "";
   position: absolute;
   width: 0;
   height: 0;
   @if ($direction == 'left') {
-    border-top: ($height/2) solid transparent;
-    border-bottom: ($height/2) solid transparent;
+    border-top:$height2 solid transparent;
+    border-bottom: $height2 solid transparent;
     border-right: $width solid $color;
   }
   @if ($direction == 'right') {
-    border-top: ($height/2) solid transparent;
-    border-bottom: ($height/2) solid transparent;
+    border-top: $height2 solid transparent;
+    border-bottom: $height2 solid transparent;
     border-left: $width solid $color;
   }
   @if ($direction == 'up') {
-    border-left: ($width/2) solid transparent;
-    border-right: ($width/2) solid transparent;
+    border-left: $width2 solid transparent;
+    border-right: $width2 solid transparent;
     border-bottom: $height solid $color;
   }
   @if ($direction == 'down') {
-    border-left: ($width/2) solid transparent;
-    border-right: ($width/2) solid transparent;
+    border-left: $width2 solid transparent;
+    border-right: $width2 solid transparent;
     border-top: $height solid $color;
   }
 }
@@ -367,3 +403,4 @@
     border-right: $width solid transparent;
   }
 }
+
