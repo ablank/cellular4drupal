@@ -1637,11 +1637,6 @@ function cellular_preprocess_html(&$vars) {
   /* Add javascript. */
 
   $scripts = array(
-    'script' => array(
-      'file' => 'script' . CELLULAR_JS_EXT,
-      'group' => JS_THEME,
-      'weight' => 100,
-    ),
     'plugins' => array(
       'file' => 'plugins' . CELLULAR_JS_EXT,
       'group' => JS_THEME,
@@ -1701,14 +1696,16 @@ function cellular_preprocess_html(&$vars) {
       'group' => CSS_THEME,
       'weight' => 101,
     ),
-    // Single stylesheet used to hack old internet explorer quirks.
+    /*
+    // Stylesheet used to hack old internet explorer quirks.
     // Minimal support for deprecated breowsers is fine imo...
     'ie' => array(
       'file' => 'ie' . CELLULAR_CSS_EXT,
       'browsers' => array('IE' => 'lt IE 10', '!IE' => FALSE),
       'group' => CSS_THEME,
       'weight' => 999,
-    ),
+    ),*/
+
   );
   // Add styles.
   cellular_add_css($styles);
