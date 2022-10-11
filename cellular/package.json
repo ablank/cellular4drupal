@@ -25,7 +25,7 @@
     "js:uglify": "uglifyjs-folder dist/js -eo dist/js",
     "imagemin": "imagemin dist/assets/**/*",
     "favicons": "imagemin src/assets/favicons/ -o dist/assets/favicons",
-    "icons": "svgo -f src/assets/icons/svg -o dist/assets/icons/svg && svg-sprite-generate -d src/assets/icons/svg -o src/assets/icons/svg/_sprite.svg && node src/_build/icons.js",
+    "icons": "svgo -f src/assets/icons/svg -o dist/assets/icons/svg && node src/_build/icons.js",
     "build:css": "run-s clean:css sass postcss",
     "build:js": "run-s clean:js js:*",
     "build:images": "run-s clean:assets && node src/_build/images.mjs && run-p favicons icons",
