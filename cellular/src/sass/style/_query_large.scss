@@ -1,0 +1,92 @@
+/**
+  * @file
+  * Styling for large-screen devices included in style.css
+*/
+
+@media screen and (min-width: $res_large) {
+
+  body:before {
+    // Pseudo element to pass the current media size to javascript.
+    content: "window_large-#{$res_large}";
+  }
+}
+
+//////
+.window_large {
+
+  p {
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+  }
+
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+  //////
+
+  #main-menu {
+    ul.menu {
+
+    }
+  }
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+
+  #page-wrap {
+
+  }
+
+  #content-wrap {
+
+  }
+
+  #header {
+
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+  }
+
+  #content {
+  }
+
+}

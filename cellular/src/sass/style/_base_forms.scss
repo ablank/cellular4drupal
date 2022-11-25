@@ -1,0 +1,273 @@
+/**
+  * @file
+  * Form styling
+*/
+
+$i_pad: 0.4em;
+
+form {
+  display: block;
+  max-width: 32em;
+  margin: auto;
+  padding: 0;
+
+  // Form Alignment Classes
+  &.horizontal {
+    display: inline;
+    max-width: none;
+    padding: 0;
+
+    label,
+    input {
+      display: inline;
+      clear: none;
+    }
+
+    input[type="submit"] {
+      margin: 0 $tiny;
+      float: none;
+      display: inline;
+    }
+  }
+
+  &.vertical {
+    text-align: center;
+
+    label,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      display: block;
+    }
+
+    input[type=submit] {
+      float: none;
+      margin: $tiny auto;
+    }
+  }
+}
+
+fieldset {
+  padding: $tiny;
+  margin: 2em $tiny 1em;
+  border: $grey $border;
+  //@include clear();
+}
+
+legend {
+  @include clear();
+  position: absolute;
+  //display: inline-block;
+  top: -1em;
+  padding: 0 $small;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  font-size: $big;
+  color: $grey;
+  background: $white;
+}
+
+label {
+  display: block;
+  display: inline-block;
+  font-family: $h_font;
+  font-weight: $h_weight;
+  text-align: left;
+  margin: $i_pad 0 0;
+  padding: 1em $i_pad 0;
+}
+
+input,
+select,
+textarea {
+  display: inline;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  text-indent: $i_pad;
+  font: 1em/1.6em $p_font;
+  font-size: 100%;
+  border: $grey 1px solid;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  padding: $i_pad 0;
+  color: $p_color;
+  background: darken($white, 1%);
+  @include border-radius();
+  @include transition();
+
+  &:focus {
+    outline: none;
+    color: $p_color;
+    background: $white;
+    box-shadow: 0 0 0.2em 0 $hilight;
+  }
+
+
+  &.year,
+  &.month,
+  &.day,
+  &.hour,
+  &.minute {
+    width: auto;
+  }
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  //width: $i_width;
+}
+
+select {
+  cursor: pointer;
+  margin: $i_pad auto;
+  padding: $i_pad;
+  text-indent: unset;
+}
+
+optgroup {
+  background: darken($white, 5%);
+}
+
+option {
+  border-bottom: $grey thin dotted;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+
+  &.required,
+  &[required]{
+    box-shadow: 0 0 0.1em 0 $hilight;
+
+    &:after {
+      //content: ' *';
+    }
+  }
+
+  &[type="hidden"] {
+    display: none;
+  }
+
+  &[type="file"] {
+    width: auto;
+
+    &:host(input) {
+      margin: 0.1em 1em;
+    }
+  }
+
+  &[type="image"] {
+    width: auto;
+    border: none;
+  }
+
+  &[type="text"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="search"],
+  &[type="email"],
+  &[type="password"] {
+
+  }
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    @include checkbox(1.2em);
+  }
+
+  &[type="checkbox"] {
+    + label:before {
+      border-radius: $tiny;
+    }
+
+    &:checked {
+      + label:after {
+        // x-position = size * 2
+        background-position: -2.4em 1px;
+      }
+    }
+  }
+
+  &[type=radio] {
+    + label:before {
+      border-radius: 50%;
+    }
+
+    &:checked {
+      + label:after {
+        background-position: 1px 1px;
+      }
+    }
+  }
+
+  &.switch {
+
+  }
+
+  &[type=range] {
+    width: 100%;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+    /* Hide default slider */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      background: transparent; /* Hides the slider so custom styles can be added */
+      border-color: transparent;
+      color: transparent;
+    }
+  }
+
+}
+
+button,
+.button,
+input[type="button"],
+input[type="submit"]{
+  @include button();
+  display: block;
+}
+
+input[type="button"],
+input[type="submit"]{
+  display: inline-block;
+  margin-bottom: 1em;
+}
+//Form Alert Classes
+.ok,
+.warning,
+.error {
+  font-weight: bold;
+  border: .2em solid;
+  @include border-radius();
+}
+
+.ok {
+  color: $ok_color;
+  background-color: lighten($ok_color, 65%);
+  border-color: $ok_color;
+}
+
+.warning {
+  color: $warning_color;
+  background-color: lighten($warning_color, 65%);
+  border-color: $warning_color;
+}
+
+.error {
+  color: $error_color;
+  background-color: lighten($error_color, 65%);
+  border-color: $error_color;
+}
