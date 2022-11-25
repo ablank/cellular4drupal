@@ -110,8 +110,8 @@ $width: 800px;
       @include textstroke($panel_background, 1px);
     }
     a:active,
-    a:hover,
-    a:focus {
+      a:hover,
+      a:focus {
       color: $dark_grey;
       @include textstroke($hilight, 2px);
     }
@@ -173,7 +173,7 @@ $width: 800px;
     background-color: $panel_color;
 
     &:hover,
-    &:focus {
+      &:focus {
       background-color: $hilight;
     }
   }
@@ -213,11 +213,11 @@ $width: 800px;
   position: relative;
   left: 50%;
   /*
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 0.75em; // jScrolli-wrap padding-bottom - .marker height /2
   */
 
   li {
@@ -247,7 +247,7 @@ $width: 800px;
   }
 
   &:hover,
-  &:focus {
+    &:focus {
     border-color: $hilight;
   }
 

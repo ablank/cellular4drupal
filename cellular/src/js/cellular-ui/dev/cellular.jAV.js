@@ -127,7 +127,7 @@ cellular.jAV = function (opts) {
    * @param {} $obj
    */
   fn.updateVolume = function ($obj, state) {
-    // state.volume =
+    // state.volume = 
   };
 
   /**
@@ -357,7 +357,7 @@ cellular.jAV = function (opts) {
     });
 
     controls.prev.on('click', function (e) {
-
+      
     });
 
 

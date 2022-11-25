@@ -17,17 +17,20 @@
  *  $content['g5_top']
  *  $content['g5_base']
  */
+
 ?>
 
 <div<?php
 if (!empty($css_id)):
   print " id=\"$css_id\"";
 endif;
+
 ?> class="cell <?php print ($classes); ?>">
 
   <?php
   // Header
   if ($content['header']) :
+
     ?>
     <div id="header">
       <?php print $content['header']; ?>
@@ -37,11 +40,13 @@ endif;
   <?php
   // Main content regions
   if (!empty($content)) :
+
     ?>
 
     <?php
     // Group 1
     if (!empty($content['g1_top']) || !empty($content['g1_base'])):
+
       ?>
       <div class="parallax-group cell">
         <?php if (!empty($content['g1_top'])) : ?>
@@ -60,6 +65,7 @@ endif;
     <?php
     // Group 2
     if (!empty($content['g2_top']) || !empty($content['g2_base'])):
+
       ?>
       <div class="parallax-group cell">
         <?php if (!empty($content['g2_top'])) : ?>
@@ -79,6 +85,7 @@ endif;
     <?php
     // Group 3
     if (!empty($content['g3_top']) || !empty($content['g3_base'])):
+
       ?>
       <div class="parallax-group cell">
         <?php if (!empty($content['g3_top'])) : ?>
@@ -97,6 +104,7 @@ endif;
     <?php
     // Group 4
     if (!empty($content['g4_top']) || !empty($content['g4_base'])):
+
       ?>
       <div class="parallax-group  cell">
         <?php if (!empty($content['g4_top'])) : ?>
@@ -116,6 +124,7 @@ endif;
     <?php
     // Group 5
     if (!empty($content['g5_top']) || !empty($content['g5_base'])):
+
       ?>
       <div class="parallax-group cell">
         <?php if (!empty($content['g5_top'])) : ?>
@@ -136,6 +145,7 @@ endif;
   <?php
   // Footer
   if (!empty($content['footer'])) :
+
     ?>
     <div class="footer cell">
       <?php print $content['footer']; ?>

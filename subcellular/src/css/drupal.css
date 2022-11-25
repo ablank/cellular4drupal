@@ -331,7 +331,7 @@ a[id^=comment-] {
   outline: 0;
   list-style: none;
 }
-/* line 173, ../sass/_mixins/_cellularmixins.scss */
+/* line 172, ../sass/_mixins/_cellularmixins.scss */
 .pager a {
   cursor: pointer;
   width: auto;
@@ -351,16 +351,16 @@ a[id^=comment-] {
   -webkit-box-shadow: #777777 0 0.1em 0.75em;
   box-shadow: #777777 0 0.1em 0.75em;
 }
-/* line 194, ../sass/_mixins/_cellularmixins.scss */
+/* line 193, ../sass/_mixins/_cellularmixins.scss */
 .pager a:visited {
   color: #FEFEFE;
   background-color: #444444;
 }
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
+/* line 197, ../sass/_mixins/_cellularmixins.scss */
 .pager a.active, .pager a:active {
   cursor: default;
 }
-/* line 202, ../sass/_mixins/_cellularmixins.scss */
+/* line 201, ../sass/_mixins/_cellularmixins.scss */
 .pager a.active, .pager a:active, .pager a:hover {
   outline: none;
   text-decoration: none;
@@ -381,7 +381,7 @@ a[id^=comment-] {
 /* line 37, ../sass/drupal/_pager.scss */
 .pager .pager-current {
   cursor: default;
-  margin: -.5em 0.6em 0;
+  margin: .2em;
   padding: 1em;
   font-weight: bold;
   outline: 0;
@@ -462,7 +462,7 @@ label + input:after, label + input:before {
 .inline.links a {
   padding: 0.2em 0.4em;
 }
-/* line 173, ../sass/_mixins/_cellularmixins.scss */
+/* line 172, ../sass/_mixins/_cellularmixins.scss */
 .menu a,
 .inline.links a {
   cursor: pointer;
@@ -483,19 +483,19 @@ label + input:after, label + input:before {
   -webkit-box-shadow: #777777 0 0.1em 0.75em;
   box-shadow: #777777 0 0.1em 0.75em;
 }
-/* line 194, ../sass/_mixins/_cellularmixins.scss */
+/* line 193, ../sass/_mixins/_cellularmixins.scss */
 .menu a:visited,
 .inline.links a:visited {
   color: #FEFEFE;
   background-color: #444444;
 }
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
+/* line 197, ../sass/_mixins/_cellularmixins.scss */
 .menu a.active, .menu a:active,
 .inline.links a.active,
 .inline.links a:active {
   cursor: default;
 }
-/* line 202, ../sass/_mixins/_cellularmixins.scss */
+/* line 201, ../sass/_mixins/_cellularmixins.scss */
 .menu a.active, .menu a:active, .menu a:hover,
 .inline.links a.active,
 .inline.links a:active,
@@ -618,32 +618,6 @@ label + input:after, label + input:before {
 
 /**
   * @file
-  * Styling DOM id's provided by drupal
-*/
-/* line 6, ../sass/drupal/_user.scss */
-.user-links {
-  float: right;
-  padding: 0.2em;
-  font-size: 0.9em;
-}
-/* line 11, ../sass/drupal/_user.scss */
-.user-links a,
-.user-links a:visited {
-  margin: 0 0.2em;
-  padding: 0.4em;
-  color: #FEFEFE;
-  text-decoration: none;
-}
-/* line 18, ../sass/drupal/_user.scss */
-.user-links a:active,
-.user-links a:hover,
-.user-links a:focus {
-  color: #FEFEFE;
-  text-decoration: none;
-}
-
-/**
-  * @file
   * Styling DOM classes provided by drupal
 */
 /* line 8, ../sass/drupal/_search.scss */
@@ -728,266 +702,6 @@ form.search-form label {
   font-size: 0.8em;
 }
 
-/* Init admin_menu styling*/
-/* line 14, ../sass/drupal/modules/_admin_menu.scss */
-body.admin-menu {
-  margin-top: 1em !important;
-}
-/* line 17, ../sass/drupal/modules/_admin_menu.scss */
-body.admin-menu-with-shortcuts {
-  margin-top: 2em !important;
-}
-/* line 21, ../sass/drupal/modules/_admin_menu.scss */
-body div#toolbar.toolbar {
-  top: -10em;
-}
-
-/* line 26, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu {
-  z-index: 999;
-  margin: 0;
-  padding: 0.4em 0;
-  text-align: left;
-  font: "Lucida Grande", Verdana, sans-serif;
-  font-size: 0.9em;
-  line-height: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  opacity: 0.8;
-  color: #c2c2c2;
-  background-color: #111;
-  background: rgba(17, 17, 17, 0.9);
-  box-shadow: 0 -10px 20px 13px #000;
-  -moz-transition: all 500ms ease-out;
-  -o-transition: all 500ms ease-out;
-  -webkit-transition: all 500ms ease-out;
-  transition: all 500ms ease-out;
-}
-/* line 46, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu:hover {
-  background: rgba(17, 17, 17, 0.9);
-  opacity: 1;
-}
-/* line 51, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu ul {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-/* line 56, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu li {
-  float: left;
-  position: relative;
-  display: block;
-  list-style: none;
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-/* line 66, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu a, #admin-menu a:visited {
-  display: block;
-  color: #F5F5F5;
-  margin: 0;
-  padding: 0.2em;
-  background-color: #3c3c3c;
-}
-/* line 74, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu a:active, #admin-menu a:hover, #admin-menu a:focus {
-  text-decoration: none;
-  color: #F5F5F5;
-  background-color: #111;
-}
-
-/* line 84, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-wrapper {
-  padding: 0 1em;
-}
-
-/* line 92, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu li,
-#admin-menu-icon li,
-#admin-menu-account li {
-  float: left;
-  margin: 0 0.4em;
-  padding: 0;
-}
-/* line 96, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu li.expandable,
-#admin-menu-icon li.expandable,
-#admin-menu-account li.expandable {
-  padding-right: 0.5em;
-  border-bottom: #999 1px solid;
-}
-/* line 99, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu li.expandable:after,
-#admin-menu-icon li.expandable:after,
-#admin-menu-account li.expandable:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.3em solid #999;
-  bottom: 0;
-  right: 0;
-}
-/* line 106, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu li a, #admin-menu-menu li a:visited,
-#admin-menu-icon li a,
-#admin-menu-icon li a:visited,
-#admin-menu-account li a,
-#admin-menu-account li a:visited {
-  background-color: transparent;
-}
-/* line 110, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu li a:active, #admin-menu-menu li a:hover, #admin-menu-menu li a:focus,
-#admin-menu-icon li a:active,
-#admin-menu-icon li a:hover,
-#admin-menu-icon li a:focus,
-#admin-menu-account li a:active,
-#admin-menu-account li a:hover,
-#admin-menu-account li a:focus {
-  text-decoration: none;
-  color: #F5F5F5;
-  background-color: #1e1e1e;
-}
-/* line 120, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown,
-#admin-menu-icon .dropdown,
-#admin-menu-account .dropdown {
-  z-index: 1;
-  position: absolute;
-  top: 1.8em;
-  left: -999em;
-  min-width: 12em;
-  background: #111;
-  border: #999 0.1em solid;
-}
-/* line 128, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown.active,
-#admin-menu-icon .dropdown.active,
-#admin-menu-account .dropdown.active {
-  left: initial;
-}
-/* line 131, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown li,
-#admin-menu-icon .dropdown li,
-#admin-menu-account .dropdown li {
-  width: 100%;
-  margin: 0 0 1px 0;
-  background: #3c3c3c;
-  line-height: 1.4em;
-}
-/* line 136, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown li.expandable,
-#admin-menu-icon .dropdown li.expandable,
-#admin-menu-account .dropdown li.expandable {
-  line-height: 1.4em;
-  padding-right: 7%;
-}
-/* line 140, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown li.expandable > li > a, #admin-menu-menu .dropdown li.expandable > li > a:visited,
-#admin-menu-icon .dropdown li.expandable > li > a,
-#admin-menu-icon .dropdown li.expandable > li > a:visited,
-#admin-menu-account .dropdown li.expandable > li > a,
-#admin-menu-account .dropdown li.expandable > li > a:visited {
-  background-color: #555;
-}
-/* line 144, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown li.expandable > li > a:focus, #admin-menu-menu .dropdown li.expandable > li > a:hover,
-#admin-menu-icon .dropdown li.expandable > li > a:focus,
-#admin-menu-icon .dropdown li.expandable > li > a:hover,
-#admin-menu-account .dropdown li.expandable > li > a:focus,
-#admin-menu-account .dropdown li.expandable > li > a:hover {
-  background-color: #3c3c3c;
-}
-/* line 149, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown li.expandable:after,
-#admin-menu-icon .dropdown li.expandable:after,
-#admin-menu-account .dropdown li.expandable:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 0.3em solid transparent;
-  border-bottom: 0.3em solid transparent;
-  border-left: 0.3em solid #999;
-  top: 0.7em;
-  right: 0.1em;
-}
-/* line 156, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown li .dropdown.active,
-#admin-menu-icon .dropdown li .dropdown.active,
-#admin-menu-account .dropdown li .dropdown.active {
-  top: 0;
-  left: 100%;
-}
-/* line 162, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown a, #admin-menu-menu .dropdown a:visited,
-#admin-menu-icon .dropdown a,
-#admin-menu-icon .dropdown a:visited,
-#admin-menu-account .dropdown a,
-#admin-menu-account .dropdown a:visited {
-  padding: 0.3em 1em 0.3em 0.2em;
-  background-color: #555;
-}
-/* line 167, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-menu .dropdown a:active, #admin-menu-menu .dropdown a:hover, #admin-menu-menu .dropdown a:focus,
-#admin-menu-icon .dropdown a:active,
-#admin-menu-icon .dropdown a:hover,
-#admin-menu-icon .dropdown a:focus,
-#admin-menu-account .dropdown a:active,
-#admin-menu-account .dropdown a:hover,
-#admin-menu-account .dropdown a:focus {
-  background-color: #111;
-}
-
-/* line 176, ../sass/drupal/modules/_admin_menu.scss */
-.admin-menu-icon {
-  padding-right: 0.6em;
-}
-/* line 178, ../sass/drupal/modules/_admin_menu.scss */
-.admin-menu-icon > a {
-  text-indent: -999em;
-  width: 2em;
-  height: 1em;
-  color: #c4c4c4;
-  background: #555 url("../assets/icons/svg/home.svg") center center no-repeat;
-  background-size: 1.4em;
-  border: #2b2b2b;
-  border-radius: 50%;
-}
-/* line 188, ../sass/drupal/modules/_admin_menu.scss */
-.admin-menu-icon > .dropdown {
-  top: 1.8em;
-}
-
-/* line 193, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-account {
-  float: right;
-}
-/* line 195, ../sass/drupal/modules/_admin_menu.scss */
-#admin-menu-account .dropdown.active {
-  right: 0;
-}
-
-@media print {
-  /* line 202, ../sass/drupal/modules/_admin_menu.scss */
-  body.admin-menu {
-    margin-top: 0 !important;
-  }
-
-  /* line 205, ../sass/drupal/modules/_admin_menu.scss */
-  #admin-menu {
-    display: none !important;
-  }
-}
-/* End admin_menu styling*/
 /* line 1, ../sass/drupal/modules/_calendar.scss */
 .calendar {
   width: 100%;
@@ -995,7 +709,7 @@ body div#toolbar.toolbar {
 
 /* line 4, ../sass/drupal/modules/_calendar.scss */
 .date-nav-wrapper {
-  background: #484848;
+  background: #f1f1f1;
   padding: .6em 0;
 }
 /* line 8, ../sass/drupal/modules/_calendar.scss */
@@ -1013,7 +727,7 @@ body div#toolbar.toolbar {
   position: relative;
   padding: 0 2em;
 }
-/* line 173, ../sass/_mixins/_cellularmixins.scss */
+/* line 172, ../sass/_mixins/_cellularmixins.scss */
 .date-nav-wrapper .date-prev a,
 .date-nav-wrapper .date-next a {
   cursor: pointer;
@@ -1034,19 +748,19 @@ body div#toolbar.toolbar {
   -webkit-box-shadow: #cbcbcb 0 0.1em 0.75em;
   box-shadow: #cbcbcb 0 0.1em 0.75em;
 }
-/* line 194, ../sass/_mixins/_cellularmixins.scss */
+/* line 193, ../sass/_mixins/_cellularmixins.scss */
 .date-nav-wrapper .date-prev a:visited,
 .date-nav-wrapper .date-next a:visited {
   color: #444444;
   background-color: #FEFEFE;
 }
-/* line 198, ../sass/_mixins/_cellularmixins.scss */
+/* line 197, ../sass/_mixins/_cellularmixins.scss */
 .date-nav-wrapper .date-prev a.active, .date-nav-wrapper .date-prev a:active,
 .date-nav-wrapper .date-next a.active,
 .date-nav-wrapper .date-next a:active {
   cursor: default;
 }
-/* line 202, ../sass/_mixins/_cellularmixins.scss */
+/* line 201, ../sass/_mixins/_cellularmixins.scss */
 .date-nav-wrapper .date-prev a.active, .date-nav-wrapper .date-prev a:active, .date-nav-wrapper .date-prev a:hover,
 .date-nav-wrapper .date-next a.active,
 .date-nav-wrapper .date-next a:active,
@@ -1112,41 +826,29 @@ body div#toolbar.toolbar {
   border-right: #bbbab7 1px solid;
   border-bottom: #bbbab7 1px solid;
   border-left: #bbbab7 1px solid;
-  vertical-align: top;
   border-bottom-left-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
 }
-/* line 89, ../sass/drupal/modules/_calendar.scss */
+/* line 88, ../sass/drupal/modules/_calendar.scss */
 .single-day td.today {
   border-color: #29B4DE;
   -moz-box-shadow: #29B4DE;
   -webkit-box-shadow: #29B4DE;
   box-shadow: #29B4DE;
 }
-/* line 94, ../sass/drupal/modules/_calendar.scss */
+/* line 93, ../sass/drupal/modules/_calendar.scss */
 .single-day td.past {
-  background-color: #e5e5e5;
+  background-color: #d8d8d8;
 }
-/* line 98, ../sass/drupal/modules/_calendar.scss */
-.single-day td.past a, .single-day td.past a:visited {
-  color: #bbbab7;
-}
-/* line 107, ../sass/drupal/modules/_calendar.scss */
-.single-day a, .single-day a:visited {
-  display: block;
-  padding: 0.3em;
+/* line 99, ../sass/drupal/modules/_calendar.scss */
+.single-day a,
+.single-day a:visited {
   background: #f1f1f1;
-  border: #bbbab7 1px solid;
-  border-radius: 0.3em;
+  border: #f1f1f1 1px solid;
 }
-/* line 117, ../sass/drupal/modules/_calendar.scss */
+/* line 106, ../sass/drupal/modules/_calendar.scss */
 .single-day a:active, .single-day a:hover, .single-day a:focus, .single-day a:visited {
-  background: #FEFEFE;
-  border-color: #29B4DE;
-}
-/* line 126, ../sass/drupal/modules/_calendar.scss */
-.single-day .date-display-single {
-  color: #bbbab7;
+  border-color: #bbbab7;
 }
 
 /**

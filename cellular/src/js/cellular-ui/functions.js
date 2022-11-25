@@ -3,38 +3,44 @@
  */
 
 /**
+ * Auto invoke
+ */
+(function () {
+  // Scroll to page anchors.
+  jQuery('a[href^="#"]').on('click', function (e) {
+    var target = jQuery(this).attr('href');
+
+    e.preventDefault();
+    jQuery('html, body').stop().animate({
+      scrollTop: jQuery(target).offset().top
+    }, 1500);
+  });
+})();
+
+/**
  * Get the breakpoints specified in CSS
  */
 cellular.breakpoint = function () {
   var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
-    win = {};
-/*
+    obj;
+
   if (content) {
-    win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");    
-  } else {*/
-    // Provide default breakpoints if they aren't set by css.
+    obj = {
+      size: content.match(/\d/g).join(""),
+      type: content.match(/\w*[^\"\'](?=-)/g).join("")
+    };
+  }
+  else {
     var ww = jQuery(window).width();
-    switch (ww) {
-      case ww < 650:
-        win.type = 'window_small';
-        break;
-      case ww > 650 && ww < 800:
-        win.type = 'window_narrow';
-        break;
-      case ww > 1200:
-       win.type = 'window_large';
-        break;
-      case ww > 800 && ww < 1200:
-      default:
-        win.type = 'window_default';
-        break;
-    }
- // }
-  jQuery('body').addClass(win.type);
 
-    win.size = ww;
+    console.log(ww);
+    obj = {
+      size: '',
+      type: ''
+    };
+  }
 
-  return win;
+  return obj;
 };
 
 /**
@@ -154,27 +160,10 @@ cellular.scrolltimer = function (el, uc, dc) {
  */
 cellular.buttonize = function (href, title, classes) {
   var btn = $('<a />')
-    .prop({
-      "href": href,
-      "title": title,
-      "tabindex": "0"
-    })
+    .attr('href', href)
+    .attr('title', title)
     .text(title)
     .classify(classes);
 
   return $(this).append(btn);
-};
-
-/**
- *
- */
-cellular.scrollto = function (target, time) {
-  target = target || jQuery(this).attr('href');
-  // Scroll to page anchors.
-  jQuery('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    jQuery('html, body').stop().animate({
-      scrollTop: jQuery(target).offset().top
-    }, time);
-  });
 };

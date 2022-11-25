@@ -3,6 +3,7 @@
  * @file
  * Vars & regions for left inset panel layout.
  */
+
 $plugin = array(
   'category' => t('Cellular | Layouts'),
   'title' => t('Standard'),
@@ -24,7 +25,7 @@ function template_preprocess_layout_standard(&$variables) {
   // Add a class to the panel
   //$variables['attributes_array']['class'][] = 'some-class';
 
-  foreach ($variables['content'] as $name => $item) {
+  foreach($variables['content'] as $name => $item) {
     $variables['region_attributes'][$name]['class'][] = 'cell';
     $variables['region_attributes'][$name]['class'][] = drupal_clean_css_identifier($name);
   }

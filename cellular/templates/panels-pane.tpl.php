@@ -28,7 +28,7 @@
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <<?php print $title_heading; ?><?php print $title_attributes; ?>>
-    <?php print $title; ?>
+      <?php print $title; ?>
     </<?php print $title_heading; ?>>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
@@ -39,7 +39,7 @@
     </div>
   <?php endif; ?>
 
-  <?php print render($content); ?>
+    <?php print render($content); ?>
 
   <?php if ($links): ?>
     <div class="links">
@@ -48,7 +48,7 @@
   <?php endif; ?>
 
   <?php if ($more): ?>
-    <?php print $more; ?>
+      <?php print $more; ?>
   <?php endif; ?>
 </div>
 <?php if ($pane_suffix): ?>

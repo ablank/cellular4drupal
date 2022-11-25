@@ -1,9 +1,6 @@
 // Compass defaults
-$default-transition-property: all;
 $default-transition-duration: 500ms;
 $default-transition-function: ease-out;
-$default-transition-delay: 0;
-
 $default-border-radius: 0.4em;
 // Box shadow
 $default-box-shadow-color: $grey;
@@ -12,4 +9,3 @@ $default-box-shadow-v-offset: 0;
 $default-box-shadow-blur: 0.3em;
 $default-box-shadow-spread: null;
 $default-box-shadow-inset: null; // 'inset' or 'null'
-

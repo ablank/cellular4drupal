@@ -35,7 +35,7 @@ cellular.jAccordion = function (opts) {
   fn.style = function ($obj) {
     $obj.once('jAccordion', function () {
 
-      $obj.prop("tabindex", "0").find('> li').each(function () {
+      $obj.find('> li').each(function () {
         var li = jQuery(this);
 
         li.kidWrap();

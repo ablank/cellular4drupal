@@ -1,7 +1,7 @@
 /**
-  * @file
-  * Old Internet Explorer is breakin internetz.
-*/
+ * @file
+ * Old Internet Explorer is breakin internetz.
+ */
 
 @import "variables";
 
@@ -41,6 +41,8 @@ input {
 }
 
 .cell,
-#{$cells}{
+#{$cells},
+.cell-33,
+.cell-66 {
   zoom: 1;
 }

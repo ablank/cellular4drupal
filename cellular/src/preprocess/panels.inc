@@ -11,6 +11,7 @@ function cellular_panels_default_style_render_region($vars) {
   // Remove the panel separator.
   return implode('', $vars['panes']);
 }
+
 /**
  * Implements template_preprocess_panels_pane().
  *

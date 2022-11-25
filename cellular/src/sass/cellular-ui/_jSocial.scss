@@ -56,7 +56,9 @@ $icon_size: 1.4em;
     }
   }
 
-&.horizontal {
+}
+
+.jSocial.horizontal {
   bottom: 0;
   left: 0;
   padding: 0 1em;
@@ -67,7 +69,7 @@ $icon_size: 1.4em;
 
 }
 
-&.vertical {
+.jSocial.vertical {
   top: $header_height;
   right: 0;
   width: $icon_size * 1.5;
@@ -80,7 +82,7 @@ $icon_size: 1.4em;
   .icon {
     margin: auto;
   }
-}
+
 }
 
 .jSocial-share {

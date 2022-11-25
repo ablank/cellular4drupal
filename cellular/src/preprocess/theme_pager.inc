@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Generate & theme drupal pager.
