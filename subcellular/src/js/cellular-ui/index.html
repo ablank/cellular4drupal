@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>Cellular UI Demo/Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css">
+
+  </head>
+  <body>
+
+    <div class="jAV" data-src="../../../assets/big_buck_bunny.mp4, assets/video/demo.ogg"></div>
+
+    <div class="jAV" data-src="../../../assets/big_buck_bunny.mp4, assets/video/demo2.ogg"></div>
+
+    <!--
+        <div class="jAV" data-src="https://youtu.be/_8jJXwO8IxE"></div>
+
+           <div class="jAV" data-src="https://www.youtube.com/watch?v=_8jJXwO8IxE"></div>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/f0z4lY4bNLE" frameborder="0" allowfullscreen></iframe>
+    -->
+
+    <!-- <div class="jAV" data-src="https://vimeo.com/channels/staffpicks/167771213"></div>-->
+
+    <!--<iframe id="player1" src="https://player.vimeo.com/video/76979871?api=1&player_id=player1" width="630" height="354" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+
+    <script src="../lib/jquery-1.11.1.min.js"></script>
+    <script src="http://dev/drupal7/sites/all/libraries/cellular/drupal/jquery.once.js?v=1.2.6"></script>
+    <script src="../jquery.cellular-ui.js"></script>
+    <script>
+      (function ($) {
+        $('.jAV').jAV({});
+      })(jQuery);
+    </script>
+  </body>
+</html>

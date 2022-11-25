@@ -1,0 +1,279 @@
+/**
+  * @file
+  // Cellular SASS mixins
+  //    tread with caution
+  //                      ^    ^
+  //                     / \  //\
+  //       |\___/|      /   \//  \
+  //       /O  O  \__  /    //  | \
+  //      /     /  \/_/    //   |  \
+  //      @___@'    \/_   //    |   \
+  //         |       \/_ //     |    \
+  //         |        \///      |     \
+  //        _|_ /   )  //       |      \
+  //       '/,_ _ _/  ( ; -.    |    _ _\           .-~~~^-.
+  //       ,-{        _      `-.|.-~-.           .~         `.
+  //        '/\      /                 ~-. _ .-~      .-~^-.  \
+  //           `.   {            }                   /      \  \
+  //         .----~-.\        \-'                 .~   `      \  `. \^-_
+  //        ///.----..>    c   \             _ -~             `.  ^-`  ^-_
+  //          ///-._ _ _ _ _ _ _}^ - - - - ~                     ~--,___.-/
+  //
+  /////
+*/
+/**
+  * @file
+  * CSS Animations.
+*/
+/*--------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/**
+  * @file
+  * CSS loading indicators.
+  * http://codepen.io/TaniaLD/pen/oKxep
+  * http://projects.lukehaas.me/css-loaders/
+  * https://github.com/jh3y/whirl/
+*/
+/* Set true' or 'false' to include or exclude entire icon group. */
+/* Select the icons to include:
+  - Use only the base filename, .png or .svg will be added based on context
+  - CSS class will be generated from the base filename.
+  - Comment-out icons to remove them individually from the stylesheet.
+*/
+/* Init admin_menu styling*/
+/* line 14, ../sass/drupal/user/_admin_menu.scss */
+body.admin-menu {
+  margin-top: 1em !important;
+}
+/* line 17, ../sass/drupal/user/_admin_menu.scss */
+body.admin-menu-with-shortcuts {
+  margin-top: 2em !important;
+}
+/* line 21, ../sass/drupal/user/_admin_menu.scss */
+body div#toolbar.toolbar {
+  top: -10em;
+}
+
+/* line 26, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu {
+  z-index: 999;
+  margin: 0;
+  padding: 0.4em 0;
+  text-align: left;
+  font: "Lucida Grande", Verdana, sans-serif;
+  font-size: 0.9em;
+  line-height: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0.8;
+  color: #c2c2c2;
+  background-color: #111;
+  background: rgba(17, 17, 17, 0.9);
+  box-shadow: 0 -10px 20px 13px #000;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+/* line 46, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu:hover {
+  background: rgba(17, 17, 17, 0.9);
+  opacity: 1;
+}
+/* line 51, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu ul {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 56, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu li {
+  float: left;
+  position: relative;
+  display: block;
+  list-style: none;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 66, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu a, #admin-menu a:visited {
+  display: block;
+  color: #F5F5F5;
+  margin: 0;
+  padding: 0.2em;
+}
+/* line 73, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu a:active, #admin-menu a:hover, #admin-menu a:focus {
+  text-decoration: none;
+  color: #F5F5F5;
+  background-color: #555;
+}
+
+/* line 83, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-wrapper {
+  padding: 0 1em;
+}
+
+/* line 91, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu > li,
+#admin-menu-icon > li,
+#admin-menu-account > li {
+  float: left;
+  margin: 0 0.4em;
+  padding: 0;
+}
+/* line 95, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu > li.expandable,
+#admin-menu-icon > li.expandable,
+#admin-menu-account > li.expandable {
+  padding-right: 0.5em;
+  border-bottom: #999 1px solid;
+}
+/* line 98, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu > li.expandable:after,
+#admin-menu-icon > li.expandable:after,
+#admin-menu-account > li.expandable:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.3em solid #999;
+  bottom: 0;
+  right: 0;
+}
+/* line 106, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown,
+#admin-menu-icon .dropdown,
+#admin-menu-account .dropdown {
+  z-index: 1;
+  position: absolute;
+  top: 1.8em;
+  left: -999em;
+  min-width: 10em;
+  background-color: #555;
+  border: #999 0.1em solid;
+}
+/* line 114, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown.active,
+#admin-menu-icon .dropdown.active,
+#admin-menu-account .dropdown.active {
+  left: initial;
+}
+/* line 117, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown li,
+#admin-menu-icon .dropdown li,
+#admin-menu-account .dropdown li {
+  margin: 0 0 1px 0;
+  background: #3b3b3b;
+  min-width: 10em;
+  line-height: 1.4em;
+}
+/* line 122, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown li.expandable,
+#admin-menu-icon .dropdown li.expandable,
+#admin-menu-account .dropdown li.expandable {
+  line-height: 1.4em;
+}
+/* line 124, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown li.expandable:after,
+#admin-menu-icon .dropdown li.expandable:after,
+#admin-menu-account .dropdown li.expandable:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid #999;
+  top: 0.7em;
+  right: 0.2em;
+}
+/* line 131, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown li .dropdown.active,
+#admin-menu-icon .dropdown li .dropdown.active,
+#admin-menu-account .dropdown li .dropdown.active {
+  top: 0;
+  left: 100%;
+}
+/* line 137, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-menu .dropdown a, #admin-menu-menu .dropdown a:visited,
+#admin-menu-icon .dropdown a,
+#admin-menu-icon .dropdown a:visited,
+#admin-menu-account .dropdown a,
+#admin-menu-account .dropdown a:visited {
+  padding: 0.3em 1em 0.3em 0.2em;
+}
+
+/* line 148, ../sass/drupal/user/_admin_menu.scss */
+.admin-menu-icon {
+  padding-right: 0.6em;
+}
+/* line 150, ../sass/drupal/user/_admin_menu.scss */
+.admin-menu-icon > a {
+  text-indent: -999em;
+  width: 2em;
+  height: 1em;
+  color: #c4c4c4;
+  background: #555 url("../assets/icons/svg/home.svg") center center no-repeat;
+  background-size: 1.4em;
+  border: #2b2b2b;
+  border-radius: 50%;
+}
+/* line 160, ../sass/drupal/user/_admin_menu.scss */
+.admin-menu-icon > .dropdown {
+  top: 1.8em;
+}
+
+/* line 165, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-account {
+  float: right;
+}
+/* line 168, ../sass/drupal/user/_admin_menu.scss */
+#admin-menu-account .dropdown.active {
+  right: 0;
+}
+
+@media print {
+  /* line 175, ../sass/drupal/user/_admin_menu.scss */
+  body.admin-menu {
+    margin-top: 0 !important;
+  }
+
+  /* line 178, ../sass/drupal/user/_admin_menu.scss */
+  #admin-menu {
+    display: none !important;
+  }
+}
+/* End admin_menu styling*/
+/**
+  * @file
+  * Styling DOM id's provided by drupal
+*/
+/* line 6, ../sass/drupal/user/_user.scss */
+.user-links {
+  float: right;
+  padding: 0.2em;
+  font-size: 0.9em;
+}
+/* line 11, ../sass/drupal/user/_user.scss */
+.user-links a,
+.user-links a:visited {
+  margin: 0 0.2em;
+  padding: 0.4em;
+  color: #FEFEFE;
+  text-decoration: none;
+}
+/* line 18, ../sass/drupal/user/_user.scss */
+.user-links a:active,
+.user-links a:hover,
+.user-links a:focus {
+  color: #FEFEFE;
+  text-decoration: none;
+}

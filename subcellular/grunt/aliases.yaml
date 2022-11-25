@@ -1,0 +1,30 @@
+default:
+  - clean
+  - concat
+  - 'compass:compile'
+  - autoprefixer
+  - 'jshint:js'
+  - 'uglify:build'
+  - svg2png
+  - imagemin
+dev:
+  - concat
+  - 'compass:compile'
+  - 'uglify:build'
+  - 'jshint:js'
+style:
+  - 'compass:compile'
+  - autoprefixer
+  - csscomb
+  - cssmin
+dist:
+  - clean
+  - concat
+  - 'compass:dist'
+  - autoprefixer
+  - csscomb
+  - cssmin
+  - 'jshint:js'
+  - 'uglify:dist'
+  - svg2png
+  - imagemin

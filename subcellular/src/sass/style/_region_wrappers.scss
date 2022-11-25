@@ -1,0 +1,10 @@
+/**
+  * @file
+  * Content region styles
+*/
+
+#page-wrap {
+  @if($header_position == 'absolute' OR 'fixed') {
+    padding-top: $header_height;
+  }
+}
