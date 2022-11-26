@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "description": "Cellular Grunt build.",
   "engines": {
     "node": ">= 0.10.0"
@@ -25,5 +26,90 @@
     "js-yaml": "^4.1.0",
     "load-grunt-config": "*",
     "time-grunt": "*"
+=======
+  "name": "cellular",
+  "version": "7.0.0",
+  "private": false,
+  "description": "A responsive base theme for Drupal",
+  "author": {
+    "name": "Adam Blankenship",
+    "email": "i.adambear@gmail.com",
+    "url": "http://ablank.github.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ablank/cellular"
+  },
+  "scripts": {
+    "clean:assets": "rimraf dist/assets",
+    "clean:css": "rimraf dist/css/*",
+    "clean:js": "rimraf dist/js",
+    "clean:dist": "rimraf dist/{css,js,assets}/**/*",
+    "postcss": "node src/_build/postcss.js --trace-warnings ...",
+    "mincss": "postcss dist/css/ -u cssnano -d dist/css/ --ext .min.css",
+    "sass": "sass src/sass:dist/css --no-source-map",
+    "js:beautify": "copyfiles -f src/js/*.js dist/js && prettier --config ./src/_build/.prettierrc.json --write ./dist/js/**/*",
+    "js:uglify": "uglifyjs-folder dist/js -eo dist/js",
+    "imagemin": "imagemin dist/assets/**/*",
+    "favicons": "imagemin src/assets/favicons/ -o dist/assets/favicons",
+    "icons": "svgo -f src/assets/icons/svg -o dist/assets/icons/svg && svg-sprite-generate -d src/assets/icons/svg -o src/assets/icons/svg/_sprite.svg && node src/_build/icons.js",
+    "build:css": "run-s clean:css sass postcss",
+    "build:js": "run-s clean:js js:*",
+    "build:images": "run-s clean:assets && node src/_build/images.mjs && run-p favicons icons",
+    "build": "run-p build:*",
+    "lint:js": "eslint -c src/_build/.eslintrc.json src/js",
+    "lint:css": "stylelint dist/css/ --config .stylelintrc.json --fix",
+    "lint:sass": "stylelint src/sass/ --config .sasslintrc.json --fix",
+    "lint": "run-s lint:*",
+    "serve": "browser-sync start --server --files \"dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*\"",
+    "watch:sass": "onchange \"src/sass\" -- run-s build:css lint:css",
+    "watch:js": "onchange \"src/js\" -- run-s build:js",
+    "watch:images": "onchange \"src/assets/images\" -- run-s build:images || onchange \"src/assets/icons\" -- run-s build:icons",
+    "watch": "run-p watch:*",
+    "postinstall": "run-p build watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "browser-sync": "^2.27.10",
+    "bufferutil": "^4.0.6",
+    "cli-glob": "^0.1.0",
+    "concat": "^1.0.3",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.1.12",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "glob": "^8.0.3",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "js-beautify": "^1.14.4",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "postcss-reporter": "^7.0.5",
+    "postcss-scss": "^4.0.4",
+    "postcss-sorting": "^7.0.1",
+    "precss": "^4.0.0",
+    "prettier": "2.7.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.53.0",
+    "style-dictionary": "^3.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-order": "^5.0.0",
+    "svg-sprite-generator": "0.0.7",
+    "svg2png": "^4.1.1",
+    "svgo": "^2.8.0",
+    "uglifyjs-folder": "^3.1.2",
+    "utf-8-validate": "^5.0.9",
+    "yaml": "^2.1.1"
+  },
+  "dependencies": {
+    "sharp": "^0.30.7"
+>>>>>>> f9c14bfc417640795d04e08d8e8b84390458cb60
   }
 }
