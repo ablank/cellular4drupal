@@ -12,6 +12,8 @@ module.exports = {
     }
   },
   dist: {
-    raw: "http_path = '/'; css_dir = 'src/css'; sass_dir = 'src/sass'; images_dir = 'assets/images'; javascripts_dir = 'js'; output_style = :expanded;"
+    options: {
+      config: 'grunt/config/compass.dist.rb'
+    }
   }
 };

@@ -11,6 +11,6 @@ module.exports = {
     cwd: 'css',
     src: ['*.css'],
     dest: 'css/',
-    ext: '.css'
+    ext: '.min.css'
   }
 };

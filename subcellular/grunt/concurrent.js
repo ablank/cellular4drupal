@@ -5,8 +5,5 @@
 
 module.exports = {
   // Prep files for further processing.
-  prep: [
-    'concat',
-    'compass'
-  ]
+  dist: ["concat", "compass", "svg2png"],
 };
