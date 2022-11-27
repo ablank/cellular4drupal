@@ -178,6 +178,7 @@ function cellular_rdf(&$vars) {
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
   // Check support for RDF & add attributes:
+    $vars['rdf_prefixes'] = '';
   if (module_exists('rdf')) {
     // @see http://phase2technology.com/?p=552
     $head_attributes = array();
@@ -193,7 +194,7 @@ function cellular_rdf(&$vars) {
     }
     $head_attributes['prefix'] = implode(' ', $prefixes);
 
-    $vars['rdf_prefixes'] = drupal_attributes($head_attributes);
+     drupal_attributes($head_attributes);
   }
 
   // Check if google+ metatags are present, add emtpy string if not.
