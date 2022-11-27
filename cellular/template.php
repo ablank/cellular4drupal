@@ -1654,12 +1654,14 @@ function cellular_js_alter(&$javascript)
     // Override misc. js
     $override = [];
     if (module_exists('admin_menu')) {
+        /*
         $override['admin_menu'] = [
             'default' =>
                 drupal_get_path('module', 'admin_menu') . '/admin_menu.js',
             'file' => $cell_path . '/js/admin_menu.js',
             //'version' => '',
         ];
+        */
     }
     if (module_exists('ckeditor')) {
         /*
@@ -2283,7 +2285,7 @@ function cellular_preprocess_page(&$vars)
     // Link site name to frontpage.
     $vars['page']['logo'] =
         '<div class="logo">' . l($vars['site_name'], '<front>') . '</div>';
-   
+
     $vars['page']['skiplinks'] = cellular_skiplinks();
     // Set copyright info if provided.
     $copyright = theme_get_setting('copyright');
@@ -2330,7 +2332,7 @@ function cellular_preprocess_maintenance_page(&$vars)
     // Set Social Media links.
     $vars['page']['social_media_share'] = cellular_social_media_share();
     $vars['page']['social_media_follow'] = cellular_social_media_follow();
-   
+
     // Set copyright info if provided.
     $copyright = theme_get_setting('copyright');
     $vars['page']['copyright'] = !empty($copyright)

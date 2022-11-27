@@ -18,11 +18,12 @@ function cellular_js_alter(&$javascript) {
   // Override misc. js
   $override = array();
   if (module_exists('admin_menu')) {
+    /*
     $override['admin_menu'] = array(
       'default' => drupal_get_path('module', 'admin_menu') . '/admin_menu.js',
       'file' => $cell_path . '/js/admin_menu.js',
     //'version' => '',
-    );
+    );*/
   }
   if (module_exists('ckeditor')) {
     /*
