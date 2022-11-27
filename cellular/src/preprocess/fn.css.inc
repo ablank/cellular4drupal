@@ -188,7 +188,9 @@ function cellular_remove_default_css(&$css) {
       'search' => 'search.css',
       'shortcut' => 'shorcut.css',
       'user' => 'user.css',
-      // Contrib
+    );
+    // Contrib
+    $contrib = array(
       'admin_menu' => array(
         'admin_menu.css',
         'admin_menu_toolbar/admin_menu_toolbar.css'
@@ -202,6 +204,11 @@ function cellular_remove_default_css(&$css) {
       'views' => 'css/views.css',
       'webform' => 'css/webform.css',
     );
+    foreach ($contrib as $module => $styles) {
+      if (module_exists($module)) {
+        $exclude[$module] = $styles;
+      }
+    }
     cellular_remove_css($css, $exclude);
   }
   else {

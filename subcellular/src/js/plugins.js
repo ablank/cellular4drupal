@@ -15,12 +15,22 @@
           single: false // Allow multiple panels to be opened or only 1?
         });
 
-        $('.jCard').jCard();
+        $('.jcard').jCard();
 
         $('form').jFormal();
 
         $('#main-menu').jMmenu({
           animateclass: "slide-down"
+        });
+
+        $('.jScrolli').jScrolli({
+          transition: {
+            background: 'img:first', // Selector for applying background image
+            pause: 8 // Time (seconds) to pause between slides.
+              //speed: 500 // Animation speed (milliseconds).
+          },
+          autodim: true,
+          delay: 1.4 // Time (seconds) to wait before dimming.
         });
 
         $('.jSocial.share').jSocial({
@@ -40,49 +50,8 @@
           orient: "vertical" //
         });
 
-        $('[data-tooltip]').jTooltip();
-        //$('.jTooltip').jTooltip();
+        //$('[data-tooltip]').jTooltip();
 
-        $('.jScrolli').jScrolli({
-          transition: {
-            background: 'img:first', // Selector for applying background image
-            pause: 8 // Time (seconds) to pause between slides.
-              //speed: 500 // Animation speed (milliseconds).
-          },
-          autodim: true,
-          delay: 1.4 // Time (seconds) to wait before dimming.
-        });
-        /*
-         $('.jScrolli').jScrolli({
-         cclass: 'jScrolli', // Object class selector
-         active: 0, // Index of initially selected slide
-         height: 'auto', // 'auto' or '[value]', i.e. '300px'
-         controls: {
-         showcontrols: true,
-         keyboard: true,
-         swipe: true,
-         showmarkers: true,
-         autoplay: false,
-         pauseonhover: true,
-         text: {
-         next: 'Next',
-         prev: 'Prev',
-         pause: 'Pause'
-         }
-         },
-         transition: {
-         pause: 5 // Time (seconds) to pause between slides.
-         //speed: 500 // Animation speed (milliseconds).
-         },
-         caption: {
-         enable: true,
-         autohide: false,
-         selector: '.caption' // 'auto' or '.selector' used to generate caption
-         },
-         autodim: true,
-         delay: 1.4, // Time (seconds) to wait before dimming.
-         background: 'img:first' // Selector for applying background image
-         });*/
       }
 
       // Backstretch functions.

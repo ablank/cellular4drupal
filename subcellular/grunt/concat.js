@@ -7,11 +7,18 @@
  */
 
 module.exports = {
+  theme_info: {
+    src: [
+      'src/info/info.txt',
+      'src/info/opts.txt'
+    ],
+    dest: 'cellular.info'
+  },
   templatephp: {
     options: {
       banner: '/**\n\
     * @file\n\
-    * Subcellular Starter Theme for Drupal 7.\n\
+    * Cellular Base Theme for Drupal 7.\n\
     *\n\
     * @author Adam Blankenship\n\
     * \n\
@@ -25,13 +32,59 @@ module.exports = {
     src: [
       // 'src/preprocess/*.inc',
       'src/preprocess/_init.inc',
+      'src/preprocess/fn.inc',
+      'src/preprocess/fn.css.inc',
+      'src/preprocess/fn.form.inc',
+      'src/preprocess/fn.form_validate.inc',
+      'src/preprocess/fn.js.inc',
+      'src/preprocess/fn.menu.inc',
+      'src/preprocess/fn.preprocess.inc',
+      'src/preprocess/jquery.inc',
+      'src/preprocess/plugin_js.inc',
+      'src/preprocess/plugin_css.inc',
       'src/preprocess/alter.inc',
       'src/preprocess/alter_css.inc',
       'src/preprocess/alter_js.inc',
+      'src/preprocess/alter_form.inc',
       'src/preprocess/preprocess_html.inc',
-      'src/preprocess/preprocess.inc'
+      'src/preprocess/preprocess_node.inc',
+      'src/preprocess/preprocess_page.inc',
+      'src/preprocess/preprocess_block.inc',
+      'src/preprocess/preprocess_comments.inc',
+      'src/preprocess/theme.inc',
+      'src/preprocess/theme_form.inc',
+      'src/preprocess/theme_pager.inc',
+      'src/preprocess/panels.inc',
+      'src/preprocess/social.inc',
+      'src/preprocess/views.inc',
+      'src/preprocess/process.inc'
     ],
     dest: 'template.php'
+  },
+  theme_settings: {
+    options: {
+      banner: '/**\n\
+ * @file\n\
+ * \n\
+ * Cellular Theme Settings\n\
+ */\n',
+      language: {
+        type: 'php',
+        rmClose: true,
+        rmSpace: true
+      }
+    },
+    src: [
+      'src/preprocess/theme-settings/_init_theme-settings.inc',
+      'src/preprocess/theme-settings/_config.inc',
+      'src/preprocess/theme-settings/meta.inc',
+      'src/preprocess/theme-settings/markup.inc',
+      'src/preprocess/theme-settings/style.inc',
+      'src/preprocess/theme-settings/js.inc',
+      'src/preprocess/theme-settings/social.inc',
+      'src/preprocess/theme-settings/_end_theme-settings.inc'
+    ],
+    dest: 'theme-settings.php'
   },
   cellularUI: {
     options: {
@@ -77,7 +130,7 @@ module.exports = {
       //'src/js/cellular-ui/dev/cellular.jScrollindicator.js',
       //'src/js/cellular-ui/dev/cellular.jScrolltrigger.js',
       //'src/js/cellular-ui/dev/cellular.jSticky.js',
-      //'src/js/cellular-ui/cellular.jTooltip.js',
+      //'src/js/cellular-ui/dev/cellular.jTooltip.js',
       /**
        * Close objects
        */
@@ -86,7 +139,7 @@ module.exports = {
       'src/js/cellular-ui/init/jquery.end.js'
     ],
     dest: 'src/js/jquery.cellular-ui.js'
-  }
+  },
   /*
    lib: {
    src: [

@@ -1320,11 +1320,6 @@ label.date-clear, input.date-clear, textarea.date-clear, select.date-clear {
   * @file
   * Drupal panels styling
 */
-/* line 17, ../sass/drupal/modules/_views.scss */
-.view-content {
-  text-align: center;
-}
-
 /* line 1, ../sass/drupal/modules/_webform.scss */
 input.webform-calendar {
   display: none;

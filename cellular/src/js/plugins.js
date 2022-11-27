@@ -15,7 +15,7 @@
           single: false // Allow multiple panels to be opened or only 1?
         });
 
-        $('.jCard').jCard();
+        $('.jcard').jCard();
 
         $('form').jFormal();
 

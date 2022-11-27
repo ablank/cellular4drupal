@@ -59,9 +59,9 @@
 .element-invisible {
   position: absolute !important;
   left: -999em;
-  clip: rect(0.0625rem 0.0625rem 0.0625rem 0.0625rem);
+  clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
-  clip: rect(0.0625rem, 0.0625rem, 0.0625rem, 0.0625rem);
+  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
 }
@@ -78,7 +78,6 @@
 /* line 27, ../sass/drupal/_drupal-classes.scss */
 [class*="ui-"],
 [class^="ui-"] {
-  -webkit-transition: none;
   transition: none;
 }
 
@@ -561,7 +560,7 @@ label + input:after, label + input:before {
 /* line 22, ../sass/drupal/_tabs.scss */
 .tabs a.active, .tabs a:active, .tabs a:focus, .tabs a:hover {
   position: relative;
-  top: 0.0625rem;
+  top: 1px;
   text-decoration: underline;
   background-color: #f4f4f4;
   border-bottom: #e5e5e5 1px solid;
@@ -871,7 +870,7 @@ a:hover.colorbox, a:focus.colorbox {
   margin: 0;
   padding: 0;
   border: thin solid #FEFEFE;
-  text-indent: -624.9375rem;
+  text-indent: -9999px;
   box-shadow: unset;
   background-image: url(../assets/icons/png/controls.png);
   background-repeat: no-repeat;
@@ -893,7 +892,6 @@ a:hover.colorbox, a:focus.colorbox {
 #cboxNext {
   bottom: 0;
   background-color: #bbbab7;
-  -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
 /* line 69, ../sass/drupal/modules/_colorbox.scss */
@@ -917,24 +915,24 @@ a:hover.colorbox, a:focus.colorbox {
 
 /* line 85, ../sass/drupal/modules/_colorbox.scss */
 .cboxSlideshow_off #cboxSlideshow {
-  background-position: -0.5rem 0.375rem;
+  background-position: -8px 6px;
 }
 
 /* line 90, ../sass/drupal/modules/_colorbox.scss */
 .cboxSlideshow_on #cboxSlideshow {
-  background-position: -3.375rem 0.375rem;
+  background-position: -54px 6px;
 }
 
 /* line 94, ../sass/drupal/modules/_colorbox.scss */
 #cboxPrevious {
   left: 0;
-  background-position: -1.625rem 0.375rem;
+  background-position: -26px 6px;
 }
 
 /* line 99, ../sass/drupal/modules/_colorbox.scss */
 #cboxNext {
   right: 0;
-  background-position: -5.625rem 0.375rem;
+  background-position: -90px 6px;
 }
 
 /* line 104, ../sass/drupal/modules/_colorbox.scss */
@@ -942,8 +940,7 @@ a:hover.colorbox, a:focus.colorbox {
   top: -2.2em;
   right: -2.2em;
   background-color: #8C0D00;
-  background-position: -7.5625rem 0.375rem;
-  -webkit-transition: all 500ms ease-out;
+  background-position: -121px 6px;
   transition: all 500ms ease-out;
 }
 /* line 111, ../sass/drupal/modules/_colorbox.scss */
@@ -1109,7 +1106,6 @@ input.progress-disabled,
 button.progress-disabled,
 select.progress-disabled {
   outline: none;
-  -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
   /**/
   position: relative;
@@ -1132,24 +1128,12 @@ select.progress-disabled:after {
   z-index: 10;
   /**/
 }
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 /* line 339, ../sass/_mixins/_loaders.scss */
@@ -1166,10 +1150,8 @@ select.progress-disabled:after {
   border-width: 1em;
   border-style: double;
   border-color: transparent #29B4DE;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
+  transform-origin: 50% 50%;
+  animation: spin 2s linear infinite;
 }
 /* line 36, ../sass/drupal/modules/_ctools.scss */
 div.progress-disabled + .ajax-progress,
@@ -1187,7 +1169,6 @@ select.progress-disabled + .ajax-progress {
 /* line 44, ../sass/drupal/modules/_ctools.scss */
 .javascript .js-hide.progress-disabled:after {
   padding: 0 1.2em;
-  -webkit-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
   /**/
   position: relative;
@@ -1207,12 +1188,10 @@ select.progress-disabled + .ajax-progress {
 }
 @keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 /* line 339, ../sass/_mixins/_loaders.scss */
@@ -1225,10 +1204,8 @@ select.progress-disabled + .ajax-progress {
   border-width: 1em;
   border-style: double;
   border-color: transparent #29B4DE;
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
+  transform-origin: 50% 50%;
+  animation: spin 2s linear infinite;
 }
 
 /* line 1, ../sass/drupal/modules/_date.scss */
@@ -1302,15 +1279,10 @@ label.date-clear, input.date-clear, textarea.date-clear, select.date-clear {
   * @file
   * Drupal panels styling
 */
-/* line 17, ../sass/drupal/modules/_views.scss */
-.view-content {
-  text-align: center;
-}
-
 /* line 1, ../sass/drupal/modules/_webform.scss */
 input.webform-calendar {
   display: none;
-  padding: 0.1875rem;
+  padding: 3px;
   vertical-align: top;
 }
 

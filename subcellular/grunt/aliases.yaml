@@ -3,11 +3,10 @@ default:
     - 'concat'
     - 'compass:compile'
     - 'autoprefixer'
-    - 'px_to_rem'
-    - 'jshint:js'
     - 'uglify:build'
     - 'svg2png'
     - 'imagemin'
+    - 'jshint:js'
 dev:
     - 'concat'
     - 'compass:compile'
@@ -16,7 +15,6 @@ dev:
 style:
     - 'compass:compile'
     - 'autoprefixer'
-    - 'px_to_rem'
     - 'csscomb'
     - 'cssmin'
 dist:
@@ -24,10 +22,9 @@ dist:
     - 'concat'
     - 'compass:dist'
     - 'autoprefixer'
-    - 'px_to_rem'
     - 'csscomb'
     - 'cssmin'
-    - 'jshint:js'
     - 'uglify:dist'
     - 'svg2png'
     - 'imagemin'
+    - 'jshint:js'

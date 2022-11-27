@@ -4,7 +4,7 @@
     * Cellular Base Theme for Drupal 7.
     *
     * @author Adam Blankenship
-    *
+    * 
     * @see http://live-cellular.gotpantheon.com
     * @see https://github.com/ablank/cellular
     */
@@ -365,7 +365,9 @@ function cellular_remove_default_css(&$css) {
       'search' => 'search.css',
       'shortcut' => 'shorcut.css',
       'user' => 'user.css',
-      // Contrib
+    );
+    // Contrib
+    $contrib = array(
       'admin_menu' => array(
         'admin_menu.css',
         'admin_menu_toolbar/admin_menu_toolbar.css'
@@ -379,6 +381,11 @@ function cellular_remove_default_css(&$css) {
       'views' => 'css/views.css',
       'webform' => 'css/webform.css',
     );
+    foreach ($contrib as $module => $styles) {
+      if (module_exists($module)) {
+        $exclude[$module] = $styles;
+      }
+    }
     cellular_remove_css($css, $exclude);
   }
   else {
@@ -1480,7 +1487,6 @@ function cellular_js_alter(&$javascript) {
 
   // Override misc. js
   $override = array();
-  /*
   if (module_exists('admin_menu')) {
     $override['admin_menu'] = array(
       'default' => drupal_get_path('module', 'admin_menu') . '/admin_menu.js',
@@ -1488,7 +1494,7 @@ function cellular_js_alter(&$javascript) {
     //'version' => '',
     );
   }
-  */
+
   foreach ($override as &$js) {
     $js['group'] = JS_LIBRARY;
     cellular_js_override($javascript, $js);
@@ -2010,7 +2016,8 @@ function cellular_preprocess_page(&$vars) {
   // Link site name to frontpage.
   $vars['page']['logo'] = '<div class="logo">' . l($vars['site_name'], '<front>') . '</div>';
   // Set search block variable for addition to page templates.
-  $vars['page']['search_box'] = drupal_get_form('search_form');
+  $vars['page']['search_box'] = module_exists('search') ?
+  drupal_get_form('search_form'): '';
   $vars['page']['skiplinks'] = cellular_skiplinks();
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
@@ -2051,7 +2058,8 @@ function cellular_preprocess_maintenance_page(&$vars) {
   $vars['page']['social_media_share'] = cellular_social_media_share();
   $vars['page']['social_media_follow'] = cellular_social_media_follow();
   // Set search block variable for addition to page templates.
-  $vars['page']['search_box'] = drupal_get_form('search_form');
+  $vars['page']['search_box'] = module_exists('search') ?
+  drupal_get_form('search_form') : '';
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ?
@@ -2099,7 +2107,7 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['theme_hook_suggestions'][] = 'comment_wrapper';
   $vars['theme_hook_suggestions'][] = 'comment_wrapper__' . $vars['node']->type;
   $vars['classes_array'][] = 'clearfix';
-
+  
   $title = &$vars['content']['comment_form']['#title'];
 
   switch ($vars['node']->type) {
@@ -3030,7 +3038,7 @@ function cellular_social_media_follow() {
   if(empty($links)){
     $links = NULL;
   }
-
+  
   return $links;
 }
 
