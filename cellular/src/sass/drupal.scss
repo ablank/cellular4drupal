@@ -15,10 +15,8 @@
 @import "drupal/forms";
 @import "drupal/menus";
 @import "drupal/tabs";
-@import "drupal/user";
 @import "drupal/search";
-// Replace default module styles.
-@import "drupal/modules/admin_menu";
+// Replaces default module styles.
 @import "drupal/modules/calendar";
 @import "drupal/modules/colorbox";
 @import "drupal/modules/ctools";

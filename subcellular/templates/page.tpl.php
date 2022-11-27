@@ -87,7 +87,7 @@
 
   <div id="header" class="cell">
     <?php if (!empty($page['header_top'])) : ?>
-      <div id="header-top" class="cell">
+      <div id="header-top" class="cell-100">
         <?php print render($page['header_top']); ?>
       </div>
     <?php endif; ?>
@@ -106,7 +106,7 @@
     </div>
 
     <?php if (!empty($page['header_bottom'])) : ?>
-      <div id="header-bottom" class="cell">
+      <div id="header-bottom" class="cell-100">
         <div class="container">
           <?php print render($page['header_bottom']); ?>
         </div>
@@ -153,7 +153,7 @@
     ?>
 
     <?php if ($page['content_top']) : ?>
-      <div id="content-top" class="cell">
+      <div id="content-top" class="cell-100">
         <?php print render($page['content_top']); ?>
       </div>
     <?php endif; ?>
@@ -162,7 +162,7 @@
     print render($page['content']);
     ?>
     <?php if ($page['content_bottom']) : ?>
-      <div id="content-bottom" class="cell">
+      <div id="content-bottom" class="cell-100">
         <?php print render($page['content_bottom']); ?>
       </div>
     <?php endif; //#content-bottom  ?>
@@ -171,18 +171,18 @@
   <?php if ($page['footer_top'] || $page['footer'] || $page['footer_bottom'] || $page['copyright']) : ?>
     <div id="footer" class="cell">
       <?php if ($page['footer_top']) : ?>
-        <div id="footer-top" class="cell">
+        <div id="footer-top" class="cell-100">
           <div class="container">
             <?php print render($page['footer_top']); ?>
           </div>
         </div>
       <?php endif; ?>
       <?php if ($page['footer']) : ?>
-        <div class="cell container">
+        <div class="cell-100 container">
           <?php print render($page['footer']); ?>
         </div>
       <?php endif; ?>
-      <div id="footer-bottom" class="cell">
+      <div id="footer-bottom" class="cell-100">
         <div class="container">
           <?php if ($page['footer_bottom']) : ?>
           </div>

@@ -3,9 +3,10 @@
  * @file
  * Vars & regions for a 2 column (30%/70%) panel layout.
  */
-$inc_path = drupal_get_path('theme', 'cellular') . '/templates/panels/_include/';
 
-include_once $inc_path . 'preprocess.inc';
+$inc_path = drupal_get_path('theme', 'cellular') .'/templates/panels/_include/';
+
+include_once  $inc_path . 'preprocess.inc';
 
 $plugin = array(
   'category' => t('Cellular | Prototype'),

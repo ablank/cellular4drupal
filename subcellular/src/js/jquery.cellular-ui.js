@@ -13,7 +13,7 @@ var cellular = {};
 cellular.opts = {
 cclass: "cellular",
 activeclass: "active",
-breakpoint: "window_small"
+breakpoint: "window_mobile"
 };
 cellular.state = {
 breakpoint: 0,
@@ -24,36 +24,39 @@ scrolltimer: 0
 * Cellular utility functions
 */
 /**
+* Auto invoke
+*/
+(function () {
+// Scroll to page anchors.
+jQuery('a[href^="#"]').on('click', function (e) {
+var target = jQuery(this).attr('href');
+e.preventDefault();
+jQuery('html, body').stop().animate({
+scrollTop: jQuery(target).offset().top
+}, 1500);
+});
+})();
+/**
 * Get the breakpoints specified in CSS
 */
 cellular.breakpoint = function () {
 var content = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content'),
-win = {};
-/*
+obj;
 if (content) {
-win.type =  content.match(/\w*[^\"\'](?=-)/g).join("");
-} else {*/
-// Provide default breakpoints if they aren't set by css.
-var ww = jQuery(window).width();
-switch (ww) {
-case ww < 650:
-win.type = 'window_small';
-break;
-case ww > 650 && ww < 800:
-win.type = 'window_narrow';
-break;
-case ww > 1200:
-win.type = 'window_large';
-break;
-case ww > 800 && ww < 1200:
-default:
-win.type = 'window_default';
-break;
+obj = {
+size: content.match(/\d/g).join(""),
+type: content.match(/\w*[^\"\'](?=-)/g).join("")
+};
 }
-// }
-jQuery('body').addClass(win.type);
-win.size = ww;
-return win;
+else {
+var ww = jQuery(window).width();
+console.log(ww);
+obj = {
+size: '',
+type: ''
+};
+}
+return obj;
 };
 /**
 * Add active class to element, remove active class from element siblings
@@ -155,27 +158,11 @@ el.removeClass(uc + ' ' + dc);
 */
 cellular.buttonize = function (href, title, classes) {
 var btn = $('<a />')
-.prop({
-"href": href,
-"title": title,
-"tabindex": "0"
-})
+.attr('href', href)
+.attr('title', title)
 .text(title)
 .classify(classes);
 return $(this).append(btn);
-};
-/**
-*
-*/
-cellular.scrollto = function (target, time) {
-target = target || jQuery(this).attr('href');
-// Scroll to page anchors.
-jQuery('a[href^="#"]').on('click', function (e) {
-e.preventDefault();
-jQuery('html, body').stop().animate({
-scrollTop: jQuery(target).offset().top
-}, time);
-});
 };
 /**
 * Set state on window resize
@@ -270,7 +257,7 @@ li.toggleClass(cellular.opts.activeclass)
 */
 fn.style = function ($obj) {
 $obj.once('jAccordion', function () {
-$obj.prop("tabindex", "0").find('> li').each(function () {
+$obj.find('> li').each(function () {
 var li = jQuery(this);
 li.kidWrap();
 li.children().eq(0).addClass('title');
@@ -306,18 +293,19 @@ $obj.once(o.cclass, function () {
 var a1 = $obj.find('a').eq(0);
 var href = a1.attr('href');
 if (href !== undefined) {
-var wrapperlink = jQuery('<a href="' + href + '" tabindex="0" />').classify([
+var wrapperlink = jQuery('<a href="' + href + '" />').classify([
 o.cclass + '-wrap',
 a1.attr('class') ? a1.attr('class') : null
 ]);
+// .data(a.data());
 $obj.wrap(wrapperlink)
 .find('h2, h3').addClass('title');
 }
 });
 $obj.on('mouseenter touchstart', function () {
-$obj.activate();
+jQuery(this).activate();
 }).on('mouseleave touchend', function () {
-$obj.deactivate();
+jQuery(this).deactivate();
 });
 };
 return this.each(fn.init);
@@ -358,9 +346,9 @@ this.value = this.defaultValue;
 /**
 * jMmenu: Hamburger menu for mobile devices
 */
-cellular.jMmenu = function (opts) {
+cellular.jMmenu = function(opts) {
 var o = jQuery.extend({
-breakpoint: cellular.opts.breakpoint, // 'window_small'|| 'window_narrow' || 'window_default'
+breakpoint: cellular.opts.breakpoint, // Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
 parent: jQuery('body'), // Parent element used to attach menu
 cclass: "jMmenu", // Menu class to test
 triggertext: "Menu",
@@ -368,8 +356,7 @@ animateclass: "slide-right", // Type of animation
 throttle: 101 // Time in ms to throttle window resize event
 }, opts),
 fn = {};
-fn.mediaQuery = cellular.debounce(function ($obj, state) {
-//console.log(cellular.opts.breakpoint);
+fn.mediaQuery = cellular.debounce(function($obj, state) {
 if (o.breakpoint === cellular.state.breakpoint) {
 var $menu = $obj.children([0]),
 label = null;
@@ -378,8 +365,7 @@ o.parent.addClass(o.animateclass);
 if (o.triggertext) {
 label = '<span class="' + o.cclass + '-triggertext">' + o.triggertext + '</span>';
 }
-$obj.prop("tabindex", "0")
-.addClass(o.cclass + '-trigger')
+$obj.addClass(o.cclass + '-trigger')
 .append(label);
 $menu.addClass(o.cclass + '-menu')
 .prependTo(o.parent);
@@ -399,7 +385,7 @@ jQuery('.' + o.cclass + '-triggertext').remove();
 }
 fn.menutrigger($obj, state);
 }, o.throttle);
-fn.menutrigger = function ($obj, state) {
+fn.menutrigger = function($obj, state) {
 var classes = [
 o.cclass + '-active',
 o.cclass + '-inactive'
@@ -420,10 +406,9 @@ o.parent.addClass(classes[1])
 }
 }
 };
-fn.style = function ($obj) {
+fn.style = function($obj) {
 var menu = $obj.find('>ul'),
 nested = menu.find('ul');
-// Add classes for parent/child.
 if (nested.length > 0) {
 var child = menu.find('li ul');
 child.addClass('child')
@@ -433,31 +418,24 @@ willChange: 'contents'
 });
 }
 };
-fn.listen = function ($obj, state) {
-jQuery(window).on('resize', function () {
+fn.listen = function($obj, state) {
+jQuery(window).on('resize', function() {
 fn.mediaQuery($obj, state);
 });
-$obj.on('click', function () {
+$obj.on('click', function() {
 if (state.mmenu) {
 state.active = state.active ? false : true;
 fn.menutrigger($obj, state);
 }
 });
-jQuery(document).on('keyup', function (e) {
-// ENTER opens menu.
-if (jQuery('.' + o.cclass + '-trigger').is(":focus") && e.which === 13) {
-e.preventDefault();
-state.active = state.active === false ? true : false;
-fn.menutrigger($obj, state);
-}
-// ESC closes menu.
+jQuery(document).on('keyup', function(e) {
 if (state.active === true && e.which === 27) {
 e.preventDefault();
 state.active = false;
 fn.menutrigger($obj, state);
 }
 });
-jQuery('.parent > a').click(function (e) {
+jQuery('.parent > a').on('click', function(e) {
 if (state.mmenu) {
 var parent = jQuery(this).parent(),
 child = parent.children(':gt(0)');
@@ -474,8 +452,26 @@ child.addClass('active');
 }
 }
 });
+/*
+jQuery('.' + o.cclass + ('-menu .parent a')).on('focus click', function(e) {
+e.preventDefault();
+var $t = jQuery(this),
+parent = $t.parent();
+if (parent.hasClass('active')) {
+parent.removeClass('active')
+.children(':gt(0)').removeClass('active');
+} else {
+parent.addClass('active')
+.children(':gt(0)').addClass('active');
+}
+});
+jQuery('.' + o.cclass + ('-menu .parent a')).on('blur', function(e) {
+jQuery(this).parent().removeClass('active')
+.children(':gt(0)').removeClass('active');
+});
+*/
 };
-fn.init = function () {
+fn.init = function() {
 var $obj = jQuery(this),
 state = {
 active: false,
@@ -561,18 +557,14 @@ fn.go = function (index, $obj, state) {
 if (!state.paused) {
 var tclass = 'transition',
 li = $obj.find('.' + o.cclass + '-slide');
-// Unset tabindexes
-li.find('a').prop("tabindex", "-1");
-// Get current slide.
 state.current = parseInt(index);
-// Normalize state.
+// Normalize state
 fn.normalize(state);
-// Update classes on slides for css transition.
+// Update classes on slides for css transition
 jQuery(li[state.prev]).activate('previous');
 jQuery(li[state.next]).activate('next');
-jQuery(li[index]).activate()
-.find('a').prop("tabindex", "-1");
-// Listen for transition to complete & update classes.
+jQuery(li[index]).activate();
+// Listen for transition to complete & update classes
 $obj.parent().addClass(tclass)
 .on(cellular.transitionend(), function () {
 jQuery(this).removeClass(tclass);
@@ -813,14 +805,12 @@ $obj.height(state.maxheight);
 */
 fn.style = function ($obj, state) {
 var li = $obj.find('> li');
-$obj.prop("tabindex", "0")
-.addClass(cellular.opts.cclass)
+$obj.addClass(cellular.opts.cclass)
 .wrap('<div class="' + cellular.opts.cclass + ' ' + o.cclass + '-wrap" />')
 .parent().css({
 willChange: "contents"
 });
-li.prop('tabindex', "-1")
-.addClass(o.cclass + '-slide')
+li.addClass(o.cclass + '-slide')
 .each(function () {
 var $t = jQuery(this);
 $t.children().wrapAll('<div class="' + o.cclass + '-slide-content cell" />');

@@ -1,0 +1,89 @@
+/**
+  * @file
+  * Styling for mobile devices included in style.css
+*/
+
+@media screen and (max-width: $res_mobile) {
+
+  body:before {
+    // Pseudo element to pass the current media size to javascript.
+    // @see https://www.lullabot.com/blog/article/importing-css-breakpoints-javascript
+    content: "window_mobile-#{$res_mobile}";
+  }
+}
+
+//////
+.window_mobile {
+
+  p {
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+
+  }
+
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+  //////
+
+  #main-menu {}
+
+  #logo {
+
+    &:hover {
+    }
+
+    & > a {
+    }
+  }
+
+  #page-wrap {
+
+  }
+
+  #content-wrap {
+
+  }
+
+  #header {
+
+  }
+
+  #app {
+  }
+
+  #content-wrap {
+  }
+
+  #content {
+  }
+
+}

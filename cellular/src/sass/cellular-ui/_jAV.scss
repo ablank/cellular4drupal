@@ -2,30 +2,30 @@
 @if($cellular_av == true){
   .jAV {
     width: 480px;
-
+    
     &.active {
-
+      
     }
-
+    
     &.playing {
-
+      
     }
   }
-
-  .jAV-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 32px;
-    left: 0;
-  }
-
+  
+      .jAV-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 32px;
+        left: 0;
+      }
+  
   .jAV-controls {
 
     a {
       position: relative;
       display: inline-block;
-      // text-indent: -999em;
+     // text-indent: -999em;
       //width: 2.4em;
       height: 1.4em;
       border: $grey 1px solid;

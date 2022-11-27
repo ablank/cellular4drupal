@@ -11,11 +11,11 @@
 @import "variables/_vars_grid";
 @import "variables/_vars_icons";
 //////
-
+@import "compass";
 @import "variables/compass_defaults";
 
 // Stylesheet breakpoints
-$res_small: 650px;
+$res_mobile: 650px;
 $res_narrow: 800px;
 $res_default: 960px;
 $res_large: 1280px;

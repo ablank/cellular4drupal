@@ -3,7 +3,7 @@
   * CellularUI : jMMenu
 */
 
-@media screen and (max-width: $res_small) {
+@media screen and (max-width: $res_mobile) {
   #main-menu {
     ul.menu {
       // Hides navigation prior to js loading & acting on DOM to prevent
@@ -23,7 +23,7 @@
     width: 3em;
     height: 3em;
     padding: 0;
-    background-color: $white;
+    background-color: darken($white, 2%);
     background-size: 9em;
     background-repeat: no-repeat;
     background-position: left center;
@@ -34,14 +34,12 @@
     will-change: background-position, box-shadow;
     @include border-radius();
     @include transition();
-    &:focus,
     &:hover {
       box-shadow: 0 0 0.2em 0.1em $hilight;
     }
     &.active {
       // Shift background to indicate state.
       background-position: right center;
-      &:focus,
       &:hover {
         box-shadow: 0 0 0.2em 0.1em $red;
       }
@@ -72,7 +70,7 @@
     @include transition();
     li {
       display: block;
-      margin: auto;
+      margin: 0.2em auto;
       list-style: none;
       max-width: none;
       &.parent {
@@ -90,7 +88,6 @@
           @include transition();
         }
         &.active:after,
-        &:focus:after,
         &:hover:after {
           @include triangle(0.8em,
           0.6em,

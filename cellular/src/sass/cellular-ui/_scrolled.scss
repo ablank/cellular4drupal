@@ -2,21 +2,21 @@
   * @file
   * CellularUI : window scrolled styling
 */
-$scroll_header: calc($header_height / 2);
+$scroll_header: $header_height / 2;
 .scrolled {
   #header {
     height: $scroll_header;
-    //overflow: hidden;
-    transition: all 300ms ease;
+    overflow: hidden;
+    transition: all 300ms;
 
     .logo {
       padding: 0;
       a {
-        width: $scroll_header; // You may need to weak width to fit your image.
+        width: $scroll_header;
         height: $scroll_header;
-        background-size: $scroll_header $scroll_header;
-        //transform: scale(0.5, 0.5);
-        transition: all 500ms ease-out;
+        msrgin: 0;
+        padding: 0;
+        background-size: $scroll_header;
       }
     }
   }

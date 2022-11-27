@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#3274D1" d="M30 16V4.625A2.625 2.625 0 0 0 27.375 2H16v14h14z"/><path fill="#DDD" d="M30 16v11.375A2.625 2.625 0 0 1 27.375 30H16V16h14z"/><path fill="#020202" d="M2 16v11.375A2.625 2.625 0 0 0 4.625 30H16V16H2z"/><path fill="#FFF" d="M2.5 15.5V4.625c0-1.172.953-2.125 2.125-2.125H15.5v13h-13z"/><path fill="#DDD" d="M3 15V4.625C3 3.729 3.729 3 4.625 3H15m1-1H4.625A2.625 2.625 0 0 0 2 4.625V16"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<path fill="#3274D1" d="M30,16V4.625C30,3.175,28.825,2,27.375,2H16v14H30z"/>
+	<path fill="#DDDDDD" d="M30,16v11.375C30,28.825,28.825,30,27.375,30H16V16H30z"/>
+	<path fill="#020202" d="M2,16v11.375C2,28.825,3.175,30,4.625,30H16V16H2z"/>
+	<path fill="#FFFFFF" d="M2.5,15.5V4.625C2.5,3.453,3.453,2.5,4.625,2.5H15.5v13H2.5z"/>
+	<path fill="#DDDDDD" d="M3,15V4.625C3,3.729,3.729,3,4.625,3H15 M15,3 M16,2L16,2H4.625C3.175,2,2,3.175,2,4.625V16"/>
+</g>
+</svg>

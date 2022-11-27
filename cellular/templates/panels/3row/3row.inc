@@ -3,9 +3,10 @@
  * @file
  * Vars & regions for 3 equal columns (33%/33%/33%) panel layout.
  */
-$inc_path = drupal_get_path('theme', 'cellular') . '/templates/panels/_include/';
 
-include_once $inc_path . 'preprocess.inc';
+$inc_path = drupal_get_path('theme', 'cellular') .'/templates/panels/_include/';
+
+include_once  $inc_path . 'preprocess.inc';
 
 $plugin = array(
   'category' => t('Cellular | Prototype'),
@@ -26,7 +27,7 @@ $plugin = array(
  */
 function template_preprocess_cellular_3row(&$variables) {
 
-  foreach ($variables['content'] as $name => $item) {
+  foreach($variables['content'] as $name => $item) {
     $variables['region_attributes'][$name]['class'][] = 'cell';
   }
 }

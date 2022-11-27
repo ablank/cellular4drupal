@@ -66,9 +66,9 @@
 
   a {
     &:active,
-    &:hover,
-    &:focus,
-    &:visited {
+      &:hover,
+      &:focus,
+      &:visited {
       color: lighten($hilight, 33%);
     }
   }
@@ -83,7 +83,6 @@
     border-right: $grey 1px solid;
     border-bottom: $grey 1px solid;
     border-left: $grey 1px solid;
-    vertical-align: top;
     @include round($tiny, 'bottom');
 
     &.today {
@@ -92,38 +91,23 @@
     }
 
     &.past {
-      background-color: darken($white, 10%);
-
-      a {
-        &,
-        &:visited{
-          color: $grey;
-        }
-      }
+      background-color: darken($white, 15%);
     }
+
+  }
+
+  a,
+  a:visited{
+    background: darken($white, 5%);
+    border: $light_grey 1px solid;
   }
 
   a {
-    &,
-    &:visited{
-      display: block;
-      padding: $tiny;
-      background: darken($white, 5%);
-      border: $grey 1px solid;
-      border-radius: $tiny;
-    }
-
-
     &:active,
-    &:hover,
-    &:focus,
-    &:visited {
-      background: $white;
-      border-color: $hilight;
+      &:hover,
+      &:focus,
+      &:visited {
+      border-color: $grey;
     }
-  }
-
-  .date-display-single {
-    color: $grey;
   }
 }

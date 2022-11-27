@@ -1,0 +1,1 @@
+!function($){Drupal.behaviors.theme={attach:function(t,a){$("a[href^=tel]").each(function(){var t=$(this).attr("href").match(/\d+/g);$(this).attr("href","tel:"+t.join(""))})}}}(jQuery);

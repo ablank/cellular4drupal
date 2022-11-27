@@ -11,11 +11,11 @@
 @import "variables/_vars_grid";
 @import "variables/_vars_icons";
 //////
-
+@import "compass";
 @import "variables/compass_defaults";
 
 // Stylesheet breakpoints
-$res_small: 650px;
+$res_mobile: 650px;
 $res_narrow: 800px;
 $res_default: 960px;
 $res_large: 1280px;
@@ -45,7 +45,7 @@ $header_position: fixed;
 $header_height: $logo_height + ($logo_pad * 2);
 
 // Images
-$body_img: url('../assets/images/png/honeycomb_light.png');
+$body_img: url('../assets/images/honeycomb_light.png');
 
 // Typography
 $p_font: SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto;
@@ -54,7 +54,7 @@ $p_line_height: $big;
 $p_max_width: 32em;
 $p_color: $c1;
 
-$h_font:  SegoeUI, "Helvetica Neue", Helvetica, Arial, Roboto;
+$h_font: "Quicksand";
 $h_size: 2.4em;
 $h_weight: normal;
 $h_color: $grey;

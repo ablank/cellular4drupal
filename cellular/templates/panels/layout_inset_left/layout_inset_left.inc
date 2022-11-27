@@ -3,6 +3,7 @@
  * @file
  * Vars & regions for left inset panel layout.
  */
+
 $plugin = array(
   'category' => t('Cellular | Layouts'),
   'title' => t('Inset Left'),

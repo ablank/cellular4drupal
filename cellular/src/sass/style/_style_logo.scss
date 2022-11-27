@@ -7,30 +7,26 @@
   // Container for logo
   z-index: 9;
   float: left;
-  @if($header_height > $logo_height + $logo_pad){
-    padding-top: ($header_height - ($logo_height + $logo_pad)) * 0.5;
-  }
-
+  padding: $logo_pad;
+  transition: all 300ms;
 
   a {
     // Logo link to frontpage.
     display: block;
     text-indent: -999em;
-    width: $logo_width + $logo_pad;
-    height: $logo_height + $logo_pad;
-    background-size: $logo_width $logo_height;
+    width: $logo_width;
+    height: $logo_height;
     background-image: $logo_png;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     border: none;
     text-decoration: none;
+    transition: width,height,padding,box-shadow 300ms ease-in-out;
     box-shadow: 0 0 0 0 $white;
-    will-change: width,height,transform;
-    transition: all 300ms ease-in;
 
-    &:focus,
     &:hover {
       box-shadow: 0 0 .4em 0 $hilight;
+      //  @include translate3d(0,-.1em,1em);
     }
   }
 }

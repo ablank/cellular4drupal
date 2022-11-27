@@ -19,16 +19,13 @@ function cellular_form_element_attributes(&$element) {
   //empty($element['#value']) ? NULL : $attributes['value'] = $element['#value'];
   empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
   empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
+  empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
   empty($element['#required']) ? NULL : $attributes['required'] = $element['#required'];
   empty($element['#size']) ? NULL : $attributes['size'] = $element['#size'];
   empty($element['#maxlength']) ? NULL : $attributes['maxlength'] = $element['#maxlength'];
   empty($element['#checked']) ? NULL : $attributes['checked'] = TRUE;
   empty($element['#attributes']['class']) ? NULL : $attributes['class'] = implode(' ', $element['#attributes']['class']);
   empty($element['#default_value']) ? NULL : $attributes['value'] = $element['#default_value'];
-  if (!empty($element['#title'])) {
-    $attributes['title'] = $element['#title'];
-    $attributes['aria-label'] = $element['#title'];
-  }
 
   return $attributes;
 }
@@ -63,7 +60,6 @@ function cellular_xinputs(&$element) {
  */
 function cellular_xinput($element, $type) {
   if (empty($element['#title'])) {
-    // Set an empty string to guarantee <label> is provided, used for fancy styling.
     $element['#title'] = '';
   }
   $attributes = cellular_form_element_attributes($element);
