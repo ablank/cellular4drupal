@@ -1151,7 +1151,7 @@ body .ui-tooltip {
 /* line 992, ../../sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-content {
   border: 1px solid #444444;
-  background: #fefefe;
+  background: #FEFEFE;
   color: #444444;
 }
 
@@ -1163,7 +1163,7 @@ body .ui-tooltip {
 /* line 1002, ../../sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-widget-header {
   border: 1px solid #444444;
-  background: #fefefe;
+  background: #FEFEFE;
   color: #444444;
   font-weight: bold;
 }
@@ -1179,17 +1179,17 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  border: 1px solid #fefefe;
-  background: #29b4de;
+  border: 1px solid #FEFEFE;
+  background: #29B4DE;
   font-weight: normal;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 1025, ../../sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 
@@ -1200,10 +1200,10 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fefefe;
-  background: #29b4de;
+  border: 1px solid #FEFEFE;
+  background: #29B4DE;
   font-weight: normal;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 1044, ../../sass/jquery-ui/jquery-ui-1.9.scss */
@@ -1211,7 +1211,7 @@ body .ui-tooltip {
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 
@@ -1219,17 +1219,17 @@ body .ui-tooltip {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-  border: 1px solid #29b4de;
-  background: #fefefe;
+  border: 1px solid #29B4DE;
+  background: #FEFEFE;
   font-weight: normal;
-  color: #29b4de;
+  color: #29B4DE;
 }
 
 /* line 1061, ../../sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-  color: #29b4de;
+  color: #29B4DE;
   text-decoration: none;
 }
 
@@ -1239,7 +1239,7 @@ body .ui-tooltip {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  border: 1px solid #ec2;
+  border: 1px solid #EC2;
   background: #f1f1f1;
   color: #444444;
 }
@@ -1255,23 +1255,23 @@ body .ui-tooltip {
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  border: 1px solid #8c0d00;
+  border: 1px solid #8C0D00;
   background: #f1f1f1;
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1093, ../../sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1099, ../../sass/jquery-ui/jquery-ui-1.9.scss */
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1105, ../../sass/jquery-ui/jquery-ui-1.9.scss */

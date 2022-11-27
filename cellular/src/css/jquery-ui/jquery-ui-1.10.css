@@ -783,7 +783,7 @@ button.ui-button::-moz-focus-inner {
   padding: 0;
   width: 100%;
   /* support: IE10, see #8844 */
-  list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP//yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+  list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
 }
 
 /* line 645, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -1113,7 +1113,7 @@ body .ui-tooltip {
 /* line 939, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-content {
   border: 1px solid #aaa;
-  background: #fefefe;
+  background: #FEFEFE;
   color: #444444;
 }
 
@@ -1124,7 +1124,7 @@ body .ui-tooltip {
 
 /* line 949, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-widget-header {
-  background: #fefefe;
+  background: #FEFEFE;
   color: #444444;
   font-weight: bold;
   border: 1px solid;
@@ -1141,17 +1141,17 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  border: 1px solid #fefefe;
-  background: #29b4de;
+  border: 1px solid #FEFEFE;
+  background: #29B4DE;
   font-weight: normal;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 971, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 
@@ -1162,10 +1162,10 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-  border: 1px solid #fefefe;
+  border: 1px solid #FEFEFE;
   background: #1982a2;
   font-weight: normal;
-  color: #fefefe;
+  color: #FEFEFE;
 }
 
 /* line 990, ../../sass/jquery-ui/jquery-ui-1.10.scss */
@@ -1177,7 +1177,7 @@ body .ui-tooltip {
 .ui-state-focus a:hover,
 .ui-state-focus a:link,
 .ui-state-focus a:visited {
-  color: #fefefe;
+  color: #FEFEFE;
   text-decoration: none;
 }
 
@@ -1185,9 +1185,9 @@ body .ui-tooltip {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-  background: #fefefe;
+  background: #FEFEFE;
   font-weight: normal;
-  color: #29b4de;
+  color: #29B4DE;
   border: 1px solid;
 }
 
@@ -1195,7 +1195,7 @@ body .ui-tooltip {
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-  color: #29b4de;
+  color: #29B4DE;
   text-decoration: none;
 }
 
@@ -1221,23 +1221,23 @@ body .ui-tooltip {
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  border: 1px solid #8c0d00;
+  border: 1px solid #8C0D00;
   background: white;
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1042, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-error a,
 .ui-widget-content .ui-state-error a,
 .ui-widget-header .ui-state-error a {
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1048, ../../sass/jquery-ui/jquery-ui-1.10.scss */
 .ui-state-error-text,
 .ui-widget-content .ui-state-error-text,
 .ui-widget-header .ui-state-error-text {
-  color: #8c0d00;
+  color: #8C0D00;
 }
 
 /* line 1054, ../../sass/jquery-ui/jquery-ui-1.10.scss */

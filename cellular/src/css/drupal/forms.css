@@ -6,7 +6,7 @@ Error: Undefined mixin 'clear'.
 12: label + div {
 13:   //margin: 0 1em 0 0;
 14: }
-15:
+15: 
 16: label + input {
 17:   @include clear();
 18: }
@@ -69,5 +69,4 @@ C:/Ruby193/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'clear'.\A         on line 17 of C:/www/dev/drupal7/sites/all/themes/Cellular/cellular/src/sass/drupal/forms.scss, in `clear'\A         from line 17 of C:/www/dev/drupal7/sites/all/themes/Cellular/cellular/src/sass/drupal/forms.scss\A \A 12: label + div {\A 13:   //margin: 0 1em 0 0;\A 14: }\A 15: \A 16: label + input {\A 17:   @include clear();\A 18: }";
-}
+  content: "Error: Undefined mixin 'clear'.\A         on line 17 of C:/www/dev/drupal7/sites/all/themes/Cellular/cellular/src/sass/drupal/forms.scss, in `clear'\A         from line 17 of C:/www/dev/drupal7/sites/all/themes/Cellular/cellular/src/sass/drupal/forms.scss\A \A 12: label + div {\A 13:   //margin: 0 1em 0 0;\A 14: }\A 15: \A 16: label + input {\A 17:   @include clear();\A 18: }"; }

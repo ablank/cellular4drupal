@@ -1,1 +1,253 @@
-!function($){Drupal.behaviors.cellular={attach:function(t,e){var l={opts:{cclass:"cellular",activeclass:"active",breakpoint:"window_mobile"},state:{breakpoint:0,scrolltop:0,scrolltimer:0}};jQuery('a[href^="#"]').on("click",function(t){var e=jQuery(this).attr("href");t.preventDefault(),jQuery("html, body").stop().animate({scrollTop:jQuery(e).offset().top},1500)}),l.breakpoint=function(){var t=window.getComputedStyle(document.querySelector("body"),":before").getPropertyValue("content"),t=t?{size:t.match(/\d/g).join(""),type:t.match(/\w*[^\"\'](?=-)/g).join("")}:(t=jQuery(window).width(),console.log(t),{size:"",type:""});return t},l.activate=function(e){return e=e||l.opts.activeclass,this.each(function(){var t=jQuery(this);t.hasClass(e)||t.addClass(e).siblings().removeClass(e)})},l.deactivate=function(t){return t=t||l.opts.activeclass,this.each(function(){jQuery(this).removeClass(t)})},l.kidWrap=function(){return this.each(function(){var t=jQuery(this);1<t.children().length&&t.children(":gt(0)").wrapAll("<div>")})},l.classify=function(t){return this.each(function(){jQuery(this).addClass(t.join(" "))})},l.debounce=function(a,i,s){var r;return function(){var t=this,e=arguments,n=s&&!r;clearTimeout(r),r=setTimeout(function(){r=null,s||a.apply(t,e)},i),n&&a.apply(t,e)}},l.transitionend=function(){var t,e=document.createElement("test"),n={transition:"transitionend",OTransition:"oTransitionEnd",MozTransition:"transitionend",WebkitTransition:"webkitTransitionEnd"};for(t in n)if(void 0!==e.style[t])return n[t]},l.scrolltimer=function(t,e,n){window.clearTimeout(l.state.scrolltimer),l.state.scrolltimer=window.setTimeout(function(){t.removeClass(e+" "+n)},2e3)},l.buttonize=function(t,e,n){t=$("<a />").attr("href",t).attr("title",e).text(e).classify(n);return $(this).append(t)},l.windowstate=l.debounce(function(){var t=l.state.breakpoint;l.state.breakpoint=l.breakpoint().type,jQuery("body").removeClass(t).addClass(l.state.breakpoint)},100),l.scrollstate=l.debounce(function(t,e){var n=jQuery("body"),a="scrolling",i=a+"-up",a=a+"-down",s=jQuery(document).scrollTop(),r=n.height()/3;30<s?n.addClass("scrolled"):n.removeClass("scrolled"),s>l.state.scrolltop?n.addClass(a).removeClass(i):n.addClass(i).removeClass(a),s<r?n.removeClass("page-middle page-bottom").addClass("page-top"):r<s&&s<2*r?n.removeClass("page-top page-bottom").addClass("page-middle"):n.removeClass("page-top page-middle").addClass("page-bottom"),l.state.scrolltop=s,l.state.scrolled=s/(n.height()-jQuery(window).height())*100},0,!0),l.windowstate(),l.scrollstate(),jQuery(window).on("resize",l.windowstate),jQuery(document).on("scroll",l.scrollstate),l.jAccordion=function(t){var n=jQuery.extend({active:0,duration:500,easing:"swing",single:!1,pclass:"panel"},t),a={};return n.pselect="."+n.pclass,a.showContent=function(t){n.single?(t.siblings().find(n.pselect).slideUp(n.duration,n.easing),t.activate().find(n.pselect).slideDown(n.duration,n.easing)):t.toggleClass(l.opts.activeclass).find(n.pselect).slideToggle(n.duration,n.easing)},a.style=function(t){t.once("jAccordion",function(){t.find("> li").each(function(){var e=jQuery(this);e.kidWrap(),e.children().eq(0).addClass("title"),e.children().eq(1).classify([l.opts.cclass,"panel"]),e.find(n.pselect).hide(),e.find(".title").click(function(t){t.preventDefault(),a.showContent(e)})})})},a.init=function(){var t=jQuery(this);a.style(t),a.showContent(t.children().eq(n.active))},this.each(a.init)},l.jCard=function(t){var a=jQuery.extend({cclass:"jCard"},t),t={init:function(){var n=jQuery(this);n.once(a.cclass,function(){var t=n.find("a").eq(0),e=t.attr("href");void 0!==e&&(e=jQuery('<a href="'+e+'" />').classify([a.cclass+"-wrap",t.attr("class")?t.attr("class"):null]),n.wrap(e).find("h2, h3").addClass("title"))}),n.on("mouseenter touchstart",function(){jQuery(this).activate()}).on("mouseleave touchend",function(){jQuery(this).deactivate()})}};return this.each(t.init)},l.jFormal=function(t){var e=jQuery.extend({inputs:['input[type="text"]','input[type="email"]','input[type="password"]',"textarea"]},t);return this.each(function(){var t=e.inputs.join(",");jQuery(t).each(function(){var t=jQuery(this),e=holder=t.attr("placeholder");t.on("focus",function(){holder="",this.value===this.defaultValue&&(this.value="")}).on("blur",function(){holder=e,""===this.value&&(this.value=this.defaultValue)})})})},l.jMmenu=function(t){var i=jQuery.extend({breakpoint:l.opts.breakpoint,parent:jQuery("body"),cclass:"jMmenu",triggertext:"Menu",animateclass:"slide-right",throttle:101},t),s={};return s.mediaQuery=l.debounce(function(t,e){var n,a;i.breakpoint===l.state.breakpoint?(n=t.children([0]),e.mmenu=!(a=null),i.parent.addClass(i.animateclass),i.triggertext&&(a='<span class="'+i.cclass+'-triggertext">'+i.triggertext+"</span>"),t.addClass(i.cclass+"-trigger").append(a),n.addClass(i.cclass+"-menu").prependTo(i.parent)):(e.mmenu=!1,e.active=!1,i.parent.removeClass(i.cclass+"-active "+i.cclass+"-inactive "+i.animateclass),t.attr("aria-label","Menu").removeClass(i.cclass+"-trigger"),jQuery("."+i.cclass+"-menu").removeClass(i.cclass+"-menu").prependTo(t),jQuery("."+i.cclass+"-triggertext").remove()),s.menutrigger(t,e)},i.throttle),s.menutrigger=function(t,e){var n=[i.cclass+"-active",i.cclass+"-inactive"];e.active?(t.activate().attr("aria-label","Close Menu"),jQuery("."+i.cclass+"-menu").addClass("active"),i.parent.addClass(n[0]).removeClass(n[1])):(t.deactivate().attr("aria-label","Open Menu"),jQuery("."+i.cclass+"-menu").removeClass("active"),e.mmenu&&i.parent.addClass(n[1]).removeClass(n[0]))},s.style=function(t){t=t.find(">ul");0<t.find("ul").length&&t.find("li ul").addClass("child").parent().addClass("parent").css({willChange:"contents"})},s.listen=function(e,a){jQuery(window).on("resize",function(){s.mediaQuery(e,a)}),e.on("click",function(){a.mmenu&&(a.active=!a.active,s.menutrigger(e,a))}),jQuery(document).on("keyup",function(t){!0===a.active&&27===t.which&&(t.preventDefault(),a.active=!1,s.menutrigger(e,a))}),jQuery(".parent > a").on("click",function(t){var e,n;a.mmenu&&0<(n=(e=jQuery(this).parent()).children(":gt(0)")).length&&(t.preventDefault(),n.hasClass("active")?(e.removeClass("active"),n.removeClass("active")):(e.addClass("active"),n.addClass("active")))})},s.init=function(){var t=jQuery(this),e={active:!1,mmenu:!1};t.addClass(i.cclass).once(i.cclass,s.style(t)),s.mediaQuery(t,e),s.listen(t,e)},this.each(s.init)},l.jScrolli=function(t){var o=$.extend({cclass:"jScrolli",active:0,background:"img:first",title:"h2, h3",height:"auto",controls:{showmarkers:!0,showcontrols:!0,keyboard:!0,swipe:!0,autoplay:!0,pauseonhover:!0,autodim:!0,delay:1.4,text:{next:"Next",prev:"Prev",pause:"Pause",play:"Play"}},transition:{pause:5},caption:{enable:!0,autohide:!1,selector:".caption"}},t),c={button:function(t){return'<a class="'+o.cclass+"-control "+t.toLowerCase()+'">'+t+"</a>"},normalize:function(t){t.prev=t.current-1,t.next=t.current+1,t.prev<0&&(t.prev=t.count),t.next>t.count&&(t.next=0)},go:function(t,e,n){var a,i;n.paused||(a="transition",i=e.find("."+o.cclass+"-slide"),n.current=parseInt(t),c.normalize(n),jQuery(i[n.prev]).activate("previous"),jQuery(i[n.next]).activate("next"),jQuery(i[t]).activate(),e.parent().addClass(a).on(l.transitionend(),function(){jQuery(this).removeClass(a)}),o.controls.showmarkers&&c.mark(e,n),o.caption.enable&&c.caption(i,n),o.controls.autoplay&&c.updateinterval(e,n))},mark:function(t,e){t.siblings().find("."+o.cclass+"-marker").eq(e.current).activate()},caption:function(t,e){var t=t.parent().parent(),n=t.find("> .caption p");e.caption=t.find(o.caption.selector).eq(e.current).text(),n.on(l.transitionend(),function(){$(this).text(e.caption).activate()})},updateinterval:function(t,e){o.controls.autoplay&&!e.paused&&(clearInterval(e.interval),e.interval=setInterval(function(){e.current=e.next,c.go(e.current,t,e)},1e3*o.transition.pause))},events:function(e,n){e.siblings(".controls");var t=e.parent();o.controls.showmarkers&&e.siblings().find("."+o.cclass+"-marker").on("click",function(){n.current=jQuery(this).attr("data-href"),n.paused=!1,c.go(n.current,e,n)}),t.find(".prev").on("click",function(t){n.current=n.prev,n.paused=!1,c.go(n.current,e,n)}),t.find(".next").on("click",function(t){n.current=n.next,n.paused=!1,c.go(n.current,e,n)}),t.on({mouseover:function(){n.active=!0,o.controls.pauseonhover&&(n.paused=!0),o.controls.autodim&&(t.activate(),window.clearTimeout(t.timeout))},mouseout:function(){n.active=!1,o.controls.pauseonhover&&(n.paused=!1),o.controls.autodim&&(t.timeout=window.setTimeout(function(){t.deactivate()},1e3*o.controls.delay))}}),o.controls.keyboard&&jQuery(document).on("keyup",function(t){if(-1!==[37,39].indexOf(t.which)){switch(t.preventDefault(),n.paused=!1,t.which){case 37:n.current=n.prev;break;case 39:n.current=n.next}c.go(n.current,e,n)}})},setheight:function(t,e){jQuery(document).ready(function(){"auto"===o.height?t.find("> li").each(function(){var t=this.clientHeight;t>e.maxheight&&(e.maxheight=t)}):e.maxheight=o.height,t.height(e.maxheight)})},style:function(t,e){var n=t.find("> li");if(t.addClass(l.opts.cclass).wrap('<div class="'+l.opts.cclass+" "+o.cclass+'-wrap" />').parent().css({willChange:"contents"}),n.addClass(o.cclass+"-slide").each(function(){var t,e=jQuery(this);e.children().wrapAll('<div class="'+o.cclass+'-slide-content cell" />'),o.title&&e.find(o.title).addClass("title"),o.background&&(t=e.find(o.background)).length&&(t.hide(),e.css({"background-image":"url("+t.attr("src")+")"}).addClass(o.cclass+"-background"))}),c.setheight(t,e),o.controls.showmarkers){for(var a=jQuery('<ul class="'+o.cclass+'-markers"/>'),i=0;i<n.length;i+=1)a.append('<li class="'+o.cclass+'-marker" data-href="'+i+'">'+(i+1)+"</li>");t.after(a),c.mark(t,e)}if(o.caption.enable&&(e=t.find(o.caption.selector)).length&&(e.hide(),t.after('<div class="'+o.cclass+'-caption"><p/></div>')),o.controls.showcontrols)for(var s=[c.button(o.controls.text.prev),c.button(o.controls.text.next)],r=0;r<s.length;r+=1)t.parent().prepend(s[r])},init:function(){var t=jQuery(this),e={active:!0,paused:!1,count:t.find("> li").length-1,width:o.width||t.width(),maxheight:0,interval:0,controls:0,caption:jQuery(o.caption.selector).html(),current:o.active||0};t.once(o.cclass,function(){c.style(t,e)}),c.events(t,e),c.go(e.current,t,e),c.updateinterval(t,e)}};return this.each(c.init)},l.jSocial=function(t){var r=document.title,o=$("link[rel='canonical']")?$("link[rel='canonical']").attr("href"):window.location,c=jQuery.extend({sharetitle:"",followtitle:"",buttonclass:"social",share:[],follow:{}},t),e={style:function(s){s.once("jSocial",function(){var e,n,a,t,i;c.share&&(e=$('<div class="jSocial-share" />'),a={facebook:{title:"Facebook",url:"http://facebook.com/sharer/sharer.php?u="+o},digg:{title:"Digg",url:"http://digg.com/submit?url="+o+"&title="+r},google:{title:"Google",url:"https://plus.google.com/share?url="+o},twitter:{title:"Twitter",url:"https://twitter.com/intent/tweet?url="+o+"&text="+r},linkedin:{title:"LinkedIn",url:"http://linkedin.com/shareArticle?url="+o+"&title="+r},pinterest:{title:"Pinterest",url:"http://pinterest.com/pin/create/bookmarklet/?url="+o+"&description="+r},reddit:{title:"Reddit",url:"http://reddit.com/submit?url="+o+"&title="+r},stumbleupon:{title:"StumbleUpon",url:"http://www.stumbleupon.com/submit?url="+o+"&title="+r},tumblr:{title:"Tumblr",url:"https://www.tumblr.com/widgets/share/tool?canonicalUrl="+o+"&title="+r}},c.sharetitle&&(e.append('<span class="title">'+c.sharetitle+"</span>"),n=c.sharetitle+" on "),c.share.map(function(t){e.buttonize(a[t].url,n+a[t].title,[a[t].title.toLowerCase(),c.buttonclass,"icon"])}),s.append(e)),"undefined"!==Object.keys(c.follow)&&(t=$('<div class="jSocial-follow" />'),i="",c.followtitle&&(t.append('<span class="title">'+c.followtitle+"</span>"),i=c.followtitle+" on "),$.each(c.follow,function(){t.buttonize(this.url,i+this.title,[this.title.replace(/ /g,"").toLowerCase(),c.buttonclass,"icon"])}),s.append(t))})},init:function(){e.style(jQuery(this))}};return this.each(e.init)},l.jTabs=function(t){var a=jQuery.extend({active:0,orient:"horizontal",cclass:"jTabs"},t),i={showContent:function(t,e){var n=e.find(".content"),t=t.parent().find(".panel-content");e.activate(),t.fadeOut("normal",function(){jQuery(this).html(n.html()).fadeIn("normal")})},init:function(){var n=jQuery(this),t=n.find("> li"),e=jQuery("<div/>").classify([a.orient,a.cclass+"-wrap"]);n.once(a.cclass,function(){n.wrap(e).after('<div class="panel"><div class="panel-content" /></div>'),t.each(function(){var t=jQuery(this);t.addClass("tab").kidWrap(),t.children().eq(0).addClass("title"),t.children().eq(1).addClass("content").hide()})}),t.each(function(){var e=jQuery(this);e.click(function(t){t.preventDefault(),i.showContent(n,e)})}),i.showContent(n,t.eq([a.active]))}};return this.each(i.init)},jQuery.fn.extend(l)}}}(jQuery);
+(function(a,b){/**
+* @file
+* CellularUI Javascript Library
+* 
+* @author Adam Blankenship <i.adambear@gmail.com>
+* 
+* @see http://live-cellular.gotpantheon.com/cellular-ui
+*/
+(function(a){Drupal.behaviors.cellular={attach:function(b,c){var d={};d.opts={cclass:"cellular",activeclass:"active",breakpoint:"window_mobile"};d.state={breakpoint:0,scrolltop:0,scrolltimer:0};/**
+* Cellular utility functions
+*/
+/**
+* Auto invoke
+*/
+(function(){
+// Scroll to page anchors.
+jQuery('a[href^="#"]').on("click",function(a){var b=jQuery(this).attr("href");a.preventDefault();jQuery("html, body").stop().animate({scrollTop:jQuery(b).offset().top},1500)})})();/**
+* Get the breakpoints specified in CSS
+*/
+d.breakpoint=function(){var a=window.getComputedStyle(document.querySelector("body"),":before").getPropertyValue("content"),b;if(a){b={size:a.match(/\d/g).join(""),type:a.match(/\w*[^\"\'](?=-)/g).join("")}}else{var c=jQuery(window).width();console.log(c);b={size:"",type:""}}return b};/**
+* Add active class to element, remove active class from element siblings
+*/
+d.activate=function(a){a=a?a:d.opts.activeclass;return this.each(function(){var b=jQuery(this);if(!b.hasClass(a)){b.addClass(a).siblings().removeClass(a)}})};/**
+* Remove 'active' class
+*/
+d.deactivate=function(a){a=a?a:d.opts.activeclass;return this.each(function(){jQuery(this).removeClass(a)})};/**
+* Wrap element's children after 1st child
+*/
+d.kidWrap=function(){return this.each(function(){var a=jQuery(this);if(a.children().length>1){a.children(":gt(0)").wrapAll("<div>")}})};/**
+* Add array of classes to element
+*/
+d.classify=function(a){return this.each(function(){jQuery(this).addClass(a.join(" "))})};/**
+* Debounce fn borrowed from Underscore.js
+*/
+d.debounce=function(a,b,c){var d;return function(){var e=this,f=arguments,g=function(){d=null;if(!c){a.apply(e,f)}},h=c&&!d;clearTimeout(d);d=setTimeout(g,b);if(h){a.apply(e,f)}}};/**
+* Detect css transition end event.
+* @see Function from David Walsh: http://davidwalsh.name/css-animation-callback
+*/
+d.transitionend=function(){var a,b=document.createElement("test"),c={transition:"transitionend",OTransition:"oTransitionEnd",MozTransition:"transitionend",WebkitTransition:"webkitTransitionEnd"};for(a in c){if(b.style[a]!==undefined){return c[a]}}};/**
+* Reset scroll timer
+*/
+d.scrolltimer=function(a,b,c){window.clearTimeout(d.state.scrolltimer);d.state.scrolltimer=window.setTimeout(function(){a.removeClass(b+" "+c)},2e3)};/**
+*
+* @param {string} href
+* @param {string} title
+* @param {array} classes
+* @returns {string}
+*/
+d.buttonize=function(b,c,d){var e=a("<a />").attr("href",b).attr("title",c).text(c).classify(d);return a(this).append(e)};/**
+* Set state on window resize
+*/
+d.windowstate=d.debounce(function(){var a=d.state.breakpoint;d.state.breakpoint=d.breakpoint().type;jQuery("body").removeClass(a).addClass(d.state.breakpoint)},100);/**
+* Set state on document scroll
+*/
+d.scrollstate=d.debounce(function(a,b){var c=jQuery("body"),e="scrolling",f=e+"-up",g=e+"-down",h=jQuery(document).scrollTop(),i=c.height()/3,
+//y = cellular.state.scrolltop,
+j=null;if(h>30){c.addClass("scrolled")}else{c.removeClass("scrolled")}if(h>d.state.scrolltop){c.addClass(g).removeClass(f)}else{c.addClass(f).removeClass(g)}
+// Detect if page is scrolled
+if(h<i){c.removeClass("page-middle page-bottom").addClass("page-top")}else if(h>i&&h<i*2){c.removeClass("page-top page-bottom").addClass("page-middle")}else{c.removeClass("page-top page-middle").addClass("page-bottom")}
+//Update global state
+d.state.scrolltop=h;
+// % of doc scrolled
+d.state.scrolled=h/(c.height()-jQuery(window).height())*100},0,true);(function e(){
+// Get initial state
+d.windowstate();d.scrollstate();
+// Update state on user interaction
+jQuery(window).on("resize",d.windowstate);jQuery(document).on("scroll",d.scrollstate)})();d.jAccordion=function(a){var b=jQuery.extend({active:0,// Index value of initial content to display.
+duration:500,// Duration of transition.
+easing:"swing",// Type of easing.
+single:false,// Allow multiple panels to be opened or only 1?
+pclass:"panel"},a),c={};b.pselect="."+b.pclass;/**
+* The <li> object to show.
+*
+* @param object li
+*  $('<li>')
+*/
+c.showContent=function(a){if(b.single){a.siblings().find(b.pselect).slideUp(b.duration,b.easing);a.activate().find(b.pselect).slideDown(b.duration,b.easing)}else{a.toggleClass(d.opts.activeclass).find(b.pselect).slideToggle(b.duration,b.easing)}};/**
+* Generate markup for controls & other elements.
+*
+* @param object $obj
+*/
+c.style=function(a){a.once("jAccordion",function(){a.find("> li").each(function(){var a=jQuery(this);a.kidWrap();a.children().eq(0).addClass("title");a.children().eq(1).classify([d.opts.cclass,"panel"]);a.find(b.pselect).hide();a.find(".title").click(function(b){b.preventDefault();c.showContent(a)})})})};/**
+* Init jAccordion
+*/
+c.init=function(){var a=jQuery(this);
+// Generate markup for accordion
+c.style(a);
+//Set default content
+c.showContent(a.children().eq(b.active))};return this.each(c.init)};d.jCard=function(a){var b=jQuery.extend({cclass:"jCard"},a),c={};c.init=function(){var a=jQuery(this);a.once(b.cclass,function(){var c=a.find("a").eq(0);var d=c.attr("href");if(d!==undefined){var e=jQuery('<a href="'+d+'" />').classify([b.cclass+"-wrap",c.attr("class")?c.attr("class"):null]);
+// .data(a.data());
+a.wrap(e).find("h2, h3").addClass("title")}});a.on("mouseenter touchstart",function(){jQuery(this).activate()}).on("mouseleave touchend",function(){jQuery(this).deactivate()})};return this.each(c.init)};/**
+* jFormal: Improve form interaction
+*/
+d.jFormal=function(a){var b=jQuery.extend({inputs:['input[type="text"]','input[type="email"]','input[type="password"]',"textarea"]},a);return this.each(function(){var a=b.inputs.join(",");
+// get/set value of inputs
+jQuery(a).each(function(){var a=jQuery(this),b=holder=a.attr("placeholder");a.on("focus",function(){holder="";if(this.value===this.defaultValue){this.value=""}}).on("blur",function(){
+// Reset to default value if no changes were made.
+holder=b;if(this.value===""||null){this.value=this.defaultValue}})})})};/**
+* jMmenu: Hamburger menu for mobile devices
+*/
+d.jMmenu=function(a){var b=jQuery.extend({breakpoint:d.opts.breakpoint,// Window breakpoint trigger: 'mobile', 'narrow', 'default', 'large'
+parent:jQuery("body"),// Parent element used to attach menu
+cclass:"jMmenu",// Menu class to test
+triggertext:"Menu",animateclass:"slide-right",// Type of animation
+throttle:101},a),c={};c.mediaQuery=d.debounce(function(a,e){if(b.breakpoint===d.state.breakpoint){var f=a.children([0]),g=null;e.mmenu=true;b.parent.addClass(b.animateclass);if(b.triggertext){g='<span class="'+b.cclass+'-triggertext">'+b.triggertext+"</span>"}a.addClass(b.cclass+"-trigger").append(g);f.addClass(b.cclass+"-menu").prependTo(b.parent)}else{e.mmenu=false;e.active=false;b.parent.removeClass(b.cclass+"-active "+b.cclass+"-inactive "+b.animateclass);a.attr("aria-label","Menu").removeClass(b.cclass+"-trigger");jQuery("."+b.cclass+"-menu").removeClass(b.cclass+"-menu").prependTo(a);jQuery("."+b.cclass+"-triggertext").remove()}c.menutrigger(a,e)},b.throttle);c.menutrigger=function(a,c){var d=[b.cclass+"-active",b.cclass+"-inactive"];if(c.active){a.activate().attr("aria-label","Close Menu");jQuery("."+b.cclass+"-menu").addClass("active");b.parent.addClass(d[0]).removeClass(d[1])}else{a.deactivate().attr("aria-label","Open Menu");jQuery("."+b.cclass+"-menu").removeClass("active");if(c.mmenu){b.parent.addClass(d[1]).removeClass(d[0])}}};c.style=function(a){var b=a.find(">ul"),c=b.find("ul");if(c.length>0){var d=b.find("li ul");d.addClass("child").parent().addClass("parent").css({willChange:"contents"})}};c.listen=function(a,b){jQuery(window).on("resize",function(){c.mediaQuery(a,b)});a.on("click",function(){if(b.mmenu){b.active=b.active?false:true;c.menutrigger(a,b)}});jQuery(document).on("keyup",function(d){if(b.active===true&&d.which===27){d.preventDefault();b.active=false;c.menutrigger(a,b)}});jQuery(".parent > a").on("click",function(a){if(b.mmenu){var c=jQuery(this).parent(),d=c.children(":gt(0)");if(d.length>0){a.preventDefault();if(d.hasClass("active")){c.removeClass("active");d.removeClass("active")}else{c.addClass("active");d.addClass("active")}}}})};c.init=function(){var a=jQuery(this),d={active:false,mmenu:false};a.addClass(b.cclass).once(b.cclass,c.style(a));c.mediaQuery(a,d);c.listen(a,d)};return this.each(c.init)};/**
+* jScrolli : Content carousel/slider
+*/
+d.jScrolli=function(b){var c=a.extend({cclass:"jScrolli",// Object class selector
+active:0,// Index of initially selected slide
+background:"img:first",// Selector for applying background image
+title:"h2, h3",// Selector for applying title class
+//width: "100%", // 'auto' or '[value]', i.e. '300px'
+height:"auto",// 'auto' or '[value]', i.e. '300px'
+controls:{showmarkers:true,showcontrols:true,keyboard:true,swipe:true,autoplay:true,pauseonhover:true,autodim:true,delay:1.4,// Time (seconds) to wait before dimming.
+text:{next:"Next",prev:"Prev",pause:"Pause",play:"Play"}},transition:{pause:5},caption:{enable:true,autohide:false,selector:".caption"}},b),e={};/**
+* Format html buttons for controls.
+*
+* @param string $text
+* @returns string
+*/
+e.button=function(a){return'<a class="'+c.cclass+"-control "+a.toLowerCase()+'">'+a+"</a>"};/**
+* Update next/prev slides.
+*
+* @param object state
+*/
+e.normalize=function(a){a.prev=a.current-1;a.next=a.current+1;if(a.prev<0){a.prev=a.count}if(a.next>a.count){a.next=0}};/**
+* Activate selected slide & corresponding marker.
+*
+* @param int index
+* @param object $obj
+* @param object state
+*/
+e.go=function(a,b,f){if(!f.paused){var g="transition",h=b.find("."+c.cclass+"-slide");f.current=parseInt(a);
+// Normalize state
+e.normalize(f);
+// Update classes on slides for css transition
+jQuery(h[f.prev]).activate("previous");jQuery(h[f.next]).activate("next");jQuery(h[a]).activate();
+// Listen for transition to complete & update classes
+b.parent().addClass(g).on(d.transitionend(),function(){jQuery(this).removeClass(g)});
+// Update the marker
+if(c.controls.showmarkers){e.mark(b,f)}
+// Update the caption
+if(c.caption.enable){e.caption(h,f)}
+// Reset the autoplay timer
+if(c.controls.autoplay){e.updateinterval(b,f)}}};/**
+* Update the current marker.
+*/
+e.mark=function(a,b){a.siblings().find("."+c.cclass+"-marker").eq(b.current).activate()};/**
+* Update slide caption
+*/
+e.caption=function(b,e){var f=b.parent().parent(),g=f.find("> .caption p");
+// Get current slide's caption
+e.caption=f.find(c.caption.selector).eq(e.current).text();g.on(d.transitionend(),function(){
+// Update the active caption
+a(this).text(e.caption).activate()})};/**
+* Reset autoplay timer.
+*/
+e.updateinterval=function(a,b){if(c.controls.autoplay&&!b.paused){clearInterval(b.interval);b.interval=setInterval(function(){b.current=b.next;e.go(b.current,a,b)},c.transition.pause*1e3)}};/**
+* Add event listeners
+*
+* @param {type} $obj
+* @param {type} state
+*/
+e.events=function(a,b){var d=a.siblings(".controls"),f=a.parent(),g=null,h=null;
+// Link markers to respective slides
+if(c.controls.showmarkers){a.siblings().find("."+c.cclass+"-marker").on("click",function(){b.current=jQuery(this).attr("data-href");b.paused=false;e.go(b.current,a,b)})}
+// Previous
+f.find(".prev").on("click",function(c){b.current=b.prev;b.paused=false;e.go(b.current,a,b)});
+// Next
+f.find(".next").on("click",function(c){b.current=b.next;b.paused=false;e.go(b.current,a,b)});/*
+// Play/Pause
+wrap.find('.pause').on('click', function (e) {
+jQuery(this).activate('play')
+.deactivate('pause')
+.text('Play');
+state.paused = true;
+clearInterval(state.interval);
+console.log(state.paused);
+});
+wrap.find('.play').on('click', function (e) {
+jQuery(this).activate('pause')
+.deactivate('play')
+.text('Pause');
+state.paused = false;
+fn.updateinterval($obj, state);
+console.log(state.paused);
+});
+*/
+// Pause/showcontrols
+f.on({mouseover:function(){b.active=true;if(c.controls.pauseonhover){b.paused=true}if(c.controls.autodim){f.activate();window.clearTimeout(f.timeout)}},mouseout:function(){b.active=false;if(c.controls.pauseonhover){b.paused=false}if(c.controls.autodim){f.timeout=window.setTimeout(function(){f.deactivate()},c.controls.delay*1e3)}}});
+// Keyboard
+if(c.controls.keyboard){jQuery(document).on("keyup",function(c){var d=[37,// left
+39];if(d.indexOf(c.which)!==-1){c.preventDefault();b.paused=false;switch(c.which){case 37:b.current=b.prev;break;case 39:b.current=b.next;break}e.go(b.current,a,b)}})}};/**
+* Set height explicitly to prevent 'jumping' content.
+*
+* @param object $obj
+* @param object state
+*/
+e.setheight=function(a,b){jQuery(document).ready(function(){if(c.height==="auto"){a.find("> li").each(function(){var a=this.clientHeight;if(a>b.maxheight){b.maxheight=a}})}else{b.maxheight=c.height}a.height(b.maxheight)})};/**
+* Generate markup for controls & other elements.
+*
+* @param object $obj
+* @param object state
+*/
+e.style=function(a,b){var f=a.find("> li");a.addClass(d.opts.cclass).wrap('<div class="'+d.opts.cclass+" "+c.cclass+'-wrap" />').parent().css({willChange:"contents"});f.addClass(c.cclass+"-slide").each(function(){var a=jQuery(this);a.children().wrapAll('<div class="'+c.cclass+'-slide-content cell" />');if(c.title){a.find(c.title).addClass("title")}if(c.background){var b=a.find(c.background);if(b.length){b.hide();a.css({"background-image":"url("+b.attr("src")+")"}).addClass(c.cclass+"-background")}}});e.setheight(a,b);if(c.controls.showmarkers){var g=jQuery('<ul class="'+c.cclass+'-markers"/>');for(var h=0;h<f.length;h+=1){g.append('<li class="'+c.cclass+'-marker" data-href="'+h+'">'+(h+1)+"</li>")}a.after(g);e.mark(a,b)}if(c.caption.enable){var i=a.find(c.caption.selector);if(i.length){i.hide();a.after('<div class="'+c.cclass+'-caption"><p/></div>')}}if(c.controls.showcontrols){var j,k=[e.button(c.controls.text.prev),e.button(c.controls.text.next)];for(j=0;j<k.length;j+=1){a.parent().prepend(k[j])}}};/**
+* Init jScrolli
+*/
+e.init=function(){var a=jQuery(this),b={active:true,paused:false,count:a.find("> li").length-1,
+//height: o.height ? o.height : fn.setheight($obj, state),
+width:c.width?c.width:a.width(),maxheight:0,interval:0,controls:0,caption:jQuery(c.caption.selector).html(),current:c.active?c.active:0};
+// o.caption.selector = o.caption.selector === 'auto' ? '[title]' : o.caption.selector;
+// Add markup
+a.once(c.cclass,function(){e.style(a,b)});
+// Add Event Listeners
+e.events(a,b);
+// Activate 1st slide
+e.go(b.current,a,b);
+// Start autoplay
+e.updateinterval(a,b)};return this.each(e.init)};d.jSocial=function(b){var c=document.title,d=a("link[rel='canonical']")?a("link[rel='canonical']").attr("href"):window.location;var e=jQuery.extend({sharetitle:"",// "Share this page",
+followtitle:"",// "Follow Us",
+buttonclass:"social",share:[],follow:{}},b),f={};/**
+* Generate markup for buttons.
+*
+* @param object $obj
+*/
+f.style=function(b){b.once("jSocial",function(){if(e.share){var f=a('<div class="jSocial-share" />'),g,h={facebook:{title:"Facebook",url:"http://facebook.com/sharer/sharer.php?u="+d},digg:{title:"Digg",url:"http://digg.com/submit?url="+d+"&title="+c},google:{title:"Google",url:"https://plus.google.com/share?url="+d},twitter:{title:"Twitter",url:"https://twitter.com/intent/tweet?url="+d+"&text="+c},linkedin:{title:"LinkedIn",url:"http://linkedin.com/shareArticle?url="+d+"&title="+c},pinterest:{title:"Pinterest",url:"http://pinterest.com/pin/create/bookmarklet/?url="+d+"&description="+c},reddit:{title:"Reddit",url:"http://reddit.com/submit?url="+d+"&title="+c},stumbleupon:{title:"StumbleUpon",url:"http://www.stumbleupon.com/submit?url="+d+"&title="+c},tumblr:{title:"Tumblr",url:"https://www.tumblr.com/widgets/share/tool?canonicalUrl="+d+"&title="+c}};if(e.sharetitle){f.append('<span class="title">'+e.sharetitle+"</span>");g=e.sharetitle+" on "}e.share.map(function(a){f.buttonize(h[a].url,g+h[a].title,[h[a].title.toLowerCase(),e.buttonclass,"icon"])});b.append(f)}if(Object.keys(e.follow)!=="undefined"){var i=a('<div class="jSocial-follow" />'),j="";if(e.followtitle){i.append('<span class="title">'+e.followtitle+"</span>");j=e.followtitle+" on "}a.each(e.follow,function(){i.buttonize(this.url,j+this.title,[this.title.replace(/ /g,"").toLowerCase(),e.buttonclass,"icon"])});b.append(i)}})};/**
+* Init jSocial
+*/
+f.init=function(){
+// Generate markup for links.
+f.style(jQuery(this))};return this.each(f.init)};/**
+* jTabs : Tabify a list of content
+*/
+d.jTabs=function(a){var b=jQuery.extend({active:0,// Array index of initially active tab
+orient:"horizontal",// || "vertical"
+cclass:"jTabs"},a),c={};/**
+*
+*
+* @param object $obj
+* @param object li
+*/
+c.showContent=function(a,b){var c=b.find(".content"),d=a.parent().find(".panel-content");b.activate();d.fadeOut("normal",function(){jQuery(this).html(c.html()).fadeIn("normal")})};/**
+* Init jTabs
+*/
+c.init=function(){var a=jQuery(this),d=a.find("> li"),e=jQuery("<div/>").classify([b.orient,b.cclass+"-wrap"]),f='<div class="panel"><div class="panel-content" /></div>';a.once(b.cclass,function(){a.wrap(e).after(f);d.each(function(){var a=jQuery(this);a.addClass("tab").kidWrap();
+//Set 1st child as title
+a.children().eq(0).addClass("title");
+//Set wrapper as content
+a.children().eq(1).addClass("content").hide()})});
+//Add classes/functions to each panel
+d.each(function(){var b=jQuery(this);b.click(function(d){d.preventDefault();c.showContent(a,b)})});
+//Set default content
+c.showContent(a,d.eq([b.active]))};return this.each(c.init)};jQuery.fn.extend(d)}}})(jQuery);b["true"]=a})({},function(){return this}());

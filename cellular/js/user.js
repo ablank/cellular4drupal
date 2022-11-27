@@ -1,1 +1,6 @@
-!function($){Drupal.behaviors.cellular_user={attach:function(e,t){var a='input[type="checkbox"], input[type="radio"]';jQuery(a).once(a,function(){var e=$(this),e=(e.attr("type"),e.next("label").length<1&&void 0!==e.attr("id")&&(t=$('<label for="'+e.attr("id")+'" />').css({padding:"0.15em","vertical-align":"top"}),e.after(t)),$('label[for="repeat-settings-fieldset"]')),t=e.prev().find("label");e.prev().nextAll().wrapAll('<div class="daterepeat" />'),$(".daterepeat").hide(),t.on("click",function(){$(".daterepeat").slideToggle()})})}}}(jQuery);
+(function(a,b){/**
+ * @file
+ * Custom javascript for use in your theme.
+ */
+(function(a){Drupal.behaviors.cellular_user={attach:function(b,c){var d='input[type="checkbox"], input[type="radio"]';/* Check for checkboxes/radios without labels & add if necessary */
+jQuery(d).once(d,function(){var b=a(this);if(b.attr("type")==="checkbox"||"radio"){if(b.next("label").length<1&&typeof b.attr("id")!=="undefined"){var c=a('<label for="'+b.attr("id")+'" />').css({padding:"0.15em","vertical-align":"top"});b.after(c)}}var d=a('label[for="repeat-settings-fieldset"]'),e=d.prev().find("label");d.prev().nextAll().wrapAll('<div class="daterepeat" />');a(".daterepeat").hide();e.on("click",function(){a(".daterepeat").slideToggle()})})}}})(jQuery);b["true"]=a})({},function(){return this}());

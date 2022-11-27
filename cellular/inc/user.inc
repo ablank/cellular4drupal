@@ -1,7 +1,1 @@
 <?php
-
-/**
- * @file
- * @file
- * @file
- * .*/
