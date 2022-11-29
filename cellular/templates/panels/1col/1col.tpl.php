@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Template for a single column panel layout.
  */
@@ -15,6 +17,7 @@
 <div<?php
 if (!empty($css_id)):
   print " id=\"$css_id\"";
+
 endif;
 
 ?> class="panels cell <?php print ($classes); ?>">
@@ -22,6 +25,7 @@ endif;
   <?php
   if ($content['body']):
     print $content['body'];
+
   endif;?>
 
 </div>

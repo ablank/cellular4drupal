@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Add/Update/Delete stylesheets.
@@ -24,16 +25,16 @@ function subcellular_css_alter(&$css) {
 
   // Uncomment this block to remove module stylesheets.
   /* $exclude = array(
-    'calendar' => 'css/calendar_multiday.css',
-    'ctools' => 'css/ctools.css',
-    'views' => 'css/views.css',
-    'logintoboggan' => 'logintoboggan.css',
-    'panels' => array(
-    'css/panels.css',
-    'plugins/layouts/flexible/flexible.css'
-    ),
-    );
+  'calendar' => 'css/calendar_multiday.css',
+  'ctools' => 'css/ctools.css',
+  'views' => 'css/views.css',
+  'logintoboggan' => 'logintoboggan.css',
+  'panels' => array(
+  'css/panels.css',
+  'plugins/layouts/flexible/flexible.css'
+  ),
+  );
 
-    cellular_remove_css($css, $exclude);
+  cellular_remove_css($css, $exclude);
    */
 }

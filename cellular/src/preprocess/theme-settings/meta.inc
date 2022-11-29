@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Theme-settings: Set copyright & favicons.
  */
+
 $form[0]['meta'] = array(
   '#type' => 'fieldset',
   '#title' => t('Meta'),
@@ -10,12 +12,12 @@ $form[0]['meta'] = array(
   '#collapsed' => FALSE,
 );
 /*
-  $form[0]['meta']['dev'] = array(
-  '#type' => 'checkbox',
-  '#title' => t('Development mode'),
-  '#description' => t("Print the page variables array in the messages area, using Devel if available."),
-  '#default_value' => theme_get_setting('dev'),
-  );
+$form[0]['meta']['dev'] = array(
+'#type' => 'checkbox',
+'#title' => t('Development mode'),
+'#description' => t("Print the page variables array in the messages area, using Devel if available."),
+'#default_value' => theme_get_setting('dev'),
+);
  */
 
 $form[0]['meta']['cookie_time'] = array(

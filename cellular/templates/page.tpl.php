@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Page Template.
  */
@@ -90,11 +92,13 @@
       <div id="header-top" class="cell-100">
         <?php print render($page['header_top']); ?>
       </div>
-    <?php endif; ?>
+    <?php
+    endif; ?>
     <div class="cell container">
       <?php
       if (!empty($page['logo'])) :
         print $page['logo'];
+
       endif;
       ?>
 
@@ -102,7 +106,8 @@
         <div id="main-menu">
           <?php print render($main_menu); ?>
         </div>
-      <?php endif; ?>
+      <?php
+      endif; ?>
     </div>
 
     <?php if (!empty($page['header_bottom'])) : ?>
@@ -111,7 +116,8 @@
           <?php print render($page['header_bottom']); ?>
         </div>
       </div>
-    <?php endif; ?>
+    <?php
+    endif; ?>
 
   </div>
 
@@ -120,35 +126,42 @@
     <div id="console" class="cell">
       <?php
       print render($page['console']);
-      if ($show_messages && $messages) :
+if ($show_messages && $messages) :
         print $messages;
-      endif;
+
+endif;
       ?>
     </div>
-  <?php endif; ?>
+  <?php
+  endif; ?>
 
   <div id="content" class="cell container">
     <?php
-    // Breadcrumb Navigation.
+
+// Breadcrumb Navigation.
     if ($breadcrumb && !$is_front) :
       print $breadcrumb;
+
     endif;
     ?>
     <?php
     if ($title) :
       print render($title_prefix);
-      print '<h1 id="page-title">' . $title . '</h1>';
-      print render($title_suffix);
+print '<h1 id="page-title">' . $title . '</h1>';
+print render($title_suffix);
+
     endif;
     ?>
     <?php if (!empty($tabs['#primary']) || !empty($tabs['#secondary'])): ?>
       <div id="page-tabs">
         <?php print render($tabs); ?>
       </div>
-    <?php endif; ?>
+    <?php
+    endif; ?>
     <?php
     if ($action_links) :
       print '<ul class="links">' . render($action_links) . '</ul>';
+
     endif;
     ?>
 
@@ -156,16 +169,21 @@
       <div id="content-top" class="cell-100">
         <?php print render($page['content_top']); ?>
       </div>
-    <?php endif; ?>
     <?php
-    // Main Page Content.
+    endif; ?>
+    <?php
+
+// Main Page Content.
     print render($page['content']);
     ?>
     <?php if ($page['content_bottom']) : ?>
       <div id="content-bottom" class="cell-100">
         <?php print render($page['content_bottom']); ?>
       </div>
-    <?php endif; //#content-bottom  ?>
+    <?php
+// #content-bottom
+    endif;
+?>
   </div>
 
   <?php if ($page['footer_top'] || $page['footer'] || $page['footer_bottom'] || $page['copyright']) : ?>
@@ -176,22 +194,33 @@
             <?php print render($page['footer_top']); ?>
           </div>
         </div>
-      <?php endif; ?>
+      <?php
+      endif; ?>
       <?php if ($page['footer']) : ?>
         <div class="cell-100 container">
           <?php print render($page['footer']); ?>
         </div>
-      <?php endif; ?>
+      <?php
+      endif; ?>
       <div id="footer-bottom" class="cell-100">
         <div class="container">
           <?php if ($page['footer_bottom']) : ?>
           </div>
           <?php print render($page['footer_bottom']); ?>
-        <?php endif; //#footer-bottom   ?>
+<?php
+// #footer-bottom
+          endif;
+?>
       </div>
       <?php if (!empty($page['copyright'])): ?>
         <small id="copyright"><?php print $page['copyright']; ?></small>
-      <?php endif; //#copyright  ?>
+      <?php
+// #copyright
+      endif;
+?>
     </div>
-  <?php endif; //#footer  ?>
+  <?php
+// #footer
+  endif;
+?>
 </div>

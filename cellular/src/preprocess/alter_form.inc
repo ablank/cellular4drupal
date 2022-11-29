@@ -9,9 +9,8 @@
  * Implements hook_form_alter().
  */
 function cellular_form_alter(&$form, &$form_state, $form_id) {
-//dpm($form_state);
-  //$form['#validate'][] = 'cellular_form_validate';
-
+  // dpm($form_state);
+  // $form['#validate'][] = 'cellular_form_validate';.
   switch ($form['#id']) {
     /* Search page. */
     case 'search-form':
@@ -45,21 +44,21 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
           break;
       }
 
-      // Username
+      // Username.
       $form['name'] = array(
         '#type' => 'textfield',
         '#title' => t('Name'),
         '#default_value' => t('Username'),
         '#size' => CELLULAR_INPUT_SIZE,
       );
-      // Password
+      // Password.
       $form['pass'] = array(
         '#type' => 'password',
         '#title' => t('Password'),
         '#default_value' => t('Password'),
         '#size' => CELLULAR_INPUT_SIZE,
       );
-      // Submit button
+      // Submit button.
       $form['actions']['submit']['#attributes']['value'] = t('Log in');
 
       /* Request New Password & Register New Account Links. */
@@ -73,13 +72,15 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
           $login_links .= l(t('Register'), "user/register", array(
             'attributes' => array(
               'class' => array('register'),
-          )));
+            ),
+          ));
         }
         if (!empty($user_pass)) {
           $login_links .= l(t('Forgotten Password?'), "user/password", array(
             'attributes' => array(
               'class' => array('password'),
-          )));
+            ),
+          ));
         }
         $login_links .= '</div>';
       }
@@ -98,7 +99,6 @@ function cellular_form_alter(&$form, &$form_state, $form_id) {
       // Customize Submit button.
       $form['actions']['submit']['#value'] = t('Submit');
       $form['actions']['submit']['#attributes']['class'][] = 'right';
-
 
       // Remove text format option descriptions.
       $form['comment_body']['#after_build'][] = 'cellular_form_format_opt';

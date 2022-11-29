@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Vars & regions for left inset panel layout.
@@ -23,9 +24,8 @@ $plugin = array(
  */
 function template_preprocess_subcellular_layout_standard(&$variables) {
   // Add a class to the panel
-  //$variables['attributes_array']['class'][] = 'some-class';
-
-  foreach($variables['content'] as $name => $item) {
+  // $variables['attributes_array']['class'][] = 'some-class';.
+  foreach ($variables['content'] as $name => $item) {
     $variables['region_attributes'][$name]['class'][] = drupal_clean_css_identifier($name);
     $variables['region_attributes'][$name]['class'][] = 'cell';
   }

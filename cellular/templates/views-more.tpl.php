@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Theme the more link rendered by views.

@@ -69,4 +69,5 @@ C:/Ruby193/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$grey\".\A         on line 39 of C:/www/dev/drupal7/sites/all/themes/Cellular/cellular/src/sass/drupal/user/admin_menu.scss\A \A 34:   left: 0;\A 35:   right: 0;\A 36:   width: 100%;\A 37:   //height: 2em;\A 38:   opacity: 0.8;\A 39:   color: $grey;\A 40:   background-color: $c1;\A 41:   background: rgba($c1, 0.9);\A 42:   box-shadow: 0 -10px 20px 13px #000;\A 43:   @include transition();\A 44:   &:hover {"; }
+  content: "Error: Undefined variable: \"$grey\".\A         on line 39 of C:/www/dev/drupal7/sites/all/themes/Cellular/cellular/src/sass/drupal/user/admin_menu.scss\A \A 34:   left: 0;\A 35:   right: 0;\A 36:   width: 100%;\A 37:   //height: 2em;\A 38:   opacity: 0.8;\A 39:   color: $grey;\A 40:   background-color: $c1;\A 41:   background: rgba($c1, 0.9);\A 42:   box-shadow: 0 -10px 20px 13px #000;\A 43:   @include transition();\A 44:   &:hover {";
+}

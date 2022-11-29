@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Custom Panels functions.
@@ -16,6 +17,7 @@ function cellular_panels_default_style_render_region($vars) {
  * Implements template_preprocess_panels_pane().
  *
  * @param array $vars
+ */
 function cellular_preprocess_panels_pane(&$vars) {
   $content = &$vars['content'];
 
@@ -39,13 +41,13 @@ function cellular_preprocess_panels_pane(&$vars) {
       );
       unset($content->content['#contextual_links']);
 
-      // Add content to $element array
+      // Add content to $element array.
       if (is_array($content->content)) {
         $element['#element'] = $content->content;
       }
 
       $element = contextual_pre_render_links($element);
-      if(!empty($element['#links'])) {
+      if (!empty($element['#links'])) {
         $links += $element['#links'];
       }
     }
@@ -66,14 +68,14 @@ function cellular_preprocess_panels_pane(&$vars) {
     }
   }
 
-  // basic classes
+  // Basic classes.
   $vars['classes_array'][] = 'panel-pane';
   $vars['id'] = '';
 
-  // Add some usable classes based on type/subtype
+  // Add some usable classes based on type/subtype.
   ctools_include('cleanstring');
-  $type_class = $content->type ? 'pane-'. ctools_cleanstring($content->type, array('lower case' => TRUE)) : '';
-  $subtype_class = $content->subtype ? 'pane-'. ctools_cleanstring($content->subtype, array('lower case' => TRUE)) : '';
+  $type_class = $content->type ? 'pane-' . ctools_cleanstring($content->type, array('lower case' => TRUE)) : '';
+  $subtype_class = $content->subtype ? 'pane-' . ctools_cleanstring($content->subtype, array('lower case' => TRUE)) : '';
 
   // Sometimes type and subtype are the same. Avoid redundant classes.
   $vars['classes_array'][] = $type_class;
@@ -118,5 +120,5 @@ function cellular_preprocess_panels_pane(&$vars) {
   }
 
   $vars['content'] = !empty($content->content) ? $content->content : '';
+  * /
 }
- */

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for a 3 column (20%/20%/60%) panel layout.

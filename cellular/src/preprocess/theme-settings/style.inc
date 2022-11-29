@@ -1,9 +1,10 @@
 <?php
+
 /**
  * @file
  * Theme-settings: Display & styling settings.
  */
-//
+
 $form[0]['style_settings'] = array(
   '#type' => 'fieldset',
   '#title' => t('Style'),

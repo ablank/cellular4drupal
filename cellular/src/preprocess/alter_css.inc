@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Add/Update/Delete stylesheets.
@@ -16,5 +17,5 @@ function cellular_css_alter(&$css) {
     cellular_jqueryui_update_css($css);
   }
 
-  //dpm($css);
+  // dpm($css);
 }

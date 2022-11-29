@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Functions to add javascript plugins.
@@ -14,7 +15,7 @@ function cellular_plugins_css() {
   $plugin_path = '/lib/css/';
   $plugin_css = array();
   // Plugins available through cellular, styles added based on theme settings.
-  // $plugin_css paths are relative to /libraries/cellular/css/
+  // $plugin_css paths are relative to /libraries/cellular/css/.
   theme_get_setting('prism') == 1 ? $plugin_css['prism'] = array(
     'file' => 'prism.css',
     'weight' => 101,

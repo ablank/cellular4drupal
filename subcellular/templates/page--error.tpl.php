@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Automated error page.

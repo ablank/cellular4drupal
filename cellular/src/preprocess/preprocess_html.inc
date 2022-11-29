@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * HTML preprocess functions.
@@ -53,7 +54,7 @@ function cellular_preprocess_html(&$vars) {
       $cellular_settings['ui']['jSocial_share'] = cellular_social_media_share();
     }
   }
-  // Add settings to Drupal.settings.cellular
+  // Add settings to Drupal.settings.cellular.
   drupal_add_js(array('cellular' => $cellular_settings), 'setting');
   // Add theme scripts.
   cellular_add_js($scripts);
@@ -104,19 +105,19 @@ function cellular_preprocess_html(&$vars) {
   if (user_is_logged_in()) {
     // Add JS.
     drupal_add_js($cellular_theme_path . '/js/user.js', array());
-    // Add CSS
+    // Add CSS.
     $user_style = array(
       'weight' => 999,
       'group' => CSS_THEME,
       'preprocess' => TRUE,
       'media' => 'all',
       'every_page' => TRUE,
-      'browsers' => array('IE' => TRUE, '!IE' => TRUE)
+      'browsers' => array('IE' => TRUE, '!IE' => TRUE),
     );
     drupal_add_css($cellular_theme_path . '/css/user.css', $user_style);
   }
 
-  //dpm($vars);
+  // dpm($vars);
 }
 
 /**
@@ -178,7 +179,6 @@ function cellular_rdf(&$vars) {
   // Add extra namespaces if needed:
   // $vars['rdf_namespaces'] .= "\nxmlns:og=\"http://opengraphprotocol.org/schema/\"";
   // Check support for RDF & add attributes:
-    $vars['rdf_prefixes'] = '';
   if (module_exists('rdf')) {
     // @see http://phase2technology.com/?p=552
     $head_attributes = array();
@@ -186,15 +186,15 @@ function cellular_rdf(&$vars) {
     $namespaces = explode("\n", trim($vars['rdf_namespaces']));
 
     foreach ($namespaces as $name) {
-      list($key, $url) = explode('=', $name, 2);
-      list($xml, $space) = explode(':', $key, 2);
+      [$key, $url] = explode('=', $name, 2);
+      [$xml, $space] = explode(':', $key, 2);
       unset($xml);
       $url = trim(str_replace('"', '', $url));
       $prefixes[] = "\n" . $space . ": " . $url;
     }
     $head_attributes['prefix'] = implode(' ', $prefixes);
 
-     drupal_attributes($head_attributes);
+    $vars['rdf_prefixes'] = drupal_attributes($head_attributes);
   }
 
   // Check if google+ metatags are present, add emtpy string if not.
@@ -288,9 +288,9 @@ function cellular_favicons() {
 
   foreach ($favicons as &$favicon) {
     if (isset($favicon)) {
-      // Set tag type to <link>
+      // Set tag type to <link>.
       $favicon['tag'] = 'link';
-      // Set href relative to /assets/favicons/
+      // Set href relative to /assets/favicons/.
       $favicon['href'] = $GLOBALS['base_url'] . '/' . CURRENT_THEME_PATH . '/assets/favicons/' . $favicon['href'];
     }
   }

@@ -1,15 +1,17 @@
 <?php
+
 /**
  * @file
  * Vars & regions for stacked panel layout.
  */
+
 // Customize the number of stacked regions to best suit your needs.
 $stacks = 3;
 
 /**
  *
- * @param type $stack
- * @return type
+ * @param mixed $stack
+ * @return mixed
  */
 function _layout_stacked_layout_stacks($stack = NULL) {
   $stacks = array(
@@ -37,8 +39,9 @@ function _layout_stacked_layout_stacks($stack = NULL) {
 /**
  * Generate the regions variable based on # of stacks.
  *
- * @param type $stacks
- * @return type
+ * @param mixed $stacks
+ *
+ * @return mixed
  */
 function _layout_stacked_generate_regions($stacks = 1) {
   $regions = array(
@@ -62,23 +65,22 @@ function _layout_stacked_generate_regions($stacks = 1) {
 function template_preprocess_layout_stacked(&$variables) {
   $variables['stack'] = array();
   // Add a class to the panel
-  //$variables['attributes_array']['class'][] = 'some-class';
-
+  // $variables['attributes_array']['class'][] = 'some-class';.
   foreach ($variables['content'] as $name => $region) {
-    // Get index from last character of $name
+    // Get index from last character of $name.
     $index = substr($name, -1);
     $match_name = preg_match('/[^_]*/', $name, $region_name);
 
     if (!empty($region)) {
       $classes = &$variables['region_attributes'][$name]['class'];
       $stack = &$variables['stack'][$index];
-// Add a class to each active region.
+      // Add a class to each active region.
       $classes[] = 'content';
-      //$classes[] = $region_name[0];
-// Group elements into stacks & add classes specific to each region.
+      // $classes[] = $region_name[0];
+      // Group elements into stacks & add classes specific to each region.
       switch ($region_name[0]) {
-        case 'header' :
-        case 'footer' :
+        case 'header':
+        case 'footer':
           $variables['region_attributes'][$name]['class'][] = 'cell';
           break;
 
@@ -110,10 +112,10 @@ function template_preprocess_layout_stacked(&$variables) {
       $content = $variables['content'];
       $attr = &$variables['region_attributes'];
 
-      //drupal_set_message(print_r($attr[$name]['class']));
+      // drupal_set_message(print_r($attr[$name]['class']));.
       switch ($region_name[0]) {
         case 'split':
-          //$c1 = $variables['content']['split_left_' . $index];
+          // $c1 = $variables['content']['split_left_' . $index];
           $c2 = $variables['content']['split_right_' . $index];
           if (
           isset($c2) &&
@@ -137,11 +139,11 @@ function template_preprocess_layout_stacked(&$variables) {
               // If 1st & 3rd col are set.
               $attr['triptych_center_' . $index]['class'][] = 'offset-33';
               /*
-                if (
-                !$attr['triptych_center_' . $index]['class']['offset-33']
-                ) {
-                $attr['triptych_center_' . $index]['class'][] = 'extra-offset-33';
-                }
+              if (
+              !$attr['triptych_center_' . $index]['class']['offset-33']
+              ) {
+              $attr['triptych_center_' . $index]['class'][] = 'extra-offset-33';
+              }
                */
             }
           }
@@ -198,10 +200,11 @@ function template_preprocess_layout_stacked(&$variables) {
       }
     }
   }
-  //dpm($variables['region_attributes']);
-  //dpm($variables['stack']);
-  //dpm($variables['content']);
+  // dpm($variables['region_attributes']);
+  // dpm($variables['stack']);
+  // dpm($variables['content']);.
 }
+
 /**
  * Panels layout settings.
  */

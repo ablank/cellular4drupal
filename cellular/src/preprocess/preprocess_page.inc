@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template page preprocess functions.
@@ -23,14 +24,14 @@ function cellular_preprocess_page(&$vars) {
   $vars['page']['logo'] = '<div class="logo">' . l($vars['site_name'], '<front>') . '</div>';
   // Set search block variable for addition to page templates.
   $vars['page']['search_box'] = module_exists('search') ?
-  drupal_get_form('search_form'): '';
+  drupal_get_form('search_form') : '';
   $vars['page']['skiplinks'] = cellular_skiplinks();
   // Set copyright info if provided.
   $copyright = theme_get_setting('copyright');
   $vars['page']['copyright'] = !empty($copyright) ? "&copy; " . date("Y") . " $copyright"
     : '';
 
-  //dpm($vars);
+  // dpm($vars);
 }
 
 /**

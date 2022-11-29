@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Functions for updating jQuery & jQuery.ui.
@@ -85,7 +86,7 @@ function cellular_jquery_update(&$javascript) {
   $jquery = array(
     'default' => $jq['default'],
     'file' => '/jquery/' . $jq['file'],
-    //'file' => 'jquery-' . $jq['version'] . '.min.js',
+    // 'file' => 'jquery-' . $jq['version'] . '.min.js',
     'version' => $jq['version'],
     'every_page' => TRUE,
     'group' => JS_LIBRARY,
@@ -156,8 +157,7 @@ function cellular_jqueryui_update_js(&$javascript) {
           'version' => $jq['ui']['version'],
           'group' => JS_LIBRARY,
           'every_page' => FALSE,
-          'weight' => isset($javascript[$default]['weight']) ? $javascript[$default]['weight']
-            : -99,
+          'weight' => $javascript[$default]['weight'] ?? -99,
           'file' => "/jquery-ui/" . $jq['ui']['version'] . "/minified/jquery.$widget.min.js",
           'preprocess' => TRUE,
           'browsers' => array('IE' => TRUE, '!IE' => TRUE),
@@ -177,7 +177,7 @@ function cellular_jqueryui_update_js(&$javascript) {
       }
       else {
         // Use local source, only include only scripts that are needed.
-        // Recommend AdvAgg, or use core aggregation in
+        // Recommend AdvAgg, or use core aggregation in.
         cellular_js_override($javascript, $script['jqueryui'], TRUE);
       }
     }
@@ -225,8 +225,7 @@ function cellular_jqueryui_update_css(&$css) {
         ),
       );
       // Remove default after collecting style info.
-     // unset($css[$default]);
-
+      // unset($css[$default]);.
       if ($ui['theme'] === 'custom') {
         // Set path to local custom file if selected.
         $v = $ui['version'] === '1.10.4' ? '1.10' : '1.9';

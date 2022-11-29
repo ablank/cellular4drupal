@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Cellular form utility functions.
@@ -16,7 +17,7 @@
 function cellular_form_element_attributes(&$element) {
   // $element['#theme_wrappers'] = NULL;
   $attributes = array();
-  //empty($element['#value']) ? NULL : $attributes['value'] = $element['#value'];
+  // empty($element['#value']) ? NULL : $attributes['value'] = $element['#value'];.
   empty($element['#name']) ? NULL : $attributes['name'] = $element['#name'];
   empty($element['#id']) ? NULL : $attributes['id'] = $element['#id'];
   empty($element['#title']) ? NULL : $attributes['title'] = $element['#title'];
@@ -43,7 +44,7 @@ function cellular_xinputs(&$element) {
   $attributes = cellular_form_element_attributes($element);
 
   $output = "<div" . drupal_attributes($attributes) . ">\n";
-  $output .= isset($element['#children']) ? $element['#children'] : NULL;
+  $output .= $element['#children'] ?? NULL;
   $output .= "\n</div>\n";
 
   return $output;

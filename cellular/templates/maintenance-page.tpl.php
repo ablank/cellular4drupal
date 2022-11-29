@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Display a single Drupal page while offline.
  */
@@ -10,7 +12,6 @@
  */
 $maintenance_title = !empty($site_name) ? $site_name : 'This site';
 $maintenance_title .= ' is currently down for maintenance';
-
 $maintenance_message = 'We apologize for the inconvenience- check back in a few minutes!';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -35,6 +36,7 @@ $maintenance_message = 'We apologize for the inconvenience- check back in a few 
         <?php
         if (!empty($page['logo'])) :
           print $page['logo'];
+
         endif;
         ?>
 
@@ -42,7 +44,8 @@ $maintenance_message = 'We apologize for the inconvenience- check back in a few 
           <div id="main-menu">
             <?php print render($main_menu); ?>
           </div>
-        <?php endif; ?>
+        <?php
+        endif; ?>
       </div>
 
       <?php if (!empty($tabs)): ?>
@@ -50,7 +53,8 @@ $maintenance_message = 'We apologize for the inconvenience- check back in a few 
           <?php print render($tabs); ?>
         </div>
 
-      <?php endif; ?>
+      <?php
+      endif; ?>
       <div id="content" class="cell container">
         <h1 id="page-title"><?php print t($maintenance_title); ?></h1>
 

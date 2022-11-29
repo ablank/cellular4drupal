@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for a 2 column (60%/40%) panel layout.
@@ -23,12 +24,12 @@ endif;
     <div class="panel-left cell-60">
     <?php print $content['left']; ?>
     </div>
-  <?php endif; ?>
+    <?php endif; ?>
 
     <?php if ($content['right']): ?>
     <div class="panel-right cell-40">
     <?php print $content['right']; ?>
     </div>
-<?php endif; ?>
+    <?php endif; ?>
 
 </div>

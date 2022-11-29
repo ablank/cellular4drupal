@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Vars & regions for left inset panel layout.

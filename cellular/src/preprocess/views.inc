@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Preprocess functions for Views.

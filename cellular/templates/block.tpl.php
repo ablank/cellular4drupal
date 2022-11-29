@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Block template.
  */
@@ -47,18 +49,21 @@
   <?php
   if ($block->subject):
     print render($title_prefix);
-    print "<h3$title_attributes>$block->subject</h3>";
-    print render($title_suffix);
+print "<h3$title_attributes>$block->subject</h3>";
+print render($title_suffix);
+
   endif;
 
   ?>
   <?php
   if ($content_attributes) :
     print "<div$content_attributes>";
+
   endif; ?>
   <?php print $content ?>
   <?php
   if ($content_attributes) :
     print "</div>";
+
   endif; ?>
 </div>

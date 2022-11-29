@@ -22,16 +22,19 @@ function cellular_build_links($links, $parent) {
     if (!empty($link['tag'])) {
       // Use preformatted html if set.
       $output .= "\n " . $link['tag'] . "\n";
-    } else {
+    }
+    else {
       // Or create link using key's attributes:
       if (!empty($link['url'])) {
         $text = $parent['link_text'] . $link['name'];
         $output .= l(t($text), $link['url'], array(
-              'attributes' => array(
-                'class' => array(
-                  $parent['link_class'],
-                  $link['class'],
-            )))) . "\n";
+          'attributes' => array(
+            'class' => array(
+              $parent['link_class'],
+              $link['class'],
+            ),
+          ),
+        )) . "\n";
       }
     }
 
@@ -40,7 +43,7 @@ function cellular_build_links($links, $parent) {
       drupal_add_js($link['script'], array(
         'type' => 'inline',
         'group' => JS_THEME,
-        'weight' => isset($link['weight']) ? $link['weight'] : 100,
+        'weight' => $link['weight'] ?? 100,
       ));
     }
   }
@@ -137,30 +140,30 @@ function cellular_social_media_follow() {
   $links = array();
 
   $set['fb'] == 1 ? $links['facebook'] = array(
-        'title' => "Facebook",
-        'url' => $url['facebook'],
-          ) : NULL;
+    'title' => "Facebook",
+    'url' => $url['facebook'],
+  ) : NULL;
   $set['google'] == 1 ? $links['google'] = array(
-        'title' => "Google",
-        'url' => $url['google'],
-          ) : NULL;
+    'title' => "Google",
+    'url' => $url['google'],
+  ) : NULL;
   $set['twitter'] == 1 ? $links['twitter'] = array(
-        'title' => "Twitter",
-        'url' => $url['twitter'],
-          ) : NULL;
+    'title' => "Twitter",
+    'url' => $url['twitter'],
+  ) : NULL;
   $set['linkedin'] == 1 ? $links['linkedin'] = array(
-        'title' => "LinkedIn",
-        'url' => $url['linkedin'],
-          ) : NULL;
+    'title' => "LinkedIn",
+    'url' => $url['linkedin'],
+  ) : NULL;
   $set['github'] == 1 ? $links['github'] = array(
-        'title' => "Github",
-        'url' => $url['github'],
-          ) : NULL;
+    'title' => "Github",
+    'url' => $url['github'],
+  ) : NULL;
 
-  if(empty($links)){
+  if (empty($links)) {
     $links = NULL;
   }
-  
+
   return $links;
 }
 
@@ -185,7 +188,7 @@ function cellular_social_media_share() {
   $set['stumbleupon'] == 1 ? $links[] = 'stumbleupon' : NULL;
   $set['tumblr'] == 1 ? $links[] = 'tumblr' : NULL;
 
-  if(empty($links)){
+  if (empty($links)) {
     $links = NULL;
   }
 

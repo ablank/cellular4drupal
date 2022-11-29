@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Page Template.
@@ -165,7 +166,9 @@
       <div id="content-bottom" class="cell-100">
         <?php print render($page['content_bottom']); ?>
       </div>
-    <?php endif; //#content-bottom  ?>
+    <?php
+// #content-bottom  endif;
+?>
   </div>
 
   <?php if ($page['footer_top'] || $page['footer'] || $page['footer_bottom'] || $page['copyright']) : ?>
@@ -187,11 +190,17 @@
           <?php if ($page['footer_bottom']) : ?>
           </div>
           <?php print render($page['footer_bottom']); ?>
-        <?php endif; //#footer-bottom   ?>
+          <?php
+// #footer-bottom   endif;
+?>
       </div>
       <?php if (!empty($page['copyright'])): ?>
         <small id="copyright"><?php print $page['copyright']; ?></small>
-      <?php endif; //#copyright  ?>
+      <?php
+// #copyright  endif;
+?>
     </div>
-  <?php endif; //#footer  ?>
+  <?php
+// #footer  endif;
+?>
 </div>

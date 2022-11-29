@@ -1,23 +1,25 @@
 <?php
+
 /**
  * @file
  * Set element markup.
  */
+
 /**
  * Implements hook_theme().
  */
 /*
-  function cellular_theme($existing, $type, $theme, $path) {
-  $theme = array();
-  $theme['node__forum'] = array(
-  'render element' => 'content',
-  'base hook' => 'node',
-  'template' => 'node--forum',
-  'path' => drupal_get_path('theme', 'cellular') . '/templates',
-  );
+function cellular_theme($existing, $type, $theme, $path) {
+$theme = array();
+$theme['node__forum'] = array(
+'render element' => 'content',
+'base hook' => 'node',
+'template' => 'node--forum',
+'path' => drupal_get_path('theme', 'cellular') . '/templates',
+);
 
-  return $theme;
-  }
+return $theme;
+}
  */
 
 /**
@@ -25,9 +27,9 @@
  */
 function cellular_links($vars) {
   global $language_url;
-  $links = $vars ['links'];
-  $attributes = $vars ['attributes'];
-  $heading = $vars ['heading'];
+  $links = $vars['links'];
+  $attributes = $vars['attributes'];
+  $heading = $vars['heading'];
   $output = '';
 
   if (count($links) > 0) {
@@ -43,11 +45,11 @@ function cellular_links($vars) {
           'level' => 'h2',
         );
       }
-      $output .= '<' . $heading ['level'];
-      if (!empty($heading ['class'])) {
-        $output .= drupal_attributes(array('class' => $heading ['class']));
+      $output .= '<' . $heading['level'];
+      if (!empty($heading['class'])) {
+        $output .= drupal_attributes(array('class' => $heading['class']));
       }
-      $output .= '>' . check_plain($heading ['text']) . '</' . $heading ['level'] . '>';
+      $output .= '>' . check_plain($heading['text']) . '</' . $heading['level'] . '>';
     }
 
     $output .= '<ul' . drupal_attributes($attributes) . '>';
@@ -60,13 +62,13 @@ function cellular_links($vars) {
 
       // Add first, last and active classes to the list of links to help out themers.
       if ($i == 1) {
-        $class [] = 'first';
+        $class[] = 'first';
       }
       if ($i == $num_links) {
-        $class [] = 'last';
+        $class[] = 'last';
       }
-      if (isset($link['href']) && ($link['href'] == $_GET ['q'] || ($link['href'] == '<front>' && drupal_is_front_page())) && (empty($link['language']) || $link['language']->language == $language_url->language)) {
-        $class [] = 'active';
+      if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page())) && (empty($link['language']) || $link['language']->language == $language_url->language)) {
+        $class[] = 'active';
       }
       $output .= '<li' . drupal_attributes(array('class' => $class)) . '>';
 
@@ -151,7 +153,7 @@ function cellular_breadcrumb(&$vars) {
  * Implements theme_file_icon().
  */
 function cellular_file_icon(&$vars) {
-  //Use css classes to style output instead of <img>.
+  // Use css classes to style output instead of <img>.
   $file = $vars['file'];
   $mime = check_plain($file->filemime);
   $generic_mime = (string) file_icon_map($file);

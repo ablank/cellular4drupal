@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
- * jQuery CDN & version settings
+ * JQuery CDN & version settings.
  */
+
 /*
  * jQuery CDN options.
  */
@@ -64,4 +66,3 @@ $ui_themes = array(
   'ui-lightness' => t('UI-Lightness'),
   'vader' => t('Vader'),
 );
-

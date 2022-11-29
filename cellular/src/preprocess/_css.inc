@@ -1,7 +1,6 @@
 <?php
+
 /**
  * @file
- * Array of CSS to attach
+ * Array of CSS to attach.
  */
-
-

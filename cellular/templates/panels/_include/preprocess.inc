@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Preprocess functions for panels.
@@ -7,7 +8,7 @@
 /**
  *
  *
- * @param type $vars
+ * @param mixed $vars
  * @param int $left
  * @param int $right
  */
@@ -33,7 +34,7 @@ function cellular_panels_preprocess_split(&$vars, $left, $right) {
 /**
  *
  *
- * @param type $vars
+ * @param mixed $vars
  * @param int $left
  * @param int $right
  */
@@ -79,7 +80,7 @@ function cellular_panels_preprocess_triptych(&$vars, $left, $center, $right) {
 /**
  *
  *
- * @param type $vars
+ * @param mixed $vars
  * @param int $left
  * @param int $right
  */
@@ -128,7 +129,7 @@ function cellular_panels_preprocess_quarters(&$vars, $left, $midleft, $midright,
         $vars['region_attributes']['right']['class'][] = "offset-" . $left + $midleft + $midright;
       }
       elseif (
-      !empty($vars['content'] ['left']) &&
+      !empty($vars['content']['left']) &&
       empty($vars['content']['midleft']) &&
       empty($vars['content']['midright']) &&
       !empty($vars['content']['right'])
@@ -149,7 +150,7 @@ function cellular_panels_preprocess_quarters(&$vars, $left, $midleft, $midright,
 /**
  *
  *
- * @param type $vars
+ * @param mixed $vars
  * @param int $left
  * @param int $right
  */
@@ -172,29 +173,29 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       $content = $vars['content'];
 
       switch($region){
-        case 'left':
-          if(empty($content['left'])) {
+      case 'left':
+      if(empty($content['left'])) {
 
-          }
-          break;
-
-        case 'midleft':
-          if(empty($content)) {
-
-          }
-          break;
-
-        case 'center':
-          break;
-
-        case 'midright':
-          break;
-
-        case 'right':
-          break;
       }
-      */
-      
+      break;
+
+      case 'midleft':
+      if(empty($content)) {
+
+      }
+      break;
+
+      case 'center':
+      break;
+
+      case 'midright':
+      break;
+
+      case 'right':
+      break;
+      }
+       */
+
       if (
       empty($vars['content']['left']) &&
       !empty($vars['content']['midleft'])
@@ -206,7 +207,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['midleft']) &&
       !empty($vars['content']['center'])
       ) {
-        (string)$offset = (int)$left + (int)$midleft;
+        (string) $offset = (int) $left + (int) $midleft;
         $vars['region_attributes']['center']['class'][] = 'offset-' . $offset;
       }
       elseif (
@@ -222,7 +223,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['center']) &&
       !empty($vars['content']['midright'])
       ) {
-        (string)$offset = (int)$left + (int)$midleft + (int)$center;
+        (string) $offset = (int) $left + (int) $midleft + (int) $center;
         $vars['region_attributes']['midright']['class'][] = "offset-" . $offset;
       }
       elseif (
@@ -231,7 +232,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['center']) &&
       !empty($vars['content']['midright'])
       ) {
-        (string)$offset = (int)$midleft + (int)$center;
+        (string) $offset = (int) $midleft + (int) $center;
         $vars['region_attributes']['midright']['class'][] = "offset-" . $offset;
       }
       elseif (
@@ -239,7 +240,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['center']) &&
       !empty($vars['content']['midright'])
       ) {
-        //drupal_set_message('no center');
+        // drupal_set_message('no center');.
         $vars['region_attributes']['midright']['class'][] = "offset-" . $center;
       }
       elseif (
@@ -249,7 +250,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['midright']) &&
       !empty($vars['content']['right'])
       ) {
-        (string)$offset = (int)$left + (int)$midleft + (int)$center + (int)$midright;
+        (string) $offset = (int) $left + (int) $midleft + (int) $center + (int) $midright;
         $vars['region_attributes']['right']['class'][] = "offset-" . $offset;
       }
       elseif (
@@ -259,7 +260,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['midright']) &&
       !empty($vars['content']['right'])
       ) {
-        (string)$offset = (int)$midleft + (int)$center + (int)$midright;
+        (string) $offset = (int) $midleft + (int) $center + (int) $midright;
         $vars['region_attributes']['right']['class'][] = "offset-" . $offset;
       }
       elseif (
@@ -268,7 +269,7 @@ function cellular_panels_preprocess_quintet(&$vars, $left, $midleft, $center, $m
       empty($vars['content']['midright']) &&
       !empty($vars['content']['right'])
       ) {
-        (string)$offset = (int)$center + (int)$midright;
+        (string) $offset = (int) $center + (int) $midright;
         $vars['region_attributes']['right']['class'][] = "offset-" . $offset;
       }
       elseif (

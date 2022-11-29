@@ -51,7 +51,7 @@
     <?php /* End of posted on div. */ ?>
 
     <?php if (!empty($in_reply_to)): ?>
-   	 <span class="forum-in-reply-to"><?php print $in_reply_to; ?></span>
+        <span class="forum-in-reply-to"><?php print $in_reply_to; ?></span>
     <?php endif; ?>
 
     <?php /* Add a note when a post is unpublished so it doesn't rely on theming. */ ?>

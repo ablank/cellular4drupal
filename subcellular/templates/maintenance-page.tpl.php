@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Display a single Drupal page while offline.

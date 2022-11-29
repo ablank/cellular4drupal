@@ -21,7 +21,7 @@ $form[0] = array(
 );
 /*
 * @see file: src/preprocess/theme-settings/_config.inc
-* jQuery CDN & version settings
+* JQuery CDN & version settings.
 */
 /*
 * jQuery CDN options.
@@ -237,7 +237,6 @@ $form[0]['markup_settings']['login']['login_block_password'] = array(
 * @see file: src/preprocess/theme-settings/style.inc
 * Theme-settings: Display & styling settings.
 */
-//
 $form[0]['style_settings'] = array(
 '#type' => 'fieldset',
 '#title' => t('Style'),
@@ -646,4 +645,9 @@ $form[0]['social_media']['follow']['follow_yelp_url'] = array(
 ),
 ),
 );
+/*
+* @see file: src/preprocess/theme-settings/_end_theme-settings.inc
+* @file
+* @file
+* .*/
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Vars & regions for a parallax layout.

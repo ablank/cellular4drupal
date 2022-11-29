@@ -19,13 +19,13 @@ function cellular_pager($vars) {
   // Calculate various markers within this pager piece:
   // Middle is used to "center" pages around the current page.
   $pager_middle = ceil($quantity / 2);
-  // current is the page we are currently paged to
+  // Current is the page we are currently paged to.
   $pager_current = $pager_page_array[$element] + 1;
-  // first is the first page listed by this pager piece (re quantity)
+  // First is the first page listed by this pager piece (re quantity)
   $pager_first = $pager_current - $pager_middle + 1;
-  // last is the last page listed by this pager piece (re quantity)
+  // Last is the last page listed by this pager piece (re quantity)
   $pager_last = $pager_current + $quantity - $pager_middle;
-  // max is the maximum page number
+  // Max is the maximum page number.
   $pager_max = $pager_total[$element];
   // End of marker calculations.
   // Prepare for generation loop.
@@ -43,26 +43,26 @@ function cellular_pager($vars) {
     }
     // End of generation loop preparation.
     $li_first = theme('pager_first', array(
-      'text' => (isset($tags[0]) ? $tags[0] : t('First')),
+      'text' => ($tags[0] ?? t('First')),
       'element' => $element,
-      'parameters' => $parameters
+      'parameters' => $parameters,
     ));
     $li_previous = theme('pager_previous', array(
-      'text' => (isset($tags[1]) ? $tags[1] : t('Previous')),
+      'text' => ($tags[1] ?? t('Previous')),
       'element' => $element,
       'interval' => 1,
-      'parameters' => $parameters
+      'parameters' => $parameters,
     ));
     $li_next = theme('pager_next', array(
-      'text' => (isset($tags[3]) ? $tags[3] : t('Next')),
+      'text' => ($tags[3] ?? t('Next')),
       'element' => $element,
       'interval' => 1,
-      'parameters' => $parameters
+      'parameters' => $parameters,
     ));
     $li_last = theme('pager_last', array(
-      'text' => (isset($tags[4]) ? $tags[4] : t('Last')),
+      'text' => ($tags[4] ?? t('Last')),
       'element' => $element,
-      'parameters' => $parameters
+      'parameters' => $parameters,
     ));
 
     if ($li_first) {
@@ -95,7 +95,7 @@ function cellular_pager($vars) {
               'text' => $i,
               'element' => $element,
               'interval' => ($pager_current - $i),
-              'parameters' => $parameters
+              'parameters' => $parameters,
             )),
           );
         }
@@ -112,7 +112,7 @@ function cellular_pager($vars) {
               'text' => $i,
               'element' => $element,
               'interval' => ($i - $pager_current),
-              'parameters' => $parameters
+              'parameters' => $parameters,
             )),
           );
         }
@@ -144,7 +144,8 @@ function cellular_pager($vars) {
       'attributes' => array(
         'class' => array(
           'pager',
-        )),
+        ),
+      ),
     ));
 
     return $output;

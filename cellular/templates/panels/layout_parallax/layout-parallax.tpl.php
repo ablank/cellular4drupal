@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for a parallax layout.
@@ -28,7 +29,7 @@ endif;
 ?> class="cell <?php print ($classes); ?>">
 
   <?php
-  // Header
+  // Header.
   if (!empty($content['header'])) :
 
     ?>
@@ -38,13 +39,13 @@ endif;
   <?php endif; ?>
 
   <?php
-  // Main content regions
+  // Main content regions.
   if (!empty($content)) :
 
     ?>
 
     <?php
-    // Group 1
+    // Group 1.
     if (!empty($content['g1_top']) || !empty($content['g1_base'])):
 
       ?>
@@ -60,7 +61,7 @@ endif;
     <?php endif; ?>
 
     <?php
-    // Group 2
+    // Group 2.
     if (!empty($content['g2_top']) || !empty($content['g2_base'])):
 
       ?>
@@ -76,7 +77,7 @@ endif;
     <?php endif; ?>
 
     <?php
-    // Group 3
+    // Group 3.
     if (!empty($content['g3_top']) || !empty($content['g3_base'])):
 
       ?>
@@ -91,7 +92,7 @@ endif;
     <?php endif; ?>
 
     <?php
-    // Group 4
+    // Group 4.
     if (!empty($content['g4_top']) || !empty($content['g4_base'])):
 
       ?>
@@ -107,7 +108,7 @@ endif;
     <?php endif; ?>
 
     <?php
-    // Group 5
+    // Group 5.
     if (!empty($content['g5_top']) || !empty($content['g5_base'])):
 
       ?>
@@ -125,7 +126,7 @@ endif;
 </div>
 
 <?php
-// Footer
+// Footer.
 if (!empty($content['footer'])) :
 
   ?>

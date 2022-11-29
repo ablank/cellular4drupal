@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Cellular stylesheet functions.
@@ -11,7 +12,7 @@
  *   Default array of stylesheets.
  * @param array $array
  *   Associative array of stylesheet data to add.
- * @param boolean $cellular
+ * @param bool $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
@@ -27,13 +28,13 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
     if (!empty($data)) {
       // Set stylesheet properties.
       $style['data'] = $data;
-      $style['preprocess'] = isset($style['preprocess']) ? $style['preprocess'] : TRUE;
-      $style['every_page'] = isset($style['every_page']) ? $style['every_page'] : TRUE;
-      $style['group'] = isset($style['group']) ? $style['group'] : CSS_THEME;
-      $style['weight'] = isset($style['weight']) ? $style['weight'] : 1;
+      $style['preprocess'] = $style['preprocess'] ?? TRUE;
+      $style['every_page'] = $style['every_page'] ?? TRUE;
+      $style['group'] = $style['group'] ?? CSS_THEME;
+      $style['weight'] = $style['weight'] ?? 1;
       $style['type'] = isset($style['cdn']) ? 'external' : 'file';
-      $style['media'] = isset($style['media']) ? $style['media'] : 'all';
-      $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
+      $style['media'] = $style['media'] ?? 'all';
+      $style['browsers'] = $style['browsers'] ?? array('IE' => TRUE, '!IE' => TRUE);
       // Add stylesheet to $css.
       $vars['#attached']['css'][$data] = $style;
     }
@@ -47,9 +48,9 @@ function cellular_attach_css(&$vars, $array, $cellular = FALSE) {
  *   Default array of stylesheets.
  * @param array $array
  *   Associative array of stylesheet data to add.
- * @param boolean $cellular
- *   Reference cellular library if TRUE.
- *///&$css
+ * @param bool $cellular
+ *   Reference cellular library if TRUE.    * // &$css.
+ */
 function cellular_add_css($array, $cellular = FALSE) {
   $type = 'file';
   foreach ($array as $style) {
@@ -85,8 +86,8 @@ function cellular_add_css($array, $cellular = FALSE) {
         : TRUE;
       $style['preprocess'] = !empty($style['preprocess']) ? $style['preprocess']
         : TRUE;
-      $style['media'] = isset($style['media']) ? $style['media'] : 'all';
-      $style['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
+      $style['media'] = $style['media'] ?? 'all';
+      $style['browsers'] = $style['browsers'] ?? array('IE' => TRUE, '!IE' => TRUE);
 
       drupal_add_css($data, $style);
     }
@@ -100,7 +101,7 @@ function cellular_add_css($array, $cellular = FALSE) {
  *   Associative array of stylesheets to merge with defaults from theme registry.
  * @param array $style
  *   Array of stylesheet data used to override default.
- * @param boolean $cellular
+ * @param bool $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_override_css(&$css, $style, $cellular = FALSE) {
@@ -120,15 +121,13 @@ function cellular_override_css(&$css, $style, $cellular = FALSE) {
     }
     // Set stylesheet properties.
     $css[$ocss]['data'] = $data;
-    $css[$ocss]['preprocess'] = isset($style['preprocess']) ? $style['preprocess']
-      : TRUE;
-    $css[$ocss]['every_page'] = isset($style['every_page']) ? $style['every_page']
-      : TRUE;
-    $css[$ocss]['group'] = isset($style['group']) ? $style['group'] : CSS_DEFAULT;
-    $css[$ocss]['weight'] = isset($style['weight']) ? $style['weight'] : 0;
+    $css[$ocss]['preprocess'] = $style['preprocess'] ?? TRUE;
+    $css[$ocss]['every_page'] = $style['every_page'] ?? TRUE;
+    $css[$ocss]['group'] = $style['group'] ?? CSS_DEFAULT;
+    $css[$ocss]['weight'] = $style['weight'] ?? 0;
     $css[$ocss]['type'] = isset($style['cdn']) ? 'external' : 'file';
-    $css[$ocss]['media'] = isset($style['media']) ? $style['media'] : 'all';
-    $css[$ocss]['browsers'] = isset($style['browsers']) ? $style['browsers'] : array('IE' => TRUE, '!IE' => TRUE);
+    $css[$ocss]['media'] = $style['media'] ?? 'all';
+    $css[$ocss]['browsers'] = $style['browsers'] ?? array('IE' => TRUE, '!IE' => TRUE);
   }
 }
 
@@ -189,11 +188,11 @@ function cellular_remove_default_css(&$css) {
       'shortcut' => 'shorcut.css',
       'user' => 'user.css',
     );
-    // Contrib
+    // Contrib.
     $contrib = array(
       'admin_menu' => array(
         'admin_menu.css',
-        'admin_menu_toolbar/admin_menu_toolbar.css'
+        'admin_menu_toolbar/admin_menu_toolbar.css',
       ),
       'calendar' => array(
         'css/calendar.css',
@@ -248,6 +247,7 @@ function cellular_remove_default_css(&$css) {
 
 /**
  * Add critical styles (above the fold) inline.
+ *
  * @see http://fourword.fourkitchens.com/article/use-grunt-and-advagg-inline-critical-css-drupal-7-theme
  */
 function cellular_critical_css($vars) {

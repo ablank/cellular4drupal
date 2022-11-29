@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for the Inset Left column panel layout.
@@ -20,7 +21,7 @@ $id = !empty($css_id) ? " id=\"$css_id\"" : '';
   <?php endif; ?>
 
   <?php
-  //dpm($stack);
+  // dpm($stack);
   foreach ($stack as $stack_idx => $stacks):
     foreach ($stacks as $stack_region => $region):
       foreach ($region as $region_idx => $region_name):
@@ -28,8 +29,7 @@ $id = !empty($css_id) ? " id=\"$css_id\"" : '';
         // $key = region name, i.e. 'split'
         // $region = array of regions i.e. '0 => split_left_0'
         //  print_r($region_name);
-
-        for ($i = 0; $i < count($region_name); $i+=1) {
+        for ($i = 0; $i < count($region_name); $i += 1) {
           // Iterate over each stack to see if it needs to be printed.
           if (!empty($content[$region_name[$i]])) {
             $regions[] = $region_name[$i];

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Cellular menu functions.
@@ -21,15 +22,16 @@ function cellular_main_menu(&$vars) {
 
   $vars['main_menu'] = $menu_data;
 }
+
 /**
  * Implements links__system_main_menu.
-function cellular_links__system_main_menu($vars) {
-  $output = "<ul id=\"nav\">\n";
-  foreach ($vars['links'] as $key => $link) {
-    $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
-  }
-  $output .= "</ul>\n";
-
-  return $output;
-}
+ * function cellular_links__system_main_menu($vars) {
+ * $output = "<ul id=\"nav\">\n";
+ * foreach ($vars['links'] as $key => $link) {
+ * $output .= "<li>" . l($link['title'], $link['href']) . "</li>";
+ * }
+ * $output .= "</ul>\n";
+ *
+ * Return $output;
+ * }
 */

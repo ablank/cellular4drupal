@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for prototype panel layouts.
@@ -11,18 +12,18 @@
  *
  *  $content['midleft']
  *  $content['midright']
- *
  */
-$content = isset($content) ? $content : array();
-$attributes = isset($attributes) ? $attributes : '';
-$classes = isset($classes) ? $classes : '';
+
+$content = $content ?? array();
+$attributes = $attributes ?? '';
+$classes = $classes ?? '';
 // Format markup for the css id.
 $id = !empty($css_id) ? " id=\"$css_id\"" : '';
 ?>
 <div<?php print "$id class=\"panels cell $classes\" $attributes"; ?>>
   <?php
-  foreach ($content as $name => $markup):
-    if (!empty($content[$name])):
+  foreach ($content as $name => $markup) :
+    if (!empty($content[$name])) :
       ?>
       <div<?php print drupal_attributes($region_attributes[$name]) ?>>
         <?php print $markup ?>

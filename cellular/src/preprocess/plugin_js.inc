@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Functions to add javascript plugins.
@@ -14,7 +15,8 @@
  *   jQuery version info.
  */
 function cellular_update_plugins(&$javascript, $jquery) {
-  $plugin_path = '/drupal/'; // Relative to Cellular Lib
+  // Relative to Cellular Lib.
+  $plugin_path = '/drupal/';
   $plugins = array(
     'bbq' => array(
       'default' => 'misc/jquery.ba-bbq.js',
@@ -70,7 +72,7 @@ function cellular_js_plugin_settings() {
 function cellular_plugins_js() {
   $jquery = cellular_jquery_info();
   $plugin_path = '/lib/';
-  // Scripts to add, relative to /libraries/cellular/js/
+  // Scripts to add, relative to /libraries/cellular/js/.
   $js_plugins = array();
 
   // Add migrate to prevent plugins from breaking with jQuery > v1.9.
@@ -143,7 +145,7 @@ function cellular_plugins_js() {
       'object' => 'NProgress',
       'file' => 'nprogress',
       'scope' => 'critical',
-      'weight' => 1
+      'weight' => 1,
     );
     $js_plugins['nprogress_init'] = array(
       'file' => 'nprogress_init',

@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- *  Cellular comment preprocess functions.
+ * Cellular comment preprocess functions.
  */
 
 /**
@@ -12,13 +13,14 @@ function cellular_preprocess_comment_wrapper(&$vars) {
   $vars['theme_hook_suggestions'][] = 'comment_wrapper';
   $vars['theme_hook_suggestions'][] = 'comment_wrapper__' . $vars['node']->type;
   $vars['classes_array'][] = 'clearfix';
-  
+
   $title = &$vars['content']['comment_form']['#title'];
 
   switch ($vars['node']->type) {
     case 'forum_topic':
       $title = t('Reply');
       break;
+
     case 'article':
     default:
       $title = t('Post your comment');
@@ -30,8 +32,8 @@ function cellular_preprocess_comment_wrapper(&$vars) {
  * Implements template_preprocess_comment().
  */
 function cellular_preprocess_comment(&$vars) {
-  $comment = $vars ['elements']['#comment'];
-  //dpm($comment);
+  $comment = $vars['elements']['#comment'];
+  // dpm($comment);
   // Set the template used by comments.
   $vars['theme_hook_suggestions'][] = 'comment';
   $vars['theme_hook_suggestions'][] = 'comment__' . $vars['node']->type;
@@ -65,6 +67,9 @@ function cellular_preprocess_comment(&$vars) {
   $vars['submitted'] = $submitted;
 }
 
+/**
+ *
+ */
 function cellular_preprocess_forum_reply(&$vars) {
 
 }

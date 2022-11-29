@@ -11,4 +11,3 @@ by setting parameters in *X*col_*XX*.inc and passing the values to the preproces
 A unique template (`_include/layout_NAME.tpl.inc`) is used to display panels content.
 
 - Admin CSS is imported from `_include/admin.css`
-

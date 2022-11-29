@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Node template.
  */
@@ -77,20 +79,23 @@ hide($content['links']);
 <div id="node-<?php print $node->nid ?>"<?php print $attributes; ?>>
   <?php
   print render($title_prefix);
-  if (!$page) :
+if (!$page) :
     if ($title) :
       print "<h2$title_attributes>\n";
-      print "<a href=\"$node_url\">\n$title\n</a>\n</h2>";
+print "<a href=\"$node_url\">\n$title\n</a>\n</h2>";
+
     endif;
-  endif;
-  print render($title_suffix);
+
+endif;
+print render($title_suffix);
   ?>
   <?php if (!empty($display_submitted)): ?>
     <div class="post-info">
       <div class="post-date"><?php print $post_date; ?></div>
       <div class="post-author"><?php print $author; ?></div>
     </div>;
-  <?php endif; ?>
+  <?php
+  endif; ?>
 
   <div<?php print $content_attributes; ?>>
     <?php print render($content); ?>
@@ -102,7 +107,8 @@ hide($content['links']);
     <div class="links">
       <?php print $links; ?>
     </div>
-  <?php endif; ?>
+  <?php
+  endif; ?>
 
   <?php print render($content['comments']); ?>
 </div>

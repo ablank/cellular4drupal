@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Vars & regions for a parallax layout grouped by rows.
  */
+
 $plugin = array(
   'category' => t('Cellular | Layouts'),
   'title' => t('Parallax - Grouped'),

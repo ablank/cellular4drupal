@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Theme markup of form elements.
@@ -75,9 +76,9 @@ function cellular_fieldset(&$vars) {
   if (!empty($element['#description'])) {
     $output .= '<div class="description">' . t($element['#description']) . "</div>\n";
   }
-// Add form elements.
+  // Add form elements.
   $output .= $element['#children'];
-  $output .=!empty($element['#value']) ? $element['#value'] . "\n" : NULL;
+  $output .= !empty($element['#value']) ? $element['#value'] . "\n" : NULL;
   $output .= "</fieldset>\n";
 
   return $output;
@@ -180,13 +181,13 @@ function cellular_webform_element($vars) {
   $nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
   $parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
 
-  // Get description
+  // Get description.
   $description = $element['#description'];
   if (!empty($description)) {
     if (theme_get_setting('ui_tooltips') == 1) {
-      $element ['#attributes']['data-tooltip'] = $description;
-      //$element['#description'] = NULL;
-      //unset($element['#description']);
+      $element['#attributes']['data-tooltip'] = $description;
+      // $element['#description'] = NULL;
+      // unset($element['#description']);
     }
     else {
       $description = "<div class=\"description\">$description</div>\n";
@@ -236,6 +237,6 @@ function cellular_webform_element($vars) {
 
   $output .= $description;
   $output .= "</div>\n";
-  //dpm($element);
+  // dpm($element);
   return $output;
 }

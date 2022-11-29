@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Comment template.
  */
@@ -70,8 +72,10 @@
       <div class="user-signature">
         <?php print $signature ?>
       </div>
-    <?php endif; ?>
+    <?php
+    endif; ?>
   </div>
 
-  <?php //print render($content['links']); ?>
+  <?php
+// Print render($content['links']);. ?>
 </div>

@@ -1,11 +1,21 @@
-
 /**
   * @file
   * Cellular Grid
 */
 
 .cell,
-.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10,
+.cell-100,
+.cell-90,
+.cell-80,
+.cell-75,
+.cell-70,
+.cell-60,
+.cell-50,
+.cell-40,
+.cell-30,
+.cell-25,
+.cell-20,
+.cell-10,
 .cell-33,
 .cell-66 {
   z-index: 1;
@@ -18,7 +28,18 @@
 }
 
 .cell.center,
-.cell-100.center, .cell-90.center, .cell-80.center, .cell-75.center, .cell-70.center, .cell-60.center, .cell-50.center, .cell-40.center, .cell-30.center, .cell-25.center, .cell-20.center, .cell-10.center,
+.cell-100.center,
+.cell-90.center,
+.cell-80.center,
+.cell-75.center,
+.cell-70.center,
+.cell-60.center,
+.cell-50.center,
+.cell-40.center,
+.cell-30.center,
+.cell-25.center,
+.cell-20.center,
+.cell-10.center,
 .cell-33.center,
 .cell-66.center {
   margin: 1% auto;
@@ -32,7 +53,8 @@
   zoom: 1;
 }
 
-.cell:before, .cell:after {
+.cell:before,
+.cell:after {
   content: "";
   display: table;
 }

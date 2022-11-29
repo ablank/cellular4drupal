@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for the Inset Left column panel layout.
@@ -20,7 +21,7 @@ endif;
 ?> class="panels cell <?php print ($classes); ?>">
 
   <?php
-  // Inset region
+  // Inset region.
   if (!empty($content['inset'])):
 
     ?>
@@ -30,7 +31,7 @@ endif;
   <?php endif; ?>
 
   <?php
-  // Main content regions
+  // Main content regions.
   if (!empty($content['header']) ||
   !empty($content['body']) ||
   !empty($content['footer'])
@@ -40,10 +41,10 @@ endif;
     <div class="cell-75
     <?php if (empty($content['inset'])): ?>
            offset-25
-         <?php endif; ?>">
+    <?php endif; ?>">
 
       <?php
-      // Header
+      // Header.
       if (!empty($content['header'])):
 
         ?>
@@ -53,7 +54,7 @@ endif;
       <?php endif; ?>
 
       <?php
-      // Body
+      // Body.
       if (!empty($content['body'])):
 
         ?>
@@ -63,7 +64,7 @@ endif;
       <?php endif; ?>
 
       <?php
-      // Footer
+      // Footer.
       if (!empty($content['footer'])):
 
         ?>

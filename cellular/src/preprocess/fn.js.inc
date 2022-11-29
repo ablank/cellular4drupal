@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Cellular javascript functions.
@@ -12,7 +13,7 @@
  *
  * @param array $array
  *   Assosciative array of javascript data.
- * @param boolean $cellular
+ * @param bool $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
@@ -57,7 +58,7 @@ function cellular_attach_js(&$vars, $array, $cellular = FALSE) {
  *
  * @param array $array
  *   Assosciative array of javascript data.
- * @param boolean $cellular
+ * @param bool $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_add_js($array, $cellular = FALSE) {
@@ -109,7 +110,7 @@ function cellular_add_js($array, $cellular = FALSE) {
  *
  * @param array $script
  *   Array of script attributes used to generate fallback.
- * @param  $cellular
+ * @param $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_js_fallback($script, $cellular = FALSE) {
@@ -138,7 +139,7 @@ function cellular_js_fallback($script, $cellular = FALSE) {
  *   Associative array of javascripts.
  * @param array $script
  *   Array of attributes used to add javascript fallback.
- * @param boolean $cellular
+ * @param bool $cellular
  *   Reference cellular library if TRUE.
  */
 function cellular_js_override(&$javascript, $script, $cellular = FALSE) {

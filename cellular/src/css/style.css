@@ -98,7 +98,7 @@ img {
 */
 /* line 6, ../sass/style/_base_body.scss */
 html {
-  background: #FEFEFE;
+  background: #fefefe;
   overflow: auto;
   overflow-y: scroll;
 }
@@ -302,7 +302,7 @@ acronym {
 */
 /* line 15, ../sass/style/_base_links.scss */
 a {
-  color: #29B4DE;
+  color: #29b4de;
   text-decoration: none;
   outline: none;
   -moz-transition: all 500ms ease-out;
@@ -315,7 +315,9 @@ a:visited {
   color: #20a5ce;
 }
 /* line 26, ../sass/style/_base_links.scss */
-a:hover, a:active, a:focus {
+a:hover,
+a:active,
+a:focus {
   outline: none;
   text-decoration: underline;
   color: #1982a2;
@@ -363,7 +365,7 @@ ol > li:before {
   width: 1.4em;
   height: 1.4em;
   color: #444444;
-  background: #FEFEFE;
+  background: #fefefe;
   border: thin solid;
   border-radius: 50%;
 }
@@ -429,7 +431,7 @@ tr:nth-child(even) {
 
 /* line 32, ../sass/style/_base_tables.scss */
 tr:nth-child(odd) {
-  background: #FEFEFE;
+  background: #fefefe;
 }
 
 /* line 36, ../sass/style/_base_tables.scss */
@@ -510,10 +512,11 @@ legend {
   font-weight: normal;
   font-size: 1.4em;
   color: #bbbab7;
-  background: #FEFEFE;
+  background: #fefefe;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-legend:after, legend:before {
+legend:after,
+legend:before {
   content: "";
   display: block;
   width: 100%;
@@ -563,11 +566,15 @@ select:focus,
 textarea:focus {
   outline: none;
   color: #111;
-  background: #FEFEFE;
-  box-shadow: 0 0 0.2em 0 #29B4DE;
+  background: #fefefe;
+  box-shadow: 0 0 0.2em 0 #29b4de;
 }
 /* line 108, ../sass/style/_base_forms.scss */
-input.year, input.month, input.day, input.hour, input.minute,
+input.year,
+input.month,
+input.day,
+input.hour,
+input.minute,
 select.year,
 select.month,
 select.day,
@@ -610,8 +617,9 @@ option:focus {
 }
 
 /* line 144, ../sass/style/_base_forms.scss */
-input.required, input[required] {
-  box-shadow: 0 0 0.1em 0 #29B4DE;
+input.required,
+input[required] {
+  box-shadow: 0 0 0.1em 0 #29b4de;
 }
 /* line 153, ../sass/style/_base_forms.scss */
 input[type="hidden"] {
@@ -631,12 +639,18 @@ input[type="image"] {
   border: none;
 }
 /* line 97, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked, input[type="checkbox"]:not(:checked), input[type="radio"]:checked, input[type="radio"]:not(:checked) {
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked),
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked) {
   position: absolute;
   left: -999em;
 }
 /* line 102, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label, input[type="checkbox"]:not(:checked) + label, input[type="radio"]:checked + label, input[type="radio"]:not(:checked) + label {
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:not(:checked) + label,
+input[type="radio"]:checked + label,
+input[type="radio"]:not(:checked) + label {
   z-index: 1;
   position: relative;
   float: left;
@@ -646,7 +660,14 @@ input[type="checkbox"]:checked + label, input[type="checkbox"]:not(:checked) + l
   text-indent: 2.16em;
 }
 /* line 111, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label:before, input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checked) + label:before, input[type="checkbox"]:not(:checked) + label:after, input[type="radio"]:checked + label:before, input[type="radio"]:checked + label:after, input[type="radio"]:not(:checked) + label:before, input[type="radio"]:not(:checked) + label:after {
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:before,
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:before,
+input[type="radio"]:not(:checked) + label:after {
   content: '';
   position: absolute;
   left: 0;
@@ -656,13 +677,19 @@ input[type="checkbox"]:checked + label:before, input[type="checkbox"]:checked + 
   vertical-align: middle;
 }
 /* line 122, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label:before, input[type="checkbox"]:not(:checked) + label:before, input[type="radio"]:checked + label:before, input[type="radio"]:not(:checked) + label:before {
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="radio"]:checked + label:before,
+input[type="radio"]:not(:checked) + label:before {
   background: #f9f9f9;
   border: #bbbab7 thin solid;
   box-shadow: inset 0 0 1px 1px #f1f1f1;
 }
 /* line 127, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checked) + label:after, input[type="radio"]:checked + label:after, input[type="radio"]:not(:checked) + label:after {
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="radio"]:checked + label:after,
+input[type="radio"]:not(:checked) + label:after {
   background-image: url("../assets/icons/png/input_sprite.png");
   background-image: url("../assets/icons/svg/input_sprite.svg");
   background-size: 6em;
@@ -670,11 +697,17 @@ input[type="checkbox"]:checked + label:after, input[type="checkbox"]:not(:checke
   background-position: -999em;
 }
 /* line 143, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked:disabled + label, input[type="checkbox"]:not(:checked):disabled + label, input[type="radio"]:checked:disabled + label, input[type="radio"]:not(:checked):disabled + label {
+input[type="checkbox"]:checked:disabled + label,
+input[type="checkbox"]:not(:checked):disabled + label,
+input[type="radio"]:checked:disabled + label,
+input[type="radio"]:not(:checked):disabled + label {
   color: #f1f1f1;
 }
 /* line 145, ../sass/_mixins/_cellularmixins.scss */
-input[type="checkbox"]:checked:disabled + label:before, input[type="checkbox"]:not(:checked):disabled + label:before, input[type="radio"]:checked:disabled + label:before, input[type="radio"]:not(:checked):disabled + label:before {
+input[type="checkbox"]:checked:disabled + label:before,
+input[type="checkbox"]:not(:checked):disabled + label:before,
+input[type="radio"]:checked:disabled + label:before,
+input[type="radio"]:not(:checked):disabled + label:before {
   background: #f1f1f1;
   color: #444444;
 }
@@ -740,7 +773,7 @@ input[type="submit"] {
   line-height: normal;
   border: #444444 2px solid;
   color: #444444;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   -moz-border-radius: 0.1em;
   -webkit-border-radius: 0.1em;
   border-radius: 0.1em;
@@ -754,10 +787,11 @@ button:visited,
 input[type="button"]:visited,
 input[type="submit"]:visited {
   color: #444444;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
 }
 /* line 197, ../sass/_mixins/_cellularmixins.scss */
-button.active, button:active,
+button.active,
+button:active,
 .button.active,
 .button:active,
 input[type="button"].active,
@@ -767,7 +801,9 @@ input[type="submit"]:active {
   cursor: default;
 }
 /* line 201, ../sass/_mixins/_cellularmixins.scss */
-button.active, button:active, button:hover,
+button.active,
+button:active,
+button:hover,
 .button.active,
 .button:active,
 .button:hover,
@@ -780,7 +816,7 @@ input[type="submit"]:hover {
   outline: none;
   text-decoration: none;
   border-color: #5e5e5e;
-  border-color: #29B4DE;
+  border-color: #29b4de;
   -moz-box-shadow: #cbcbcb 0 0.1em 0.4em;
   -webkit-box-shadow: #cbcbcb 0 0.1em 0.4em;
   box-shadow: #cbcbcb 0 0.1em 0.4em;
@@ -806,23 +842,23 @@ input[type="submit"] {
 
 /* line 257, ../sass/style/_base_forms.scss */
 .ok {
-  color: #61D43F;
+  color: #61d43f;
   background-color: white;
-  border-color: #61D43F;
+  border-color: #61d43f;
 }
 
 /* line 263, ../sass/style/_base_forms.scss */
 .warning {
-  color: #EC2;
+  color: #ec2;
   background-color: white;
-  border-color: #EC2;
+  border-color: #ec2;
 }
 
 /* line 269, ../sass/style/_base_forms.scss */
 .error {
-  color: #8C0D00;
+  color: #8c0d00;
   background-color: #ffdcd9;
-  border-color: #8C0D00;
+  border-color: #8c0d00;
 }
 
 /**
@@ -869,7 +905,18 @@ a img {
 */
 /* line 9, ../sass/style/_base_grid.scss */
 .cell,
-.cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10,
+.cell-100,
+.cell-90,
+.cell-80,
+.cell-75,
+.cell-70,
+.cell-60,
+.cell-50,
+.cell-40,
+.cell-30,
+.cell-25,
+.cell-20,
+.cell-10,
 .cell-33,
 .cell-66 {
   z-index: 1;
@@ -885,7 +932,18 @@ a img {
 }
 /* line 21, ../sass/style/_base_grid.scss */
 .cell.center,
-.cell-100.center, .cell-90.center, .cell-80.center, .cell-75.center, .cell-70.center, .cell-60.center, .cell-50.center, .cell-40.center, .cell-30.center, .cell-25.center, .cell-20.center, .cell-10.center,
+.cell-100.center,
+.cell-90.center,
+.cell-80.center,
+.cell-75.center,
+.cell-70.center,
+.cell-60.center,
+.cell-50.center,
+.cell-40.center,
+.cell-30.center,
+.cell-25.center,
+.cell-20.center,
+.cell-10.center,
 .cell-33.center,
 .cell-66.center {
   margin: 0% auto;
@@ -898,7 +956,8 @@ a img {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.cell:after, .cell:before {
+.cell:after,
+.cell:before {
   content: "";
   display: block;
   width: 100%;
@@ -1056,14 +1115,36 @@ a img {
 
 @media screen and (max-width: 650px) and (min-width: 0) {
   /* line 116, ../sass/style/_base_grid.scss */
-  .cell-100, .cell-90, .cell-80, .cell-75, .cell-70, .cell-60, .cell-50, .cell-40, .cell-30, .cell-25, .cell-20, .cell-10,
+  .cell-100,
+  .cell-90,
+  .cell-80,
+  .cell-75,
+  .cell-70,
+  .cell-60,
+  .cell-50,
+  .cell-40,
+  .cell-30,
+  .cell-25,
+  .cell-20,
+  .cell-10,
   .cell-33,
   .cell-66 {
     width: 100%;
   }
 
   /* line 126, ../sass/style/_base_grid.scss */
-  .offset-100, .offset-90, .offset-80, .offset-75, .offset-70, .offset-60, .offset-50, .offset-40, .offset-30, .offset-25, .offset-20, .offset-10,
+  .offset-100,
+  .offset-90,
+  .offset-80,
+  .offset-75,
+  .offset-70,
+  .offset-60,
+  .offset-50,
+  .offset-40,
+  .offset-30,
+  .offset-25,
+  .offset-20,
+  .offset-10,
   .offset-33,
   .offset-66 {
     margin-left: 0%;
@@ -1081,7 +1162,8 @@ a img {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.clearfix:after, .clearfix:before {
+.clearfix:after,
+.clearfix:before {
   content: "";
   display: block;
   width: 100%;
@@ -1120,7 +1202,8 @@ hr.clearfix {
   zoom: 1;
 }
 /* line 27, ../sass/_mixins/_cellularmixins.scss */
-.center:after, .center:before {
+.center:after,
+.center:before {
   content: "";
   display: block;
   width: 100%;
@@ -1161,7 +1244,7 @@ hr.clearfix {
   top: 0;
   left: 0;
   height: 96px;
-  background: #FEFEFE;
+  background: #fefefe;
   z-index: 10;
   -moz-box-shadow: 0 0 1em 0.1em #444444;
   -webkit-box-shadow: 0 0 1em 0.1em #444444;
@@ -1172,7 +1255,7 @@ hr.clearfix {
 #header-top {
   z-index: 4;
   background: #111;
-  color: #FEFEFE;
+  color: #fefefe;
   border-bottom: #111 thin solid;
   text-align: right;
 }
@@ -1184,7 +1267,7 @@ hr.clearfix {
 #header-top h2,
 #header-top h3,
 #header-top h4 {
-  color: #FEFEFE;
+  color: #fefefe;
   font-size: 1em;
   display: inline;
 }
@@ -1192,7 +1275,7 @@ hr.clearfix {
 /* line 38, ../sass/style/_region_header.scss */
 #header-bottom {
   background-color: #444444;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /**
@@ -1212,7 +1295,8 @@ hr.clearfix {
   transition: all 500ms ease-out;
 }
 /* line 20, ../sass/style/_region_navigation.scss */
-#main-menu a, #main-menu a:visited {
+#main-menu a,
+#main-menu a:visited {
   z-index: 2;
   display: block;
   margin: 0;
@@ -1224,16 +1308,23 @@ hr.clearfix {
   white-space: nowrap;
   text-decoration: none;
   color: #bbbab7;
-  background: #FEFEFE;
+  background: #fefefe;
   box-shadow: #bbbab7 0 0.1em 0.25em;
   border: none;
   border-radius: unset;
 }
 /* line 39, ../sass/style/_region_navigation.scss */
-#main-menu a:hover, #main-menu a:focus, #main-menu a:active, #main-menu a.active, #main-menu a:visited:hover, #main-menu a:visited:focus, #main-menu a:visited:active, #main-menu a:visited.active {
+#main-menu a:hover,
+#main-menu a:focus,
+#main-menu a:active,
+#main-menu a.active,
+#main-menu a:visited:hover,
+#main-menu a:visited:focus,
+#main-menu a:visited:active,
+#main-menu a:visited.active {
   text-decoration: none;
-  background: #29B4DE;
-  color: #FEFEFE;
+  background: #29b4de;
+  color: #fefefe;
 }
 /* line 53, ../sass/style/_region_navigation.scss */
 #main-menu > li:first-child {
@@ -1264,7 +1355,7 @@ hr.clearfix {
   height: 0;
   border-left: 0.4em solid transparent;
   border-right: 0.4em solid transparent;
-  border-top: 0.6em solid #29B4DE;
+  border-top: 0.6em solid #29b4de;
 }
 /* line 73, ../sass/style/_region_navigation.scss */
 #main-menu li {
@@ -1301,7 +1392,9 @@ hr.clearfix {
   overflow: visible;
 }
 /* line 118, ../sass/style/_region_navigation.scss */
-#main-menu li:focus > ul, #main-menu li:hover > ul, #main-menu li.active > ul {
+#main-menu li:focus > ul,
+#main-menu li:hover > ul,
+#main-menu li.active > ul {
   max-height: 20em;
   -moz-transition: all 500ms ease-out;
   -o-transition: all 500ms ease-out;
@@ -1325,7 +1418,9 @@ hr.clearfix {
   right: 100%;
 }
 /* line 148, ../sass/style/_region_navigation.scss */
-#main-menu li li.active > ul, #main-menu li li:focus > ul, #main-menu li li:hover > ul {
+#main-menu li li.active > ul,
+#main-menu li li:focus > ul,
+#main-menu li li:hover > ul {
   width: 100%;
 }
 /* line 155, ../sass/style/_region_navigation.scss */
@@ -1352,7 +1447,7 @@ hr.clearfix {
 /* line 6, ../sass/style/_region_content.scss */
 #content {
   z-index: 1;
-  background: #FEFEFE;
+  background: #fefefe;
 }
 
 /* line 19, ../sass/style/_region_content.scss */
@@ -1369,11 +1464,11 @@ hr.clearfix {
   z-index: 1;
   margin: 5em 0 0 0;
   background: #444444;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 12, ../sass/style/_region_footer.scss */
 #footer p {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /* line 17, ../sass/style/_region_footer.scss */
@@ -1417,7 +1512,7 @@ hr.clearfix {
 }
 /* line 18, ../sass/style/_style_icons.scss */
 .icon:hover {
-  border-color: #29B4DE;
+  border-color: #29b4de;
 }
 /* line 22, ../sass/style/_style_icons.scss */
 .icon.search {
@@ -2016,7 +2111,7 @@ hr.clearfix {
   max-width: 100%;
   padding: .6em 1em;
   background-color: #444444;
-  color: #FEFEFE;
+  color: #fefefe;
   z-index: 2;
   -moz-transition: all 500ms ease-out;
   -o-transition: all 500ms ease-out;
@@ -2028,7 +2123,7 @@ hr.clearfix {
 .cellular .jBlocklink .title:hover,
 .cellular .jMmenu .title:hover,
 .cellular .jTabs .title:hover {
-  color: #FEFEFE;
+  color: #fefefe;
   background-color: #1c94b8;
 }
 /* line 52, ../sass/cellular-ui/_Cellular.scss */
@@ -2043,11 +2138,13 @@ hr.clearfix {
   font-weight: bold;
   line-height: 1.4em;
   text-decoration: none;
-  color: #FEFEFE;
+  color: #fefefe;
   border: none;
 }
 /* line 60, ../sass/cellular-ui/_Cellular.scss */
-.cellular .jAccordion .title a:hover, .cellular .jAccordion .title a:active, .cellular .jAccordion .title a.active,
+.cellular .jAccordion .title a:hover,
+.cellular .jAccordion .title a:active,
+.cellular .jAccordion .title a.active,
 .cellular .jAccordion .title a:visited:hover,
 .cellular .jAccordion .title a:visited:active,
 .cellular .jAccordion .title a:visited.active,
@@ -2078,7 +2175,7 @@ hr.clearfix {
 .cellular .jMmenu .panel,
 .cellular .jTabs .panel {
   display: block;
-  background: #FEFEFE;
+  background: #fefefe;
   color: #444444;
   border: #bbbab7 1px solid;
   z-index: 1;
@@ -2151,7 +2248,7 @@ hr.clearfix {
   margin: 0.2em auto;
   padding: 0.2em;
   color: #444444;
-  background: #FEFEFE;
+  background: #fefefe;
   border: 1px solid #f1f1f1;
   box-shadow: 0 0 0.1em 0.1em #f1f1f1;
   -moz-transition: all 500ms ease-out;
@@ -2173,7 +2270,7 @@ hr.clearfix {
 /* line 31, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap .title a,
 .jCard-wrap .title a:visited {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 37, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap a,
@@ -2187,36 +2284,51 @@ hr.clearfix {
   padding: 0.2em 0.8em;
 }
 /* line 46, ../sass/cellular-ui/_jCard.scss */
-.jCard-wrap.active, .jCard-wrap:active, .jCard-wrap:focus, .jCard-wrap:hover {
+.jCard-wrap.active,
+.jCard-wrap:active,
+.jCard-wrap:focus,
+.jCard-wrap:hover {
   color: #1c94b8;
   text-decoration: none;
   border: 1px solid #f1f1f1;
   box-shadow: 0 0.4em 1em 0.3em #bbbab7;
 }
 /* line 55, ../sass/cellular-ui/_jCard.scss */
-.jCard-wrap.active .jCard, .jCard-wrap:active .jCard, .jCard-wrap:focus .jCard, .jCard-wrap:hover .jCard {
+.jCard-wrap.active .jCard,
+.jCard-wrap:active .jCard,
+.jCard-wrap:focus .jCard,
+.jCard-wrap:hover .jCard {
   border: 2px solid #444444;
 }
 /* line 58, ../sass/cellular-ui/_jCard.scss */
-.jCard-wrap.active .title, .jCard-wrap:active .title, .jCard-wrap:focus .title, .jCard-wrap:hover .title {
+.jCard-wrap.active .title,
+.jCard-wrap:active .title,
+.jCard-wrap:focus .title,
+.jCard-wrap:hover .title {
   background-color: #1c94b8;
 }
 /* line 61, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap.active .title a,
-.jCard-wrap.active .title a:visited, .jCard-wrap:active .title a,
-.jCard-wrap:active .title a:visited, .jCard-wrap:focus .title a,
-.jCard-wrap:focus .title a:visited, .jCard-wrap:hover .title a,
+.jCard-wrap.active .title a:visited,
+.jCard-wrap:active .title a,
+.jCard-wrap:active .title a:visited,
+.jCard-wrap:focus .title a,
+.jCard-wrap:focus .title a:visited,
+.jCard-wrap:hover .title a,
 .jCard-wrap:hover .title a:visited {
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 66, ../sass/cellular-ui/_jCard.scss */
 .jCard-wrap.active a,
 .jCard-wrap.active p,
-.jCard-wrap.active li, .jCard-wrap:active a,
+.jCard-wrap.active li,
+.jCard-wrap:active a,
 .jCard-wrap:active p,
-.jCard-wrap:active li, .jCard-wrap:focus a,
+.jCard-wrap:active li,
+.jCard-wrap:focus a,
 .jCard-wrap:focus p,
-.jCard-wrap:focus li, .jCard-wrap:hover a,
+.jCard-wrap:focus li,
+.jCard-wrap:hover a,
 .jCard-wrap:hover p,
 .jCard-wrap:hover li {
   color: #1c94b8;
@@ -2243,7 +2355,7 @@ hr.clearfix {
   right: 50%;
   padding: 1em;
   border-radius: 0.3em;
-  background: #FEFEFE;
+  background: #fefefe;
   -moz-transition: all 500ms ease-out;
   -o-transition: all 500ms ease-out;
   -webkit-transition: all 500ms ease-out;
@@ -2276,7 +2388,7 @@ hr.clearfix {
   background-image: url("../assets/icons/png/menu.png");
   background-image: url("../assets/icons/svg/menu.svg");
   border: 2px solid #bbbab7;
-  box-shadow: 0 0 0 0 #FEFEFE;
+  box-shadow: 0 0 0 0 #fefefe;
   will-change: background-position, box-shadow;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
@@ -2288,7 +2400,7 @@ hr.clearfix {
 }
 /* line 37, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-trigger:hover {
-  box-shadow: 0 0 0.2em 0.1em #29B4DE;
+  box-shadow: 0 0 0.2em 0.1em #29b4de;
 }
 /* line 40, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-trigger.active {
@@ -2296,7 +2408,7 @@ hr.clearfix {
 }
 /* line 43, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-trigger.active:hover {
-  box-shadow: 0 0 0.2em 0.1em #8C0D00;
+  box-shadow: 0 0 0.2em 0.1em #8c0d00;
 }
 /* line 48, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-triggertext {
@@ -2353,14 +2465,15 @@ hr.clearfix {
   transition: all 500ms ease-out;
 }
 /* line 90, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-menu li.parent.active:after, .cellular .jMmenu-menu li.parent:hover:after {
+.cellular .jMmenu-menu li.parent.active:after,
+.cellular .jMmenu-menu li.parent:hover:after {
   content: "";
   position: absolute;
   width: 0;
   height: 0;
   border-left: 0.4em solid transparent;
   border-right: 0.4em solid transparent;
-  border-top: 0.6em solid #29B4DE;
+  border-top: 0.6em solid #29b4de;
   transform: rotateY(180deg);
 }
 /* line 100, ../sass/cellular-ui/_jMmenu.scss */
@@ -2382,7 +2495,8 @@ hr.clearfix {
   transition: max-height 0.5s ease-in;
 }
 /* line 118, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-menu a, .cellular .jMmenu-menu a:visited {
+.cellular .jMmenu-menu a,
+.cellular .jMmenu-menu a:visited {
   display: block;
   height: 1em;
   padding: 0.6em 1em 0.8em;
@@ -2393,20 +2507,22 @@ hr.clearfix {
   background-image: none;
   border-bottom: 1px solid;
   color: #444444;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   -moz-box-shadow: 0 0 0.3em #bbbab7;
   -webkit-box-shadow: 0 0 0.3em #bbbab7;
   box-shadow: 0 0 0.3em #bbbab7;
 }
 /* line 133, ../sass/cellular-ui/_jMmenu.scss */
-.cellular .jMmenu-menu a:active, .cellular .jMmenu-menu a:focus, .cellular .jMmenu-menu a:hover {
-  color: #29B4DE;
-  background-color: #FEFEFE;
+.cellular .jMmenu-menu a:active,
+.cellular .jMmenu-menu a:focus,
+.cellular .jMmenu-menu a:hover {
+  color: #29b4de;
+  background-color: #fefefe;
 }
 /* line 140, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-menu .active > a {
-  color: #29B4DE;
-  background-color: #FEFEFE;
+  color: #29b4de;
+  background-color: #fefefe;
 }
 /* line 144, ../sass/cellular-ui/_jMmenu.scss */
 .cellular .jMmenu-menu ul {
@@ -2426,26 +2542,35 @@ hr.clearfix {
   height: 100%;
 }
 /* line 173, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-left .jMmenu-menu, .cellular.push-right .jMmenu-menu, .cellular.slide-left .jMmenu-menu, .cellular.slide-right .jMmenu-menu {
+.cellular.push-left .jMmenu-menu,
+.cellular.push-right .jMmenu-menu,
+.cellular.slide-left .jMmenu-menu,
+.cellular.slide-right .jMmenu-menu {
   bottom: 0;
   width: 0;
   max-width: 0;
 }
 /* line 177, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-left .jMmenu-menu.active, .cellular.push-right .jMmenu-menu.active, .cellular.slide-left .jMmenu-menu.active, .cellular.slide-right .jMmenu-menu.active {
+.cellular.push-left .jMmenu-menu.active,
+.cellular.push-right .jMmenu-menu.active,
+.cellular.slide-left .jMmenu-menu.active,
+.cellular.slide-right .jMmenu-menu.active {
   width: 100%;
   max-width: 50%;
 }
 /* line 186, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-left .jMmenu-menu, .cellular.slide-left .jMmenu-menu {
+.cellular.push-left .jMmenu-menu,
+.cellular.slide-left .jMmenu-menu {
   left: 0;
 }
 /* line 193, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.push-right .jMmenu-menu, .cellular.slide-right .jMmenu-menu {
+.cellular.push-right .jMmenu-menu,
+.cellular.slide-right .jMmenu-menu {
   right: 0;
 }
 /* line 202, ../sass/cellular-ui/_jMmenu.scss */
-.cellular.jMmenu-active.push-left #content, .cellular.jMmenu-active.push-right #content {
+.cellular.jMmenu-active.push-left #content,
+.cellular.jMmenu-active.push-right #content {
   width: 50%;
 }
 /* line 207, ../sass/cellular-ui/_jMmenu.scss */
@@ -2475,7 +2600,7 @@ hr.clearfix {
 /* line 24, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-wrap {
   overflow: hidden;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   border: #bbbab7 1px solid;
   /* Styles applied while .slide is transitioning */
 }
@@ -2546,14 +2671,14 @@ hr.clearfix {
 .jScrolli-slide .title a:visited {
   font-weight: bold;
   color: #444444;
-  text-shadow: -2px 0 #FEFEFE, 0px 0 #FEFEFE, -1px 1px 0 #FEFEFE, 1px 1px 0 #FEFEFE;
+  text-shadow: -2px 0 #fefefe, 0px 0 #fefefe, -1px 1px 0 #fefefe, 1px 1px 0 #fefefe;
 }
 /* line 112, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-slide .title a:active,
 .jScrolli-slide .title a:hover,
 .jScrolli-slide .title a:focus {
   color: #444444;
-  text-shadow: -4px 0 #29B4DE, 0px 0 #29B4DE, -2px 2px 0 #29B4DE, 2px 2px 0 #29B4DE;
+  text-shadow: -4px 0 #29b4de, 0px 0 #29b4de, -2px 2px 0 #29b4de, 2px 2px 0 #29b4de;
 }
 /* line 120, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-slide p {
@@ -2585,7 +2710,7 @@ hr.clearfix {
   max-width: none;
   margin: 0;
   padding: 0.8em;
-  color: #FEFEFE;
+  color: #fefefe;
   opacity: 1;
   transition: all 1s linear;
 }
@@ -2599,7 +2724,7 @@ hr.clearfix {
   text-indent: -999em;
   width: 2em;
   height: 2em;
-  color: #FEFEFE;
+  color: #fefefe;
   background-repeat: no-repeat;
   background-image: url(../assets/icons/png/controls.png);
   background-image: url(../assets/icons/svg/controls.svg);
@@ -2610,13 +2735,17 @@ hr.clearfix {
   transition: all 500ms ease-out;
 }
 /* line 170, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-control.prev, .jScrolli-control.next {
+.jScrolli-control.prev,
+.jScrolli-control.next {
   top: 50%;
   background-color: #444444;
 }
 /* line 175, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-control.prev:hover, .jScrolli-control.prev:focus, .jScrolli-control.next:hover, .jScrolli-control.next:focus {
-  background-color: #29B4DE;
+.jScrolli-control.prev:hover,
+.jScrolli-control.prev:focus,
+.jScrolli-control.next:hover,
+.jScrolli-control.next:focus {
+  background-color: #29b4de;
 }
 /* line 181, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-control.prev {
@@ -2629,11 +2758,12 @@ hr.clearfix {
   background-position: -88px 8px;
 }
 /* line 191, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-control.play, .jScrolli-control.pause {
+.jScrolli-control.play,
+.jScrolli-control.pause {
   top: 0;
   left: 0;
   background-color: #111;
-  border: #FEFEFE 2px solid;
+  border: #fefefe 2px solid;
   border-radius: 50%;
   opacity: 0;
   transition: none;
@@ -2686,12 +2816,13 @@ hr.clearfix {
 /* line 243, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-marker.active {
   border-color: #16708b;
-  background-color: #29B4DE;
-  box-shadow: 0 0 0.5em 0 #29B4DE;
+  background-color: #29b4de;
+  box-shadow: 0 0 0.5em 0 #29b4de;
 }
 /* line 249, ../sass/cellular-ui/_jScrolli.scss */
-.jScrolli-marker:hover, .jScrolli-marker:focus {
-  border-color: #29B4DE;
+.jScrolli-marker:hover,
+.jScrolli-marker:focus {
+  border-color: #29b4de;
 }
 /* line 254, ../sass/cellular-ui/_jScrolli.scss */
 .jScrolli-marker a {
@@ -2708,7 +2839,7 @@ hr.clearfix {
   display: block;
   margin: 1em 0 0 0;
   padding: 1em;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   border-radius: 0.4em;
   -moz-box-shadow: 0 0 0.3em #bbbab7;
   -webkit-box-shadow: 0 0 0.3em #bbbab7;
@@ -2735,7 +2866,7 @@ hr.clearfix {
 }
 /* line 34, ../sass/cellular-ui/_jSocial.scss */
 .jSocial .icon:hover {
-  background-color: #FEFEFE;
+  background-color: #fefefe;
 }
 /* line 40, ../sass/cellular-ui/_jSocial.scss */
 .jSocial .icon.behance {
@@ -2873,13 +3004,15 @@ hr.clearfix {
   background-image: url("../assets/icons/svg/youtube.svg");
 }
 /* line 48, ../sass/cellular-ui/_jSocial.scss */
-.jSocial.horizontal, .jSocial.vertical {
+.jSocial.horizontal,
+.jSocial.vertical {
   z-index: 10;
   position: fixed;
   margin: 0;
 }
 /* line 54, ../sass/cellular-ui/_jSocial.scss */
-.jSocial.horizontal .icon, .jSocial.vertical .icon {
+.jSocial.horizontal .icon,
+.jSocial.vertical .icon {
   border-radius: 0;
 }
 
@@ -2929,7 +3062,7 @@ hr.clearfix {
   z-index: 1;
   padding: 1.4em 1em 1em;
   bottom: 1px;
-  background: #FEFEFE;
+  background: #fefefe;
   color: #444444;
   border: #bbbab7 1px solid;
 }
@@ -2955,14 +3088,14 @@ hr.clearfix {
 }
 /* line 42, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab.active {
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   color: #444444;
 }
 /* line 46, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab.active .title {
   color: #444444;
-  background: #FEFEFE;
-  border-bottom-color: #FEFEFE;
+  background: #fefefe;
+  border-bottom-color: #fefefe;
 }
 /* line 51, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap .tab.active .title a {
@@ -3001,7 +3134,7 @@ hr.clearfix {
 }
 /* line 95, ../sass/cellular-ui/_jTabs.scss */
 .jTabs-wrap.vertical .tab.active .title {
-  border-right-color: #FEFEFE;
+  border-right-color: #fefefe;
   border-bottom-color: #444444;
 }
 
@@ -3025,7 +3158,7 @@ hr.clearfix {
   border: 1px solid #bbbab7;
   border-radius: 50%;
   background-color: #f1f1f1;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
 /* line 21, ../sass/cellular-ui/_jTooltip.scss */
@@ -3034,7 +3167,7 @@ hr.clearfix {
   position: fixed;
   display: block;
   background-color: rgba(17, 17, 17, 0.9);
-  color: #FEFEFE;
+  color: #fefefe;
   height: 0;
   max-height: 0;
   margin: 0;
@@ -3089,7 +3222,7 @@ hr.clearfix {
   width: 1em;
   height: 1em;
   text-indent: -999em;
-  background: #8C0D00;
+  background: #8c0d00;
 }
 
 /* line 18, ../sass/cellular-ui/_jZoom.scss */
@@ -3134,7 +3267,8 @@ hr.clearfix {
   border: 1px solid #bbbab7;
 }
 /* line 36, ../sass/cellular-ui/_scrolled.scss */
-.scrolled.jMmenu-active .jMmenu-menu, .scrolled.jMmenu-inactive .jMmenu-menu {
+.scrolled.jMmenu-active .jMmenu-menu,
+.scrolled.jMmenu-inactive .jMmenu-menu {
   top: 48px;
 }
 
@@ -3191,13 +3325,14 @@ hr.clearfix {
 .box-shadow {
   margin: 0 auto;
   padding: 3em 1.4em;
-  background-color: #FEFEFE;
+  background-color: #fefefe;
   -moz-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
   -webkit-box-shadow: inset 0 0 0.3em 0 #f1f1f1;
   box-shadow: inset 0 0 0.3em 0 #f1f1f1;
 }
 /* line 23, ../sass/style/_style_decor.scss */
-.box-shadow:before, .box-shadow:after {
+.box-shadow:before,
+.box-shadow:after {
   position: absolute;
   width: 40%;
   height: 1em;
@@ -3223,10 +3358,11 @@ hr.clearfix {
   padding: 0 1.2em;
   border-bottom: black 1px solid;
   background-color: #111;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 335, ../sass/_mixins/_cellularmixins.scss */
-.ribbon:after, .ribbon:before {
+.ribbon:after,
+.ribbon:before {
   content: " ";
   position: absolute;
   bottom: -1em;
@@ -3250,7 +3386,7 @@ hr.clearfix {
   padding: 0 1.2em;
   background: #111;
   border-bottom: black 1px solid;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 /* line 357, ../sass/_mixins/_cellularmixins.scss */
 .popout:after {
@@ -3288,11 +3424,11 @@ hr.clearfix {
   border: none;
   text-decoration: none;
   transition: width,height,padding,box-shadow 300ms ease-in-out;
-  box-shadow: 0 0 0 0 #FEFEFE;
+  box-shadow: 0 0 0 0 #fefefe;
 }
 /* line 27, ../sass/style/_style_logo.scss */
 .logo a:hover {
-  box-shadow: 0 0 0.4em 0 #29B4DE;
+  box-shadow: 0 0 0.4em 0 #29b4de;
 }
 
 /**

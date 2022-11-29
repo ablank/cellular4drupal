@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  * Node template.
  */
@@ -80,7 +82,8 @@ hide($content['links']);
       <div class="post-date"><?php print $post_date; ?></div>
       <div class="post-author"><?php print $author; ?></div>
     </div>;
-  <?php endif; ?>
+  <?php
+  endif; ?>
 
   <div<?php print $content_attributes; ?>>
     <?php print render($content); ?>
@@ -92,7 +95,8 @@ hide($content['links']);
     <div class="links">
       <?php print $links; ?>
     </div>
-  <?php endif; ?>
+  <?php
+  endif; ?>
 
   <?php print render($content['comments']); ?>
 </div>

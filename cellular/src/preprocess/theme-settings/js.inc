@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Theme-settings: Javascript options.
  */
+
 // Start js opts.
 $form[0]['js'] = array(
   '#type' => 'fieldset',

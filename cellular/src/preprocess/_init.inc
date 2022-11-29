@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Initialize constants & global variables.
  */
+
 define('CURRENT_THEME_PATH', cellular_theme_path());
 define('CELLULAR_CSS_EXT', cellular_ext('css'));
 define('CELLULAR_JS_EXT', cellular_ext('js'));

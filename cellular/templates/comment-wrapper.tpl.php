@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @file
  * @file
  *
  * Default theme implementation to provide an HTML container for comments.
@@ -34,21 +36,23 @@
  * @see template_preprocess_comment_wrapper()
  *
  * @ingroup themeable
- */
+ * .*/
 ?>
 
 <?php if ($content['comment_form']): ?>
   <h2><?php print render($content['comment_form']['#title']); ?></h2>
   <?php print render($content['comment_form']); ?>
-<?php endif; ?>
+<?php
+endif; ?>
 
 <?php if (!empty($content['comments'])): ?>
   <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
     <?php
     print render($title_prefix);
-    print '<h2>' . t('Comments') . '</h2>';
-    print render($title_suffix);
-    print render($content['comments']);
+print '<h2>' . t('Comments') . '</h2>';
+print render($title_suffix);
+print render($content['comments']);
     ?>
   </div>
-<?php endif; ?>
+<?php
+endif; ?>

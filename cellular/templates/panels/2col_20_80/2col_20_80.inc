@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @file
  * Vars & regions for a 2 column (20%/80%) panel layout.
  */
+
 $inc_path = drupal_get_path('theme', 'cellular') . '/templates/panels/_include/';
 
 include_once $inc_path . 'preprocess.inc';

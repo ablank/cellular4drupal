@@ -4,12 +4,12 @@
  * @file
  * Theme-settings: Social media link settings.
  */
- 
+
 $form[0]['social_media'] = array(
   '#type' => 'fieldset',
   '#title' => t('Social Media'),
   '#description' => is_dir('sites/all/libraries/cellular') ? NULL :
-      t('<div class="messages error"> <h2>These features require the <a href="@url">Cellular Library</a>.</h2> </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
+  t('<div class="messages error"> <h2>These features require the <a href="@url">Cellular Library</a>.</h2> </div>', array('@url' => 'https://github.com/ablank/cellular.library')),
   '#collapsible' => TRUE,
   '#collapsed' => FALSE,
 );
@@ -78,15 +78,15 @@ $form[0]['social_media']['share']['share_digg'] = array(
 );
 
 $form[0]['social_media']['share']['share_stumbleupon'] = array(
-'#type' => 'checkbox',
- '#title' => t('StumbleUpon'),
- '#default_value' => theme_get_setting('share_rstumbleupon'),
- );
- 
- $form[0]['social_media']['share']['share_tumblr'] = array(
-'#type' => 'checkbox',
- '#title' => t('Tumblr'),
- '#default_value' => theme_get_setting('share_tumblr'),
+  '#type' => 'checkbox',
+  '#title' => t('StumbleUpon'),
+  '#default_value' => theme_get_setting('share_rstumbleupon'),
+);
+
+$form[0]['social_media']['share']['share_tumblr'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Tumblr'),
+  '#default_value' => theme_get_setting('share_tumblr'),
 );
 
 $form[0]['social_media']['social_media_follow'] = array(
