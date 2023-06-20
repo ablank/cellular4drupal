@@ -4,7 +4,7 @@
     * Cellular Base Theme for Drupal 7.
     *
     * @author Adam Blankenship
-    * 
+    *
     * @see http://live-cellular.gotpantheon.com
     * @see https://github.com/ablank/cellular
     */
@@ -2799,14 +2799,13 @@ function cellular_preprocess_panels_pane(&$vars) {
   $vars['links'] = !empty($content->links) ? theme('links', array('links' => $content->links)) : '';
   $vars['more'] = '';
   if (!empty($content->more)) {
+    $vars['more'] = l($content->more['title'], $content->more['href'], $content->more);
+
     if (empty($content->more['title'])) {
       $content->more['title'] = t('More');
-    }
-    $vars['more'] = l($content->more['title'], $content->more['href'], $content->more);
-  }
+    }}
 
   $vars['content'] = !empty($content->content) ? $content->content : '';
- */
 }
 
 

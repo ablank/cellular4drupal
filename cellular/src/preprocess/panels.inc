@@ -120,5 +120,4 @@ function cellular_preprocess_panels_pane(&$vars) {
   }
 
   $vars['content'] = !empty($content->content) ? $content->content : '';
-  * /
 }
